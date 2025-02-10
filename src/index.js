@@ -31,7 +31,7 @@ import axios from "axios";
 import Box from "@mui/material/Box";
 import battleMusic from "../../audio/battleMusic.mp3";
 
-function GameWorld() {
+
   // console.log('bowsermonMapJson', bowsermonMapJson);
   // console.log('collisionsArray', collisionsArray);
   //   console.log('battleZonesArray', battleZonesArray);
@@ -220,8 +220,7 @@ function GameWorld() {
   const [pokeStamina, setPokeStamina] = useState(0);
   const [pokeAttackType, setPokeAttackType] = useState("");
 
-  useEffect(() => {
-    if (canvasRef.current) {
+  
       const canvas = canvasRef.current;
       const c = canvas.getContext("2d");
 
@@ -1222,10 +1221,9 @@ function GameWorld() {
           e.currentTarget.style.display = "none";
         }
       });
-    }
-  }, [usersConsumableItems]);
 
-  return (
+
+
     <div style={{ display: "inline-block", position: "relative" }}>
       {/* fade out div */}
       <div
@@ -1841,7 +1839,5 @@ function GameWorld() {
         </div>
       </div>
     </div>
-  );
-}
 
-export default GameWorld;
+
