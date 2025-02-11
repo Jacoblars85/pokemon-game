@@ -36,6 +36,7 @@ import battleMusic from "../../audio/battleMusic.mp3";
   // console.log('collisionsArray', collisionsArray);
   //   console.log('battleZonesArray', battleZonesArray);
 
+    // starter stats/info
   const starterOneHp = 0
   const starterOneStamina = 0
   const starterPicture = ''
@@ -43,6 +44,15 @@ import battleMusic from "../../audio/battleMusic.mp3";
   const starterOneName = ''
   const starterOneSpeed = 0
   const starterOneAttackStats = {}
+
+  // starter 2 stats/info
+  const starterTwoHp = 0
+  const starterTwoStamina = 0
+  const starterTwoPicture = ''
+  const starterTwoFxImg = ''
+  const starterTwoName = ''
+  const starterTwoSpeed = 0
+  const starterTwoAttackStats = {}
 
 
 
@@ -189,14 +199,14 @@ import battleMusic from "../../audio/battleMusic.mp3";
 //   const [starterOneSpeed, setStarterOneSpeed] = useState(0);
 //   const [starterOneAttackStats, setStarterOneAttackStats] = useState({});
 
-  // starter stats/info
-  const [starterTwoHp, setStarterTwoHp] = useState(0);
-  const [starterTwoStamina, setStarterTwoStamina] = useState(0);
-  const [starterTwoPicture, setStarterTwoPicture] = useState("");
-  const [starterTwoFxImg, setStarterTwoFxImg] = useState("");
-  const [starterTwoName, setStarterTwoName] = useState("");
-  const [starterTwoSpeed, setStarterTwoSpeed] = useState(0);
-  const [starterTwoAttackStats, setStarterTwoAttackStats] = useState({});
+  // starter 2 stats/info
+//   const [starterTwoHp, setStarterTwoHp] = useState(0);
+//   const [starterTwoStamina, setStarterTwoStamina] = useState(0);
+//   const [starterTwoPicture, setStarterTwoPicture] = useState("");
+//   const [starterTwoFxImg, setStarterTwoFxImg] = useState("");
+//   const [starterTwoName, setStarterTwoName] = useState("");
+//   const [starterTwoSpeed, setStarterTwoSpeed] = useState(0);
+//   const [starterTwoAttackStats, setStarterTwoAttackStats] = useState({});
 
   // All current varibles for battle
   const [currentId, setCurrentId] = useState(0);
