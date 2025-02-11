@@ -176,27 +176,27 @@ import battleMusic from "../../audio/battleMusic.mp3";
       url: `/api/characters/basic`,
     })
       .then((response) => {
-        setKickAttack(response.data[0].attack_name);
-        setKickStamina(response.data[0].attack_stamina);
-        setKickAttackType(response.data[0].attack_type);
+        // setKickAttack(response.data[0].attack_name);
+        kickStamina = response.data[0].attack_stamina;
+        // setKickAttackType(response.data[0].attack_type);
 
-        setKickAttackStats({
+        kickAttackStats = {
           attack_name: response.data[0].attack_name,
           attack_damage: response.data[0].attack_damage,
           attack_stamina: response.data[0].attack_stamina,
           attack_type: response.data[0].attack_type,
-        });
+        };
 
-        setPokeAttack(response.data[1].attack_name);
-        setPokeStamina(response.data[1].attack_stamina);
-        setPokeAttackType(response.data[1].attack_type);
+        // setPokeAttack(response.data[1].attack_name);
+        pokeStamina = response.data[1].attack_stamina;
+        // setPokeAttackType(response.data[1].attack_type);
 
-        setPokeAttackStats({
+        pokeAttackStats = {
           attack_name: response.data[1].attack_name,
           attack_damage: response.data[1].attack_damage,
           attack_stamina: response.data[1].attack_stamina,
           attack_type: response.data[1].attack_type,
-        });
+        };
       })
       .catch((err) => {
         console.log(err);
