@@ -63,6 +63,15 @@ import battleMusic from "../../audio/battleMusic.mp3";
   const enemySpeed = 0
   const enemyAttackStats = {}
 
+  // kick attack name and stamina
+  const kickAttackStats = {}
+  const kickStamina = 0
+
+
+
+
+
+
   let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
   getStarters();
@@ -236,9 +245,9 @@ import battleMusic from "../../audio/battleMusic.mp3";
 //   const [enemyAttackStats, setEnemyAttackStats] = useState({});
 
   // kick attack name and stamina
-  const [kickAttackStats, setKickAttackStats] = useState({});
+//   const [kickAttackStats, setKickAttackStats] = useState({});
   const [kickAttack, setKickAttack] = useState("");
-  const [kickStamina, setKickStamina] = useState(0);
+//   const [kickStamina, setKickStamina] = useState(0);
   const [kickAttackType, setKickAttackType] = useState("");
 
   // poke attack name and stamina
