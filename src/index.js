@@ -54,7 +54,14 @@ import battleMusic from "../../audio/battleMusic.mp3";
   const starterTwoSpeed = 0
   const starterTwoAttackStats = {}
 
-
+  // enemy stats/info
+  const enemyHp = 0
+  const enemyStamina = 0
+  const enemyPicture = ''
+  const enemyFxImg = ''
+  const enemyName = ''
+  const enemySpeed = 0
+  const enemyAttackStats = {}
 
   let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
@@ -220,13 +227,13 @@ import battleMusic from "../../audio/battleMusic.mp3";
 
   // enemy stats/info
   const [enemyId, setEnemyId] = useState(0);
-  const [enemyPicture, setEnemyPicture] = useState("");
-  const [enemyHp, setEnemyHp] = useState(0);
-  const [enemyStamina, setEnemyStamina] = useState(0);
-  const [enemyFxImg, setEnemyFxImg] = useState("");
-  const [enemyName, setEnemyName] = useState("");
-  const [enemySpeed, setEnemySpeed] = useState(0);
-  const [enemyAttackStats, setEnemyAttackStats] = useState({});
+//   const [enemyPicture, setEnemyPicture] = useState("");
+//   const [enemyHp, setEnemyHp] = useState(0);
+//   const [enemyStamina, setEnemyStamina] = useState(0);
+//   const [enemyFxImg, setEnemyFxImg] = useState("");
+//   const [enemyName, setEnemyName] = useState("");
+//   const [enemySpeed, setEnemySpeed] = useState(0);
+//   const [enemyAttackStats, setEnemyAttackStats] = useState({});
 
   // kick attack name and stamina
   const [kickAttackStats, setKickAttackStats] = useState({});
