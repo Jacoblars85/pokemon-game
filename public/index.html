@@ -11,7 +11,8 @@
   </head>
   <body>
     <div style={{ display: "inline-block", position: "relative" }}>
-      {/* fade out div */}
+      
+      <!-- fade out div  -->
       <div
         id="fadeOutDiv"
         style={{
@@ -27,7 +28,7 @@
         }}
       ></div>
 
-      {/* main canvas */}
+      <!-- main canvas -->
       <canvas
         ref={canvasRef}
         height={576}
@@ -35,9 +36,10 @@
         className="canvasForGame"
       ></canvas>
 
-      {/* battle interface */}
+      <!-- battle interface  -->
       <div id="battleInterface" style={{ display: "none" }}>
-        {/* enemy health box */}
+
+        <!-- enemy health box  -->
         <div
           style={{
             backgroundColor: "white",
@@ -53,7 +55,7 @@
         >
           <h1 style={{ margin: 0 }}>{enemyName}</h1>
 
-          {/* enemy health bar */}
+          <!-- enemy health bar  -->
           <div style={{ position: "relative" }}>
             <div
               style={{
@@ -76,7 +78,7 @@
             ></div>
           </div>
 
-          {/* enemy stamina bar */}
+          <!-- enemy stamina bar  -->
           <div style={{ position: "relative" }}>
             <div
               style={{
@@ -100,7 +102,7 @@
           </div>
         </div>
 
-        {/* starter health box */}
+        <!-- starter health box -->
         <div
           style={{
             backgroundColor: "white",
@@ -116,7 +118,7 @@
         >
           <h1 style={{ margin: 0 }}>{currentName}</h1>
 
-          {/* starter health bar */}
+          <!-- starter health bar  -->
           <div style={{ position: "relative" }}>
             <div
               style={{
@@ -139,7 +141,7 @@
             ></div>
           </div>
 
-          {/* starter stamina bar */}
+          <!-- starter stamina bar -->
           <div style={{ position: "relative" }}>
             <div
               style={{
@@ -163,7 +165,7 @@
           </div>
         </div>
 
-        {/* canvas */}
+        <!-- canvas -->
         {/* <canvas
             ref={battleCanvasRef}
             height={576}
@@ -171,7 +173,7 @@
             className="canvasForBattle"
           ></canvas> */}
 
-        {/* the attack box */}
+        <!-- the attack box -->
         <div
           style={{
             backgroundColor: "white",
@@ -184,7 +186,7 @@
             display: "flex",
           }}
         >
-          {/* text box */}
+          <!-- text box  -->
           <div
             id="dialogueBox"
             style={{
@@ -200,10 +202,9 @@
               zIndex: 1,
             }}
           >
-            {/* {textBox} */}
           </div>
 
-          {/* all of the togglable buttons */}
+          <!-- all of the togglable buttons -->
           <div
             id="togglableButtons"
             style={{
@@ -213,7 +214,7 @@
               justifyContent: "center",
             }}
           >
-            {/* attack box */}
+            <!-- attack box  -->
             <div
               id="attackBox"
               style={{
@@ -575,7 +576,7 @@
             </div>
           </div>
 
-          {/* all of the basic buttons */}
+          <!-- all of the basic buttons -->
           <div
             style={{
               width: "33.33%",
@@ -585,7 +586,7 @@
             }}
           >
             <>
-              {/* the inventory button */}
+              <!-- the inventory button  -->
               <button
                 onClick={() => setDisplayButtons("inventory")}
                 className="inventoryMove"
@@ -594,7 +595,7 @@
                 Inventory
               </button>
 
-              {/* the switch button */}
+              <!-- the switch button  -->
               <button
                 onClick={() => setDisplayButtons("switch")}
                 className="switch"
@@ -603,7 +604,7 @@
                 Switch
               </button>
 
-              {/* run button */}
+              <!-- run button  -->
               <button
                 onClick={() => history.push("/home")}
                 className="runButton"
@@ -612,7 +613,7 @@
                 Run
               </button>
 
-              {/* shows all the attack buttons */}
+              <!-- shows all the attack buttons -->
               <button
                 onClick={() => setDisplayButtons("attack")}
                 className="attackToggleButton"
