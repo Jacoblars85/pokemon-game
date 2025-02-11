@@ -36,6 +36,16 @@ import battleMusic from "../../audio/battleMusic.mp3";
   // console.log('collisionsArray', collisionsArray);
   //   console.log('battleZonesArray', battleZonesArray);
 
+  const starterOneHp = 0
+  const starterOneStamina = 0
+  const starterPicture = ''
+  const starterFxImg = ''
+  const starterOneName = ''
+  const starterOneSpeed = 0
+  const starterOneAttackStats = {}
+
+
+
   let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
   getStarters();
@@ -171,13 +181,13 @@ import battleMusic from "../../audio/battleMusic.mp3";
   let starterTwo = starter[1];
 
   // starter stats/info
-  const [starterOneHp, setStarterOneHp] = useState(0);
-  const [starterOneStamina, setStarterOneStamina] = useState(0);
-  const [starterPicture, setStarterPicture] = useState("");
-  const [starterFxImg, setStarterFxImg] = useState("");
-  const [starterOneName, setStarterOneName] = useState("");
-  const [starterOneSpeed, setStarterOneSpeed] = useState(0);
-  const [starterOneAttackStats, setStarterOneAttackStats] = useState({});
+//   const [starterOneHp, setStarterOneHp] = useState(0);
+//   const [starterOneStamina, setStarterOneStamina] = useState(0);
+//   const [starterPicture, setStarterPicture] = useState("");
+//   const [starterFxImg, setStarterFxImg] = useState("");
+//   const [starterOneName, setStarterOneName] = useState("");
+//   const [starterOneSpeed, setStarterOneSpeed] = useState(0);
+//   const [starterOneAttackStats, setStarterOneAttackStats] = useState({});
 
   // starter stats/info
   const [starterTwoHp, setStarterTwoHp] = useState(0);
