@@ -67,7 +67,9 @@ import battleMusic from "../../audio/battleMusic.mp3";
   const kickAttackStats = {}
   const kickStamina = 0
 
-
+  // poke attack name and stamina
+  const pokeAttackStats = {}
+  const pokeStamina = 0
 
 
 
@@ -251,9 +253,9 @@ import battleMusic from "../../audio/battleMusic.mp3";
   const [kickAttackType, setKickAttackType] = useState("");
 
   // poke attack name and stamina
-  const [pokeAttackStats, setPokeAttackStats] = useState({});
+//   const [pokeAttackStats, setPokeAttackStats] = useState({});
   const [pokeAttack, setPokeAttack] = useState("");
-  const [pokeStamina, setPokeStamina] = useState(0);
+//   const [pokeStamina, setPokeStamina] = useState(0);
   const [pokeAttackType, setPokeAttackType] = useState("");
 
 
