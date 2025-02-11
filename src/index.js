@@ -242,18 +242,6 @@ const [enemyId, setEnemyId] = useState(0);
 //   const [enemySpeed, setEnemySpeed] = useState(0);
 //   const [enemyAttackStats, setEnemyAttackStats] = useState({});
 
-// kick attack name and stamina
-//   const [kickAttackStats, setKickAttackStats] = useState({});
-const [kickAttack, setKickAttack] = useState("");
-//   const [kickStamina, setKickStamina] = useState(0);
-const [kickAttackType, setKickAttackType] = useState("");
-
-// poke attack name and stamina
-//   const [pokeAttackStats, setPokeAttackStats] = useState({});
-const [pokeAttack, setPokeAttack] = useState("");
-//   const [pokeStamina, setPokeStamina] = useState(0);
-const [pokeAttackType, setPokeAttackType] = useState("");
-
 const canvas = canvasRef.current;
 const c = canvas.getContext("2d");
 
