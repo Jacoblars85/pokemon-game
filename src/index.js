@@ -204,15 +204,6 @@ let enemyOne = levelEnemy[0];
 let starterOne = starter[0];
 let starterTwo = starter[1];
 
-// starter stats/info
-//   const [starterOneHp, setStarterOneHp] = useState(0);
-//   const [starterOneStamina, setStarterOneStamina] = useState(0);
-//   const [starterPicture, setStarterPicture] = useState("");
-//   const [starterFxImg, setStarterFxImg] = useState("");
-//   const [starterOneName, setStarterOneName] = useState("");
-//   const [starterOneSpeed, setStarterOneSpeed] = useState(0);
-//   const [starterOneAttackStats, setStarterOneAttackStats] = useState({});
-
 
 // All current varibles for battle
 const [currentId, setCurrentId] = useState(0);
