@@ -745,7 +745,7 @@ class Character extends Sprite {
     this.stamina = stamina;
     this.maxStamina = maxStamina;
     this.speed = speed;
-    this.fx_img = fx_img
+    this.fx_img = fx_img;
   }
 
   faint() {
@@ -796,8 +796,8 @@ class Character extends Sprite {
     });
 
     const uniqueAttackFxImage = new Image();
-      uniqueAttackFxImage.src = this.fx_img;
-      
+    uniqueAttackFxImage.src = this.fx_img;
+
     if (attack.attack_type === "physical") {
       const tl = gsap.timeline();
 
@@ -832,11 +832,11 @@ class Character extends Sprite {
           x: this.position.x,
         });
     } else if (attack.attack_type === "projectile") {
-    //   const enemyProjectileAttackFxImage = new Image();
-    //   enemyProjectileAttackFxImage.src = enemyFxImg;
+      //   const enemyProjectileAttackFxImage = new Image();
+      //   enemyProjectileAttackFxImage.src = enemyFxImg;
 
-    //   const starterProjectileAttackFxImage = new Image();
-    //   starterProjectileAttackFxImage.src = starterFxImg;
+      //   const starterProjectileAttackFxImage = new Image();
+      //   starterProjectileAttackFxImage.src = starterFxImg;
 
       const projectileAttackFx = new Sprite({
         position: {
@@ -882,11 +882,11 @@ class Character extends Sprite {
         },
       });
     } else if (attack.attack_type === "summon") {
-    //   const enemySummonAttackFxImage = new Image();
-    //   enemySummonAttackFxImage.src = enemyFxImg;
+      //   const enemySummonAttackFxImage = new Image();
+      //   enemySummonAttackFxImage.src = enemyFxImg;
 
-    //   const starterSummonAttackFxImage = new Image();
-    //   starterSummonAttackFxImage.src = starterFxImg;
+      //   const starterSummonAttackFxImage = new Image();
+      //   starterSummonAttackFxImage.src = starterFxImg;
 
       const summonAttackFx = new Sprite({
         position: {
