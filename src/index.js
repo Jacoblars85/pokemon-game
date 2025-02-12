@@ -96,6 +96,7 @@ const getStarters = () => {
           attack_damage: response.data[0].attack_damage,
           attack_stamina: response.data[0].attack_stamina,
           attack_type: response.data[0].attack_type,
+          fx_img: response.data[0].fx_img
         };
       } else if (response.data.length === 2) {
         setStarterOneHp(response.data[0].hp);
@@ -105,12 +106,13 @@ const getStarters = () => {
         setStarterPicture(response.data[0].battle_pic);
         setStarterFxImg(response.data[0].fx_img);
 
-        setStarterOneAttackStats({
+        starterOneAttackStats = {
           attack_name: response.data[0].attack_name,
           attack_damage: response.data[0].attack_damage,
           attack_stamina: response.data[0].attack_stamina,
           attack_type: response.data[0].attack_type,
-        });
+          fx_img: response.data[0].fx_img
+        };
 
         setStarterTwoHp(response.data[1].hp);
         setStarterTwoStamina(response.data[1].stamina);
@@ -118,12 +120,14 @@ const getStarters = () => {
         setStarterTwoPicture(response.data[1].battle_pic);
         setStarterTwoFxImg(response.data[1].fx_img);
         setStarterTwoName(response.data[1].character_name);
-        setStarterTwoAttackStats({
+
+        starterTwoAttackStats = {
           attack_name: response.data[1].attack_name,
           attack_damage: response.data[1].attack_damage,
           attack_stamina: response.data[1].attack_stamina,
           attack_type: response.data[1].attack_type,
-        });
+          fx_img: response.data[1].fx_img
+        };
       }
     })
     .catch((err) => {
