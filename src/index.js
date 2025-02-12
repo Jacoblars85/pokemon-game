@@ -95,19 +95,19 @@ const getStarters = () => {
         setStarterFxImg(response.data[0].fx_img);
 
         starterOneInfo = {
-            character_name: response.data[0].character_name,
-            hp: response.data[0].hp,
-            stamina: response.data[0].stamina,
-            speed: response.data[0].speed,
-            battle_pic: response.data[0].battle_pic
-        }
+          character_name: response.data[0].character_name,
+          hp: response.data[0].hp,
+          stamina: response.data[0].stamina,
+          speed: response.data[0].speed,
+          battle_pic: response.data[0].battle_pic,
+        };
 
         starterOneAttackStats = {
           attack_name: response.data[0].attack_name,
           attack_damage: response.data[0].attack_damage,
           attack_stamina: response.data[0].attack_stamina,
           attack_type: response.data[0].attack_type,
-          fx_img: response.data[0].fx_img
+          fx_img: response.data[0].fx_img,
         };
       } else if (response.data.length === 2) {
         setStarterOneHp(response.data[0].hp);
@@ -118,19 +118,19 @@ const getStarters = () => {
         setStarterFxImg(response.data[0].fx_img);
 
         starterOneInfo = {
-            character_name: response.data[0].character_name,
-            hp: response.data[0].hp,
-            stamina: response.data[0].stamina,
-            speed: response.data[0].speed,
-            battle_pic: response.data[0].battle_pic
-        }
+          character_name: response.data[0].character_name,
+          hp: response.data[0].hp,
+          stamina: response.data[0].stamina,
+          speed: response.data[0].speed,
+          battle_pic: response.data[0].battle_pic,
+        };
 
         starterOneAttackStats = {
           attack_name: response.data[0].attack_name,
           attack_damage: response.data[0].attack_damage,
           attack_stamina: response.data[0].attack_stamina,
           attack_type: response.data[0].attack_type,
-          fx_img: response.data[0].fx_img
+          fx_img: response.data[0].fx_img,
         };
 
         setStarterTwoHp(response.data[1].hp);
@@ -141,19 +141,19 @@ const getStarters = () => {
         setStarterTwoName(response.data[1].character_name);
 
         starterTwoInfo = {
-            character_name: response.data[1].character_name,
-            hp: response.data[1].hp,
-            stamina: response.data[1].stamina,
-            speed: response.data[1].speed,
-            battle_pic: response.data[1].battle_pic
-        }
+          character_name: response.data[1].character_name,
+          hp: response.data[1].hp,
+          stamina: response.data[1].stamina,
+          speed: response.data[1].speed,
+          battle_pic: response.data[1].battle_pic,
+        };
 
         starterTwoAttackStats = {
           attack_name: response.data[1].attack_name,
           attack_damage: response.data[1].attack_damage,
           attack_stamina: response.data[1].attack_stamina,
           attack_type: response.data[1].attack_type,
-          fx_img: response.data[1].fx_img
+          fx_img: response.data[1].fx_img,
         };
       }
     })
@@ -180,15 +180,15 @@ const getEnemy = () => {
         hp: response.data[0].hp,
         stamina: response.data[0].stamina,
         speed: response.data[0].speed,
-        battle_pic: response.data[0].battle_pic
-    }
+        battle_pic: response.data[0].battle_pic,
+      };
 
       enemyAttackStats = {
         attack_name: response.data[0].attack_name,
         attack_damage: response.data[0].attack_damage,
         attack_stamina: response.data[0].attack_stamina,
         attack_type: response.data[0].attack_type,
-        fx_img: response.data[0].fx_img
+        fx_img: response.data[0].fx_img,
       };
     })
     .catch((err) => {
