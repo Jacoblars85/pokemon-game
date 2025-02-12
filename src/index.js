@@ -232,15 +232,6 @@ const [currentDamage, setDamage] = useState(0);
 const [maxHp, setMaxHp] = useState(0);
 const [maxStamina, setMaxStamina] = useState(0);
 
-// enemy stats/info
-const [enemyId, setEnemyId] = useState(0);
-//   const [enemyPicture, setEnemyPicture] = useState("");
-//   const [enemyHp, setEnemyHp] = useState(0);
-//   const [enemyStamina, setEnemyStamina] = useState(0);
-//   const [enemyFxImg, setEnemyFxImg] = useState("");
-//   const [enemyName, setEnemyName] = useState("");
-//   const [enemySpeed, setEnemySpeed] = useState(0);
-//   const [enemyAttackStats, setEnemyAttackStats] = useState({});
 
 const canvas = canvasRef.current;
 const c = canvas.getContext("2d");
