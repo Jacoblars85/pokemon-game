@@ -727,6 +727,7 @@ class Character extends Sprite {
     stamina,
     maxStamina,
     speed,
+    fx_img,
   }) {
     super({
       position,
@@ -744,6 +745,7 @@ class Character extends Sprite {
     this.stamina = stamina;
     this.maxStamina = maxStamina;
     this.speed = speed;
+    this.fx_img = fx_img
   }
 
   faint() {
@@ -994,6 +996,7 @@ function initBattle() {
     stamina: enemyStamina,
     maxStamina: enemyStamina,
     speed: enemySpeed,
+    fx_img: enemyAttackStats.fx_img
   });
 
   starter = new Character({
@@ -1016,6 +1019,7 @@ function initBattle() {
     stamina: starterOneStamina,
     maxStamina: starterOneStamina,
     speed: starterOneSpeed,
+    fx_img: starterOneAttackStats.fx_img
   });
 
   starter2 = new Character({
