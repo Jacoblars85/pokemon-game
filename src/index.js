@@ -175,6 +175,14 @@ const getEnemy = () => {
       setEnemyFxImg(response.data[0].fx_img);
       setEnemyName(response.data[0].character_name);
 
+      enemyInfo = {
+        character_name: response.data[0].character_name,
+        hp: response.data[0].hp,
+        stamina: response.data[0].stamina,
+        speed: response.data[0].speed,
+        battle_pic: response.data[0].battle_pic
+    }
+
       enemyAttackStats = {
         attack_name: response.data[0].attack_name,
         attack_damage: response.data[0].attack_damage,
