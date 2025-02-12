@@ -795,6 +795,9 @@ class Character extends Sprite {
       width: (this.stamina / this.maxStamina) * 100 + "%",
     });
 
+    const uniqueAttackFxImage = new Image();
+      uniqueAttackFxImage.src = this.fx_img;
+      
     if (attack.attack_type === "physical") {
       const tl = gsap.timeline();
 
@@ -829,20 +832,21 @@ class Character extends Sprite {
           x: this.position.x,
         });
     } else if (attack.attack_type === "projectile") {
-      const enemyProjectileAttackFxImage = new Image();
-      enemyProjectileAttackFxImage.src = enemyFxImg;
+    //   const enemyProjectileAttackFxImage = new Image();
+    //   enemyProjectileAttackFxImage.src = enemyFxImg;
 
-      const starterProjectileAttackFxImage = new Image();
-      starterProjectileAttackFxImage.src = starterFxImg;
+    //   const starterProjectileAttackFxImage = new Image();
+    //   starterProjectileAttackFxImage.src = starterFxImg;
 
       const projectileAttackFx = new Sprite({
         position: {
           x: this.position.x,
           y: this.position.y,
         },
-        image: this.isEnemy
-          ? enemyProjectileAttackFxImage
-          : starterProjectileAttackFxImage,
+        image: uniqueAttackFxImage,
+        // this.isEnemy
+        //   ? enemyProjectileAttackFxImage
+        //   : starterProjectileAttackFxImage,
         frames: {
           max: this.isEnemy ? enemyOne.max_frames : starterOne.max_frames,
           hold: this.isEnemy ? enemyOne.hold_time : starterOne.hold_time,
