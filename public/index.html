@@ -302,21 +302,20 @@
               <button
                 id="attackButton"
                 className={pokeAttack}
-                style={{
-                  display: "flex",
-                  width: "33.33%",
-                  height: "100%",
-                  textAlign: "center",
-                  fontSize: "30px",
-                  color: "black",
-                  fontFamily: "New Super Mario Font U",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  border: 0,
-                  borderLeft: "4px solid black",
-                  // backgroundColor: "white",
-                  boxShadow: "0 0 0 0",
-                }}
+                style="
+                  display: flex;
+                  width: 33.33%;
+                  height: 100%;
+                  text-align: center;
+                  font-size: 30px;
+                  color: black;
+                  font-family: New Super Mario Font U;
+                  justify-content: center;
+                  align-items: center;
+                  border: 0;
+                  border-left: 4px solid black;
+                  box-shadow: 0 0 0 0;
+                  "
                 disabled={
                   starter.length === 1
                     ? starterOneStamina < pokeStamina
@@ -338,19 +337,18 @@
             <!-- switch box  -->
             <div
               id="switchBox"
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                top: 0,
-                width: "66.4%",
-                backgroundColor: "white",
-                padding: "0px",
-                display: "none",
-                // fontSize: "30px",
-                zIndex: 1,
-              }}
+              style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: 0;
+                width: 66.4%;
+                background-color: white;
+                padding: 0px;
+                display: none;
+                z-index: 1;
+                "
             >
               {starter.length === 1 ? (
                 <List sx={{ padding: 0 }}>
@@ -364,13 +362,12 @@
                     <button
                       id="attackButton"
                       className="starterOne"
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "New Super Mario Font U",
-                        borderColor: "black",
-                      }}
-                      variant="outlined"
+                      style="
+                        color: black;
+                        font-size: 15;
+                        font-family: New Super Mario Font U;
+                        border-color: black;
+                        "
                       disabled={
                         currentId === starterOne.id
                           ? true
@@ -378,7 +375,6 @@
                           ? true
                           : false
                       }
-                      onClick={() => battle("starterOne")}
                     >
                       Change Starter
                     </button>
@@ -396,13 +392,12 @@
                     <button
                       id="attackButton"
                       className="starterOne"
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "New Super Mario Font U",
-                        borderColor: "black",
-                      }}
-                      // variant="outlined"
+                      style="
+                        color: black;
+                        font-size: 15;
+                        font-family: New Super Mario Font U;
+                        border-color: black;
+                        "
                       disabled={
                         currentId === starterOne.id
                           ? true
@@ -410,7 +405,6 @@
                           ? true
                           : false
                       }
-                      onClick={() => battle("starterOne")}
                     >
                       Change Starter
                     </button>
