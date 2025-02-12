@@ -132,7 +132,7 @@ const getStarters = () => {
           attack_type: response.data[0].attack_type,
           fx_img: response.data[0].fx_img,
         };
-        
+
         starterTwoHp = response.data[1].hp;
         starterTwoStamina = response.data[1].stamina;
         starterTwoName = response.data[1].character_name;
@@ -168,12 +168,13 @@ const getEnemy = () => {
     url: `/api/characters/enemy/${randomEnemy}`,
   })
     .then((response) => {
-      setEnemyHp(response.data[0].hp);
-      setEnemyStamina(response.data[0].stamina);
-      setEnemySpeed(response.data[0].speed);
-      setEnemyPicture(response.data[0].battle_pic);
-      setEnemyFxImg(response.data[0].fx_img);
-      setEnemyName(response.data[0].character_name);
+      enemyHp = response.data[0].hp;
+      enemyStamina = response.data[0].stamina;
+      enemyName = response.data[0].character_name;
+      enemySpeed = response.data[0].speed;
+      enemyPicture = response.data[0].battle_pic;
+      enemyFxImg = response.data[0].fx_img;
+
 
       enemyInfo = {
         character_name: response.data[0].character_name,
