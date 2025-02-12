@@ -153,6 +153,7 @@ const getEnemy = () => {
         attack_damage: response.data[0].attack_damage,
         attack_stamina: response.data[0].attack_stamina,
         attack_type: response.data[0].attack_type,
+        fx_img: response.data[0].fx_img
       });
     })
     .catch((err) => {
