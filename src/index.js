@@ -42,6 +42,7 @@ const starterPicture = "";
 const starterFxImg = "";
 const starterOneName = "";
 const starterOneSpeed = 0;
+const starterOneInfo = {};
 const starterOneAttackStats = {};
 
 // starter 2 stats/info
@@ -51,6 +52,7 @@ const starterTwoPicture = "";
 const starterTwoFxImg = "";
 const starterTwoName = "";
 const starterTwoSpeed = 0;
+const starterTwoInfo = {};
 const starterTwoAttackStats = {};
 
 // enemy stats/info
@@ -60,6 +62,7 @@ const enemyPicture = "";
 const enemyFxImg = "";
 const enemyName = "";
 const enemySpeed = 0;
+const enemyInfo= {};
 const enemyAttackStats = {};
 
 // kick attack name and stamina
@@ -148,13 +151,13 @@ const getEnemy = () => {
       setEnemyFxImg(response.data[0].fx_img);
       setEnemyName(response.data[0].character_name);
 
-      setEnemyAttackStats({
+      enemyAttackStats = {
         attack_name: response.data[0].attack_name,
         attack_damage: response.data[0].attack_damage,
         attack_stamina: response.data[0].attack_stamina,
         attack_type: response.data[0].attack_type,
         fx_img: response.data[0].fx_img
-      });
+      };
     })
     .catch((err) => {
       console.log(err);
