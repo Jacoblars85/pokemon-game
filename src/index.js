@@ -996,7 +996,7 @@ function initBattle() {
     stamina: enemyStamina,
     maxStamina: enemyStamina,
     speed: enemySpeed,
-    fx_img: enemyAttackStats.fx_img
+    fx_img: enemyAttackStats.fx_img,
   });
 
   starter = new Character({
@@ -1019,7 +1019,7 @@ function initBattle() {
     stamina: starterOneStamina,
     maxStamina: starterOneStamina,
     speed: starterOneSpeed,
-    fx_img: starterOneAttackStats.fx_img
+    fx_img: starterOneAttackStats.fx_img,
   });
 
   starter2 = new Character({
@@ -1043,6 +1043,7 @@ function initBattle() {
     stamina: starterTwoStamina,
     maxStamina: starterTwoStamina,
     speed: starterTwoSpeed,
+    fx_img: starterTwoAttackStats.fx_img,
   });
 
   renderedSprites = [enemy, starter, starter2];
