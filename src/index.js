@@ -86,32 +86,32 @@ const getStarters = () => {
       if (response.data.length === 1) {
         setStarterOneHp(response.data[0].hp);
         setStarterOneStamina(response.data[0].stamina);
-        setCurrentId(response.data[0].id);
-        setCurrentName(response.data[0].character_name);
+        // setCurrentId(response.data[0].id);
+        // setCurrentName(response.data[0].character_name);
         setStarterOneName(response.data[0].character_name);
-        setCurrentSpeed(response.data[0].speed);
+        // setCurrentSpeed(response.data[0].speed);
         setStarterOneSpeed(response.data[0].speed);
-        setMaxHp(response.data[0].hp);
-        setMaxStamina(response.data[0].stamina);
+        // setMaxHp(response.data[0].hp);
+        // setMaxStamina(response.data[0].stamina);
         setStarterPicture(response.data[0].battle_pic);
         setStarterFxImg(response.data[0].fx_img);
 
-        setStarterOneAttackStats({
+        starterOneAttackStats = {
           attack_name: response.data[0].attack_name,
           attack_damage: response.data[0].attack_damage,
           attack_stamina: response.data[0].attack_stamina,
           attack_type: response.data[0].attack_type,
-        });
+        };
       } else if (response.data.length === 2) {
         setStarterOneHp(response.data[0].hp);
         setStarterOneStamina(response.data[0].stamina);
-        setCurrentId(response.data[0].id);
-        setCurrentName(response.data[0].character_name);
+        // setCurrentId(response.data[0].id);
+        // setCurrentName(response.data[0].character_name);
         setStarterOneName(response.data[0].character_name);
-        setCurrentSpeed(response.data[0].speed);
+        // setCurrentSpeed(response.data[0].speed);
         setStarterOneSpeed(response.data[0].speed);
-        setMaxHp(response.data[0].hp);
-        setMaxStamina(response.data[0].stamina);
+        // setMaxHp(response.data[0].hp);
+        // setMaxStamina(response.data[0].stamina);
         setStarterPicture(response.data[0].battle_pic);
         setStarterFxImg(response.data[0].fx_img);
 
@@ -205,14 +205,14 @@ let starterOne = starter[0];
 let starterTwo = starter[1];
 
 // All current varibles for battle
-const [currentId, setCurrentId] = useState(0);
-const [currentName, setCurrentName] = useState("");
-const [currentHp, setCurrentHp] = useState(0);
-const [currentStamina, setCurrentStamina] = useState(0);
-const [currentSpeed, setCurrentSpeed] = useState(0);
-const [currentDamage, setDamage] = useState(0);
-const [maxHp, setMaxHp] = useState(0);
-const [maxStamina, setMaxStamina] = useState(0);
+// const [currentId, setCurrentId] = useState(0);
+// const [currentName, setCurrentName] = useState("");
+// const [currentHp, setCurrentHp] = useState(0);
+// const [currentStamina, setCurrentStamina] = useState(0);
+// const [currentSpeed, setCurrentSpeed] = useState(0);
+// const [currentDamage, setDamage] = useState(0);
+// const [maxHp, setMaxHp] = useState(0);
+// const [maxStamina, setMaxStamina] = useState(0);
 
 const canvas = canvasRef.current;
 const c = canvas.getContext("2d");
