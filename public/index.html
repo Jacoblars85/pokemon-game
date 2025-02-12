@@ -10,94 +10,94 @@
     <title>pokemon game</title>
   </head>
   <body>
-    <div style={{ display: "inline-block", position: "relative" }}>
+    <div style=" display: inline-block; position: relative ">
       
       <!-- fade out div  -->
       <div
         id="fadeOutDiv"
-        style={{
-          backgroundColor: "black",
-          position: "absolute",
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0,
-          opacity: 0,
-          pointerEvents: "none",
-          zIndex: 10,
-        }}
+        style="
+          background-color: black;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          opacity: 0;
+          pointer-events: none;
+          z-index: 10;
+        "
       ></div>
 
       <!-- main canvas -->
       <canvas
-        ref={canvasRef}
-        height={576}
-        width={1024}
-        className="canvasForGame"
+        <!-- ref={canvasRef} -->
+        <!-- height={576} -->
+        <!-- width={1024} -->
+        <!-- class="canvasForGame" -->
       ></canvas>
 
       <!-- battle interface  -->
-      <div id="battleInterface" style={{ display: "none" }}>
+      <div id="battleInterface" style=" display: none">
 
         <!-- enemy health box  -->
         <div
-          style={{
-            backgroundColor: "white",
-            width: `300px`,
-            position: "absolute",
-            top: "30px",
-            left: "50px",
-            border: "4px solid black",
-            display: "flex",
-            flexDirection: "column",
-            padding: "10px",
-          }}
+          style="
+            background-color: white;
+            width: 300px;
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            border: 4px solid black;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+          "
         >
-          <h1 style={{ margin: 0 }}>{enemyName}</h1>
+          <h1 style="margin: 0">{enemyName}</h1>
 
           <!-- enemy health bar  -->
-          <div style={{ position: "relative" }}>
+          <div style="position: relative">
             <div
-              style={{
-                height: "8px",
-                backgroundColor: "#ccc",
-                marginTop: "10px",
-              }}
+              style="
+                height: 8px;
+                background-color: #ccc;
+                margin-top: 10px;
+              "
             ></div>
             <div
               id="enemyHealthBar"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "8px",
-                backgroundColor: "red",
-                marginTop: "10px",
-              }}
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 8px;
+                background-color: red;
+                margin-top: 10px;
+              "
             ></div>
           </div>
 
           <!-- enemy stamina bar  -->
-          <div style={{ position: "relative" }}>
+          <div style="position: relative">
             <div
-              style={{
-                height: "5px",
-                backgroundColor: "#ccc",
-                marginTop: "10px",
-              }}
+              style="
+                height: 5px;
+                background-color: #ccc;
+                margin-top: 10px;
+              "
             ></div>
             <div
               id="enemyStaminaBar"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "5px",
-                backgroundColor: "green",
-                marginTop: "10px",
-              }}
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 5px;
+                background-color: green;
+                margin-top: 10px;
+              "
             ></div>
           </div>
         </div>
@@ -452,7 +452,6 @@
                         borderColor: "black",
                         ml: 2,
                       }}
-                      // variant="outlined"
                       disabled={
                         currentId === starterTwo.id
                           ? true
@@ -460,7 +459,7 @@
                           ? true
                           : false
                       }
-                      onClick={() => battle("starterTwo")}
+                      <!-- onClick="battle()" -->
                     >
                       Change Starter
                     </button>
