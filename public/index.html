@@ -422,13 +422,13 @@
                     <button
                       id="attackButton"
                       className="starterTwo"
-                      style={{
-                        color: "black",
-                        fontSize: 15,
-                        fontFamily: "New Super Mario Font U",
-                        borderColor: "black",
-                        ml: 2,
-                      }}
+                      style="
+                        color: black;
+                        font-size: 15;
+                        font-family: New Super Mario Font U;
+                        border-color: black;
+                        /* ml: 2; */
+                        "
                       disabled={
                         currentId === starterTwo.id
                           ? true
@@ -436,7 +436,6 @@
                           ? true
                           : false
                       }
-                      <!-- onClick="battle()" -->
                     >
                       Change Starter
                     </button>
@@ -448,18 +447,18 @@
           <!-- inventory box  -->
             <div
               id="inventoryBox"
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                top: 0,
-                width: "66.33%",
-                backgroundColor: "white",
-                display: "none",
-                fontSize: "30px",
-                zIndex: 1,
-              }}
+              style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: 0;
+                width: 66.33%;
+                background-color: white;
+                display: none;
+                font-size: 30px;
+                z-index: 1;
+                "
             >
               <Box height="140px" overflow={"scroll"}>
                 {usersConsumableItems &&
@@ -554,28 +553,24 @@
 
           <!-- all of the basic buttons -->
           <div
-            style={{
-              width: "33.33%",
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              borderLeft: "4px solid black",
-            }}
+            style="
+              width: 33.33%;
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              border-left: 4px solid black;
+              "
           >
-            <>
+            <div>
               <!-- the inventory button  -->
               <button
-                onClick={() => setDisplayButtons("inventory")}
                 className="inventoryMove"
-                // disabled={isDisabled}
               >
                 Inventory
               </button>
 
               <!-- the switch button  -->
               <button
-                onClick={() => setDisplayButtons("switch")}
                 className="switch"
-                // disabled={isDisabled}
               >
                 Switch
               </button>
@@ -584,20 +579,17 @@
               <button
                 onClick={() => history.push("/home")}
                 className="runButton"
-                // disabled={isDisabled}
               >
                 Run
               </button>
 
               <!-- shows all the attack buttons -->
               <button
-                onClick={() => setDisplayButtons("attack")}
                 className="attackToggleButton"
-                // disabled={isDisabled}
               >
                 Attack
               </button>
-            </>
+            </div>
           </div>
         </div>
       </div>
