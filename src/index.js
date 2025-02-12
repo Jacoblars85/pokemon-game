@@ -132,13 +132,13 @@ const getStarters = () => {
           attack_type: response.data[0].attack_type,
           fx_img: response.data[0].fx_img,
         };
-
-        setStarterTwoHp(response.data[1].hp);
-        setStarterTwoStamina(response.data[1].stamina);
-        setStarterTwoSpeed(response.data[1].speed);
-        setStarterTwoPicture(response.data[1].battle_pic);
-        setStarterTwoFxImg(response.data[1].fx_img);
-        setStarterTwoName(response.data[1].character_name);
+        
+        starterTwoHp = response.data[1].hp;
+        starterTwoStamina = response.data[1].stamina;
+        starterTwoName = response.data[1].character_name;
+        starterTwoSpeed = response.data[1].speed;
+        starterTwoPicture = response.data[1].battle_pic;
+        starterTwoFxImg = response.data[1].fx_img;
 
         starterTwoInfo = {
           character_name: response.data[1].character_name,
