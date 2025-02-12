@@ -86,13 +86,8 @@ const getStarters = () => {
       if (response.data.length === 1) {
         setStarterOneHp(response.data[0].hp);
         setStarterOneStamina(response.data[0].stamina);
-        // setCurrentId(response.data[0].id);
-        // setCurrentName(response.data[0].character_name);
         setStarterOneName(response.data[0].character_name);
-        // setCurrentSpeed(response.data[0].speed);
         setStarterOneSpeed(response.data[0].speed);
-        // setMaxHp(response.data[0].hp);
-        // setMaxStamina(response.data[0].stamina);
         setStarterPicture(response.data[0].battle_pic);
         setStarterFxImg(response.data[0].fx_img);
 
@@ -105,13 +100,8 @@ const getStarters = () => {
       } else if (response.data.length === 2) {
         setStarterOneHp(response.data[0].hp);
         setStarterOneStamina(response.data[0].stamina);
-        // setCurrentId(response.data[0].id);
-        // setCurrentName(response.data[0].character_name);
         setStarterOneName(response.data[0].character_name);
-        // setCurrentSpeed(response.data[0].speed);
         setStarterOneSpeed(response.data[0].speed);
-        // setMaxHp(response.data[0].hp);
-        // setMaxStamina(response.data[0].stamina);
         setStarterPicture(response.data[0].battle_pic);
         setStarterFxImg(response.data[0].fx_img);
 
