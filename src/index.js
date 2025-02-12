@@ -117,6 +117,14 @@ const getStarters = () => {
         setStarterPicture(response.data[0].battle_pic);
         setStarterFxImg(response.data[0].fx_img);
 
+        starterOneInfo = {
+            character_name: response.data[0].character_name,
+            hp: response.data[0].hp,
+            stamina: response.data[0].stamina,
+            speed: response.data[0].speed,
+            battle_pic: response.data[0].battle_pic
+        }
+
         starterOneAttackStats = {
           attack_name: response.data[0].attack_name,
           attack_damage: response.data[0].attack_damage,
@@ -131,6 +139,14 @@ const getStarters = () => {
         setStarterTwoPicture(response.data[1].battle_pic);
         setStarterTwoFxImg(response.data[1].fx_img);
         setStarterTwoName(response.data[1].character_name);
+
+        starterTwoInfo = {
+            character_name: response.data[1].character_name,
+            hp: response.data[1].hp,
+            stamina: response.data[1].stamina,
+            speed: response.data[1].speed,
+            battle_pic: response.data[1].battle_pic
+        }
 
         starterTwoAttackStats = {
           attack_name: response.data[1].attack_name,
