@@ -213,14 +213,6 @@ let starterTwo = starter[1];
 //   const [starterOneSpeed, setStarterOneSpeed] = useState(0);
 //   const [starterOneAttackStats, setStarterOneAttackStats] = useState({});
 
-// starter 2 stats/info
-//   const [starterTwoHp, setStarterTwoHp] = useState(0);
-//   const [starterTwoStamina, setStarterTwoStamina] = useState(0);
-//   const [starterTwoPicture, setStarterTwoPicture] = useState("");
-//   const [starterTwoFxImg, setStarterTwoFxImg] = useState("");
-//   const [starterTwoName, setStarterTwoName] = useState("");
-//   const [starterTwoSpeed, setStarterTwoSpeed] = useState(0);
-//   const [starterTwoAttackStats, setStarterTwoAttackStats] = useState({});
 
 // All current varibles for battle
 const [currentId, setCurrentId] = useState(0);
