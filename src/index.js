@@ -110,12 +110,12 @@ const getStarters = () => {
           fx_img: response.data[0].fx_img,
         };
       } else if (response.data.length === 2) {
-        setStarterOneHp(response.data[0].hp);
-        setStarterOneStamina(response.data[0].stamina);
-        setStarterOneName(response.data[0].character_name);
-        setStarterOneSpeed(response.data[0].speed);
-        setStarterPicture(response.data[0].battle_pic);
-        setStarterFxImg(response.data[0].fx_img);
+        starterOneHp = response.data[0].hp;
+        starterOneStamina = response.data[0].stamina;
+        starterOneName = response.data[0].character_name;
+        starterOneSpeed = response.data[0].speed;
+        starterPicture = response.data[0].battle_pic;
+        starterFxImg = response.data[0].fx_img;
 
         starterOneInfo = {
           character_name: response.data[0].character_name,
