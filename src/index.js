@@ -62,7 +62,7 @@ const enemyPicture = "";
 const enemyFxImg = "";
 const enemyName = "";
 const enemySpeed = 0;
-const enemyInfo= {};
+const enemyInfo = {};
 const enemyAttackStats = {};
 
 // kick attack name and stamina
@@ -93,6 +93,14 @@ const getStarters = () => {
         setStarterOneSpeed(response.data[0].speed);
         setStarterPicture(response.data[0].battle_pic);
         setStarterFxImg(response.data[0].fx_img);
+
+        starterOneInfo = {
+            character_name: response.data[0].character_name,
+            hp: response.data[0].hp,
+            stamina: response.data[0].stamina,
+            speed: response.data[0].speed,
+            battle_pic: response.data[0].battle_pic
+        }
 
         starterOneAttackStats = {
           attack_name: response.data[0].attack_name,
