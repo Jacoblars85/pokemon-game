@@ -247,7 +247,7 @@ let starterTwo = starter[1];
 // const [maxHp, setMaxHp] = useState(0);
 // const [maxStamina, setMaxStamina] = useState(0);
 
-const canvas = canvasRef.current;
+const canvas = document.getElementById("canvasRef");
 const c = canvas.getContext("2d");
 
 const collisionsMap = [];
