@@ -1392,7 +1392,7 @@ ${enemyHp
             renderedSprites,
           });
 
-          console.log("enemy.health", enemy.health);
+          // console.log("enemy.health", enemy.health);
 
           if (enemy.health <= 0) {
             queue.push(() => {
@@ -1425,7 +1425,7 @@ ${enemyHp
             });
           });
 
-          console.log("starter.health", starter.health);
+          // console.log("starter.health", starter.health);
 
           if (starter.health <= 0) {
             console.log("are we really in the starter fainting");
@@ -1454,47 +1454,74 @@ ${enemyHp
         } else if (starterOneSpeed < enemySpeed) {
           console.log("enemy is faster");
 
-          // enemy.attack({
-          //   attack: selectedAttack,
-          //   recipient: starter,
-          //   renderedSprites,
-          // });
+  
 
-          // queue.push(() => {
-          //   if (starter.health <= 0) {
-          //     starter.faint();
-          //     return;
-          //   } else if (starter.health > 0) {
-          //     starter.attack({
-          //       attack: selectedAttack,
-          //       recipient: enemy,
-          //       renderedSprites,
-          //     });
+           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
+          enemy.attack({
+            attack: selectedAttack,
+            recipient: starter,
+            renderedSprites,
+          });
 
-          //     if (enemy.health <= 0) {
-          //       enemy.faint();
-          //       return;
-          //     }
-          //   }
-          // });
+          // console.log("starter.health", starter.health);
 
-          // if (starter.health <= 0) {
-          //   starter.faint();
-          //   return;
-          // } else if (starter.health > 0) {
-          //   setTimeout(() => {
-          //     starter.attack({
-          //       attack: selectedAttack,
-          //       recipient: enemy,
-          //       renderedSprites,
-          //     });
+          if (starter.health <= 0) {
+            queue.push(() => {
+              starter.faint();
+            });
 
-          //     if (enemy.health <= 0) {
-          //       enemy.faint();
-          //       return;
-          //     }
-          //   }, 2700);
-          // }
+            queue.push(() => {
+              gsap.to("#fadeOutDiv", {
+                opacity: 1,
+                onComplete: () => {
+                  cancelAnimationFrame(battleAnimationId);
+                  setBattleStart(false);
+                  animate();
+                  document.getElementById("battleInterface").style.display =
+                    "none";
+                  gsap.to("#fadeOutDiv", {
+                    opacity: 0,
+                  });
+                  battle.initiated = false;
+                },
+              });
+            });
+          }
+         
+          queue.push(() => {
+            starter.attack({
+              attack: selectedAttack,
+              recipient: enemy,
+              renderedSprites,
+            });
+          });
+
+          // console.log("enemy.health", enemy.health);
+
+          if (enemy.health <= 0) {
+            // console.log("are we really in the enemy fainting");
+
+            queue.push(() => {
+              enemy.faint();
+            });
+
+            queue.push(() => {
+              gsap.to("#fadeOutDiv", {
+                opacity: 1,
+                onComplete: () => {
+                  cancelAnimationFrame(battleAnimationId);
+                  animate();
+                  document.getElementById(
+                    "battleInterface"
+                  ).style.display = "none";
+                  gsap.to("#fadeOutDiv", {
+                    opacity: 0,
+                  });
+            battle.initiated = false
+                },
+              });
+            });
+          }
         }
       } else if (
         button.className === "starterOne" ||
