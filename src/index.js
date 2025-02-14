@@ -29,7 +29,7 @@ import Divider from "@mui/material/Divider";
 // import Slide from "@mui/material/Slide";
 import axios from "axios";
 import Box from "@mui/material/Box";
-import battleMusic from "../../audio/battleMusic.mp3";
+// import battleMusic from "../../audio/battleMusic.mp3";
 
 // console.log('bowsermonMapJson', bowsermonMapJson);
 // console.log('collisionsArray', collisionsArray);
@@ -74,10 +74,6 @@ const pokeAttackStats = {};
 const pokeStamina = 0;
 
 let randomEnemy = Math.floor(Math.random() * 8 + 1);
-
-getStarters();
-getEnemy();
-getBasicAttacks();
 
 // axios functions
 const getStarters = () => {
@@ -228,6 +224,10 @@ const getBasicAttacks = () => {
       console.log(err);
     });
 };
+
+getStarters();
+getEnemy();
+getBasicAttacks();
 
 // setting each starter/enemy to a varriable
 let enemyOne = levelEnemy[0];
