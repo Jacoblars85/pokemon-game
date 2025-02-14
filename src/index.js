@@ -1434,22 +1434,22 @@ ${enemyHp
               starter.faint();
             });
 
-            // queue.push(() => {
-            //   gsap.to("#fadeOutDiv", {
-            //     opacity: 1,
-            //     onComplete: () => {
-            //       cancelAnimationFrame(battleAnimationId);
-            //       animate();
-            //       document.getElementById(
-            //         "battleInterface"
-            //       ).style.display = "none";
-            //       gsap.to("#fadeOutDiv", {
-            //         opacity: 0,
-            //       });
-            // battle.initiated = false
-            //     },
-            //   });
-            // });
+            queue.push(() => {
+              gsap.to("#fadeOutDiv", {
+                opacity: 1,
+                onComplete: () => {
+                  cancelAnimationFrame(battleAnimationId);
+                  animate();
+                  document.getElementById(
+                    "battleInterface"
+                  ).style.display = "none";
+                  gsap.to("#fadeOutDiv", {
+                    opacity: 0,
+                  });
+            battle.initiated = false
+                },
+              });
+            });
           }
         } else if (starterOneSpeed < enemySpeed) {
           console.log("enemy is faster");
