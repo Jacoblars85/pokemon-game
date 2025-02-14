@@ -981,6 +981,7 @@ function initBattle() {
   document.getElementById("starterHealthBar").style.width = "100%";
   document.getElementById("starterStaminaBar").style.width = "100%";
 
+
   enemy = new Character({
     position: {
       x: 800,
@@ -1051,6 +1052,9 @@ function initBattle() {
     speed: starterTwoSpeed,
     fx_img: starterTwoAttackStats.fx_img,
   });
+
+  document.getElementById("starterName").innerHTML = starter.name
+  document.getElementById("enemyName").innerHTML = enemy.name
 
   renderedSprites = [enemy, starter, starter2];
 
