@@ -1054,6 +1054,120 @@ function initBattle() {
   document.getElementById("starterName").innerHTML = starter.name;
   document.getElementById("enemyName").innerHTML = enemy.name;
 
+  document.getElementById("attackBox").innerHTML = `
+<button
+            id="attackButton"
+            className={
+              starter.length === 1
+                ? starterOne.attack_name
+                : currentId === starterOne.id
+                ? starterOne.attack_name
+                : starterTwo.attack_type
+            }
+            style={{
+              display: "flex",
+              width: "33.33%",
+              height: "100%",
+              textAlign: "center",
+              fontSize: "30px",
+              color: "black",
+              fontFamily: "New Super Mario Font U",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRight: "4px solid black",
+              // backgroundColor: "white",
+              boxShadow: "0 0 0 0",
+            }}
+            disabled={
+              starter.length === 1
+                ? starterOneStamina < starterOne.attack_stamina
+                  ? true
+                  : false
+                : currentId === starterOne.id
+                ? starterOneStamina < starterOne.attack_stamina
+                  ? true
+                  : false
+                : starterTwoStamina < starterTwo.attack_stamina
+                ? true
+                : false
+            }
+          >
+            {starter.length === 1
+              ? starterOne.attack_name
+              : currentId === starterOne.id
+              ? starterOne.attack_name
+              : starterTwo.attack_name}
+          </button>
+
+          <button
+            id="attackButton"
+            className={kickAttack}
+            style={{
+              display: "flex",
+              width: "33.33%",
+              height: "100%",
+              textAlign: "center",
+              fontSize: "30px",
+              color: "black",
+              fontFamily: "New Super Mario Font U",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRight: "4px solid black",
+              borderLeft: "4px solid black",
+              boxShadow: "0 0 0 0",
+            }}
+            disabled={
+              starter.length === 1
+                ? starterOneStamina < kickStamina
+                  ? true
+                  : false
+                : currentId === starterOne.id
+                ? starterOneStamina < kickStamina
+                  ? true
+                  : false
+                : starterTwoStamina < kickStamina
+                ? true
+                : false
+            }
+          >
+            {kickAttack}
+          </button>
+
+          <button
+            id="attackButton"
+            className={pokeAttack}
+            style={{
+              display: "flex",
+              width: "33.33%",
+              height: "100%",
+              textAlign: "center",
+              fontSize: "30px",
+              color: "black",
+              fontFamily: "New Super Mario Font U",
+              justifyContent: "center",
+              alignItems: "center",
+              border: 0,
+              borderLeft: "4px solid black",
+              boxShadow: "0 0 0 0",
+            }}
+            disabled={
+              starter.length === 1
+                ? starterOneStamina < pokeStamina
+                  ? true
+                  : false
+                : currentId === starterOne.id
+                ? starterOneStamina < pokeStamina
+                  ? true
+                  : false
+                : starterTwoStamina < pokeStamina
+                ? true
+                : false
+            }
+          >
+            {pokeAttack}
+          </button>
+`
+
   document.getElementById("switchBox").innerHTML = `
 ${
   starter.length === 1 ? (
