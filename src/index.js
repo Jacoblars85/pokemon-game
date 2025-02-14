@@ -313,8 +313,8 @@ battleZonesMap.forEach((row, i) => {
   });
 });
 
-const image = new Image();
-image.src = MarioMap;
+const worldImage = new Image();
+worldImage.src = MarioMap;
 
 const foregroundImage = new Image();
 foregroundImage.src = MarioMapForegroundImage;
@@ -463,7 +463,7 @@ const exploringBackground = new Sprite({
     x: offset.x,
     y: offset.y,
   },
-  image: image,
+  image: worldImage,
 });
 
 const keys = {
