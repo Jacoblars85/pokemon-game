@@ -10,7 +10,7 @@
 // const battleZonesArray = require("./data/battleZones");
 
 // const axios = require('axios');
-import axios from 'axios';
+import axios from "axios";
 
 // import "./Battle.css";
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
@@ -1172,7 +1172,8 @@ function initBattle() {
 `;
 
   document.getElementById("switchBox").innerHTML = `
-${enemyHp
+${
+  enemyHp
   // starter.length === 1 ? (
   //   <List sx={{ padding: 0 }}>
   //     <ListItem>
@@ -1274,99 +1275,99 @@ ${enemyHp
 }
   `;
 
-  document.getElementById("inventoryBox").innerHTML = enemy.hp
-//   `
-//    <Box height="140px" overflow={"scroll"}>
-//                 ${
-//                   usersConsumableItems &&
-//                   usersConsumableItems.map((usersConsumables) => {
-//                     return (
-//                       <div
-//                         key={usersConsumables.id}
-//                         style={{ height: "40px", padding: 10 }}
-//                       >
-//                         <ListItem>
-//                           <Box
-//                             display="flex"
-//                             flexDirection="row"
-//                             columnGap={5}
-//                             justifyContent="space-around"
-//                             alignItems="center"
-//                           >
-//                             <p
-//                               style={{
-//                                 color: "black",
-//                                 fontSize: "15px",
-//                               }}
-//                             >
-//                               {usersConsumables.number}X
-//                             </p>
-//                             <img
-//                               height={35}
-//                               width={35}
-//                               src={usersConsumables.item_pic}
-//                             />
-//                           </Box>
+  document.getElementById("inventoryBox").innerHTML = enemy.hp;
+  //   `
+  //    <Box height="140px" overflow={"scroll"}>
+  //                 ${
+  //                   usersConsumableItems &&
+  //                   usersConsumableItems.map((usersConsumables) => {
+  //                     return (
+  //                       <div
+  //                         key={usersConsumables.id}
+  //                         style={{ height: "40px", padding: 10 }}
+  //                       >
+  //                         <ListItem>
+  //                           <Box
+  //                             display="flex"
+  //                             flexDirection="row"
+  //                             columnGap={5}
+  //                             justifyContent="space-around"
+  //                             alignItems="center"
+  //                           >
+  //                             <p
+  //                               style={{
+  //                                 color: "black",
+  //                                 fontSize: "15px",
+  //                               }}
+  //                             >
+  //                               {usersConsumables.number}X
+  //                             </p>
+  //                             <img
+  //                               height={35}
+  //                               width={35}
+  //                               src={usersConsumables.item_pic}
+  //                             />
+  //                           </Box>
 
-//                           <ListItemText
-//                             sx={{
-//                               ml: 20,
-//                               fontFamily: "New Super Mario Font U",
-//                             }}
-//                             primary={usersConsumables.name}
-//                           />
+  //                           <ListItemText
+  //                             sx={{
+  //                               ml: 20,
+  //                               fontFamily: "New Super Mario Font U",
+  //                             }}
+  //                             primary={usersConsumables.name}
+  //                           />
 
-//                           <ListItemText
-//                             sx={{
-//                               ml: 5,
-//                               fontFamily: "New Super Mario Font U",
-//                               width: "70px",
-//                             }}
-//                             // primary={usersConsumables.name}
-//                             secondary={`${
-//                               usersConsumables.item_hp === 0
-//                                 ? ""
-//                                 : `+${usersConsumables.item_hp} hp`
-//                             } ${
-//                               usersConsumables.item_stamina === 0
-//                                 ? ""
-//                                 : usersConsumables.item_hp === 0
-//                                 ? `+${usersConsumables.item_stamina} stamina`
-//                                 : `| +${usersConsumables.item_stamina} stamina`
-//                             } ${
-//                               usersConsumables.item_speed === 0
-//                                 ? ""
-//                                 : `| +${usersConsumables.item_speed} speed`
-//                             }`}
-//                           />
-//                           <button
-//                             // id="consumable"
-//                             id="attackButton"
-//                             className="consumable"
-//                             style={{
-//                               color: "black",
-//                               fontSize: 15,
-//                               fontFamily: "New Super Mario Font U",
-//                               borderColor: "black",
-//                               // height: "35px",
-//                               // width: "60px",
-//                             }}
-//                             variant="outlined"
-//                             disabled={
-//                               usersConsumables.number <= 0 ? true : false
-//                             }
-//                             onClick={() => battle(usersConsumables)}
-//                           >
-//                             Use Consumable
-//                           </button>
-//                         </ListItem>
-//                         <Divider />
-//                       </div>
-//                     );
-//                   })
-//                 }
-//               </Box>
-// `;
+  //                           <ListItemText
+  //                             sx={{
+  //                               ml: 5,
+  //                               fontFamily: "New Super Mario Font U",
+  //                               width: "70px",
+  //                             }}
+  //                             // primary={usersConsumables.name}
+  //                             secondary={`${
+  //                               usersConsumables.item_hp === 0
+  //                                 ? ""
+  //                                 : `+${usersConsumables.item_hp} hp`
+  //                             } ${
+  //                               usersConsumables.item_stamina === 0
+  //                                 ? ""
+  //                                 : usersConsumables.item_hp === 0
+  //                                 ? `+${usersConsumables.item_stamina} stamina`
+  //                                 : `| +${usersConsumables.item_stamina} stamina`
+  //                             } ${
+  //                               usersConsumables.item_speed === 0
+  //                                 ? ""
+  //                                 : `| +${usersConsumables.item_speed} speed`
+  //                             }`}
+  //                           />
+  //                           <button
+  //                             // id="consumable"
+  //                             id="attackButton"
+  //                             className="consumable"
+  //                             style={{
+  //                               color: "black",
+  //                               fontSize: 15,
+  //                               fontFamily: "New Super Mario Font U",
+  //                               borderColor: "black",
+  //                               // height: "35px",
+  //                               // width: "60px",
+  //                             }}
+  //                             variant="outlined"
+  //                             disabled={
+  //                               usersConsumables.number <= 0 ? true : false
+  //                             }
+  //                             onClick={() => battle(usersConsumables)}
+  //                           >
+  //                             Use Consumable
+  //                           </button>
+  //                         </ListItem>
+  //                         <Divider />
+  //                       </div>
+  //                     );
+  //                   })
+  //                 }
+  //               </Box>
+  // `;
 
   renderedSprites = [enemy, starter, starter2];
 
@@ -1440,13 +1441,12 @@ ${enemyHp
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId);
                   animate();
-                  document.getElementById(
-                    "battleInterface"
-                  ).style.display = "none";
+                  document.getElementById("battleInterface").style.display =
+                    "none";
                   gsap.to("#fadeOutDiv", {
                     opacity: 0,
                   });
-            battle.initiated = false
+                  battle.initiated = false;
                 },
               });
             });
@@ -1454,9 +1454,7 @@ ${enemyHp
         } else if (starterOneSpeed < enemySpeed) {
           console.log("enemy is faster");
 
-  
-
-           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
+          // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
           enemy.attack({
             attack: selectedAttack,
             recipient: starter,
@@ -1487,7 +1485,7 @@ ${enemyHp
               });
             });
           }
-         
+
           queue.push(() => {
             starter.attack({
               attack: selectedAttack,
@@ -1511,13 +1509,12 @@ ${enemyHp
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId);
                   animate();
-                  document.getElementById(
-                    "battleInterface"
-                  ).style.display = "none";
+                  document.getElementById("battleInterface").style.display =
+                    "none";
                   gsap.to("#fadeOutDiv", {
                     opacity: 0,
                   });
-            battle.initiated = false
+                  battle.initiated = false;
                 },
               });
             });
