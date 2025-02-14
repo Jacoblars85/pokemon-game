@@ -1056,6 +1056,102 @@ function initBattle() {
   document.getElementById("starterName").innerHTML = starter.name
   document.getElementById("enemyName").innerHTML = enemy.name
 
+  document.getElementById("switchBox").innerHTML = `
+  ${starter.length === 1 ? (
+                <List sx={{ padding: 0 }}>
+                  <ListItem>
+                    <img height={50} width={50} src={starterOne.profile_pic} />
+                    <ListItemText
+                      sx={{ ml: 25 }}
+                      primary={`starter 1: ${starterOne.character_name}`}
+                      secondary={`${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed`}
+                    />
+                    <button
+                      id="attackButton"
+                      className="starterOne"
+                      style="
+                        color: black;
+                        font-size: 15;
+                        font-family: New Super Mario Font U;
+                        border-color: black;
+                        "
+                      disabled={
+                        currentId === starterOne.id
+                          ? true
+                          : starterOneHp <= 0
+                          ? true
+                          : false
+                      }
+                    >
+                      Change Starter
+                    </button>
+                  </ListItem>
+                </List>
+              ) : (
+                <List sx={{ padding: 0 }}>
+                  <ListItem>
+                    <img height={50} width={50} src={starterOne.profile_pic} />
+                    <ListItemText
+                      sx={{ ml: 25 }}
+                      primary={`starter 1: ${starterOne.character_name}`}
+                      secondary={`${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed`}
+                    />
+                    <button
+                      id="attackButton"
+                      className="starterOne"
+                      style="
+                        color: black;
+                        font-size: 15;
+                        font-family: New Super Mario Font U;
+                        border-color: black;
+                        "
+                      disabled={
+                        currentId === starterOne.id
+                          ? true
+                          : starterOneHp <= 0
+                          ? true
+                          : false
+                      }
+                    >
+                      Change Starter
+                    </button>
+                  </ListItem>
+
+                  <Divider />
+
+                  <ListItem>
+                    <img height={50} width={50} src={starterTwo.profile_pic} />
+                    <ListItemText
+                      sx={{ ml: 25 }}
+                      primary={`starter 2: ${starterTwo.character_name}`}
+                      secondary={`${starterTwoHp}/${starterTwo.hp} hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${starterTwo.speed} speed`}
+                    />
+                    <button
+                      id="attackButton"
+                      className="starterTwo"
+                      style="
+                        color: black;
+                        font-size: 15;
+                        font-family: New Super Mario Font U;
+                        border-color: black;
+                        /* ml: 2; */
+                        "
+                      disabled={
+                        currentId === starterTwo.id
+                          ? true
+                          : starterTwoHp <= 0
+                          ? true
+                          : false
+                      }
+                    >
+                      Change Starter
+                    </button>
+                  </ListItem>
+                </List>
+              )}
+  `
+
+
   renderedSprites = [enemy, starter, starter2];
 
   queue = [];
