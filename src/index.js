@@ -1166,7 +1166,7 @@ function initBattle() {
           >
             {pokeAttack}
           </button>
-`
+`;
 
   document.getElementById("switchBox").innerHTML = `
 ${
@@ -1273,7 +1273,8 @@ ${
 
   document.getElementById("inventoryBox").innerHTML = `
    <Box height="140px" overflow={"scroll"}>
-                ${usersConsumableItems &&
+                ${
+                  usersConsumableItems &&
                   usersConsumableItems.map((usersConsumables) => {
                     return (
                       <div
@@ -1358,9 +1359,10 @@ ${
                         <Divider />
                       </div>
                     );
-                  })}
+                  })
+                }
               </Box>
-`
+`;
 
   renderedSprites = [enemy, starter, starter2];
 
