@@ -1,10 +1,3 @@
-// import "./gameWorld.css";
-// import MarioMap from "./img/bowsermon-map-v1.png";
-// import MarioMapForegroundImage from "./img/foregroundObjects.png";
-// import PlayerUp from "./img/playerUp.png";
-// import PlayerLeft from "./img/playerLeft.png";
-// import PlayerRight from "./img/playerRight.png";
-// import PlayerDown from "./img/playerDown.png";
 // const bowsermonMapJson = require("./data/bowsermonMap");
 // const collisionsArray = require("./data/collisions");
 // const battleZonesArray = require("./data/battleZones");
@@ -12,13 +5,9 @@
 // const axios = require('axios');
 import axios from "axios";
 
-// import "./Battle.css";
+
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
 // import forestBackground from "./img/backgroundImg/RockForest.webp";
-// import battleBackgroundImage from "./img/backgroundImg/battleBackground.png";
-
-// import fireballSpriteImage from "./img/fx/SmokeSpriteSheet.png";
-// import iceSpriteImage from "./img/fx/SmokeSpriteSheet.png";
 
 // import ListItemText from "@mui/material/ListItemText";
 // import ListItem from "@mui/material/ListItem";
