@@ -1,16 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link href="https://fonts.cdnfonts.com/css/new-super-mario-font-u" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link
+      href="https://fonts.cdnfonts.com/css/new-super-mario-font-u"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>pokemon game</title>
   </head>
   <body>
-    <div style=" display: inline-block; position: relative ">
-      
+    <div style="display: inline-block; position: relative">
       <!-- fade out div  -->
       <div
         id="fadeOutDiv"
@@ -28,15 +38,10 @@
       ></div>
 
       <!-- main canvas -->
-      <canvas
-      id="canvasRef"
-       height="576"
- width="1024"
-        ></canvas>
+      <canvas id="canvasRef" height="576" width="1024"></canvas>
 
       <!-- battle interface  -->
-      <div id="battleInterface" style=" display: none">
-
+      <div id="battleInterface" style="display: none">
         <!-- enemy health box  -->
         <div
           style="
@@ -56,11 +61,7 @@
           <!-- enemy health bar  -->
           <div style="position: relative">
             <div
-              style="
-                height: 8px;
-                background-color: #ccc;
-                margin-top: 10px;
-              "
+              style="height: 8px; background-color: #ccc; margin-top: 10px"
             ></div>
             <div
               id="enemyHealthBar"
@@ -79,11 +80,7 @@
           <!-- enemy stamina bar  -->
           <div style="position: relative">
             <div
-              style="
-                height: 5px;
-                background-color: #ccc;
-                margin-top: 10px;
-              "
+              style="height: 5px; background-color: #ccc; margin-top: 10px"
             ></div>
             <div
               id="enemyStaminaBar"
@@ -119,11 +116,7 @@
           <!-- starter health bar  -->
           <div style="position: relative">
             <div
-              style="
-                height: 8px;
-                background-color: #ccc;
-                margin-top: 10px;
-                "
+              style="height: 8px; background-color: #ccc; margin-top: 10px"
             ></div>
             <div
               id="starterHealthBar"
@@ -135,18 +128,14 @@
                 height: 8px;
                 background-color: red;
                 margin-top: 10px;
-                "
+              "
             ></div>
           </div>
 
           <!-- starter stamina bar -->
           <div style="position: relative">
             <div
-              style="
-                height: 5px;
-                background-color: #ccc;
-                margin-top: 10px;
-                "
+              style="height: 5px; background-color: #ccc; margin-top: 10px"
             ></div>
             <div
               id="starterStaminaBar"
@@ -158,7 +147,7 @@
                 height: 5px;
                 background-color: green;
                 margin-top: 10px;
-                "
+              "
             ></div>
           </div>
         </div>
@@ -182,7 +171,7 @@
             right: 0;
             border-top: 4px solid black;
             display: flex;
-            "
+          "
         >
           <!-- text box  -->
           <div
@@ -198,9 +187,8 @@
               display: none;
               font-size: 30px;
               z-index: 1;
-              "
-          >
-          </div>
+            "
+          ></div>
 
           <!-- all of the togglable buttons -->
           <div
@@ -210,7 +198,7 @@
               display: flex;
               align-items: center;
               justify-content: center;
-              "
+            "
           >
             <!-- attack box  -->
             <div
@@ -222,7 +210,7 @@
                 width: 100%;
                 height: 100%;
                 background-color: white;
-                "
+              "
             >
               <!-- <button
                 id="attackButton"
@@ -343,11 +331,10 @@
                 padding: 0px;
                 display: none;
                 z-index: 1;
-                "
-            >
-            </div>
+              "
+            ></div>
 
-          <!-- inventory box  -->
+            <!-- inventory box  -->
             <div
               id="inventoryBox"
               style="
@@ -361,9 +348,8 @@
                 display: none;
                 font-size: 30px;
                 z-index: 1;
-                "
-            >
-            </div>
+              "
+            ></div>
           </div>
 
           <!-- all of the basic buttons -->
@@ -373,37 +359,22 @@
               display: grid;
               grid-template-columns: repeat(2, 1fr);
               border-left: 4px solid black;
-              "
+            "
           >
             <div>
               <!-- the inventory button  -->
-              <button
-                className="inventoryMove"
-              >
-                Inventory
-              </button>
+              <button className="inventoryMove">Inventory</button>
 
               <!-- the switch button  -->
-              <button
-                class="switch"
-              >
-                Switch
-              </button>
+              <button class="switch">Switch</button>
 
               <!-- run button  -->
-              <button
-                onclick="runFromBattle()"
-                className="runButton"
-              >
+              <button onclick="runFromBattle()" className="runButton">
                 Run
               </button>
 
               <!-- shows all the attack buttons -->
-              <button
-                className="attackToggleButton"
-              >
-                Attack
-              </button>
+              <button className="attackToggleButton">Attack</button>
             </div>
           </div>
         </div>
