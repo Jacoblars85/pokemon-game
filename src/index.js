@@ -323,16 +323,16 @@ const foregroundImage = new Image();
 foregroundImage.src = "./img/foregroundObjects.png";
 
 const playerDownImage = new Image();
-playerDownImage.src = PlayerDown;
+playerDownImage.src = "./img/playerDown.png";
 
 const playerUpImage = new Image();
-playerUpImage.src = PlayerUp;
+playerUpImage.src = "./img/playerUp.png";
 
 const playerLeftImage = new Image();
-playerLeftImage.src = PlayerLeft;
+playerLeftImage.src = "./img/playerLeft.png";
 
 const playerRightImage = new Image();
-playerRightImage.src = PlayerRight;
+playerRightImage.src = "./img/playerRight.png";
 
 class Sprite {
   constructor({
