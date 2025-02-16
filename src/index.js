@@ -712,7 +712,7 @@ window.addEventListener("keyup", (e) => {
 });
 
 const backgroundImage = new Image();
-backgroundImage.src = battleBackgroundImage;
+backgroundImage.src = "./img/backgroundImg/battleBackground.png";
 
 class Character extends Sprite {
   constructor({
