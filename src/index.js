@@ -317,10 +317,10 @@ battleZonesMap.forEach((row, i) => {
 });
 
 const worldImage = new Image();
-worldImage.src = MarioMap;
+worldImage.src = "./img/bowsermon-map-v1.png";
 
 const foregroundImage = new Image();
-foregroundImage.src = MarioMapForegroundImage;
+foregroundImage.src = "./img/foregroundObjects.png";
 
 const playerDownImage = new Image();
 playerDownImage.src = PlayerDown;
