@@ -231,10 +231,6 @@ getStarters();
 getEnemy();
 getBasicAttacks();
 
-// setting each starter/enemy to a varriable
-// let enemyOne = levelEnemy[0];
-// let starterOne = starter[0];
-// let starterTwo = starter[1];
 
 // All current varibles for battle
 // const [currentId, setCurrentId] = useState(0);
