@@ -66,6 +66,11 @@ const pokeStamina = 0;
 
 let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
+// setting each starter/enemy to a varriable
+let enemyOne 
+let starterOne
+let starterTwo 
+
 // axios functions
 const getStarters = () => {
   axios({
@@ -73,6 +78,8 @@ const getStarters = () => {
     url: "/api/characters/starter",
   })
     .then((response) => {
+      starterOne = response.data[0]
+
       if (response.data.length === 1) {
         starterOneHp = response.data[0].hp;
         starterOneStamina = response.data[0].stamina;
@@ -120,6 +127,8 @@ const getStarters = () => {
           fx_img: response.data[0].fx_img,
         };
 
+        starterTwo = response.data[1]
+
         starterTwoHp = response.data[1].hp;
         starterTwoStamina = response.data[1].stamina;
         starterTwoName = response.data[1].character_name;
@@ -155,6 +164,8 @@ const getEnemy = () => {
     url: `/api/characters/enemy/${randomEnemy}`,
   })
     .then((response) => {
+      enemyOne = response.data[0]
+
       enemyHp = response.data[0].hp;
       enemyStamina = response.data[0].stamina;
       enemyName = response.data[0].character_name;
@@ -221,9 +232,9 @@ getEnemy();
 getBasicAttacks();
 
 // setting each starter/enemy to a varriable
-let enemyOne = levelEnemy[0];
-let starterOne = starter[0];
-let starterTwo = starter[1];
+// let enemyOne = levelEnemy[0];
+// let starterOne = starter[0];
+// let starterTwo = starter[1];
 
 // All current varibles for battle
 // const [currentId, setCurrentId] = useState(0);
