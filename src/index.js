@@ -988,6 +988,8 @@ function initBattle() {
     maxStamina: enemyStamina,
     speed: enemySpeed,
     fx_img: enemyAttackStats.fx_img,
+    max_frames: enemyAttackStats.max_frames,
+    hold_time: enemyAttackStats.hold_time,
   });
 
   starter = new Character({
@@ -1037,6 +1039,8 @@ function initBattle() {
     maxStamina: starterTwoStamina,
     speed: starterTwoSpeed,
     fx_img: starterTwoAttackStats.fx_img,
+    max_frames: starterTwoAttackStats.max_frames,
+    hold_time: starterTwoAttackStats.hold_time,
   });
 
   document.getElementById("starterName").innerHTML = starter.name;
