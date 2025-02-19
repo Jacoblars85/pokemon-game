@@ -711,7 +711,7 @@ class Character extends Sprite {
     speed,
     fx_img,
     max_frames,
-          hold_time,
+    hold_time,
   }) {
     super({
       position,
@@ -730,8 +730,8 @@ class Character extends Sprite {
     this.maxStamina = maxStamina;
     this.speed = speed;
     this.fx_img = fx_img;
-    this.max_frames = max_frames
-    this.hold_time = hold_time
+    this.max_frames = max_frames;
+    this.hold_time = hold_time;
   }
 
   faint() {
@@ -1053,14 +1053,14 @@ function initBattle() {
   document.getElementById("attackBox").innerHTML = `
 <button
             id="attackButton"
-            className={
+            className=${
               starter.length === 1
                 ? starterOne.attack_name
                 : currentId === starterOne.id
                 ? starterOne.attack_name
                 : starterTwo.attack_type
             }
-            style={{
+            style=${{
               display: "flex",
               width: "33.33%",
               height: "100%",
@@ -1074,7 +1074,7 @@ function initBattle() {
               // backgroundColor: "white",
               boxShadow: "0 0 0 0",
             }}
-            disabled={
+            disabled=${
               starter.length === 1
                 ? starterOneStamina < starterOne.attack_stamina
                   ? true
@@ -1088,7 +1088,7 @@ function initBattle() {
                 : false
             }
           >
-            {starter.length === 1
+            ${starter.length === 1
               ? starterOne.attack_name
               : currentId === starterOne.id
               ? starterOne.attack_name
@@ -1097,8 +1097,8 @@ function initBattle() {
 
           <button
             id="attackButton"
-            className={kickAttack}
-            style={{
+            className=${kickAttack}
+            style=${{
               display: "flex",
               width: "33.33%",
               height: "100%",
@@ -1112,7 +1112,7 @@ function initBattle() {
               borderLeft: "4px solid black",
               boxShadow: "0 0 0 0",
             }}
-            disabled={
+            disabled=${
               starter.length === 1
                 ? starterOneStamina < kickStamina
                   ? true
@@ -1126,13 +1126,13 @@ function initBattle() {
                 : false
             }
           >
-            {kickAttack}
+            ${kickAttack}
           </button>
 
           <button
             id="attackButton"
-            className={pokeAttack}
-            style={{
+            className=${pokeAttack}
+            style=${{
               display: "flex",
               width: "33.33%",
               height: "100%",
@@ -1146,7 +1146,7 @@ function initBattle() {
               borderLeft: "4px solid black",
               boxShadow: "0 0 0 0",
             }}
-            disabled={
+            disabled=${
               starter.length === 1
                 ? starterOneStamina < pokeStamina
                   ? true
@@ -1160,7 +1160,7 @@ function initBattle() {
                 : false
             }
           >
-            {pokeAttack}
+            ${pokeAttack}
           </button>
 `;
 
