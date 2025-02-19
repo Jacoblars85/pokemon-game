@@ -710,6 +710,8 @@ class Character extends Sprite {
     maxStamina,
     speed,
     fx_img,
+    max_frames,
+          hold_time,
   }) {
     super({
       position,
@@ -728,6 +730,8 @@ class Character extends Sprite {
     this.maxStamina = maxStamina;
     this.speed = speed;
     this.fx_img = fx_img;
+    this.max_frames = max_frames
+    this.hold_time = hold_time
   }
 
   faint() {
