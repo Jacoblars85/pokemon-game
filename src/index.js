@@ -171,7 +171,7 @@ const getEnemy = () => {
         attack_type: response.data[0].attack_type,
         fx_img: response.data[0].fx_img,
         max_frames: response.data[0].max_frames,
-          hold_time: response.data[0].hold_time,
+        hold_time: response.data[0].hold_time,
       };
     })
     .catch((err) => {
@@ -297,8 +297,6 @@ battleZonesMap.forEach((row, i) => {
 
 const worldImage = new Image();
 worldImage.src = "./img/bowsermon-map-v1.png";
-
-
 
 // const foregroundImage = new Image();
 // foregroundImage.src = "./img/foregroundObjects.png";
