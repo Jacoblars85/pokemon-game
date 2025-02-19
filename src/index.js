@@ -79,6 +79,8 @@ const getStarters = () => {
           attack_stamina: response.data[0].attack_stamina,
           attack_type: response.data[0].attack_type,
           fx_img: response.data[0].fx_img,
+          max_frames: response.data[0].max_frames,
+          hold_time: response.data[0].hold_time,
         };
       } else if (response.data.length === 2) {
         starterOneHp = response.data[0].hp;
@@ -102,6 +104,8 @@ const getStarters = () => {
           attack_stamina: response.data[0].attack_stamina,
           attack_type: response.data[0].attack_type,
           fx_img: response.data[0].fx_img,
+          max_frames: response.data[0].max_frames,
+          hold_time: response.data[0].hold_time,
         };
 
         starterTwo = response.data[1];
@@ -127,6 +131,8 @@ const getStarters = () => {
           attack_stamina: response.data[1].attack_stamina,
           attack_type: response.data[1].attack_type,
           fx_img: response.data[1].fx_img,
+          max_frames: response.data[1].max_frames,
+          hold_time: response.data[1].hold_time,
         };
       }
     })
