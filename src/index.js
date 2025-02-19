@@ -834,8 +834,10 @@ class Character extends Sprite {
         //   ? enemyProjectileAttackFxImage
         //   : starterProjectileAttackFxImage,
         frames: {
-          max: this.isEnemy ? enemyOne.max_frames : starterOne.max_frames,
-          hold: this.isEnemy ? enemyOne.hold_time : starterOne.hold_time,
+          // max: this.isEnemy ? enemyOne.max_frames : starterOne.max_frames,
+          // hold: this.isEnemy ? enemyOne.hold_time : starterOne.hold_time,
+          max: this.max_frames,
+          hold: this.hold_time,
           attackFx: true,
         },
         animate: true,
@@ -884,8 +886,10 @@ class Character extends Sprite {
         //   ? enemySummonAttackFxImage
         //   : starterSummonAttackFxImage,
         frames: {
-          max: this.isEnemy ? enemyOne.max_frames : starterOne.max_frames,
-          hold: this.isEnemy ? enemyOne.hold_time : starterOne.hold_time,
+          // max: this.isEnemy ? enemyOne.max_frames : starterOne.max_frames,
+          // hold: this.isEnemy ? enemyOne.hold_time : starterOne.hold_time,
+          max: this.max_frames,
+          hold: this.hold_time,
           attackFx: true,
         },
         animate: true,
