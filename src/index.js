@@ -1,10 +1,3 @@
-// const bowsermonMapJson = require("./data/bowsermonMap");
-// const collisionsArray = require("./data/collisions");
-// const battleZonesArray = require("./data/battleZones");
-
-// const axios = require('axios');
-// import axios from "axios";
-
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
 // import forestBackground from "./img/backgroundImg/RockForest.webp";
 
@@ -313,20 +306,22 @@ battleZonesMap.forEach((row, i) => {
 const worldImage = new Image();
 worldImage.src = "./img/bowsermon-map-v1.png";
 
-const foregroundImage = new Image();
-foregroundImage.src = "./img/foregroundObjects.png";
 
-const playerDownImage = new Image();
-playerDownImage.src = "./img/playerDown.png";
 
-const playerUpImage = new Image();
-playerUpImage.src = "./img/playerUp.png";
+// const foregroundImage = new Image();
+// foregroundImage.src = "./img/foregroundObjects.png";
 
-const playerLeftImage = new Image();
-playerLeftImage.src = "./img/playerLeft.png";
+// const playerDownImage = new Image();
+// playerDownImage.src = "./img/playerDown.png";
 
-const playerRightImage = new Image();
-playerRightImage.src = "./img/playerRight.png";
+// const playerUpImage = new Image();
+// playerUpImage.src = "./img/playerUp.png";
+
+// const playerLeftImage = new Image();
+// playerLeftImage.src = "./img/playerLeft.png";
+
+// const playerRightImage = new Image();
+// playerRightImage.src = "./img/playerRight.png";
 
 class Sprite {
   constructor({
@@ -428,24 +423,24 @@ class Sprite {
   }
 }
 
-const player = new Sprite({
-  position: {
-    x: canvas.width / 2 - 192 / 4 / 2,
-    y: canvas.height / 2 - 68 / 2,
-  },
-  image: playerDownImage,
-  frames: {
-    max: 4,
-    hold: 10,
-    attackFx: true,
-  },
-  sprites: {
-    up: playerUpImage,
-    left: playerLeftImage,
-    right: playerRightImage,
-    down: playerDownImage,
-  },
-});
+// const player = new Sprite({
+//   position: {
+//     x: canvas.width / 2 - 192 / 4 / 2,
+//     y: canvas.height / 2 - 68 / 2,
+//   },
+//   image: playerDownImage,
+//   frames: {
+//     max: 4,
+//     hold: 10,
+//     attackFx: true,
+//   },
+//   sprites: {
+//     up: playerUpImage,
+//     left: playerLeftImage,
+//     right: playerRightImage,
+//     down: playerDownImage,
+//   },
+// });
 
 const foreground = new Sprite({
   position: {
