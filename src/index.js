@@ -11,13 +11,8 @@
 // import Typography from "@mui/material/Typography";
 // import CloseIcon from "@mui/icons-material/Close";
 // import Slide from "@mui/material/Slide";
-// import axios from "axios";
 // import Box from "@mui/material/Box";
 // import battleMusic from "../../audio/battleMusic.mp3";
-
-// console.log('bowsermonMapJson', bowsermonMapJson);
-// console.log('collisionsArray', collisionsArray);
-//   console.log('battleZonesArray', battleZonesArray);
 
 // starter stats/info
 const starterOneHp = 0;
