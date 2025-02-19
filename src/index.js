@@ -49,172 +49,172 @@ let starterOne;
 let starterTwo;
 
 // axios functions
-const getStarters = () => {
-  axios({
-    method: "GET",
-    url: "/api/characters/starter",
-  })
-    .then((response) => {
-      starterOne = response.data[0];
+// const getStarters = () => {
+//   axios({
+//     method: "GET",
+//     url: "/api/characters/starter",
+//   })
+//     .then((response) => {
+//       starterOne = response.data[0];
 
-      if (response.data.length === 1) {
-        starterOneHp = response.data[0].hp;
-        starterOneStamina = response.data[0].stamina;
-        starterOneName = response.data[0].character_name;
-        starterOneSpeed = response.data[0].speed;
-        starterPicture = response.data[0].battle_pic;
-        starterFxImg = response.data[0].fx_img;
+//       if (response.data.length === 1) {
+//         starterOneHp = response.data[0].hp;
+//         starterOneStamina = response.data[0].stamina;
+//         starterOneName = response.data[0].character_name;
+//         starterOneSpeed = response.data[0].speed;
+//         starterPicture = response.data[0].battle_pic;
+//         starterFxImg = response.data[0].fx_img;
 
-        starterOneInfo = {
-          character_name: response.data[0].character_name,
-          hp: response.data[0].hp,
-          stamina: response.data[0].stamina,
-          speed: response.data[0].speed,
-          battle_pic: response.data[0].battle_pic,
-        };
+//         starterOneInfo = {
+//           character_name: response.data[0].character_name,
+//           hp: response.data[0].hp,
+//           stamina: response.data[0].stamina,
+//           speed: response.data[0].speed,
+//           battle_pic: response.data[0].battle_pic,
+//         };
 
-        starterOneAttackStats = {
-          attack_name: response.data[0].attack_name,
-          attack_damage: response.data[0].attack_damage,
-          attack_stamina: response.data[0].attack_stamina,
-          attack_type: response.data[0].attack_type,
-          fx_img: response.data[0].fx_img,
-          max_frames: response.data[0].max_frames,
-          hold_time: response.data[0].hold_time,
-        };
-      } else if (response.data.length === 2) {
-        starterOneHp = response.data[0].hp;
-        starterOneStamina = response.data[0].stamina;
-        starterOneName = response.data[0].character_name;
-        starterOneSpeed = response.data[0].speed;
-        starterPicture = response.data[0].battle_pic;
-        starterFxImg = response.data[0].fx_img;
+//         starterOneAttackStats = {
+//           attack_name: response.data[0].attack_name,
+//           attack_damage: response.data[0].attack_damage,
+//           attack_stamina: response.data[0].attack_stamina,
+//           attack_type: response.data[0].attack_type,
+//           fx_img: response.data[0].fx_img,
+//           max_frames: response.data[0].max_frames,
+//           hold_time: response.data[0].hold_time,
+//         };
+//       } else if (response.data.length === 2) {
+//         starterOneHp = response.data[0].hp;
+//         starterOneStamina = response.data[0].stamina;
+//         starterOneName = response.data[0].character_name;
+//         starterOneSpeed = response.data[0].speed;
+//         starterPicture = response.data[0].battle_pic;
+//         starterFxImg = response.data[0].fx_img;
 
-        starterOneInfo = {
-          character_name: response.data[0].character_name,
-          hp: response.data[0].hp,
-          stamina: response.data[0].stamina,
-          speed: response.data[0].speed,
-          battle_pic: response.data[0].battle_pic,
-        };
+//         starterOneInfo = {
+//           character_name: response.data[0].character_name,
+//           hp: response.data[0].hp,
+//           stamina: response.data[0].stamina,
+//           speed: response.data[0].speed,
+//           battle_pic: response.data[0].battle_pic,
+//         };
 
-        starterOneAttackStats = {
-          attack_name: response.data[0].attack_name,
-          attack_damage: response.data[0].attack_damage,
-          attack_stamina: response.data[0].attack_stamina,
-          attack_type: response.data[0].attack_type,
-          fx_img: response.data[0].fx_img,
-          max_frames: response.data[0].max_frames,
-          hold_time: response.data[0].hold_time,
-        };
+//         starterOneAttackStats = {
+//           attack_name: response.data[0].attack_name,
+//           attack_damage: response.data[0].attack_damage,
+//           attack_stamina: response.data[0].attack_stamina,
+//           attack_type: response.data[0].attack_type,
+//           fx_img: response.data[0].fx_img,
+//           max_frames: response.data[0].max_frames,
+//           hold_time: response.data[0].hold_time,
+//         };
 
-        starterTwo = response.data[1];
+//         starterTwo = response.data[1];
 
-        starterTwoHp = response.data[1].hp;
-        starterTwoStamina = response.data[1].stamina;
-        starterTwoName = response.data[1].character_name;
-        starterTwoSpeed = response.data[1].speed;
-        starterTwoPicture = response.data[1].battle_pic;
-        starterTwoFxImg = response.data[1].fx_img;
+//         starterTwoHp = response.data[1].hp;
+//         starterTwoStamina = response.data[1].stamina;
+//         starterTwoName = response.data[1].character_name;
+//         starterTwoSpeed = response.data[1].speed;
+//         starterTwoPicture = response.data[1].battle_pic;
+//         starterTwoFxImg = response.data[1].fx_img;
 
-        starterTwoInfo = {
-          character_name: response.data[1].character_name,
-          hp: response.data[1].hp,
-          stamina: response.data[1].stamina,
-          speed: response.data[1].speed,
-          battle_pic: response.data[1].battle_pic,
-        };
+//         starterTwoInfo = {
+//           character_name: response.data[1].character_name,
+//           hp: response.data[1].hp,
+//           stamina: response.data[1].stamina,
+//           speed: response.data[1].speed,
+//           battle_pic: response.data[1].battle_pic,
+//         };
 
-        starterTwoAttackStats = {
-          attack_name: response.data[1].attack_name,
-          attack_damage: response.data[1].attack_damage,
-          attack_stamina: response.data[1].attack_stamina,
-          attack_type: response.data[1].attack_type,
-          fx_img: response.data[1].fx_img,
-          max_frames: response.data[1].max_frames,
-          hold_time: response.data[1].hold_time,
-        };
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+//         starterTwoAttackStats = {
+//           attack_name: response.data[1].attack_name,
+//           attack_damage: response.data[1].attack_damage,
+//           attack_stamina: response.data[1].attack_stamina,
+//           attack_type: response.data[1].attack_type,
+//           fx_img: response.data[1].fx_img,
+//           max_frames: response.data[1].max_frames,
+//           hold_time: response.data[1].hold_time,
+//         };
+//       }
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
 
-const getEnemy = () => {
-  axios({
-    method: "GET",
-    url: `/api/characters/enemy/${randomEnemy}`,
-  })
-    .then((response) => {
-      enemyOne = response.data[0];
+// const getEnemy = () => {
+//   axios({
+//     method: "GET",
+//     url: `/api/characters/enemy/${randomEnemy}`,
+//   })
+//     .then((response) => {
+//       enemyOne = response.data[0];
 
-      enemyHp = response.data[0].hp;
-      enemyStamina = response.data[0].stamina;
-      enemyName = response.data[0].character_name;
-      enemySpeed = response.data[0].speed;
-      enemyPicture = response.data[0].battle_pic;
-      enemyFxImg = response.data[0].fx_img;
+//       enemyHp = response.data[0].hp;
+//       enemyStamina = response.data[0].stamina;
+//       enemyName = response.data[0].character_name;
+//       enemySpeed = response.data[0].speed;
+//       enemyPicture = response.data[0].battle_pic;
+//       enemyFxImg = response.data[0].fx_img;
 
-      enemyInfo = {
-        character_name: response.data[0].character_name,
-        hp: response.data[0].hp,
-        stamina: response.data[0].stamina,
-        speed: response.data[0].speed,
-        battle_pic: response.data[0].battle_pic,
-      };
+//       enemyInfo = {
+//         character_name: response.data[0].character_name,
+//         hp: response.data[0].hp,
+//         stamina: response.data[0].stamina,
+//         speed: response.data[0].speed,
+//         battle_pic: response.data[0].battle_pic,
+//       };
 
-      enemyAttackStats = {
-        attack_name: response.data[0].attack_name,
-        attack_damage: response.data[0].attack_damage,
-        attack_stamina: response.data[0].attack_stamina,
-        attack_type: response.data[0].attack_type,
-        fx_img: response.data[0].fx_img,
-        max_frames: response.data[0].max_frames,
-        hold_time: response.data[0].hold_time,
-      };
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+//       enemyAttackStats = {
+//         attack_name: response.data[0].attack_name,
+//         attack_damage: response.data[0].attack_damage,
+//         attack_stamina: response.data[0].attack_stamina,
+//         attack_type: response.data[0].attack_type,
+//         fx_img: response.data[0].fx_img,
+//         max_frames: response.data[0].max_frames,
+//         hold_time: response.data[0].hold_time,
+//       };
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
 
-const getBasicAttacks = () => {
-  axios({
-    method: "GET",
-    url: `/api/characters/basic`,
-  })
-    .then((response) => {
-      // setKickAttack(response.data[0].attack_name);
-      kickStamina = response.data[0].attack_stamina;
-      // setKickAttackType(response.data[0].attack_type);
+// const getBasicAttacks = () => {
+//   axios({
+//     method: "GET",
+//     url: `/api/characters/basic`,
+//   })
+//     .then((response) => {
+//       // setKickAttack(response.data[0].attack_name);
+//       kickStamina = response.data[0].attack_stamina;
+//       // setKickAttackType(response.data[0].attack_type);
 
-      kickAttackStats = {
-        attack_name: response.data[0].attack_name,
-        attack_damage: response.data[0].attack_damage,
-        attack_stamina: response.data[0].attack_stamina,
-        attack_type: response.data[0].attack_type,
-      };
+//       kickAttackStats = {
+//         attack_name: response.data[0].attack_name,
+//         attack_damage: response.data[0].attack_damage,
+//         attack_stamina: response.data[0].attack_stamina,
+//         attack_type: response.data[0].attack_type,
+//       };
 
-      // setPokeAttack(response.data[1].attack_name);
-      pokeStamina = response.data[1].attack_stamina;
-      // setPokeAttackType(response.data[1].attack_type);
+//       // setPokeAttack(response.data[1].attack_name);
+//       pokeStamina = response.data[1].attack_stamina;
+//       // setPokeAttackType(response.data[1].attack_type);
 
-      pokeAttackStats = {
-        attack_name: response.data[1].attack_name,
-        attack_damage: response.data[1].attack_damage,
-        attack_stamina: response.data[1].attack_stamina,
-        attack_type: response.data[1].attack_type,
-      };
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+//       pokeAttackStats = {
+//         attack_name: response.data[1].attack_name,
+//         attack_damage: response.data[1].attack_damage,
+//         attack_stamina: response.data[1].attack_stamina,
+//         attack_type: response.data[1].attack_type,
+//       };
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
 
-getStarters();
-getEnemy();
-getBasicAttacks();
+// getStarters();
+// getEnemy();
+// getBasicAttacks();
 
 // All current varibles for battle
 // const [currentId, setCurrentId] = useState(0);
@@ -296,10 +296,17 @@ battleZonesMap.forEach((row, i) => {
 });
 
 const worldImage = new Image();
-worldImage.src = "./img/bowsermon-map-v1.png";
+worldImage.src = "../src/img/bowsermon-map-v1.png";
+
+c.fillStyle = 'black'
+c.fillRect(0,0, canvas.width, canvas.height)
+
+worldImage.onload = () => {
+  c.drawImage(worldImage, 0, 0)
+}
 
 // const foregroundImage = new Image();
-// foregroundImage.src = "./img/foregroundObjects.png";
+// foregroundImage.src = "../src/img/foregroundObjects.png";
 
 // const playerDownImage = new Image();
 // playerDownImage.src = "./img/playerDown.png";
@@ -432,13 +439,13 @@ class Sprite {
 //   },
 // });
 
-const foreground = new Sprite({
-  position: {
-    x: offset.x,
-    y: offset.y,
-  },
-  image: foregroundImage,
-});
+// const foreground = new Sprite({
+//   position: {
+//     x: offset.x,
+//     y: offset.y,
+//   },
+//   image: foregroundImage,
+// });
 
 const exploringBackground = new Sprite({
   position: {
@@ -466,7 +473,7 @@ const keys = {
 const movables = [
   exploringBackground,
   ...boundaries,
-  foreground,
+  // foreground,
   ...battleZones,
 ];
 
@@ -486,177 +493,177 @@ const battle = {
 function animate() {
   const animationId = window.requestAnimationFrame(animate);
   exploringBackground.draw();
-  boundaries.forEach((boundary) => {
-    boundary.draw();
-  });
-  battleZones.forEach((battleZone) => {
-    battleZone.draw();
-  });
-  player.draw();
-  foreground.draw();
+  // boundaries.forEach((boundary) => {
+  //   boundary.draw();
+  // });
+  // battleZones.forEach((battleZone) => {
+  //   battleZone.draw();
+  // });
+  // player.draw();
+  // foreground.draw();
 
-  let moving = true;
-  player.animate = false;
+  // let moving = true;
+  // player.animate = false;
 
-  if (battle.initiated) return;
+  // if (battle.initiated) return;
 
-  // activate battle
-  if (keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) {
-    for (let i = 0; i < battleZones.length; i++) {
-      const battleZone = battleZones[i];
-      const overlappingArea =
-        (Math.min(
-          player.position.x + player.width,
-          battleZone.position.x + battleZone.width
-        ) -
-          Math.max(player.position.x, battleZone.position.x)) *
-        (Math.min(
-          player.position.y + player.height,
-          battleZone.position.y + battleZone.height
-        ) -
-          Math.max(player.position.y, battleZone.position.y));
+  // // activate battle
+  // if (keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) {
+  //   for (let i = 0; i < battleZones.length; i++) {
+  //     const battleZone = battleZones[i];
+  //     const overlappingArea =
+  //       (Math.min(
+  //         player.position.x + player.width,
+  //         battleZone.position.x + battleZone.width
+  //       ) -
+  //         Math.max(player.position.x, battleZone.position.x)) *
+  //       (Math.min(
+  //         player.position.y + player.height,
+  //         battleZone.position.y + battleZone.height
+  //       ) -
+  //         Math.max(player.position.y, battleZone.position.y));
 
-      if (
-        rectangularCollisions({
-          rectangle1: player,
-          rectangle2: battleZone,
-        }) &&
-        overlappingArea > (player.width * player.height) / 2 &&
-        Math.random() < 0.015
-      ) {
-        window.cancelAnimationFrame(animationId);
-        battle.initiated = true;
-        setBattleStart(true);
-        gsap.to("#fadeOutDiv", {
-          opacity: 1,
-          repeat: 3,
-          yoyo: true,
-          duration: 0.4,
-          onComplete() {
-            gsap.to("#fadeOutDiv", {
-              opacity: 1,
-              duration: 0.4,
-              onComplete() {
-                // history.push(
-                //   `/battle/${Math.floor(Math.random() * 8 + 1)}`
-                // );
-                initBattle();
-                animateBattle();
+  //     if (
+  //       rectangularCollisions({
+  //         rectangle1: player,
+  //         rectangle2: battleZone,
+  //       }) &&
+  //       overlappingArea > (player.width * player.height) / 2 &&
+  //       Math.random() < 0.015
+  //     ) {
+  //       window.cancelAnimationFrame(animationId);
+  //       battle.initiated = true;
+  //       setBattleStart(true);
+  //       gsap.to("#fadeOutDiv", {
+  //         opacity: 1,
+  //         repeat: 3,
+  //         yoyo: true,
+  //         duration: 0.4,
+  //         onComplete() {
+  //           gsap.to("#fadeOutDiv", {
+  //             opacity: 1,
+  //             duration: 0.4,
+  //             onComplete() {
+  //               // history.push(
+  //               //   `/battle/${Math.floor(Math.random() * 8 + 1)}`
+  //               // );
+  //               initBattle();
+  //               animateBattle();
 
-                gsap.to("#fadeOutDiv", {
-                  opacity: 0,
-                  duration: 0.4,
-                });
-              },
-            });
-          },
-        });
-        break;
-      }
-    }
-  }
+  //               gsap.to("#fadeOutDiv", {
+  //                 opacity: 0,
+  //                 duration: 0.4,
+  //               });
+  //             },
+  //           });
+  //         },
+  //       });
+  //       break;
+  //     }
+  //   }
+  // }
 
-  if (keys.w.pressed && lastKey === "w") {
-    player.animate = true;
-    player.image = player.sprites.up;
-    for (let i = 0; i < boundaries.length; i++) {
-      const boundary = boundaries[i];
-      if (
-        rectangularCollisions({
-          rectangle1: player,
-          rectangle2: {
-            ...boundary,
-            position: {
-              x: boundary.position.x,
-              y: boundary.position.y + 3,
-            },
-          },
-        })
-      ) {
-        moving = false;
-        break;
-      }
-    }
-    if (moving)
-      movables.forEach((movable) => {
-        movable.position.y += 3;
-      });
-  } else if (keys.a.pressed && lastKey === "a") {
-    player.animate = true;
-    player.image = player.sprites.left;
-    for (let i = 0; i < boundaries.length; i++) {
-      const boundary = boundaries[i];
-      if (
-        rectangularCollisions({
-          rectangle1: player,
-          rectangle2: {
-            ...boundary,
-            position: {
-              x: boundary.position.x + 3,
-              y: boundary.position.y,
-            },
-          },
-        })
-      ) {
-        moving = false;
-        break;
-      }
-    }
-    if (moving)
-      movables.forEach((movable) => {
-        movable.position.x += 3;
-      });
-  } else if (keys.s.pressed && lastKey === "s") {
-    player.animate = true;
-    player.image = player.sprites.down;
-    for (let i = 0; i < boundaries.length; i++) {
-      const boundary = boundaries[i];
-      if (
-        rectangularCollisions({
-          rectangle1: player,
-          rectangle2: {
-            ...boundary,
-            position: {
-              x: boundary.position.x,
-              y: boundary.position.y - 3,
-            },
-          },
-        })
-      ) {
-        moving = false;
-        break;
-      }
-    }
-    if (moving)
-      movables.forEach((movable) => {
-        movable.position.y -= 3;
-      });
-  } else if (keys.d.pressed && lastKey === "d") {
-    player.animate = true;
-    player.image = player.sprites.right;
-    for (let i = 0; i < boundaries.length; i++) {
-      const boundary = boundaries[i];
-      if (
-        rectangularCollisions({
-          rectangle1: player,
-          rectangle2: {
-            ...boundary,
-            position: {
-              x: boundary.position.x - 3,
-              y: boundary.position.y,
-            },
-          },
-        })
-      ) {
-        moving = false;
-        break;
-      }
-    }
-    if (moving)
-      movables.forEach((movable) => {
-        movable.position.x -= 3;
-      });
-  }
+  // if (keys.w.pressed && lastKey === "w") {
+  //   player.animate = true;
+  //   player.image = player.sprites.up;
+  //   for (let i = 0; i < boundaries.length; i++) {
+  //     const boundary = boundaries[i];
+  //     if (
+  //       rectangularCollisions({
+  //         rectangle1: player,
+  //         rectangle2: {
+  //           ...boundary,
+  //           position: {
+  //             x: boundary.position.x,
+  //             y: boundary.position.y + 3,
+  //           },
+  //         },
+  //       })
+  //     ) {
+  //       moving = false;
+  //       break;
+  //     }
+  //   }
+  //   if (moving)
+  //     movables.forEach((movable) => {
+  //       movable.position.y += 3;
+  //     });
+  // } else if (keys.a.pressed && lastKey === "a") {
+  //   player.animate = true;
+  //   player.image = player.sprites.left;
+  //   for (let i = 0; i < boundaries.length; i++) {
+  //     const boundary = boundaries[i];
+  //     if (
+  //       rectangularCollisions({
+  //         rectangle1: player,
+  //         rectangle2: {
+  //           ...boundary,
+  //           position: {
+  //             x: boundary.position.x + 3,
+  //             y: boundary.position.y,
+  //           },
+  //         },
+  //       })
+  //     ) {
+  //       moving = false;
+  //       break;
+  //     }
+  //   }
+  //   if (moving)
+  //     movables.forEach((movable) => {
+  //       movable.position.x += 3;
+  //     });
+  // } else if (keys.s.pressed && lastKey === "s") {
+  //   player.animate = true;
+  //   player.image = player.sprites.down;
+  //   for (let i = 0; i < boundaries.length; i++) {
+  //     const boundary = boundaries[i];
+  //     if (
+  //       rectangularCollisions({
+  //         rectangle1: player,
+  //         rectangle2: {
+  //           ...boundary,
+  //           position: {
+  //             x: boundary.position.x,
+  //             y: boundary.position.y - 3,
+  //           },
+  //         },
+  //       })
+  //     ) {
+  //       moving = false;
+  //       break;
+  //     }
+  //   }
+  //   if (moving)
+  //     movables.forEach((movable) => {
+  //       movable.position.y -= 3;
+  //     });
+  // } else if (keys.d.pressed && lastKey === "d") {
+  //   player.animate = true;
+  //   player.image = player.sprites.right;
+  //   for (let i = 0; i < boundaries.length; i++) {
+  //     const boundary = boundaries[i];
+  //     if (
+  //       rectangularCollisions({
+  //         rectangle1: player,
+  //         rectangle2: {
+  //           ...boundary,
+  //           position: {
+  //             x: boundary.position.x - 3,
+  //             y: boundary.position.y,
+  //           },
+  //         },
+  //       })
+  //     ) {
+  //       moving = false;
+  //       break;
+  //     }
+  //   }
+  //   if (moving)
+  //     movables.forEach((movable) => {
+  //       movable.position.x -= 3;
+  //     });
+  // }
 }
 animate();
 
@@ -691,7 +698,7 @@ window.addEventListener("keyup", (e) => {
 });
 
 const battleBackgroundImage = new Image();
-battleBackgroundImage.src = "./img/backgroundImg/battleBackground.png";
+battleBackgroundImage.src = "../src/img/backgroundImg/battleBackground.png";
 
 class Character extends Sprite {
   constructor({
