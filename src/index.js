@@ -170,6 +170,8 @@ const getEnemy = () => {
         attack_stamina: response.data[0].attack_stamina,
         attack_type: response.data[0].attack_type,
         fx_img: response.data[0].fx_img,
+        max_frames: response.data[0].max_frames,
+          hold_time: response.data[0].hold_time,
       };
     })
     .catch((err) => {
