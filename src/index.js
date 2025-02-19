@@ -1011,6 +1011,8 @@ function initBattle() {
     maxStamina: starterOneStamina,
     speed: starterOneSpeed,
     fx_img: starterOneAttackStats.fx_img,
+    max_frames: starterOneAttackStats.max_frames,
+    hold_time: starterOneAttackStats.hold_time,
   });
 
   starter2 = new Character({
