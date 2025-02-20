@@ -298,12 +298,6 @@ battleZonesMap.forEach((row, i) => {
 const worldImage = new Image();
 worldImage.src = "../src/img/bowsermon-map-v1.png";
 
-// c.fillStyle = 'black'
-// c.fillRect(0,0, canvas.width, canvas.height)
-
-// worldImage.onload = () => {
-//   c.drawImage(worldImage, 0, 0)
-// }
 
 const foregroundImage = new Image();
 foregroundImage.src = "../src/img/foregroundObjects.png";
@@ -439,13 +433,13 @@ class Sprite {
 //   },
 // });
 
-// const foreground = new Sprite({
-//   position: {
-//     x: offset.x,
-//     y: offset.y,
-//   },
-//   image: foregroundImage,
-// });
+const foreground = new Sprite({
+  position: {
+    x: offset.x,
+    y: offset.y,
+  },
+  image: foregroundImage,
+});
 
 const exploringBackground = new Sprite({
   position: {
