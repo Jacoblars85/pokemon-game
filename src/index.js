@@ -526,7 +526,7 @@ function animate() {
       ) {
         window.cancelAnimationFrame(animationId);
         battle.initiated = true;
-        setBattleStart(true);
+        // setBattleStart(true);
         gsap.to("#fadeOutDiv", {
           opacity: 1,
           repeat: 3,
@@ -1400,7 +1400,7 @@ ${
                 opacity: 1,
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId);
-                  setBattleStart(false);
+                  // setBattleStart(false);
                   animate();
                   document.getElementById("battleInterface").style.display =
                     "none";
@@ -1468,7 +1468,7 @@ ${
                 opacity: 1,
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId);
-                  setBattleStart(false);
+                  // setBattleStart(false);
                   animate();
                   document.getElementById("battleInterface").style.display =
                     "none";
