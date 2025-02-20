@@ -1087,7 +1087,7 @@ function initBattle() {
 
           <button
             id="attackButton"
-            className=${kickAttack}
+            className="kickAttack"
             style=${{
               display: "flex",
               width: "33.33%",
@@ -1121,7 +1121,7 @@ function initBattle() {
 
           <button
             id="attackButton"
-            className=${pokeAttack}
+            className="pokeAttack"
             style=${{
               display: "flex",
               width: "33.33%",
