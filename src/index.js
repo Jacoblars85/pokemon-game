@@ -298,7 +298,6 @@ battleZonesMap.forEach((row, i) => {
 const worldImage = new Image();
 worldImage.src = "../src/img/bowsermon-map-v1.png";
 
-
 const foregroundImage = new Image();
 foregroundImage.src = "../src/img/foregroundObjects.png";
 
@@ -1089,11 +1088,13 @@ function initBattle() {
                 : false
             }
           >
-            ${starter.length === 1
-              ? starterOne.attack_name
-              : currentId === starterOne.id
-              ? starterOne.attack_name
-              : starterTwo.attack_name}
+            ${
+              starter.length === 1
+                ? starterOne.attack_name
+                : currentId === starterOne.id
+                ? starterOne.attack_name
+                : starterTwo.attack_name
+            }
           </button>
 
           <button
