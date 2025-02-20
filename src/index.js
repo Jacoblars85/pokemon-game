@@ -414,24 +414,24 @@ class Sprite {
   }
 }
 
-// const player = new Sprite({
-//   position: {
-//     x: canvas.width / 2 - 192 / 4 / 2,
-//     y: canvas.height / 2 - 68 / 2,
-//   },
-//   image: playerDownImage,
-//   frames: {
-//     max: 4,
-//     hold: 10,
-//     attackFx: true,
-//   },
-//   sprites: {
-//     up: playerUpImage,
-//     left: playerLeftImage,
-//     right: playerRightImage,
-//     down: playerDownImage,
-//   },
-// });
+const player = new Sprite({
+  position: {
+    x: canvas.width / 2 - 192 / 4 / 2,
+    y: canvas.height / 2 - 68 / 2,
+  },
+  image: playerDownImage,
+  frames: {
+    max: 4,
+    hold: 10,
+    attackFx: true,
+  },
+  sprites: {
+    up: playerUpImage,
+    left: playerLeftImage,
+    right: playerRightImage,
+    down: playerDownImage,
+  },
+});
 
 const foreground = new Sprite({
   position: {
