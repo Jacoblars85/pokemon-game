@@ -493,14 +493,14 @@ const battle = {
 function animate() {
   const animationId = window.requestAnimationFrame(animate);
   exploringBackground.draw();
-  // boundaries.forEach((boundary) => {
-  //   boundary.draw();
-  // });
-  // battleZones.forEach((battleZone) => {
-  //   battleZone.draw();
-  // });
-  // player.draw();
-  // foreground.draw();
+  boundaries.forEach((boundary) => {
+    boundary.draw();
+  });
+  battleZones.forEach((battleZone) => {
+    battleZone.draw();
+  });
+  player.draw();
+  foreground.draw();
 
   // let moving = true;
   // player.animate = false;
