@@ -1053,13 +1053,7 @@ function initBattle() {
   document.getElementById("attackBox").innerHTML = `
 <button
             id="attackButton"
-            className=${
-              starter.length === 1
-                ? starterOne.attack_name
-                : currentId === starterOne.id
-                ? starterOne.attack_name
-                : starterTwo.attack_type
-            }
+            className=${starterOne.attack_name}
             style=${{
               display: "flex",
               width: "33.33%",
@@ -1088,13 +1082,7 @@ function initBattle() {
                 : false
             }
           >
-            ${
-              starter.length === 1
-                ? starterOne.attack_name
-                : currentId === starterOne.id
-                ? starterOne.attack_name
-                : starterTwo.attack_name
-            }
+            ${starterOne.attack_name}
           </button>
 
           <button
