@@ -466,7 +466,7 @@ const keys = {
 const movables = [
   exploringBackground,
   ...boundaries,
-  // foreground,
+  foreground,
   ...battleZones,
 ];
 
