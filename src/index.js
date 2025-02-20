@@ -308,17 +308,17 @@ worldImage.src = "../src/img/bowsermon-map-v1.png";
 const foregroundImage = new Image();
 foregroundImage.src = "../src/img/foregroundObjects.png";
 
-// const playerDownImage = new Image();
-// playerDownImage.src = "./img/playerDown.png";
+const playerDownImage = new Image();
+playerDownImage.src = "../src/img/playerDown.png";
 
-// const playerUpImage = new Image();
-// playerUpImage.src = "./img/playerUp.png";
+const playerUpImage = new Image();
+playerUpImage.src = "../src/img/playerUp.png";
 
-// const playerLeftImage = new Image();
-// playerLeftImage.src = "./img/playerLeft.png";
+const playerLeftImage = new Image();
+playerLeftImage.src = "../src/img/playerLeft.png";
 
-// const playerRightImage = new Image();
-// playerRightImage.src = "./img/playerRight.png";
+const playerRightImage = new Image();
+playerRightImage.src = "../src/img/playerRight.png";
 
 class Sprite {
   constructor({
