@@ -52,7 +52,7 @@ let starterTwo;
 const getStarters = () => {
   axios({
     method: "GET",
-    url: "/api/characters/starter",
+    url: "https://reqres.in/api/characters/starter",
   })
     .then((response) => {
       starterOne = response.data[0];
@@ -144,7 +144,7 @@ const getStarters = () => {
 const getEnemy = () => {
   axios({
     method: "GET",
-    url: `/api/characters/enemy/${randomEnemy}`,
+    url: `https://reqres.in/api/characters/enemy/${randomEnemy}`,
   })
     .then((response) => {
       enemyOne = response.data[0];
@@ -182,7 +182,7 @@ const getEnemy = () => {
 const getBasicAttacks = () => {
   axios({
     method: "GET",
-    url: `/api/characters/basic`,
+    url: `https://reqres.in/api/characters/basic`,
   })
     .then((response) => {
       // setKickAttack(response.data[0].attack_name);
