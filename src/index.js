@@ -1157,11 +1157,11 @@ function initBattle() {
   document.getElementById("switchBox").innerHTML = `
 ${
   starter.length === 1 ? (
-    <List sx={{ padding: 0 }}>
+    <List style={{ padding: 0 }}>
       <ListItem>
         <img height={50} width={50} src={starterOne.profile_pic} />
         <ListItemText
-          sx={{ ml: 25 }}
+          style={{ ml: 25 }}
           primary={`starter 1: ${starterOne.character_name}`}
           secondary={`${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed`}
         />
@@ -1189,11 +1189,11 @@ ${
       </ListItem>
     </List>
   ) : (
-    <List sx={{ padding: 0 }}>
+    <List style={{ padding: 0 }}>
       <ListItem>
         <img height={50} width={50} src={starterOne.profile_pic} />
         <ListItemText
-          sx={{ ml: 25 }}
+          style={{ ml: 25 }}
           primary={`starter 1: ${starterOne.character_name}`}
           secondary={`${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed`}
         />
@@ -1225,7 +1225,7 @@ ${
       <ListItem>
         <img height={50} width={50} src={starterTwo.profile_pic} />
         <ListItemText
-          sx={{ ml: 25 }}
+          style={{ ml: 25 }}
           primary={`starter 2: ${starterTwo.character_name}`}
           secondary={`${starterTwoHp}/${starterTwo.hp} hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${starterTwo.speed} speed`}
         />
