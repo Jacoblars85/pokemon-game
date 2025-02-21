@@ -1157,8 +1157,8 @@ function initBattle() {
   document.getElementById("switchBox").innerHTML = `
 ${
   starter.length === 1 ? (
-    <List style={{ padding: 0 }}>
-      <ListItem>
+    <ul style={{ padding: 0 }}>
+      <li>
         <img height={50} width={50} src={starterOne.profile_pic} />
         <ListItemText
           style={{ ml: 25 }}
@@ -1186,11 +1186,11 @@ ${
         >
           Change Starter
         </button>
-      </ListItem>
-    </List>
+      </li>
+    </ul>
   ) : (
-    <List style={{ padding: 0 }}>
-      <ListItem>
+    <ul style={{ padding: 0 }}>
+      <li>
         <img height={50} width={50} src={starterOne.profile_pic} />
         <ListItemText
           style={{ ml: 25 }}
@@ -1218,11 +1218,11 @@ ${
         >
           Change Starter
         </button>
-      </ListItem>
+      </li>
 
       <Divider />
 
-      <ListItem>
+      <li>
         <img height={50} width={50} src={starterTwo.profile_pic} />
         <ListItemText
           style={{ ml: 25 }}
@@ -1251,8 +1251,8 @@ ${
         >
           Change Starter
         </button>
-      </ListItem>
-    </List>
+      </li>
+    </ul>
   )
 }
   `;
