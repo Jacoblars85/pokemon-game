@@ -1220,7 +1220,7 @@ ${
         </button>
       </li>
 
-      <Divider />
+      <div style={{ width: "90%"}} />
 
       <li>
         <img height={50} width={50} src={starterTwo.profile_pic} />
