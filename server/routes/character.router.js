@@ -113,24 +113,6 @@ router.get('/all/characters', (req, res) => {
 
 router.get('/enemy/:id', (req, res) => {
     // console.log('im in enemy get');
-    // const query = `
-    // SELECT "levels"."id" as "level_id",
-    //     "levels"."enemy_id" as "enemy_id",
-    //     "levels"."name" as "level_name",
-    //     "characters"."name",
-    //     "characters"."profile_pic",
-    //     "characters"."hp",
-    //     "characters"."stamina",
-    //     "characters"."speed",
-    //     "characters"."unique_attack",
-    //     "characters"."unique_damage",
-    //     "characters"."unique_stamina",
-    //     "characters"."battle_pic"
-    //         FROM "levels"
-    //     INNER JOIN "characters"
-    //         ON "levels"."enemy_id" = "characters"."id"
-    //     WHERE "levels"."id" = $1;
-    //   `;
 
         const query = `
 SELECT  "characters"."character_name",
