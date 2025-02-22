@@ -1218,7 +1218,7 @@ ${
         </button>
       </li>
 
-      <div style={{ width: "90%"}} />
+      <div style={{ width: "90%" }} />
 
       <li>
         <img height={50} width={50} src={starterTwo.profile_pic} />
@@ -1255,7 +1255,7 @@ ${
   `;
 
   for (usersConsumables of usersConsumableItems) {
-    console.log('am i looping');
+    console.log("am i looping");
     document.getElementById("inventoryBox").innerHTML = `
     <div height="140px" overflow={"scroll"}>
                        <div
@@ -1303,16 +1303,16 @@ ${
                                  ? ""
                                  : `+${usersConsumables.item_hp} hp`
                              } ${
-                               usersConsumables.item_stamina === 0
-                                 ? ""
-                                 : usersConsumables.item_hp === 0
-                                 ? `+${usersConsumables.item_stamina} stamina`
-                                 : `| +${usersConsumables.item_stamina} stamina`
-                             } ${
-                               usersConsumables.item_speed === 0
-                                 ? ""
-                                 : `| +${usersConsumables.item_speed} speed`
-                             }
+      usersConsumables.item_stamina === 0
+        ? ""
+        : usersConsumables.item_hp === 0
+        ? `+${usersConsumables.item_stamina} stamina`
+        : `| +${usersConsumables.item_stamina} stamina`
+    } ${
+      usersConsumables.item_speed === 0
+        ? ""
+        : `| +${usersConsumables.item_speed} speed`
+    }
                            />
                            <button
                              id="attackButton"
@@ -1331,7 +1331,7 @@ ${
                              Use Consumable
                            </button>
                          </ListItem>
-                         <div style=${{ width: "90%"}} />
+                         <div style=${{ width: "90%" }} />
                        </div>
                </div>
  `;
