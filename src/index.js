@@ -1258,10 +1258,6 @@ ${
     console.log('am i looping');
     document.getElementById("inventoryBox").innerHTML = `
     <div height="140px" overflow={"scroll"}>
-                 ${
-                   usersConsumableItems &&
-                   usersConsumableItems.map((usersConsumables) => {
-                     return (
                        <div
                          key={usersConsumables.id}
                          style={{ height: "40px", padding: 10 }}
@@ -1343,13 +1339,10 @@ ${
                          </ListItem>
                          <Divider />
                        </div>
-                     );
-                   })
-                 }
                </div>
  `;
   }
-  
+
   // document.getElementById("inventoryBox").innerHTML = `
   //    <div height="140px" overflow={"scroll"}>
   //                 ${
