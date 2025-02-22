@@ -1286,7 +1286,7 @@ ${
                            </Box>
 
                            <ListItemText
-                             sx={{
+                             style={{
                                ml: 20,
                                fontFamily: "New Super Mario Font U",
                              }}
@@ -1294,12 +1294,11 @@ ${
                            />
 
                            <ListItemText
-                             sx={{
+                             style={{
                                ml: 5,
                                fontFamily: "New Super Mario Font U",
                                width: "70px",
                              }}
-                             // primary={usersConsumables.name}
                              secondary={`${
                                usersConsumables.item_hp === 0
                                  ? ""
@@ -1317,7 +1316,6 @@ ${
                              }`}
                            />
                            <button
-                             // id="consumable"
                              id="attackButton"
                              className="consumable"
                              style={{
@@ -1325,8 +1323,6 @@ ${
                                fontSize: 15,
                                fontFamily: "New Super Mario Font U",
                                borderColor: "black",
-                               // height: "35px",
-                               // width: "60px",
                              }}
                              variant="outlined"
                              disabled={
