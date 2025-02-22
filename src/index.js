@@ -1259,7 +1259,6 @@ ${
     document.getElementById("inventoryBox").innerHTML = `
     <div height="140px" overflow={"scroll"}>
                        <div
-                         key={usersConsumables.id}
                          style={{ height: "40px", padding: 10 }}
                        >
                          <ListItem>
@@ -1333,7 +1332,7 @@ ${
                              Use Consumable
                            </button>
                          </ListItem>
-                         <Divider />
+                         <div style={{ width: "90%"}} />
                        </div>
                </div>
  `;
