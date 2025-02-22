@@ -1259,7 +1259,7 @@ ${
     document.getElementById("inventoryBox").innerHTML = `
     <div height="140px" overflow={"scroll"}>
                        <div
-                         style={{ height: "40px", padding: 10 }}
+                         style=${{ height: "40px", padding: 10 }}
                        >
                          <ListItem>
                            <Box
@@ -1270,22 +1270,22 @@ ${
                              alignItems="center"
                            >
                              <p
-                               style={{
+                               style=${{
                                  color: "black",
                                  fontSize: "15px",
                                }}
                              >
-                               {usersConsumables.number}X
+                               ${usersConsumables.number}X
                              </p>
                              <img
                                height={35}
                                width={35}
-                               src={usersConsumables.item_pic}
+                               src=${usersConsumables.item_pic}
                              />
                            </Box>
 
                            <ListItemText
-                             style={{
+                             style=${{
                                ml: 20,
                                fontFamily: "New Super Mario Font U",
                              }}
@@ -1293,12 +1293,12 @@ ${
                            />
 
                            <ListItemText
-                             style={{
+                             style=${{
                                ml: 5,
                                fontFamily: "New Super Mario Font U",
                                width: "70px",
                              }}
-                             secondary={`${
+                             secondary=${
                                usersConsumables.item_hp === 0
                                  ? ""
                                  : `+${usersConsumables.item_hp} hp`
@@ -1312,7 +1312,7 @@ ${
                                usersConsumables.item_speed === 0
                                  ? ""
                                  : `| +${usersConsumables.item_speed} speed`
-                             }`}
+                             }
                            />
                            <button
                              id="attackButton"
@@ -1323,8 +1323,7 @@ ${
                                fontFamily: "New Super Mario Font U",
                                borderColor: "black",
                              }}
-                             variant="outlined"
-                             disabled={
+                             disabled=${
                                usersConsumables.number <= 0 ? true : false
                              }
                              onClick={() => battle(usersConsumables)}
