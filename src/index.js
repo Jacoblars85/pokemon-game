@@ -1261,13 +1261,15 @@ ${
                        <div
                          style=${{ height: "40px", padding: 10 }}
                        >
-                         <ListItem>
+                         <ul>
                            <Box
-                             display="flex"
-                             flexDirection="row"
-                             columnGap={5}
-                             justifyContent="space-around"
-                             alignItems="center"
+                           style=${{
+                             display: "flex",
+                             flexDirection: "row",
+                             columnGap: "5",
+                             justifyContent: "space-around",
+                             alignItems: "center",
+                             }}
                            >
                              <p
                                style=${{
@@ -1326,11 +1328,10 @@ ${
                              disabled=${
                                usersConsumables.number <= 0 ? true : false
                              }
-                             onClick={() => battle(usersConsumables)}
                            >
                              Use Consumable
                            </button>
-                         </ListItem>
+                         </ul>
                          <div style=${{ width: "90%" }} />
                        </div>
                </div>
