@@ -1278,8 +1278,8 @@ ${
                                ${usersConsumables.number}X
                              </p>
                              <img
-                               height={35}
-                               width={35}
+                               height="35"
+                               width="35"
                                src=${usersConsumables.item_pic}
                              />
                            </Box>
@@ -1289,7 +1289,7 @@ ${
                                ml: 20,
                                fontFamily: "New Super Mario Font U",
                              }}
-                             primary={usersConsumables.name}
+                             primary=${usersConsumables.name}
                            />
 
                            <ListItemText
@@ -1317,7 +1317,7 @@ ${
                            <button
                              id="attackButton"
                              className="consumable"
-                             style={{
+                             style=${{
                                color: "black",
                                fontSize: 15,
                                fontFamily: "New Super Mario Font U",
@@ -1331,7 +1331,7 @@ ${
                              Use Consumable
                            </button>
                          </ListItem>
-                         <div style={{ width: "90%"}} />
+                         <div style=${{ width: "90%"}} />
                        </div>
                </div>
  `;
