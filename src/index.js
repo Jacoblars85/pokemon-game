@@ -1262,7 +1262,7 @@ ${
                          style=${{ height: "40px", padding: 10 }}
                        >
                          <ul>
-                           <Box
+                           <div
                            style=${{
                              display: "flex",
                              flexDirection: "row",
@@ -1284,9 +1284,9 @@ ${
                                width="35"
                                src=${usersConsumables.item_pic}
                              />
-                           </Box>
+                           </div>
 
-                           <ListItemText
+                           <p
                              style=${{
                                ml: 20,
                                fontFamily: "New Super Mario Font U",
@@ -1294,7 +1294,7 @@ ${
                              primary=${usersConsumables.name}
                            />
 
-                           <ListItemText
+                           <p
                              style=${{
                                ml: 5,
                                fontFamily: "New Super Mario Font U",
