@@ -1065,7 +1065,6 @@ function initBattle() {
               justifyContent: "center",
               alignItems: "center",
               borderRight: "4px solid black",
-              // backgroundColor: "white",
               boxShadow: "0 0 0 0",
             }}
             disabled=${
@@ -1206,7 +1205,6 @@ ${
             fontFamily: "New Super Mario Font U",
             borderColor: "black",
           }}
-          // variant="outlined"
           disabled={
             currentId === starterOne.id
               ? true
@@ -1239,7 +1237,6 @@ ${
             borderColor: "black",
             ml: 2,
           }}
-          // variant="outlined"
           disabled={
             currentId === starterTwo.id
               ? true
