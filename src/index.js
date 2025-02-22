@@ -1254,6 +1254,10 @@ ${
 }
   `;
 
+  for (usersConsumables of usersConsumableItems) {
+    console.log('am i looping');
+    
+  }
   document.getElementById("inventoryBox").innerHTML = `
      <div height="140px" overflow={"scroll"}>
                   ${
