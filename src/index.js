@@ -52,7 +52,7 @@ let starterTwo;
 const getStarters = () => {
   axios({
     method: "GET",
-    url: "https://reqres.in/api/characters/starter",
+    url: "api/characters/starter",
   })
     .then((response) => {
       starterOne = response.data[0];
@@ -141,80 +141,80 @@ const getStarters = () => {
     });
 };
 
-const getEnemy = () => {
-  axios({
-    method: "GET",
-    url: `https://reqres.in/api/characters/enemy/${randomEnemy}`,
-  })
-    .then((response) => {
-      enemyOne = response.data[0];
+// const getEnemy = () => {
+//   axios({
+//     method: "GET",
+//     url: `https://reqres.in/api/characters/enemy/${randomEnemy}`,
+//   })
+//     .then((response) => {
+//       enemyOne = response.data[0];
 
-      enemyHp = response.data[0].hp;
-      enemyStamina = response.data[0].stamina;
-      enemyName = response.data[0].character_name;
-      enemySpeed = response.data[0].speed;
-      enemyPicture = response.data[0].battle_pic;
-      enemyFxImg = response.data[0].fx_img;
+//       enemyHp = response.data[0].hp;
+//       enemyStamina = response.data[0].stamina;
+//       enemyName = response.data[0].character_name;
+//       enemySpeed = response.data[0].speed;
+//       enemyPicture = response.data[0].battle_pic;
+//       enemyFxImg = response.data[0].fx_img;
 
-      enemyInfo = {
-        character_name: response.data[0].character_name,
-        hp: response.data[0].hp,
-        stamina: response.data[0].stamina,
-        speed: response.data[0].speed,
-        battle_pic: response.data[0].battle_pic,
-      };
+//       enemyInfo = {
+//         character_name: response.data[0].character_name,
+//         hp: response.data[0].hp,
+//         stamina: response.data[0].stamina,
+//         speed: response.data[0].speed,
+//         battle_pic: response.data[0].battle_pic,
+//       };
 
-      enemyAttackStats = {
-        attack_name: response.data[0].attack_name,
-        attack_damage: response.data[0].attack_damage,
-        attack_stamina: response.data[0].attack_stamina,
-        attack_type: response.data[0].attack_type,
-        fx_img: response.data[0].fx_img,
-        max_frames: response.data[0].max_frames,
-        hold_time: response.data[0].hold_time,
-      };
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+//       enemyAttackStats = {
+//         attack_name: response.data[0].attack_name,
+//         attack_damage: response.data[0].attack_damage,
+//         attack_stamina: response.data[0].attack_stamina,
+//         attack_type: response.data[0].attack_type,
+//         fx_img: response.data[0].fx_img,
+//         max_frames: response.data[0].max_frames,
+//         hold_time: response.data[0].hold_time,
+//       };
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
 
-const getBasicAttacks = () => {
-  axios({
-    method: "GET",
-    url: `https://reqres.in/api/characters/basic`,
-  })
-    .then((response) => {
-      // setKickAttack(response.data[0].attack_name);
-      kickStamina = response.data[0].attack_stamina;
-      // setKickAttackType(response.data[0].attack_type);
+// const getBasicAttacks = () => {
+//   axios({
+//     method: "GET",
+//     url: `https://reqres.in/api/characters/basic`,
+//   })
+//     .then((response) => {
+//       // setKickAttack(response.data[0].attack_name);
+//       kickStamina = response.data[0].attack_stamina;
+//       // setKickAttackType(response.data[0].attack_type);
 
-      kickAttackStats = {
-        attack_name: response.data[0].attack_name,
-        attack_damage: response.data[0].attack_damage,
-        attack_stamina: response.data[0].attack_stamina,
-        attack_type: response.data[0].attack_type,
-      };
+//       kickAttackStats = {
+//         attack_name: response.data[0].attack_name,
+//         attack_damage: response.data[0].attack_damage,
+//         attack_stamina: response.data[0].attack_stamina,
+//         attack_type: response.data[0].attack_type,
+//       };
 
-      // setPokeAttack(response.data[1].attack_name);
-      pokeStamina = response.data[1].attack_stamina;
-      // setPokeAttackType(response.data[1].attack_type);
+//       // setPokeAttack(response.data[1].attack_name);
+//       pokeStamina = response.data[1].attack_stamina;
+//       // setPokeAttackType(response.data[1].attack_type);
 
-      pokeAttackStats = {
-        attack_name: response.data[1].attack_name,
-        attack_damage: response.data[1].attack_damage,
-        attack_stamina: response.data[1].attack_stamina,
-        attack_type: response.data[1].attack_type,
-      };
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
+//       pokeAttackStats = {
+//         attack_name: response.data[1].attack_name,
+//         attack_damage: response.data[1].attack_damage,
+//         attack_stamina: response.data[1].attack_stamina,
+//         attack_type: response.data[1].attack_type,
+//       };
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
 
 getStarters();
-getEnemy();
-getBasicAttacks();
+// getEnemy();
+// getBasicAttacks();
 
 // All current varibles for battle
 // const [currentId, setCurrentId] = useState(0);
