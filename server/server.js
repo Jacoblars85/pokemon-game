@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
@@ -33,7 +33,7 @@ app.use('/api/inventory', inventoryRouter);
 app.use(express.static('build'));
 
 // App Set //
-const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 5001;
 
 /** Listen * */
 app.listen(PORT, () => {
