@@ -52,7 +52,7 @@ let starterTwo;
 const getStarters = () => {
   axios({
     method: "GET",
-    url: "api/characters/starter",
+    url: "/api/characters/starter",
   })
     .then((response) => {
       starterOne = response.data[0];
