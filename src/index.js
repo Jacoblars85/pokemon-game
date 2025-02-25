@@ -1066,7 +1066,7 @@ function initBattle() {
   document.getElementById("starterName").innerHTML = starter.name;
   document.getElementById("enemyName").innerHTML = enemy.name;
 
-// InnerHtml for the attack box
+  // InnerHtml for the attack box
   document.getElementById("attackBox").innerHTML = `
 <button
             id="attackButton"
@@ -1170,16 +1170,20 @@ function initBattle() {
           </button>
 `;
 
-// InnerHtml for the switch box
-if (starter.length === 1 ) {
-  document.getElementById("switchBox").innerHTML = `
+  // InnerHtml for the switch box
+  if (starter.length === 1) {
+    document.getElementById("switchBox").innerHTML = `
       <ul style=${{ padding: 0 }}>
         <li>
           <img height="50" width="50" src=${starterOne.profile_pic} />
           <p
             style=${{ ml: 25 }}
             primary="starter 1: ${starterOne.character_name}"
-            secondary="${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed"
+            secondary="${starterOneHp}/${
+      starterOne.hp
+    } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
+      starterOne.speed
+    } speed"
           />
           <button
             id="attackButton"
@@ -1203,15 +1207,20 @@ if (starter.length === 1 ) {
         </li>
       </ul>
     `;
-} {
-  document.getElementById("switchBox").innerHTML = `
+  }
+  {
+    document.getElementById("switchBox").innerHTML = `
     <ul style=${{ padding: 0 }}>
       <li>
         <img height="50" width="50" src=${starterOne.profile_pic} />
         <p
           style=${{ ml: 25 }}
           primary="starter 1: ${starterOne.character_name}"
-          secondary="${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed"
+          secondary="${starterOneHp}/${
+      starterOne.hp
+    } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
+      starterOne.speed
+    } speed"
         />
         <button
           id="attackButton"
@@ -1241,7 +1250,11 @@ if (starter.length === 1 ) {
         <p
           style=${{ ml: 25 }}
           primary="starter 2: ${starterTwo.character_name}"
-          secondary="${starterTwoHp}/${starterTwo.hp} hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${starterTwo.speed} speed"
+          secondary="${starterTwoHp}/${
+      starterTwo.hp
+    } hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${
+      starterTwo.speed
+    } speed"
         />
         <button
           id="attackButton"
@@ -1265,14 +1278,13 @@ if (starter.length === 1 ) {
         </button>
       </li>
     </ul>
-    `
-}
+    `;
+  }
 
-
-// InnerHtml for the inventory box
-    for ( const usersConsumables of usersConsumableItems) {
-      console.log("am i looping");
-      document.getElementById("inventoryBox").innerHTML = `
+  // InnerHtml for the inventory box
+  for (const usersConsumables of usersConsumableItems) {
+    console.log("am i looping");
+    document.getElementById("inventoryBox").innerHTML = `
       <div height="140px" overflow="scroll">
                          <div
                            style=${{ height: "40px", padding: 10 }}
@@ -1285,7 +1297,7 @@ if (starter.length === 1 ) {
                                columnGap: "5",
                                justifyContent: "space-around",
                                alignItems: "center",
-                               }}
+                             }}
                              >
                                <p
                                  style=${{
@@ -1321,16 +1333,16 @@ if (starter.length === 1 ) {
                                    ? ""
                                    : `+${usersConsumables.item_hp} hp`
                                } ${
-                                usersConsumables.item_stamina === 0
-                                 ? ""
-                                  : usersConsumables.item_hp === 0
-                                  ? `+${usersConsumables.item_stamina} stamina`
-                                  : `| +${usersConsumables.item_stamina} stamina`
-                              } ${
-                                usersConsumables.item_speed === 0
-                                  ? ""
-                                  : `| +${usersConsumables.item_speed} speed`
-                              }
+      usersConsumables.item_stamina === 0
+        ? ""
+        : usersConsumables.item_hp === 0
+        ? `+${usersConsumables.item_stamina} stamina`
+        : `| +${usersConsumables.item_stamina} stamina`
+    } ${
+      usersConsumables.item_speed === 0
+        ? ""
+        : `| +${usersConsumables.item_speed} speed`
+    }
                              />
                              <button
                                id="attackButton"
@@ -1352,9 +1364,7 @@ if (starter.length === 1 ) {
                          </div>
                  </div>
    `;
-    }
-
-
+  }
 
   renderedSprites = [enemy, starter, starter2];
 
