@@ -47,7 +47,7 @@ let randomEnemy = Math.floor(Math.random() * 8 + 1);
 let enemyOne;
 let starterOne;
 let starterTwo;
-let usersConsumableItems
+let usersConsumableItems;
 
 // axios functions
 // const getStarters = () => {
@@ -220,7 +220,6 @@ const getAllUsersItems = () => {
   })
     .then((response) => {
       usersConsumableItems = response.data[0];
-      
     })
     .catch((err) => {
       console.log(err);
@@ -230,7 +229,7 @@ const getAllUsersItems = () => {
 // getStarters();
 // getEnemy();
 // getBasicAttacks();
-getAllUsersItems()
+getAllUsersItems();
 
 // All current varibles for battle
 // const [currentId, setCurrentId] = useState(0);
@@ -1169,190 +1168,190 @@ function initBattle() {
           </button>
 `;
 
-//   document.getElementById("switchBox").innerHTML = `
-// ${
-//   starter.length === 1 ? (
-//     <ul style={{ padding: 0 }}>
-//       <li>
-//         <img height={50} width={50} src={starterOne.profile_pic} />
-//         <p
-//           style={{ ml: 25 }}
-//           primary={`starter 1: ${starterOne.character_name}`}
-//           secondary={`${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed`}
-//         />
-//         <button
-//           id="attackButton"
-//           className="starterOne"
-//           style={{
-//             color: "black",
-//             fontSize: 15,
-//             fontFamily: "New Super Mario Font U",
-//             borderColor: "black",
-//           }}
-//           variant="outlined"
-//           disabled={
-//             currentId === starterOne.id
-//               ? true
-//               : starterOneHp <= 0
-//               ? true
-//               : false
-//           }
-//           onClick={() => battle("starterOne")}
-//         >
-//           Change Starter
-//         </button>
-//       </li>
-//     </ul>
-//   ) : (
-//     <ul style={{ padding: 0 }}>
-//       <li>
-//         <img height={50} width={50} src={starterOne.profile_pic} />
-//         <p
-//           style={{ ml: 25 }}
-//           primary={`starter 1: ${starterOne.character_name}`}
-//           secondary={`${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed`}
-//         />
-//         <button
-//           id="attackButton"
-//           className="starterOne"
-//           style={{
-//             color: "black",
-//             fontSize: 15,
-//             fontFamily: "New Super Mario Font U",
-//             borderColor: "black",
-//           }}
-//           disabled={
-//             currentId === starterOne.id
-//               ? true
-//               : starterOneHp <= 0
-//               ? true
-//               : false
-//           }
-//           onClick={() => battle("starterOne")}
-//         >
-//           Change Starter
-//         </button>
-//       </li>
+  //   document.getElementById("switchBox").innerHTML = `
+  // ${
+  //   starter.length === 1 ? (
+  //     <ul style={{ padding: 0 }}>
+  //       <li>
+  //         <img height={50} width={50} src={starterOne.profile_pic} />
+  //         <p
+  //           style={{ ml: 25 }}
+  //           primary={`starter 1: ${starterOne.character_name}`}
+  //           secondary={`${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed`}
+  //         />
+  //         <button
+  //           id="attackButton"
+  //           className="starterOne"
+  //           style={{
+  //             color: "black",
+  //             fontSize: 15,
+  //             fontFamily: "New Super Mario Font U",
+  //             borderColor: "black",
+  //           }}
+  //           variant="outlined"
+  //           disabled={
+  //             currentId === starterOne.id
+  //               ? true
+  //               : starterOneHp <= 0
+  //               ? true
+  //               : false
+  //           }
+  //           onClick={() => battle("starterOne")}
+  //         >
+  //           Change Starter
+  //         </button>
+  //       </li>
+  //     </ul>
+  //   ) : (
+  //     <ul style={{ padding: 0 }}>
+  //       <li>
+  //         <img height={50} width={50} src={starterOne.profile_pic} />
+  //         <p
+  //           style={{ ml: 25 }}
+  //           primary={`starter 1: ${starterOne.character_name}`}
+  //           secondary={`${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed`}
+  //         />
+  //         <button
+  //           id="attackButton"
+  //           className="starterOne"
+  //           style={{
+  //             color: "black",
+  //             fontSize: 15,
+  //             fontFamily: "New Super Mario Font U",
+  //             borderColor: "black",
+  //           }}
+  //           disabled={
+  //             currentId === starterOne.id
+  //               ? true
+  //               : starterOneHp <= 0
+  //               ? true
+  //               : false
+  //           }
+  //           onClick={() => battle("starterOne")}
+  //         >
+  //           Change Starter
+  //         </button>
+  //       </li>
 
-//       <div style={{ width: "90%" }} />
+  //       <div style={{ width: "90%" }} />
 
-//       <li>
-//         <img height={50} width={50} src={starterTwo.profile_pic} />
-//         <p
-//           style={{ ml: 25 }}
-//           primary={`starter 2: ${starterTwo.character_name}`}
-//           secondary={`${starterTwoHp}/${starterTwo.hp} hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${starterTwo.speed} speed`}
-//         />
-//         <button
-//           id="attackButton"
-//           className="starterTwo"
-//           style={{
-//             color: "black",
-//             fontSize: 15,
-//             fontFamily: "New Super Mario Font U",
-//             borderColor: "black",
-//             ml: 2,
-//           }}
-//           disabled={
-//             currentId === starterTwo.id
-//               ? true
-//               : starterTwoHp <= 0
-//               ? true
-//               : false
-//           }
-//           onClick={() => battle("starterTwo")}
-//         >
-//           Change Starter
-//         </button>
-//       </li>
-//     </ul>
-//   )
-// }
-//   `;
+  //       <li>
+  //         <img height={50} width={50} src={starterTwo.profile_pic} />
+  //         <p
+  //           style={{ ml: 25 }}
+  //           primary={`starter 2: ${starterTwo.character_name}`}
+  //           secondary={`${starterTwoHp}/${starterTwo.hp} hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${starterTwo.speed} speed`}
+  //         />
+  //         <button
+  //           id="attackButton"
+  //           className="starterTwo"
+  //           style={{
+  //             color: "black",
+  //             fontSize: 15,
+  //             fontFamily: "New Super Mario Font U",
+  //             borderColor: "black",
+  //             ml: 2,
+  //           }}
+  //           disabled={
+  //             currentId === starterTwo.id
+  //               ? true
+  //               : starterTwoHp <= 0
+  //               ? true
+  //               : false
+  //           }
+  //           onClick={() => battle("starterTwo")}
+  //         >
+  //           Change Starter
+  //         </button>
+  //       </li>
+  //     </ul>
+  //   )
+  // }
+  //   `;
 
-//   for (usersConsumables of usersConsumableItems) {
-//     console.log("am i looping");
-//     document.getElementById("inventoryBox").innerHTML = `
-//     <div height="140px" overflow={"scroll"}>
-//                        <div
-//                          style=${{ height: "40px", padding: 10 }}
-//                        >
-//                          <ul>
-//                            <div
-//                            style=${{
-//                              display: "flex",
-//                              flexDirection: "row",
-//                              columnGap: "5",
-//                              justifyContent: "space-around",
-//                              alignItems: "center",
-//                              }}
-//                            >
-//                              <p
-//                                style=${{
-//                                  color: "black",
-//                                  fontSize: "15px",
-//                                }}
-//                              >
-//                                ${usersConsumables.number}X
-//                              </p>
-//                              <img
-//                                height="35"
-//                                width="35"
-//                                src=${usersConsumables.item_pic}
-//                              />
-//                            </div>
+  //   for (usersConsumables of usersConsumableItems) {
+  //     console.log("am i looping");
+  //     document.getElementById("inventoryBox").innerHTML = `
+  //     <div height="140px" overflow={"scroll"}>
+  //                        <div
+  //                          style=${{ height: "40px", padding: 10 }}
+  //                        >
+  //                          <ul>
+  //                            <div
+  //                            style=${{
+  //                              display: "flex",
+  //                              flexDirection: "row",
+  //                              columnGap: "5",
+  //                              justifyContent: "space-around",
+  //                              alignItems: "center",
+  //                              }}
+  //                            >
+  //                              <p
+  //                                style=${{
+  //                                  color: "black",
+  //                                  fontSize: "15px",
+  //                                }}
+  //                              >
+  //                                ${usersConsumables.number}X
+  //                              </p>
+  //                              <img
+  //                                height="35"
+  //                                width="35"
+  //                                src=${usersConsumables.item_pic}
+  //                              />
+  //                            </div>
 
-//                            <p
-//                              style=${{
-//                                ml: 20,
-//                                fontFamily: "New Super Mario Font U",
-//                              }}
-//                              primary=${usersConsumables.name}
-//                            />
+  //                            <p
+  //                              style=${{
+  //                                ml: 20,
+  //                                fontFamily: "New Super Mario Font U",
+  //                              }}
+  //                              primary=${usersConsumables.name}
+  //                            />
 
-//                            <p
-//                              style=${{
-//                                ml: 5,
-//                                fontFamily: "New Super Mario Font U",
-//                                width: "70px",
-//                              }}
-//                              secondary=${
-//                                usersConsumables.item_hp === 0
-//                                  ? ""
-//                                  : `+${usersConsumables.item_hp} hp`
-//                              } ${
-//       usersConsumables.item_stamina === 0
-//         ? ""
-//         : usersConsumables.item_hp === 0
-//         ? `+${usersConsumables.item_stamina} stamina`
-//         : `| +${usersConsumables.item_stamina} stamina`
-//     } ${
-//       usersConsumables.item_speed === 0
-//         ? ""
-//         : `| +${usersConsumables.item_speed} speed`
-//     }
-//                            />
-//                            <button
-//                              id="attackButton"
-//                              className="consumable"
-//                              style=${{
-//                                color: "black",
-//                                fontSize: 15,
-//                                fontFamily: "New Super Mario Font U",
-//                                borderColor: "black",
-//                              }}
-//                              disabled=${
-//                                usersConsumables.number <= 0 ? true : false
-//                              }
-//                            >
-//                              Use Consumable
-//                            </button>
-//                          </ul>
-//                          <div style=${{ width: "90%" }} />
-//                        </div>
-//                </div>
-//  `;
-//   }
+  //                            <p
+  //                              style=${{
+  //                                ml: 5,
+  //                                fontFamily: "New Super Mario Font U",
+  //                                width: "70px",
+  //                              }}
+  //                              secondary=${
+  //                                usersConsumables.item_hp === 0
+  //                                  ? ""
+  //                                  : `+${usersConsumables.item_hp} hp`
+  //                              } ${
+  //       usersConsumables.item_stamina === 0
+  //         ? ""
+  //         : usersConsumables.item_hp === 0
+  //         ? `+${usersConsumables.item_stamina} stamina`
+  //         : `| +${usersConsumables.item_stamina} stamina`
+  //     } ${
+  //       usersConsumables.item_speed === 0
+  //         ? ""
+  //         : `| +${usersConsumables.item_speed} speed`
+  //     }
+  //                            />
+  //                            <button
+  //                              id="attackButton"
+  //                              className="consumable"
+  //                              style=${{
+  //                                color: "black",
+  //                                fontSize: 15,
+  //                                fontFamily: "New Super Mario Font U",
+  //                                borderColor: "black",
+  //                              }}
+  //                              disabled=${
+  //                                usersConsumables.number <= 0 ? true : false
+  //                              }
+  //                            >
+  //                              Use Consumable
+  //                            </button>
+  //                          </ul>
+  //                          <div style=${{ width: "90%" }} />
+  //                        </div>
+  //                </div>
+  //  `;
+  //   }
 
   // document.getElementById("inventoryBox").innerHTML = `
   //    <div height="140px" overflow={"scroll"}>
