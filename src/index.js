@@ -1270,89 +1270,89 @@ function initBattle() {
   // }
   //   `;
 
-  //   for (usersConsumables of usersConsumableItems) {
-  //     console.log("am i looping");
-  //     document.getElementById("inventoryBox").innerHTML = `
-  //     <div height="140px" overflow={"scroll"}>
-  //                        <div
-  //                          style=${{ height: "40px", padding: 10 }}
-  //                        >
-  //                          <ul>
-  //                            <div
-  //                            style=${{
-  //                              display: "flex",
-  //                              flexDirection: "row",
-  //                              columnGap: "5",
-  //                              justifyContent: "space-around",
-  //                              alignItems: "center",
-  //                              }}
-  //                            >
-  //                              <p
-  //                                style=${{
-  //                                  color: "black",
-  //                                  fontSize: "15px",
-  //                                }}
-  //                              >
-  //                                ${usersConsumables.number}X
-  //                              </p>
-  //                              <img
-  //                                height="35"
-  //                                width="35"
-  //                                src=${usersConsumables.item_pic}
-  //                              />
-  //                            </div>
+    for ( const usersConsumables of usersConsumableItems) {
+      console.log("am i looping");
+      document.getElementById("inventoryBox").innerHTML = `
+      <div height="140px" overflow="scroll">
+                         <div
+                           style=${{ height: "40px", padding: 10 }}
+                         >
+                           <ul>
+                             <div
+                             style=${{
+                               display: "flex",
+                               flexDirection: "row",
+                               columnGap: "5",
+                               justifyContent: "space-around",
+                               alignItems: "center",
+                               }}
+                             >
+                               <p
+                                 style=${{
+                                   color: "black",
+                                   fontSize: "15px",
+                                 }}
+                               >
+                                 ${usersConsumables.number}X
+                               </p>
+                               <img
+                                 height="35"
+                                 width="35"
+                                 src=${usersConsumables.item_pic}
+                               />
+                             </div>
 
-  //                            <p
-  //                              style=${{
-  //                                ml: 20,
-  //                                fontFamily: "New Super Mario Font U",
-  //                              }}
-  //                              primary=${usersConsumables.name}
-  //                            />
+                             <p
+                               style=${{
+                                 ml: 20,
+                                 fontFamily: "New Super Mario Font U",
+                               }}
+                               primary=${usersConsumables.name}
+                             />
 
-  //                            <p
-  //                              style=${{
-  //                                ml: 5,
-  //                                fontFamily: "New Super Mario Font U",
-  //                                width: "70px",
-  //                              }}
-  //                              secondary=${
-  //                                usersConsumables.item_hp === 0
-  //                                  ? ""
-  //                                  : `+${usersConsumables.item_hp} hp`
-  //                              } ${
-  //       usersConsumables.item_stamina === 0
-  //         ? ""
-  //         : usersConsumables.item_hp === 0
-  //         ? `+${usersConsumables.item_stamina} stamina`
-  //         : `| +${usersConsumables.item_stamina} stamina`
-  //     } ${
-  //       usersConsumables.item_speed === 0
-  //         ? ""
-  //         : `| +${usersConsumables.item_speed} speed`
-  //     }
-  //                            />
-  //                            <button
-  //                              id="attackButton"
-  //                              className="consumable"
-  //                              style=${{
-  //                                color: "black",
-  //                                fontSize: 15,
-  //                                fontFamily: "New Super Mario Font U",
-  //                                borderColor: "black",
-  //                              }}
-  //                              disabled=${
-  //                                usersConsumables.number <= 0 ? true : false
-  //                              }
-  //                            >
-  //                              Use Consumable
-  //                            </button>
-  //                          </ul>
-  //                          <div style=${{ width: "90%" }} />
-  //                        </div>
-  //                </div>
-  //  `;
-  //   }
+                             <p
+                               style=${{
+                                 ml: 5,
+                                 fontFamily: "New Super Mario Font U",
+                                 width: "70px",
+                               }}
+                               secondary=${
+                                 usersConsumables.item_hp === 0
+                                   ? ""
+                                   : `+${usersConsumables.item_hp} hp`
+                               } ${
+        usersConsumables.item_stamina === 0
+          ? ""
+          : usersConsumables.item_hp === 0
+          ? `+${usersConsumables.item_stamina} stamina`
+          : `| +${usersConsumables.item_stamina} stamina`
+      } ${
+        usersConsumables.item_speed === 0
+          ? ""
+          : `| +${usersConsumables.item_speed} speed`
+      }
+                             />
+                             <button
+                               id="attackButton"
+                               className="consumable"
+                               style=${{
+                                 color: "black",
+                                 fontSize: 15,
+                                 fontFamily: "New Super Mario Font U",
+                                 borderColor: "black",
+                               }}
+                               disabled=${
+                                 usersConsumables.number <= 0 ? true : false
+                               }
+                             >
+                               Use Consumable
+                             </button>
+                           </ul>
+                           <div style=${{ width: "90%" }} />
+                         </div>
+                 </div>
+   `;
+    }
 
   // document.getElementById("inventoryBox").innerHTML = `
   //    <div height="140px" overflow={"scroll"}>
