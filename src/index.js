@@ -216,7 +216,8 @@ let usersConsumableItems = [];
 const getAllUsersItems = () => {
   axios({
     method: "GET",
-    url: "/api/inventory/",
+    // url: "/api/inventory/user/consumable",
+    url: "/api/inventory/all/items",
   })
     .then((response) => {
       usersConsumableItems = response.data;
