@@ -1321,16 +1321,16 @@ function initBattle() {
                                    ? ""
                                    : `+${usersConsumables.item_hp} hp`
                                } ${
-        usersConsumables.item_stamina === 0
-          ? ""
-          : usersConsumables.item_hp === 0
-          ? `+${usersConsumables.item_stamina} stamina`
-          : `| +${usersConsumables.item_stamina} stamina`
-      } ${
-        usersConsumables.item_speed === 0
-          ? ""
-          : `| +${usersConsumables.item_speed} speed`
-      }
+                                usersConsumables.item_stamina === 0
+                                 ? ""
+                                  : usersConsumables.item_hp === 0
+                                  ? `+${usersConsumables.item_stamina} stamina`
+                                  : `| +${usersConsumables.item_stamina} stamina`
+                              } ${
+                                usersConsumables.item_speed === 0
+                                  ? ""
+                                  : `| +${usersConsumables.item_speed} speed`
+                              }
                              />
                              <button
                                id="attackButton"
