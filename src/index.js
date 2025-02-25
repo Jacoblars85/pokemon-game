@@ -1243,7 +1243,12 @@ function initBattle() {
         </button>
       </li>
 
-      <div style=${{ width: "90%" }} />
+      <div style=${{ display: block,
+        height: "1px",
+        border: 0,
+        borderTop: "1px solid #ccc",
+        margin: "1em 0",
+        padding: 0 }} />
 
       <li>
         <img height="50" width="50" src=${starterTwo.profile_pic} />
@@ -1360,7 +1365,14 @@ function initBattle() {
                                Use Consumable
                              </button>
                            </ul>
-                           <div style=${{ width: "90%" }} />
+                           <div style=${{ 
+                            display: block,
+                            height: "1px",
+                            border: 0,
+                            borderTop: "1px solid #ccc",
+                            margin: "1em 0",
+                            padding: 0,
+                           }} />
                          </div>
                  </div>
    `;
