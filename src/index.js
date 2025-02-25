@@ -1066,6 +1066,7 @@ function initBattle() {
   document.getElementById("starterName").innerHTML = starter.name;
   document.getElementById("enemyName").innerHTML = enemy.name;
 
+// InnerHtml for the attack box
   document.getElementById("attackBox").innerHTML = `
 <button
             id="attackButton"
@@ -1169,6 +1170,7 @@ function initBattle() {
           </button>
 `;
 
+// InnerHtml for the switch box
 if (starter.length === 1 ) {
   document.getElementById("switchBox").innerHTML = `
       <ul style=${{ padding: 0 }}>
@@ -1267,7 +1269,7 @@ if (starter.length === 1 ) {
 }
 
 
-
+// InnerHtml for the inventory box
     for ( const usersConsumables of usersConsumableItems) {
       console.log("am i looping");
       document.getElementById("inventoryBox").innerHTML = `
