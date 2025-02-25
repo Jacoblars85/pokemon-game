@@ -1173,11 +1173,11 @@ if (starter.length === 1 ) {
   document.getElementById("switchBox").innerHTML = `
       <ul style=${{ padding: 0 }}>
         <li>
-          <img height={50} width={50} src=${starterOne.profile_pic} />
+          <img height="50" width="50" src=${starterOne.profile_pic} />
           <p
             style=${{ ml: 25 }}
-            primary={starter 1: ${starterOne.character_name}}
-            secondary={${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed}
+            primary="starter 1: ${starterOne.character_name}"
+            secondary="${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${starterOne.speed} speed"
           />
           <button
             id="attackButton"
