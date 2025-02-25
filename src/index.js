@@ -47,7 +47,7 @@ let randomEnemy = Math.floor(Math.random() * 8 + 1);
 let enemyOne;
 let starterOne;
 let starterTwo;
-let usersConsumableItems;
+let usersConsumableItems = [];
 
 // axios functions
 // const getStarters = () => {
@@ -219,7 +219,7 @@ const getAllUsersItems = () => {
     url: "/api/inventory/",
   })
     .then((response) => {
-      usersConsumableItems = response.data[0];
+      usersConsumableItems = response.data;
     })
     .catch((err) => {
       console.log(err);
