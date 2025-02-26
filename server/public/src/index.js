@@ -312,22 +312,22 @@ battleZonesMap.forEach((row, i) => {
 });
 
 const worldImage = new Image();
-worldImage.src = "../src/img/bowsermon-map-v1.png";
+worldImage.src = "./src/img/bowsermon-map-v1.png";
 
 const foregroundImage = new Image();
-foregroundImage.src = "../src/img/foregroundObjects.png";
+foregroundImage.src = "./src/img/foregroundObjects.png";
 
 const playerDownImage = new Image();
-playerDownImage.src = "../src/img/playerDown.png";
+playerDownImage.src = "./src/img/playerDown.png";
 
 const playerUpImage = new Image();
-playerUpImage.src = "../src/img/playerUp.png";
+playerUpImage.src = "./src/img/playerUp.png";
 
 const playerLeftImage = new Image();
-playerLeftImage.src = "../src/img/playerLeft.png";
+playerLeftImage.src = "./src/img/playerLeft.png";
 
 const playerRightImage = new Image();
-playerRightImage.src = "../src/img/playerRight.png";
+playerRightImage.src = "./src/img/playerRight.png";
 
 class Sprite {
   constructor({
@@ -707,7 +707,7 @@ window.addEventListener("keyup", (e) => {
 });
 
 const battleBackgroundImage = new Image();
-battleBackgroundImage.src = "../src/img/backgroundImg/battleBackground.png";
+battleBackgroundImage.src = "./src/img/backgroundImg/battleBackground.png";
 
 class Character extends Sprite {
   constructor({
