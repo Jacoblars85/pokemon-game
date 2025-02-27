@@ -232,16 +232,6 @@ const getAllUsersItems = () => {
 // getBasicAttacks();
 getAllUsersItems();
 
-// All current varibles for battle
-// const [currentId, setCurrentId] = useState(0);
-// const [currentName, setCurrentName] = useState("");
-// const [currentHp, setCurrentHp] = useState(0);
-// const [currentStamina, setCurrentStamina] = useState(0);
-// const [currentSpeed, setCurrentSpeed] = useState(0);
-// const [currentDamage, setDamage] = useState(0);
-// const [maxHp, setMaxHp] = useState(0);
-// const [maxStamina, setMaxStamina] = useState(0);
-
 const canvas = document.getElementById("canvasRef");
 const c = canvas.getContext("2d");
 
