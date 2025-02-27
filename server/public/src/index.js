@@ -1092,7 +1092,7 @@ function initBattle() {
                 ? starterOneStamina < starterOne.attack_stamina
                   ? true
                   : false
-                : currentId === starterOne.id
+                : starter.isCurrentStarter === true
                 ? starterOneStamina < starterOne.attack_stamina
                   ? true
                   : false
@@ -1126,7 +1126,7 @@ function initBattle() {
                 ? starterOneStamina < kickStamina
                   ? true
                   : false
-                : currentId === starterOne.id
+                : starter.isCurrentStarter === true
                 ? starterOneStamina < kickStamina
                   ? true
                   : false
@@ -1160,7 +1160,7 @@ function initBattle() {
                 ? starterOneStamina < pokeStamina
                   ? true
                   : false
-                : currentId === starterOne.id
+                : starter.isCurrentStarter === true
                 ? starterOneStamina < pokeStamina
                   ? true
                   : false
@@ -1198,7 +1198,7 @@ function initBattle() {
               borderColor: "black",
             }}
             disabled=${
-              currentId === starterOne.id
+              starter.isCurrentStarter === true
                 ? true
                 : starterOneHp <= 0
                 ? true
@@ -1235,7 +1235,7 @@ function initBattle() {
             borderColor: "black",
           }}
           disabled=${
-            currentId === starterOne.id
+            starter.isCurrentStarter === true
               ? true
               : starterOneHp <= 0
               ? true
@@ -1277,7 +1277,7 @@ function initBattle() {
             ml: 2,
           }}
           disabled=${
-            currentId === starterTwo.id
+            starter2.isCurrentStarter === true
               ? true
               : starterTwoHp <= 0
               ? true
