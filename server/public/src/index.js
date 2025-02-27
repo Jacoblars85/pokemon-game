@@ -740,7 +740,7 @@ class Character extends Sprite {
       opacity,
     });
     this.isEnemy = isEnemy;
-    this.isCurrentStarter = isCurrentStarter
+    this.isCurrentStarter = isCurrentStarter;
     this.name = name;
     this.health = health;
     this.maxHealth = maxHealth;
@@ -1246,12 +1246,14 @@ function initBattle() {
         </button>
       </li>
 
-      <div style=${{ display: block,
+      <div style=${{
+        display: block,
         height: "1px",
         border: 0,
         borderTop: "1px solid #ccc",
         margin: "1em 0",
-        padding: 0 }} />
+        padding: 0,
+      }} />
 
       <li>
         <img height="50" width="50" src=${starterTwo.profile_pic} />
@@ -1368,13 +1370,13 @@ function initBattle() {
                                Use Consumable
                              </button>
                            </ul>
-                           <div style=${{ 
-                            display: block,
-                            height: "1px",
-                            border: 0,
-                            borderTop: "1px solid #ccc",
-                            margin: "1em 0",
-                            padding: 0,
+                           <div style=${{
+                             display: block,
+                             height: "1px",
+                             border: 0,
+                             borderTop: "1px solid #ccc",
+                             margin: "1em 0",
+                             padding: 0,
                            }} />
                          </div>
                  </div>
