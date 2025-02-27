@@ -1028,6 +1028,7 @@ function initBattle() {
       alignment: 86,
     },
     animate: true,
+    isCurrentStarter: true,
     name: starterOneName,
     health: starterOneHp,
     maxHealth: starterOneHp,
