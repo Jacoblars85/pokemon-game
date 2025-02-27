@@ -1545,14 +1545,14 @@ function initBattle() {
           console.log("switching starter 1");
 
           currentStarter = starter;
-          starter.isCurrentStarter = true
+          starter.isCurrentStarter = true;
 
           // this.image = starterOne.battle_pic;
         } else if (button.className === "starterTwo") {
           console.log("switching starter 2");
 
           currentStarter = starter2;
-          starter2.isCurrentStarter = true
+          starter2.isCurrentStarter = true;
 
           // this.image = starterTwo.battle_pic;
         } else if (button.id === "consumable") {
