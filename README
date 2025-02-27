@@ -1,6 +1,7 @@
 Problems:
 
 1. fix the starter.faint activating without starter being at 0
+2. changed the disabled variables to the classes that change the hp and stamina
 3. fix the changing to a differnet starter
 4. get new font instead of the mario font
 5. create the new hp, speed and damage system
