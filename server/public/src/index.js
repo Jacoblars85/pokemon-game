@@ -728,6 +728,7 @@ class Character extends Sprite {
     fx_img,
     max_frames,
     hold_time,
+    isCurrentStarter = false,
   }) {
     super({
       position,
@@ -748,6 +749,7 @@ class Character extends Sprite {
     this.fx_img = fx_img;
     this.max_frames = max_frames;
     this.hold_time = hold_time;
+    this.isCurrentStarter = isCurrentStarter
   }
 
   faint() {
