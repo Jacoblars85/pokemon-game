@@ -719,6 +719,7 @@ class Character extends Sprite {
     rotation = 0,
     opacity = 1,
     isEnemy = false,
+    isCurrentStarter = false,
     name = "no name",
     health,
     maxHealth,
@@ -728,7 +729,6 @@ class Character extends Sprite {
     fx_img,
     max_frames,
     hold_time,
-    isCurrentStarter = false,
   }) {
     super({
       position,
@@ -740,6 +740,7 @@ class Character extends Sprite {
       opacity,
     });
     this.isEnemy = isEnemy;
+    this.isCurrentStarter = isCurrentStarter
     this.name = name;
     this.health = health;
     this.maxHealth = maxHealth;
@@ -749,7 +750,6 @@ class Character extends Sprite {
     this.fx_img = fx_img;
     this.max_frames = max_frames;
     this.hold_time = hold_time;
-    this.isCurrentStarter = isCurrentStarter
   }
 
   faint() {
