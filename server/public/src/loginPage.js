@@ -51,6 +51,8 @@ const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
 const errors = useSelector((store) => store.errors);
 
+
+document.getElementById('loginPage').innerHTML = `
 <div>
   <form className="formPanel" onSubmit={login}>
     <h2
@@ -113,4 +115,5 @@ const errors = useSelector((store) => store.errors);
       Register
     </button>
   </center>
-</div>;
+</div>
+`
