@@ -1,43 +1,4 @@
-import React from "react";
-
-import { useHistory } from "react-router-dom";
-import RegisterForm from "../RegisterForm/RegisterForm";
-
-function RegisterPage() {
-  const history = useHistory();
-
-  return (
-    <div>
-
-      <RegisterForm />
-
-      <center>
-        <button
-          type="button"
-          className="btn btn_asLink"
-          onClick={() => {
-            history.push("/login");
-          }}
-        >
-          Login
-        </button>
-      </center>
-    </div>
-  );
-}
-
-export default RegisterPage;
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import TextField from '@mui/material/TextField';
-
-function RegisterForm() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const errors = useSelector((store) => store.errors);
-  const dispatch = useDispatch();
-
-  const registerUser = (event) => {
+const registerUser = (event) => {
     event.preventDefault();
 
     dispatch({
@@ -47,10 +8,19 @@ function RegisterForm() {
         password: password,
       },
     });
-  }; // end registerUser
+  }; 
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const errors = useSelector((store) => store.errors);
+  const dispatch = useDispatch();
+
+function RegisterPage() {
 
   return (
-    <form className="formPanel" onSubmit={registerUser}>
+    <div>
+
+<form className="formPanel" onSubmit={registerUser}>
       <h2 style={{ margin: "5px", fontSize: "35px", textShadow: "3px 3px 3px gray"}}>Register User</h2>
       <div style={{ height: "25px", width: "100%"}}>
       {errors.loginMessage && (
@@ -91,7 +61,21 @@ function RegisterForm() {
         <input className="btn" type="submit" name="submit" value="Register" />
       </div>
     </form>
+
+      <center>
+        <button
+          type="button"
+          className="btn btn_asLink"
+          onClick={() => {
+            history.push("/login");
+          }}
+        >
+          Login
+        </button>
+      </center>
+    </div>
   );
 }
 
-export default RegisterForm;
+
+
