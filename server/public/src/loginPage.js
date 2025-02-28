@@ -45,7 +45,7 @@ const login = (event) => {
   } else {
     dispatch({ type: "LOGIN_INPUT_ERROR" });
   }
-}; // end login
+}; 
 
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
@@ -71,7 +71,7 @@ const errors = useSelector((store) => store.errors);
     </div>
     <div>
       <label htmlFor="username">
-        <TextField
+        <input
           margin="dense"
           variant="standard"
           type="text"
@@ -85,7 +85,7 @@ const errors = useSelector((store) => store.errors);
     </div>
     <div>
       <label htmlFor="password">
-        <TextField
+        <input
           margin="dense"
           variant="standard"
           type="password"
