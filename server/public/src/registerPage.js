@@ -8,16 +8,35 @@ const registerUser = (event) => {
         password: password,
       },
     });
+    function* registerUser(action) {
+        try {
+          // clear any existing error on the registration page
+          yield put({ type: 'CLEAR_REGISTRATION_ERROR' });
+      
+          // passes the username and password from the payload to the server
+          yield axios.post('/api/user/register', action.payload);
+      
+          // automatically log a user in after registration
+          yield put({ type: 'LOGIN', payload: action.payload });
+      
+          // set to 'login' mode so they see the login screen
+          // after registration or after they log out
+          yield put({ type: 'SET_TO_LOGIN_MODE' });
+        } catch (error) {
+          console.log('Error with user registration:', error);
+          yield put({ type: 'REGISTRATION_FAILED' });
+        }
+      }
+      
   }; 
+
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector((store) => store.errors);
-  const dispatch = useDispatch();
 
-function RegisterPage() {
 
-  return (
+
     <div>
 
 <form className="formPanel" onSubmit={registerUser}>
@@ -31,7 +50,7 @@ function RegisterPage() {
 </div>
       <div>
         <label htmlFor="username">
-          <TextField
+          <input
            margin="dense"
            variant="standard"
             type="text"
@@ -45,7 +64,7 @@ function RegisterPage() {
       </div>
       <div>
         <label htmlFor="password">
-          <TextField
+          <input
            margin="dense"
            variant="standard"
             type="password"
@@ -74,8 +93,7 @@ function RegisterPage() {
         </button>
       </center>
     </div>
-  );
-}
+
 
 
 
