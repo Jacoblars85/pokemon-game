@@ -12,25 +12,21 @@ const login = (event) => {
   };
 
   if (username && password) {
-
     axios({
-        method: "POST",
-        url: "/api/user/login",
-        data: {
-            username: username,
-            password: password,
-          },
-        config
+      method: "POST",
+      url: "/api/user/login",
+      data: {
+        username: username,
+        password: password,
+      },
+      config,
+    })
+      .then((response) => {
+        console.log("login worked?", response);
       })
-        .then((response) => {
-          console.log('login worked?', response);
-          
-        })
-        .catch((err) => {
-          console.log("error logging in user", err);
-        });
-
-    
+      .catch((err) => {
+        console.log("error logging in user", err);
+      });
   } else {
     dispatch({ type: "LOGIN_INPUT_ERROR" });
   }
