@@ -1,3 +1,7 @@
+const [username, setUsername] = useState("");
+const [password, setPassword] = useState("");
+const errors = useSelector((store) => store.errors);
+
 const registerUser = (event) => {
   event.preventDefault();
 
@@ -29,9 +33,7 @@ const registerUser = (event) => {
   }
 };
 
-const [username, setUsername] = useState("");
-const [password, setPassword] = useState("");
-const errors = useSelector((store) => store.errors);
+
 
 document.getElementById('registerPage').innerHTML = `
 <div>
