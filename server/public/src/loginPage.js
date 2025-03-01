@@ -1,3 +1,8 @@
+const [username, setUsername] = useState("");
+const [password, setPassword] = useState("");
+const errors = useSelector((store) => store.errors);
+
+
 const login = (event) => {
   event.preventDefault();
 
@@ -47,9 +52,7 @@ const login = (event) => {
   }
 }; 
 
-const [username, setUsername] = useState("");
-const [password, setPassword] = useState("");
-const errors = useSelector((store) => store.errors);
+
 
 
 document.getElementById('loginPage').innerHTML = `
