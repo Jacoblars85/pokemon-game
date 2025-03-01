@@ -1,6 +1,5 @@
-let username = ""
-let password = ""
-
+let username = "";
+let password = "";
 
 const errors = useSelector((store) => store.errors);
 
@@ -35,9 +34,7 @@ const registerUser = (event) => {
   }
 };
 
-
-
-document.getElementById('registerPage').innerHTML = `
+document.getElementById("registerPage").innerHTML = `
 <div>
   <form className="formPanel" onSubmit={registerUser}>
     <h2
@@ -101,4 +98,4 @@ document.getElementById('registerPage').innerHTML = `
     </button>
   </center>
 </div>
-`
+`;
