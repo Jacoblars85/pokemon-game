@@ -1,5 +1,7 @@
-const [username, setUsername] = useState("");
-const [password, setPassword] = useState("");
+let username = ""
+let password = ""
+
+
 const errors = useSelector((store) => store.errors);
 
 const registerUser = (event) => {
