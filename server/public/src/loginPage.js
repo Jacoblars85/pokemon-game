@@ -6,6 +6,11 @@ const errors = useSelector((store) => store.errors);
 const login = (event) => {
   event.preventDefault();
 
+  const config = {
+    headers: { "Content-Type": "application/json" },
+    withCredentials: true,
+  };
+
   if (username && password) {
     dispatch({
       type: "LOGIN",
@@ -14,6 +19,23 @@ const login = (event) => {
         password: password,
       },
     });
+
+    axios({
+        method: "POST",
+        url: "/api/user/login",
+        data: {
+            username: username,
+            password: password,
+          },
+        config
+      })
+        .then((response) => {
+          console.log('login worked?', response);
+          
+        })
+        .catch((err) => {
+          console.log("error logging in user", err);
+        });
 
     function* loginUser(action) {
       try {
