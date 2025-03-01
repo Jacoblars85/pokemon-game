@@ -1,9 +1,7 @@
-let username = ""
-let password = ""
-
+let username = "";
+let password = "";
 
 const errors = useSelector((store) => store.errors);
-
 
 const login = (event) => {
   event.preventDefault();
@@ -52,12 +50,9 @@ const login = (event) => {
   } else {
     dispatch({ type: "LOGIN_INPUT_ERROR" });
   }
-}; 
+};
 
-
-
-
-document.getElementById('loginPage').innerHTML = `
+document.getElementById("loginPage").innerHTML = `
 <div>
   <form className="formPanel" onSubmit={login}>
     <h2
@@ -121,4 +116,4 @@ document.getElementById('loginPage').innerHTML = `
     </button>
   </center>
 </div>
-`
+`;
