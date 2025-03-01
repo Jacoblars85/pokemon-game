@@ -13,6 +13,23 @@ const registerUser = (event) => {
       password: password,
     },
   });
+
+  axios({
+    method: "POST",
+    url: "/api/user/register",
+    data: {
+        username: username,
+        password: password,
+      },
+  })
+    .then((response) => {
+      console.log('register worked?', response);
+      
+    })
+    .catch((err) => {
+      console.log("error registering user", err);
+    });
+
   function* registerUser(action) {
     try {
       // clear any existing error on the registration page
