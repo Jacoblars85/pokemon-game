@@ -187,7 +187,6 @@ const getBasicAttacks = () => {
     url: `http://localhost:5001/api/characters/basic`,
   })
     .then((response) => {
-      console.log('response', response);
       // setKickAttack(response.data[0].attack_name);
       kickStamina = response.data[0].attack_stamina;
       // setKickAttackType(response.data[0].attack_type);
@@ -227,7 +226,6 @@ const getAllUsersItems = () => {
     .catch((err) => {
       console.log(err);
     });
-
 };
 
 // getStarters();
