@@ -1,4 +1,4 @@
-getAllUsersItems();
+// getAllUsersItems();
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
 // import forestBackground from "./img/backgroundImg/RockForest.webp";
 
@@ -214,11 +214,11 @@ let usersConsumableItems = [];
 //     });
 // };
 
-function getAllUsersItems() {
+const getAllUsersItems = () => {
   axios({
     method: "GET",
     // url: "/api/inventory/user/consumable",
-    url: "/api/inventory/all/items",
+    url: "http://localhost:5001/api/inventory/all/items",
   })
     .then((response) => {
       usersConsumableItems = response.data;
@@ -232,7 +232,7 @@ function getAllUsersItems() {
 // getStarters();
 // getEnemy();
 // getBasicAttacks();
-// getAllUsersItems();
+getAllUsersItems();
 
 const canvas = document.getElementById("canvasRef");
 const c = canvas.getContext("2d");
