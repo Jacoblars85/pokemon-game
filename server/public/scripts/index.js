@@ -35,12 +35,12 @@ const enemyInfo = {};
 const enemyAttackStats = {};
 
 // kick attack name and stamina
-const kickAttackStats = {};
-const kickStamina = 0;
+let kickAttackStats = {};
+let kickStamina = 0;
 
 // poke attack name and stamina
-const pokeAttackStats = {};
-const pokeStamina = 0;
+let pokeAttackStats = {};
+let pokeStamina = 0;
 
 let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
@@ -181,38 +181,39 @@ let usersConsumableItems = [];
 //     });
 // };
 
-// const getBasicAttacks = () => {
-//   axios({
-//     method: "GET",
-//     url: `https://reqres.in/api/characters/basic`,
-//   })
-//     .then((response) => {
-//       // setKickAttack(response.data[0].attack_name);
-//       kickStamina = response.data[0].attack_stamina;
-//       // setKickAttackType(response.data[0].attack_type);
+const getBasicAttacks = () => {
+  axios({
+    method: "GET",
+    url: `http://localhost:5001/api/characters/basic`,
+  })
+    .then((response) => {
+      console.log('response', response);
+      // setKickAttack(response.data[0].attack_name);
+      kickStamina = response.data[0].attack_stamina;
+      // setKickAttackType(response.data[0].attack_type);
 
-//       kickAttackStats = {
-//         attack_name: response.data[0].attack_name,
-//         attack_damage: response.data[0].attack_damage,
-//         attack_stamina: response.data[0].attack_stamina,
-//         attack_type: response.data[0].attack_type,
-//       };
+      kickAttackStats = {
+        attack_name: response.data[0].attack_name,
+        attack_damage: response.data[0].attack_damage,
+        attack_stamina: response.data[0].attack_stamina,
+        attack_type: response.data[0].attack_type,
+      };
 
-//       // setPokeAttack(response.data[1].attack_name);
-//       pokeStamina = response.data[1].attack_stamina;
-//       // setPokeAttackType(response.data[1].attack_type);
+      // setPokeAttack(response.data[1].attack_name);
+      pokeStamina = response.data[1].attack_stamina;
+      // setPokeAttackType(response.data[1].attack_type);
 
-//       pokeAttackStats = {
-//         attack_name: response.data[1].attack_name,
-//         attack_damage: response.data[1].attack_damage,
-//         attack_stamina: response.data[1].attack_stamina,
-//         attack_type: response.data[1].attack_type,
-//       };
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
+      pokeAttackStats = {
+        attack_name: response.data[1].attack_name,
+        attack_damage: response.data[1].attack_damage,
+        attack_stamina: response.data[1].attack_stamina,
+        attack_type: response.data[1].attack_type,
+      };
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 const getAllUsersItems = () => {
   axios({
@@ -231,7 +232,7 @@ const getAllUsersItems = () => {
 
 // getStarters();
 // getEnemy();
-// getBasicAttacks();
+getBasicAttacks();
 getAllUsersItems();
 
 const canvas = document.getElementById("canvasRef");
