@@ -25,14 +25,14 @@ const starterTwoInfo = {};
 const starterTwoAttackStats = {};
 
 // enemy stats/info
-const enemyHp = 0;
-const enemyStamina = 0;
-const enemyPicture = "";
-const enemyFxImg = "";
-const enemyName = "";
-const enemySpeed = 0;
-const enemyInfo = {};
-const enemyAttackStats = {};
+let enemyHp = 0;
+let enemyStamina = 0;
+let enemyPicture = "";
+let enemyFxImg = "";
+let enemyName = "";
+let enemySpeed = 0;
+let enemyInfo = {};
+let enemyAttackStats = {};
 
 // kick attack name and stamina
 let kickAttackStats = {};
@@ -146,7 +146,7 @@ let usersConsumableItems = [];
 const getEnemy = () => {
   axios({
     method: "GET",
-    url: `https://reqres.in/api/characters/enemy/${randomEnemy}`,
+    url: `http://localhost:5001/api/characters/enemy/${randomEnemy}`,
   })
     .then((response) => {
       enemyOne = response.data[0];
@@ -231,7 +231,7 @@ const getAllUsersItems = () => {
 };
 
 // getStarters();
-// getEnemy();
+getEnemy();
 getBasicAttacks();
 getAllUsersItems();
 
