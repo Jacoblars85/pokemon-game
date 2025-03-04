@@ -36,12 +36,12 @@ let enemyAttackStats = {};
 
 // kick attack name and stamina
 let kickAttackStats = {};
-let kickAttack = ""
+let kickAttack = "";
 let kickStamina = 0;
 
 // poke attack name and stamina
 let pokeAttackStats = {};
-let pokeAttack = ""
+let pokeAttack = "";
 let pokeStamina = 0;
 
 let randomEnemy = Math.floor(Math.random() * 8 + 1);
