@@ -41,6 +41,7 @@ let kickStamina = 0;
 
 // poke attack name and stamina
 let pokeAttackStats = {};
+let pokeAttack = ""
 let pokeStamina = 0;
 
 let randomEnemy = Math.floor(Math.random() * 8 + 1);
@@ -174,7 +175,7 @@ const getBasicAttacks = () => {
         attack_type: response.data[0].attack_type,
       };
 
-      // setPokeAttack(response.data[1].attack_name);
+      pokeAttack = response.data[1].attack_name;
       pokeStamina = response.data[1].attack_stamina;
       // setPokeAttackType(response.data[1].attack_type);
 
