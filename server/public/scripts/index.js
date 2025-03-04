@@ -36,6 +36,7 @@ let enemyAttackStats = {};
 
 // kick attack name and stamina
 let kickAttackStats = {};
+let kickAttack = ""
 let kickStamina = 0;
 
 // poke attack name and stamina
@@ -162,7 +163,7 @@ const getBasicAttacks = () => {
     url: `http://localhost:5001/api/characters/basic`,
   })
     .then((response) => {
-      // setKickAttack(response.data[0].attack_name);
+      kickAttack = response.data[0].attack_name;
       kickStamina = response.data[0].attack_stamina;
       // setKickAttackType(response.data[0].attack_type);
 
