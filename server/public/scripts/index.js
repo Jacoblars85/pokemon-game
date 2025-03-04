@@ -85,30 +85,6 @@ const getStarters = () => {
         };
 
       if (response.data.length === 2) {
-        starterOneHp = response.data[0].hp;
-        starterOneStamina = response.data[0].stamina;
-        starterOneName = response.data[0].character_name;
-        starterOneSpeed = response.data[0].speed;
-        starterPicture = response.data[0].battle_pic;
-        starterFxImg = response.data[0].fx_img;
-
-        starterOneInfo = {
-          character_name: response.data[0].character_name,
-          hp: response.data[0].hp,
-          stamina: response.data[0].stamina,
-          speed: response.data[0].speed,
-          battle_pic: response.data[0].battle_pic,
-        };
-
-        starterOneAttackStats = {
-          attack_name: response.data[0].attack_name,
-          attack_damage: response.data[0].attack_damage,
-          attack_stamina: response.data[0].attack_stamina,
-          attack_type: response.data[0].attack_type,
-          fx_img: response.data[0].fx_img,
-          max_frames: response.data[0].max_frames,
-          hold_time: response.data[0].hold_time,
-        };
 
         starterTwo = response.data[1];
 
