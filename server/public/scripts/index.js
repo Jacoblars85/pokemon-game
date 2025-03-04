@@ -15,14 +15,14 @@ let starterOneInfo = {};
 let starterOneAttackStats = {};
 
 // starter 2 stats/info
-const starterTwoHp = 0;
-const starterTwoStamina = 0;
-const starterTwoPicture = "";
-const starterTwoFxImg = "";
-const starterTwoName = "";
-const starterTwoSpeed = 0;
-const starterTwoInfo = {};
-const starterTwoAttackStats = {};
+let starterTwoHp = 0;
+let starterTwoStamina = 0;
+let starterTwoPicture = "";
+let starterTwoFxImg = "";
+let starterTwoName = "";
+let starterTwoSpeed = 0;
+let starterTwoInfo = {};
+let starterTwoAttackStats = {};
 
 // enemy stats/info
 let enemyHp = 0;
