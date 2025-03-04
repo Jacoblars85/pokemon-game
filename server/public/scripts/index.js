@@ -1215,7 +1215,7 @@ function initBattle() {
       </li>
 
       <div style=${{
-        display: block,
+        display: "block",
         height: "1px",
         border: 0,
         borderTop: "1px solid #ccc",
