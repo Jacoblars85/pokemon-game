@@ -54,7 +54,7 @@ let usersConsumableItems = [];
 const getStarters = () => {
   axios({
     method: "GET",
-    url: "/api/characters/starter",
+    url: "http://localhost:5001/api/characters/starter",
   })
     .then((response) => {
       starterOne = response.data[0];
