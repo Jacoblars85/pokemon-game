@@ -59,8 +59,7 @@ const getStarters = () => {
     .then((response) => {
       starterOne = response.data[0];
 
-      if (response.data.length === 1) {
-        starterOneHp = response.data[0].hp;
+      starterOneHp = response.data[0].hp;
         starterOneStamina = response.data[0].stamina;
         starterOneName = response.data[0].character_name;
         starterOneSpeed = response.data[0].speed;
@@ -84,7 +83,8 @@ const getStarters = () => {
           max_frames: response.data[0].max_frames,
           hold_time: response.data[0].hold_time,
         };
-      } else if (response.data.length === 2) {
+
+      if (response.data.length === 2) {
         starterOneHp = response.data[0].hp;
         starterOneStamina = response.data[0].stamina;
         starterOneName = response.data[0].character_name;
