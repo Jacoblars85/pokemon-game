@@ -204,9 +204,11 @@ SELECT "user_characters"."id" as "id",
     // this is the original where statement
     // WHERE "user_characters"."starter_1" = TRUE AND "user_id" = $1 OR "user_characters"."starter_2" = TRUE AND "user_id" = $1
 
-  const sqlValues = [req.user.id];
+//   const sqlValues = [req.user.id];
 
-    pool.query(query, sqlValues)
+
+    pool.query(query)
+// add sqlValues back in here ^
         .then(result => {
 
             for (const starter of result.rows) {
