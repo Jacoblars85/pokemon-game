@@ -5,14 +5,14 @@
 // import battleMusic from "../../audio/battleMusic.mp3";
 
 // starter stats/info
-const starterOneHp = 0;
-const starterOneStamina = 0;
-const starterPicture = "";
-const starterFxImg = "";
-const starterOneName = "";
-const starterOneSpeed = 0;
-const starterOneInfo = {};
-const starterOneAttackStats = {};
+let starterOneHp = 0;
+let starterOneStamina = 0;
+let starterPicture = "";
+let starterFxImg = "";
+let starterOneName = "";
+let starterOneSpeed = 0;
+let starterOneInfo = {};
+let starterOneAttackStats = {};
 
 // starter 2 stats/info
 const starterTwoHp = 0;
