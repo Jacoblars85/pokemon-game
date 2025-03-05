@@ -1,3 +1,5 @@
+let randomEnemy = Math.floor(Math.random() * 8 + 1);
+
 getStarters();
 getEnemy();
 getBasicAttacks();
@@ -49,7 +51,7 @@ let pokeAttackStats = {};
 let pokeAttack = "";
 let pokeStamina = 0;
 
-let randomEnemy = Math.floor(Math.random() * 8 + 1);
+// let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
 // setting each starter/enemy to a varriable
 let starters = []
