@@ -54,7 +54,7 @@ let pokeStamina = 0;
 // let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
 // setting each starter/enemy to a varriable
-let starters = []
+let starters = [];
 let enemyOne;
 let starterOne;
 let starterTwo;
@@ -67,8 +67,8 @@ function getStarters() {
     url: "http://localhost:5001/api/characters/starter",
   })
     .then((response) => {
-      starters = response.data
-      
+      starters = response.data;
+
       starterOne = response.data[0];
 
       starterOneHp = response.data[0].hp;
@@ -128,7 +128,7 @@ function getStarters() {
     .catch((err) => {
       console.log(err);
     });
-};
+}
 
 function getEnemy() {
   axios({
@@ -166,7 +166,7 @@ function getEnemy() {
     .catch((err) => {
       console.log(err);
     });
-};
+}
 
 function getBasicAttacks() {
   axios({
@@ -199,7 +199,7 @@ function getBasicAttacks() {
     .catch((err) => {
       console.log(err);
     });
-};
+}
 
 function getAllUsersItems() {
   axios({
@@ -213,7 +213,7 @@ function getAllUsersItems() {
     .catch((err) => {
       console.log(err);
     });
-};
+}
 
 // getStarters();
 // getEnemy();
@@ -1151,7 +1151,7 @@ function initBattle() {
           </button>
 `;
 
-console.log('starters', starters);
+  console.log("starters", starters);
 
   // InnerHtml for the switch box
   if (starters.length == 1) {
