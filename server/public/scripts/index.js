@@ -49,7 +49,6 @@ let pokeAttackStats = {};
 let pokeAttack = "";
 let pokeStamina = 0;
 
-
 // setting each starter/enemy to a varriable
 let starters = [];
 let enemyOne;
@@ -210,7 +209,6 @@ function getAllUsersItems() {
       console.log(err);
     });
 }
-
 
 const canvas = document.getElementById("canvasRef");
 const c = canvas.getContext("2d");
@@ -1262,8 +1260,8 @@ function initBattle() {
     `;
   }
 
-  console.log('usersConsumableItems', usersConsumableItems);
-  
+  console.log("usersConsumableItems", usersConsumableItems);
+
   // InnerHtml for the inventory box
   for (const usersConsumables of usersConsumableItems) {
     document.getElementById("inventoryBox").innerHTML = `
