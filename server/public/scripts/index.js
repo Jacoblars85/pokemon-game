@@ -1,3 +1,8 @@
+getStarters();
+getEnemy();
+getBasicAttacks();
+getAllUsersItems();
+
 // getAllUsersItems();
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
 // import forestBackground from "./img/backgroundImg/RockForest.webp";
@@ -208,10 +213,10 @@ const getAllUsersItems = () => {
     });
 };
 
-getStarters();
-getEnemy();
-getBasicAttacks();
-getAllUsersItems();
+// getStarters();
+// getEnemy();
+// getBasicAttacks();
+// getAllUsersItems();
 
 const canvas = document.getElementById("canvasRef");
 const c = canvas.getContext("2d");
