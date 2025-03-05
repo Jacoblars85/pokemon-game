@@ -59,7 +59,7 @@ let starterTwo;
 let usersConsumableItems = [];
 
 // axios functions
-const getStarters = () => {
+function getStarters() {
   axios({
     method: "GET",
     url: "http://localhost:5001/api/characters/starter",
@@ -128,7 +128,7 @@ const getStarters = () => {
     });
 };
 
-const getEnemy = () => {
+function getEnemy() {
   axios({
     method: "GET",
     url: `http://localhost:5001/api/characters/enemy/${randomEnemy}`,
@@ -166,7 +166,7 @@ const getEnemy = () => {
     });
 };
 
-const getBasicAttacks = () => {
+function getBasicAttacks() {
   axios({
     method: "GET",
     url: `http://localhost:5001/api/characters/basic`,
@@ -199,7 +199,7 @@ const getBasicAttacks = () => {
     });
 };
 
-const getAllUsersItems = () => {
+function getAllUsersItems() {
   axios({
     method: "GET",
     // url: "/api/inventory/user/consumable",
