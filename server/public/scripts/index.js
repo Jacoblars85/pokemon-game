@@ -67,8 +67,8 @@ function getStarters() {
     url: "http://localhost:5001/api/characters/starter",
   })
     .then((response) => {
-      console.log('response.data', response.data);
       starters = response.data
+      
       starterOne = response.data[0];
 
       starterOneHp = response.data[0].hp;
@@ -1272,7 +1272,6 @@ console.log('starters', starters);
 
   // InnerHtml for the inventory box
   for (const usersConsumables of usersConsumableItems) {
-    console.log("am i looping");
     document.getElementById("inventoryBox").innerHTML = `
       <div height="140px" overflow="scroll">
                          <div
