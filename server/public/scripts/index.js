@@ -47,6 +47,7 @@ let pokeStamina = 0;
 let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
 // setting each starter/enemy to a varriable
+let starters = []
 let enemyOne;
 let starterOne;
 let starterTwo;
@@ -59,6 +60,8 @@ const getStarters = () => {
     url: "http://localhost:5001/api/characters/starter",
   })
     .then((response) => {
+      console.log('response.data', response.data);
+      starters = response.data
       starterOne = response.data[0];
 
       starterOneHp = response.data[0].hp;
@@ -1141,8 +1144,10 @@ function initBattle() {
           </button>
 `;
 
+console.log('starters', starters);
+
   // InnerHtml for the switch box
-  if (starter.length === 1) {
+  if (starters.length == 1) {
     document.getElementById("switchBox").innerHTML = `
       <ul style=${{ padding: 0 }}>
         <li>
@@ -1178,8 +1183,7 @@ function initBattle() {
         </li>
       </ul>
     `;
-  }
-  {
+  } else if (starters.length === 2) {
     document.getElementById("switchBox").innerHTML = `
     <ul style=${{ padding: 0 }}>
       <li>
