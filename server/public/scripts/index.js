@@ -1294,7 +1294,6 @@ function initBattle() {
                                  src=${usersConsumables.item_pic}
                                />
                              </div>
-
                              <p
                                style=${{
                                  ml: 20,
@@ -1542,7 +1541,7 @@ function initBattle() {
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
       } else if (e.target.innerHTML === "Switch") {
-        console.log("currentStarter", currentStarter);
+        // console.log("currentStarter", currentStarter);
 
         document.getElementById("switchBox").style.display = "block";
         document.getElementById("attackBox").style.display = "none";
