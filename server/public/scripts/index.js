@@ -201,8 +201,7 @@ function getBasicAttacks() {
 function getAllUsersItems() {
   axios({
     method: "GET",
-    // url: "/api/inventory/user/consumable",
-    url: "http://localhost:5001/api/inventory/all/items",
+    url: "http://localhost:5001/api/inventory/user/consumable",
   })
     .then((response) => {
       usersConsumableItems = response.data;
@@ -1263,6 +1262,8 @@ function initBattle() {
     `;
   }
 
+  console.log('usersConsumableItems', usersConsumableItems);
+  
   // InnerHtml for the inventory box
   for (const usersConsumables of usersConsumableItems) {
     document.getElementById("inventoryBox").innerHTML = `
@@ -1299,7 +1300,7 @@ function initBattle() {
                                  ml: 20,
                                  fontFamily: "New Super Mario Font U",
                                }}
-                               primary=${usersConsumables.name}
+                               primary=${usersConsumables.item_name}
                              />
 
                              <p
