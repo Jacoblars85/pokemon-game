@@ -5,10 +5,8 @@ getEnemy();
 getBasicAttacks();
 getAllUsersItems();
 
-// getAllUsersItems();
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
 // import forestBackground from "./img/backgroundImg/RockForest.webp";
-
 // import battleMusic from "../../audio/battleMusic.mp3";
 
 // starter stats/info
@@ -51,7 +49,6 @@ let pokeAttackStats = {};
 let pokeAttack = "";
 let pokeStamina = 0;
 
-// let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
 // setting each starter/enemy to a varriable
 let starters = [];
@@ -215,10 +212,6 @@ function getAllUsersItems() {
     });
 }
 
-// getStarters();
-// getEnemy();
-// getBasicAttacks();
-// getAllUsersItems();
 
 const canvas = document.getElementById("canvasRef");
 const c = canvas.getContext("2d");
