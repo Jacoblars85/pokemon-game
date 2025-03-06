@@ -1150,11 +1150,11 @@ function initBattle() {
         <li>
           <img height="50" width="50" src=${starterOne.profile_pic} />
           <p style=${{ ml: 25 }}>starter 1: ${starterOne.character_name}<p/>
-<p style=${{ ml: 25 }}>${starterOneHp}/${
-      starterOne.hp
-    } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
-      starterOne.speed
-    } speed
+          <p style=${{ ml: 25 }}>${starterOneHp}/${
+          starterOne.hp
+          } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
+          starterOne.speed
+          } speed
           <p/>
           <button
             id="attackButton"
