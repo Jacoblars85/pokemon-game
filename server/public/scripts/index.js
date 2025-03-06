@@ -1290,9 +1290,9 @@ function initBattle() {
                   style=${{
                     ml: 20,
                     fontFamily: "New Super Mario Font U",
-                    }}
-                  primary=${usersConsumables.item_name}
-                />
+                    }}>
+                  ${usersConsumables.item_name}
+                </p>
 
                 <p
                   style=${{
