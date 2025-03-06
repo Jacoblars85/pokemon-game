@@ -1151,10 +1151,10 @@ function initBattle() {
           <img height="50" width="50" src=${starterOne.profile_pic} />
           <p style=${{ ml: 25 }}>starter 1: ${starterOne.character_name} </p>
           <p style=${{ ml: 25 }}>${starterOneHp}/${
-          starterOne.hp
-          } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
-          starterOne.speed
-          } speed
+      starterOne.hp
+    } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
+      starterOne.speed
+    } speed
           </p>
           <button
             id="attackButton"
@@ -1185,10 +1185,10 @@ function initBattle() {
         <img height="50" width="50" src=${starterOne.profile_pic} />
         <p style=${{ ml: 25 }}>starter 1: ${starterOne.character_name}</p>
          <p style=${{ ml: 25 }}>${starterOneHp}/${
-            starterOne.hp
-            } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
-            starterOne.speed
-            } speed
+      starterOne.hp
+    } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
+      starterOne.speed
+    } speed
          </p>
         <button
           id="attackButton"
@@ -1224,10 +1224,10 @@ function initBattle() {
         <img height="50" width="50" src=${starterTwo.profile_pic} />
         <p style=${{ ml: 25 }}>starter 2: ${starterTwo.character_name}</p>
          <p style=${{ ml: 25 }}>${starterTwoHp}/${
-            starterTwo.hp
-            } hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${
-            starterTwo.speed
-            } speed
+      starterTwo.hp
+    } hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${
+      starterTwo.speed
+    } speed
         </p>
         <button
           id="attackButton"
@@ -1270,13 +1270,13 @@ function initBattle() {
                     columnGap: "5",
                     justifyContent: "space-around",
                     alignItems: "center",
-                    }}
+                  }}
                      >
                   <p
                     style=${{
                       color: "black",
                       fontSize: "15px",
-                        }}
+                    }}
                   >
                     ${usersConsumables.number}X
                   </p>
@@ -1290,7 +1290,7 @@ function initBattle() {
                   style=${{
                     ml: 20,
                     fontFamily: "New Super Mario Font U",
-                    }}>
+                  }}>
                   ${usersConsumables.item_name}
                 </p>
 
@@ -1299,22 +1299,22 @@ function initBattle() {
                     ml: 5,
                     fontFamily: "New Super Mario Font U",
                     width: "70px",
-                    }}>
+                  }}>
                   ${
                     usersConsumables.item_hp === 0
-                    ? ""
-                    : `+${usersConsumables.item_hp} hp`
-                    } ${
+                      ? ""
+                      : `+${usersConsumables.item_hp} hp`
+                  } ${
                     usersConsumables.item_stamina === 0
-                    ? ""
-                    : usersConsumables.item_hp === 0
-                    ? `+${usersConsumables.item_stamina} stamina`
-                    : `| +${usersConsumables.item_stamina} stamina`
-                    } ${
-                    usersConsumables.item_speed === 0
-                    ? ""
-                    : `| +${usersConsumables.item_speed} speed`
-                  }
+                  ? ""
+                  : usersConsumables.item_hp === 0
+                  ? `+${usersConsumables.item_stamina} stamina`
+                  : `| +${usersConsumables.item_stamina} stamina`
+                  } ${
+                  usersConsumables.item_speed === 0
+                  ? ""
+                  : `| +${usersConsumables.item_speed} speed`
+    }
                 </p>
                 <button
                   id="attackButton"
@@ -1324,22 +1324,20 @@ function initBattle() {
                     fontSize: 15,
                     fontFamily: "New Super Mario Font U",
                     borderColor: "black",
-                    }}
-                  disabled=${
-                    usersConsumables.number <= 0 ? true : false
-                    }
+                  }}
+                  disabled=${usersConsumables.number <= 0 ? true : false}
                 >
                   Use Consumable
                 </button>
               </ul>
               <div style=${{
-                  display: "block",
-                  height: "1px",
-                  border: 0,
-                  borderTop: "1px solid #ccc",
-                  margin: "1em 0",
-                  padding: 0,
-                }} />
+                display: "block",
+                height: "1px",
+                border: 0,
+                borderTop: "1px solid #ccc",
+                margin: "1em 0",
+                padding: 0,
+              }} />
               </div>
           </div>
    `;
