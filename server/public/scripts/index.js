@@ -1299,8 +1299,8 @@ function initBattle() {
                     ml: 5,
                     fontFamily: "New Super Mario Font U",
                     width: "70px",
-                    }}
-                  secondary=${
+                    }}>
+                  ${
                     usersConsumables.item_hp === 0
                     ? ""
                     : `+${usersConsumables.item_hp} hp`
@@ -1315,7 +1315,7 @@ function initBattle() {
                     ? ""
                     : `| +${usersConsumables.item_speed} speed`
                   }
-                />
+                </p>
                 <button
                   id="attackButton"
                   className="consumable"
