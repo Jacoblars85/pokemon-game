@@ -1149,13 +1149,13 @@ function initBattle() {
       <ul style=${{ padding: 0 }}>
         <li>
           <img height="50" width="50" src=${starterOne.profile_pic} />
-          <p style=${{ ml: 25 }}>starter 1: ${starterOne.character_name}<p/>
+          <p style=${{ ml: 25 }}>starter 1: ${starterOne.character_name} </p>
           <p style=${{ ml: 25 }}>${starterOneHp}/${
           starterOne.hp
           } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
           starterOne.speed
           } speed
-          <p/>
+          </p>
           <button
             id="attackButton"
             className="starterOne"
@@ -1183,13 +1183,13 @@ function initBattle() {
     <ul style=${{ padding: 0 }}>
       <li>
         <img height="50" width="50" src=${starterOne.profile_pic} />
-        <p style=${{ ml: 25 }}>starter 1: ${starterOne.character_name}<p/>
+        <p style=${{ ml: 25 }}>starter 1: ${starterOne.character_name}</p>
          <p style=${{ ml: 25 }}>${starterOneHp}/${
             starterOne.hp
             } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
             starterOne.speed
             } speed
-        <p/>
+         </p>
         <button
           id="attackButton"
           className="starterOne"
