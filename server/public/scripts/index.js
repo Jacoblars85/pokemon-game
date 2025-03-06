@@ -1222,15 +1222,13 @@ function initBattle() {
 
       <li>
         <img height="50" width="50" src=${starterTwo.profile_pic} />
-        <p
-          style=${{ ml: 25 }}
-          primary="starter 2: ${starterTwo.character_name}"
-          secondary="${starterTwoHp}/${
+        <p style=${{ ml: 25 }}>starter 2: ${starterTwo.character_name}</p>
+         <p style=${{ ml: 25 }}>${starterTwoHp}/${
       starterTwo.hp
     } hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${
       starterTwo.speed
-    } speed"
-        />
+    } speed
+        </p>
         <button
           id="attackButton"
           className="starterTwo"
