@@ -1060,9 +1060,7 @@ function initBattle() {
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
                   "
-          >
-            ${starterOne.attack_name}
-          </button>
+          >${starterOne.attack_name}</button>
 
           <button
             id="attackButton"
@@ -1083,9 +1081,7 @@ function initBattle() {
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
                   "
-          >
-            ${kickAttack}
-          </button>
+          >${kickAttack}</button>
 
           <button
             id="attackButton"
@@ -1106,9 +1102,7 @@ function initBattle() {
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
                   "
-          >
-            ${pokeAttack}
-          </button>
+          >${pokeAttack}</button>
 `;
 
   console.log("starters", starters);
