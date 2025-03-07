@@ -1076,19 +1076,6 @@ function initBattle() {
               borderLeft: "4px solid black",
               boxShadow: "0 0 0 0",
             }}
-            disabled=${
-              starter.length === 1
-                ? starterOneStamina < kickStamina
-                  ? true
-                  : false
-                : starter.isCurrentStarter === true
-                ? starterOneStamina < kickStamina
-                  ? true
-                  : false
-                : starterTwoStamina < kickStamina
-                ? true
-                : false
-            }
           >
             ${kickAttack}
           </button>
