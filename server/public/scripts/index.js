@@ -1077,8 +1077,8 @@ function initBattle() {
                   font-family: New Super Mario Font U;
                   justify-content: center;
                   align-items: center;
-border: 0;
-border-bottom: 4px solid black;
+                  border: 0;
+                  border-bottom: 4px solid black;
                   background-color: white;
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
@@ -1100,8 +1100,8 @@ border-bottom: 4px solid black;
                   font-family: New Super Mario Font U;
                   justify-content: center;
                   align-items: center;
-border: 0;
-border-bottom: 4px solid black;
+                  border: 0;
+                  border-bottom: 4px solid black;
                   background-color: white;
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
@@ -1275,15 +1275,15 @@ border-bottom: 4px solid black;
                       ? ""
                       : `+${usersConsumables.item_hp} hp`
                   } ${
-                    usersConsumables.item_stamina === 0
-                  ? ""
-                  : usersConsumables.item_hp === 0
-                  ? `+${usersConsumables.item_stamina} stamina`
-                  : `| +${usersConsumables.item_stamina} stamina`
-                  } ${
-                  usersConsumables.item_speed === 0
-                  ? ""
-                  : `| +${usersConsumables.item_speed} speed`
+      usersConsumables.item_stamina === 0
+        ? ""
+        : usersConsumables.item_hp === 0
+        ? `+${usersConsumables.item_stamina} stamina`
+        : `| +${usersConsumables.item_stamina} stamina`
+    } ${
+      usersConsumables.item_speed === 0
+        ? ""
+        : `| +${usersConsumables.item_speed} speed`
     }
                 </p>
                 <button
