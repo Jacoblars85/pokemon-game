@@ -1097,19 +1097,6 @@ function initBattle() {
               borderLeft: "4px solid black",
               boxShadow: "0 0 0 0",
             }}
-            disabled=${
-              starter.length === 1
-                ? starterOneStamina < pokeStamina
-                  ? true
-                  : false
-                : starter.isCurrentStarter === true
-                ? starterOneStamina < pokeStamina
-                  ? true
-                  : false
-                : starterTwoStamina < pokeStamina
-                ? true
-                : false
-            }
           >
             ${pokeAttack}
           </button>
