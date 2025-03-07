@@ -1063,20 +1063,20 @@ function initBattle() {
           <button
             id="attackButton"
             className="kickAttack"
-            style=${{
-              display: "flex",
-              width: "33.33%",
-              height: "100%",
-              textAlign: "center",
-              fontSize: "30px",
-              color: "black",
-              fontFamily: "New Super Mario Font U",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRight: "4px solid black",
-              borderLeft: "4px solid black",
-              boxShadow: "0 0 0 0",
-            }}
+            style="
+                  display: flex;
+                  width: 33.33%;
+                  height: 100%;
+                  text-align: center;
+                  font-size: 30px;
+                  color: black;
+                  font-family: New Super Mario Font U;
+                  justify-content: center;
+                  align-items: center;
+                  border-right: 4px solid black;
+                  border-left: 4px solid black;
+                  box-shadow: 0 0 0 0;
+                  "
           >
             ${kickAttack}
           </button>
