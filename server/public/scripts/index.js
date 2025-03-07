@@ -1054,6 +1054,8 @@ function initBattle() {
                   justify-content: center;
                   align-items: center;
                   border: 0;
+                  border-bottom: 4px solid black;
+                  border-left: 4px solid black;
                   background-color: white;
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
@@ -1076,6 +1078,7 @@ function initBattle() {
                   justify-content: center;
                   align-items: center;
 border: 0;
+border-bottom: 4px solid black;
                   background-color: white;
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
@@ -1098,6 +1101,7 @@ border: 0;
                   justify-content: center;
                   align-items: center;
 border: 0;
+border-bottom: 4px solid black;
                   background-color: white;
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
