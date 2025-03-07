@@ -1097,8 +1097,9 @@ border: 0;
                   font-family: New Super Mario Font U;
                   justify-content: center;
                   align-items: center;
-                  border-right: 4px solid black;
-                  border-left: 4px solid black;
+border: 0;
+                  background-color: white;
+                  cursor: pointer;
                   box-shadow: 0 0 0 0;
                   "
           >
