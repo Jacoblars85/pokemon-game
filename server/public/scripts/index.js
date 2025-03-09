@@ -1105,7 +1105,7 @@ function initBattle() {
           >${pokeAttack}</button>
 `;
 
-  console.log("starters", starters);
+
 
   // InnerHtml for the switch box
   if (starters.length == 1) {
@@ -1218,7 +1218,7 @@ function initBattle() {
     `;
   }
 
-  console.log("usersConsumableItems", usersConsumableItems);
+
 
   // InnerHtml for the inventory box
   for (const usersConsumables of usersConsumableItems) {
