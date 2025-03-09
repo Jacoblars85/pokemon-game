@@ -1105,8 +1105,6 @@ function initBattle() {
           >${pokeAttack}</button>
 `;
 
-
-
   // InnerHtml for the switch box
   if (starters.length == 1) {
     document.getElementById("switchBox").innerHTML = `
@@ -1217,8 +1215,6 @@ function initBattle() {
     </ul>
     `;
   }
-
-
 
   // InnerHtml for the inventory box
   for (const usersConsumables of usersConsumableItems) {
@@ -1495,8 +1491,6 @@ function initBattle() {
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
       } else if (e.target.innerHTML === "Switch") {
-        // console.log("currentStarter", currentStarter);
-
         document.getElementById("switchBox").style.display = "block";
         document.getElementById("attackBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
