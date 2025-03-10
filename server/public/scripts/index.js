@@ -1130,6 +1130,7 @@ function initBattle() {
               color: black;
               font-size: 15;
               border-color: black;
+              cursor: pointer;
             "
             disabled=${
               starter.isCurrentStarter === true
@@ -1149,7 +1150,7 @@ function initBattle() {
               display: flex;
               flex-direction: column;
               align-items: center;
-              justify-content: space-around;
+              justify-content: center;
               padding: 5px; 
       ">
       <div style=" 
@@ -1174,6 +1175,7 @@ function initBattle() {
             color: black;
             font-size: 15;
             border-color: black;
+            cursor: pointer;
           "
           disabled=${
             starter.isCurrentStarter === true
@@ -1218,6 +1220,7 @@ function initBattle() {
             color: black;
             font-size: 15;
             border-color: black;
+            cursor: pointer;
             ml: 2:
           "
           disabled=${
