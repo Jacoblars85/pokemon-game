@@ -1108,8 +1108,14 @@ function initBattle() {
   // InnerHtml for the switch box
   if (starters.length == 1) {
     document.getElementById("switchBox").innerHTML = `
-      <ul style=" padding: 0; ">
-        <li>
+      <div style=" 
+      padding: 0; 
+      display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                padding: 5px; 
+      ">
           <img height="50" width="50" src=${starterOne.profile_pic} />
           <p style=" ml: 25; ">starter 1: ${starterOne.character_name} </p>
           <p style=" ml: 25; ">${starterOneHp}/${
@@ -1136,8 +1142,7 @@ function initBattle() {
           >
             Change Starter
           </button>
-        </li>
-      </ul>
+      </div>
     `;
   } else if (starters.length === 2) {
     document.getElementById("switchBox").innerHTML = `
@@ -1182,8 +1187,8 @@ function initBattle() {
 
       <li>
         <img height="50" width="50" src=${starterTwo.profile_pic} />
-        <p style=" ml: 25 ">starter 2: ${starterTwo.character_name}</p>
-         <p style=" ml: 25 ">${starterTwoHp}/${
+        <p style=" ml: 25; ">starter 2: ${starterTwo.character_name}</p>
+         <p style=" ml: 25; ">${starterTwoHp}/${
       starterTwo.hp
     } hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${
       starterTwo.speed
