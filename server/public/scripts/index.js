@@ -1225,19 +1225,20 @@ function initBattle() {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-around;
                 height: 40px;
                 padding: 10; 
+
               "
               >
                 <div
-                  style=${{
-                    display: "flex",
-                    flexDirection: "row",
-                    columnGap: "5",
-                    justifyContent: "space-around",
-                    alignItems: "center",
-                  }}
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 5;
+                    justify-content: space-around;
+                    align-items: center;
+                  "
                      >
                   <p
                     style=${{
