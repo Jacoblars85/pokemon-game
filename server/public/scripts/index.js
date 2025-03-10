@@ -1108,11 +1108,11 @@ function initBattle() {
   // InnerHtml for the switch box
   if (starters.length == 1) {
     document.getElementById("switchBox").innerHTML = `
-      <ul style=${{ padding: 0 }}>
+      <ul style=" padding: 0; ">
         <li>
           <img height="50" width="50" src=${starterOne.profile_pic} />
-          <p style=${{ ml: 25 }}>starter 1: ${starterOne.character_name} </p>
-          <p style=${{ ml: 25 }}>${starterOneHp}/${
+          <p style=" ml: 25; ">starter 1: ${starterOne.character_name} </p>
+          <p style=" ml: 25; ">${starterOneHp}/${
       starterOne.hp
     } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
       starterOne.speed
@@ -1121,12 +1121,11 @@ function initBattle() {
           <button
             id="attackButton"
             className="starterOne"
-            style=${{
-              color: "black",
-              fontSize: 15,
-              fontFamily: "New Super Mario Font U",
-              borderColor: "black",
-            }}
+            style="
+              color: black;
+              font-size: 15;
+              border-color: black;
+            "
             disabled=${
               starter.isCurrentStarter === true
                 ? true
