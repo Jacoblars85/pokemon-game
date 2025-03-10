@@ -1241,10 +1241,10 @@ function initBattle() {
                   "
                      >
                   <p
-                    style=${{
-                      color: "black",
-                      fontSize: "15px",
-                    }}
+                    style="
+                      color: black;
+                      font-size: 25px;
+                    "
                   >
                     ${usersConsumables.number}X
                   </p>
@@ -1255,19 +1255,18 @@ function initBattle() {
                   />
                 </div>
                 <p
-                  style=${{
-                    ml: 20,
-                    fontFamily: "New Super Mario Font U",
-                  }}>
+                  style="
+                    ml: 20;
+                  "">
                   ${usersConsumables.item_name}
                 </p>
 
                 <p
-                  style=${{
-                    ml: 5,
-                    fontFamily: "New Super Mario Font U",
-                    width: "70px",
-                  }}>
+                  style="
+                    ml: 5;
+                    font-size: 20px;
+                    width: 100px;
+                  ">
                   ${
                     usersConsumables.item_hp === 0
                       ? ""
@@ -1287,24 +1286,23 @@ function initBattle() {
                 <button
                   id="attackButton"
                   className="consumable"
-                  style=${{
-                    color: "black",
-                    fontSize: 15,
-                    fontFamily: "New Super Mario Font U",
-                    borderColor: "black",
-                  }}
+                  style="
+                    color: black;
+                    font-size: 15;
+                    border-color: black;
+                  "
                   disabled=${usersConsumables.number <= 0 ? true : false}
                 >
                   Use Consumable
                 </button>
-              <div style=${{
-                display: "block",
-                height: "1px",
-                border: 0,
-                borderTop: "1px solid #ccc",
-                margin: "1em 0",
-                padding: 0,
-              }} />
+              <div style="
+                display: block;
+                height: 1px;
+                border: 0;
+                borderTop: 1px solid #ccc;
+                margin: 1em 0;
+                padding: 0;
+              "> </div>
               </div>
           </div>
    `;
