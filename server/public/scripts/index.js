@@ -1225,8 +1225,8 @@ function initBattle() {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-around;
-                height: 40px;
+                justify-content: space-between;
+                height: 50px;
                 padding: 10; 
 
               "
@@ -1290,21 +1290,22 @@ function initBattle() {
                     color: black;
                     font-size: 15;
                     border-color: black;
+                    cursor: pointer;
                   "
                   disabled=${usersConsumables.number <= 0 ? true : false}
                 >
                   Use Consumable
                 </button>
-              <div style="
-                display: block;
-                height: 1px;
-                border: 0;
-                borderTop: 1px solid #ccc;
-                margin: 1em 0;
-                padding: 0;
-              "> </div>
               </div>
           </div>
+          <div style="
+                display: block;
+                height: 3px;
+                border: 0;
+                border-top: 3px solid black;
+                margin: 0 0;
+                padding: 0;
+              "> </div>
    `;
   }
 
