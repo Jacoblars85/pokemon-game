@@ -1182,8 +1182,8 @@ function initBattle() {
 
       <li>
         <img height="50" width="50" src=${starterTwo.profile_pic} />
-        <p style=${{ ml: 25 }}>starter 2: ${starterTwo.character_name}</p>
-         <p style=${{ ml: 25 }}>${starterTwoHp}/${
+        <p style=" ml: 25 ">starter 2: ${starterTwo.character_name}</p>
+         <p style=" ml: 25 ">${starterTwoHp}/${
       starterTwo.hp
     } hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${
       starterTwo.speed
@@ -1192,13 +1192,12 @@ function initBattle() {
         <button
           id="attackButton"
           className="starterTwo"
-          style=${{
-            color: "black",
-            fontSize: 15,
-            fontFamily: "New Super Mario Font U",
-            borderColor: "black",
-            ml: 2,
-          }}
+          style="
+            color: black;
+            font-size: 15;
+            border-color: black;
+            ml: 2:
+          "
           disabled=${
             starter2.isCurrentStarter === true
               ? true
