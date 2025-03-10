@@ -1171,14 +1171,14 @@ function initBattle() {
         </button>
       </li>
 
-      <div style=${{
-        display: "block",
-        height: "1px",
-        border: 0,
-        borderTop: "1px solid #ccc",
-        margin: "1em 0",
-        padding: 0,
-      }} />
+      <div style="
+                display: block;
+                height: 2px;
+                border: 0;
+                border-top: 2px solid black;
+                margin: 0 0;
+                padding: 0;
+              "> </div>
 
       <li>
         <img height="50" width="50" src=${starterTwo.profile_pic} />
