@@ -1109,7 +1109,6 @@ function initBattle() {
   if (starters.length == 1) {
     document.getElementById("switchBox").innerHTML = `
       <div style=" 
-              padding: 0; 
               display: flex;
               flex-direction: row;
               align-items: center;
@@ -1146,8 +1145,20 @@ function initBattle() {
     `;
   } else if (starters.length === 2) {
     document.getElementById("switchBox").innerHTML = `
-    <ul style=" padding: 0; ">
-      <li>
+    <div style=" 
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: space-around;
+              padding: 5px; 
+      ">
+      <div style=" 
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-around;
+              padding: 5px; 
+      ">
         <img height="50" width="50" src=${starterOne.profile_pic} />
         <p style=" ml: 25; ">starter 1: ${starterOne.character_name}</p>
          <p style=" ml: 25; ">${starterOneHp}/${
@@ -1174,7 +1185,7 @@ function initBattle() {
         >
           Change Starter
         </button>
-      </li>
+      </div>
 
       <div style="
                 display: block;
@@ -1214,7 +1225,7 @@ function initBattle() {
           Change Starter
         </button>
       </li>
-    </ul>
+    </div>
     `;
   }
 
