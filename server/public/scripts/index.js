@@ -1218,7 +1218,7 @@ function initBattle() {
 
   // InnerHtml for the inventory box
   for (const usersConsumables of usersConsumableItems) {
-    document.getElementById("inventoryBox").innerHTML = `
+    document.getElementById("inventoryBox").innerHTML += `
       <div height="140px">
           <div
             style="
