@@ -1109,12 +1109,12 @@ function initBattle() {
   if (starters.length == 1) {
     document.getElementById("switchBox").innerHTML = `
       <div style=" 
-      padding: 0; 
-      display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-around;
-                padding: 5px; 
+              padding: 0; 
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-around;
+              padding: 5px; 
       ">
           <img height="50" width="50" src=${starterOne.profile_pic} />
           <p style=" ml: 25; ">starter 1: ${starterOne.character_name} </p>
@@ -1183,7 +1183,7 @@ function initBattle() {
                 border-top: 2px solid black;
                 margin: 0 0;
                 padding: 0;
-              "> </div>
+              " />
 
       <li>
         <img height="50" width="50" src=${starterTwo.profile_pic} />
@@ -1230,7 +1230,6 @@ function initBattle() {
                 justify-content: space-around;
                 height: 45px;
                 padding: 5px; 
-
               "
               >
                 <div
@@ -1308,7 +1307,7 @@ function initBattle() {
                 border-top: 2px solid black;
                 margin: 0 0;
                 padding: 0;
-              "> </div>
+              " />
    `;
   }
 
