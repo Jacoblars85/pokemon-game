@@ -1225,9 +1225,9 @@ function initBattle() {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-between;
-                height: 50px;
-                padding: 10; 
+                justify-content: space-around;
+                height: 45px;
+                padding: 5px; 
 
               "
               >
@@ -1235,7 +1235,7 @@ function initBattle() {
                   style="
                     display: flex;
                     flex-direction: row;
-                    column-gap: 5;
+                    column-gap: 5px;
                     justify-content: space-around;
                     align-items: center;
                   "
@@ -1265,7 +1265,8 @@ function initBattle() {
                   style="
                     ml: 5;
                     font-size: 20px;
-                    width: 100px;
+                    width: 150px;
+                    text-align: center;
                   ">
                   ${
                     usersConsumables.item_hp === 0
@@ -1300,9 +1301,9 @@ function initBattle() {
           </div>
           <div style="
                 display: block;
-                height: 3px;
+                height: 2px;
                 border: 0;
-                border-top: 3px solid black;
+                border-top: 2px solid black;
                 margin: 0 0;
                 padding: 0;
               "> </div>
