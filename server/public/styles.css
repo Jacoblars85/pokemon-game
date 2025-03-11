@@ -1,3 +1,7 @@
 button:hover {
     background-color: lightgray;
 }
+
+.btn:hover {
+    background-color: lightgray;
+}
