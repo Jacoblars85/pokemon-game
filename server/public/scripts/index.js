@@ -1042,7 +1042,6 @@ function initBattle() {
   document.getElementById("attackBox").innerHTML = `
 <button
             id="attackButton"
-            className=${starterOne.attack_name}
               style="
                   display: flex;
                   width: 33.33%;
@@ -1064,7 +1063,6 @@ function initBattle() {
 
           <button
             id="attackButton"
-            className="kickAttack"
             style="
                   display: flex;
                   width: 33.33%;
@@ -1085,7 +1083,6 @@ function initBattle() {
 
           <button
             id="attackButton"
-            className="pokeAttack"
             style="
                   display: flex;
                   width: 33.33%;
