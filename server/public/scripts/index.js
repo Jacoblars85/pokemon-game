@@ -1042,6 +1042,7 @@ function initBattle() {
   document.getElementById("attackBox").innerHTML = `
 <button
             id="attackButton"
+            class="btn"
               style="
                   display: flex;
                   width: 33.33%;
@@ -1055,7 +1056,6 @@ function initBattle() {
                   border: 0;
                   border-bottom: 4px solid black;
                   border-left: 4px solid black;
-                  background-color: white;
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
                   "
@@ -1063,6 +1063,7 @@ function initBattle() {
 
           <button
             id="attackButton"
+            class="btn"
             style="
                   display: flex;
                   width: 33.33%;
@@ -1075,7 +1076,6 @@ function initBattle() {
                   align-items: center;
                   border: 0;
                   border-bottom: 4px solid black;
-                  background-color: white;
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
                   "
@@ -1083,6 +1083,7 @@ function initBattle() {
 
           <button
             id="attackButton"
+            class="btn"
             style="
                   display: flex;
                   width: 33.33%;
@@ -1095,7 +1096,6 @@ function initBattle() {
                   align-items: center;
                   border: 0;
                   border-bottom: 4px solid black;
-                  background-color: white;
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
                   "
