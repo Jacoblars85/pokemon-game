@@ -1122,7 +1122,7 @@ function initBattle() {
           </p>
           <button
             id="attackButton"
-            className="starterOne"
+            class="starterOne"
             style="
               color: black;
               font-size: 15;
@@ -1167,7 +1167,7 @@ function initBattle() {
          </p>
         <button
           id="attackButton"
-          className="starterOne"
+          class="starterOne"
           style="
             color: black;
             font-size: 15;
@@ -1212,7 +1212,7 @@ function initBattle() {
         </p>
         <button
           id="attackButton"
-          className="starterTwo"
+          class="starterTwo"
           style="
             color: black;
             font-size: 15;
@@ -1304,7 +1304,7 @@ function initBattle() {
                 </p>
                 <button
                   id="attackButton"
-                  className="consumable"
+                  class="consumable"
                   style="
                     color: black;
                     font-size: 15;
