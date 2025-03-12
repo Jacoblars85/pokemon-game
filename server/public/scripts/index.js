@@ -511,7 +511,6 @@ function animate() {
       ) {
         window.cancelAnimationFrame(animationId);
         battle.initiated = true;
-        // setBattleStart(true);
         gsap.to("#fadeOutDiv", {
           opacity: 1,
           repeat: 3,
@@ -522,9 +521,6 @@ function animate() {
               opacity: 1,
               duration: 0.4,
               onComplete() {
-                // history.push(
-                //   `/battle/${Math.floor(Math.random() * 8 + 1)}`
-                // );
                 initBattle();
                 animateBattle();
 
