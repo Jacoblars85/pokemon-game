@@ -225,8 +225,6 @@ for (let i = 0; i < battleZonesArray.length; i += 235) {
   battleZonesMap.push(battleZonesArray.slice(i, 235 + i));
 }
 
-
-
 const offset = {
   x: -4767.5,
   y: -5990,
@@ -283,7 +281,6 @@ playerLeftImage.src = "./scripts/img/playerLeft.png";
 
 const playerRightImage = new Image();
 playerRightImage.src = "./scripts/img/playerRight.png";
-
 
 const player = new Sprite({
   position: {
@@ -562,8 +559,6 @@ window.addEventListener("keyup", (e) => {
 const battleBackgroundImage = new Image();
 battleBackgroundImage.src = "./scripts/img/backgroundImg/battleBackground.png";
 
-
-
 const battleBackground = new Sprite({
   position: {
     x: 0,
@@ -758,7 +753,9 @@ function initBattle() {
             margin: 0px;
             text-align: center;
             "
-            >${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina
+            >${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${
+      starterOne.stamina
+    } stamina
             </p>
             <p style=" 
             margin: 0px;
@@ -814,7 +811,9 @@ function initBattle() {
             margin: 0px;
             text-align: center;
             "
-            >${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina
+            >${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${
+      starterOne.stamina
+    } stamina
             </p>
             <p style=" 
             margin: 0px;
@@ -870,7 +869,9 @@ function initBattle() {
             margin: 0px;
             text-align: center;
             "
-            >${starterTwoHp}/${starterTwo.hp} hp | ${starterTwoStamina}/${starterTwo.stamina} stamina
+            >${starterTwoHp}/${starterTwo.hp} hp | ${starterTwoStamina}/${
+      starterTwo.stamina
+    } stamina
             </p>
             <p style=" 
             margin: 0px;
@@ -1204,7 +1205,6 @@ function animateBattle() {
     sprite.draw();
   });
 }
-
 
 document.querySelector("#dialogueBox").addEventListener("click", (e) => {
   if (queue.length > 0) {
