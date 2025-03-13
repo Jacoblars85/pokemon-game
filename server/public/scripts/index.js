@@ -1046,7 +1046,6 @@ function initBattle() {
                   text-align: center;
                   font-size: 30px;
                   color: black;
-                  font-family: New Super Mario Font U;
                   justify-content: center;
                   align-items: center;
                   border: 0;
@@ -1067,7 +1066,6 @@ function initBattle() {
                   text-align: center;
                   font-size: 30px;
                   color: black;
-                  font-family: New Super Mario Font U;
                   justify-content: center;
                   align-items: center;
                   border: 0;
@@ -1087,7 +1085,6 @@ function initBattle() {
                   text-align: center;
                   font-size: 30px;
                   color: black;
-                  font-family: New Super Mario Font U;
                   justify-content: center;
                   align-items: center;
                   border: 0;
