@@ -1106,13 +1106,23 @@ function initBattle() {
               padding: 5px; 
       ">
           <img height="50" width="50" src=${starterOne.profile_pic} />
-          <p style=" ml: 25; ">starter 1: ${starterOne.character_name} </p>
-          <p style=" ml: 25; ">${starterOneHp}/${
-      starterOne.hp
-    } hp | ${starterOneStamina}/${starterOne.stamina} stamina | ${
-      starterOne.speed
-    } speed
-          </p>
+          <p style=" 
+            text-align: center;
+           "
+           >starter 1: ${starterOne.character_name} </p>
+          <div>
+            <p style=" 
+            margin: 0px;
+            text-align: center;
+            "
+            >${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${starterOne.stamina} stamina
+            </p>
+            <p style=" 
+            margin: 0px;
+            text-align: center;
+            "
+            >${starterOne.speed} speed</p>
+          </div>
           <button
             id="attackButton"
             class="starterOne"
@@ -1121,6 +1131,7 @@ function initBattle() {
               font-size: 15;
               border-color: black;
               cursor: pointer;
+              width: 100px;
             "
             disabled=${
               starter.isCurrentStarter === true
