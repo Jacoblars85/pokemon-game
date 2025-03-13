@@ -188,7 +188,7 @@ class Character extends Sprite {
 
     document.getElementById("dialogueBox").style.display = "block";
     document.getElementById("dialogueBox").innerHTML =
-      this.name + " used " + attack.attack_name;
+      this.name + " used " + attack.attack_name + "...";
 
     let rotation = 1;
     if (this.isEnemy) rotation = -2.2;
