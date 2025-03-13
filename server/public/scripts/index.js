@@ -1210,41 +1210,51 @@ function initBattle() {
                 padding: 0;
               " />
 
-      <div style=" 
+            <div style=" 
               display: flex;
               flex-direction: row;
               align-items: center;
               justify-content: space-around;
               padding: 5px; 
       ">
-        <img height="50" width="50" src=${starterTwo.profile_pic} />
-        <p style=" ml: 25; ">starter 2: ${starterTwo.character_name}</p>
-         <p style=" ml: 25; ">${starterTwoHp}/${
-      starterTwo.hp
-    } hp | ${starterTwoStamina}/${starterTwo.stamina} stamina | ${
-      starterTwo.speed
-    } speed
-        </p>
-        <button
-          id="attackButton"
-          class="starterTwo"
-          style="
-            color: black;
-            font-size: 15;
-            border-color: black;
-            cursor: pointer;
-            ml: 2:
-          "
-          disabled=${
-            starter2.isCurrentStarter === true
-              ? true
-              : starterTwoHp <= 0
-              ? true
-              : false
-          }
-        >
-          Change Starter
-        </button>
+          <img height="50" width="50" src=${starterTwo.profile_pic} />
+          <p style=" 
+            text-align: center;
+           "
+           >starter 1: ${starterTwo.character_name} </p>
+          <div>
+            <p style=" 
+            margin: 0px;
+            text-align: center;
+            "
+            >${starterTwoHp}/${starterTwo.hp} hp | ${starterTwoStamina}/${starterTwo.stamina} stamina
+            </p>
+            <p style=" 
+            margin: 0px;
+            text-align: center;
+            "
+            >${starterTwo.speed} speed</p>
+          </div>
+          <button
+            id="attackButton"
+            class="starterOne"
+            style="
+              color: black;
+              font-size: 15;
+              border-color: black;
+              cursor: pointer;
+              width: 100px;
+            "
+            disabled=${
+              starter2.isCurrentStarter === true
+                ? true
+                : starterTwoHp <= 0
+                ? true
+                : false
+            }
+          >
+            Change Starter
+          </button>
       </div>
     </div>
     `;
