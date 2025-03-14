@@ -76,30 +76,7 @@ class Sprite {
         this.image.height / this.frames.max
       );
     }
-
-    // c.drawImage(
-    //   this.image,
-    //   this.frames.val * this.width,
-    //   0,
-    //   this.image.width / this.frames.max,
-    //   this.image.height,
-    //   this.position.x,
-    //   this.position.y,
-    //   this.image.width / this.frames.max,
-    //   this.image.height
-    // );
-
-    // c.drawImage(
-    //   this.image,
-    //   this.frames.alignment,
-    //   this.frames.val * this.width,
-    //   this.image.width / this.frames.max,
-    //   this.image.height / this.frames.max,
-    //   this.position.x,
-    //   this.position.y,
-    //   this.image.width / this.frames.max,
-    //   this.image.height / this.frames.max
-    // );
+    
     c.restore();
 
     if (!this.animate) return;
