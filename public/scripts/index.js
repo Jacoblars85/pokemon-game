@@ -540,13 +540,13 @@ function animate() {
         Math.min(
           player.position.y + player.height,
           boundary.position.y + boundary.height
-        ) - Math.max(player.position.y, boundary.position.y);
+        ) - Math.max(player.position.y, boundary.position.y - (boundary.height / 2));
 
       if (
         rectangularCollisions({
           rectangle1: {
             ...player,
-            height: player.height / 2,
+            height: player.height,
           },
           rectangle2: {
             ...boundary,
