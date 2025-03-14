@@ -429,11 +429,10 @@ function animate() {
       const boundary = boundaries[i];
 
       const overlappingArea =
-        (Math.min(
+        Math.min(
           player.position.y + player.height,
           boundary.position.y + boundary.height
-        ) -
-          Math.max(player.position.y, boundary.position.y));
+        ) - Math.max(player.position.y, boundary.position.y);
 
       if (
         rectangularCollisions({
@@ -463,18 +462,17 @@ function animate() {
       const boundary = boundaries[i];
 
       const overlappingArea =
-      (Math.min(
-        player.position.y + player.height,
-        boundary.position.y + boundary.height
-      ) -
-        Math.max(player.position.y, boundary.position.y));
+        Math.min(
+          player.position.y + player.height,
+          boundary.position.y + boundary.height
+        ) - Math.max(player.position.y, boundary.position.y);
 
       if (
         rectangularCollisions({
           rectangle1: {
             ...player,
-            height: player.height / 2
-        },
+            height: player.height / 2,
+          },
           rectangle2: {
             ...boundary,
             position: {
@@ -500,17 +498,16 @@ function animate() {
       const boundary = boundaries[i];
 
       const overlappingArea =
-      (Math.min(
-        player.position.y + player.height,
-        boundary.position.y + boundary.height
-      ) -
-        Math.max(player.position.y, boundary.position.y));
+        Math.min(
+          player.position.y + player.height,
+          boundary.position.y + boundary.height
+        ) - Math.max(player.position.y, boundary.position.y);
 
       if (
         player.position.x + player.width >= boundary.position.x &&
         player.position.x <= boundary.position.x + boundary.width &&
-        player.position.y + (player.height) >= (boundary.position.y - 3) &&
-        player.position.y <= (boundary.position.y - 3) + boundary.height &&
+        player.position.y + player.height >= boundary.position.y - 3 &&
+        player.position.y <= boundary.position.y - 3 + boundary.height &&
         overlappingArea > player.height / 2
 
         // rectangularCollisions({
@@ -539,18 +536,17 @@ function animate() {
       const boundary = boundaries[i];
 
       const overlappingArea =
-      (Math.min(
-        player.position.y + player.height,
-        boundary.position.y + boundary.height
-      ) -
-        Math.max(player.position.y, boundary.position.y));
+        Math.min(
+          player.position.y + player.height,
+          boundary.position.y + boundary.height
+        ) - Math.max(player.position.y, boundary.position.y);
 
       if (
         rectangularCollisions({
           rectangle1: {
             ...player,
-            height: player.height / 2
-        },
+            height: player.height / 2,
+          },
           rectangle2: {
             ...boundary,
             position: {
