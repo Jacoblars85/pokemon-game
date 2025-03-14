@@ -501,25 +501,26 @@ function animate() {
         Math.min(
           player.position.y + player.height,
           boundary.position.y + boundary.height
-        ) - Math.max(player.position.y, boundary.position.y - 34);
+        ) - Math.max(player.position.y, boundary.position.y - (player.height / 2));
 
       if (
-        player.position.x + player.width >= boundary.position.x &&
-        player.position.x <= boundary.position.x + boundary.width &&
-        player.position.y + player.height >= boundary.position.y - 3 &&
-        player.position.y <= boundary.position.y - 3 + boundary.height &&
-        overlappingArea > player.height / 2
+        // player.position.x + player.width >= boundary.position.x &&
+        // player.position.x <= boundary.position.x + boundary.width &&
+        // player.position.y + player.height >= boundary.position.y - 3 &&
+        // player.position.y <= boundary.position.y - 3 + boundary.height &&
+        // overlappingArea > player.height / 2
 
-        // rectangularCollisions({
-        //   rectangle1: player
-        //   rectangle2: {
-        //     ...boundary,
-        //     position: {
-        //       x: boundary.position.x,
-        //       y: boundary.position.y - 3,
-        //     },
-        //   },
-        // })
+        rectangularCollisions({
+          rectangle1: player,
+          rectangle2: {
+            ...boundary,
+            position: {
+              x: boundary.position.x,
+              y: boundary.position.y - 3,
+            },
+          },
+        }) &&
+        overlappingArea > player.height / 2
       ) {
         moving = false;
         break;
