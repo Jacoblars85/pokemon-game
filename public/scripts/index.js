@@ -465,7 +465,7 @@ function animate() {
         Math.min(
           player.position.y + player.height,
           boundary.position.y + boundary.height
-        ) - Math.max(player.position.y, boundary.position.y - (boundary.height / 2));
+        ) - Math.max(player.position.y, boundary.position.y - (player.height / 2));
 
       if (
         rectangularCollisions({
@@ -501,7 +501,7 @@ function animate() {
         Math.min(
           player.position.y + player.height,
           boundary.position.y + boundary.height
-        ) - Math.max(player.position.y, boundary.position.y - (player.height / 2));
+        ) - Math.max(player.position.y, boundary.position.y - ((player.height / 2) + 2));
 
       if (
         // player.position.x + player.width >= boundary.position.x &&
@@ -540,7 +540,7 @@ function animate() {
         Math.min(
           player.position.y + player.height,
           boundary.position.y + boundary.height
-        ) - Math.max(player.position.y, boundary.position.y - (boundary.height / 2));
+        ) - Math.max(player.position.y, boundary.position.y - (player.height / 2));
 
       if (
         rectangularCollisions({
