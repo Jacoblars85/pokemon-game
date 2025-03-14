@@ -507,8 +507,8 @@ function animate() {
         player.position.x + player.width >= boundary.position.x &&
         player.position.x <= boundary.position.x + boundary.width &&
         player.position.y + player.height >= boundary.position.y - 3 &&
-        player.position.y <= boundary.position.y - 3 + boundary.height &&
-        overlappingArea > player.height / 2
+        player.position.y <= boundary.position.y - 3 + boundary.height 
+        // overlappingArea > player.height / 2
 
         // rectangularCollisions({
         //   rectangle1: player
