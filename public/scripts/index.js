@@ -469,10 +469,7 @@ function animate() {
 
       if (
         rectangularCollisions({
-          rectangle1: {
-            ...player,
-            height: player.height,
-          },
+          rectangle1: player,
           rectangle2: {
             ...boundary,
             position: {
@@ -544,10 +541,7 @@ function animate() {
 
       if (
         rectangularCollisions({
-          rectangle1: {
-            ...player,
-            height: player.height,
-          },
+          rectangle1: player,
           rectangle2: {
             ...boundary,
             position: {
