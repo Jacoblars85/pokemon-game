@@ -1117,33 +1117,35 @@ function initBattle() {
               recipient: enemy,
               renderedSprites,
             });
+
+            if (enemy.health <= 0) {
+              // console.log("are we really in the enemy fainting");
+  
+              queue.push(() => {
+                enemy.faint();
+              });
+  
+              queue.push(() => {
+                gsap.to("#fadeOutDiv", {
+                  opacity: 1,
+                  onComplete: () => {
+                    cancelAnimationFrame(battleAnimationId);
+                    animate();
+                    document.getElementById("battleInterface").style.display =
+                      "none";
+                    gsap.to("#fadeOutDiv", {
+                      opacity: 0,
+                    });
+                    battle.initiated = false;
+                  },
+                });
+              });
+            }
           });
 
           // console.log("enemy.health", enemy.health);
 
-          if (enemy.health <= 0) {
-            // console.log("are we really in the enemy fainting");
-
-            queue.push(() => {
-              enemy.faint();
-            });
-
-            queue.push(() => {
-              gsap.to("#fadeOutDiv", {
-                opacity: 1,
-                onComplete: () => {
-                  cancelAnimationFrame(battleAnimationId);
-                  animate();
-                  document.getElementById("battleInterface").style.display =
-                    "none";
-                  gsap.to("#fadeOutDiv", {
-                    opacity: 0,
-                  });
-                  battle.initiated = false;
-                },
-              });
-            });
-          }
+          
         }
       } else if (
         button.className === "starterOne" ||
