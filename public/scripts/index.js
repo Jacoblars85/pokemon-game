@@ -427,6 +427,14 @@ function animate() {
     player.image = player.sprites.up;
     for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
+
+      const overlappingArea =
+        (Math.min(
+          player.position.y + player.height,
+          boundary.position.y + boundary.height
+        ) -
+          Math.max(player.position.y, boundary.position.y));
+
       if (
         rectangularCollisions({
           rectangle1: player,
@@ -437,7 +445,8 @@ function animate() {
               y: boundary.position.y + 3,
             },
           },
-        })
+        }) &&
+        overlappingArea > player.height / 2.2
       ) {
         moving = false;
         break;
@@ -452,9 +461,20 @@ function animate() {
     player.image = player.sprites.left;
     for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
+
+      const overlappingArea =
+      (Math.min(
+        player.position.y + player.height,
+        boundary.position.y + boundary.height
+      ) -
+        Math.max(player.position.y, boundary.position.y));
+
       if (
         rectangularCollisions({
-          rectangle1: player,
+          rectangle1: {
+            ...player,
+            height: player.height / 2
+        },
           rectangle2: {
             ...boundary,
             position: {
@@ -462,7 +482,8 @@ function animate() {
               y: boundary.position.y,
             },
           },
-        })
+        }) &&
+        overlappingArea > player.height / 2
       ) {
         moving = false;
         break;
@@ -477,17 +498,31 @@ function animate() {
     player.image = player.sprites.down;
     for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
+
+      const overlappingArea =
+      (Math.min(
+        player.position.y + player.height,
+        boundary.position.y + boundary.height
+      ) -
+        Math.max(player.position.y, boundary.position.y));
+
       if (
-        rectangularCollisions({
-          rectangle1: player,
-          rectangle2: {
-            ...boundary,
-            position: {
-              x: boundary.position.x,
-              y: boundary.position.y - 3,
-            },
-          },
-        })
+        player.position.x + player.width >= boundary.position.x &&
+        player.position.x <= boundary.position.x + boundary.width &&
+        player.position.y + (player.height) >= (boundary.position.y - 3) &&
+        player.position.y <= (boundary.position.y - 3) + boundary.height &&
+        overlappingArea > player.height / 2
+
+        // rectangularCollisions({
+        //   rectangle1: player
+        //   rectangle2: {
+        //     ...boundary,
+        //     position: {
+        //       x: boundary.position.x,
+        //       y: boundary.position.y - 3,
+        //     },
+        //   },
+        // })
       ) {
         moving = false;
         break;
@@ -502,9 +537,20 @@ function animate() {
     player.image = player.sprites.right;
     for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
+
+      const overlappingArea =
+      (Math.min(
+        player.position.y + player.height,
+        boundary.position.y + boundary.height
+      ) -
+        Math.max(player.position.y, boundary.position.y));
+
       if (
         rectangularCollisions({
-          rectangle1: player,
+          rectangle1: {
+            ...player,
+            height: player.height / 2
+        },
           rectangle2: {
             ...boundary,
             position: {
@@ -512,7 +558,8 @@ function animate() {
               y: boundary.position.y,
             },
           },
-        })
+        }) &&
+        overlappingArea > player.height / 2
       ) {
         moving = false;
         break;
