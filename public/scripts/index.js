@@ -1021,7 +1021,6 @@ function initBattle() {
             renderedSprites,
           });
 
-          // console.log("enemy.health", enemy.health);
 
           if (enemy.health <= 0) {
             queue.push(() => {
@@ -1054,8 +1053,6 @@ function initBattle() {
             });
 
             if (starter.health <= 0) {
-              console.log("are we really in the starter fainting");
-  
               queue.push(() => {
                 starter.faint();
               });
@@ -1078,9 +1075,7 @@ function initBattle() {
             }
           });
 
-          // console.log("starter.health", starter.health);
 
-          
         } else if (starterOneSpeed < enemySpeed) {
           console.log("enemy is faster");
 
