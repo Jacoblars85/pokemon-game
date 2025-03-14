@@ -1021,7 +1021,6 @@ function initBattle() {
             renderedSprites,
           });
 
-
           if (enemy.health <= 0) {
             queue.push(() => {
               enemy.faint();
@@ -1032,7 +1031,6 @@ function initBattle() {
                 opacity: 1,
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId);
-                  // setBattleStart(false);
                   animate();
                   document.getElementById("battleInterface").style.display =
                     "none";
@@ -1056,7 +1054,7 @@ function initBattle() {
               queue.push(() => {
                 starter.faint();
               });
-  
+
               queue.push(() => {
                 gsap.to("#fadeOutDiv", {
                   opacity: 1,
@@ -1074,8 +1072,6 @@ function initBattle() {
               });
             }
           });
-
-
         } else if (starterOneSpeed < enemySpeed) {
           console.log("enemy is faster");
 
@@ -1085,7 +1081,6 @@ function initBattle() {
             recipient: starter,
             renderedSprites,
           });
-
 
           if (starter.health <= 0) {
             queue.push(() => {
@@ -1118,11 +1113,11 @@ function initBattle() {
 
             if (enemy.health <= 0) {
               // console.log("are we really in the enemy fainting");
-  
+
               queue.push(() => {
                 enemy.faint();
               });
-  
+
               queue.push(() => {
                 gsap.to("#fadeOutDiv", {
                   opacity: 1,
@@ -1140,8 +1135,6 @@ function initBattle() {
               });
             }
           });
-
-          
         }
       } else if (
         button.className === "starterOne" ||
