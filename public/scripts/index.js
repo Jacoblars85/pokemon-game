@@ -1086,7 +1086,6 @@ function initBattle() {
             renderedSprites,
           });
 
-          // console.log("starter.health", starter.health);
 
           if (starter.health <= 0) {
             queue.push(() => {
@@ -1098,7 +1097,6 @@ function initBattle() {
                 opacity: 1,
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId);
-                  // setBattleStart(false);
                   animate();
                   document.getElementById("battleInterface").style.display =
                     "none";
@@ -1142,8 +1140,6 @@ function initBattle() {
               });
             }
           });
-
-          // console.log("enemy.health", enemy.health);
 
           
         }
