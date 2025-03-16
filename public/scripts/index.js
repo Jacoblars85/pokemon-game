@@ -270,7 +270,7 @@ battleZonesMap.forEach((row, i) => {
   });
 });
 
-const cheastZones = [];
+// const cheastZones = [];
 
 // cheastZonesMap.forEach((row, i) => {
 //   row.forEach((symbol, j) => {
