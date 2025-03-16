@@ -270,6 +270,23 @@ battleZonesMap.forEach((row, i) => {
   });
 });
 
+const cheastZones = [];
+
+// cheastZonesMap.forEach((row, i) => {
+//   row.forEach((symbol, j) => {
+//     if (symbol === 1025) {
+//       cheastZones.push(
+//         new Boundary({
+//           position: {
+//             x: j * Boundary.width + offset.x,
+//             y: i * Boundary.height + offset.y,
+//           },
+//         })
+//       );
+//     }
+//   });
+// });
+
 const worldImage = new Image();
 worldImage.src = "./scripts/img/bowsermon-map-v1.png";
 
