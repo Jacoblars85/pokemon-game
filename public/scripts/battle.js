@@ -179,7 +179,59 @@ function initBattle() {
   for (const start of starters) {
     console.log('how many starters', start);
     
+    document.getElementById("switchBox").innerHTML += `
+      <div style=" 
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-around;
+              padding: 5px; 
+      ">
+          <img height="50" width="50" src=${starterOne.profile_pic} />
+          <p style=" 
+            text-align: center;
+           "
+           >starter 1: ${starterOne.character_name} </p>
+          <div>
+            <p style=" 
+            margin: 0px;
+            text-align: center;
+            "
+            >${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${
+      starterOne.stamina
+    } stamina
+            </p>
+            <p style=" 
+            margin: 0px;
+            text-align: center;
+            "
+            >${starterOne.speed} speed</p>
+          </div>
+          <button
+            id="attackButton"
+            class="starterOne"
+            style="
+              color: black;
+              font-size: 15;
+              border-color: black;
+              cursor: pointer;
+              width: 100px;
+            "
+            disabled=${
+              starter.isCurrentStarter === true
+                ? true
+                : starterOneHp <= 0
+                ? true
+                : false
+            }
+          >
+            Change Starter
+          </button>
+      </div>
+    `;
   }
+
+
   if (starters.length === 1) {
     document.getElementById("switchBox").innerHTML = `
       <div style=" 
