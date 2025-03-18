@@ -176,8 +176,9 @@ function initBattle() {
 `;
 
   // InnerHtml for the switch box
-  for (const start of starters) {
-    console.log('how many starters', starters[start]);
+  for (let i = 0; i < starters.length; i++) {
+    const start = starters[i];
+    console.log('how many starters',i++);
     
     document.getElementById("switchBox").innerHTML += `
       <div style=" 
@@ -191,7 +192,7 @@ function initBattle() {
           <p style=" 
             text-align: center;
            "
-           >starter ${start.length++}: ${start.character_name} </p>
+           >starter ${i++}: ${start.character_name} </p>
           <div>
             <p style=" 
             margin: 0px;
@@ -229,6 +230,8 @@ function initBattle() {
       </div>
     `;
   }
+
+  
 
 
 //   if (starters.length === 1) {
