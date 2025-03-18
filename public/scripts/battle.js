@@ -176,10 +176,10 @@ function initBattle() {
 `;
 
   // InnerHtml for the switch box
-  let starterNum = 0
+  let starterNum = 0;
   for (let i = 0; i < starters.length; i++) {
     const start = starters[i];
-    starterNum++
+    starterNum++;
 
     document.getElementById("switchBox").innerHTML += `
       <div style=" 
@@ -231,7 +231,6 @@ function initBattle() {
       </div>
     `;
   }
-
 
   // InnerHtml for the inventory box
   for (const usersConsumables of usersConsumableItems) {
