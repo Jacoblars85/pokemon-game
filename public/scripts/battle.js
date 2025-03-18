@@ -176,8 +176,10 @@ function initBattle() {
 `;
 
   // InnerHtml for the switch box
+  let starterNum = 0
   for (let i = 0; i < starters.length; i++) {
     const start = starters[i];
+    starterNum++
 
     document.getElementById("switchBox").innerHTML += `
       <div style=" 
@@ -191,7 +193,7 @@ function initBattle() {
           <p style=" 
             text-align: center;
            "
-           >starter ${i++}: ${start.character_name} </p>
+           >starter ${starterNum}: ${start.character_name} </p>
           <div>
             <p style=" 
             margin: 0px;
