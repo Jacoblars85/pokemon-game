@@ -177,7 +177,7 @@ function initBattle() {
 
   // InnerHtml for the switch box
   for (const start of starters) {
-    console.log('how many starters', start);
+    console.log('how many starters', starters[start]);
     
     document.getElementById("switchBox").innerHTML += `
       <div style=" 
@@ -187,29 +187,28 @@ function initBattle() {
               justify-content: space-around;
               padding: 5px; 
       ">
-          <img height="50" width="50" src=${starterOne.profile_pic} />
+          <img height="50" width="50" src=${start.profile_pic} />
           <p style=" 
             text-align: center;
            "
-           >starter 1: ${starterOne.character_name} </p>
+           >starter ${start.length++}: ${start.character_name} </p>
           <div>
             <p style=" 
             margin: 0px;
             text-align: center;
             "
-            >${starterOneHp}/${starterOne.hp} hp | ${starterOneStamina}/${
-      starterOne.stamina
+            >${starterOneHp}/${start.hp} hp | ${starterOneStamina}/${
+                start.stamina
     } stamina
             </p>
             <p style=" 
             margin: 0px;
             text-align: center;
             "
-            >${starterOne.speed} speed</p>
+            >${start.speed} speed</p>
           </div>
           <button
             id="attackButton"
-            class="starterOne"
             style="
               color: black;
               font-size: 15;
@@ -218,7 +217,7 @@ function initBattle() {
               width: 100px;
             "
             disabled=${
-              starter.isCurrentStarter === true
+                start.isCurrentStarter === true
                 ? true
                 : starterOneHp <= 0
                 ? true
