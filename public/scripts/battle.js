@@ -178,7 +178,6 @@ function initBattle() {
   // InnerHtml for the switch box
   for (let i = 0; i < starters.length; i++) {
     const start = starters[i];
-    console.log("how many starters", i++);
 
     document.getElementById("switchBox").innerHTML += `
       <div style=" 
@@ -198,7 +197,7 @@ function initBattle() {
             margin: 0px;
             text-align: center;
             "
-            >${starterOneHp}/${start.hp} hp | ${starterOneStamina}/${
+            >${start.hp}/${start.hp} hp | ${start.stamina}/${
       start.stamina
     } stamina
             </p>
