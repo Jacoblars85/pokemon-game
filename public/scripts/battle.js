@@ -176,7 +176,11 @@ function initBattle() {
 `;
 
   // InnerHtml for the switch box
-  if (starters.length == 1) {
+  for (const start of starters) {
+    console.log('how many starters', start);
+    
+  }
+  if (starters.length === 1) {
     document.getElementById("switchBox").innerHTML = `
       <div style=" 
               display: flex;
