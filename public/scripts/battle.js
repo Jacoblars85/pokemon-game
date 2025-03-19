@@ -531,7 +531,7 @@ function initBattle() {
 
         queue.push(() => {
             enemy.attack({
-              attack: selectedAttack,
+              attack: {},
               recipient: starter,
               renderedSprites,
             });
