@@ -359,6 +359,8 @@ function initBattle() {
                 opacity: 1,
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId);
+                  randomEnemy = Math.floor(Math.random() * 18 + 1);
+                    getEnemy(randomEnemy);
                   animate();
                   document.getElementById("battleInterface").style.display =
                     "none";
@@ -388,6 +390,8 @@ function initBattle() {
                   opacity: 1,
                   onComplete: () => {
                     cancelAnimationFrame(battleAnimationId);
+                    randomEnemy = Math.floor(Math.random() * 18 + 1);
+                    getEnemy(randomEnemy);
                     animate();
                     document.getElementById("battleInterface").style.display =
                       "none";
