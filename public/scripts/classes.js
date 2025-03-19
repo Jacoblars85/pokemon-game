@@ -76,7 +76,7 @@ class Sprite {
         this.image.height / this.frames.max
       );
     }
-    
+
     c.restore();
 
     if (!this.animate) return;
@@ -145,7 +145,11 @@ class Character extends Sprite {
   }
 
   switching(recipient) {
-    document.getElementById("dialogueBox").innerHTML = this.name + " switched into ...";
+    console.log("recipient", recipient);
+
+    document.getElementById("dialogueBox").style.display = "block";
+    document.getElementById("dialogueBox").innerHTML =
+      this.name + " switched into ...";
 
     this.isCurrentStarter = false;
     recipient.isCurrentStarter = true;
@@ -156,14 +160,15 @@ class Character extends Sprite {
     gsap.to(this, {
       opacity: 0,
       onComplete: () => {
-        gsap.to(recipient.position, {
-          x: this.position.x + 20,
-        });
-        gsap.to(recipient, {
-          opacity: 1,
-          
-        });
-          },
+        console.log('hi');
+        
+        // gsap.to(recipient, {
+        //   opacity: 1,
+        // });
+        // gsap.to(recipient.position, {
+        //   x: this.position.x + 20,
+        // });
+      },
     });
   }
 
