@@ -155,7 +155,15 @@ class Character extends Sprite {
     });
     gsap.to(this, {
       opacity: 0,
-      
+      onComplete: () => {
+        gsap.to(recipient.position, {
+          y: recipient.position.y - 20,
+        });
+        gsap.to(recipient, {
+          opacity: 1,
+          
+        });
+          },
     });
   }
 
