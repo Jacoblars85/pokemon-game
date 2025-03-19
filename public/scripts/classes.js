@@ -151,13 +151,13 @@ class Character extends Sprite {
     recipient.isCurrentStarter = true;
 
     gsap.to(this.position, {
-      y: this.position.y + 20,
+      x: this.position.x - 20,
     });
     gsap.to(this, {
       opacity: 0,
       onComplete: () => {
         gsap.to(recipient.position, {
-          y: recipient.position.y - 20,
+          x: this.position.x + 20,
         });
         gsap.to(recipient, {
           opacity: 1,
