@@ -360,7 +360,7 @@ function initBattle() {
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId);
                   randomEnemy = Math.floor(Math.random() * 18 + 1);
-                    getEnemy(randomEnemy);
+                  getEnemy(randomEnemy);
                   animate();
                   document.getElementById("battleInterface").style.display =
                     "none";
@@ -425,7 +425,7 @@ function initBattle() {
                 onComplete: () => {
                   cancelAnimationFrame(battleAnimationId);
                   randomEnemy = Math.floor(Math.random() * 18 + 1);
-                    getEnemy(randomEnemy);
+                  getEnemy(randomEnemy);
                   animate();
                   document.getElementById("battleInterface").style.display =
                     "none";
