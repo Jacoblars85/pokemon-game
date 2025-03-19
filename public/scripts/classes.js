@@ -158,6 +158,7 @@ class Character extends Sprite {
     gsap.to(this, {
       opacity: 0,
       onComplete: () => {
+        document.getElementById("starterName").innerHTML = recipient.name;
         gsap.to(recipient, {
           opacity: 1,
         });
