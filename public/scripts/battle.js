@@ -523,8 +523,6 @@ function initBattle() {
         });
       } else if (e.target.innerHTML === "Change Starter") {
         console.log("currentStarter", currentStarter);
-        // currentStarter = starter2;
-        // console.log('currentStarter', currentStarter);
 
         currentStarter.switching({
           recipient: starter2,
@@ -540,9 +538,9 @@ function initBattle() {
             renderedSprites,
           });
 
-          if (starter.health <= 0) {
+          if (currentStarter.health <= 0) {
             queue.push(() => {
-              starter.faint();
+              currentStarter.faint();
             });
 
             queue.push(() => {
