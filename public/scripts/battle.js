@@ -516,6 +516,22 @@ function initBattle() {
         document.getElementById("inventoryBox").style.display = "block";
         document.getElementById("attackBox").style.display = "none";
         document.getElementById("switchBox").style.display = "none";
+      } else if (e.target.innerHTML === "Run") {
+        gsap.to("#fadeOutDiv", {
+            opacity: 1,
+            onComplete: () => {
+              cancelAnimationFrame(battleAnimationId);
+              randomEnemy = Math.floor(Math.random() * 18 + 1);
+              getEnemy(randomEnemy);
+              animate();
+              document.getElementById("battleInterface").style.display =
+                "none";
+              gsap.to("#fadeOutDiv", {
+                opacity: 0,
+              });
+              battle.initiated = false;
+            },
+          });
       }
     });
   });
