@@ -144,14 +144,18 @@ class Character extends Sprite {
     });
   }
 
-  switch(recipient) {
+  switching(recipient) {
     document.getElementById("dialogueBox").innerHTML = this.name + " switched into ...";
+
+    this.isCurrentStarter = false;
+    recipient.isCurrentStarter = true;
 
     gsap.to(this.position, {
       y: this.position.y + 20,
     });
     gsap.to(this, {
       opacity: 0,
+      
     });
   }
 
