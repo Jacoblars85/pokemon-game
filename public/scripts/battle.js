@@ -17,7 +17,7 @@ let starter2;
 
 let renderedSprites;
 
-let currentStarter = starter;
+let currentStarter;
 
 let queue;
 
@@ -111,7 +111,9 @@ function initBattle() {
     hold_time: starterTwoAttackStats.hold_time,
   });
 
-  document.getElementById("starterName").innerHTML = starter.name;
+  currentStarter = starter;
+
+  document.getElementById("starterName").innerHTML = currentStarter.name;
   document.getElementById("enemyName").innerHTML = enemy.name;
 
   // InnerHtml for the attack box
@@ -313,6 +315,7 @@ function initBattle() {
    `;
   }
 
+  
   renderedSprites = [enemy, starter, starter2];
 
   queue = [];
@@ -520,14 +523,23 @@ function initBattle() {
           },
         });
       } else if (e.target.innerHTML === "Change Starter") {
-        starter.switching({
+
+
+        console.log('currentStarter', currentStarter);
+        // currentStarter = starter2;
+        // console.log('currentStarter', currentStarter);
+        
+        currentStarter.switching({
           recipient: starter2,
         });
+
+        currentStarter = starter2;
+        console.log('currentStarter', currentStarter);
 
         queue.push(() => {
           enemy.attack({
             attack: {},
-            recipient: starter,
+            recipient: currentStarter,
             renderedSprites,
           });
 
