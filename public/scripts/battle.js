@@ -523,7 +523,11 @@ function initBattle() {
             },
           });
       } else if (e.target.innerHTML === "Change Starter") {
-        console.log('e.target.innerHTML', e.target.innerHTML);
+
+        
+        starter.switching({
+            recipient: starter2,
+          });
 
         queue.push(() => {
             enemy.attack({
