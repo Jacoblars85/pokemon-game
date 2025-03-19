@@ -160,14 +160,12 @@ class Character extends Sprite {
     gsap.to(this, {
       opacity: 0,
       onComplete: () => {
-        console.log('hi');
-        
-        // gsap.to(recipient, {
-        //   opacity: 1,
-        // });
-        // gsap.to(recipient.position, {
-        //   x: this.position.x + 20,
-        // });
+        gsap.to(recipient, {
+          opacity: 1,
+        });
+        gsap.to(recipient.position, {
+          x: this.position.x + 20,
+        });
       },
     });
   }
