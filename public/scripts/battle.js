@@ -210,7 +210,6 @@ function initBattle() {
             >${start.speed} speed</p>
           </div>
           <button
-            id="attackButton"
             style="
               color: black;
               font-size: 15;
@@ -218,16 +217,7 @@ function initBattle() {
               cursor: pointer;
               width: 100px;
             "
-            disabled=${
-              start.isCurrentStarter === true
-                ? true
-                : starterOneHp <= 0
-                ? true
-                : false
-            }
-          >
-            Change Starter
-          </button>
+          >Change Starter</button>
       </div>
     `;
   }
@@ -532,6 +522,9 @@ function initBattle() {
               battle.initiated = false;
             },
           });
+      } else if (e.target.innerHTML === "Change Starter") {
+        console.log('e.target.innerHTML', e.target.innerHTML);
+        
       }
     });
   });
