@@ -199,9 +199,7 @@ function initBattle() {
             margin: 0px;
             text-align: center;
             "
-            >${start.hp}/${start.hp} hp | ${start.stamina}/${
-      start.stamina
-    } stamina
+            >${start.hp}/${start.hp} hp | ${start.stamina}/${start.stamina} stamina
             </p>
             <p style=" 
             margin: 0px;
@@ -508,59 +506,55 @@ function initBattle() {
         document.getElementById("switchBox").style.display = "none";
       } else if (e.target.innerHTML === "Run") {
         gsap.to("#fadeOutDiv", {
-            opacity: 1,
-            onComplete: () => {
-              cancelAnimationFrame(battleAnimationId);
-              randomEnemy = Math.floor(Math.random() * 18 + 1);
-              getEnemy(randomEnemy);
-              animate();
-              document.getElementById("battleInterface").style.display =
-                "none";
-              gsap.to("#fadeOutDiv", {
-                opacity: 0,
-              });
-              battle.initiated = false;
-            },
-          });
+          opacity: 1,
+          onComplete: () => {
+            cancelAnimationFrame(battleAnimationId);
+            randomEnemy = Math.floor(Math.random() * 18 + 1);
+            getEnemy(randomEnemy);
+            animate();
+            document.getElementById("battleInterface").style.display = "none";
+            gsap.to("#fadeOutDiv", {
+              opacity: 0,
+            });
+            battle.initiated = false;
+          },
+        });
       } else if (e.target.innerHTML === "Change Starter") {
-
-        
         starter.switching({
-            recipient: starter2,
-          });
+          recipient: starter2,
+        });
 
         queue.push(() => {
-            enemy.attack({
-              attack: {},
-              recipient: starter,
-              renderedSprites,
+          enemy.attack({
+            attack: {},
+            recipient: starter,
+            renderedSprites,
+          });
+
+          if (starter.health <= 0) {
+            queue.push(() => {
+              starter.faint();
             });
 
-            if (starter.health <= 0) {
-              queue.push(() => {
-                starter.faint();
+            queue.push(() => {
+              gsap.to("#fadeOutDiv", {
+                opacity: 1,
+                onComplete: () => {
+                  cancelAnimationFrame(battleAnimationId);
+                  randomEnemy = Math.floor(Math.random() * 18 + 1);
+                  getEnemy(randomEnemy);
+                  animate();
+                  document.getElementById("battleInterface").style.display =
+                    "none";
+                  gsap.to("#fadeOutDiv", {
+                    opacity: 0,
+                  });
+                  battle.initiated = false;
+                },
               });
-
-              queue.push(() => {
-                gsap.to("#fadeOutDiv", {
-                  opacity: 1,
-                  onComplete: () => {
-                    cancelAnimationFrame(battleAnimationId);
-                    randomEnemy = Math.floor(Math.random() * 18 + 1);
-                    getEnemy(randomEnemy);
-                    animate();
-                    document.getElementById("battleInterface").style.display =
-                      "none";
-                    gsap.to("#fadeOutDiv", {
-                      opacity: 0,
-                    });
-                    battle.initiated = false;
-                  },
-                });
-              });
-            }
-          });
-        
+            });
+          }
+        });
       }
     });
   });
