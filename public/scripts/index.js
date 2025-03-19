@@ -1,7 +1,7 @@
 let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
 getStarters();
-getEnemy();
+getEnemy(randomEnemy);
 getBasicAttacks();
 getAllUsersItems();
 
@@ -126,10 +126,10 @@ function getStarters() {
     });
 }
 
-function getEnemy() {
+function getEnemy(enemyId) {
   axios({
     method: "GET",
-    url: `http://localhost:5001/api/characters/enemy/${randomEnemy}`,
+    url: `http://localhost:5001/api/characters/enemy/${enemyId}`,
   })
     .then((response) => {
       enemyOne = response.data[0];
