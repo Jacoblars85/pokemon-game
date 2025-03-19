@@ -315,7 +315,6 @@ function initBattle() {
    `;
   }
 
-  
   renderedSprites = [enemy, starter, starter2];
 
   queue = [];
@@ -523,18 +522,16 @@ function initBattle() {
           },
         });
       } else if (e.target.innerHTML === "Change Starter") {
-
-
-        console.log('currentStarter', currentStarter);
+        console.log("currentStarter", currentStarter);
         // currentStarter = starter2;
         // console.log('currentStarter', currentStarter);
-        
+
         currentStarter.switching({
           recipient: starter2,
         });
 
         currentStarter = starter2;
-        console.log('currentStarter', currentStarter);
+        console.log("currentStarter", currentStarter);
 
         queue.push(() => {
           enemy.attack({
