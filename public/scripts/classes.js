@@ -144,7 +144,7 @@ class Character extends Sprite {
     });
   }
 
-  switching(recipient) {
+  switching({ recipient }) {
     console.log("recipient", recipient);
 
     document.getElementById("dialogueBox").style.display = "block";
