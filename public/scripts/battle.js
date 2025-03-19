@@ -524,6 +524,38 @@ function initBattle() {
           });
       } else if (e.target.innerHTML === "Change Starter") {
         console.log('e.target.innerHTML', e.target.innerHTML);
+
+        queue.push(() => {
+            enemy.attack({
+              attack: selectedAttack,
+              recipient: starter,
+              renderedSprites,
+            });
+
+            if (starter.health <= 0) {
+              queue.push(() => {
+                starter.faint();
+              });
+
+              queue.push(() => {
+                gsap.to("#fadeOutDiv", {
+                  opacity: 1,
+                  onComplete: () => {
+                    cancelAnimationFrame(battleAnimationId);
+                    randomEnemy = Math.floor(Math.random() * 18 + 1);
+                    getEnemy(randomEnemy);
+                    animate();
+                    document.getElementById("battleInterface").style.display =
+                      "none";
+                    gsap.to("#fadeOutDiv", {
+                      opacity: 0,
+                    });
+                    battle.initiated = false;
+                  },
+                });
+              });
+            }
+          });
         
       }
     });
