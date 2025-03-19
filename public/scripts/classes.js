@@ -144,6 +144,17 @@ class Character extends Sprite {
     });
   }
 
+  switch(recipient) {
+    document.getElementById("dialogueBox").innerHTML = this.name + " switched into ...";
+
+    gsap.to(this.position, {
+      y: this.position.y + 20,
+    });
+    gsap.to(this, {
+      opacity: 0,
+    });
+  }
+
   attack({ attack, recipient, renderedSprites }) {
     if (this.isEnemy) {
       if (this.stamina >= enemyAttackStats.attack_stamina)
