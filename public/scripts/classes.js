@@ -149,7 +149,7 @@ class Character extends Sprite {
 
     document.getElementById("dialogueBox").style.display = "block";
     document.getElementById("dialogueBox").innerHTML =
-      this.name + " switched into ...";
+      this.name + " switched into " + recipient.name;
 
     this.isCurrentStarter = false;
     recipient.isCurrentStarter = true;
