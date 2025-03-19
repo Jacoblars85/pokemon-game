@@ -145,8 +145,6 @@ class Character extends Sprite {
   }
 
   switching({ recipient }) {
-    console.log("recipient", recipient);
-
     document.getElementById("dialogueBox").style.display = "block";
     document.getElementById("dialogueBox").innerHTML =
       this.name + " switched into " + recipient.name;
@@ -164,7 +162,10 @@ class Character extends Sprite {
           opacity: 1,
         });
         gsap.to(recipient.position, {
-          x: this.position.x + 20,
+          x: recipient.position.x - 20,
+        });
+        gsap.to(recipient.position, {
+          x: recipient.position.x,
         });
       },
     });
