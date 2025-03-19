@@ -271,7 +271,7 @@ class Character extends Sprite {
         rotation,
       });
 
-      renderedSprites.splice(1, 0, projectileAttackFx);
+      renderedSprites.splice(2, 0, projectileAttackFx);
 
       gsap.to(projectileAttackFx.position, {
         x: recipient.position.x,
@@ -293,7 +293,7 @@ class Character extends Sprite {
             duration: 0.08,
           });
 
-          renderedSprites.splice(1, 1);
+          renderedSprites.splice(2, 1);
         },
       });
     } else if (attack.attack_type === "summon") {
@@ -322,7 +322,7 @@ class Character extends Sprite {
         animate: true,
       });
 
-      renderedSprites.splice(2, 0, summonAttackFx);
+      renderedSprites.splice(3, 0, summonAttackFx);
 
       gsap.to(summonAttackFx.position, {
         x: recipient.position.x + 10,
@@ -345,7 +345,7 @@ class Character extends Sprite {
             duration: 0.08,
           });
 
-          renderedSprites.splice(2, 1);
+          renderedSprites.splice(3, 1);
         },
       });
     } else if (attack.attack_type === "tired") {
