@@ -162,6 +162,9 @@ class Character extends Sprite {
         gsap.to("#starterHealthBar", {
           width: (recipient.health / recipient.maxHealth) * 100 + "%",
         });
+        gsap.to("#starterStaminaBar", {
+          width: (recipient.stamina / recipient.maxStamina) * 100 + "%",
+        });
         gsap.to(recipient, {
           opacity: 1,
         });
