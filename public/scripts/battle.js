@@ -469,38 +469,6 @@ function initBattle() {
             }
           });
         }
-      } else if (
-        button.className === "starterOne" ||
-        button.className === "starterTwo" ||
-        button.id === "consumable"
-      ) {
-        console.log("in switch");
-
-        if (button.className === "starterOne") {
-          console.log("switching starter 1");
-
-          currentStarter = starter;
-          starter.isCurrentStarter = true;
-
-          // this.image = starterOne.battle_pic;
-        } else if (button.className === "starterTwo") {
-          console.log("switching starter 2");
-
-          currentStarter = starter2;
-          starter2.isCurrentStarter = true;
-
-          // this.image = starterTwo.battle_pic;
-        } else if (button.id === "consumable") {
-          console.log("using consumable");
-        }
-
-        setTimeout(() => {
-          enemy.attack({
-            attack: selectedAttack,
-            recipient: starter,
-            renderedSprites,
-          });
-        }, 2700);
       } else if (e.target.innerHTML === "Attack") {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
@@ -532,6 +500,7 @@ function initBattle() {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
+
         console.log("currentStarter", currentStarter);
 
         currentStarter.switching({
