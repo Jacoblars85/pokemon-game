@@ -55,6 +55,7 @@ function initBattle() {
     maxStamina: enemyStamina,
     speed: enemySpeed,
     fx_img: enemyAttackStats.fx_img,
+    attackStats: enemyAttackStats,
     max_frames: enemyAttackStats.max_frames,
     hold_time: enemyAttackStats.hold_time,
   });
@@ -81,6 +82,7 @@ function initBattle() {
     maxStamina: starterOneStamina,
     speed: starterOneSpeed,
     fx_img: starterOneAttackStats.fx_img,
+    attackStats: starterOneAttackStats,
     max_frames: starterOneAttackStats.max_frames,
     hold_time: starterOneAttackStats.hold_time,
   });
@@ -107,6 +109,7 @@ function initBattle() {
     maxStamina: starterTwoStamina,
     speed: starterTwoSpeed,
     fx_img: starterTwoAttackStats.fx_img,
+    attackStats: starterTwoAttackStats,
     max_frames: starterTwoAttackStats.max_frames,
     hold_time: starterTwoAttackStats.hold_time,
   });
