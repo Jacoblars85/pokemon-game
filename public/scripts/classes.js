@@ -172,7 +172,7 @@ class Character extends Sprite {
                         cursor: pointer;
                         box-shadow: 0 0 0 0;
                         "
-                >${recipient.attack_name}</button>
+                >${recipient.attackStats.attack_name}</button>
       
                 <button
                   id="attackButton"
