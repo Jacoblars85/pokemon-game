@@ -327,6 +327,8 @@ function initBattle() {
 
         if (characterSelectedAttack === starterOneAttackStats.attack_name)
           selectedAttack = starterOneAttackStats;
+        else if (characterSelectedAttack === starterTwoAttackStats.attack_name)
+            selectedAttack = starterTwoAttackStats;
         else if (characterSelectedAttack === kickAttackStats.attack_name)
           selectedAttack = kickAttackStats;
         else if (characterSelectedAttack === pokeAttackStats.attack_name)
