@@ -325,6 +325,8 @@ function initBattle() {
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
       if (e.target.id === "attackButton") {
+        console.log('clicked attack');
+        
         const characterSelectedAttack = e.target.innerHTML;
         let selectedAttack = {};
 
@@ -527,6 +529,9 @@ function initBattle() {
           },
         });
       } else if (e.target.innerHTML === "Change Starter") {
+        document.getElementById("attackBox").style.display = "flex";
+        document.getElementById("switchBox").style.display = "none";
+        document.getElementById("inventoryBox").style.display = "none";
         console.log("currentStarter", currentStarter);
 
         currentStarter.switching({
