@@ -145,9 +145,71 @@ class Character extends Sprite {
   }
 
   switching({ recipient }) {
+    console.log('recipient', recipient);
+    
     document.getElementById("dialogueBox").style.display = "block";
     document.getElementById("dialogueBox").innerHTML =
       this.name + " switched into " + recipient.name;
+
+      document.getElementById("attackBox").innerHTML = `
+      <button
+                  id="attackButton"
+                  class="btn"
+                    style="
+                        display: flex;
+                        width: 33.33%;
+                        height: 100%;
+                        text-align: center;
+                        font-size: 30px;
+                        color: black;
+                        justify-content: center;
+                        align-items: center;
+                        border: 0;
+                        border-bottom: 4px solid black;
+                        border-left: 4px solid black;
+                        cursor: pointer;
+                        box-shadow: 0 0 0 0;
+                        "
+                >${recipient.attack_name}</button>
+      
+                <button
+                  id="attackButton"
+                  class="btn"
+                  style="
+                        display: flex;
+                        width: 33.33%;
+                        height: 100%;
+                        text-align: center;
+                        font-size: 30px;
+                        color: black;
+                        justify-content: center;
+                        align-items: center;
+                        border: 0;
+                        border-bottom: 4px solid black;
+                        cursor: pointer;
+                        box-shadow: 0 0 0 0;
+                        "
+                >${kickAttack}</button>
+      
+                <button
+                  id="attackButton"
+                  class="btn"
+                  style="
+                        display: flex;
+                        width: 33.33%;
+                        height: 100%;
+                        text-align: center;
+                        font-size: 30px;
+                        color: black;
+                        justify-content: center;
+                        align-items: center;
+                        border: 0;
+                        border-bottom: 4px solid black;
+                        cursor: pointer;
+                        box-shadow: 0 0 0 0;
+                        "
+                >${pokeAttack}</button>
+      `;
 
     this.isCurrentStarter = false;
     recipient.isCurrentStarter = true;
