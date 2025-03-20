@@ -339,8 +339,8 @@ function initBattle() {
         else if (characterSelectedAttack === pokeAttackStats.attack_name)
           selectedAttack = pokeAttackStats;
 
-        if (starterOneSpeed >= enemySpeed) {
-          starter.attack({
+        if (currentStarter.speed >= enemySpeed) {
+            currentStarter.attack({
             attack: selectedAttack,
             recipient: enemy,
             renderedSprites,
@@ -373,13 +373,13 @@ function initBattle() {
           queue.push(() => {
             enemy.attack({
               attack: selectedAttack,
-              recipient: starter,
+              recipient: currentStarter,
               renderedSprites,
             });
 
-            if (starter.health <= 0) {
+            if (currentStarter.health <= 0) {
               queue.push(() => {
-                starter.faint();
+                currentStarter.faint();
               });
 
               queue.push(() => {
@@ -401,19 +401,19 @@ function initBattle() {
               });
             }
           });
-        } else if (starterOneSpeed < enemySpeed) {
+        } else if (currentStarter.speed < enemySpeed) {
           console.log("enemy is faster");
 
           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
           enemy.attack({
             attack: selectedAttack,
-            recipient: starter,
+            recipient: currentStarter,
             renderedSprites,
           });
 
-          if (starter.health <= 0) {
+          if (currentStarter.health <= 0) {
             queue.push(() => {
-              starter.faint();
+                currentStarter.faint();
             });
 
             queue.push(() => {
@@ -436,7 +436,7 @@ function initBattle() {
           }
 
           queue.push(() => {
-            starter.attack({
+            currentStarter.attack({
               attack: selectedAttack,
               recipient: enemy,
               renderedSprites,
