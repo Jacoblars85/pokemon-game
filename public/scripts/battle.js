@@ -586,20 +586,17 @@ function initBattle() {
         // document.getElementById("switchBox").style.display = "none";
         // document.getElementById("inventoryBox").style.display = "none";
 
-        let itemBeingUsed
+        let itemBeingUsed;
 
         for (const usersConsumables of usersConsumableItems) {
-            if (usersConsumables.items_id == e.target.id) {
-                itemBeingUsed = usersConsumables 
-            }
+          if (usersConsumables.items_id == e.target.id) {
+            itemBeingUsed = usersConsumables;
+          }
         }
-        
 
         currentStarter.usingItem({
-            item: itemBeingUsed
-          });
-
-       
+          item: itemBeingUsed,
+        });
 
         queue.push(() => {
           enemy.attack({
