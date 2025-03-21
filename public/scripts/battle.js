@@ -509,14 +509,12 @@ function initBattle() {
         else if (e.target.id == 2) changingStarter = starter2
         
 
-        console.log("currentStarter", currentStarter);
 
         currentStarter.switching({
           recipient: changingStarter,
         });
 
         currentStarter = changingStarter;
-        console.log("currentStarter", currentStarter);
 
         queue.push(() => {
           enemy.attack({
