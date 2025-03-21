@@ -582,9 +582,9 @@ function initBattle() {
           }
         });
       } else if (e.target.innerHTML === "Use Consumable") {
-        // document.getElementById("attackBox").style.display = "flex";
-        // document.getElementById("switchBox").style.display = "none";
-        // document.getElementById("inventoryBox").style.display = "none";
+        document.getElementById("attackBox").style.display = "flex";
+        document.getElementById("switchBox").style.display = "none";
+        document.getElementById("inventoryBox").style.display = "none";
 
         let itemBeingUsed;
 
