@@ -213,6 +213,7 @@ function initBattle() {
             >${start.speed} speed</p>
           </div>
           <button
+            id=${starterNum}
             style="
               color: black;
               font-size: 15;
@@ -501,13 +502,20 @@ function initBattle() {
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
 
+        let changingStarter
+        if (e.target.id === 1) {
+            changingStarter = starter
+        } else if (e.target.id === 2) {
+            changingStarter = starter2
+        }
+
         console.log("currentStarter", currentStarter);
 
         currentStarter.switching({
-          recipient: starter2,
+          recipient: changingStarter,
         });
 
-        currentStarter = starter2;
+        currentStarter = changingStarter;
         console.log("currentStarter", currentStarter);
 
         queue.push(() => {
