@@ -75,6 +75,7 @@ function initBattle() {
     },
     animate: true,
     isCurrentStarter: true,
+    id: 1,
     name: starterOneName,
     health: starterOneHp,
     maxHealth: starterOneHp,
@@ -102,6 +103,7 @@ function initBattle() {
     },
     animate: true,
     opacity: 0,
+    id: 2,
     name: starterTwoName,
     health: starterTwoHp,
     maxHealth: starterTwoHp,
@@ -139,7 +141,7 @@ function initBattle() {
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
                   "
-          >${starterOne.attack_name}</button>
+          >${currentStarter.attackStats.attack_name}</button>
 
           <button
             id="attackButton"
@@ -497,7 +499,7 @@ function initBattle() {
             battle.initiated = false;
           },
         });
-      } else if (e.target.innerHTML === "Change Starter") {
+      } else if (e.target.innerHTML === "Change Starter" && e.target.id != currentStarter.id) {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
