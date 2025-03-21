@@ -242,6 +242,14 @@ class Character extends Sprite {
     });
   }
 
+  usingItem({ item }) {
+    document.getElementById("dialogueBox").style.display = "block";
+    document.getElementById("dialogueBox").innerHTML = this.name + " used " + item.item_name;
+
+    this.health + item.hp
+    
+  }
+
   attack({ attack, recipient, renderedSprites }) {
     if (this.isEnemy) {
       if (this.stamina >= enemyAttackStats.attack_stamina)
