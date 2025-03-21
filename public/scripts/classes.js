@@ -101,6 +101,7 @@ class Character extends Sprite {
     opacity = 1,
     isEnemy = false,
     isCurrentStarter = false,
+    id,
     name = "no name",
     health,
     maxHealth,
@@ -123,6 +124,7 @@ class Character extends Sprite {
     });
     this.isEnemy = isEnemy;
     this.isCurrentStarter = isCurrentStarter;
+    this.id = id
     this.name = name;
     this.health = health;
     this.maxHealth = maxHealth;
