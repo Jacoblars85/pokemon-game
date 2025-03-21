@@ -247,7 +247,29 @@ class Character extends Sprite {
     document.getElementById("dialogueBox").innerHTML = this.name + " used " + item.item_name;
 
     this.health + item.hp
-    
+    this.stamina + item.stamina
+    this.speed + item.speed
+
+    gsap.to(this.position, {
+      x: this.position.x + 10,
+      yoyo: true,
+      repeat: 5,
+      duration: 0.08,
+    });
+    gsap.to(this, {
+      opacity: 0,
+      repeat: 5,
+      yoyo: true,
+      duration: 0.08,
+      onComplete: () => {
+        gsap.to("#starterHealthBar", {
+          width: (this.health / this.maxHealth) * 100 + "%",
+        });
+        gsap.to("#starterStaminaBar", {
+          width: (this.stamina / this.maxStamina) * 100 + "%",
+        });
+      },
+    });
   }
 
   attack({ attack, recipient, renderedSprites }) {
