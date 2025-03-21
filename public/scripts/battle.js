@@ -326,22 +326,22 @@ function initBattle() {
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
       if (e.target.id === "attackButton") {
-        console.log('clicked attack');
-        
+        console.log("clicked attack");
+
         const characterSelectedAttack = e.target.innerHTML;
         let selectedAttack = {};
 
         if (characterSelectedAttack === starterOneAttackStats.attack_name)
           selectedAttack = starterOneAttackStats;
         else if (characterSelectedAttack === starterTwoAttackStats.attack_name)
-            selectedAttack = starterTwoAttackStats;
+          selectedAttack = starterTwoAttackStats;
         else if (characterSelectedAttack === kickAttackStats.attack_name)
           selectedAttack = kickAttackStats;
         else if (characterSelectedAttack === pokeAttackStats.attack_name)
           selectedAttack = pokeAttackStats;
 
         if (currentStarter.speed >= enemySpeed) {
-            currentStarter.attack({
+          currentStarter.attack({
             attack: selectedAttack,
             recipient: enemy,
             renderedSprites,
@@ -414,7 +414,7 @@ function initBattle() {
 
           if (currentStarter.health <= 0) {
             queue.push(() => {
-                currentStarter.faint();
+              currentStarter.faint();
             });
 
             queue.push(() => {
@@ -502,13 +502,9 @@ function initBattle() {
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
 
-        
-
-        let changingStarter
-        if (e.target.id == 1) changingStarter = starter
-        else if (e.target.id == 2) changingStarter = starter2
-        
-
+        let changingStarter;
+        if (e.target.id == 1) changingStarter = starter;
+        else if (e.target.id == 2) changingStarter = starter2;
 
         currentStarter.switching({
           recipient: changingStarter,
