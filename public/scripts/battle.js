@@ -543,6 +543,10 @@ function initBattle() {
 
         currentStarter = changingStarter;
 
+        attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
+
+        console.log('attackButtonsArray', attackButtonsArray);
+
         queue.push(() => {
           enemy.attack({
             attack: {},
