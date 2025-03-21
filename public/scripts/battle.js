@@ -581,9 +581,6 @@ function initBattle() {
           }
         });
       } else if (e.target.innerHTML === "Use Consumable") {
-
-        console.log('using consumable');
-        
         // document.getElementById("attackBox").style.display = "flex";
         // document.getElementById("switchBox").style.display = "none";
         // document.getElementById("inventoryBox").style.display = "none";
@@ -592,37 +589,37 @@ function initBattle() {
 
        
 
-        // queue.push(() => {
-        //   enemy.attack({
-        //     attack: {},
-        //     recipient: currentStarter,
-        //     renderedSprites,
-        //   });
+        queue.push(() => {
+          enemy.attack({
+            attack: {},
+            recipient: currentStarter,
+            renderedSprites,
+          });
 
-        //   if (currentStarter.health <= 0) {
-        //     queue.push(() => {
-        //       currentStarter.faint();
-        //     });
+          if (currentStarter.health <= 0) {
+            queue.push(() => {
+              currentStarter.faint();
+            });
 
-        //     queue.push(() => {
-        //       gsap.to("#fadeOutDiv", {
-        //         opacity: 1,
-        //         onComplete: () => {
-        //           cancelAnimationFrame(battleAnimationId);
-        //           randomEnemy = Math.floor(Math.random() * 18 + 1);
-        //           getEnemy(randomEnemy);
-        //           animate();
-        //           document.getElementById("battleInterface").style.display =
-        //             "none";
-        //           gsap.to("#fadeOutDiv", {
-        //             opacity: 0,
-        //           });
-        //           battle.initiated = false;
-        //         },
-        //       });
-        //     });
-        //   }
-        // });
+            queue.push(() => {
+              gsap.to("#fadeOutDiv", {
+                opacity: 1,
+                onComplete: () => {
+                  cancelAnimationFrame(battleAnimationId);
+                  randomEnemy = Math.floor(Math.random() * 18 + 1);
+                  getEnemy(randomEnemy);
+                  animate();
+                  document.getElementById("battleInterface").style.display =
+                    "none";
+                  gsap.to("#fadeOutDiv", {
+                    opacity: 0,
+                  });
+                  battle.initiated = false;
+                },
+              });
+            });
+          }
+        });
       }
     });
   });
