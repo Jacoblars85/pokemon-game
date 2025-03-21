@@ -329,6 +329,7 @@ function initBattle() {
     }
                 </p>
                 <button
+                id=${usersConsumables.items_id}
                   style="
                     color: black;
                     font-size: 15;
@@ -586,12 +587,13 @@ function initBattle() {
         // document.getElementById("inventoryBox").style.display = "none";
 
         let itemBeingUsed
+
         for (const usersConsumables of usersConsumableItems) {
-            console.log('usersConsumables', usersConsumables);
-            if (usersConsumables.items.id === e.target.id) {
+            if (usersConsumables.items_id == e.target.id) {
                 itemBeingUsed = usersConsumables 
             }
         }
+        
 
         currentStarter.usingItem({
             item: itemBeingUsed
