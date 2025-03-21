@@ -588,11 +588,14 @@ function initBattle() {
         let itemBeingUsed
         for (const usersConsumables of usersConsumableItems) {
             console.log('usersConsumables', usersConsumables);
-            // if (usersConsumables.id === e.target.id) {
-            //     itemBeingUsed = usersConsumables 
-            // }
+            if (usersConsumables.items.id === e.target.id) {
+                itemBeingUsed = usersConsumables 
+            }
         }
-       
+
+        currentStarter.usingItem({
+            item: itemBeingUsed
+          });
 
        
 
