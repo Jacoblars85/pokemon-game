@@ -585,6 +585,13 @@ function initBattle() {
         // document.getElementById("switchBox").style.display = "none";
         // document.getElementById("inventoryBox").style.display = "none";
 
+        let itemBeingUsed
+        for (const usersConsumables of usersConsumableItems) {
+            console.log('usersConsumables', usersConsumables);
+            // if (usersConsumables.id === e.target.id) {
+            //     itemBeingUsed = usersConsumables 
+            // }
+        }
        
 
        
