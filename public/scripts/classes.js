@@ -246,9 +246,9 @@ class Character extends Sprite {
     document.getElementById("dialogueBox").style.display = "block";
     document.getElementById("dialogueBox").innerHTML = this.name + " used " + item.item_name;
 
-    this.health + item.hp
-    this.stamina + item.stamina
-    this.speed + item.speed
+    this.health += item.item_hp
+    this.stamina += item.item_stamina
+    this.speed += item.item_speed
 
     gsap.to(this.position, {
       x: this.position.x + 10,
