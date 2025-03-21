@@ -15,7 +15,7 @@ let starter;
 
 let starter2;
 
-let attackButtonsArray
+let attackButtonsArray;
 
 let renderedSprites;
 
@@ -123,10 +123,14 @@ function initBattle() {
   document.getElementById("starterName").innerHTML = currentStarter.name;
   document.getElementById("enemyName").innerHTML = enemy.name;
 
-  attackButtonsArray = [starter.attackStats.attack_name, kickAttack, pokeAttack];
+  attackButtonsArray = [
+    starter.attackStats.attack_name,
+    kickAttack,
+    pokeAttack,
+  ];
 
-  console.log('attackButtonsArray', attackButtonsArray);
-  
+  console.log("attackButtonsArray", attackButtonsArray);
+
   // InnerHtml for the attack box
   for (const attackButtons of attackButtonsArray) {
     document.getElementById("attackBox").innerHTML += `
@@ -148,68 +152,68 @@ function initBattle() {
                   box-shadow: 0 0 0 0;
                   "
           >${attackButtons}</button>
-          `
+          `;
   }
 
-//   document.getElementById("attackBox").innerHTML = `
-// <button
-//             id="attackButton"
-//             class="btn"
-//               style="
-//                   display: flex;
-//                   width: 33.33%;
-//                   height: 100%;
-//                   text-align: center;
-//                   font-size: 30px;
-//                   color: black;
-//                   justify-content: center;
-//                   align-items: center;
-//                   border: 0;
-//                   border-bottom: 4px solid black;
-//                   border-left: 4px solid black;
-//                   cursor: pointer;
-//                   box-shadow: 0 0 0 0;
-//                   "
-//           >${currentStarter.attackStats.attack_name}</button>
+  //   document.getElementById("attackBox").innerHTML = `
+  // <button
+  //             id="attackButton"
+  //             class="btn"
+  //               style="
+  //                   display: flex;
+  //                   width: 33.33%;
+  //                   height: 100%;
+  //                   text-align: center;
+  //                   font-size: 30px;
+  //                   color: black;
+  //                   justify-content: center;
+  //                   align-items: center;
+  //                   border: 0;
+  //                   border-bottom: 4px solid black;
+  //                   border-left: 4px solid black;
+  //                   cursor: pointer;
+  //                   box-shadow: 0 0 0 0;
+  //                   "
+  //           >${currentStarter.attackStats.attack_name}</button>
 
-//           <button
-//             id="attackButton"
-//             class="btn"
-//             style="
-//                   display: flex;
-//                   width: 33.33%;
-//                   height: 100%;
-//                   text-align: center;
-//                   font-size: 30px;
-//                   color: black;
-//                   justify-content: center;
-//                   align-items: center;
-//                   border: 0;
-//                   border-bottom: 4px solid black;
-//                   cursor: pointer;
-//                   box-shadow: 0 0 0 0;
-//                   "
-//           >${kickAttack}</button>
+  //           <button
+  //             id="attackButton"
+  //             class="btn"
+  //             style="
+  //                   display: flex;
+  //                   width: 33.33%;
+  //                   height: 100%;
+  //                   text-align: center;
+  //                   font-size: 30px;
+  //                   color: black;
+  //                   justify-content: center;
+  //                   align-items: center;
+  //                   border: 0;
+  //                   border-bottom: 4px solid black;
+  //                   cursor: pointer;
+  //                   box-shadow: 0 0 0 0;
+  //                   "
+  //           >${kickAttack}</button>
 
-//           <button
-//             id="attackButton"
-//             class="btn"
-//             style="
-//                   display: flex;
-//                   width: 33.33%;
-//                   height: 100%;
-//                   text-align: center;
-//                   font-size: 30px;
-//                   color: black;
-//                   justify-content: center;
-//                   align-items: center;
-//                   border: 0;
-//                   border-bottom: 4px solid black;
-//                   cursor: pointer;
-//                   box-shadow: 0 0 0 0;
-//                   "
-//           >${pokeAttack}</button>
-// `;
+  //           <button
+  //             id="attackButton"
+  //             class="btn"
+  //             style="
+  //                   display: flex;
+  //                   width: 33.33%;
+  //                   height: 100%;
+  //                   text-align: center;
+  //                   font-size: 30px;
+  //                   color: black;
+  //                   justify-content: center;
+  //                   align-items: center;
+  //                   border: 0;
+  //                   border-bottom: 4px solid black;
+  //                   cursor: pointer;
+  //                   box-shadow: 0 0 0 0;
+  //                   "
+  //           >${pokeAttack}</button>
+  // `;
 
   // InnerHtml for the switch box
   let starterNum = 0;
@@ -528,7 +532,10 @@ function initBattle() {
             battle.initiated = false;
           },
         });
-      } else if (e.target.innerHTML === "Change Starter" && e.target.id != currentStarter.id) {
+      } else if (
+        e.target.innerHTML === "Change Starter" &&
+        e.target.id != currentStarter.id
+      ) {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
@@ -545,7 +552,7 @@ function initBattle() {
 
         attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
 
-        console.log('attackButtonsArray', attackButtonsArray);
+        console.log("attackButtonsArray", attackButtonsArray);
 
         queue.push(() => {
           enemy.attack({
