@@ -15,6 +15,8 @@ let starter;
 
 let starter2;
 
+let attackButtonsArray
+
 let renderedSprites;
 
 let currentStarter;
@@ -121,9 +123,14 @@ function initBattle() {
   document.getElementById("starterName").innerHTML = currentStarter.name;
   document.getElementById("enemyName").innerHTML = enemy.name;
 
+  attackButtonsArray = [starter.attackStats.attack_name, kickAttack, pokeAttack];
+
+  console.log('attackButtonsArray', attackButtonsArray);
+  
   // InnerHtml for the attack box
-  document.getElementById("attackBox").innerHTML = `
-<button
+  for (const attackButtons of attackButtonsArray) {
+    document.getElementById("attackBox").innerHTML += `
+    <button
             id="attackButton"
             class="btn"
               style="
@@ -137,50 +144,72 @@ function initBattle() {
                   align-items: center;
                   border: 0;
                   border-bottom: 4px solid black;
-                  border-left: 4px solid black;
                   cursor: pointer;
                   box-shadow: 0 0 0 0;
                   "
-          >${currentStarter.attackStats.attack_name}</button>
+          >${attackButtons}</button>
+          `
+  }
 
-          <button
-            id="attackButton"
-            class="btn"
-            style="
-                  display: flex;
-                  width: 33.33%;
-                  height: 100%;
-                  text-align: center;
-                  font-size: 30px;
-                  color: black;
-                  justify-content: center;
-                  align-items: center;
-                  border: 0;
-                  border-bottom: 4px solid black;
-                  cursor: pointer;
-                  box-shadow: 0 0 0 0;
-                  "
-          >${kickAttack}</button>
+//   document.getElementById("attackBox").innerHTML = `
+// <button
+//             id="attackButton"
+//             class="btn"
+//               style="
+//                   display: flex;
+//                   width: 33.33%;
+//                   height: 100%;
+//                   text-align: center;
+//                   font-size: 30px;
+//                   color: black;
+//                   justify-content: center;
+//                   align-items: center;
+//                   border: 0;
+//                   border-bottom: 4px solid black;
+//                   border-left: 4px solid black;
+//                   cursor: pointer;
+//                   box-shadow: 0 0 0 0;
+//                   "
+//           >${currentStarter.attackStats.attack_name}</button>
 
-          <button
-            id="attackButton"
-            class="btn"
-            style="
-                  display: flex;
-                  width: 33.33%;
-                  height: 100%;
-                  text-align: center;
-                  font-size: 30px;
-                  color: black;
-                  justify-content: center;
-                  align-items: center;
-                  border: 0;
-                  border-bottom: 4px solid black;
-                  cursor: pointer;
-                  box-shadow: 0 0 0 0;
-                  "
-          >${pokeAttack}</button>
-`;
+//           <button
+//             id="attackButton"
+//             class="btn"
+//             style="
+//                   display: flex;
+//                   width: 33.33%;
+//                   height: 100%;
+//                   text-align: center;
+//                   font-size: 30px;
+//                   color: black;
+//                   justify-content: center;
+//                   align-items: center;
+//                   border: 0;
+//                   border-bottom: 4px solid black;
+//                   cursor: pointer;
+//                   box-shadow: 0 0 0 0;
+//                   "
+//           >${kickAttack}</button>
+
+//           <button
+//             id="attackButton"
+//             class="btn"
+//             style="
+//                   display: flex;
+//                   width: 33.33%;
+//                   height: 100%;
+//                   text-align: center;
+//                   font-size: 30px;
+//                   color: black;
+//                   justify-content: center;
+//                   align-items: center;
+//                   border: 0;
+//                   border-bottom: 4px solid black;
+//                   cursor: pointer;
+//                   box-shadow: 0 0 0 0;
+//                   "
+//           >${pokeAttack}</button>
+// `;
 
   // InnerHtml for the switch box
   let starterNum = 0;
