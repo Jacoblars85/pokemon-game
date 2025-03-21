@@ -329,18 +329,13 @@ function initBattle() {
     }
                 </p>
                 <button
-                  id="attackButton"
-                  class="consumable"
                   style="
                     color: black;
                     font-size: 15;
                     border-color: black;
                     cursor: pointer;
                   "
-                  disabled=${usersConsumables.number <= 0 ? true : false}
-                >
-                  Use Consumable
-                </button>
+                >Use Consumable</button>
               </div>
           </div>
           <div style="
