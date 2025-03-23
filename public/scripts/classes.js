@@ -124,7 +124,7 @@ class Character extends Sprite {
     });
     this.isEnemy = isEnemy;
     this.isCurrentStarter = isCurrentStarter;
-    this.id = id
+    this.id = id;
     this.name = name;
     this.health = health;
     this.maxHealth = maxHealth;
@@ -132,7 +132,7 @@ class Character extends Sprite {
     this.maxStamina = maxStamina;
     this.speed = speed;
     this.fx_img = fx_img;
-    this.attackStats = attackStats
+    this.attackStats = attackStats;
     this.max_frames = max_frames;
     this.hold_time = hold_time;
   }
@@ -173,7 +173,7 @@ class Character extends Sprite {
     //                     box-shadow: 0 0 0 0;
     //                     "
     //             >${recipient.attackStats.attack_name}</button>
-      
+
     //             <button
     //               id="attackButton"
     //               class="btn"
@@ -192,7 +192,7 @@ class Character extends Sprite {
     //                     box-shadow: 0 0 0 0;
     //                     "
     //             >${kickAttack}</button>
-      
+
     //             <button
     //               id="attackButton"
     //               class="btn"
@@ -244,15 +244,15 @@ class Character extends Sprite {
 
   usingItem({ item }) {
     document.getElementById("dialogueBox").style.display = "block";
-    document.getElementById("dialogueBox").innerHTML = this.name + " used " + item.item_name;
+    document.getElementById("dialogueBox").innerHTML =
+      this.name + " used " + item.item_name;
 
-    this.health += item.item_hp
-    this.stamina += item.item_stamina
-    this.speed += item.item_speed
+    this.health += item.item_hp;
+    this.stamina += item.item_stamina;
+    this.speed += item.item_speed;
 
-    if (this.health > this.maxHealth) this.health = this.maxHealth
-    if (this.stamina > this.maxStamina) this.stamina = this.maxStamina
-
+    if (this.health > this.maxHealth) this.health = this.maxHealth;
+    if (this.stamina > this.maxStamina) this.stamina = this.maxStamina;
 
     gsap.to(this.position, {
       x: this.position.x + 10,
