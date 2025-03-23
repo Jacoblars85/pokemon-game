@@ -250,6 +250,10 @@ class Character extends Sprite {
     this.stamina += item.item_stamina
     this.speed += item.item_speed
 
+    if (this.health > this.maxHealth) this.health = this.maxHealth
+    if (this.stamina > this.maxStamina) this.stamina = this.maxStamina
+
+
     gsap.to(this.position, {
       x: this.position.x + 10,
       yoyo: true,
