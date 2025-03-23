@@ -453,6 +453,14 @@ class Character extends Sprite {
         },
       });
     } else if (attack.attack_type === "tired") {
+      this.health -= 5
+
+      let tiredHealthBar = "#starterHealthBar";
+    if (this.isEnemy) tiredHealthBar = "#enemyHealthBar";
+
+    document.getElementById("dialogueBox").innerHTML =
+      this.name + " is " + attack.attack_name + "...";
+
       gsap.to(this.position, {
         x: this.position.x + 10,
         yoyo: true,
@@ -464,6 +472,11 @@ class Character extends Sprite {
         repeat: 5,
         yoyo: true,
         duration: 0.08,
+        onComplete: () => {
+          gsap.to(tiredHealthBar, {
+            width: (this.health / this.maxHealth) * 100 + "%",
+          });
+        },
       });
     }
   }
