@@ -598,6 +598,17 @@ function initBattle() {
           item: itemBeingUsed,
         });
 
+        axios({
+            method: "GET",
+            url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.itemId}`,
+          })
+            .then((response) => {
+              usersConsumableItems = response.data;
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+
         queue.push(() => {
           enemy.attack({
             attack: {},
