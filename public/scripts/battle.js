@@ -606,7 +606,7 @@ function initBattle() {
             url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
           })
             .then((response) => {
-              usersConsumableItems = response.data;
+                getAllUsersItems()
             })
             .catch((err) => {
               console.log(err);
