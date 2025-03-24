@@ -598,9 +598,12 @@ function initBattle() {
           item: itemBeingUsed,
         });
 
+        console.log('itemBeingUsed', itemBeingUsed);
+        
+
         axios({
             method: "GET",
-            url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.itemId}`,
+            url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
           })
             .then((response) => {
               usersConsumableItems = response.data;
