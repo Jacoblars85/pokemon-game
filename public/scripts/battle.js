@@ -598,19 +598,18 @@ function initBattle() {
           item: itemBeingUsed,
         });
 
-        console.log('itemBeingUsed', itemBeingUsed);
-        
+        console.log("itemBeingUsed", itemBeingUsed);
 
         axios({
-            method: "PUT",
-            url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
+          method: "PUT",
+          url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
+        })
+          .then((response) => {
+            getAllUsersItems();
           })
-            .then((response) => {
-                getAllUsersItems()
-            })
-            .catch((err) => {
-              console.log(err);
-            });
+          .catch((err) => {
+            console.log(err);
+          });
 
         queue.push(() => {
           enemy.attack({
