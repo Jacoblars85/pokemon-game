@@ -598,8 +598,6 @@ function initBattle() {
           item: itemBeingUsed,
         });
 
-        console.log("itemBeingUsed", itemBeingUsed);
-
         axios({
           method: "PUT",
           url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
