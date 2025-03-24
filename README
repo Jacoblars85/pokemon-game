@@ -1,14 +1,11 @@
 Problems:
 
-1. fix the starter.faint activating without starter being at 0
 2. changed the disabled variables to the classes that change the hp and stamina
-3. fix the changing to a differnet starter
-4. get new font instead of the mario font
+3. fix the changing to a differnet starter and getting the new attacks registered
 5. create the new hp, speed and damage system
 7. get the valiadation and log in working
 8. figure out if you can use multiple html for different pages
 9. fix the winning battle being sent to server
-10. fix chanracter walking into the top barriers
 11. fix the buttons being disabled when the character doesnt have enough stamina
 12. changed the battle odds in grass back to normal
 
