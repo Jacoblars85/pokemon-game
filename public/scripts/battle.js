@@ -602,7 +602,7 @@ function initBattle() {
         
 
         axios({
-            method: "GET",
+            method: "PUT",
             url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
           })
             .then((response) => {
