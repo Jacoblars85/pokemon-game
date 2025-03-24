@@ -26,10 +26,9 @@ let queue;
 let battleAnimationId;
 
 function resetBattleFunc() {
-  
-    // InnerHtml for the attack box
-    for (const attackButtons of attackButtonsArray) {
-      document.getElementById("attackBox").innerHTML += `
+  // InnerHtml for the attack box
+  for (const attackButtons of attackButtonsArray) {
+    document.getElementById("attackBox").innerHTML += `
       <button
               id="attackButton"
               class="btn"
@@ -49,16 +48,15 @@ function resetBattleFunc() {
                     "
             >${attackButtons}</button>
             `;
-    }
+  }
 
-  
-    // InnerHtml for the switch box
-    let starterNum = 0;
-    for (let i = 0; i < starters.length; i++) {
-      const start = starters[i];
-      starterNum++;
-  
-      document.getElementById("switchBox").innerHTML += `
+  // InnerHtml for the switch box
+  let starterNum = 0;
+  for (let i = 0; i < starters.length; i++) {
+    const start = starters[i];
+    starterNum++;
+
+    document.getElementById("switchBox").innerHTML += `
         <div style=" 
                 display: flex;
                 flex-direction: row;
@@ -96,11 +94,11 @@ function resetBattleFunc() {
             >Change Starter</button>
         </div>
       `;
-    }
-  
-    // InnerHtml for the inventory box
-    for (const usersConsumables of usersConsumableItems) {
-      document.getElementById("inventoryBox").innerHTML += `
+  }
+
+  // InnerHtml for the inventory box
+  for (const usersConsumables of usersConsumableItems) {
+    document.getElementById("inventoryBox").innerHTML += `
         <div height="140px">
             <div
               style="
@@ -154,16 +152,16 @@ function resetBattleFunc() {
                         ? ""
                         : `+${usersConsumables.item_hp} hp`
                     } ${
-        usersConsumables.item_stamina === 0
-          ? ""
-          : usersConsumables.item_hp === 0
-          ? `+${usersConsumables.item_stamina} stamina`
-          : `| +${usersConsumables.item_stamina} stamina`
-      } ${
-        usersConsumables.item_speed === 0
-          ? ""
-          : `| +${usersConsumables.item_speed} speed`
-      }
+      usersConsumables.item_stamina === 0
+        ? ""
+        : usersConsumables.item_hp === 0
+        ? `+${usersConsumables.item_stamina} stamina`
+        : `| +${usersConsumables.item_stamina} stamina`
+    } ${
+      usersConsumables.item_speed === 0
+        ? ""
+        : `| +${usersConsumables.item_speed} speed`
+    }
                   </p>
                   <button
                   id=${usersConsumables.items_id}
@@ -185,279 +183,139 @@ function resetBattleFunc() {
                   padding: 0;
                 " />
      `;
-    }
-  
-    renderedSprites = [enemy, starter, starter2];
-  
-    queue = [];
-  
-    document.querySelectorAll("button").forEach((button) => {
-      button.addEventListener("click", (e) => {
-        if (e.target.id === "attackButton") {
-          console.log("clicked attack");
-  
-          const characterSelectedAttack = e.target.innerHTML;
-          let selectedAttack = {};
-  
-          if (characterSelectedAttack === starterOneAttackStats.attack_name)
-            selectedAttack = starterOneAttackStats;
-          else if (characterSelectedAttack === starterTwoAttackStats.attack_name)
-            selectedAttack = starterTwoAttackStats;
-          else if (characterSelectedAttack === kickAttackStats.attack_name)
-            selectedAttack = kickAttackStats;
-          else if (characterSelectedAttack === pokeAttackStats.attack_name)
-            selectedAttack = pokeAttackStats;
-  
-          if (currentStarter.speed >= enemySpeed) {
+  }
+
+  renderedSprites = [enemy, starter, starter2];
+
+  queue = [];
+
+  document.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      if (e.target.id === "attackButton") {
+        console.log("clicked attack");
+
+        const characterSelectedAttack = e.target.innerHTML;
+        let selectedAttack = {};
+
+        if (characterSelectedAttack === starterOneAttackStats.attack_name)
+          selectedAttack = starterOneAttackStats;
+        else if (characterSelectedAttack === starterTwoAttackStats.attack_name)
+          selectedAttack = starterTwoAttackStats;
+        else if (characterSelectedAttack === kickAttackStats.attack_name)
+          selectedAttack = kickAttackStats;
+        else if (characterSelectedAttack === pokeAttackStats.attack_name)
+          selectedAttack = pokeAttackStats;
+
+        if (currentStarter.speed >= enemySpeed) {
+          currentStarter.attack({
+            attack: selectedAttack,
+            recipient: enemy,
+            renderedSprites,
+          });
+
+          if (enemy.health <= 0) {
+            queue.push(() => {
+              enemy.faint();
+            });
+
+            queue.push(() => {
+              gsap.to("#fadeOutDiv", {
+                opacity: 1,
+                onComplete: () => {
+                  cancelAnimationFrame(battleAnimationId);
+                  randomEnemy = Math.floor(Math.random() * 18 + 1);
+                  getEnemy(randomEnemy);
+                  animate();
+                  document.getElementById("battleInterface").style.display =
+                    "none";
+                  gsap.to("#fadeOutDiv", {
+                    opacity: 0,
+                  });
+                  battle.initiated = false;
+                },
+              });
+            });
+          }
+          // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
+          queue.push(() => {
+            enemy.attack({
+              attack: selectedAttack,
+              recipient: currentStarter,
+              renderedSprites,
+            });
+
+            if (currentStarter.health <= 0) {
+              queue.push(() => {
+                currentStarter.faint();
+              });
+
+              queue.push(() => {
+                gsap.to("#fadeOutDiv", {
+                  opacity: 1,
+                  onComplete: () => {
+                    cancelAnimationFrame(battleAnimationId);
+                    randomEnemy = Math.floor(Math.random() * 18 + 1);
+                    getEnemy(randomEnemy);
+                    animate();
+                    document.getElementById("battleInterface").style.display =
+                      "none";
+                    gsap.to("#fadeOutDiv", {
+                      opacity: 0,
+                    });
+                    battle.initiated = false;
+                  },
+                });
+              });
+            }
+          });
+        } else if (currentStarter.speed < enemySpeed) {
+          console.log("enemy is faster");
+
+          // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
+          enemy.attack({
+            attack: selectedAttack,
+            recipient: currentStarter,
+            renderedSprites,
+          });
+
+          if (currentStarter.health <= 0) {
+            queue.push(() => {
+              currentStarter.faint();
+            });
+
+            queue.push(() => {
+              gsap.to("#fadeOutDiv", {
+                opacity: 1,
+                onComplete: () => {
+                  cancelAnimationFrame(battleAnimationId);
+                  randomEnemy = Math.floor(Math.random() * 18 + 1);
+                  getEnemy(randomEnemy);
+                  animate();
+                  document.getElementById("battleInterface").style.display =
+                    "none";
+                  gsap.to("#fadeOutDiv", {
+                    opacity: 0,
+                  });
+                  battle.initiated = false;
+                },
+              });
+            });
+          }
+
+          queue.push(() => {
             currentStarter.attack({
               attack: selectedAttack,
               recipient: enemy,
               renderedSprites,
             });
-  
+
             if (enemy.health <= 0) {
+              // console.log("are we really in the enemy fainting");
+
               queue.push(() => {
                 enemy.faint();
               });
-  
-              queue.push(() => {
-                gsap.to("#fadeOutDiv", {
-                  opacity: 1,
-                  onComplete: () => {
-                    cancelAnimationFrame(battleAnimationId);
-                    randomEnemy = Math.floor(Math.random() * 18 + 1);
-                    getEnemy(randomEnemy);
-                    animate();
-                    document.getElementById("battleInterface").style.display =
-                      "none";
-                    gsap.to("#fadeOutDiv", {
-                      opacity: 0,
-                    });
-                    battle.initiated = false;
-                  },
-                });
-              });
-            }
-            // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
-            queue.push(() => {
-              enemy.attack({
-                attack: selectedAttack,
-                recipient: currentStarter,
-                renderedSprites,
-              });
-  
-              if (currentStarter.health <= 0) {
-                queue.push(() => {
-                  currentStarter.faint();
-                });
-  
-                queue.push(() => {
-                  gsap.to("#fadeOutDiv", {
-                    opacity: 1,
-                    onComplete: () => {
-                      cancelAnimationFrame(battleAnimationId);
-                      randomEnemy = Math.floor(Math.random() * 18 + 1);
-                      getEnemy(randomEnemy);
-                      animate();
-                      document.getElementById("battleInterface").style.display =
-                        "none";
-                      gsap.to("#fadeOutDiv", {
-                        opacity: 0,
-                      });
-                      battle.initiated = false;
-                    },
-                  });
-                });
-              }
-            });
-          } else if (currentStarter.speed < enemySpeed) {
-            console.log("enemy is faster");
-  
-            // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
-            enemy.attack({
-              attack: selectedAttack,
-              recipient: currentStarter,
-              renderedSprites,
-            });
-  
-            if (currentStarter.health <= 0) {
-              queue.push(() => {
-                currentStarter.faint();
-              });
-  
-              queue.push(() => {
-                gsap.to("#fadeOutDiv", {
-                  opacity: 1,
-                  onComplete: () => {
-                    cancelAnimationFrame(battleAnimationId);
-                    randomEnemy = Math.floor(Math.random() * 18 + 1);
-                    getEnemy(randomEnemy);
-                    animate();
-                    document.getElementById("battleInterface").style.display =
-                      "none";
-                    gsap.to("#fadeOutDiv", {
-                      opacity: 0,
-                    });
-                    battle.initiated = false;
-                  },
-                });
-              });
-            }
-  
-            queue.push(() => {
-              currentStarter.attack({
-                attack: selectedAttack,
-                recipient: enemy,
-                renderedSprites,
-              });
-  
-              if (enemy.health <= 0) {
-                // console.log("are we really in the enemy fainting");
-  
-                queue.push(() => {
-                  enemy.faint();
-                });
-  
-                queue.push(() => {
-                  gsap.to("#fadeOutDiv", {
-                    opacity: 1,
-                    onComplete: () => {
-                      cancelAnimationFrame(battleAnimationId);
-                      randomEnemy = Math.floor(Math.random() * 18 + 1);
-                      getEnemy(randomEnemy);
-                      animate();
-                      document.getElementById("battleInterface").style.display =
-                        "none";
-                      gsap.to("#fadeOutDiv", {
-                        opacity: 0,
-                      });
-                      battle.initiated = false;
-                    },
-                  });
-                });
-              }
-            });
-          }
-        } else if (e.target.innerHTML === "Attack") {
-          document.getElementById("attackBox").style.display = "flex";
-          document.getElementById("switchBox").style.display = "none";
-          document.getElementById("inventoryBox").style.display = "none";
-        } else if (e.target.innerHTML === "Switch") {
-          document.getElementById("switchBox").style.display = "block";
-          document.getElementById("attackBox").style.display = "none";
-          document.getElementById("inventoryBox").style.display = "none";
-        } else if (e.target.innerHTML === "Inventory") {
-          document.getElementById("inventoryBox").style.display = "block";
-          document.getElementById("attackBox").style.display = "none";
-          document.getElementById("switchBox").style.display = "none";
-        } else if (e.target.innerHTML === "Run") {
-          gsap.to("#fadeOutDiv", {
-            opacity: 1,
-            onComplete: () => {
-              cancelAnimationFrame(battleAnimationId);
-              randomEnemy = Math.floor(Math.random() * 18 + 1);
-              getEnemy(randomEnemy);
-              animate();
-              document.getElementById("battleInterface").style.display = "none";
-              gsap.to("#fadeOutDiv", {
-                opacity: 0,
-              });
-              battle.initiated = false;
-            },
-          });
-        } else if (
-          e.target.innerHTML === "Change Starter" &&
-          e.target.id != currentStarter.id
-        ) {
-          document.getElementById("attackBox").style.display = "flex";
-          document.getElementById("switchBox").style.display = "none";
-          document.getElementById("inventoryBox").style.display = "none";
-  
-          let changingStarter;
-          if (e.target.id == 1) changingStarter = starter;
-          else if (e.target.id == 2) changingStarter = starter2;
-  
-          currentStarter.switching({
-            recipient: changingStarter,
-          });
-  
-          currentStarter = changingStarter;
-  
-          attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
-  
-          console.log("attackButtonsArray", attackButtonsArray);
-  
-          queue.push(() => {
-            enemy.attack({
-              attack: {},
-              recipient: currentStarter,
-              renderedSprites,
-            });
-  
-            if (currentStarter.health <= 0) {
-              queue.push(() => {
-                currentStarter.faint();
-              });
-  
-              queue.push(() => {
-                gsap.to("#fadeOutDiv", {
-                  opacity: 1,
-                  onComplete: () => {
-                    cancelAnimationFrame(battleAnimationId);
-                    randomEnemy = Math.floor(Math.random() * 18 + 1);
-                    getEnemy(randomEnemy);
-                    animate();
-                    document.getElementById("battleInterface").style.display =
-                      "none";
-                    gsap.to("#fadeOutDiv", {
-                      opacity: 0,
-                    });
-                    battle.initiated = false;
-                  },
-                });
-              });
-            }
-          });
-        } else if (e.target.innerHTML === "Use Consumable") {
-          document.getElementById("attackBox").style.display = "flex";
-          document.getElementById("switchBox").style.display = "none";
-          document.getElementById("inventoryBox").style.display = "none";
-  
-          let itemBeingUsed;
-  
-          for (const usersConsumables of usersConsumableItems) {
-            if (usersConsumables.items_id == e.target.id) {
-              itemBeingUsed = usersConsumables;
-            }
-          }
-  
-          currentStarter.usingItem({
-            item: itemBeingUsed,
-          });
-  
-          axios({
-            method: "PUT",
-            url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
-          })
-            .then((response) => {
-              getAllUsersItems();
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-  
-          queue.push(() => {
-            enemy.attack({
-              attack: {},
-              recipient: currentStarter,
-              renderedSprites,
-            });
-  
-            if (currentStarter.health <= 0) {
-              queue.push(() => {
-                currentStarter.faint();
-              });
-  
+
               queue.push(() => {
                 gsap.to("#fadeOutDiv", {
                   opacity: 1,
@@ -478,9 +336,149 @@ function resetBattleFunc() {
             }
           });
         }
-      });
+      } else if (e.target.innerHTML === "Attack") {
+        document.getElementById("attackBox").style.display = "flex";
+        document.getElementById("switchBox").style.display = "none";
+        document.getElementById("inventoryBox").style.display = "none";
+      } else if (e.target.innerHTML === "Switch") {
+        document.getElementById("switchBox").style.display = "block";
+        document.getElementById("attackBox").style.display = "none";
+        document.getElementById("inventoryBox").style.display = "none";
+      } else if (e.target.innerHTML === "Inventory") {
+        document.getElementById("inventoryBox").style.display = "block";
+        document.getElementById("attackBox").style.display = "none";
+        document.getElementById("switchBox").style.display = "none";
+      } else if (e.target.innerHTML === "Run") {
+        gsap.to("#fadeOutDiv", {
+          opacity: 1,
+          onComplete: () => {
+            cancelAnimationFrame(battleAnimationId);
+            randomEnemy = Math.floor(Math.random() * 18 + 1);
+            getEnemy(randomEnemy);
+            animate();
+            document.getElementById("battleInterface").style.display = "none";
+            gsap.to("#fadeOutDiv", {
+              opacity: 0,
+            });
+            battle.initiated = false;
+          },
+        });
+      } else if (
+        e.target.innerHTML === "Change Starter" &&
+        e.target.id != currentStarter.id
+      ) {
+        document.getElementById("attackBox").style.display = "flex";
+        document.getElementById("switchBox").style.display = "none";
+        document.getElementById("inventoryBox").style.display = "none";
+
+        let changingStarter;
+        if (e.target.id == 1) changingStarter = starter;
+        else if (e.target.id == 2) changingStarter = starter2;
+
+        currentStarter.switching({
+          recipient: changingStarter,
+        });
+
+        currentStarter = changingStarter;
+
+        attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
+
+        console.log("attackButtonsArray", attackButtonsArray);
+
+        queue.push(() => {
+          enemy.attack({
+            attack: {},
+            recipient: currentStarter,
+            renderedSprites,
+          });
+
+          if (currentStarter.health <= 0) {
+            queue.push(() => {
+              currentStarter.faint();
+            });
+
+            queue.push(() => {
+              gsap.to("#fadeOutDiv", {
+                opacity: 1,
+                onComplete: () => {
+                  cancelAnimationFrame(battleAnimationId);
+                  randomEnemy = Math.floor(Math.random() * 18 + 1);
+                  getEnemy(randomEnemy);
+                  animate();
+                  document.getElementById("battleInterface").style.display =
+                    "none";
+                  gsap.to("#fadeOutDiv", {
+                    opacity: 0,
+                  });
+                  battle.initiated = false;
+                },
+              });
+            });
+          }
+        });
+      } else if (e.target.innerHTML === "Use Consumable") {
+        document.getElementById("attackBox").style.display = "flex";
+        document.getElementById("switchBox").style.display = "none";
+        document.getElementById("inventoryBox").style.display = "none";
+
+        let itemBeingUsed;
+
+        for (const usersConsumables of usersConsumableItems) {
+          if (usersConsumables.items_id == e.target.id) {
+            itemBeingUsed = usersConsumables;
+          }
+        }
+
+        currentStarter.usingItem({
+          item: itemBeingUsed,
+        });
+
+        axios({
+          method: "PUT",
+          url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
+        })
+          .then((response) => {
+            getAllUsersItems();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+        queue.push(() => {
+          enemy.attack({
+            attack: {},
+            recipient: currentStarter,
+            renderedSprites,
+          });
+
+          if (currentStarter.health <= 0) {
+            queue.push(() => {
+              currentStarter.faint();
+            });
+
+            queue.push(() => {
+              gsap.to("#fadeOutDiv", {
+                opacity: 1,
+                onComplete: () => {
+                  cancelAnimationFrame(battleAnimationId);
+                  randomEnemy = Math.floor(Math.random() * 18 + 1);
+                  getEnemy(randomEnemy);
+                  animate();
+                  document.getElementById("battleInterface").style.display =
+                    "none";
+                  gsap.to("#fadeOutDiv", {
+                    opacity: 0,
+                  });
+                  battle.initiated = false;
+                },
+              });
+            });
+          }
+        });
+      }
     });
-  }
+  });
+}
 
 function initBattle() {
   document.getElementById("battleInterface").style.display = "block";
