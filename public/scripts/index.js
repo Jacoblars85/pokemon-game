@@ -197,13 +197,15 @@ function getBasicAttacks() {
     });
 }
 
-function getAllUsersItems() {
+function getAllUsersItems(resetBattleFunc) {
   axios({
     method: "GET",
     url: "http://localhost:5001/api/inventory/user/consumable",
   })
     .then((response) => {
       usersConsumableItems = response.data;
+
+      if (resetBattleFunc) resetBattleFunc()
     })
     .catch((err) => {
       console.log(err);
