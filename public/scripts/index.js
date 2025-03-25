@@ -205,7 +205,7 @@ function getAllUsersItems(resetBattleFunc) {
     .then((response) => {
       usersConsumableItems = response.data;
 
-      if (resetBattleFunc) resetBattleFunc()
+      if (resetBattleFunc) resetBattleFunc();
     })
     .catch((err) => {
       console.log(err);
