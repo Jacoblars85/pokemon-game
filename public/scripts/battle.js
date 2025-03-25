@@ -26,6 +26,9 @@ let queue;
 let battleAnimationId;
 
 function resetBattleFunc() {
+
+    document.getElementById("attackBox").innerHTML = ''
+
   // InnerHtml for the attack box
   for (const attackButtons of attackButtonsArray) {
     document.getElementById("attackBox").innerHTML += `
@@ -49,6 +52,9 @@ function resetBattleFunc() {
             >${attackButtons}</button>
             `;
   }
+
+
+  document.getElementById("switchBox").innerHTML = ''
 
   // InnerHtml for the switch box
   let starterNum = 0;
@@ -95,6 +101,9 @@ function resetBattleFunc() {
         </div>
       `;
   }
+
+
+   document.getElementById("inventoryBox").innerHTML = ''
 
   // InnerHtml for the inventory box
   for (const usersConsumables of usersConsumableItems) {
@@ -412,6 +421,9 @@ function resetBattleFunc() {
             });
           }
         });
+
+        resetBattleFunc()
+
       } else if (e.target.innerHTML === "Use Consumable") {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
@@ -435,6 +447,7 @@ function resetBattleFunc() {
         })
           .then((response) => {
             getAllUsersItems();
+            resetBattleFunc()
           })
           .catch((err) => {
             console.log(err);
@@ -471,6 +484,9 @@ function resetBattleFunc() {
             });
           }
         });
+
+        // resetBattleFunc()
+
       }
     });
   });
