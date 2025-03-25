@@ -185,9 +185,6 @@ function resetBattleFunc() {
      `;
   }
 
-  renderedSprites = [enemy, starter, starter2];
-
-  queue = [];
 
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
