@@ -441,7 +441,6 @@ function resetBattleFunc() {
         })
           .then((response) => {
             getAllUsersItems(resetBattleFunc);
-            // resetBattleFunc();
           })
           .catch((err) => {
             console.log(err);
@@ -478,8 +477,6 @@ function resetBattleFunc() {
             });
           }
         });
-
-        // resetBattleFunc()
       }
     });
   });
