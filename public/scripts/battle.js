@@ -185,7 +185,6 @@ function resetBattleFunc() {
      `;
   }
 
-
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
       if (e.target.id === "attackButton") {
@@ -584,28 +583,28 @@ function initBattle() {
   console.log("attackButtonsArray", attackButtonsArray);
 
   // InnerHtml for the attack box
-  for (const attackButtons of attackButtonsArray) {
-    document.getElementById("attackBox").innerHTML += `
-    <button
-            id="attackButton"
-            class="btn"
-              style="
-                  display: flex;
-                  width: 33.33%;
-                  height: 100%;
-                  text-align: center;
-                  font-size: 30px;
-                  color: black;
-                  justify-content: center;
-                  align-items: center;
-                  border: 0;
-                  border-bottom: 4px solid black;
-                  cursor: pointer;
-                  box-shadow: 0 0 0 0;
-                  "
-          >${attackButtons}</button>
-          `;
-  }
+//   for (const attackButtons of attackButtonsArray) {
+//     document.getElementById("attackBox").innerHTML += `
+//     <button
+//             id="attackButton"
+//             class="btn"
+//               style="
+//                   display: flex;
+//                   width: 33.33%;
+//                   height: 100%;
+//                   text-align: center;
+//                   font-size: 30px;
+//                   color: black;
+//                   justify-content: center;
+//                   align-items: center;
+//                   border: 0;
+//                   border-bottom: 4px solid black;
+//                   cursor: pointer;
+//                   box-shadow: 0 0 0 0;
+//                   "
+//           >${attackButtons}</button>
+//           `;
+//   }
 
   //   document.getElementById("attackBox").innerHTML = `
   // <button
@@ -668,433 +667,435 @@ function initBattle() {
   // `;
 
   // InnerHtml for the switch box
-  let starterNum = 0;
-  for (let i = 0; i < starters.length; i++) {
-    const start = starters[i];
-    starterNum++;
+//   let starterNum = 0;
+//   for (let i = 0; i < starters.length; i++) {
+//     const start = starters[i];
+//     starterNum++;
 
-    document.getElementById("switchBox").innerHTML += `
-      <div style=" 
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: space-around;
-              padding: 5px; 
-      ">
-          <img height="50" width="50" src=${start.profile_pic} />
-          <p style=" 
-            text-align: center;
-           "
-           >starter ${starterNum}: ${start.character_name} </p>
-          <div>
-            <p style=" 
-            margin: 0px;
-            text-align: center;
-            "
-            >${start.hp}/${start.hp} hp | ${start.stamina}/${start.stamina} stamina
-            </p>
-            <p style=" 
-            margin: 0px;
-            text-align: center;
-            "
-            >${start.speed} speed</p>
-          </div>
-          <button
-            id=${starterNum}
-            style="
-              color: black;
-              font-size: 15;
-              border-color: black;
-              cursor: pointer;
-              width: 100px;
-            "
-          >Change Starter</button>
-      </div>
-    `;
-  }
+//     document.getElementById("switchBox").innerHTML += `
+//       <div style=" 
+//               display: flex;
+//               flex-direction: row;
+//               align-items: center;
+//               justify-content: space-around;
+//               padding: 5px; 
+//       ">
+//           <img height="50" width="50" src=${start.profile_pic} />
+//           <p style=" 
+//             text-align: center;
+//            "
+//            >starter ${starterNum}: ${start.character_name} </p>
+//           <div>
+//             <p style=" 
+//             margin: 0px;
+//             text-align: center;
+//             "
+//             >${start.hp}/${start.hp} hp | ${start.stamina}/${start.stamina} stamina
+//             </p>
+//             <p style=" 
+//             margin: 0px;
+//             text-align: center;
+//             "
+//             >${start.speed} speed</p>
+//           </div>
+//           <button
+//             id=${starterNum}
+//             style="
+//               color: black;
+//               font-size: 15;
+//               border-color: black;
+//               cursor: pointer;
+//               width: 100px;
+//             "
+//           >Change Starter</button>
+//       </div>
+//     `;
+//   }
 
   // InnerHtml for the inventory box
-  for (const usersConsumables of usersConsumableItems) {
-    document.getElementById("inventoryBox").innerHTML += `
-      <div height="140px">
-          <div
-            style="
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-around;
-                height: 45px;
-                padding: 5px; 
-              "
-              >
-                <div
-                  style="
-                    display: flex;
-                    flex-direction: row;
-                    column-gap: 5px;
-                    justify-content: space-around;
-                    align-items: center;
-                  "
-                     >
-                  <p
-                    style="
-                      color: black;
-                      font-size: 25px;
-                    "
-                  >
-                    ${usersConsumables.number}X
-                  </p>
-                  <img
-                    height="35"
-                    width="35"
-                    src=${usersConsumables.item_pic}
-                  />
-                </div>
-                <p
-                  style="
-                    ml: 20;
-                  "">
-                  ${usersConsumables.item_name}
-                </p>
+//   for (const usersConsumables of usersConsumableItems) {
+//     document.getElementById("inventoryBox").innerHTML += `
+//       <div height="140px">
+//           <div
+//             style="
+//                 display: flex;
+//                 flex-direction: row;
+//                 align-items: center;
+//                 justify-content: space-around;
+//                 height: 45px;
+//                 padding: 5px; 
+//               "
+//               >
+//                 <div
+//                   style="
+//                     display: flex;
+//                     flex-direction: row;
+//                     column-gap: 5px;
+//                     justify-content: space-around;
+//                     align-items: center;
+//                   "
+//                      >
+//                   <p
+//                     style="
+//                       color: black;
+//                       font-size: 25px;
+//                     "
+//                   >
+//                     ${usersConsumables.number}X
+//                   </p>
+//                   <img
+//                     height="35"
+//                     width="35"
+//                     src=${usersConsumables.item_pic}
+//                   />
+//                 </div>
+//                 <p
+//                   style="
+//                     ml: 20;
+//                   "">
+//                   ${usersConsumables.item_name}
+//                 </p>
 
-                <p
-                  style="
-                    ml: 5;
-                    font-size: 20px;
-                    width: 150px;
-                    text-align: center;
-                  ">
-                  ${
-                    usersConsumables.item_hp === 0
-                      ? ""
-                      : `+${usersConsumables.item_hp} hp`
-                  } ${
-      usersConsumables.item_stamina === 0
-        ? ""
-        : usersConsumables.item_hp === 0
-        ? `+${usersConsumables.item_stamina} stamina`
-        : `| +${usersConsumables.item_stamina} stamina`
-    } ${
-      usersConsumables.item_speed === 0
-        ? ""
-        : `| +${usersConsumables.item_speed} speed`
-    }
-                </p>
-                <button
-                id=${usersConsumables.items_id}
-                  style="
-                    color: black;
-                    font-size: 15;
-                    border-color: black;
-                    cursor: pointer;
-                  "
-                >Use Consumable</button>
-              </div>
-          </div>
-          <div style="
-                display: block;
-                height: 2px;
-                border: 0;
-                border-top: 2px solid black;
-                margin: 0 0;
-                padding: 0;
-              " />
-   `;
-  }
+//                 <p
+//                   style="
+//                     ml: 5;
+//                     font-size: 20px;
+//                     width: 150px;
+//                     text-align: center;
+//                   ">
+//                   ${
+//                     usersConsumables.item_hp === 0
+//                       ? ""
+//                       : `+${usersConsumables.item_hp} hp`
+//                   } ${
+//       usersConsumables.item_stamina === 0
+//         ? ""
+//         : usersConsumables.item_hp === 0
+//         ? `+${usersConsumables.item_stamina} stamina`
+//         : `| +${usersConsumables.item_stamina} stamina`
+//     } ${
+//       usersConsumables.item_speed === 0
+//         ? ""
+//         : `| +${usersConsumables.item_speed} speed`
+//     }
+//                 </p>
+//                 <button
+//                 id=${usersConsumables.items_id}
+//                   style="
+//                     color: black;
+//                     font-size: 15;
+//                     border-color: black;
+//                     cursor: pointer;
+//                   "
+//                 >Use Consumable</button>
+//               </div>
+//           </div>
+//           <div style="
+//                 display: block;
+//                 height: 2px;
+//                 border: 0;
+//                 border-top: 2px solid black;
+//                 margin: 0 0;
+//                 padding: 0;
+//               " />
+//    `;
+//   }
 
   renderedSprites = [enemy, starter, starter2];
 
   queue = [];
 
-  document.querySelectorAll("button").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      if (e.target.id === "attackButton") {
-        console.log("clicked attack");
+  resetBattleFunc()
 
-        const characterSelectedAttack = e.target.innerHTML;
-        let selectedAttack = {};
+//   document.querySelectorAll("button").forEach((button) => {
+//     button.addEventListener("click", (e) => {
+//       if (e.target.id === "attackButton") {
+//         console.log("clicked attack");
 
-        if (characterSelectedAttack === starterOneAttackStats.attack_name)
-          selectedAttack = starterOneAttackStats;
-        else if (characterSelectedAttack === starterTwoAttackStats.attack_name)
-          selectedAttack = starterTwoAttackStats;
-        else if (characterSelectedAttack === kickAttackStats.attack_name)
-          selectedAttack = kickAttackStats;
-        else if (characterSelectedAttack === pokeAttackStats.attack_name)
-          selectedAttack = pokeAttackStats;
+//         const characterSelectedAttack = e.target.innerHTML;
+//         let selectedAttack = {};
 
-        if (currentStarter.speed >= enemySpeed) {
-          currentStarter.attack({
-            attack: selectedAttack,
-            recipient: enemy,
-            renderedSprites,
-          });
+//         if (characterSelectedAttack === starterOneAttackStats.attack_name)
+//           selectedAttack = starterOneAttackStats;
+//         else if (characterSelectedAttack === starterTwoAttackStats.attack_name)
+//           selectedAttack = starterTwoAttackStats;
+//         else if (characterSelectedAttack === kickAttackStats.attack_name)
+//           selectedAttack = kickAttackStats;
+//         else if (characterSelectedAttack === pokeAttackStats.attack_name)
+//           selectedAttack = pokeAttackStats;
 
-          if (enemy.health <= 0) {
-            queue.push(() => {
-              enemy.faint();
-            });
+//         if (currentStarter.speed >= enemySpeed) {
+//           currentStarter.attack({
+//             attack: selectedAttack,
+//             recipient: enemy,
+//             renderedSprites,
+//           });
 
-            queue.push(() => {
-              gsap.to("#fadeOutDiv", {
-                opacity: 1,
-                onComplete: () => {
-                  cancelAnimationFrame(battleAnimationId);
-                  randomEnemy = Math.floor(Math.random() * 18 + 1);
-                  getEnemy(randomEnemy);
-                  animate();
-                  document.getElementById("battleInterface").style.display =
-                    "none";
-                  gsap.to("#fadeOutDiv", {
-                    opacity: 0,
-                  });
-                  battle.initiated = false;
-                },
-              });
-            });
-          }
-          // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
-          queue.push(() => {
-            enemy.attack({
-              attack: selectedAttack,
-              recipient: currentStarter,
-              renderedSprites,
-            });
+//           if (enemy.health <= 0) {
+//             queue.push(() => {
+//               enemy.faint();
+//             });
 
-            if (currentStarter.health <= 0) {
-              queue.push(() => {
-                currentStarter.faint();
-              });
+//             queue.push(() => {
+//               gsap.to("#fadeOutDiv", {
+//                 opacity: 1,
+//                 onComplete: () => {
+//                   cancelAnimationFrame(battleAnimationId);
+//                   randomEnemy = Math.floor(Math.random() * 18 + 1);
+//                   getEnemy(randomEnemy);
+//                   animate();
+//                   document.getElementById("battleInterface").style.display =
+//                     "none";
+//                   gsap.to("#fadeOutDiv", {
+//                     opacity: 0,
+//                   });
+//                   battle.initiated = false;
+//                 },
+//               });
+//             });
+//           }
+//           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
+//           queue.push(() => {
+//             enemy.attack({
+//               attack: selectedAttack,
+//               recipient: currentStarter,
+//               renderedSprites,
+//             });
 
-              queue.push(() => {
-                gsap.to("#fadeOutDiv", {
-                  opacity: 1,
-                  onComplete: () => {
-                    cancelAnimationFrame(battleAnimationId);
-                    randomEnemy = Math.floor(Math.random() * 18 + 1);
-                    getEnemy(randomEnemy);
-                    animate();
-                    document.getElementById("battleInterface").style.display =
-                      "none";
-                    gsap.to("#fadeOutDiv", {
-                      opacity: 0,
-                    });
-                    battle.initiated = false;
-                  },
-                });
-              });
-            }
-          });
-        } else if (currentStarter.speed < enemySpeed) {
-          console.log("enemy is faster");
+//             if (currentStarter.health <= 0) {
+//               queue.push(() => {
+//                 currentStarter.faint();
+//               });
 
-          // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
-          enemy.attack({
-            attack: selectedAttack,
-            recipient: currentStarter,
-            renderedSprites,
-          });
+//               queue.push(() => {
+//                 gsap.to("#fadeOutDiv", {
+//                   opacity: 1,
+//                   onComplete: () => {
+//                     cancelAnimationFrame(battleAnimationId);
+//                     randomEnemy = Math.floor(Math.random() * 18 + 1);
+//                     getEnemy(randomEnemy);
+//                     animate();
+//                     document.getElementById("battleInterface").style.display =
+//                       "none";
+//                     gsap.to("#fadeOutDiv", {
+//                       opacity: 0,
+//                     });
+//                     battle.initiated = false;
+//                   },
+//                 });
+//               });
+//             }
+//           });
+//         } else if (currentStarter.speed < enemySpeed) {
+//           console.log("enemy is faster");
 
-          if (currentStarter.health <= 0) {
-            queue.push(() => {
-              currentStarter.faint();
-            });
+//           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
+//           enemy.attack({
+//             attack: selectedAttack,
+//             recipient: currentStarter,
+//             renderedSprites,
+//           });
 
-            queue.push(() => {
-              gsap.to("#fadeOutDiv", {
-                opacity: 1,
-                onComplete: () => {
-                  cancelAnimationFrame(battleAnimationId);
-                  randomEnemy = Math.floor(Math.random() * 18 + 1);
-                  getEnemy(randomEnemy);
-                  animate();
-                  document.getElementById("battleInterface").style.display =
-                    "none";
-                  gsap.to("#fadeOutDiv", {
-                    opacity: 0,
-                  });
-                  battle.initiated = false;
-                },
-              });
-            });
-          }
+//           if (currentStarter.health <= 0) {
+//             queue.push(() => {
+//               currentStarter.faint();
+//             });
 
-          queue.push(() => {
-            currentStarter.attack({
-              attack: selectedAttack,
-              recipient: enemy,
-              renderedSprites,
-            });
+//             queue.push(() => {
+//               gsap.to("#fadeOutDiv", {
+//                 opacity: 1,
+//                 onComplete: () => {
+//                   cancelAnimationFrame(battleAnimationId);
+//                   randomEnemy = Math.floor(Math.random() * 18 + 1);
+//                   getEnemy(randomEnemy);
+//                   animate();
+//                   document.getElementById("battleInterface").style.display =
+//                     "none";
+//                   gsap.to("#fadeOutDiv", {
+//                     opacity: 0,
+//                   });
+//                   battle.initiated = false;
+//                 },
+//               });
+//             });
+//           }
 
-            if (enemy.health <= 0) {
-              // console.log("are we really in the enemy fainting");
+//           queue.push(() => {
+//             currentStarter.attack({
+//               attack: selectedAttack,
+//               recipient: enemy,
+//               renderedSprites,
+//             });
 
-              queue.push(() => {
-                enemy.faint();
-              });
+//             if (enemy.health <= 0) {
+//               // console.log("are we really in the enemy fainting");
 
-              queue.push(() => {
-                gsap.to("#fadeOutDiv", {
-                  opacity: 1,
-                  onComplete: () => {
-                    cancelAnimationFrame(battleAnimationId);
-                    randomEnemy = Math.floor(Math.random() * 18 + 1);
-                    getEnemy(randomEnemy);
-                    animate();
-                    document.getElementById("battleInterface").style.display =
-                      "none";
-                    gsap.to("#fadeOutDiv", {
-                      opacity: 0,
-                    });
-                    battle.initiated = false;
-                  },
-                });
-              });
-            }
-          });
-        }
-      } else if (e.target.innerHTML === "Attack") {
-        document.getElementById("attackBox").style.display = "flex";
-        document.getElementById("switchBox").style.display = "none";
-        document.getElementById("inventoryBox").style.display = "none";
-      } else if (e.target.innerHTML === "Switch") {
-        document.getElementById("switchBox").style.display = "block";
-        document.getElementById("attackBox").style.display = "none";
-        document.getElementById("inventoryBox").style.display = "none";
-      } else if (e.target.innerHTML === "Inventory") {
-        document.getElementById("inventoryBox").style.display = "block";
-        document.getElementById("attackBox").style.display = "none";
-        document.getElementById("switchBox").style.display = "none";
-      } else if (e.target.innerHTML === "Run") {
-        gsap.to("#fadeOutDiv", {
-          opacity: 1,
-          onComplete: () => {
-            cancelAnimationFrame(battleAnimationId);
-            randomEnemy = Math.floor(Math.random() * 18 + 1);
-            getEnemy(randomEnemy);
-            animate();
-            document.getElementById("battleInterface").style.display = "none";
-            gsap.to("#fadeOutDiv", {
-              opacity: 0,
-            });
-            battle.initiated = false;
-          },
-        });
-      } else if (
-        e.target.innerHTML === "Change Starter" &&
-        e.target.id != currentStarter.id
-      ) {
-        document.getElementById("attackBox").style.display = "flex";
-        document.getElementById("switchBox").style.display = "none";
-        document.getElementById("inventoryBox").style.display = "none";
+//               queue.push(() => {
+//                 enemy.faint();
+//               });
 
-        let changingStarter;
-        if (e.target.id == 1) changingStarter = starter;
-        else if (e.target.id == 2) changingStarter = starter2;
+//               queue.push(() => {
+//                 gsap.to("#fadeOutDiv", {
+//                   opacity: 1,
+//                   onComplete: () => {
+//                     cancelAnimationFrame(battleAnimationId);
+//                     randomEnemy = Math.floor(Math.random() * 18 + 1);
+//                     getEnemy(randomEnemy);
+//                     animate();
+//                     document.getElementById("battleInterface").style.display =
+//                       "none";
+//                     gsap.to("#fadeOutDiv", {
+//                       opacity: 0,
+//                     });
+//                     battle.initiated = false;
+//                   },
+//                 });
+//               });
+//             }
+//           });
+//         }
+//       } else if (e.target.innerHTML === "Attack") {
+//         document.getElementById("attackBox").style.display = "flex";
+//         document.getElementById("switchBox").style.display = "none";
+//         document.getElementById("inventoryBox").style.display = "none";
+//       } else if (e.target.innerHTML === "Switch") {
+//         document.getElementById("switchBox").style.display = "block";
+//         document.getElementById("attackBox").style.display = "none";
+//         document.getElementById("inventoryBox").style.display = "none";
+//       } else if (e.target.innerHTML === "Inventory") {
+//         document.getElementById("inventoryBox").style.display = "block";
+//         document.getElementById("attackBox").style.display = "none";
+//         document.getElementById("switchBox").style.display = "none";
+//       } else if (e.target.innerHTML === "Run") {
+//         gsap.to("#fadeOutDiv", {
+//           opacity: 1,
+//           onComplete: () => {
+//             cancelAnimationFrame(battleAnimationId);
+//             randomEnemy = Math.floor(Math.random() * 18 + 1);
+//             getEnemy(randomEnemy);
+//             animate();
+//             document.getElementById("battleInterface").style.display = "none";
+//             gsap.to("#fadeOutDiv", {
+//               opacity: 0,
+//             });
+//             battle.initiated = false;
+//           },
+//         });
+//       } else if (
+//         e.target.innerHTML === "Change Starter" &&
+//         e.target.id != currentStarter.id
+//       ) {
+//         document.getElementById("attackBox").style.display = "flex";
+//         document.getElementById("switchBox").style.display = "none";
+//         document.getElementById("inventoryBox").style.display = "none";
 
-        currentStarter.switching({
-          recipient: changingStarter,
-        });
+//         let changingStarter;
+//         if (e.target.id == 1) changingStarter = starter;
+//         else if (e.target.id == 2) changingStarter = starter2;
 
-        currentStarter = changingStarter;
+//         currentStarter.switching({
+//           recipient: changingStarter,
+//         });
 
-        attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
+//         currentStarter = changingStarter;
 
-        console.log("attackButtonsArray", attackButtonsArray);
+//         attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
 
-        queue.push(() => {
-          enemy.attack({
-            attack: {},
-            recipient: currentStarter,
-            renderedSprites,
-          });
+//         console.log("attackButtonsArray", attackButtonsArray);
 
-          if (currentStarter.health <= 0) {
-            queue.push(() => {
-              currentStarter.faint();
-            });
+//         queue.push(() => {
+//           enemy.attack({
+//             attack: {},
+//             recipient: currentStarter,
+//             renderedSprites,
+//           });
 
-            queue.push(() => {
-              gsap.to("#fadeOutDiv", {
-                opacity: 1,
-                onComplete: () => {
-                  cancelAnimationFrame(battleAnimationId);
-                  randomEnemy = Math.floor(Math.random() * 18 + 1);
-                  getEnemy(randomEnemy);
-                  animate();
-                  document.getElementById("battleInterface").style.display =
-                    "none";
-                  gsap.to("#fadeOutDiv", {
-                    opacity: 0,
-                  });
-                  battle.initiated = false;
-                },
-              });
-            });
-          }
-        });
-      } else if (e.target.innerHTML === "Use Consumable") {
-        document.getElementById("attackBox").style.display = "flex";
-        document.getElementById("switchBox").style.display = "none";
-        document.getElementById("inventoryBox").style.display = "none";
+//           if (currentStarter.health <= 0) {
+//             queue.push(() => {
+//               currentStarter.faint();
+//             });
 
-        let itemBeingUsed;
+//             queue.push(() => {
+//               gsap.to("#fadeOutDiv", {
+//                 opacity: 1,
+//                 onComplete: () => {
+//                   cancelAnimationFrame(battleAnimationId);
+//                   randomEnemy = Math.floor(Math.random() * 18 + 1);
+//                   getEnemy(randomEnemy);
+//                   animate();
+//                   document.getElementById("battleInterface").style.display =
+//                     "none";
+//                   gsap.to("#fadeOutDiv", {
+//                     opacity: 0,
+//                   });
+//                   battle.initiated = false;
+//                 },
+//               });
+//             });
+//           }
+//         });
+//       } else if (e.target.innerHTML === "Use Consumable") {
+//         document.getElementById("attackBox").style.display = "flex";
+//         document.getElementById("switchBox").style.display = "none";
+//         document.getElementById("inventoryBox").style.display = "none";
 
-        for (const usersConsumables of usersConsumableItems) {
-          if (usersConsumables.items_id == e.target.id) {
-            itemBeingUsed = usersConsumables;
-          }
-        }
+//         let itemBeingUsed;
 
-        currentStarter.usingItem({
-          item: itemBeingUsed,
-        });
+//         for (const usersConsumables of usersConsumableItems) {
+//           if (usersConsumables.items_id == e.target.id) {
+//             itemBeingUsed = usersConsumables;
+//           }
+//         }
 
-        axios({
-          method: "PUT",
-          url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
-        })
-          .then((response) => {
-            getAllUsersItems();
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+//         currentStarter.usingItem({
+//           item: itemBeingUsed,
+//         });
 
-        queue.push(() => {
-          enemy.attack({
-            attack: {},
-            recipient: currentStarter,
-            renderedSprites,
-          });
+//         axios({
+//           method: "PUT",
+//           url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
+//         })
+//           .then((response) => {
+//             getAllUsersItems();
+//           })
+//           .catch((err) => {
+//             console.log(err);
+//           });
 
-          if (currentStarter.health <= 0) {
-            queue.push(() => {
-              currentStarter.faint();
-            });
+//         queue.push(() => {
+//           enemy.attack({
+//             attack: {},
+//             recipient: currentStarter,
+//             renderedSprites,
+//           });
 
-            queue.push(() => {
-              gsap.to("#fadeOutDiv", {
-                opacity: 1,
-                onComplete: () => {
-                  cancelAnimationFrame(battleAnimationId);
-                  randomEnemy = Math.floor(Math.random() * 18 + 1);
-                  getEnemy(randomEnemy);
-                  animate();
-                  document.getElementById("battleInterface").style.display =
-                    "none";
-                  gsap.to("#fadeOutDiv", {
-                    opacity: 0,
-                  });
-                  battle.initiated = false;
-                },
-              });
-            });
-          }
-        });
-      }
-    });
-  });
+//           if (currentStarter.health <= 0) {
+//             queue.push(() => {
+//               currentStarter.faint();
+//             });
+
+//             queue.push(() => {
+//               gsap.to("#fadeOutDiv", {
+//                 opacity: 1,
+//                 onComplete: () => {
+//                   cancelAnimationFrame(battleAnimationId);
+//                   randomEnemy = Math.floor(Math.random() * 18 + 1);
+//                   getEnemy(randomEnemy);
+//                   animate();
+//                   document.getElementById("battleInterface").style.display =
+//                     "none";
+//                   gsap.to("#fadeOutDiv", {
+//                     opacity: 0,
+//                   });
+//                   battle.initiated = false;
+//                 },
+//               });
+//             });
+//           }
+//         });
+//       }
+//     });
+//   });
 }
 
 function animateBattle() {
