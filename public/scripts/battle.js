@@ -28,6 +28,10 @@ let battleAnimationId;
 function resetBattleFunc() {
 
     document.getElementById("attackBox").innerHTML = ''
+  document.getElementById("switchBox").innerHTML = ''
+  document.getElementById("inventoryBox").innerHTML = ''
+
+
 
   // InnerHtml for the attack box
   for (const attackButtons of attackButtonsArray) {
@@ -54,7 +58,7 @@ function resetBattleFunc() {
   }
 
 
-  document.getElementById("switchBox").innerHTML = ''
+
 
   // InnerHtml for the switch box
   let starterNum = 0;
@@ -103,7 +107,7 @@ function resetBattleFunc() {
   }
 
 
-   document.getElementById("inventoryBox").innerHTML = ''
+
 
   // InnerHtml for the inventory box
   for (const usersConsumables of usersConsumableItems) {
