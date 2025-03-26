@@ -42,6 +42,56 @@ function fadeBackToExplore() {
   });
 }
 
+function faintSwitching() {
+
+    let starterNumInDead = 0;
+  for (let i = 0; i < starters.length; i++) {
+    const start = starters[i];
+    starterNumInDead++;
+
+    document.getElementById("dialogueBox").innerHTML += `
+        <div style=" 
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                padding: 5px; 
+        ">
+            <img height="50" width="50" src=${start.profile_pic} />
+            <p style=" 
+              text-align: center;
+             "
+             >starter ${starterNumInDead}: ${start.character_name} </p>
+            <div>
+              <p style=" 
+              margin: 0px;
+              text-align: center;
+              "
+              >${start.hp}/${start.hp} hp | ${start.stamina}/${start.stamina} stamina
+              </p>
+              <p style=" 
+              margin: 0px;
+              text-align: center;
+              "
+              >${start.speed} speed</p>
+            </div>
+            <button
+              id=${starterNumInDead}
+              style="
+                color: black;
+                font-size: 15;
+                border-color: black;
+                cursor: pointer;
+                width: 100px;
+              "
+            >Change Starter</button>
+        </div>
+      `;
+  }
+
+    
+  }
+
 function resetBattleFunc() {
   document.getElementById("attackBox").innerHTML = "";
   document.getElementById("switchBox").innerHTML = "";
@@ -258,7 +308,7 @@ function resetBattleFunc() {
                 console.log('theres a starter left');
 
                 queue.push(() => {
-                    document.getElementById("dialogueBox").innerHTML = `helppppp`;
+                    faintSwitching()
                     });
               }
               
@@ -333,6 +383,9 @@ function resetBattleFunc() {
         e.target.innerHTML === "Change Starter" &&
         e.target.id != currentStarter.id
       ) {
+
+        console.log('changing starter');
+        
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
