@@ -254,7 +254,13 @@ function resetBattleFunc() {
                 queue.push(() => {
                     fadeBackToExplore();
                   });
-              } 
+              } {
+                console.log('theres a starter left');
+
+                queue.push(() => {
+                    document.getElementById("dialogueBox").innerHTML = `helppppp`;
+                    });
+              }
               
             }
           });
