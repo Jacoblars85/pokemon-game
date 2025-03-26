@@ -250,9 +250,12 @@ function resetBattleFunc() {
                 currentStarter.faint();
               });
 
-              queue.push(() => {
-                fadeBackToExplore();
-              });
+              if (starter.health <= 0 && starter2.health <= 0) {
+                queue.push(() => {
+                    fadeBackToExplore();
+                  });
+              } 
+              
             }
           });
         } else if (currentStarter.speed < enemySpeed) {
