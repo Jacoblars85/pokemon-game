@@ -283,8 +283,6 @@ function resetBattleFunc() {
             });
 
             if (enemy.health <= 0) {
-              // console.log("are we really in the enemy fainting");
-
               queue.push(() => {
                 enemy.faint();
               });
