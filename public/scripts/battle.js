@@ -192,7 +192,6 @@ function resetBattleFunc() {
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
       if (e.target.id === "attackButton") {
-        console.log("clicked attack");
 
         const characterSelectedAttack = e.target.innerHTML;
         let selectedAttack = {};
@@ -382,8 +381,6 @@ function resetBattleFunc() {
         currentStarter = changingStarter;
 
         attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
-
-        console.log("attackButtonsArray", attackButtonsArray);
 
         queue.push(() => {
           enemy.attack({
@@ -585,8 +582,6 @@ function initBattle() {
     kickAttack,
     pokeAttack,
   ];
-
-  console.log("attackButtonsArray", attackButtonsArray);
 
   // InnerHtml for the attack box
   //   for (const attackButtons of attackButtonsArray) {
