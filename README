@@ -1,7 +1,6 @@
 Problems:
 
 2. changed the disabled variables to the classes that change the hp and stamina
-3. fix the changing to a differnet starter and getting the new attacks registered
 5. create the new hp, speed and damage system
 7. get the valiadation and log in working
 8. figure out if you can use multiple html for different pages
