@@ -26,22 +26,21 @@ let queue;
 let battleAnimationId;
 
 function fadeBackToExplore() {
-    gsap.to("#fadeOutDiv", {
-      opacity: 1,
-      onComplete: () => {
-        cancelAnimationFrame(battleAnimationId);
-        randomEnemy = Math.floor(Math.random() * 18 + 1);
-        getEnemy(randomEnemy);
-        animate();
-        document.getElementById("battleInterface").style.display =
-          "none";
-        gsap.to("#fadeOutDiv", {
-          opacity: 0,
-        });
-        battle.initiated = false;
-      },
-    });
-  }
+  gsap.to("#fadeOutDiv", {
+    opacity: 1,
+    onComplete: () => {
+      cancelAnimationFrame(battleAnimationId);
+      randomEnemy = Math.floor(Math.random() * 18 + 1);
+      getEnemy(randomEnemy);
+      animate();
+      document.getElementById("battleInterface").style.display = "none";
+      gsap.to("#fadeOutDiv", {
+        opacity: 0,
+      });
+      battle.initiated = false;
+    },
+  });
+}
 
 function resetBattleFunc() {
   document.getElementById("attackBox").innerHTML = "";
@@ -210,7 +209,6 @@ function resetBattleFunc() {
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
       if (e.target.id === "attackButton") {
-
         const characterSelectedAttack = e.target.innerHTML;
         let selectedAttack = {};
 
@@ -236,7 +234,7 @@ function resetBattleFunc() {
             });
 
             queue.push(() => {
-                fadeBackToExplore()
+              fadeBackToExplore();
             });
           }
           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
@@ -253,7 +251,7 @@ function resetBattleFunc() {
               });
 
               queue.push(() => {
-                fadeBackToExplore()
+                fadeBackToExplore();
               });
             }
           });
@@ -273,7 +271,7 @@ function resetBattleFunc() {
             });
 
             queue.push(() => {
-                fadeBackToExplore()
+              fadeBackToExplore();
             });
           }
 
@@ -292,7 +290,7 @@ function resetBattleFunc() {
               });
 
               queue.push(() => {
-                fadeBackToExplore()
+                fadeBackToExplore();
               });
             }
           });
