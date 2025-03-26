@@ -236,21 +236,7 @@ function resetBattleFunc() {
             });
 
             queue.push(() => {
-              gsap.to("#fadeOutDiv", {
-                opacity: 1,
-                onComplete: () => {
-                  cancelAnimationFrame(battleAnimationId);
-                  randomEnemy = Math.floor(Math.random() * 18 + 1);
-                  getEnemy(randomEnemy);
-                  animate();
-                  document.getElementById("battleInterface").style.display =
-                    "none";
-                  gsap.to("#fadeOutDiv", {
-                    opacity: 0,
-                  });
-                  battle.initiated = false;
-                },
-              });
+                fadeBackToExplore()
             });
           }
           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
@@ -267,21 +253,7 @@ function resetBattleFunc() {
               });
 
               queue.push(() => {
-                gsap.to("#fadeOutDiv", {
-                  opacity: 1,
-                  onComplete: () => {
-                    cancelAnimationFrame(battleAnimationId);
-                    randomEnemy = Math.floor(Math.random() * 18 + 1);
-                    getEnemy(randomEnemy);
-                    animate();
-                    document.getElementById("battleInterface").style.display =
-                      "none";
-                    gsap.to("#fadeOutDiv", {
-                      opacity: 0,
-                    });
-                    battle.initiated = false;
-                  },
-                });
+                fadeBackToExplore()
               });
             }
           });
