@@ -308,8 +308,6 @@ function resetBattleFunc() {
                 });
               }
               {
-                console.log("theres a starter left");
-
                 queue.push(() => {
                   document.getElementById("deadSwitchBox").style.display =
                     "block";
@@ -386,8 +384,6 @@ function resetBattleFunc() {
         e.target.innerHTML === "Change Starter" &&
         e.target.id != currentStarter.id
       ) {
-        console.log("changing starter");
-
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
