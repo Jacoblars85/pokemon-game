@@ -277,7 +277,7 @@ function resetBattleFunc() {
                 align-items: center;
                 justify-content: space-around;
                 padding: 5px; 
-                height: 60px;
+                height: 50px;
         ">
             <img height="50" width="50" src=${start.profile_pic} />
             <p style=" 
@@ -368,7 +368,7 @@ function resetBattleFunc() {
                 console.log("theres a starter left");
 
                 queue.push(() => {
-                  faintSwitching();
+                    document.getElementById("deadSwitchBox").style.display = "block";
                 });
               }
             }
@@ -444,14 +444,13 @@ function resetBattleFunc() {
       ) {
         console.log("changing starter");
 
-  document.getElementById("deadSwitchBox").innerHTML = "";
-  document.getElementById("deadSwitchBox").style.display = "none";
 
 
 
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
+        document.getElementById("deadSwitchBox").style.display = "none";
 
         let changingStarter;
         if (e.target.id == 1) changingStarter = starter;
