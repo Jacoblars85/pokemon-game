@@ -43,6 +43,7 @@ function fadeBackToExplore() {
 }
 
 function faintSwitching() {
+    document.getElementById("dialogueBox").innerHTML = ''
 
     let starterNumInDead = 0;
   for (let i = 0; i < starters.length; i++) {
