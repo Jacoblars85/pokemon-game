@@ -42,61 +42,6 @@ function fadeBackToExplore() {
   });
 }
 
-function faintSwitching() {
-  //   document.getElementById("dialogueBox").innerHTML = "";
-  document.getElementById("deadSwitchBox").style.display = "block";
-
-  //   let starterNumInDead = 0;
-  //   for (let i = 0; i < starters.length; i++) {
-  //     const start = starters[i];
-  //     starterNumInDead++;
-
-  //     document.getElementById("deadSwitchBox").innerHTML += `
-  //         <div style="
-  //                 display: flex;
-  //                 flex-direction: row;
-  //                 align-items: center;
-  //                 justify-content: space-around;
-  //                 padding: 5px;
-  //                 height: 60px;
-  //         ">
-  //             <img height="50" width="50" src=${start.profile_pic} />
-  //             <p style="
-  //               text-align: center;
-  //               font-size: 20px;
-  //               width: 300px;
-  //              "
-  //              >starter ${starterNumInDead}: ${start.character_name} </p>
-  //             <div>
-  //               <p style="
-  //               margin: 0px;
-  //               text-align: center;
-  //               font-size: 20px;
-  //               "
-  //               >${start.hp}/${start.hp} hp | ${start.stamina}/${start.stamina} stamina
-  //               </p>
-  //               <p style="
-  //               margin: 0px;
-  //               text-align: center;
-  //               font-size: 20px;
-  //               "
-  //               >${start.speed} speed</p>
-  //             </div>
-  //             <button
-  //               id=${starterNumInDead}
-  //               style="
-  //                 color: black;
-  //                 font-size: 15;
-  //                 border-color: black;
-  //                 cursor: pointer;
-  //                 width: 100px;
-  //               "
-  //             >Change Starter</button>
-  //         </div>
-  //       `;
-  //   }
-}
-
 function resetBattleFunc() {
   document.getElementById("attackBox").innerHTML = "";
   document.getElementById("switchBox").innerHTML = "";
