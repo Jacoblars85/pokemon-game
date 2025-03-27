@@ -43,9 +43,9 @@ function fadeBackToExplore() {
 }
 
 function faintSwitching() {
-    document.getElementById("dialogueBox").innerHTML = ''
+  document.getElementById("dialogueBox").innerHTML = "";
 
-    let starterNumInDead = 0;
+  let starterNumInDead = 0;
   for (let i = 0; i < starters.length; i++) {
     const start = starters[i];
     starterNumInDead++;
@@ -94,9 +94,7 @@ function faintSwitching() {
         </div>
       `;
   }
-
-    
-  }
+}
 
 function resetBattleFunc() {
   document.getElementById("attackBox").innerHTML = "";
@@ -308,16 +306,16 @@ function resetBattleFunc() {
 
               if (starter.health <= 0 && starter2.health <= 0) {
                 queue.push(() => {
-                    fadeBackToExplore();
-                  });
-              } {
-                console.log('theres a starter left');
+                  fadeBackToExplore();
+                });
+              }
+              {
+                console.log("theres a starter left");
 
                 queue.push(() => {
-                    faintSwitching()
-                    });
+                  faintSwitching();
+                });
               }
-              
             }
           });
         } else if (currentStarter.speed < enemySpeed) {
@@ -389,9 +387,8 @@ function resetBattleFunc() {
         e.target.innerHTML === "Change Starter" &&
         e.target.id != currentStarter.id
       ) {
+        console.log("changing starter");
 
-        console.log('changing starter');
-        
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
