@@ -56,22 +56,26 @@ function faintSwitching() {
                 align-items: center;
                 justify-content: space-around;
                 padding: 5px; 
+                height: 80px;
         ">
             <img height="50" width="50" src=${start.profile_pic} />
             <p style=" 
               text-align: center;
+              font-size: 20px;
              "
              >starter ${starterNumInDead}: ${start.character_name} </p>
             <div>
               <p style=" 
               margin: 0px;
               text-align: center;
+              font-size: 20px;
               "
               >${start.hp}/${start.hp} hp | ${start.stamina}/${start.stamina} stamina
               </p>
               <p style=" 
               margin: 0px;
               text-align: center;
+              font-size: 20px;
               "
               >${start.speed} speed</p>
             </div>
