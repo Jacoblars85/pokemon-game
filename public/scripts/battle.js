@@ -57,12 +57,13 @@ function faintSwitching() {
                 align-items: center;
                 justify-content: space-around;
                 padding: 5px; 
-                height: 80px;
+                height: 60px;
         ">
             <img height="50" width="50" src=${start.profile_pic} />
             <p style=" 
               text-align: center;
               font-size: 20px;
+              width: 300px;
              "
              >starter ${starterNumInDead}: ${start.character_name} </p>
             <div>
