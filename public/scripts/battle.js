@@ -394,15 +394,9 @@ function resetBattleFunc() {
         else if (e.target.id == 2) changingStarter = starter2;
 
         let currentStarterIsDead = false
-        if (currentStarter.health <= 0) {
-            console.log('current starter is dead, enemy shouldnt attack');
-            
-            currentStarterIsDead = true
+        if (currentStarter.health <= 0) currentStarterIsDead = true
 
-        }
-
-        console.log('currentStarterIsDead', currentStarterIsDead);
-        
+ 
 
         currentStarter.switching({
           recipient: changingStarter,
