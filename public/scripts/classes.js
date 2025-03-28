@@ -237,6 +237,8 @@ class Character extends Sprite {
     recipient.health -= attack.attack_damage;
     this.stamina -= attack.attack_stamina;
 
+    if (recipient.health < 0) recipient.health = 0;
+
     document.getElementById("dialogueBox").style.display = "block";
     document.getElementById("dialogueBox").innerHTML =
       this.name + " used " + attack.attack_name + "...";
