@@ -78,6 +78,9 @@ function resetBattleFunc() {
     const start = starters[i];
     starterNum++;
 
+    console.log('start', start);
+    
+
     document.getElementById("switchBox").innerHTML += `
         <div style=" 
                 display: flex;
@@ -86,17 +89,17 @@ function resetBattleFunc() {
                 justify-content: space-around;
                 padding: 5px; 
         ">
-            <img height="50" width="50" src=${start.profile_pic} />
+            <img height="50" width="50" src=${start.profilePic} />
             <p style=" 
               text-align: center;
              "
-             >starter ${starterNum}: ${start.character_name} </p>
+             >starter ${starterNum}: ${start.name} </p>
             <div>
               <p style=" 
               margin: 0px;
               text-align: center;
               "
-              >${start.hp}/${start.hp} hp | ${start.stamina}/${start.stamina} stamina
+              >${start.health}/${start.maxHealth} hp | ${start.stamina}/${start.maxStamina} stamina
               </p>
               <p style=" 
               margin: 0px;
@@ -222,20 +225,20 @@ function resetBattleFunc() {
                 padding: 5px; 
                 height: 50px;
         ">
-            <img height="50" width="50" src=${start.profile_pic} />
+            <img height="50" width="50" src=${start.profilePic} />
             <p style=" 
               text-align: center;
               font-size: 20px;
               width: 300px;
              "
-             >starter ${starterNumInDead}: ${start.character_name} </p>
+             >starter ${starterNumInDead}: ${start.name} </p>
             <div>
               <p style=" 
               margin: 0px;
               text-align: center;
               font-size: 20px;
               "
-              >${start.hp}/${start.hp} hp | ${start.stamina}/${start.stamina} stamina
+              >${start.health}/${start.maxHealth} hp | ${start.stamina}/${start.maxStamina} stamina
               </p>
               <p style=" 
               margin: 0px;
@@ -551,6 +554,7 @@ function initBattle() {
     isCurrentStarter: true,
     id: 1,
     name: starterOneName,
+    profilePic: starterOne.profile_pic,
     health: starterOneHp,
     maxHealth: starterOneHp,
     stamina: starterOneStamina,
@@ -579,6 +583,7 @@ function initBattle() {
     opacity: 0,
     id: 2,
     name: starterTwoName,
+    profilePic: starterTwo.profile_pic,
     health: starterTwoHp,
     maxHealth: starterTwoHp,
     stamina: starterTwoStamina,
@@ -589,6 +594,8 @@ function initBattle() {
     max_frames: starterTwoAttackStats.max_frames,
     hold_time: starterTwoAttackStats.hold_time,
   });
+
+  starters = [starter, starter2]
 
   currentStarter = starter;
 
