@@ -65,8 +65,6 @@ function getStarters() {
     url: "http://localhost:5001/api/characters/starter",
   })
     .then((response) => {
-      starters = response.data;
-
       starterOne = response.data[0];
 
       starterOneHp = response.data[0].hp;
