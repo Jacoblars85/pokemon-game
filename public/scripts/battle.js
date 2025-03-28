@@ -318,6 +318,8 @@ function resetBattleFunc() {
                 });
               }
             }
+
+            resetBattleFunc();
           });
         } else if (currentStarter.speed < enemySpeed) {
           console.log("enemy is faster");
@@ -363,6 +365,8 @@ function resetBattleFunc() {
                 fadeBackToExplore();
               });
             }
+
+            resetBattleFunc();
           });
         }
       } else if (e.target.innerHTML === "Attack") {
@@ -433,6 +437,8 @@ function resetBattleFunc() {
                 fadeBackToExplore();
               });
             }
+            
+            resetBattleFunc();
           });
         }
 
@@ -495,6 +501,7 @@ function resetBattleFunc() {
               });
             });
           }
+          resetBattleFunc();
         });
       }
     });
