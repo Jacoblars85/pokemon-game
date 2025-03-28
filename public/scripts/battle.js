@@ -393,10 +393,8 @@ function resetBattleFunc() {
         if (e.target.id == 1) changingStarter = starter;
         else if (e.target.id == 2) changingStarter = starter2;
 
-        let currentStarterIsDead = false
-        if (currentStarter.health <= 0) currentStarterIsDead = true
-
- 
+        let currentStarterIsDead = false;
+        if (currentStarter.health <= 0) currentStarterIsDead = true;
 
         currentStarter.switching({
           recipient: changingStarter,
@@ -407,23 +405,23 @@ function resetBattleFunc() {
         attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
 
         if (!currentStarterIsDead) {
-            queue.push(() => {
-                enemy.attack({
-                  attack: {},
-                  recipient: currentStarter,
-                  renderedSprites,
-                });
-      
-                if (currentStarter.health <= 0) {
-                  queue.push(() => {
-                    currentStarter.faint();
-                  });
-      
-                  queue.push(() => {
-                    fadeBackToExplore();
-                  });
-                }
+          queue.push(() => {
+            enemy.attack({
+              attack: {},
+              recipient: currentStarter,
+              renderedSprites,
+            });
+
+            if (currentStarter.health <= 0) {
+              queue.push(() => {
+                currentStarter.faint();
               });
+
+              queue.push(() => {
+                fadeBackToExplore();
+              });
+            }
+          });
         }
 
         resetBattleFunc();
