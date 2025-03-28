@@ -413,9 +413,6 @@ function resetBattleFunc() {
         attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
 
         if (!currentStarterIsDead) {
-console.log('enemy attacking bc starter isnt dead switching');
-
-
             queue.push(() => {
                 enemy.attack({
                   attack: {},
@@ -447,9 +444,6 @@ console.log('enemy attacking bc starter isnt dead switching');
                   });
                 }
               });
-        } else if (currentStarterIsDead) {
-            console.log('in dead switching');
-            
         }
         // queue.push(() => {
         //   enemy.attack({
