@@ -92,6 +92,7 @@ function resetBattleFunc() {
             <img height="50" width="50" src=${start.profilePic} />
             <p style=" 
               text-align: center;
+              width: 230px;
              "
              >starter ${starterNum}: ${start.name} </p>
             <div>
