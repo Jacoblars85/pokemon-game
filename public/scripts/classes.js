@@ -103,6 +103,7 @@ class Character extends Sprite {
     isCurrentStarter = false,
     id,
     name = "no name",
+    profilePic,
     health,
     maxHealth,
     stamina,
@@ -126,6 +127,7 @@ class Character extends Sprite {
     this.isCurrentStarter = isCurrentStarter;
     this.id = id;
     this.name = name;
+    this.profilePic = profilePic
     this.health = health;
     this.maxHealth = maxHealth;
     this.stamina = stamina;
