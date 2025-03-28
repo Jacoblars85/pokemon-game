@@ -412,37 +412,76 @@ function resetBattleFunc() {
 
         attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
 
-        queue.push(() => {
-          enemy.attack({
-            attack: {},
-            recipient: currentStarter,
-            renderedSprites,
-          });
+        if (!currentStarterIsDead) {
+console.log('enemy attacking bc starter isnt dead switching');
 
-          if (currentStarter.health <= 0) {
-            queue.push(() => {
-              currentStarter.faint();
-            });
 
             queue.push(() => {
-              gsap.to("#fadeOutDiv", {
-                opacity: 1,
-                onComplete: () => {
-                  cancelAnimationFrame(battleAnimationId);
-                  randomEnemy = Math.floor(Math.random() * 18 + 1);
-                  getEnemy(randomEnemy);
-                  animate();
-                  document.getElementById("battleInterface").style.display =
-                    "none";
-                  gsap.to("#fadeOutDiv", {
-                    opacity: 0,
+                enemy.attack({
+                  attack: {},
+                  recipient: currentStarter,
+                  renderedSprites,
+                });
+      
+                if (currentStarter.health <= 0) {
+                  queue.push(() => {
+                    currentStarter.faint();
                   });
-                  battle.initiated = false;
-                },
+      
+                  queue.push(() => {
+                    gsap.to("#fadeOutDiv", {
+                      opacity: 1,
+                      onComplete: () => {
+                        cancelAnimationFrame(battleAnimationId);
+                        randomEnemy = Math.floor(Math.random() * 18 + 1);
+                        getEnemy(randomEnemy);
+                        animate();
+                        document.getElementById("battleInterface").style.display =
+                          "none";
+                        gsap.to("#fadeOutDiv", {
+                          opacity: 0,
+                        });
+                        battle.initiated = false;
+                      },
+                    });
+                  });
+                }
               });
-            });
-          }
-        });
+        } else if (currentStarterIsDead) {
+            console.log('in dead switching');
+            
+        }
+        // queue.push(() => {
+        //   enemy.attack({
+        //     attack: {},
+        //     recipient: currentStarter,
+        //     renderedSprites,
+        //   });
+
+        //   if (currentStarter.health <= 0) {
+        //     queue.push(() => {
+        //       currentStarter.faint();
+        //     });
+
+        //     queue.push(() => {
+        //       gsap.to("#fadeOutDiv", {
+        //         opacity: 1,
+        //         onComplete: () => {
+        //           cancelAnimationFrame(battleAnimationId);
+        //           randomEnemy = Math.floor(Math.random() * 18 + 1);
+        //           getEnemy(randomEnemy);
+        //           animate();
+        //           document.getElementById("battleInterface").style.display =
+        //             "none";
+        //           gsap.to("#fadeOutDiv", {
+        //             opacity: 0,
+        //           });
+        //           battle.initiated = false;
+        //         },
+        //       });
+        //     });
+        //   }
+        // });
 
         resetBattleFunc();
       } else if (e.target.innerHTML === "Use Consumable") {
