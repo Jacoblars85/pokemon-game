@@ -392,12 +392,8 @@ function resetBattleFunc() {
 
         if (changingStarter.health > 0) {
             console.log('you can switch :)');
-            
-        } else if (changingStarter.health <= 0) {
-            console.log('you cant switch :(');
-            
-        }
-        document.getElementById("attackBox").style.display = "flex";
+
+            document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
         document.getElementById("deadSwitchBox").style.display = "none";
@@ -438,6 +434,52 @@ function resetBattleFunc() {
         }
 
         resetBattleFunc();
+            
+        } else if (changingStarter.health <= 0) {
+            console.log('you cant switch :(');
+            
+        }
+        // document.getElementById("attackBox").style.display = "flex";
+        // document.getElementById("switchBox").style.display = "none";
+        // document.getElementById("inventoryBox").style.display = "none";
+        // document.getElementById("deadSwitchBox").style.display = "none";
+
+        
+
+        // let currentStarterIsDead = false;
+        // if (currentStarter.health <= 0) currentStarterIsDead = true;
+
+        // currentStarter.switching({
+        //   recipient: changingStarter,
+        // });
+
+        // currentStarter = changingStarter;
+
+        // attackButtonsArray.splice(0, 1, currentStarter.attackStats.attack_name);
+
+        // if (!currentStarterIsDead) {
+        //   queue.push(() => {
+        //     enemy.attack({
+        //       attack: {},
+        //       recipient: currentStarter,
+        //       renderedSprites,
+        //     });
+
+        //     if (currentStarter.health <= 0) {
+        //       queue.push(() => {
+        //         currentStarter.faint();
+        //       });
+
+        //       queue.push(() => {
+        //         fadeBackToExplore();
+        //       });
+        //     }
+
+        //     resetBattleFunc();
+        //   });
+        // }
+
+        // resetBattleFunc();
       } else if (e.target.innerHTML === "Use Consumable") {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
