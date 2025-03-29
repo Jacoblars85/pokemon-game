@@ -78,8 +78,7 @@ function resetBattleFunc() {
     const start = starters[i];
     starterNum++;
 
-    console.log('start', start);
-    
+    console.log("start", start);
 
     document.getElementById("switchBox").innerHTML += `
         <div style=" 
@@ -576,7 +575,7 @@ function initBattle() {
     hold_time: starterTwoAttackStats.hold_time,
   });
 
-  starters = [starter, starter2]
+  starters = [starter, starter2];
 
   currentStarter = starter;
 
