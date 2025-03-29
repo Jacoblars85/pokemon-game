@@ -78,8 +78,6 @@ function resetBattleFunc() {
     const start = starters[i];
     starterNum++;
 
-    console.log("start", start);
-
     document.getElementById("switchBox").innerHTML += `
         <div style=" 
                 display: flex;
