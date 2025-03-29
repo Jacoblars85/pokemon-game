@@ -127,7 +127,7 @@ class Character extends Sprite {
     this.isCurrentStarter = isCurrentStarter;
     this.id = id;
     this.name = name;
-    this.profilePic = profilePic
+    this.profilePic = profilePic;
     this.health = health;
     this.maxHealth = maxHealth;
     this.stamina = stamina;
