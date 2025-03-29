@@ -386,14 +386,23 @@ function resetBattleFunc() {
         e.target.innerHTML === "Change Starter" &&
         e.target.id != currentStarter.id
       ) {
+        let changingStarter;
+        if (e.target.id == 1) changingStarter = starter;
+        else if (e.target.id == 2) changingStarter = starter2;
+
+        if (changingStarter.health > 0) {
+            console.log('you can switch :)');
+            
+        } else if (changingStarter.health <= 0) {
+            console.log('you cant switch :(');
+            
+        }
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
         document.getElementById("deadSwitchBox").style.display = "none";
 
-        let changingStarter;
-        if (e.target.id == 1) changingStarter = starter;
-        else if (e.target.id == 2) changingStarter = starter2;
+        
 
         let currentStarterIsDead = false;
         if (currentStarter.health <= 0) currentStarterIsDead = true;
