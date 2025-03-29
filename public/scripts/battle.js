@@ -380,6 +380,52 @@ function resetBattleFunc() {
         document.getElementById("switchBox").style.display = "none";
       } else if (e.target.innerHTML === "Run") {
         fadeBackToExplore();
+      } else if (e.target.innerHTML === "Use Consumable") {
+        document.getElementById("attackBox").style.display = "flex";
+        document.getElementById("switchBox").style.display = "none";
+        document.getElementById("inventoryBox").style.display = "none";
+
+        let itemBeingUsed;
+
+        for (const usersConsumables of usersConsumableItems) {
+          if (usersConsumables.items_id == e.target.id) {
+            itemBeingUsed = usersConsumables;
+          }
+        }
+
+        currentStarter.usingItem({
+          item: itemBeingUsed,
+        });
+
+        axios({
+          method: "PUT",
+          url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
+        })
+          .then((response) => {
+            getAllUsersItems(resetBattleFunc);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+        queue.push(() => {
+          enemy.attack({
+            attack: {},
+            recipient: currentStarter,
+            renderedSprites,
+          });
+
+          if (currentStarter.health <= 0) {
+            queue.push(() => {
+              currentStarter.faint();
+            });
+
+            queue.push(() => {
+              fadeBackToExplore();
+            });
+          }
+          resetBattleFunc();
+        });
       } else if (
         e.target.innerHTML === "Change Starter" &&
         e.target.id != currentStarter.id
@@ -433,52 +479,6 @@ function resetBattleFunc() {
 
           resetBattleFunc();
         }
-      } else if (e.target.innerHTML === "Use Consumable") {
-        document.getElementById("attackBox").style.display = "flex";
-        document.getElementById("switchBox").style.display = "none";
-        document.getElementById("inventoryBox").style.display = "none";
-
-        let itemBeingUsed;
-
-        for (const usersConsumables of usersConsumableItems) {
-          if (usersConsumables.items_id == e.target.id) {
-            itemBeingUsed = usersConsumables;
-          }
-        }
-
-        currentStarter.usingItem({
-          item: itemBeingUsed,
-        });
-
-        axios({
-          method: "PUT",
-          url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
-        })
-          .then((response) => {
-            getAllUsersItems(resetBattleFunc);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-
-        queue.push(() => {
-          enemy.attack({
-            attack: {},
-            recipient: currentStarter,
-            renderedSprites,
-          });
-
-          if (currentStarter.health <= 0) {
-            queue.push(() => {
-              currentStarter.faint();
-            });
-
-            queue.push(() => {
-              fadeBackToExplore();
-            });
-          }
-          resetBattleFunc();
-        });
       }
     });
   });
