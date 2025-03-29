@@ -435,9 +435,6 @@ function resetBattleFunc() {
 
         resetBattleFunc();
             
-        } else if (changingStarter.health <= 0) {
-            console.log('you cant switch :(');
-            
         }
         // document.getElementById("attackBox").style.display = "flex";
         // document.getElementById("switchBox").style.display = "none";
