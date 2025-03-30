@@ -306,6 +306,10 @@ function resetBattleFunc() {
             queue.push(() => {
               enemy.faint();
             });
+            
+            queue.push(() => {
+                popUpReward()
+              });
 
             queue.push(() => {
               fadeBackToExplore();
