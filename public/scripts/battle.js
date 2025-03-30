@@ -43,6 +43,11 @@ function fadeBackToExplore() {
 }
 
 function popUpReward() {
+    document.getElementById("popUpRewardBox").style.display = "block";
+
+    document.getElementById("popUpRewardBox").innerHTML = `you won the battle!`
+
+
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/user/won/battle`,
