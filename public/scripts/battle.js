@@ -43,17 +43,16 @@ function fadeBackToExplore() {
 }
 
 function popUpReward() {
-    document.getElementById("popUpRewardBox").style.display = "block";
+  document.getElementById("popUpRewardBox").style.display = "block";
 
-    document.getElementById("popUpRewardBox").innerHTML = `you won the battle!`
+  document.getElementById("popUpRewardBox").innerHTML = `you won the battle!`;
 
-
-    let reward = {xp: .25}
+  let reward = { xp: 0.25 };
 
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/user/won/battle`,
-    data: reward
+    data: reward,
   })
     .then((response) => {
       console.log("finished winning battle axios");
@@ -306,10 +305,10 @@ function resetBattleFunc() {
             queue.push(() => {
               enemy.faint();
             });
-            
+
             queue.push(() => {
-                popUpReward()
-              });
+              popUpReward();
+            });
 
             queue.push(() => {
               fadeBackToExplore();
