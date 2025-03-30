@@ -48,9 +48,12 @@ function popUpReward() {
     document.getElementById("popUpRewardBox").innerHTML = `you won the battle!`
 
 
+    let reward = {}
+
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/user/won/battle`,
+    data: reward
   })
     .then((response) => {
       console.log("finished winning battle axios");
