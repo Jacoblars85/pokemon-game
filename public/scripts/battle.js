@@ -43,17 +43,16 @@ function fadeBackToExplore() {
 }
 
 function popUpReward() {
-    axios({
-        method: "PUT",
-        url: `http://localhost:5001/api/user/won/battle`,
-      })
-        .then((response) => {
-            console.log('finished winning battle axios');
-            
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/user/won/battle`,
+  })
+    .then((response) => {
+      console.log("finished winning battle axios");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 function resetBattleFunc() {
@@ -606,13 +605,11 @@ function initBattle() {
     pokeAttack,
   ];
 
-
   renderedSprites = [enemy, starter, starter2];
 
   queue = [];
 
   resetBattleFunc();
-
 }
 
 function animateBattle() {
