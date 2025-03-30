@@ -48,7 +48,7 @@ function popUpReward() {
     document.getElementById("popUpRewardBox").innerHTML = `you won the battle!`
 
 
-    let reward = {}
+    let reward = {xp: .25}
 
   axios({
     method: "PUT",
