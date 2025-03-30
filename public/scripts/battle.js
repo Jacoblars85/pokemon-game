@@ -42,6 +42,20 @@ function fadeBackToExplore() {
   });
 }
 
+function popUpReward() {
+    axios({
+        method: "PUT",
+        url: `http://localhost:5001/api/user/won/battle`,
+      })
+        .then((response) => {
+            console.log('finished winning battle axios');
+            
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+}
+
 function resetBattleFunc() {
   document.getElementById("attackBox").innerHTML = "";
   document.getElementById("switchBox").innerHTML = "";
@@ -598,7 +612,7 @@ function initBattle() {
   queue = [];
 
   resetBattleFunc();
-  
+
 }
 
 function animateBattle() {
