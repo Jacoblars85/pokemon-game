@@ -49,7 +49,7 @@ function popUpReward() {
 
   let reward = { xp: 0.25 };
 
-  putWonBattle(reward)
+  putWonBattle(reward);
 }
 
 function resetBattleFunc() {
