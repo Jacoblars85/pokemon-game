@@ -393,7 +393,12 @@ function resetBattleFunc() {
         if (currentStarter.health + currentStarter.stamina + currentStarter.speed >= enemy.health + enemy.stamina + enemy.speed) {
             console.log('starters stats are better');
 
+            document.getElementById("dialogueBox").innerHTML = "you ran away successfully"
+
+            queue.push(() => {
             fadeBackToExplore();
+              });
+
         } else {
             console.log('enemy stats are better');
 
