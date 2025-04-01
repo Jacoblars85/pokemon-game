@@ -391,12 +391,11 @@ function resetBattleFunc() {
         document.getElementById("dialogueBox").style.display = "block";
 
         if (
-          currentStarter.health +
-            currentStarter.stamina +
+          currentStarter.maxHealth +
+            currentStarter.maxStamina +
             currentStarter.speed >=
-          enemy.health + enemy.stamina + enemy.speed
+          enemy.maxHealth + enemy.maxStamina + enemy.speed
         ) {
-          console.log("starters stats are better");
 
           document.getElementById("dialogueBox").innerHTML =
             "you ran away successfully";
@@ -405,12 +404,9 @@ function resetBattleFunc() {
             fadeBackToExplore();
           });
         } else {
-          console.log("enemy stats are better");
 
-          // queue.push(() => {
           document.getElementById("dialogueBox").innerHTML =
-            "you are not able to run";
-          //   });
+            "you are not able to run away";
 
           queue.push(() => {
             enemy.attack({
