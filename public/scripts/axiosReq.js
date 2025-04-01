@@ -198,3 +198,18 @@ function getAllUsersItems(resetBattleFunc) {
       console.log(err);
     });
 }
+
+function putWonBattle(reward) {
+  
+    axios({
+      method: "PUT",
+      url: `http://localhost:5001/api/user/won/battle`,
+      data: reward,
+    })
+      .then((response) => {
+        console.log("finished winning battle axios");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
