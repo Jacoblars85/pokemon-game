@@ -49,17 +49,7 @@ function popUpReward() {
 
   let reward = { xp: 0.25 };
 
-  axios({
-    method: "PUT",
-    url: `http://localhost:5001/api/user/won/battle`,
-    data: reward,
-  })
-    .then((response) => {
-      console.log("finished winning battle axios");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  putWonBattle(reward)
 }
 
 function resetBattleFunc() {
