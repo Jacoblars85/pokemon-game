@@ -42,16 +42,6 @@ function fadeBackToExplore() {
   });
 }
 
-function popUpReward() {
-  document.getElementById("popUpRewardBox").style.display = "block";
-
-  document.getElementById("popUpRewardBox").innerHTML = `you won the battle!`;
-
-  let reward = { xp: 0.25 };
-
-  putWonBattle(reward);
-}
-
 function resetBattleFunc() {
   document.getElementById("attackBox").innerHTML = "";
   document.getElementById("switchBox").innerHTML = "";
@@ -296,9 +286,9 @@ function resetBattleFunc() {
               enemy.faint();
             });
 
-            queue.push(() => {
-              popUpReward();
-            });
+            let reward = { xp: 0.25 };
+
+            putWonBattle(reward);
 
             queue.push(() => {
               fadeBackToExplore();
