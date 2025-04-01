@@ -388,14 +388,48 @@ function resetBattleFunc() {
         document.getElementById("switchBox").style.display = "none";
       } else if (e.target.innerHTML === "Run") {
 
+        document.getElementById("dialogueBox").style.display = "block";
+
         if (currentStarter.health + currentStarter.stamina + currentStarter.speed >= enemy.health + enemy.stamina + enemy.speed) {
             console.log('starters stats are better');
-            
+
+            fadeBackToExplore();
         } else {
             console.log('enemy stats are better');
 
+            // queue.push(() => {
+                document.getElementById("dialogueBox").innerHTML = "you are not able to run"
+            //   });
+
+            queue.push(() => {
+                enemy.attack({
+                  attack: {},
+                  recipient: currentStarter,
+                  renderedSprites,
+                });
+    
+                if (currentStarter.health <= 0) {
+                  queue.push(() => {
+                    currentStarter.faint();
+                  });
+    
+                  if (starter.health <= 0 && starter2.health <= 0) {
+                    queue.push(() => {
+                      fadeBackToExplore();
+                    });
+                  }
+                  {
+                    queue.push(() => {
+                      document.getElementById("deadSwitchBox").style.display =
+                        "block";
+                    });
+                  }
+                }
+    
+                resetBattleFunc();
+              });
         }
-        // fadeBackToExplore();
+        
       } else if (e.target.innerHTML === "Use Consumable") {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
