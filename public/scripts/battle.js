@@ -387,7 +387,15 @@ function resetBattleFunc() {
         document.getElementById("attackBox").style.display = "none";
         document.getElementById("switchBox").style.display = "none";
       } else if (e.target.innerHTML === "Run") {
-        fadeBackToExplore();
+
+        if (currentStarter.health + currentStarter.stamina + currentStarter.speed >= enemy.health + enemy.stamina + enemy.speed) {
+            console.log('starters stats are better');
+            
+        } else {
+            console.log('enemy stats are better');
+
+        }
+        // fadeBackToExplore();
       } else if (e.target.innerHTML === "Use Consumable") {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
