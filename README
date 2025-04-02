@@ -1,5 +1,6 @@
 Problems:
 
+1. add xp levels for the characters
 2. changed the disabled variables to the classes that change the hp and stamina
 5. create the new hp, speed and damage system
 7. get the valiadation and log in working
