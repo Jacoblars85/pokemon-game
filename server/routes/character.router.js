@@ -215,15 +215,21 @@ SELECT "user_characters"."id" as "id",
 
             console.log('result.rows before', result.rows);
             
+            let multiplier = .2
 
             for (const starter of result.rows) {
+              
+                multiplier += Math.floor(starter.xp_level)
 
                 if (starter.item_id !== null) {
-                starter.hp += starter.item_hp
-                starter.stamina += starter.item_stamina
-                starter.speed += starter.item_speed
-                starter.attack_damage += starter.item_damage
+                    starter.hp += starter.item_hp
+                    starter.stamina += starter.item_stamina
+                    starter.speed += starter.item_speed
+                    starter.attack_damage += starter.item_damage
                 }
+
+
+                
             }
 
             console.log('result.rows after', result.rows);
