@@ -13,6 +13,7 @@ SELECT "user_characters"."id" as "id",
         "user_characters"."starter_2",
         "user_characters"."new",
         "user_characters"."nickname",
+        "user_characters"."xp_level",
 		"characters"."character_name",
 		"characters"."profile_pic",
 		"characters"."hp",
@@ -163,6 +164,7 @@ SELECT "user_characters"."id" as "id",
         "user_characters"."starter_2",
         "user_characters"."new",
         "user_characters"."nickname",
+        "user_characters"."xp_level",
 		"characters"."character_name",
 		"characters"."profile_pic",
 		"characters"."hp",
@@ -211,7 +213,11 @@ SELECT "user_characters"."id" as "id",
 // add sqlValues back in here ^
         .then(result => {
 
+            console.log('result.rows before', result.rows);
+            
+
             for (const starter of result.rows) {
+
                 if (starter.item_id !== null) {
                 starter.hp += starter.item_hp
                 starter.stamina += starter.item_stamina
@@ -219,6 +225,9 @@ SELECT "user_characters"."id" as "id",
                 starter.attack_damage += starter.item_damage
                 }
             }
+
+            console.log('result.rows after', result.rows);
+
             res.send(result.rows);
         })
         .catch(err => {
