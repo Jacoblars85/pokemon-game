@@ -53,26 +53,26 @@ function getStarters() {
   })
     .then((response) => {
       starterOne = response.data[0];
-
-      starterOneHp = response.data[0].hp;
-      starterOneStamina = response.data[0].stamina;
+      
+      starterOneHp = Math.floor(response.data[0].hp);
+      starterOneStamina = Math.floor(response.data[0].stamina);
       starterOneName = response.data[0].character_name;
-      starterOneSpeed = response.data[0].speed;
+      starterOneSpeed = Math.floor(response.data[0].speed);
       starterPicture = response.data[0].battle_pic;
       starterFxImg = response.data[0].fx_img;
 
       starterOneInfo = {
         character_name: response.data[0].character_name,
-        hp: response.data[0].hp,
-        stamina: response.data[0].stamina,
-        speed: response.data[0].speed,
+        hp: Math.floor(response.data[0].hp),
+        stamina: Math.floor(response.data[0].stamina),
+        speed: Math.floor(response.data[0].speed),
         battle_pic: response.data[0].battle_pic,
       };
 
       starterOneAttackStats = {
         attack_name: response.data[0].attack_name,
-        attack_damage: response.data[0].attack_damage,
-        attack_stamina: response.data[0].attack_stamina,
+        attack_damage: Math.floor(response.data[0].attack_damage),
+        attack_stamina: Math.floor(response.data[0].attack_stamina),
         attack_type: response.data[0].attack_type,
         fx_img: response.data[0].fx_img,
         max_frames: response.data[0].max_frames,
