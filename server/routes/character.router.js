@@ -231,9 +231,7 @@ SELECT "user_characters"."id" as "id",
                     starter.stamina += starter.item_stamina
                     starter.speed += starter.item_speed
                     starter.attack_damage += starter.item_damage
-                }
-
-                
+                } 
             }
 
             console.log('result.rows after', result.rows);
