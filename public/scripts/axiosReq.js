@@ -53,7 +53,7 @@ function getStarters() {
   })
     .then((response) => {
       starterOne = response.data[0];
-      
+
       starterOneHp = Math.floor(response.data[0].hp);
       starterOneStamina = Math.floor(response.data[0].stamina);
       starterOneName = response.data[0].character_name;
@@ -82,25 +82,25 @@ function getStarters() {
       if (response.data.length === 2) {
         starterTwo = response.data[1];
 
-        starterTwoHp = response.data[1].hp;
-        starterTwoStamina = response.data[1].stamina;
+        starterTwoHp = Math.floor(response.data[1].hp);
+        starterTwoStamina = Math.floor(response.data[1].stamina);
         starterTwoName = response.data[1].character_name;
-        starterTwoSpeed = response.data[1].speed;
+        starterTwoSpeed = Math.floor(response.data[1].speed);
         starterTwoPicture = response.data[1].battle_pic;
         starterTwoFxImg = response.data[1].fx_img;
 
         starterTwoInfo = {
           character_name: response.data[1].character_name,
-          hp: response.data[1].hp,
-          stamina: response.data[1].stamina,
-          speed: response.data[1].speed,
+          hp: Math.floor(response.data[1].hp),
+          stamina: Math.floor(response.data[1].stamina),
+          speed: Math.floor(response.data[1].speed),
           battle_pic: response.data[1].battle_pic,
         };
 
         starterTwoAttackStats = {
           attack_name: response.data[1].attack_name,
-          attack_damage: response.data[1].attack_damage,
-          attack_stamina: response.data[1].attack_stamina,
+          attack_damage: Math.floor(response.data[1].attack_damage),
+          attack_stamina: Math.floor(response.data[1].attack_stamina),
           attack_type: response.data[1].attack_type,
           fx_img: response.data[1].fx_img,
           max_frames: response.data[1].max_frames,
