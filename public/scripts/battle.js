@@ -348,6 +348,12 @@ function resetBattleFunc() {
             });
 
             if (starter.health <= 0 && starter2.health <= 0) {
+
+                queue.push(() => {
+                    document.getElementById("dialogueBox").innerHTML =
+                      "you lost the battle";
+                  });
+                  
               queue.push(() => {
                 fadeBackToExplore();
               });
@@ -370,6 +376,11 @@ function resetBattleFunc() {
             if (enemy.health <= 0) {
               queue.push(() => {
                 enemy.faint();
+              });
+
+              queue.push(() => {
+                document.getElementById("dialogueBox").innerHTML =
+                  "you won the battle!";
               });
 
               queue.push(() => {
