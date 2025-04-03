@@ -10,54 +10,6 @@ getAllUsersItems();
 // import forestBackground from "./img/backgroundImg/RockForest.webp";
 // import battleMusic from "../../audio/battleMusic.mp3";
 
-// // starter stats/info
-// let starterOneHp = 0;
-// let starterOneStamina = 0;
-// let starterPicture = "";
-// let starterFxImg = "";
-// let starterOneName = "";
-// let starterOneSpeed = 0;
-// let starterOneInfo = {};
-// let starterOneAttackStats = {};
-
-// // starter 2 stats/info
-// let starterTwoHp = 0;
-// let starterTwoStamina = 0;
-// let starterTwoPicture = "";
-// let starterTwoFxImg = "";
-// let starterTwoName = "";
-// let starterTwoSpeed = 0;
-// let starterTwoInfo = {};
-// let starterTwoAttackStats = {};
-
-// // enemy stats/info
-// let enemyHp = 0;
-// let enemyStamina = 0;
-// let enemyPicture = "";
-// let enemyFxImg = "";
-// let enemyName = "";
-// let enemySpeed = 0;
-// let enemyInfo = {};
-// let enemyAttackStats = {};
-
-// // kick attack name and stamina
-// let kickAttackStats = {};
-// let kickAttack = "";
-// let kickStamina = 0;
-
-// // poke attack name and stamina
-// let pokeAttackStats = {};
-// let pokeAttack = "";
-// let pokeStamina = 0;
-
-// // setting each starter/enemy to a varriable
-// let starters = [];
-// let enemyOne;
-// let starterOne;
-// let starterTwo;
-// let usersConsumableItems = [];
-
-
 
 const canvas = document.getElementById("canvasRef");
 const c = canvas.getContext("2d");
