@@ -387,6 +387,10 @@ function resetBattleFunc() {
                 enemy.faint();
               });
 
+              let reward = { xp: 0.25 };
+
+              putWonBattle(reward);
+
               queue.push(() => {
                 document.getElementById("dialogueBox").innerHTML =
                   "you won the battle!";
