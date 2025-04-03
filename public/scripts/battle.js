@@ -313,11 +313,10 @@ function resetBattleFunc() {
               });
 
               if (starter.health <= 0 && starter2.health <= 0) {
-
                 queue.push(() => {
-                    document.getElementById("dialogueBox").innerHTML =
-                      "you lost the battle";
-                  });
+                  document.getElementById("dialogueBox").innerHTML =
+                    "you lost the battle";
+                });
 
                 queue.push(() => {
                   fadeBackToExplore();
@@ -402,7 +401,6 @@ function resetBattleFunc() {
             currentStarter.speed >=
           enemy.maxHealth + enemy.maxStamina + enemy.speed
         ) {
-
           document.getElementById("dialogueBox").innerHTML =
             "you ran away successfully";
 
@@ -410,7 +408,6 @@ function resetBattleFunc() {
             fadeBackToExplore();
           });
         } else {
-
           document.getElementById("dialogueBox").innerHTML =
             "you are not able to run away";
 
@@ -614,42 +611,42 @@ function initBattle() {
 
   starters = [starter];
 
-//   if (starterTwo != null) {
+  //   if (starterTwo != null) {
 
-//   starter2 = new Character({
-//     position: {
-//       x: 280,
-//       y: 325,
-//     },
-//     image: {
-//       src: starterTwoPicture,
-//     },
-//     frames: {
-//       max: 4,
-//       hold: 30,
-//       alignment: 86,
-//     },
-//     animate: true,
-//     opacity: 0,
-//     id: 2,
-//     name: starterTwoName,
-//     profilePic: starterTwoProfilePic,
-//     health: starterTwoHp,
-//     maxHealth: starterTwoHp,
-//     stamina: starterTwoStamina,
-//     maxStamina: starterTwoStamina,
-//     speed: starterTwoSpeed,
-//     fx_img: starterTwoAttackStats.fx_img,
-//     attackStats: starterTwoAttackStats,
-//     max_frames: starterTwoAttackStats.max_frames,
-//     hold_time: starterTwoAttackStats.hold_time,
-//   });
+  //   starter2 = new Character({
+  //     position: {
+  //       x: 280,
+  //       y: 325,
+  //     },
+  //     image: {
+  //       src: starterTwoPicture,
+  //     },
+  //     frames: {
+  //       max: 4,
+  //       hold: 30,
+  //       alignment: 86,
+  //     },
+  //     animate: true,
+  //     opacity: 0,
+  //     id: 2,
+  //     name: starterTwoName,
+  //     profilePic: starterTwoProfilePic,
+  //     health: starterTwoHp,
+  //     maxHealth: starterTwoHp,
+  //     stamina: starterTwoStamina,
+  //     maxStamina: starterTwoStamina,
+  //     speed: starterTwoSpeed,
+  //     fx_img: starterTwoAttackStats.fx_img,
+  //     attackStats: starterTwoAttackStats,
+  //     max_frames: starterTwoAttackStats.max_frames,
+  //     hold_time: starterTwoAttackStats.hold_time,
+  //   });
 
-//   starters.push(starter2)
+  //   starters.push(starter2)
 
-// }
+  // }
 
-//   starters = [starter, starter2];
+  //   starters = [starter, starter2];
 
   currentStarter = starter;
 
@@ -665,7 +662,6 @@ function initBattle() {
   renderedSprites = [enemy, starter];
 
   if (starterTwo != null) {
-    
     starter2 = new Character({
       position: {
         x: 280,
@@ -694,11 +690,10 @@ function initBattle() {
       max_frames: starterTwoAttackStats.max_frames,
       hold_time: starterTwoAttackStats.hold_time,
     });
-  
-    starters.push(starter2)
 
-    renderedSprites.push(starter2)
-  
+    starters.push(starter2);
+
+    renderedSprites.push(starter2);
   }
 
   queue = [];
