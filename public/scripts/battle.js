@@ -25,6 +25,7 @@ let queue;
 
 let battleAnimationId;
 
+// animation for fading back to explore
 function fadeBackToExplore() {
   gsap.to("#fadeOutDiv", {
     opacity: 1,
@@ -42,6 +43,7 @@ function fadeBackToExplore() {
   });
 }
 
+// func to reset the display for the attack box
 function resetBattleFunc() {
   document.getElementById("attackBox").innerHTML = "";
   document.getElementById("switchBox").innerHTML = "";
@@ -208,7 +210,7 @@ function resetBattleFunc() {
      `;
   }
 
-  //   InnerHtml for the dead switch box
+  // InnerHtml for the dead switch box
   let starterNumInDead = 0;
   for (let i = 0; i < starters.length; i++) {
     const start = starters[i];
