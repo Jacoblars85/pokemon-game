@@ -296,47 +296,47 @@ router.put("/won/battle", (req, res) => {
 
 
 // new one
-// router.put("/won/battle", (req, res) => {
+router.put("/won/battle", (req, res) => {
 
-//   const sqlText = `
-//   UPDATE "user"
-//         SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
-//         WHERE "id" = $2 RETURNING "xp_level";
-//     `;
+  const sqlText = `
+  UPDATE "user"
+        SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
+        WHERE "id" = $2 RETURNING "xp_level";
+    `;
 
-//     const sqlValues = [req.body.xp, req.user.id];
+    const sqlValues = [req.body.xp, req.user.id];
 
-//   pool.query(sqlText, sqlValues)
-//         .then(result => {
+  pool.query(sqlText, sqlValues)
+        .then(result => {
 
-//           const userXpLevel = result.rows[0].xp_level
+          const userXpLevel = result.rows[0].xp_level
 
-//           if (Math.floor(userXpLevel) > req.user.rewards_received) {
+          if (Math.floor(userXpLevel) > req.user.rewards_received) {
             
-//           }
+          }
 
-//           const sqlText = `
-//           UPDATE "user_rewards"
-//                 SET "number" = "number" + 1
-//                 WHERE "user_id" = $1 AND "reward_id" = $2;
-//             `;
+          const sqlText = `
+          UPDATE "user_rewards"
+                SET "number" = "number" + 1
+                WHERE "user_id" = $1 AND "reward_id" = $2;
+            `;
         
-//             const sqlValues = [req.user.id, req.body.rewardId];
+            const sqlValues = [req.user.id, req.body.rewardId];
         
-//           pool.query(sqlText, sqlValues)
-//                 .then(result => {
-//           res.sendStatus(201);
-//         })
-//         .catch((err) => {
-//           console.log("Error in user.router /won/battle PUT,", err);
-//           res.sendStatus(500);
-//         })
-//       })
-//     .catch((err) => {
-//       console.log("Error in user.router /won/battle PUT,", err);
-//       res.sendStatus(500);
-//     });
-// });
+          pool.query(sqlText, sqlValues)
+                .then(result => {
+          res.sendStatus(201);
+        })
+        .catch((err) => {
+          console.log("Error in user.router /won/battle PUT,", err);
+          res.sendStatus(500);
+        })
+      })
+    .catch((err) => {
+      console.log("Error in user.router /won/battle PUT,", err);
+      res.sendStatus(500);
+    });
+});
 
 
 router.put("/level/up", (req, res) => {
