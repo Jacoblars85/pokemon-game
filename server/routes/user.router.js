@@ -262,14 +262,19 @@ router.put("/won/battle", (req, res) => {
 
   const sqlText = `
   UPDATE "user"
-        SET "coins" = "coins" + 10, "level_${req.body.levelId}_completed" = TRUE, "xp_level" = "xp_level" + $1
-        WHERE "id" = $2;
+        SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
+        WHERE "id" = $2 RETURNING "xp_level";
     `;
 
     const sqlValues = [req.body.xp, req.user.id];
 
   pool.query(sqlText, sqlValues)
         .then(result => {
+
+          const createdUserId = result.rows[0]
+
+          console.log('result.rows[0]', result.rows[0]);
+          
           res.sendStatus(201);
         })
     .catch((err) => {
