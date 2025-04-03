@@ -213,8 +213,6 @@ SELECT "user_characters"."id" as "id",
 // add sqlValues back in here ^
         .then(result => {
 
-            console.log('result.rows before', result.rows);
-            
             let multiplier = .2
 
             for (const starter of result.rows) {
@@ -233,8 +231,6 @@ SELECT "user_characters"."id" as "id",
                     starter.attack_damage += starter.item_damage
                 } 
             }
-
-            console.log('result.rows after', result.rows);
 
             res.send(result.rows);
         })
