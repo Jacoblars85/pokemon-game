@@ -312,7 +312,11 @@ function resetBattleFunc() {
                 currentStarter.faint();
               });
 
-              if (starter.health <= 0 && starter2.health <= 0) {
+              if (
+                starter.health <= 0 && starterTwo != null
+                  ? starter2.health <= 0
+                  : currentStarter.health <= 0
+              ) {
                 queue.push(() => {
                   document.getElementById("dialogueBox").innerHTML =
                     "you lost the battle";
