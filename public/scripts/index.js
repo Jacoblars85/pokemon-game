@@ -10,7 +10,6 @@ getAllUsersItems();
 // import forestBackground from "./img/backgroundImg/RockForest.webp";
 // import battleMusic from "../../audio/battleMusic.mp3";
 
-
 const canvas = document.getElementById("canvasRef");
 const c = canvas.getContext("2d");
 
