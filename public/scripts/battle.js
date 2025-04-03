@@ -607,6 +607,7 @@ function resetBattleFunc() {
   });
 }
 
+// Initialize the battle
 function initBattle() {
   document.getElementById("battleInterface").style.display = "block";
   document.getElementById("dialogueBox").style.display = "none";
@@ -728,6 +729,7 @@ function initBattle() {
   resetBattleFunc();
 }
 
+// animates the battle
 function animateBattle() {
   battleAnimationId = window.requestAnimationFrame(animateBattle);
   battleBackground.draw();
@@ -737,6 +739,7 @@ function animateBattle() {
   });
 }
 
+// func to go through the queue
 document.querySelector("#dialogueBox").addEventListener("click", (e) => {
   if (queue.length > 0) {
     queue[0]();
