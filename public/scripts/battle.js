@@ -348,12 +348,11 @@ function resetBattleFunc() {
             });
 
             if (starter.health <= 0 && starter2.health <= 0) {
+              queue.push(() => {
+                document.getElementById("dialogueBox").innerHTML =
+                  "you lost the battle";
+              });
 
-                queue.push(() => {
-                    document.getElementById("dialogueBox").innerHTML =
-                      "you lost the battle";
-                  });
-                  
               queue.push(() => {
                 fadeBackToExplore();
               });
