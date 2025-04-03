@@ -612,36 +612,44 @@ function initBattle() {
     hold_time: starterOneAttackStats.hold_time,
   });
 
-  starter2 = new Character({
-    position: {
-      x: 280,
-      y: 325,
-    },
-    image: {
-      src: starterTwoPicture,
-    },
-    frames: {
-      max: 4,
-      hold: 30,
-      alignment: 86,
-    },
-    animate: true,
-    opacity: 0,
-    id: 2,
-    name: starterTwoName,
-    profilePic: starterTwo.profile_pic,
-    health: starterTwoHp,
-    maxHealth: starterTwoHp,
-    stamina: starterTwoStamina,
-    maxStamina: starterTwoStamina,
-    speed: starterTwoSpeed,
-    fx_img: starterTwoAttackStats.fx_img,
-    attackStats: starterTwoAttackStats,
-    max_frames: starterTwoAttackStats.max_frames,
-    hold_time: starterTwoAttackStats.hold_time,
-  });
+  starters = [starter];
 
-  starters = [starter, starter2];
+//   if (starterTwo != null) {
+
+//   starter2 = new Character({
+//     position: {
+//       x: 280,
+//       y: 325,
+//     },
+//     image: {
+//       src: starterTwoPicture,
+//     },
+//     frames: {
+//       max: 4,
+//       hold: 30,
+//       alignment: 86,
+//     },
+//     animate: true,
+//     opacity: 0,
+//     id: 2,
+//     name: starterTwoName,
+//     profilePic: starterTwoProfilePic,
+//     health: starterTwoHp,
+//     maxHealth: starterTwoHp,
+//     stamina: starterTwoStamina,
+//     maxStamina: starterTwoStamina,
+//     speed: starterTwoSpeed,
+//     fx_img: starterTwoAttackStats.fx_img,
+//     attackStats: starterTwoAttackStats,
+//     max_frames: starterTwoAttackStats.max_frames,
+//     hold_time: starterTwoAttackStats.hold_time,
+//   });
+
+//   starters.push(starter2)
+
+// }
+
+//   starters = [starter, starter2];
 
   currentStarter = starter;
 
@@ -654,7 +662,44 @@ function initBattle() {
     pokeAttack,
   ];
 
-  renderedSprites = [enemy, starter, starter2];
+  renderedSprites = [enemy, starter];
+
+  if (starterTwo != null) {
+    
+    starter2 = new Character({
+      position: {
+        x: 280,
+        y: 325,
+      },
+      image: {
+        src: starterTwoPicture,
+      },
+      frames: {
+        max: 4,
+        hold: 30,
+        alignment: 86,
+      },
+      animate: true,
+      opacity: 0,
+      id: 2,
+      name: starterTwoName,
+      profilePic: starterTwo.profile_pic,
+      health: starterTwoHp,
+      maxHealth: starterTwoHp,
+      stamina: starterTwoStamina,
+      maxStamina: starterTwoStamina,
+      speed: starterTwoSpeed,
+      fx_img: starterTwoAttackStats.fx_img,
+      attackStats: starterTwoAttackStats,
+      max_frames: starterTwoAttackStats.max_frames,
+      hold_time: starterTwoAttackStats.hold_time,
+    });
+  
+    starters.push(starter2)
+
+    renderedSprites.push(starter2)
+  
+  }
 
   queue = [];
 
