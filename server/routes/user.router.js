@@ -298,13 +298,21 @@ router.put("/won/battle", (req, res) => {
 // new one
 router.put("/won/battle", (req, res) => {
 
+    // const sqlText = `
+  // UPDATE "user"
+  //       SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
+  //       WHERE "id" = $2 RETURNING "xp_level";
+  //   `;
+
   const sqlText = `
   UPDATE "user"
         SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
-        WHERE "id" = $2 RETURNING "xp_level";
+        WHERE "id" = 1 RETURNING "xp_level";
     `;
 
-    const sqlValues = [req.body.xp, req.user.id];
+
+    // const sqlValues = [req.body.xp, req.user.id];
+    const sqlValues = [req.body.xp];
 
   pool.query(sqlText, sqlValues)
         .then(result => {
