@@ -489,9 +489,22 @@ function resetBattleFunc() {
               currentStarter.faint();
             });
 
-            queue.push(() => {
-              fadeBackToExplore();
-            });
+            if (starter.health <= 0 && starter2.health <= 0) {
+              queue.push(() => {
+                document.getElementById("dialogueBox").innerHTML =
+                  "you lost the battle";
+              });
+
+              queue.push(() => {
+                fadeBackToExplore();
+              });
+            }
+            {
+              queue.push(() => {
+                document.getElementById("deadSwitchBox").style.display =
+                  "block";
+              });
+            }
           }
           resetBattleFunc();
         });
