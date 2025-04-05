@@ -328,12 +328,6 @@ router.put("/won/battle", (req, res) => {
                 WHERE "user_id" = $1 AND "reward_id" = $2;
             `;
           }
-
-          // const sqlText = `
-          // UPDATE "user_rewards"
-          //       SET "number" = "number" + 1
-          //       WHERE "user_id" = $1 AND "reward_id" = $2;
-          //   `;
         
             const sqlValues = [req.user.id, rewardId];
         
