@@ -303,7 +303,15 @@ router.put("/won/battle", (req, res) => {
   //       WHERE "id" = $2 RETURNING "xp_level";
   //   `;
 
-  const sqlText = `
+  let sqlText
+
+  if (Math.floor(userXpLevel + req.body.xp) > req.user.rewards_received) {
+    
+  } else {
+
+  }
+
+  sqlText = `
   UPDATE "user"
         SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
         WHERE "id" = 1 RETURNING "xp_level";
