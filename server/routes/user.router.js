@@ -319,13 +319,6 @@ router.put("/won/battle", (req, res) => {
       `;
   }
 
-  // sqlText = `
-  // UPDATE "user"
-  //       SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
-  //       WHERE "id" = $2 RETURNING "xp_level";
-  //   `;
-
-
     // const sqlValues = [req.body.xp, req.user.id];
     const sqlValues = [req.body.xp, 1];
 
