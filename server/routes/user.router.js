@@ -321,11 +321,11 @@ router.put("/won/battle", (req, res) => {
           let rewardId = result.rows[0].xp_level % 2
           let sqlText
 
-          if (Math.floor(Number(user.xp_level) + 1) % 4 === 0) {
+          if (Math.floor(Number(userXpLevel)) % 4 === 0) {
 
-          } else if (Math.floor(Number(user.xp_level) + 1) % 3 === 0) {
+          } else if (Math.floor(Number(userXpLevel)) % 3 === 0) {
 
-          } else if (Math.floor(Number(user.xp_level) + 1) % 2 === 0) {
+          } else if (Math.floor(Number(userXpLevel)) % 2 === 0) {
 
           } else {
 console.log('1');
