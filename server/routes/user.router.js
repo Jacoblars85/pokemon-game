@@ -322,10 +322,16 @@ router.put("/won/battle", (req, res) => {
           let sqlText
 
           if (Math.floor(Number(userXpLevel)) % 4 === 0) {
+            console.log('in 4 reward');
+
             rewardId = 4
           } else if (Math.floor(Number(userXpLevel)) % 3 === 0) {
+            console.log('in 3 reward');
+
             rewardId = 3
           } else if (Math.floor(Number(userXpLevel)) % 2 === 0) {
+            console.log('in 2 reward');
+
             rewardId = 2
           } else {
             console.log('in 1 reward');
