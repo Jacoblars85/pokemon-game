@@ -339,26 +339,6 @@ router.put("/won/battle", (req, res) => {
             // const sqlValues = [req.user.id, rewardId];
             const sqlValues = [1, rewardId];
 
-  // let sqlText
-
-  // // if (Math.floor(req.user.xp_level += req.body.xp) > req.user.rewards_received) {
-  //   if (Math.floor(1.75 + req.body.xp) > 1) {
-  //   sqlText = `
-  //   UPDATE "user"
-  //         SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1,  "rewards_received" = "rewards_received" + 1
-  //         WHERE "id" = $2 RETURNING "xp_level";
-  //     `;
-  // } else {
-  //   sqlText = `
-  //   UPDATE "user"
-  //         SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
-  //         WHERE "id" = $2 RETURNING "xp_level";
-  //     `;
-  // }
-
-  //   // const sqlValues = [req.body.xp, req.user.id];
-  //   const sqlValues = [req.body.xp, 1];
-
   pool.query(sqlText, sqlValues)
         .then(result => {
 
