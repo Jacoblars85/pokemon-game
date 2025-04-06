@@ -361,48 +361,7 @@ router.put("/won/battle", (req, res) => {
 
     // const sqlValues = [req.body.xp, req.user.id];
     const sqlValues = [req.body.xp, 1];
-
-          // const userXpLevel = result.rows[0].xp_level
-          // let rewardId
-          // let sqlText
-
-          // if (Math.floor(Number(userXpLevel)) % 4 === 0) {
-          //   console.log('in 4 reward');
-
-          //   rewardId = 4
-          // } else if (Math.floor(Number(userXpLevel)) % 3 === 0) {
-          //   console.log('in 3 reward');
-
-          //   rewardId = 3
-          // } else if (Math.floor(Number(userXpLevel)) % 2 === 0) {
-          //   console.log('in 2 reward');
-
-          //   rewardId = 2
-          // } else {
-          //   console.log('in 1 reward');
-
-          //   rewardId = 1
-          // }
-
-          // // if (Math.floor(userXpLevel) > req.user.rewards_received) {
-          //   if (Math.floor(userXpLevel) > 1) {
-
-          //     sqlText = `
-          //       UPDATE "user_rewards"
-          //             SET "number" = "number" + 1
-          //             WHERE "user_id" = $1 AND "reward_id" = $2;
-          //     `;
-          //   } else {
-          //     sqlText = `
-          //       UPDATE "user_rewards"
-          //             SET "number" = "number"
-          //             WHERE "user_id" = $1 AND "reward_id" = $2;
-          //     `;
-          //   }
-        
-          //   // const sqlValues = [req.user.id, rewardId];
-          //   const sqlValues = [1, rewardId];
-        
+   
           pool.query(sqlText, sqlValues)
                 .then(result => {
           res.sendStatus(201);
