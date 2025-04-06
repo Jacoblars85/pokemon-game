@@ -378,40 +378,40 @@ router.put("/won/battle", (req, res) => {
 });
 
 
-router.put("/level/up", (req, res) => {
+// router.put("/level/up", (req, res) => {
 
-  const sqlText = `
-  UPDATE "user"
-        SET "coins" = "coins" + 10, "level_${req.body.levelId}_completed" = TRUE, "xp_level" = "xp_level" + $1, "rewards_received" = "rewards_received" + 1
-        WHERE "id" = $2;
-    `;
+//   const sqlText = `
+//   UPDATE "user"
+//         SET "coins" = "coins" + 10, "level_${req.body.levelId}_completed" = TRUE, "xp_level" = "xp_level" + $1, "rewards_received" = "rewards_received" + 1
+//         WHERE "id" = $2;
+//     `;
 
-    const sqlValues = [req.body.xp, req.user.id];
+//     const sqlValues = [req.body.xp, req.user.id];
 
-  pool.query(sqlText, sqlValues)
-        .then(result => {
-          const sqlText = `
-          UPDATE "user_rewards"
-                SET "number" = "number" + 1
-                WHERE "user_id" = $1 AND "reward_id" = $2;
-            `;
+//   pool.query(sqlText, sqlValues)
+//         .then(result => {
+//           const sqlText = `
+//           UPDATE "user_rewards"
+//                 SET "number" = "number" + 1
+//                 WHERE "user_id" = $1 AND "reward_id" = $2;
+//             `;
         
-            const sqlValues = [req.user.id, req.body.rewardId];
+//             const sqlValues = [req.user.id, req.body.rewardId];
         
-          pool.query(sqlText, sqlValues)
-                .then(result => {
-          res.sendStatus(201);
-        })
-        .catch((err) => {
-          console.log("Error in user.router /level/up PUT,", err);
-          res.sendStatus(500);
-        })
-      })
-    .catch((err) => {
-      console.log("Error in user.router /level/up PUT,", err);
-      res.sendStatus(500);
-    });
-});
+//           pool.query(sqlText, sqlValues)
+//                 .then(result => {
+//           res.sendStatus(201);
+//         })
+//         .catch((err) => {
+//           console.log("Error in user.router /level/up PUT,", err);
+//           res.sendStatus(500);
+//         })
+//       })
+//     .catch((err) => {
+//       console.log("Error in user.router /level/up PUT,", err);
+//       res.sendStatus(500);
+//     });
+// });
 
 
 // user watched credits and turns it to true
