@@ -1,3 +1,22 @@
+function fetchUser() {
+  const config = {
+    headers: { "Content-Type": "application/json" },
+    withCredentials: true,
+  };
+
+  axios({
+    method: "GET",
+    url: `http://localhost:5001/api/user`,
+    data: config,
+  })
+    .then((response) => {
+      console.log("got the user", response);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function registerUser(action) {
   axios({
     method: "POST",
@@ -31,7 +50,6 @@ function loginUser(action) {
     });
 }
 
-// worker Saga: will be fired on "LOGOUT" actions
 function logoutUser(action) {
   const config = {
     headers: { "Content-Type": "application/json" },
@@ -45,25 +63,6 @@ function logoutUser(action) {
   })
     .then((response) => {
       console.log("logged out", response);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
-
-function fetchUser() {
-  const config = {
-    headers: { "Content-Type": "application/json" },
-    withCredentials: true,
-  };
-
-  axios({
-    method: "GET",
-    url: `http://localhost:5001/api/user`,
-    data: config,
-  })
-    .then((response) => {
-      console.log("got the user", response);
     })
     .catch((err) => {
       console.log(err);
