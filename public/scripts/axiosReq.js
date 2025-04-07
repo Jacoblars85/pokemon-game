@@ -49,6 +49,24 @@ function loginUser(action) {
       yield put({ type: "LOGIN_FAILED_NO_CODE" });
     }
   }
+
+  const config = {
+    headers: { "Content-Type": "application/json" },
+    withCredentials: true,
+  };
+
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/user/login`,
+    data: {config: config, payload: action.payload },
+  })
+    .then((response) => {
+      console.log('logged in');
+      
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 // worker Saga: will be fired on "LOGOUT" actions
