@@ -72,6 +72,24 @@ function logoutUser(action) {
   } catch (error) {
     console.log("Error with user logout:", error);
   }
+
+  const config = {
+    headers: { "Content-Type": "application/json" },
+    withCredentials: true,
+  };
+
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/user/logout`,
+    data: config,
+  })
+    .then((response) => {
+      console.log('logged out');
+      
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 function fetchUser() {
