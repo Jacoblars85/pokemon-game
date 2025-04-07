@@ -16,6 +16,19 @@ function registerUser(action) {
     console.log("Error with user registration:", error);
     yield put({ type: "REGISTRATION_FAILED" });
   }
+
+  axios({
+    method: "POST",
+    url: `http://localhost:5001/api/user/register`,
+    data: action.payload,
+  })
+    .then((response) => {
+      console.log('registered the new user', response);
+      
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 function loginUser(action) {
