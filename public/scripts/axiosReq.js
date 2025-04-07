@@ -94,6 +94,24 @@ function* fetchUser() {
   } catch (error) {
     console.log("User get request failed", error);
   }
+
+  const config = {
+    headers: { "Content-Type": "application/json" },
+    withCredentials: true,
+  };
+
+  axios({
+    method: "GET",
+    url: `http://localhost:5001/api/user`,
+    data: config,
+  })
+    .then((response) => {
+      console.log('got the user');
+      
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 // starter stats/info
