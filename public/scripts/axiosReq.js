@@ -1,4 +1,4 @@
-function* registerUser(action) {
+function registerUser(action) {
   try {
     // clear any existing error on the registration page
     yield put({ type: "CLEAR_REGISTRATION_ERROR" });
@@ -18,7 +18,7 @@ function* registerUser(action) {
   }
 }
 
-function* loginUser(action) {
+function loginUser(action) {
   try {
     // clear any existing error on the login page
     yield put({ type: "CLEAR_LOGIN_ERROR" });
@@ -52,7 +52,7 @@ function* loginUser(action) {
 }
 
 // worker Saga: will be fired on "LOGOUT" actions
-function* logoutUser(action) {
+function logoutUser(action) {
   try {
     const config = {
       headers: { "Content-Type": "application/json" },
@@ -74,7 +74,7 @@ function* logoutUser(action) {
   }
 }
 
-function* fetchUser() {
+function fetchUser() {
   const config = {
     headers: { "Content-Type": "application/json" },
     withCredentials: true,
