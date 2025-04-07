@@ -5,8 +5,7 @@ function registerUser(action) {
     data: action.payload,
   })
     .then((response) => {
-      console.log('registered the new user', response);
-      
+      console.log("registered the new user", response);
     })
     .catch((err) => {
       console.log(err);
@@ -22,11 +21,10 @@ function loginUser(action) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/user/login`,
-    data: {config: config, payload: action.payload },
+    data: { config: config, payload: action.payload },
   })
     .then((response) => {
-      console.log('logged in', response);
-      
+      console.log("logged in", response);
     })
     .catch((err) => {
       console.log(err);
@@ -46,8 +44,7 @@ function logoutUser(action) {
     data: config,
   })
     .then((response) => {
-      console.log('logged out', response);
-      
+      console.log("logged out", response);
     })
     .catch((err) => {
       console.log(err);
@@ -66,8 +63,7 @@ function fetchUser() {
     data: config,
   })
     .then((response) => {
-      console.log('got the user', response);
-      
+      console.log("got the user", response);
     })
     .catch((err) => {
       console.log(err);
