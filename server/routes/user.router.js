@@ -264,23 +264,11 @@ router.put("/won/battle", (req, res) => {
           let rewardId
           let sqlText
 
-          if (Math.floor(Number(newUserXpLevel)) % 4 === 0) {
-            console.log('in 4 reward');
-
-            rewardId = 4
-          } else if (Math.floor(Number(newUserXpLevel)) % 3 === 0) {
-            console.log('in 3 reward');
-
-            rewardId = 3
-          } else if (Math.floor(Number(newUserXpLevel)) % 2 === 0) {
-            console.log('in 2 reward');
-
-            rewardId = 2
-          } else {
-            console.log('in 1 reward');
-
-            rewardId = 1
-          }
+          if (Math.floor(Number(newUserXpLevel)) % 4 === 0) rewardId = 4
+          else if (Math.floor(Number(newUserXpLevel)) % 3 === 0) rewardId = 3
+          else if (Math.floor(Number(newUserXpLevel)) % 2 === 0) rewardId = 2
+          else rewardId = 1
+          
 
           // if (Math.floor(userXpLevel) > req.user.rewards_received) {
             if (Math.floor(newUserXpLevel) > 1) {
