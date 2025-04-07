@@ -258,43 +258,6 @@ router.delete("/", (req, res) => {
 });
 
 
-// router.put("/won/battle", (req, res) => {
-
-//   // const sqlText = `
-//   // UPDATE "user"
-//   //       SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
-//   //       WHERE "id" = $2 RETURNING "xp_level";
-//   //   `;
-
-//   const sqlText = `
-//   UPDATE "user"
-//         SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
-//         WHERE "id" = 1 RETURNING "xp_level";
-//     `;
-
-
-//     // const sqlValues = [req.body.xp, req.user.id];
-//     const sqlValues = [req.body.xp];
-
-
-//   pool.query(sqlText, sqlValues)
-//         .then(result => {
-
-//           const createdUserId = result.rows[0]
-
-//           console.log('result.rows[0]', result.rows);
-//           // console.log('result.rows[0]', result.rows[0]);
-
-          
-//           res.sendStatus(201);
-//         })
-//     .catch((err) => {
-//       console.log("Error in user.router /won/battle PUT,", err);
-//       res.sendStatus(500);
-//     });
-// });
-
-
 router.put("/won/battle", (req, res) => {
 
           const newUserXpLevel = req.user.xp_level += req.body.xp
