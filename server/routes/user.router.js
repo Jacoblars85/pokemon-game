@@ -1,15 +1,15 @@
-const express = require('express');
+const express = require("express");
 const {
   rejectUnauthenticated,
-} = require('../modules/authentication-middleware');
-const encryptLib = require('../modules/encryption');
-const pool = require('../modules/pool');
-const userStrategy = require('../strategies/user.strategy');
+} = require("../modules/authentication-middleware");
+const encryptLib = require("../modules/encryption");
+const pool = require("../modules/pool");
+const userStrategy = require("../strategies/user.strategy");
 
 const router = express.Router();
 
 // Handles Ajax request for user information if user is authenticated
-router.get('/', rejectUnauthenticated, (req, res) => {
+router.get("/", rejectUnauthenticated, (req, res) => {
   // Send back user object from the session (previously queried from the database)
   res.send(req.user);
 });
@@ -17,7 +17,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 // Handles POST request with new user data
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
-router.post('/register', (req, res, next) => {
+router.post("/register", (req, res, next) => {
   const username = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
 
@@ -27,10 +27,10 @@ router.post('/register', (req, res, next) => {
     .query(queryText, [username, password])
 
     // new stuff to add basic character to new user
-    .then(result => {
+    .then((result) => {
       // ID IS HERE!
       // console.log('New user Id:', result.rows[0].id);
-      const createdUserId = result.rows[0].id
+      const createdUserId = result.rows[0].id;
 
       // Now handle the user_characters reference:
       const insertNewUserQuery = `
@@ -40,13 +40,14 @@ router.post('/register', (req, res, next) => {
           ($1, 1, TRUE) 
           RETURNING user_id;
       `;
-      const insertNewUserValues = [createdUserId]
+      const insertNewUserValues = [createdUserId];
       // SECOND QUERY ADDS user_id to user_characeters
-      pool.query(insertNewUserQuery, insertNewUserValues)
-        .then(result => {
+      pool
+        .query(insertNewUserQuery, insertNewUserValues)
+        .then((result) => {
           // ID IS HERE!
           // console.log('New user Id:', result.rows[0].user_id);
-          const createdUserId = result.rows[0].user_id
+          const createdUserId = result.rows[0].user_id;
 
           // Now handle the user_characters reference:
           const insertNewUserQuery = `
@@ -69,17 +70,18 @@ router.post('/register', (req, res, next) => {
             ($1, 14, 0)
             RETURNING user_id;;
         `;
-          const insertNewUserValues = [createdUserId]
+          const insertNewUserValues = [createdUserId];
 
-          pool.query(insertNewUserQuery, insertNewUserValues)
+          pool
+            .query(insertNewUserQuery, insertNewUserValues)
 
-          .then(result => {
-            // ID IS HERE!
-            // console.log('New user Id:', result.rows[0].user_id);
-            const createdUserId = result.rows[0].user_id
-  
-            // Now handle the user_characters reference:
-            const insertNewUserQuery = `
+            .then((result) => {
+              // ID IS HERE!
+              // console.log('New user Id:', result.rows[0].user_id);
+              const createdUserId = result.rows[0].user_id;
+
+              // Now handle the user_characters reference:
+              const insertNewUserQuery = `
             INSERT INTO "user_rewards" 
               ("user_id", "reward_id", "number")
               VALUES
@@ -88,29 +90,33 @@ router.post('/register', (req, res, next) => {
               ($1, 3, 0),
               ($1, 4, 0);
           `;
-            const insertNewUserValues = [createdUserId]
-  
-            pool.query(insertNewUserQuery, insertNewUserValues)
-            // was here for basic
-            .then(() => res.sendStatus(201))
-          }).catch(err => {
-            // catch for third query
-            console.log(err);
-            res.sendStatus(500)
-          })
-        }).catch(err => {
+              const insertNewUserValues = [createdUserId];
+
+              pool
+                .query(insertNewUserQuery, insertNewUserValues)
+                // was here for basic
+                .then(() => res.sendStatus(201));
+            })
+            .catch((err) => {
+              // catch for third query
+              console.log(err);
+              res.sendStatus(500);
+            });
+        })
+        .catch((err) => {
           // catch for third query
           console.log(err);
-          res.sendStatus(500)
-        })
-    }).catch(err => {
+          res.sendStatus(500);
+        });
+    })
+    .catch((err) => {
       // catch for second query
       console.log(err);
-      res.sendStatus(500)
+      res.sendStatus(500);
     })
     // for the first query
     .catch((err) => {
-      console.log('User registration failed: ', err);
+      console.log("User registration failed: ", err);
       res.sendStatus(500);
     });
 });
@@ -119,19 +125,18 @@ router.post('/register', (req, res, next) => {
 // userStrategy.authenticate('local') is middleware that we run on this route
 // this middleware will run our POST if successful
 // this middleware will send a 404 if not successful
-router.post('/login', userStrategy.authenticate('local'), (req, res) => {
+router.post("/login", userStrategy.authenticate("local"), (req, res) => {
   res.sendStatus(200);
 });
 
 // clear all server session information about this user
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   // Use passport's built-in method to log out the user
   req.logout();
   res.sendStatus(200);
 });
 
-router.get('/rewards', (req, res) => {
-
+router.get("/rewards", (req, res) => {
   const query = `
   SELECT "user_rewards"."id" as "id",
   "user_rewards"."user_id" as "user_id",
@@ -145,21 +150,20 @@ ON "user_rewards"."reward_id" = "rewards"."id"
 WHERE "user_id" = $1 AND "user_rewards"."number" > 0;
 `;
 
-const sqlValues = [req.user.id];
+  const sqlValues = [req.user.id];
 
-  pool.query(query, sqlValues)
-      .then(result => {
-          res.send(result.rows);
-      })
-      .catch(err => {
-          console.log('ERROR: Get all rewards for user', err);
-          res.sendStatus(500)
-      })
+  pool
+    .query(query, sqlValues)
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("ERROR: Get all rewards for user", err);
+      res.sendStatus(500);
+    });
 });
 
-
-router.get('/all/rewards', (req, res) => {
-
+router.get("/all/rewards", (req, res) => {
   const query = `
   SELECT "id",
   "reward_name",
@@ -168,16 +172,16 @@ router.get('/all/rewards', (req, res) => {
 FROM "rewards";
 `;
 
-  pool.query(query)
-      .then(result => {
-          res.send(result.rows);
-      })
-      .catch(err => {
-          console.log('ERROR: Get all rewards', err);
-          res.sendStatus(500)
-      })
+  pool
+    .query(query)
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("ERROR: Get all rewards", err);
+      res.sendStatus(500);
+    });
 });
-
 
 router.put("/change", (req, res) => {
   // console.log('req.body', req.body.newName);
@@ -200,10 +204,8 @@ router.put("/change", (req, res) => {
     });
 });
 
-
 // delete the users account
 router.delete("/", (req, res) => {
-
   const sqlText = `
     DELETE FROM "user_inventory"
       WHERE "user_id" = $1;
@@ -213,43 +215,45 @@ router.delete("/", (req, res) => {
 
   pool
     .query(sqlText, sqlValues)
-    .then(result => {
-
+    .then((result) => {
       // Now handle the user_characters reference:
       const insertNewUserQuery = `
       DELETE FROM "user_characters"
         WHERE "user_id" = $1;
-        `
+        `;
 
-        const sqlValues = [req.user.id];
+      const sqlValues = [req.user.id];
 
       // SECOND QUERY DELETES user_id from user_characeters
-      pool.query(insertNewUserQuery, sqlValues)
-        .then(result => {
-
+      pool
+        .query(insertNewUserQuery, sqlValues)
+        .then((result) => {
           // Now handle the user_characters reference:
           const insertNewUserQuery = `
         DELETE FROM "user"
-          WHERE "id" = $1;`
+          WHERE "id" = $1;`;
 
           const sqlValues = [req.user.id];
 
           // Third QUERY DELETES user from user table
-          pool.query(insertNewUserQuery, sqlValues)
+          pool
+            .query(insertNewUserQuery, sqlValues)
 
             // was here for basic
             .then((result) => {
               res.sendStatus(201);
-            })
-        }).catch(err => {
-          // catch for third query
-          console.log('in the third', err);
-          res.sendStatus(500)
+            });
         })
-    }).catch(err => {
+        .catch((err) => {
+          // catch for third query
+          console.log("in the third", err);
+          res.sendStatus(500);
+        });
+    })
+    .catch((err) => {
       // catch for second query
-      console.log('in the second', err);
-      res.sendStatus(500)
+      console.log("in the second", err);
+      res.sendStatus(500);
     })
     .catch((err) => {
       console.log("Error in user.router DELETE, deleting account", err);
@@ -257,77 +261,72 @@ router.delete("/", (req, res) => {
     });
 });
 
-
 router.put("/won/battle", (req, res) => {
+  const newUserXpLevel = (req.user.xp_level += req.body.xp);
+  let rewardId;
+  let sqlText;
 
-          const newUserXpLevel = req.user.xp_level += req.body.xp
-          let rewardId
-          let sqlText
+  if (Math.floor(Number(newUserXpLevel)) % 4 === 0) rewardId = 4;
+  else if (Math.floor(Number(newUserXpLevel)) % 3 === 0) rewardId = 3;
+  else if (Math.floor(Number(newUserXpLevel)) % 2 === 0) rewardId = 2;
+  else rewardId = 1;
 
-          if (Math.floor(Number(newUserXpLevel)) % 4 === 0) rewardId = 4
-          else if (Math.floor(Number(newUserXpLevel)) % 3 === 0) rewardId = 3
-          else if (Math.floor(Number(newUserXpLevel)) % 2 === 0) rewardId = 2
-          else rewardId = 1
-          
-
-          // if (Math.floor(userXpLevel) > req.user.rewards_received) {
-            if (Math.floor(newUserXpLevel) > 1) {
-
-              sqlText = `
+  // if (Math.floor(userXpLevel) > req.user.rewards_received) {
+  if (Math.floor(newUserXpLevel) > 1) {
+    sqlText = `
                 UPDATE "user_rewards"
                       SET "number" = "number" + 1
                       WHERE "user_id" = $1 AND "reward_id" = $2;
               `;
-            } else {
-
-              sqlText = `
+  } else {
+    sqlText = `
                 UPDATE "user_rewards"
                       SET "number" = "number"
                       WHERE "user_id" = $1 AND "reward_id" = $2;
               `;
-            }
-        
-            // const sqlValues = [req.user.id, rewardId];
-            const sqlValues = [1, rewardId];
+  }
 
-  pool.query(sqlText, sqlValues)
-        .then(result => {
+  // const sqlValues = [req.user.id, rewardId];
+  const sqlValues = [1, rewardId];
 
-          let sqlText
+  pool
+    .query(sqlText, sqlValues)
+    .then((result) => {
+      let sqlText;
 
-  // if (Math.floor(req.user.xp_level + req.body.xp) > req.user.rewards_received) {
-    if (Math.floor(1.75 + req.body.xp) > 1) {
-    sqlText = `
+      // if (Math.floor(req.user.xp_level + req.body.xp) > req.user.rewards_received) {
+      if (Math.floor(1.75 + req.body.xp) > 1) {
+        sqlText = `
     UPDATE "user"
           SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1,  "rewards_received" = "rewards_received" + 1
           WHERE "id" = $2;
       `;
-  } else {
-    sqlText = `
+      } else {
+        sqlText = `
     UPDATE "user"
           SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
           WHERE "id" = $2;
       `;
-  }
+      }
 
-    // const sqlValues = [req.body.xp, req.user.id];
-    const sqlValues = [req.body.xp, 1];
-   
-          pool.query(sqlText, sqlValues)
-                .then(result => {
+      // const sqlValues = [req.body.xp, req.user.id];
+      const sqlValues = [req.body.xp, 1];
+
+      pool
+        .query(sqlText, sqlValues)
+        .then((result) => {
           res.sendStatus(201);
         })
         .catch((err) => {
           console.log("Error in user.router /won/battle PUT,", err);
           res.sendStatus(500);
-        })
-      })
+        });
+    })
     .catch((err) => {
       console.log("Error in user.router /won/battle PUT,", err);
       res.sendStatus(500);
     });
 });
-
 
 // user watched credits and turns it to true
 router.put("/credits", (req, res) => {
@@ -352,26 +351,23 @@ router.put("/credits", (req, res) => {
 });
 
 router.put("/reward/open", (req, res) => {
-
   const sqlText = `
   UPDATE "user_rewards"
         SET "number" = "number" - 1
         WHERE "reward_id" = $1 AND "user_id" = $2
     `;
 
-    const sqlValues = [req.body.rewardId, req.user.id];
+  const sqlValues = [req.body.rewardId, req.user.id];
 
-  pool.query(sqlText, sqlValues)
-        .then(result => {
-          res.sendStatus(201);
-        })
+  pool
+    .query(sqlText, sqlValues)
+    .then((result) => {
+      res.sendStatus(201);
+    })
     .catch((err) => {
       console.log("Error in user.router /reward/open PUT,", err);
       res.sendStatus(500);
     });
 });
-
-
-
 
 module.exports = router;
