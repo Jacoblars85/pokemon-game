@@ -1,18 +1,18 @@
 * {
-    /* font-family: 'seriousr2b', sans-serif; */
-    font-family: 'seriousr2', sans-serif;
-    /* font-family: 'seriousr4b', sans-serif; */
-    /* font-family: 'seriousr4', sans-serif; */
+  /* font-family: 'seriousr2b', sans-serif; */
+  font-family: "seriousr2", sans-serif;
+  /* font-family: 'seriousr4b', sans-serif; */
+  /* font-family: 'seriousr4', sans-serif; */
 }
 
 button {
-    background-color: white;
+  background-color: white;
 }
 
 button:hover {
-    background-color: lightgray;
+  background-color: lightgray;
 }
 
 .btn:hover {
-    background-color: lightgray;
+  background-color: lightgray;
 }
