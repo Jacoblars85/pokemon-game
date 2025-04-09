@@ -1,7 +1,7 @@
 let username = "";
 let password = "";
 
-const errors = useSelector((store) => store.errors);
+// const errors = useSelector((store) => store.errors);
 
 const registerUser = (event) => {
   event.preventDefault();
@@ -34,7 +34,7 @@ const registerUser = (event) => {
   }
 };
 
-document.getElementById("registerPage").innerHTML = `
+document.getElementById("loginInterface").innerHTML = `
 <div>
   <form className="formPanel" onSubmit={registerUser}>
     <h2
