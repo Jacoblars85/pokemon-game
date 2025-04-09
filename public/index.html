@@ -41,13 +41,6 @@
           >
             Register User
           </h2>
-          <div style=" height: 25px; width: 100%; ">
-            {errors.loginMessage && (
-              <h3 className="alert" role="alert">
-                {errors.loginMessage}
-              </h3>
-            )}
-          </div>
           <div>
             <label htmlFor="username">
               <input
@@ -58,7 +51,6 @@
                 label="username"
                 value={username}
                 required
-                onChange={(event) => setUsername(event.target.value)}
               />
             </label>
           </div>
@@ -72,7 +64,6 @@
                 label="password"
                 value={password}
                 required
-                onChange={(event) => setPassword(event.target.value)}
               />
             </label>
           </div>
@@ -81,17 +72,12 @@
           </div>
         </form>
       
-        <center>
           <button
             type="button"
             className="btn btn_asLink"
-            onClick={() => {
-              history.push("/login");
-            }}
           >
             Login
           </button>
-        </center>
       </div>
 
       <!-- fade out div  -->
