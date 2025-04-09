@@ -34,7 +34,7 @@ const registerUser = (event) => {
   }
 };
 
-document.getElementById("loginInterface").innerHTML = `
+document.getElementById("registerInterface").innerHTML = `
 <div>
   <form className="formPanel" onSubmit={registerUser}>
     <h2
