@@ -1,5 +1,5 @@
-let username = "";
-let password = "";
+// let username = "";
+// let password = "";
 
 // const errors = useSelector((store) => store.errors);
 
@@ -21,17 +21,17 @@ const registerUser = (event) => {
       console.log("error registering user", err);
     });
 
-  function* registerUser(action) {
-    // clear any existing error on the registration page
-    yield put({ type: "CLEAR_REGISTRATION_ERROR" });
+//   function* registerUser(action) {
+//     // clear any existing error on the registration page
+//     yield put({ type: "CLEAR_REGISTRATION_ERROR" });
 
-    // automatically log a user in after registration
-    yield put({ type: "LOGIN", payload: action.payload });
+//     // automatically log a user in after registration
+//     yield put({ type: "LOGIN", payload: action.payload });
 
-    // set to 'login' mode so they see the login screen
-    // after registration or after they log out
-    yield put({ type: "SET_TO_LOGIN_MODE" });
-  }
+//     // set to 'login' mode so they see the login screen
+//     // after registration or after they log out
+//     yield put({ type: "SET_TO_LOGIN_MODE" });
+//   }
 };
 
 document.getElementById("registerInterface").innerHTML = `
