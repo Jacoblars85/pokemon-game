@@ -17,11 +17,11 @@ function fetchUser() {
     });
 }
 
-function registerUser(action) {
+function registerUser(userInfo) {
   axios({
     method: "POST",
     url: `http://localhost:5001/api/user/register`,
-    data: action.payload,
+    data: userInfo,
   })
     .then((response) => {
       console.log("registered the new user", response);
