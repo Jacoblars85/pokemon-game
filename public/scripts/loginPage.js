@@ -1,7 +1,7 @@
 let username = "";
 let password = "";
 
-const errors = useSelector((store) => store.errors);
+// const errors = useSelector((store) => store.errors);
 
 const login = (event) => {
   event.preventDefault();
@@ -32,7 +32,7 @@ const login = (event) => {
   }
 };
 
-document.getElementById("loginPage").innerHTML = `
+document.getElementById("loginInterface").innerHTML = `
 <div>
   <form className="formPanel" onSubmit={login}>
     <h2
