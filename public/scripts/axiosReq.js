@@ -31,7 +31,7 @@ function registerUser(userInfo) {
     });
 }
 
-function loginUser(action) {
+function loginUser(userInfo) {
   const config = {
     headers: { "Content-Type": "application/json" },
     withCredentials: true,
@@ -40,7 +40,7 @@ function loginUser(action) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/user/login`,
-    data: { config: config, payload: action.payload },
+    data: { config, userInfo },
   })
     .then((response) => {
       console.log("logged in", response);
@@ -50,7 +50,7 @@ function loginUser(action) {
     });
 }
 
-function logoutUser(action) {
+function logoutUser() {
   const config = {
     headers: { "Content-Type": "application/json" },
     withCredentials: true,
