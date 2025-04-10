@@ -71,7 +71,7 @@
       </div>
 
       <!-- register interface -->
-      <div id="registerInterface" style="display: none">
+      <div id="registerInterface" style="display: block">
         <form class="formPanel" onSubmit="registerUser">
           <h2
             style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray"
@@ -82,12 +82,12 @@
             <label htmlFor="username">
               <input
                 id="registerUsernameInput"
+                placeholder="username"
                 margin="dense"
                 variant="standard"
                 type="text"
                 name="username"
                 label="username"
-                value="{username}"
                 required
               />
             </label>
@@ -96,12 +96,12 @@
             <label htmlFor="password">
               <input
                 id="registerPasswordInput"
+                placeholder="password"
                 margin="dense"
                 variant="standard"
                 type="password"
                 name="password"
                 label="password"
-                value="{password}"
                 required
               />
             </label>
@@ -136,7 +136,7 @@
       ></div>
 
       <!-- main canvas -->
-      <canvas id="canvasRef" height="576" width="1024"></canvas>
+      <canvas style="display: none" id="canvasRef" height="576" width="1024"></canvas>
 
       <!-- battle interface  -->
       <div id="battleInterface" style="display: none">
