@@ -16,3 +16,23 @@ button:hover {
 .btn:hover {
   background-color: lightgray;
 }
+
+/* This line makes the "Register" and "Login" buttons look like links */
+.btn_asLink {
+    padding: 0;
+    border-width: 0;
+    border-bottom: 1px solid #dbd7d7;
+    border-radius: 0;
+    background: none;
+    font: inherit;
+    color: #f0e9e9;
+    margin-top: 0px;
+    background-color: inherit;
+    box-shadow: 0px 0px 0px 0px black;
+  }
+
+  .btn_asLink:hover {
+    background-color: transparent;
+    border-color: #1b1d1d;
+    color: #272828;
+  }
