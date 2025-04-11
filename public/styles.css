@@ -36,3 +36,26 @@ button:hover {
     border-color: #1b1d1d;
     color: #272828;
   }
+
+  .formPanel {
+    box-sizing: border-box;
+    width: 600px;
+    height: 325px;
+    max-width: 100%;
+    padding: 25px;
+    margin: 0 auto 20px;
+    margin-top: 40px;
+    background-color: #efefef;
+    border: 2px solid black;
+    box-shadow: 4px 8px 6px -2px black;
+    border-radius: 3px;
+    /* box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4); */
+    box-shadow: 5px 3px 7px -2px black;
+    text-align: center;
+    z-index: 1;
+  }
+
+  input {
+    margin: 5px;
+    margin-bottom: 10px;
+  }
