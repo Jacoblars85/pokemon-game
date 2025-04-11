@@ -5,6 +5,40 @@
   /* font-family: 'seriousr4', sans-serif; */
 }
 
+/* --------------------------------------------------------------------------------
+Button
+-------------------------------------------------------------------------------- */
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-color: #fafdfd;
+    border-width: 1px 1px 3px;
+    border-radius: 4px;
+    background-color: black;
+    color: #f8f8f8;
+    font-size: 1.1rem;
+    outline: 0;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'New Super Mario Font U';
+  }
+  
+  .btn_sizeMin {
+    min-height: 50px;
+    min-width: 100px;
+  }
+  
+  .btn_sizeSm {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .btn_sizeFull {
+    display: block;
+    width: 100%;
+  }
+
 button {
   background-color: white;
 }
