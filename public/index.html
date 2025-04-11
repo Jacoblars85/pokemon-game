@@ -72,7 +72,7 @@
 
       <!-- register interface -->
       <div id="registerInterface" style="display: block">
-        <form class="formPanel" onSubmit="registerUser">
+        <form class="formPanel" onSubmit="registerUser(event)">
           <h2
             style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray"
           >
@@ -83,11 +83,8 @@
               <input
                 id="registerUsernameInput"
                 placeholder="username"
-                margin="dense"
-                variant="standard"
                 type="text"
                 name="username"
-                label="username"
                 required
               />
             </label>
@@ -97,11 +94,8 @@
               <input
                 id="registerPasswordInput"
                 placeholder="password"
-                margin="dense"
-                variant="standard"
                 type="password"
                 name="password"
-                label="password"
                 required
               />
             </label>
