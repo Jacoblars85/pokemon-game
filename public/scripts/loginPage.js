@@ -15,6 +15,7 @@ document.getElementById("loginPasswordInput").value = "";
     loginUser({username: getUsernameInputLogin, password: getPasswordInputLogin })
     
   } else {
-    dispatch({ type: "LOGIN_INPUT_ERROR" });
+    console.log('username or password error');
+    
   }
 };
