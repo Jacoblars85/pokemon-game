@@ -1,5 +1,3 @@
-let username = "";
-let password = "";
 
 let getUsernameInputLogin = document.getElementById("loginUsernameInput").value;
 let getPasswordInputLogin = document.getElementById("loginPasswordInput").value;
@@ -7,7 +5,6 @@ let getPasswordInputLogin = document.getElementById("loginPasswordInput").value;
 document.getElementById("loginUsernameInput").value = "";
 document.getElementById("loginPasswordInput").value = "";
 
-// const errors = useSelector((store) => store.errors);
 
 const login = (event) => {
   event.preventDefault();
