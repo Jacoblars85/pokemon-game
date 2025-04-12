@@ -1,10 +1,8 @@
-
 let getUsernameInputLogin = document.getElementById("loginUsernameInput").value;
 let getPasswordInputLogin = document.getElementById("loginPasswordInput").value;
 
 document.getElementById("loginUsernameInput").value = "";
 document.getElementById("loginPasswordInput").value = "";
-
 
 const login = (event) => {
   event.preventDefault();
