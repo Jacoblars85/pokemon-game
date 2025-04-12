@@ -8,6 +8,7 @@ function fetchUser() {
     method: "GET",
     url: `http://localhost:5001/api/user`,
     data: config,
+    config,
   })
     .then((response) => {
       console.log("got the user", response);
@@ -41,6 +42,7 @@ function loginUser(userInfo) {
     method: "PUT",
     url: `http://localhost:5001/api/user/login`,
     data: { config, userInfo },
+    config,
   })
     .then((response) => {
       console.log("logged in", response);
@@ -60,6 +62,7 @@ function logoutUser() {
     method: "PUT",
     url: `http://localhost:5001/api/user/logout`,
     data: config,
+    config,
   })
     .then((response) => {
       console.log("logged out", response);
