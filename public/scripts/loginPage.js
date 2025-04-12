@@ -1,18 +1,17 @@
-let getUsernameInputLogin = document.getElementById("loginUsernameInput").value;
+
+
+const login = (event) => {
+  event.preventDefault();
+
+  let getUsernameInputLogin = document.getElementById("loginUsernameInput").value;
 let getPasswordInputLogin = document.getElementById("loginPasswordInput").value;
 
 document.getElementById("loginUsernameInput").value = "";
 document.getElementById("loginPasswordInput").value = "";
 
-const login = (event) => {
-  event.preventDefault();
 
-  const config = {
-    headers: { "Content-Type": "application/json" },
-    withCredentials: true,
-  };
 
-  if (username && password) {
+  if (getUsernameInputLogin && getPasswordInputLogin) {
     axios({
       method: "POST",
       url: "/api/user/login",
@@ -20,7 +19,6 @@ const login = (event) => {
         username: username,
         password: password,
       },
-      config,
     })
       .then((response) => {
         console.log("login worked?", response);
