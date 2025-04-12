@@ -1,13 +1,13 @@
 const config = {
-    headers: { "Content-Type": "application/json" },
-    withCredentials: true,
-  };
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
 
 function fetchUser() {
-//   const config = {
-//     headers: { "Content-Type": "application/json" },
-//     withCredentials: true,
-//   };
+  //   const config = {
+  //     headers: { "Content-Type": "application/json" },
+  //     withCredentials: true,
+  //   };
 
   axios({
     method: "GET",
@@ -38,10 +38,10 @@ function registerUser(userInfo) {
 }
 
 function loginUser(userInfo) {
-//   const config = {
-//     headers: { "Content-Type": "application/json" },
-//     withCredentials: true,
-//   };
+  //   const config = {
+  //     headers: { "Content-Type": "application/json" },
+  //     withCredentials: true,
+  //   };
 
   axios({
     method: "PUT",
@@ -58,10 +58,10 @@ function loginUser(userInfo) {
 }
 
 function logoutUser() {
-//   const config = {
-//     headers: { "Content-Type": "application/json" },
-//     withCredentials: true,
-//   };
+  //   const config = {
+  //     headers: { "Content-Type": "application/json" },
+  //     withCredentials: true,
+  //   };
 
   axios({
     method: "PUT",
