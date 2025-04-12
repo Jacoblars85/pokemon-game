@@ -28,38 +28,38 @@
     <div style="display: inline-block; position: relative">
       <!-- login interface -->
       <div id="loginInterface" style="display: none">
-        <form class="formPanel" onSubmit="login">
+
+        <form class="formPanel" onSubmit="login(event)">
           <h2
-            style="margin: 5px; font-size: 35px; text-shadow: 2px 2px 2px gray"
+            style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray"
           >
             Login
           </h2>
           <div>
               <input
                 id="loginUsernameInput"
-                margin="dense"
-                variant="standard"
+                placeholder="username"
                 type="text"
                 name="username"
-                label="username"
                 required
-                value="{username}"
               />
           </div>
           <div>
               <input
                 id="loginPasswordInput"
-                margin="dense"
-                variant="standard"
+                placeholder="password"
                 type="password"
                 name="password"
-                label="password"
                 required
-                value="{password}"
               />
           </div>
           <div>
-            <input class="btn" type="submit" name="submit" value="Log In" />
+            <input
+              class="btn"
+              type="submit"
+              name="submit"
+              value="Login"
+            />
           </div>
         </form>
 
