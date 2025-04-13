@@ -23,7 +23,7 @@ function fetchUser() {
     });
 }
 
-function registerUser(userInfo) {
+function registerUserPost(userInfo) {
   axios({
     method: "POST",
     url: `http://localhost:5001/api/user/register`,
