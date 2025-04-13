@@ -11,6 +11,11 @@ let getPasswordInput = document.getElementById("registerPasswordInput").value;
 document.getElementById("registerUsernameInput").value = "";
 document.getElementById("registerPasswordInput").value = "";
 
+registerUserPost({
+  username: getUsernameInput,
+  password: getPasswordInput,
+})
+
   axios({
     method: "POST",
     url: "/api/user/register",
