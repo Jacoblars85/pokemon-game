@@ -124,7 +124,7 @@ let starterOne;
 let starterTwo;
 let usersConsumableItems = [];
 
-// axios functions
+// axios functions for user info
 function getStarters() {
   axios({
     method: "GET",
