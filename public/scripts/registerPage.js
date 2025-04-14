@@ -13,4 +13,13 @@ const registerUser = (event) => {
     username: getUsernameInput,
     password: getPasswordInput,
   });
+
+  if (getUsernameInputLogin && getPasswordInputLogin) {
+      registerUserPost({
+        username: getUsernameInput,
+        password: getPasswordInput,
+      });
+  } else {
+    console.log("username or password error");
+  }
 };
