@@ -9,12 +9,9 @@ const registerUser = (event) => {
   document.getElementById("registerUsernameInput").value = "";
   document.getElementById("registerPasswordInput").value = "";
 
-  registerUserPost({
-    username: getUsernameInput,
-    password: getPasswordInput,
-  });
+  
 
-  if (getUsernameInputLogin && getPasswordInputLogin) {
+  if (getUsernameInput && getPasswordInput) {
       registerUserPost({
         username: getUsernameInput,
         password: getPasswordInput,
