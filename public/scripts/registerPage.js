@@ -1,5 +1,3 @@
-// const errors = useSelector((store) => store.errors);
-
 const registerUser = (event) => {
   event.preventDefault();
 
@@ -9,13 +7,11 @@ const registerUser = (event) => {
   document.getElementById("registerUsernameInput").value = "";
   document.getElementById("registerPasswordInput").value = "";
 
-  
-
   if (getUsernameInput && getPasswordInput) {
-      registerUserPost({
-        username: getUsernameInput,
-        password: getPasswordInput,
-      });
+    registerUserPost({
+      username: getUsernameInput,
+      password: getPasswordInput,
+    });
   } else {
     console.log("username or password error");
   }
