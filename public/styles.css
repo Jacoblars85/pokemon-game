@@ -55,11 +55,12 @@ button:hover {
 .btn_asLink {
   padding: 0;
   border-width: 0;
+  width: 10vh;
   border-bottom: 1px solid #dbd7d7;
   border-radius: 0;
   background: none;
   font: inherit;
-  color: #f0e9e9;
+  color: #948c8c;
   margin-top: 0px;
   background-color: inherit;
   box-shadow: 0px 0px 0px 0px black;
