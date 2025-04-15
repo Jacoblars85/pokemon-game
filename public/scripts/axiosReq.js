@@ -44,7 +44,7 @@ function loginUser(userInfo) {
   //   };
 
   axios({
-    method: "PUT",
+    method: "POST",
     url: `http://localhost:5001/api/user/login`,
     data: { config, userInfo },
     config,
@@ -64,7 +64,7 @@ function logoutUser() {
   //   };
 
   axios({
-    method: "PUT",
+    method: "POST",
     url: `http://localhost:5001/api/user/logout`,
     data: config,
     config,
