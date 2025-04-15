@@ -18,3 +18,13 @@ const login = (event) => {
     console.log("username or password error");
   }
 };
+
+function flipTheLoginPage(pageGettingFlipped) {
+  
+  if (pageGettingFlipped === "loginPage") {
+
+  } else if (pageGettingFlipped === "registerPage") {
+    
+  }
+
+}
