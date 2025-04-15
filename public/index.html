@@ -27,7 +27,7 @@
   <body>
     <div style="display: inline-block; position: relative">
       <!-- login interface -->
-      <div id="loginInterface" style="display: none">
+      <div id="loginInterface" style="display: none;">
         <form class="formPanel" onSubmit="login(event)">
           <h2
             style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray"
@@ -61,7 +61,7 @@
       </div>
 
       <!-- register interface -->
-      <div id="registerInterface" style="display: block">
+      <div id="registerInterface" style="display: flex; flex-direction: column; width: 100vw;">
         <form class="formPanel" onSubmit="registerUser(event)">
           <h2
             style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray"
@@ -91,7 +91,7 @@
           </div>
         </form>
 
-        <button type="button" class="btn btn_asLink">Login</button>
+        <button class="btn btn_asLink">Login</button>
       </div>
 
       <!-- fade out div  -->
