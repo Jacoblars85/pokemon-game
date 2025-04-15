@@ -20,13 +20,11 @@ const login = (event) => {
 };
 
 function flipTheLoginPage(pageGettingFlipped) {
-  
-  if (pageGettingFlipped === 'loginPage') {
+  if (pageGettingFlipped === "loginPage") {
     document.getElementById("loginInterface").style.display = "flex";
     document.getElementById("registerInterface").style.display = "none";
-  } else if (pageGettingFlipped === 'registerPage') {
+  } else if (pageGettingFlipped === "registerPage") {
     document.getElementById("registerInterface").style.display = "flex";
     document.getElementById("loginInterface").style.display = "none";
   }
-
 }
