@@ -31,6 +31,8 @@ function registerUserPost(userInfo) {
   })
     .then((response) => {
       console.log("registered the new user", response);
+
+      fetchUser()
     })
     .catch((err) => {
       console.log(err);
@@ -51,6 +53,8 @@ function loginUser(userInfo) {
   })
     .then((response) => {
       console.log("logged in", response);
+
+      fetchUser()
     })
     .catch((err) => {
       console.log(err);
