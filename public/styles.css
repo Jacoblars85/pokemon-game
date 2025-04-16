@@ -104,27 +104,26 @@ Container
 -------------------------------------------------------------------------------- */
 
 .container {
-    padding: 20px;
-  }
+  padding: 20px;
+}
 
-
-  /* --------------------------------------------------------------------------------
+/* --------------------------------------------------------------------------------
 Alert
 -------------------------------------------------------------------------------- */
 
 .alert {
-    display: flex;
-    box-sizing: border-box;
-    /* padding: 15px 10px; */
-    margin: 0px;
-    border: 2px solid #e01616;
-    background-color: #efefef;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    border-radius: 3px;
-    color: #e01616;
-    font-size: 0.8rem;
-    height: 25px;
-    width: 100%;
-  }
+  display: flex;
+  box-sizing: border-box;
+  /* padding: 15px 10px; */
+  margin: 0px;
+  border: 2px solid #e01616;
+  background-color: #efefef;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  color: #e01616;
+  font-size: 0.8rem;
+  height: 25px;
+  width: 100%;
+}
