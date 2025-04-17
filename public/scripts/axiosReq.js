@@ -94,7 +94,7 @@ function deleteUser() {
     });
 }
 
-function changeUsername() {
+function changeUsername(newName) {
     try {
         const response = yield axios({
             method: 'PUT',
@@ -108,6 +108,18 @@ function changeUsername() {
       alert('you cant do that')
         console.log('Unable to update username from server', error);
     }
+
+    axios({
+        method: "PUT",
+        url: `http://localhost:5001/api/user/change`,
+        data: {newName: newName},
+      })
+        .then((response) => {
+          console.log("finished changing the username axios");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
 }
 
 // starter stats/info
