@@ -8,7 +8,7 @@ function goToMainMenu() {
     
 }
 
-function changeName() {
+function changeUsernameDialog() {
     console.log('trying to change users name');
     
 }
