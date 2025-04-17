@@ -1,4 +1,4 @@
-function deleteUser() {
+function deleteUserDialog() {
     console.log('trying to delete user');
     
 }
