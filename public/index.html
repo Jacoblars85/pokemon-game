@@ -42,14 +42,16 @@
           >
             Login
           </h2>
-          <div style="
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-align-self: center;
-height: 80%;
-">
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              align-self: center;
+              height: 80%;
+            "
+          >
             <input
               id="loginUsernameInput"
               placeholder="username"
@@ -57,8 +59,7 @@ height: 80%;
               name="username"
               required
             />
-     
-       
+
             <input
               id="loginPasswordInput"
               placeholder="password"
@@ -66,7 +67,7 @@ height: 80%;
               name="password"
               required
             />
-          
+
             <input class="btn" type="submit" name="submit" value="Login" />
           </div>
         </form>
@@ -96,14 +97,16 @@ height: 80%;
           >
             Register User
           </h2>
-<div style="
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-align-self: center;
-height: 80%;
-">
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              align-self: center;
+              height: 80%;
+            "
+          >
             <input
               id="registerUsernameInput"
               placeholder="username"
@@ -119,7 +122,6 @@ height: 80%;
               name="password"
               required
             />
-
 
             <input class="btn" type="submit" name="submit" value="Register" />
           </div>
@@ -180,8 +182,12 @@ height: 80%;
           "
         >
           <button class="btn" onclick="goToMainMenu()">Main Menu</button>
-          <button class="btn" onclick="deleteUserDialog()">Delete Account</button>
-          <button class="btn" onclick="changeUsernameDialog()">Change Name</button>
+          <button class="btn" onclick="deleteUserDialog()">
+            Delete Account
+          </button>
+          <button class="btn" onclick="changeUsernameDialog()">
+            Change Name
+          </button>
           <button class="btn" onclick="logoutUser()">Log Out</button>
         </div>
       </div>
