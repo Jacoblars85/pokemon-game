@@ -95,19 +95,17 @@ function deleteUser() {
 }
 
 function changeUsername(newName) {
-
-
-    axios({
-        method: "PUT",
-        url: `http://localhost:5001/api/user/change`,
-        data: {newName: newName},
-      })
-        .then((response) => {
-          console.log("finished changing the username axios");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/user/change`,
+    data: { newName: newName },
+  })
+    .then((response) => {
+      console.log("finished changing the username axios");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 // starter stats/info
