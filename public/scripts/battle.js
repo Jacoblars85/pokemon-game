@@ -55,7 +55,6 @@ function resetBattleFunc() {
     document.getElementById("attackBox").innerHTML += `
       <button
               id="attackButton"
-              class="btn"
                 style="
                     display: flex;
                     width: 33.33%;
