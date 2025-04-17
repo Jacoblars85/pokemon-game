@@ -94,6 +94,22 @@ function deleteUser() {
     });
 }
 
+function changeUsername() {
+    try {
+        const response = yield axios({
+            method: 'PUT',
+            url: `/api/user/change`,
+            data: {newName: action.payload}
+        })
+        yield put({
+            type: 'FETCH_USER',
+        })
+    } catch (error) {
+      alert('you cant do that')
+        console.log('Unable to update username from server', error);
+    }
+}
+
 // starter stats/info
 let starterOneHp = 0;
 let starterOneStamina = 0;
