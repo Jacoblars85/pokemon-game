@@ -81,6 +81,33 @@ function logoutUser() {
     });
 }
 
+function deleteUser() {
+    try {
+        const response = yield axios({
+            method: 'DELETE',
+            url: `/api/user`
+        })
+        yield put({
+            type: 'LOGOUT',
+        })
+    } catch (error) {
+        console.log('Unable to delete account from server', error);
+    }
+    
+    axios({
+        method: "GET",
+        url: `http://localhost:5001/api/user`,
+        data: config,
+        config,
+      })
+        .then((response) => {
+          console.log("got the user", response);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+}
+
 // starter stats/info
 let starterOneHp = 0;
 let starterOneStamina = 0;
