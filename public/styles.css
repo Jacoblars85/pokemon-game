@@ -1,8 +1,8 @@
 html,
 body {
     overflow: hidden;
-    height: 576;
-    width: 1024;
+    height: 576px;
+    width: 1024px;
 }
 
 * {
@@ -10,9 +10,9 @@ body {
   font-family: "seriousr2", sans-serif;
   /* font-family: 'seriousr4b', sans-serif; */
   /* font-family: 'seriousr4', sans-serif; */
-  overflow: hidden;
-  /* height: 576;
-  width: 1024; */
+  /* overflow: hidden; */
+  max-height: 576;
+  max-width: 1024;
 }
 
 /* --------------------------------------------------------------------------------
