@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+  </head>
+  <body>
+    <div style="display: inline-block; position: relative">
+      <!-- register interface -->
+      <div
+        id="registerInterface"
+        style="
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        "
+      >
+        <form class="formPanel" onSubmit="registerUser(event)">
+          <h2
+            style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray"
+          >
+            Register User
+          </h2>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              align-self: center;
+              height: 80%;
+            "
+          >
+            <input
+              id="registerUsernameInput"
+              placeholder="username"
+              type="text"
+              name="username"
+              required
+            />
+
+            <input
+              id="registerPasswordInput"
+              placeholder="password"
+              type="password"
+              name="password"
+              required
+            />
+
+            <input class="btn" type="submit" name="submit" value="Register" />
+          </div>
+        </form>
+
+        <button class="btn btn_asLink" onclick="flipTheLoginPage('loginPage')">
+          Login
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
