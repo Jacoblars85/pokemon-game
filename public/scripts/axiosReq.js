@@ -79,6 +79,8 @@ function logoutUser() {
   })
     .then((response) => {
       console.log("logged out", response);
+
+      window.location.href = "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/registerPage/register.html";
     })
     .catch((err) => {
       console.log(err);
@@ -92,6 +94,9 @@ function deleteUser() {
   })
     .then((response) => {
       console.log("deleted the user", response);
+
+      window.location.href = "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/registerPage/register.html";
+
     })
     .catch((err) => {
       console.log(err);
