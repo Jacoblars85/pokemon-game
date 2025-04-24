@@ -32,7 +32,8 @@ function registerUserPost(userInfo) {
     .then((response) => {
       console.log("registered the new user", response);
 
-      window.location.href = "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/mainMenuPage/mainMenu.html";
+      window.location.href =
+        "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/mainMenuPage/mainMenu.html";
 
       fetchUser();
     })
@@ -56,7 +57,8 @@ function loginUser(userInfo) {
     .then((response) => {
       console.log("logged in", response);
 
-      window.location.href = "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/mainMenuPage/mainMenu.html";
+      window.location.href =
+        "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/mainMenuPage/mainMenu.html";
 
       fetchUser();
     })
@@ -80,7 +82,8 @@ function logoutUser() {
     .then((response) => {
       console.log("logged out", response);
 
-      window.location.href = "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/registerPage/register.html";
+      window.location.href =
+        "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/registerPage/register.html";
     })
     .catch((err) => {
       console.log(err);
@@ -95,8 +98,8 @@ function deleteUser() {
     .then((response) => {
       console.log("deleted the user", response);
 
-      window.location.href = "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/registerPage/register.html";
-
+      window.location.href =
+        "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/registerPage/register.html";
     })
     .catch((err) => {
       console.log(err);
