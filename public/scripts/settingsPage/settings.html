@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/serious-rounded"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div style="display: inline-block; position: relative">
+      <!-- settings interface -->
+      <div id="settingsInterface" class="settingsScreen">
+        <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
+          Settings
+        </h2>
+
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 80%;
+            height: 90%;
+          "
+        >
+          <!-- <button class="btn" onclick="goToMainMenu()">Main Menu</button> -->
+          <button class="btn" ><a href="scripts/mainMenuPage/mainMenu.html">Main Menu</a></button>
+          <button class="btn" onclick="deleteUserDialog()">
+            Delete Account
+          </button>
+          <button class="btn" onclick="changeUsernameDialog()">
+            Change Name
+          </button>
+          <button class="btn" onclick="logoutUser()"><a href="scripts/loginPage/login.html">Log Out</a></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
