@@ -88,22 +88,22 @@ battleZonesMap.forEach((row, i) => {
 // });
 
 const worldImage = new Image();
-worldImage.src = "./scripts/img/bowsermon-map-v1.png";
+worldImage.src = "./img/bowsermon-map-v1.png";
 
 const foregroundImage = new Image();
-foregroundImage.src = "./scripts/img/foregroundObjects.png";
+foregroundImage.src = "./img/foregroundObjects.png";
 
 const playerDownImage = new Image();
-playerDownImage.src = "./scripts/img/playerDown.png";
+playerDownImage.src = "./img/playerDown.png";
 
 const playerUpImage = new Image();
-playerUpImage.src = "./scripts/img/playerUp.png";
+playerUpImage.src = "./img/playerUp.png";
 
 const playerLeftImage = new Image();
-playerLeftImage.src = "./scripts/img/playerLeft.png";
+playerLeftImage.src = "./img/playerLeft.png";
 
 const playerRightImage = new Image();
-playerRightImage.src = "./scripts/img/playerRight.png";
+playerRightImage.src = "./img/playerRight.png";
 
 const player = new Sprite({
   position: {
