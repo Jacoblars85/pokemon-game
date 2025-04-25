@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link
+      href="https://fonts.cdnfonts.com/css/serious-rounded"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <title>pokemon game</title>
+  </head>
+  <body>
+    <div style="display: inline-block; position: relative">
+      <!-- login interface -->
+      <!-- <div
+        id="loginInterface"
+        style="
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        "
+      >
+        <form class="formPanel" onSubmit="login(event)">
+          <h2
+            style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray"
+          >
+            Login
+          </h2>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              align-self: center;
+              height: 80%;
+            "
+          >
+            <input
+              id="loginUsernameInput"
+              placeholder="username"
+              type="text"
+              name="username"
+              required
+            />
+
+            <input
+              id="loginPasswordInput"
+              placeholder="password"
+              type="password"
+              name="password"
+              required
+            />
+
+            <input class="btn" type="submit" name="submit" value="Login" />
+          </div>
+        </form>
+
+        <button
+          type="button"
+          class="btn btn_asLink"
+          onclick="flipTheLoginPage('registerPage')"
+        >
+          Register
+        </button>
+      </div> -->
+
+      <!-- register interface -->
+      <!-- <div
+        id="registerInterface"
+        style="
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        "
+      >
+        <form class="formPanel" onSubmit="registerUser(event)">
+          <h2
+            style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray"
+          >
+            Register User
+          </h2>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              align-self: center;
+              height: 80%;
+            "
+          >
+            <input
+              id="registerUsernameInput"
+              placeholder="username"
+              type="text"
+              name="username"
+              required
+            />
+
+            <input
+              id="registerPasswordInput"
+              placeholder="password"
+              type="password"
+              name="password"
+              required
+            />
+
+            <input class="btn" type="submit" name="submit" value="Register" />
+          </div>
+        </form>
+
+        <button class="btn btn_asLink" onclick="flipTheLoginPage('loginPage')">
+          Login
+        </button>
+      </div> -->
+
+      <!-- fade out div  -->
+      <div
+        id="fadeOutDiv"
+        style="
+          background-color: black;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          opacity: 0;
+          pointer-events: none;
+          z-index: 10;
+        "
+      ></div>
+
+      <!-- main canvas -->
+      <canvas
+        id="canvasRef"
+        style="display: none"
+        height="576"
+        width="1024"
+      ></canvas>
+
+      <!-- settings interface -->
+      <div id="settingsInterface" class="settingsScreen">
+        <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
+          Settings
+        </h2>
+
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 80%;
+            height: 90%;
+          "
+        >
+          <!-- <button class="btn" onclick="goToMainMenu()">Main Menu</button> -->
+          <button class="btn" ><a href="scripts/mainMenuPage/mainMenu.html">Main Menu</a></button>
+          <button class="btn" onclick="deleteUserDialog()">
+            Delete Account
+          </button>
+          <button class="btn" onclick="changeUsernameDialog()">
+            Change Name
+          </button>
+          <button class="btn" onclick="logoutUser()"><a href="scripts/loginPage/login.html">Log Out</a></button>
+        </div>
+      </div>
+
+      <!-- battle interface  -->
+      <div id="battleInterface" style="display: none">
+        <!-- enemy health box  -->
+        <div
+          style="
+            background-color: white;
+            width: 300px;
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            border: 4px solid black;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+          "
+        >
+          <h1 id="enemyName" style="margin: 0"></h1>
+
+          <!-- enemy health bar  -->
+          <div style="position: relative">
+            <div
+              style="height: 8px; background-color: #ccc; margin-top: 10px"
+            ></div>
+            <div
+              id="enemyHealthBar"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 8px;
+                background-color: red;
+                margin-top: 10px;
+              "
+            ></div>
+          </div>
+
+          <!-- enemy stamina bar  -->
+          <div style="position: relative">
+            <div
+              style="height: 5px; background-color: #ccc; margin-top: 10px"
+            ></div>
+            <div
+              id="enemyStaminaBar"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 5px;
+                background-color: green;
+                margin-top: 10px;
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- starter health box -->
+        <div
+          style="
+            background-color: white;
+            width: 300px;
+            position: absolute;
+            top: 300px;
+            right: 50px;
+            border: 4px solid black;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+          "
+        >
+          <h1 id="starterName" style="margin: 0"></h1>
+
+          <!-- starter health bar  -->
+          <div style="position: relative">
+            <div
+              style="height: 8px; background-color: #ccc; margin-top: 10px"
+            ></div>
+            <div
+              id="starterHealthBar"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 8px;
+                background-color: red;
+                margin-top: 10px;
+              "
+            ></div>
+          </div>
+
+          <!-- starter stamina bar -->
+          <div style="position: relative">
+            <div
+              style="height: 5px; background-color: #ccc; margin-top: 10px"
+            ></div>
+            <div
+              id="starterStaminaBar"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 5px;
+                background-color: green;
+                margin-top: 10px;
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- attack box -->
+        <div
+          style="
+            background-color: white;
+            height: 140px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-top: 4px solid black;
+            display: flex;
+          "
+        >
+          <!-- dialog box  -->
+          <div
+            id="dialogueBox"
+            style="
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              top: 0;
+              background-color: white;
+              padding: 12px;
+              display: none;
+              font-size: 30px;
+              z-index: 1;
+              cursor: pointer;
+            "
+          ></div>
+
+          <!-- dead switch box -->
+          <div
+            id="deadSwitchBox"
+            style="
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              top: 0;
+              background-color: white;
+              padding: 12px;
+              display: none;
+              font-size: 30px;
+              z-index: 2;
+              cursor: pointer;
+            "
+          ></div>
+
+          <!-- all of the togglable buttons -->
+          <div
+            id="togglableButtons"
+            style="
+              width: 66.66%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <!-- attack box  -->
+            <div
+              id="attackBox"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+              "
+            ></div>
+
+            <!-- switch box  -->
+            <div
+              id="switchBox"
+              style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: 0;
+                width: 66.4%;
+                padding: 0px;
+                display: none;
+                border-left: 4px solid black;
+                border-bottom: 4px solid black;
+                overflow-y: scroll;
+              "
+            ></div>
+
+            <!-- inventory box  -->
+            <div
+              id="inventoryBox"
+              style="
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: 0;
+                width: 66.33%;
+                display: none;
+                font-size: 30px;
+                border-left: 4px solid black;
+                border-bottom: 4px solid black;
+                overflow-y: scroll;
+              "
+            ></div>
+          </div>
+
+          <!-- all of the basic buttons -->
+          <div style="width: 33.33%; border-left: 4px solid black">
+            <div style="height: 100%; width: 100%">
+              <!-- shows all the attack buttons -->
+              <button
+                style="
+                  height: 25%;
+                  width: 100%;
+                  border: 0;
+                  border-right: 4px solid black;
+                  cursor: pointer;
+                  font-size: 30px;
+                "
+              >Attack</button>
+
+              <!-- the inventory button  -->
+              <button
+                style="
+                  height: 25%;
+                  width: 100%;
+                  border: 0;
+                  border-right: 4px solid black;
+                  cursor: pointer;
+                  font-size: 30px;
+                "
+              >Inventory</button>
+
+              <!-- the switch button  -->
+              <button
+                style="
+                  height: 25%;
+                  width: 100%;
+                  border: 0;
+                  border-right: 4px solid black;
+                  cursor: pointer;
+                  font-size: 30px;
+                "
+                class="switch"
+              >Switch</button>
+
+              <!-- run button  -->
+              <button
+                style="
+                  height: 25%;
+                  width: 100%;
+                  border: 0;
+                  border-bottom: 4px solid black;
+                  border-right: 4px solid black;
+                  cursor: pointer;
+                  font-size: 30px;
+                "
+              >Run</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./scripts/data/battleZones.js"></script>
+    <script src="./scripts/data/bowsermonMap.js"></script>
+    <script src="./scripts/data/collisions.js"></script>
+    <script src="./scripts/axiosReq.js"></script>
+    <script src="./scripts/classes.js"></script>
+    <script defer src="./scripts/index.js"></script>
+    <script defer src="./scripts/battle.js"></script>
+    <script defer src="./scripts/mainMenuPage/mainMenu.js"></script>
+    <script defer src="./scripts/loginPage/loginPage.js"></script>
+    <script defer src="./scripts/registerPage/registerPage.js"></script>
+    <script defer src="./scripts/settingsPage/settings.js"></script>
+  </body>
+</html>
