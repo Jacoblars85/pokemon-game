@@ -10,7 +10,6 @@ function changeUsernameDialog() {
   console.log("trying to change users name");
 }
 
-
 function goBackButton() {
   window.history.back();
 }
