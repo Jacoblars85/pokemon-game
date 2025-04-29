@@ -392,29 +392,29 @@ animate();
 let lastKey = "";
 
 window.addEventListener("keydown", (e) => {
-  if (e.key === "w") {
+  if (e.key === "w" || e.key === "ArrowUp") {
     keys.w.pressed = true;
     lastKey = "w";
-  } else if (e.key === "a") {
+  } else if (e.key === "a" || e.key === "ArrowLeft") {
     keys.a.pressed = true;
     lastKey = "a";
-  } else if (e.key === "s") {
+  } else if (e.key === "s" || e.key === "ArrowDown") {
     keys.s.pressed = true;
     lastKey = "s";
-  } else if (e.key === "d") {
+  } else if (e.key === "d" || e.key === "ArrowRight") {
     keys.d.pressed = true;
     lastKey = "d";
   }
 });
 
 window.addEventListener("keyup", (e) => {
-  if (e.key === "w") {
+  if (e.key === "w" || e.key === "ArrowUp") {
     keys.w.pressed = false;
-  } else if (e.key === "a") {
+  } else if (e.key === "a" || e.key === "ArrowLeft") {
     keys.a.pressed = false;
-  } else if (e.key === "s") {
+  } else if (e.key === "s" || e.key === "ArrowDown") {
     keys.s.pressed = false;
-  } else if (e.key === "d") {
+  } else if (e.key === "d" || e.key === "ArrowRight") {
     keys.d.pressed = false;
   }
 });
