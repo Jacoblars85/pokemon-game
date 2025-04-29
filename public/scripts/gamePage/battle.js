@@ -57,6 +57,7 @@ function resetBattleFunc() {
     document.getElementById("attackBox").innerHTML += `
       <button
               id="attackButton"
+              class=${attackButtons.attack_name}
                 style="
                     display: flex;
                     width: 33.33%;
@@ -73,6 +74,10 @@ function resetBattleFunc() {
                     "
             >${attackButtons.attack_name}</button>
             `;
+
+            if (attackButtons.attack_stamina > currentStarter.stamina) {
+              document.getElementsByClassName(attackButtons.attack_name).disabled = true
+            }
   }
 
   // InnerHtml for the switch box
