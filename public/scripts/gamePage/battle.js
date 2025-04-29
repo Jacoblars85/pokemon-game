@@ -54,23 +54,23 @@ function resetBattleFunc() {
   for (const attackButtons of attackButtonsArray) {
     document.getElementById("attackBox").innerHTML += `
       <button
-              class="attackButton"
               id=${attackButtons.attack_name}
+              class="attackButton"
               disabled
-                style="
-                    display: flex;
-                    width: 33.33%;
-                    height: 100%;
-                    text-align: center;
-                    font-size: 30px;
-                    color: black;
-                    justify-content: center;
-                    align-items: center;
-                    border: 0;
-                    border-bottom: 4px solid black;
-                    cursor: pointer;
-                    box-shadow: 0 0 0 0;
-                    "
+              style="
+                display: flex;
+                width: 33.33%;
+                height: 100%;
+                text-align: center;
+                font-size: 30px;
+                color: black;
+                justify-content: center;
+                align-items: center;
+                border: 0;
+                border-bottom: 4px solid black;
+                cursor: pointer;
+                box-shadow: 0 0 0 0;
+                "
             >${attackButtons.attack_name}</button>
             `;
 
@@ -79,7 +79,7 @@ function resetBattleFunc() {
     if (attackButtons.attack_stamina <= currentStarter.stamina) {
       let currentButton = document.getElementById(attackButtons.attack_name);
 
-      currentButton.disabled = false;
+      // currentButton.disabled = false;
 
       console.log("currentButton", currentButton);
     }
