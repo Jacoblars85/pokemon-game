@@ -189,7 +189,7 @@ function animate() {
   player.draw();
   foreground.draw();
 
-  // let moving = true;
+  moving = true;
   player.animate = false;
 
   if (battle.initiated) return;
