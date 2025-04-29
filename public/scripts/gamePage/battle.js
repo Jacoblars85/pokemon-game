@@ -78,10 +78,13 @@ function resetBattleFunc() {
 
 
             if (attackButtons.attack_stamina <= currentStarter.stamina) {
-              let currentButton = document.getElementById(`${attackButtons.attack_name}`)
-              // console.log('currentButton', currentButton);
-              
+              let currentButton = document.getElementById(attackButtons.attack_name)
+
               currentButton.disabled = false
+              
+              console.log('currentButton', currentButton);
+              
+              
             }
   }
 
