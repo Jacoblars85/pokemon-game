@@ -52,8 +52,6 @@ function resetBattleFunc() {
 
   // InnerHtml for the attack box
   for (const attackButtons of attackButtonsArray) {
-    console.log('attackButtons', attackButtons);
-    
     document.getElementById("attackBox").innerHTML += `
       <button
               class="attackButton"
@@ -76,12 +74,13 @@ function resetBattleFunc() {
             >${attackButtons.attack_name}</button>
             `;
 
+            console.log('attackButtons', attackButtons);
 
             if (attackButtons.attack_stamina <= currentStarter.stamina) {
               let currentButton = document.getElementById(attackButtons.attack_name)
 
               currentButton.disabled = false
-              
+
               console.log('currentButton', currentButton);
               
               
