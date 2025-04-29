@@ -17,3 +17,7 @@ function goBackButton() {
 function openSettingsDialog() {
   document.getElementById("loginInterface").style.display = "flex";
 }
+
+function closeSettingsDialog() {
+  document.getElementById("loginInterface").style.display = "none";
+}
