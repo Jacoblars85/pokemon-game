@@ -15,9 +15,14 @@ function goBackButton() {
 }
 
 function openSettingsDialog() {
+  moving = false
+
   document.getElementById("settingsInterfacePopUp").style.display = "flex";
 }
 
 function closeSettingsDialog() {
+
+  moving = true
+
   document.getElementById("settingsInterfacePopUp").style.display = "none";
 }
