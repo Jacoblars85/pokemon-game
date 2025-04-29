@@ -74,17 +74,15 @@ function resetBattleFunc() {
             >${attackButtons.attack_name}</button>
             `;
 
-            console.log('attackButtons', attackButtons);
+    console.log("attackButtons", attackButtons);
 
-            if (attackButtons.attack_stamina <= currentStarter.stamina) {
-              let currentButton = document.getElementById(attackButtons.attack_name)
+    if (attackButtons.attack_stamina <= currentStarter.stamina) {
+      let currentButton = document.getElementById(attackButtons.attack_name);
 
-              currentButton.disabled = false
+      currentButton.disabled = false;
 
-              console.log('currentButton', currentButton);
-              
-              
-            }
+      console.log("currentButton", currentButton);
+    }
   }
 
   // InnerHtml for the switch box
@@ -572,11 +570,7 @@ function resetBattleFunc() {
 
           currentStarter = changingStarter;
 
-          attackButtonsArray.splice(
-            0,
-            1,
-            currentStarter.attackStats
-          );
+          attackButtonsArray.splice(0, 1, currentStarter.attackStats);
 
           if (!currentStarterIsDead) {
             queue.push(() => {
@@ -698,11 +692,7 @@ function initBattle() {
   document.getElementById("starterName").innerHTML = currentStarter.name;
   document.getElementById("enemyName").innerHTML = enemy.name;
 
-  attackButtonsArray = [
-    starter.attackStats,
-    kickAttackStats,
-    pokeAttackStats,
-  ];
+  attackButtonsArray = [starter.attackStats, kickAttackStats, pokeAttackStats];
 
   renderedSprites = [enemy, starter];
 
