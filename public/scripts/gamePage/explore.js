@@ -175,6 +175,8 @@ const battle = {
   initiated: false,
 };
 
+let moving = true;
+
 function animate() {
   const animationId = window.requestAnimationFrame(animate);
   exploringBackground.draw();
@@ -187,7 +189,7 @@ function animate() {
   player.draw();
   foreground.draw();
 
-  let moving = true;
+  // let moving = true;
   player.animate = false;
 
   if (battle.initiated) return;
