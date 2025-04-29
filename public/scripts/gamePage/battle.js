@@ -56,8 +56,9 @@ function resetBattleFunc() {
     
     document.getElementById("attackBox").innerHTML += `
       <button
-              id="attackButton"
-              class=${attackButtons.attack_name}
+              class="attackButton"
+              id=${attackButtons.attack_name}
+              disabled
                 style="
                     display: flex;
                     width: 33.33%;
@@ -75,8 +76,12 @@ function resetBattleFunc() {
             >${attackButtons.attack_name}</button>
             `;
 
-            if (attackButtons.attack_stamina > currentStarter.stamina) {
-              document.getElementsByClassName(attackButtons.attack_name).disabled = true
+
+            if (attackButtons.attack_stamina <= currentStarter.stamina) {
+              let currentButton = document.getElementById(`${attackButtons.attack_name}`)
+              // console.log('currentButton', currentButton);
+              
+              currentButton.disabled = false
             }
   }
 
@@ -269,7 +274,7 @@ function resetBattleFunc() {
 
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
-      if (e.target.id === "attackButton") {
+      if (e.target.className === "attackButton") {
         const characterSelectedAttack = e.target.innerHTML;
         let selectedAttack = {};
 
