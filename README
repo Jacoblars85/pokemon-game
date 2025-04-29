@@ -4,9 +4,9 @@ Problems:
 5. create the new hp, speed and damage system
 7. get the valiadation and log in working
 9. switch the req.user in the routers when the user validation is working again
-8. figure out if you can use multiple html for different pages
 11. fix the buttons being disabled when the character doesnt have enough stamina
 12. changed the battle odds in grass back to normal
+13. fixed the delayed walking when changing directions, related to the walking in walls 
 
 
 New Ideas:
