@@ -52,6 +52,8 @@ function resetBattleFunc() {
 
   // InnerHtml for the attack box
   for (const attackButtons of attackButtonsArray) {
+    console.log('attackButtons', attackButtons);
+    
     document.getElementById("attackBox").innerHTML += `
       <button
               id="attackButton"
@@ -69,7 +71,7 @@ function resetBattleFunc() {
                     cursor: pointer;
                     box-shadow: 0 0 0 0;
                     "
-            >${attackButtons}</button>
+            >${attackButtons.attack_name}</button>
             `;
   }
 
@@ -561,7 +563,7 @@ function resetBattleFunc() {
           attackButtonsArray.splice(
             0,
             1,
-            currentStarter.attackStats.attack_name
+            currentStarter.attackStats
           );
 
           if (!currentStarterIsDead) {
@@ -685,9 +687,9 @@ function initBattle() {
   document.getElementById("enemyName").innerHTML = enemy.name;
 
   attackButtonsArray = [
-    starter.attackStats.attack_name,
-    kickAttack,
-    pokeAttack,
+    starter.attackStats,
+    kickAttackStats,
+    pokeAttackStats,
   ];
 
   renderedSprites = [enemy, starter];
