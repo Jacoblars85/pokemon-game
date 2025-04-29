@@ -15,9 +15,9 @@ function goBackButton() {
 }
 
 function openSettingsDialog() {
-  document.getElementById("loginInterface").style.display = "flex";
+  document.getElementById("settingsInterfacePopUp").style.display = "flex";
 }
 
 function closeSettingsDialog() {
-  document.getElementById("loginInterface").style.display = "none";
+  document.getElementById("settingsInterfacePopUp").style.display = "none";
 }
