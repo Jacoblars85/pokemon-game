@@ -13,3 +13,7 @@ function changeUsernameDialog() {
 function goBackButton() {
   window.history.back();
 }
+
+function openSettingsDialog() {
+  document.getElementById("loginInterface").style.display = "flex";
+}
