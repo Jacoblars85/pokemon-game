@@ -51,10 +51,14 @@ function resetBattleFunc() {
   document.getElementById("deadSwitchBox").innerHTML = "";
 
   // InnerHtml for the attack box
-  for (const attackButtons of attackButtonsArray) {
+  let attackNum = 10;
+  for (let i = 0; i < attackButtonsArray.length; i++) {
+    const attack = attackButtonsArray[i];
+    attackNum++;
+
     document.getElementById("attackBox").innerHTML += `
       <button
-              id=${attackButtons.attack_name}
+              id=${attackNum}
               class="attackButton"
               disabled
               style="
@@ -71,15 +75,15 @@ function resetBattleFunc() {
                 cursor: pointer;
                 box-shadow: 0 0 0 0;
                 "
-            >${attackButtons.attack_name}</button>
+            >${attack.attack_name}</button>
             `;
 
-    console.log("attackButtons", attackButtons);
+    console.log("attack", attack);
 
-    if (attackButtons.attack_stamina <= currentStarter.stamina) {
-      let currentButton = document.getElementById(attackButtons.attack_name);
+    if (attack.attack_stamina <= currentStarter.stamina) {
+      let currentButton = document.getElementById(attackNum);
 
-      // currentButton.disabled = false;
+      currentButton.disabled = false;
 
       console.log("currentButton", currentButton);
     }
