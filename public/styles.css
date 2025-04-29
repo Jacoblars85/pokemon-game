@@ -163,11 +163,11 @@ Alert
 
 .settingsScreenPopUp {
   position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 1016px;
-  height: 568px;
-  display: flex;
+  top: 7.5%;
+  left: 5%;
+  width: 916px;
+  height: 468px;
+  /* display: flex; */
   display: none;
   flex-direction: column;
   align-items: center;
