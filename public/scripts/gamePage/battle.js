@@ -78,14 +78,10 @@ function resetBattleFunc() {
             >${attack.attack_name}</button>
             `;
 
-    console.log("attack", attack);
-
     if (attack.attack_stamina <= currentStarter.stamina) {
       let currentButton = document.getElementById(attackNum);
 
       currentButton.disabled = false;
-
-      console.log("currentButton", currentButton);
     }
   }
 
