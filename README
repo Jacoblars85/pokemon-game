@@ -1,9 +1,9 @@
 Problems:
 
-2. changed the disabled variables to the classes that change the hp and stamina
-5. create the new hp, speed and damage system
-7. get the valiadation and log in working
-9. switch the req.user in the routers when the user validation is working again
+1. changed the disabled variables to the classes that change the hp and stamina
+2. create the new hp, speed and damage system
+3. get the valiadation and log in working
+4. switch the req.user in the routers when the user validation is working again
 
 
 New Ideas:
