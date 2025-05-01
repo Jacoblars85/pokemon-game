@@ -4,8 +4,6 @@ Problems:
 5. create the new hp, speed and damage system
 7. get the valiadation and log in working
 9. switch the req.user in the routers when the user validation is working again
-11. fix the buttons being disabled when the character doesnt have enough stamina
-12. changed the battle odds in grass back to normal
 
 
 New Ideas:
