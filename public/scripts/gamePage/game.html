@@ -47,7 +47,6 @@
 
       <!-- battle interface  -->
       <div id="battleInterface" style="display: none">
-
         <!-- enemy health box  -->
         <div
           style="
@@ -62,11 +61,17 @@
             padding: 10px;
           "
         >
-
-          <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline;">
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: baseline;
+            "
+          >
             <h1 id="enemyName" style="margin: 0"></h1>
-  
-            <h2 id="enemyLevel" style="margin: 0;"></h2>
+
+            <h2 id="enemyLevel" style="margin: 0"></h2>
           </div>
 
           <!-- enemy health bar  -->
@@ -122,12 +127,18 @@
             padding: 10px;
           "
         >
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: baseline;
+            "
+          >
+            <h1 id="starterName" style="margin: 0"></h1>
 
-        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: baseline;">
-          <h1 id="starterName" style="margin: 0"></h1>
-
-          <h2 id="starterLevel" style="margin: 0;"></h2>
-        </div>
+            <h2 id="starterLevel" style="margin: 0"></h2>
+          </div>
 
           <!-- starter health bar  -->
           <div style="position: relative">
@@ -343,44 +354,44 @@
         O
       </button>
 
-        <!-- settings interface -->
-        <div id="settingsInterfacePopUp" class="settingsScreenPopUp">
-          <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
-            Settings
-          </h2>
-  
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: space-evenly;
-              width: 80%;
-              height: 90%;
-            "
-          >
-            <!-- <button class="btn" onclick="goToMainMenu()">Main Menu</button> -->
-            <button class="btn">
-              <a href="../mainMenuPage/mainMenu.html">Main Menu</a>
-            </button>
-            <button class="btn" onclick="deleteUserDialog()">
-              Delete Account
-            </button>
-            <button class="btn" onclick="changeUsernameDialog()">
-              Change Name
-            </button>
-            <button class="btn" onclick="logoutUser()">
-              <a href="../loginPage/login.html">Log Out</a>
-            </button>
-          </div>
-  
-          <button
-            class="btn"
-            style="position: absolute; top: 0.5%; right: 0.5%; margin: 0"
-            onclick="closeSettingsDialog()"
-          >
-            X
+      <!-- settings interface -->
+      <div id="settingsInterfacePopUp" class="settingsScreenPopUp">
+        <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
+          Settings
+        </h2>
+
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 80%;
+            height: 90%;
+          "
+        >
+          <!-- <button class="btn" onclick="goToMainMenu()">Main Menu</button> -->
+          <button class="btn">
+            <a href="../mainMenuPage/mainMenu.html">Main Menu</a>
           </button>
+          <button class="btn" onclick="deleteUserDialog()">
+            Delete Account
+          </button>
+          <button class="btn" onclick="changeUsernameDialog()">
+            Change Name
+          </button>
+          <button class="btn" onclick="logoutUser()">
+            <a href="../loginPage/login.html">Log Out</a>
+          </button>
+        </div>
+
+        <button
+          class="btn"
+          style="position: absolute; top: 0.5%; right: 0.5%; margin: 0"
+          onclick="closeSettingsDialog()"
+        >
+          X
+        </button>
       </div>
     </div>
 
