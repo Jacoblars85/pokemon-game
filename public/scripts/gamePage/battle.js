@@ -650,6 +650,7 @@ function initBattle() {
     stamina: enemyStamina,
     maxStamina: enemyStamina,
     speed: enemySpeed,
+    // level: enemyOne.xp_level,
     fx_img: enemyAttackStats.fx_img,
     attackStats: enemyAttackStats,
     max_frames: enemyAttackStats.max_frames,
