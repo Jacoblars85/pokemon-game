@@ -3,8 +3,8 @@ body {
   overflow: hidden;
   height: 576px;
   width: 1024px;
-  max-height: 576;
-  max-width: 1024;
+  max-height: 576px;
+  max-width: 1024px;
 }
 
 * {
@@ -12,8 +12,13 @@ body {
   font-family: "seriousr2", sans-serif;
   /* font-family: 'seriousr4b', sans-serif; */
   /* font-family: 'seriousr4', sans-serif; */
-  max-height: 576;
-  max-width: 1024;
+  max-height: 576px;
+  max-width: 1024px;
+}
+
+.bigArea {
+  height: 576px;
+  width: 1024px;
 }
 
 /* --------------------------------------------------------------------------------
