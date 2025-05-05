@@ -35,6 +35,13 @@ function changeUsernameDialog() {
     <button class="btn">change username</button>
   </div>
 
+  <button
+          class="btn"
+          style="position: absolute; top: 0.5%; left: 0.5%; margin: 0"
+          onclick="resetSettingsBody()"
+        >
+          X
+        </button>
 
 `;
 }
