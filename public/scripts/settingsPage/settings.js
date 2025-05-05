@@ -1,7 +1,5 @@
 function deleteUserDialog() {
   document.getElementById("settingsBody").innerHTML = `
-    <h2>Are You Sure?</h2>
-    
     <div 
       style="
           display: flex;
@@ -9,17 +7,20 @@ function deleteUserDialog() {
           align-items: center;
           row-gap: 20px;
           ">
+
+      <h2>Are You Sure?</h2>
+
       <button class="btn">delete account</button>
       <button class="btn">back</button>
     </div>
-
+    
     <button
-          class="btn"
-          style="position: absolute; top: 0.5%; left: 0.5%; margin: 0"
-          onclick="resetSettingsBody()"
-        >
-          <--
-        </button>
+      class="btn"
+      style="position: absolute; top: 0.5%; left: 0.5%; margin: 0"
+      onclick="resetSettingsBody()"
+    >
+      <--
+    </button>
   `;
 }
 
