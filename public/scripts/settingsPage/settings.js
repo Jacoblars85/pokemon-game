@@ -1,5 +1,17 @@
 function deleteUserDialog() {
-  console.log("trying to delete user");
+  document.getElementById("settingsBody").innerHTML = `
+    <h2>Are You Sure?</h2>
+    
+    <div style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 20px;
+          ">
+    <button class="btn">delete account</button>
+    <button class="btn">back</button>
+    </div>
+  `
 }
 
 function goToMainMenu() {
