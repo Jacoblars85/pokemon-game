@@ -79,4 +79,6 @@ function closeSettingsDialog() {
   moving = true;
 
   document.getElementById("settingsInterfacePopUp").style.display = "none";
+
+  resetSettingsBody()
 }
