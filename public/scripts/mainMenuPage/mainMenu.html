@@ -16,7 +16,14 @@
   <body>
     <div class="bigArea" style="display: inline-block; position: relative">
       <!-- main menu interface -->
-      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        "
+      >
         <h1>Main Menu</h1>
 
         <!-- <p>username</p>
@@ -28,24 +35,25 @@
         <p><a href="../gamePage/game.html">Play</a></p>
       </div>
 
-
-       <div style="position: absolute; display: flex; flex-direction: row; top: 0.5%; right: 0.5%; margin: 0">
-
-        <p>username</p>
-   
-          <p>level</p>
-          <p>coins</p>
-
-        
-      <button
-        class="btn"
-        style="margin: 0"
-
-        onclick="openSettingsDialog()"
+      <div
+        style="
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          top: 0.5%;
+          right: 0.5%;
+          margin: 0;
+        "
       >
-        O
-      </button>
-    </div>
+        <p>username</p>
+
+        <p>level</p>
+        <p>coins</p>
+
+        <button class="btn" style="margin: 0" onclick="openSettingsDialog()">
+          O
+        </button>
+      </div>
       <!-- settings interface -->
       <div id="settingsInterfacePopUp" class="settingsScreenPopUp">
         <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
