@@ -23,10 +23,6 @@ function deleteUserDialog() {
   `;
 }
 
-function goToMainMenu() {
-  console.log("trying to go to main menu");
-}
-
 function changeUsernameDialog() {
   document.getElementById("settingsBody").innerHTML = `
   <h2>Change Username</h2>
@@ -39,8 +35,6 @@ function changeUsernameDialog() {
       row-gap: 20px;
       ">
 
-
-      
     <input
     id="changeUsernameInput"
       placeholder="username"
