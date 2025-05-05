@@ -10,8 +10,7 @@ function deleteUserDialog() {
 
       <h2>Are You Sure?</h2>
 
-      <button class="btn">delete account</button>
-      <button class="btn">back</button>
+      <button onclick="deleteUser()" class="btn">delete account</button>
     </div>
     
     <button
@@ -30,7 +29,7 @@ function goToMainMenu() {
 
 function changeUsernameDialog() {
   document.getElementById("settingsBody").innerHTML = `
-  <h2>Change Username?</h2>
+  <h2>Change Username</h2>
   
   <div 
     style="
@@ -40,7 +39,16 @@ function changeUsernameDialog() {
       row-gap: 20px;
       ">
 
-    <input></input>
+
+      
+    <input
+    id="changeUsernameInput"
+      placeholder="username"
+      type="text"
+      name="username"
+      required
+    ></input>
+
     <button class="btn">change username</button>
   </div>
 
@@ -51,7 +59,6 @@ function changeUsernameDialog() {
   >
     <--
   </button>
-
 `;
 }
 
