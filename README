@@ -4,6 +4,7 @@ Problems:
 2. create the new hp, speed and damage system
 3. get the valiadation and log in working
 4. switch the req.user in the routers when the user validation is working again
+5. fix the input delay when moving in explore
 
 
 New Ideas:
