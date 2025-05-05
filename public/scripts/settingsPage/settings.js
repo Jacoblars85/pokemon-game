@@ -20,7 +20,27 @@ function goToMainMenu() {
 }
 
 function changeUsernameDialog() {
-  console.log("trying to change users name");
+  document.getElementById("settingsBody").innerHTML = `
+  <h2>Change Username?</h2>
+  
+  <div 
+    style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+        ">
+
+    <input></input>
+    <button class="btn">change username</button>
+  </div>
+
+
+`;
+}
+
+function resetSettingsBody() {
+  
 }
 
 function goBackButton() {
