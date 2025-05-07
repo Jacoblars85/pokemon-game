@@ -27,7 +27,8 @@ function changeUsernameDialog() {
   document.getElementById("settingsBody").innerHTML = `
   <h2>Change Username</h2>
   
-  <div 
+  <form 
+    onSubmit="changeUsername(event)"
     style="
       display: flex;
       flex-direction: column;
@@ -44,7 +45,7 @@ function changeUsernameDialog() {
     ></input>
 
     <button class="btn">change username</button>
-  </div>
+  </form>
 
   <button
     class="btn"
