@@ -231,31 +231,35 @@ function animate() {
 
   if (battle.initiated) return;
 
-  for (let i = 0; i < cheastZones.length; i++) {
-    const cheastZone = cheastZones[i];
-    const overlappingArea =
-      (Math.min(
-        player.position.x + player.width,
-        cheastZone.position.x + cheastZone.width
-      ) -
-        Math.max(player.position.x, cheastZone.position.x)) *
-      (Math.min(
-        player.position.y + player.height,
-        cheastZone.position.y + cheastZone.height
-      ) -
-        Math.max(player.position.y, cheastZone.position.y));
 
-    if (
-      (keys.e.pressed || keys.f.pressed) &&
-      rectangularCollisions({
-        rectangle1: player,
-        rectangle2: cheastZone,
-      }) &&
-      overlappingArea > (player.width * player.height) / 2
-    ) {
-      console.log("trying to open a cheast");
+  if (keys.e.pressed || keys.f.pressed) {
+    for (let i = 0; i < cheastZones.length; i++) {
+      const cheastZone = cheastZones[i];
+      const overlappingArea =
+        (Math.min(
+          player.position.x + player.width,
+          cheastZone.position.x + cheastZone.width
+        ) -
+          Math.max(player.position.x, cheastZone.position.x)) *
+        (Math.min(
+          player.position.y + player.height,
+          cheastZone.position.y + cheastZone.height
+        ) -
+          Math.max(player.position.y, cheastZone.position.y));
+  
+      if (
+        (keys.e.pressed || keys.f.pressed) &&
+        rectangularCollisions({
+          rectangle1: player,
+          rectangle2: cheastZone,
+        }) &&
+        overlappingArea > (player.width * player.height) / 2
+      ) {
+        console.log("trying to open a cheast");
+      }
     }
   }
+  
 
   // activate battle
   if (keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) {
