@@ -25,7 +25,7 @@ for (let i = 0; i < battleZonesArray.length; i += 235) {
   battleZonesMap.push(battleZonesArray.slice(i, 235 + i));
 }
 
-const cheastZonesMap = []
+const cheastZonesMap = [];
 
 for (let i = 0; i < cheastZonesArray.length; i += 235) {
   cheastZonesMap.push(cheastZonesArray.slice(i, 235 + i));
