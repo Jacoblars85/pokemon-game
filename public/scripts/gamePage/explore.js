@@ -219,28 +219,8 @@ function animate() {
       }) &&
       overlappingArea > (player.width * player.height) / 2
     ) {
-      window.cancelAnimationFrame(animationId);
-      gsap.to("#fadeOutDiv", {
-        opacity: 1,
-        repeat: 3,
-        yoyo: true,
-        duration: 0.4,
-        onComplete() {
-          gsap.to("#fadeOutDiv", {
-            opacity: 1,
-            duration: 0.4,
-            onComplete() {
-              initBattle();
-              animateBattle();
-
-              gsap.to("#fadeOutDiv", {
-                opacity: 0,
-                duration: 0.4,
-              });
-            },
-          });
-        },
-      });
+      console.log('trying to open a cheast');
+      
     }
   }
 
