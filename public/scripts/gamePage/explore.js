@@ -198,6 +198,56 @@ function animate() {
 
   if (battle.initiated) return;
 
+  for (let i = 0; i < cheastZones.length; i++) {
+    const cheastZones = cheastZones[i];
+    const overlappingArea =
+      (Math.min(
+        player.position.x + player.width,
+        battleZone.position.x + battleZone.width
+      ) -
+        Math.max(player.position.x, battleZone.position.x)) *
+      (Math.min(
+        player.position.y + player.height,
+        battleZone.position.y + battleZone.height
+      ) -
+        Math.max(player.position.y, battleZone.position.y));
+
+    if (
+      rectangularCollisions({
+        rectangle1: player,
+        rectangle2: battleZone,
+      }) &&
+      overlappingArea > (player.width * player.height) / 2 &&
+      // Math.random() < 0.8
+      Math.random() < 0.015
+    ) {
+      window.cancelAnimationFrame(animationId);
+      battle.initiated = true;
+      gsap.to("#fadeOutDiv", {
+        opacity: 1,
+        repeat: 3,
+        yoyo: true,
+        duration: 0.4,
+        onComplete() {
+          gsap.to("#fadeOutDiv", {
+            opacity: 1,
+            duration: 0.4,
+            onComplete() {
+              initBattle();
+              animateBattle();
+
+              gsap.to("#fadeOutDiv", {
+                opacity: 0,
+                duration: 0.4,
+              });
+            },
+          });
+        },
+      });
+      break;
+    }
+  }
+
   // activate battle
   if (keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) {
     for (let i = 0; i < battleZones.length; i++) {
