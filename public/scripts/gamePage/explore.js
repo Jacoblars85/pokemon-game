@@ -31,6 +31,12 @@ for (let i = 0; i < cheastZonesArray.length; i += 235) {
   cheastZonesMap.push(cheastZonesArray.slice(i, 235 + i));
 }
 
+const doorZonesMap = [];
+
+for (let i = 0; i < doorZonesArray.length; i += 235) {
+  doorZonesMap.push(doorZonesArray.slice(i, 235 + i));
+}
+
 const offset = {
   x: -4767.5,
   y: -5990,
