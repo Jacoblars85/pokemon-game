@@ -153,6 +153,12 @@ const keys = {
   d: {
     pressed: false,
   },
+  e: {
+    pressed: false,
+  },
+  f: {
+    pressed: false,
+  },
 };
 
 const movables = [
@@ -213,14 +219,14 @@ function animate() {
         Math.max(player.position.y, cheastZone.position.y));
 
     if (
+      (keys.e.pressed || keys.f.pressed) &&
       rectangularCollisions({
         rectangle1: player,
         rectangle2: cheastZone,
       }) &&
       overlappingArea > (player.width * player.height) / 2
     ) {
-      console.log('trying to open a cheast');
-      
+      console.log("trying to open a cheast");
     }
   }
 
