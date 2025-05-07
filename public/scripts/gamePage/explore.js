@@ -160,6 +160,7 @@ const movables = [
   ...boundaries,
   foreground,
   ...battleZones,
+  ...cheastZones,
 ];
 
 function rectangularCollisions({ rectangle1, rectangle2 }) {
@@ -185,6 +186,9 @@ function animate() {
   });
   battleZones.forEach((battleZone) => {
     battleZone.draw();
+  });
+  cheastZones.forEach((cheastZone) => {
+    cheastZone.draw();
   });
   player.draw();
   foreground.draw();
