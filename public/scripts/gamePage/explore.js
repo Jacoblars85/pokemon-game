@@ -440,6 +440,12 @@ window.addEventListener("keydown", (e) => {
   } else if (e.key === "d" || e.key === "ArrowRight") {
     keys.d.pressed = true;
     lastKey = "d";
+  } else if (e.key === "e") {
+    keys.e.pressed = true;
+    lastKey = "e";
+  } else if (e.key === "f") {
+    keys.f.pressed = true;
+    lastKey = "f";
   }
 });
 
@@ -452,5 +458,9 @@ window.addEventListener("keyup", (e) => {
     keys.s.pressed = false;
   } else if (e.key === "d" || e.key === "ArrowRight") {
     keys.d.pressed = false;
+  } else if (e.key === "e") {
+    keys.e.pressed = false;
+  } else if (e.key === "f") {
+    keys.f.pressed = false;
   }
 });
