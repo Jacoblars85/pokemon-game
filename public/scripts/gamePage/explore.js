@@ -246,6 +246,21 @@ function animate() {
     }
   }
 
+  if (keys.e.pressed || keys.f.pressed) {
+    for (let i = 0; i < doorZones.length; i++) {
+      const doorZone = doorZones[i];
+
+      if (
+        rectangularCollisions({
+          rectangle1: player,
+          rectangle2: doorZone,
+        })
+      ) {
+        console.log("trying to go into a house");
+      }
+    }
+  }
+
   // activate battle
   if (keys.w.pressed || keys.a.pressed || keys.s.pressed || keys.d.pressed) {
     for (let i = 0; i < battleZones.length; i++) {
