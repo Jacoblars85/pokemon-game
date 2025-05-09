@@ -231,6 +231,7 @@ function animate() {
 
   if (battle.initiated) return;
 
+  // open cheast
   if (keys.e.pressed || keys.f.pressed) {
     for (let i = 0; i < cheastZones.length; i++) {
       const cheastZone = cheastZones[i];
@@ -246,6 +247,7 @@ function animate() {
     }
   }
 
+  // open door
   if (keys.e.pressed || keys.f.pressed) {
     for (let i = 0; i < doorZones.length; i++) {
       const doorZone = doorZones[i];
