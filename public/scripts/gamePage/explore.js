@@ -265,15 +265,13 @@ function animate() {
           opacity: 1,
           repeat: 1,
           yoyo: true,
-          duration: 0.4,
+          duration: 0.6,
           onComplete() {
+            console.log("in the house");
+
             gsap.to("#fadeOutDiv", {
-              opacity: 1,
+              opacity: 0,
               duration: 0.4,
-              onComplete() {
-  console.log('in the house');
-  
-              },
             });
           },
         });
