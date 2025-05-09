@@ -316,6 +316,7 @@ function animate() {
     }
   }
 
+  // moving in all directions
   if (keys.w.pressed && lastKey === "w") {
     player.animate = true;
     player.image = player.sprites.up;
