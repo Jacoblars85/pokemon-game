@@ -268,6 +268,7 @@ function animate() {
           duration: 0.6,
           onComplete() {
             console.log("in the house");
+            animateHouse()
 
             gsap.to("#fadeOutDiv", {
               opacity: 0,
