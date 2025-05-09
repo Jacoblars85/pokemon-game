@@ -236,7 +236,6 @@ function animate() {
       const cheastZone = cheastZones[i];
 
       if (
-        (keys.e.pressed || keys.f.pressed) &&
         rectangularCollisions({
           rectangle1: player,
           rectangle2: cheastZone,
