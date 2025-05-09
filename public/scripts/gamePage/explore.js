@@ -259,6 +259,25 @@ function animate() {
         })
       ) {
         console.log("trying to go into a house");
+
+        window.cancelAnimationFrame(animationId);
+        gsap.to("#fadeOutDiv", {
+          opacity: 1,
+          repeat: 1,
+          yoyo: true,
+          duration: 0.4,
+          onComplete() {
+            gsap.to("#fadeOutDiv", {
+              opacity: 1,
+              duration: 0.4,
+              onComplete() {
+  console.log('in the house');
+  
+              },
+            });
+          },
+        });
+        break;
       }
     }
   }
