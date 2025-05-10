@@ -25,10 +25,10 @@ for (let i = 0; i < battleZonesArray.length; i += 235) {
   battleZonesMap.push(battleZonesArray.slice(i, 235 + i));
 }
 
-const cheastZonesMap = [];
+const chestZonesMap = [];
 
-for (let i = 0; i < cheastZonesArray.length; i += 235) {
-  cheastZonesMap.push(cheastZonesArray.slice(i, 235 + i));
+for (let i = 0; i < chestZonesArray.length; i += 235) {
+  chestZonesMap.push(chestZonesArray.slice(i, 235 + i));
 }
 
 const doorZonesMap = [];
@@ -76,12 +76,12 @@ battleZonesMap.forEach((row, i) => {
   });
 });
 
-const cheastZones = [];
+const chestZones = [];
 
-cheastZonesMap.forEach((row, i) => {
+chestZonesMap.forEach((row, i) => {
   row.forEach((symbol, j) => {
     if (symbol === 1025) {
-      cheastZones.push(
+      chestZones.push(
         new Boundary({
           position: {
             x: j * Boundary.width + offset.x,
@@ -189,7 +189,7 @@ const movables = [
   ...boundaries,
   foreground,
   ...battleZones,
-  ...cheastZones,
+  ...chestZones,
   ...doorZones,
 ];
 
@@ -217,8 +217,8 @@ function animate() {
   battleZones.forEach((battleZone) => {
     battleZone.draw();
   });
-  cheastZones.forEach((cheastZone) => {
-    cheastZone.draw();
+  chestZones.forEach((chestZone) => {
+    chestZone.draw();
   });
   doorZones.forEach((doorZone) => {
     doorZone.draw();
@@ -231,18 +231,18 @@ function animate() {
 
   if (battle.initiated) return;
 
-  // open cheast
+  // open chest
   if (keys.e.pressed || keys.f.pressed) {
-    for (let i = 0; i < cheastZones.length; i++) {
-      const cheastZone = cheastZones[i];
+    for (let i = 0; i < chestZones.length; i++) {
+      const chestZone = chestZones[i];
 
       if (
         rectangularCollisions({
           rectangle1: player,
-          rectangle2: cheastZone,
+          rectangle2: chestZone,
         })
       ) {
-        console.log("trying to open a cheast");
+        console.log("trying to open a chest");
       }
     }
   }
