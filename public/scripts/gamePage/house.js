@@ -17,13 +17,10 @@ function animateHouse() {
 
   player.draw();
 
-  movables = [
-    houseBackground,
-  ];
+  movables = [houseBackground];
 
   moving = true;
   player.animate = false;
 
-  movementIf()
+  movementIf();
 }
-
