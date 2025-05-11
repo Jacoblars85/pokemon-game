@@ -18,4 +18,7 @@ function animateHouse() {
   player.draw();
   moving = true;
   player.animate = false;
+
+  movementIf()
 }
+
