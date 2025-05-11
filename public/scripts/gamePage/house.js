@@ -1,5 +1,5 @@
 const houseBackgroundImage = new Image();
-houseBackgroundImage.src = "./img/backgroundImg/battleBackground.png";
+houseBackgroundImage.src = "./img/bowsermon-map-v1.png";
 
 const houseBackground = new Sprite({
   position: {
@@ -16,6 +16,11 @@ function animateHouse() {
   houseBackground.draw();
 
   player.draw();
+
+  movables = [
+    houseBackground,
+  ];
+
   moving = true;
   player.animate = false;
 
