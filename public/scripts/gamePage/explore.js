@@ -184,8 +184,6 @@ const keys = {
   },
 };
 
-
-
 function rectangularCollisions({ rectangle1, rectangle2 }) {
   return (
     rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
@@ -199,7 +197,7 @@ const battle = {
   initiated: false,
 };
 
-let movables 
+let movables;
 
 let moving = true;
 
@@ -414,7 +412,7 @@ function animate() {
           duration: 0.6,
           onComplete() {
             console.log("in the house");
-            animateHouse()
+            animateHouse();
 
             gsap.to("#fadeOutDiv", {
               opacity: 0,
@@ -481,7 +479,7 @@ function animate() {
   }
 
   // moving in all directions
-  movementIf()
+  movementIf();
   // if (keys.w.pressed && lastKey === "w") {
   //   player.animate = true;
   //   player.image = player.sprites.up;
