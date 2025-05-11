@@ -184,14 +184,7 @@ const keys = {
   },
 };
 
-const movables = [
-  exploringBackground,
-  ...boundaries,
-  foreground,
-  ...battleZones,
-  ...chestZones,
-  ...doorZones,
-];
+
 
 function rectangularCollisions({ rectangle1, rectangle2 }) {
   return (
@@ -205,6 +198,8 @@ function rectangularCollisions({ rectangle1, rectangle2 }) {
 const battle = {
   initiated: false,
 };
+
+let movables 
 
 let moving = true;
 
@@ -367,6 +362,15 @@ function animate() {
   });
   player.draw();
   foreground.draw();
+
+  movables = [
+    exploringBackground,
+    ...boundaries,
+    foreground,
+    ...battleZones,
+    ...chestZones,
+    ...doorZones,
+  ];
 
   moving = true;
   player.animate = false;
