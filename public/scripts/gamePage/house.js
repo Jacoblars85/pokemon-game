@@ -38,6 +38,10 @@ function animateHouse() {
   houseAnimationId = window.requestAnimationFrame(animateHouse);
   houseBackground.draw();
 
+  houseBoundaries.forEach((houseBoundary) => {
+    houseBoundary.draw();
+  });
+
   player.draw();
 
   movables = [houseBackground];
