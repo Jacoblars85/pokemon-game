@@ -22,7 +22,7 @@ houseCollisionsMap.forEach((row, i) => {
 });
 
 const houseBackgroundImage = new Image();
-houseBackgroundImage.src = "./img/bowsermon-map-v1.png";
+houseBackgroundImage.src = "./img/backgroundImg/house-interior-background.png";
 
 const houseBackground = new Sprite({
   position: {
