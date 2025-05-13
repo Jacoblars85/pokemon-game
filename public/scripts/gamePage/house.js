@@ -4,6 +4,23 @@ for (let i = 0; i < houseCollisionsArray.length; i += 235) {
     houseCollisionsMap.push(houseCollisionsArray.slice(i, 235 + i));
 }
 
+const houseBoundaries = [];
+
+houseCollisionsMap.forEach((row, i) => {
+  row.forEach((symbol, j) => {
+    if (symbol === 1025) {
+        houseBoundaries.push(
+        new Boundary({
+          position: {
+            x: j * Boundary.width + offset.x,
+            y: i * Boundary.height + offset.y,
+          },
+        })
+      );
+    }
+  });
+});
+
 const houseBackgroundImage = new Image();
 houseBackgroundImage.src = "./img/bowsermon-map-v1.png";
 
