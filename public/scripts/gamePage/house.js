@@ -8,7 +8,7 @@ const houseBoundaries = [];
 
 houseCollisionsMap.forEach((row, i) => {
   row.forEach((symbol, j) => {
-    if (symbol === 1025) {
+    if (symbol === 2207) {
       houseBoundaries.push(
         new Boundary({
           position: {
@@ -44,7 +44,7 @@ function animateHouse() {
 
   player.draw();
 
-  movables = [houseBackground];
+  movables = [houseBackground, ...houseBoundaries,];
 
   moving = true;
   player.animate = false;
