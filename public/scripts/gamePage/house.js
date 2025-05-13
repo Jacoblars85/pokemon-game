@@ -1,7 +1,7 @@
 const houseCollisionsMap = [];
 
 for (let i = 0; i < houseCollisionsArray.length; i += 235) {
-    houseCollisionsMap.push(houseCollisionsArray.slice(i, 235 + i));
+  houseCollisionsMap.push(houseCollisionsArray.slice(i, 235 + i));
 }
 
 const houseBoundaries = [];
@@ -9,7 +9,7 @@ const houseBoundaries = [];
 houseCollisionsMap.forEach((row, i) => {
   row.forEach((symbol, j) => {
     if (symbol === 1025) {
-        houseBoundaries.push(
+      houseBoundaries.push(
         new Boundary({
           position: {
             x: j * Boundary.width + offset.x,
