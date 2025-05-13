@@ -1,3 +1,9 @@
+const houseCollisionsMap = [];
+
+for (let i = 0; i < houseCollisionsArray.length; i += 235) {
+    houseCollisionsMap.push(houseCollisionsArray.slice(i, 235 + i));
+}
+
 const houseBackgroundImage = new Image();
 houseBackgroundImage.src = "./img/bowsermon-map-v1.png";
 
