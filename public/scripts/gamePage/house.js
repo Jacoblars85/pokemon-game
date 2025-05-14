@@ -54,7 +54,5 @@ function animateHouse() {
   moving = true;
   player.animate = false;
 
-  movementIf();
+  movementIf(houseBoundaries);
 }
-
-animateHouse()
