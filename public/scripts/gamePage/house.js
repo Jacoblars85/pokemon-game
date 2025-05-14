@@ -44,7 +44,7 @@ function animateHouse() {
 
   player.draw();
 
-  movables = [houseBackground, ...houseBoundaries,];
+  movables = [houseBackground, ...houseBoundaries];
 
   moving = true;
   player.animate = false;
