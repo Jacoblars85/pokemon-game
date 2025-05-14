@@ -1,7 +1,7 @@
 const houseCollisionsMap = [];
 
-for (let i = 0; i < houseCollisionsArray.length; i += 235) {
-  houseCollisionsMap.push(houseCollisionsArray.slice(i, 235 + i));
+for (let i = 0; i < houseCollisionsArray.length; i += 50) {
+  houseCollisionsMap.push(houseCollisionsArray.slice(i, 50 + i));
 }
 
 const houseOffset = {
@@ -56,3 +56,5 @@ function animateHouse() {
 
   movementIf();
 }
+
+animateHouse()
