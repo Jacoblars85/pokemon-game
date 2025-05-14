@@ -5,9 +5,9 @@ for (let i = 0; i < houseCollisionsArray.length; i += 235) {
 }
 
 const houseOffset = {
-    x: -635.5,
-    y: -625,
-  };
+  x: -635.5,
+  y: -625,
+};
 
 const houseBoundaries = [];
 
