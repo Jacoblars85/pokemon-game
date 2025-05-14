@@ -31,8 +31,8 @@ houseBackgroundImage.src = "./img/backgroundImg/house-interior-background.png";
 
 const houseBackground = new Sprite({
   position: {
-    x: 0,
-    y: 0,
+    x: houseOffset.x,
+    y: houseOffset.y,
   },
   image: houseBackgroundImage,
 });
