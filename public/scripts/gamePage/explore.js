@@ -402,8 +402,6 @@ function animate() {
           rectangle2: doorZone,
         })
       ) {
-        console.log("trying to go into a house");
-
         window.cancelAnimationFrame(animationId);
         gsap.to("#fadeOutDiv", {
           opacity: 1,
@@ -411,7 +409,6 @@ function animate() {
           yoyo: true,
           duration: 0.6,
           onComplete() {
-            console.log("in the house");
             animateHouse();
 
             gsap.to("#fadeOutDiv", {
