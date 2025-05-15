@@ -82,4 +82,35 @@ function animateHouse() {
   player.animate = false;
 
   movementIf(houseBoundaries);
+
+    // open door back to explore
+    if (keys.e.pressed || keys.f.pressed) {
+        for (let i = 0; i < houseDoorZones.length; i++) {
+          const doorZone = houseDoorZones[i];
+    
+          if (
+            rectangularCollisions({
+              rectangle1: player,
+              rectangle2: doorZone,
+            })
+          ) {
+            window.cancelAnimationFrame(houseAnimationId);
+            gsap.to("#fadeOutDiv", {
+              opacity: 1,
+              repeat: 1,
+              yoyo: true,
+              duration: 0.6,
+              onComplete() {
+                animate();
+    
+                gsap.to("#fadeOutDiv", {
+                  opacity: 0,
+                  duration: 0.4,
+                });
+              },
+            });
+            break;
+          }
+        }
+      }
 }
