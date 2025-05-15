@@ -4,6 +4,12 @@ for (let i = 0; i < houseCollisionsArray.length; i += 50) {
   houseCollisionsMap.push(houseCollisionsArray.slice(i, 50 + i));
 }
 
+const houseDoorZonesMap = [];
+
+for (let i = 0; i < houseDoorZonesArray.length; i += 50) {
+  houseDoorZonesMap.push(houseDoorZonesArray.slice(i, 50 + i));
+}
+
 const houseOffset = {
   x: -635.5,
   y: -625,
