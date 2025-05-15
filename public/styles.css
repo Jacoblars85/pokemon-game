@@ -197,5 +197,23 @@ Chest Interface
 -------------------------------------------------------------------------------- */
 
 .chestPopUp {
-  
+  position: absolute;
+  top: 7.5%;
+  left: 5%;
+  width: 616px;
+  height: 368px;
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 25px;
+  background-color: #efefef;
+  border: 2px solid black;
+  box-shadow: 4px 8px 6px -2px black;
+  border-radius: 3px;
+  box-shadow: 5px 3px 7px -2px black;
+  text-align: center;
+  z-index: 100;
 }
