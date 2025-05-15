@@ -346,8 +346,7 @@ function movementIf(boundryParam) {
 function openChest() {
   document.getElementById("chestInterfacePopUp").style.display = "flex";
 
-  
-  
+  document.getElementById("chestInterfacePopUp").innerHTML = "You Won...";
 }
 
 function animate() {
@@ -393,9 +392,9 @@ function animate() {
           rectangle2: chestZone,
         })
       ) {
-        console.log("trying to open a chest");
+        window.cancelAnimationFrame(animationId);
 
-        openChest()
+        openChest();
       }
     }
   }
