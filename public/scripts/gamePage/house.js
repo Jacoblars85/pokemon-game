@@ -32,6 +32,23 @@ houseCollisionsMap.forEach((row, i) => {
   });
 });
 
+const houseDoorZones = [];
+
+houseDoorZonesMap.forEach((row, i) => {
+  row.forEach((symbol, j) => {
+    if (symbol === 2207) {
+      houseDoorZones.push(
+        new Boundary({
+          position: {
+            x: j * Boundary.width + houseOffset.x,
+            y: i * Boundary.height + houseOffset.y,
+          },
+        })
+      );
+    }
+  });
+});
+
 const houseBackgroundImage = new Image();
 houseBackgroundImage.src = "./img/backgroundImg/house-interior-background.png";
 
