@@ -200,8 +200,8 @@ Chest Interface
   left: 20%;
   width: 616px;
   height: 368px;
-  display: flex;
-  /* display: none; */
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
