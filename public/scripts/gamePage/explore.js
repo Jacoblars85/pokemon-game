@@ -387,6 +387,8 @@ function animate() {
         })
       ) {
         console.log("trying to open a chest");
+
+        document.getElementById("chestInterfacePopUp").style.display = "flex";
       }
     }
   }
