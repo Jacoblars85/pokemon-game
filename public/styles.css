@@ -196,8 +196,8 @@ Chest Interface
 
 .chestPopUp {
   position: absolute;
-  top: 7.5%;
-  left: 5%;
+  top: 17.5%;
+  left: 20%;
   width: 616px;
   height: 368px;
   display: flex;
