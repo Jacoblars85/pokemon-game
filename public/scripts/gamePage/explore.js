@@ -343,6 +343,10 @@ function movementIf(boundryParam) {
   }
 }
 
+function openChest() {
+  
+}
+
 function animate() {
   const animationId = window.requestAnimationFrame(animate);
   exploringBackground.draw();
