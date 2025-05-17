@@ -132,8 +132,6 @@ function userOpenReward(rewardId) {
     .catch((err) => {
       console.log(err);
     });
-
-
 }
 
 // starter stats/info
@@ -182,6 +180,7 @@ let enemyOne;
 let starterOne;
 let starterTwo;
 let usersConsumableItems = [];
+let allItems = [];
 
 // axios functions for user info
 function getStarters() {
@@ -343,8 +342,9 @@ function getAllItems() {
     url: "http://localhost:5001/api/inventory/all/items",
   })
     .then((response) => {
-      console.log('got all items');
-      
+      allItems = response.data;
+console.log('allItems', allItems);
+
     })
     .catch((err) => {
       console.log(err);
