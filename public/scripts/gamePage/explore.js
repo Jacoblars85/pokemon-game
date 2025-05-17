@@ -349,14 +349,12 @@ function openChest() {
 
   userOpenReward(rewardId);
 
-  allItems.forEach(item => {
+  allItems.forEach((item) => {
     // console.log('item', item);
     // console.log('rewardId', rewardId);
-    
-    
+
     if (item.id === rewardId) {
-      console.log('match', item);
-      
+      console.log("match", item);
     }
   });
 
