@@ -121,6 +121,17 @@ function changeUsername(newName) {
 }
 
 function userOpenReward() {
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/user/reward/open`,
+  })
+    .then((response) => {
+      console.log("finished opening the reward axios");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
   try {
   const levelUpResponse = yield axios({
     method: 'PUT',
