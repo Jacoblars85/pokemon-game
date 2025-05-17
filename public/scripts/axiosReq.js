@@ -337,6 +337,20 @@ function getAllUsersItems(resetBattleFunc) {
     });
 }
 
+function getAllItems() {
+  axios({
+    method: "GET",
+    url: "http://localhost:5001/api/inventory/all/items",
+  })
+    .then((response) => {
+      console.log('got all items');
+      
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function putWonBattle(reward) {
   axios({
     method: "PUT",
