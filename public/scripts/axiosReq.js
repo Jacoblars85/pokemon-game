@@ -120,6 +120,21 @@ function changeUsername(newName) {
     });
 }
 
+function userOpenReward() {
+  try {
+  const levelUpResponse = yield axios({
+    method: 'PUT',
+    url: `/api/user/reward/open`,
+    data: action.payload
+})
+    yield put({
+      type: 'SAGA_FETCH_IVENTORY',
+    })
+  } catch (error) {
+    console.log('Unable to put open reward to server', error);
+  }
+}
+
 // starter stats/info
 let starterOneHp = 0;
 let starterOneStamina = 0;
