@@ -120,10 +120,11 @@ function changeUsername(newName) {
     });
 }
 
-function userOpenReward() {
+function userOpenReward(rewardId) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/user/reward/open`,
+    data: rewardId,
   })
     .then((response) => {
       console.log("finished opening the reward axios");
