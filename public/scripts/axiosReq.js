@@ -322,7 +322,7 @@ function getBasicAttacks() {
     });
 }
 
-function getAllUsersItems(resetBattleFunc) {
+function getAllUsersConsumables(resetBattleFunc) {
   axios({
     method: "GET",
     url: "http://localhost:5001/api/inventory/user/consumable",
