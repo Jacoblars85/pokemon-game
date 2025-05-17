@@ -505,7 +505,7 @@ function resetBattleFunc() {
           url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
         })
           .then((response) => {
-            getAllUsersItems(resetBattleFunc);
+            getAllUsersConsumables(resetBattleFunc);
           })
           .catch((err) => {
             console.log(err);
