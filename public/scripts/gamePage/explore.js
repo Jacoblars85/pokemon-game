@@ -349,6 +349,15 @@ function openChest() {
 
   userOpenReward(rewardId);
 
+  allItems.forEach(item => {
+    // console.log('item', item);
+    
+    if (item.id === rewardId) {
+      console.log('match');
+      
+    }
+  });
+
   document.getElementById("chestInterfacePopUp").style.display = "flex";
 
   document.getElementById("chestInterfacePopUp").innerHTML = "You Won...";
