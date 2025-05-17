@@ -4,7 +4,7 @@ let randomEnemy = Math.floor(Math.random() * 8 + 1);
 getStarters();
 getEnemy(randomEnemy);
 getBasicAttacks();
-getAllUsersItems();
+getAllUsersConsumables();
 
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
 // import forestBackground from "./img/backgroundImg/RockForest.webp";
