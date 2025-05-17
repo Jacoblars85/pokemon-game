@@ -343,8 +343,7 @@ function getAllItems() {
   })
     .then((response) => {
       allItems = response.data;
-console.log('allItems', allItems);
-
+      console.log("allItems", allItems);
     })
     .catch((err) => {
       console.log(err);
