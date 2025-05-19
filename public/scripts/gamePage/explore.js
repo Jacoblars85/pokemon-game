@@ -349,6 +349,8 @@ function openChest() {
 
   // userOpenReward(rewardId);
 
+  document.getElementById("chestInterfacePopUp").style.display = "flex";
+
   allItems.forEach((item) => {
     // console.log('item', item);
     // console.log('rewardId', rewardId);
@@ -357,6 +359,8 @@ function openChest() {
       console.log("match", item);
 
       document.getElementById("rewardPicDiv").innerHTML = `
+      <p>${item.item_name}</p>
+
       <img
                       height="75"
                       width="75"
@@ -366,9 +370,7 @@ function openChest() {
     }
   });
 
-  document.getElementById("chestInterfacePopUp").style.display = "flex";
 
-  // document.getElementById("chestInterfacePopUp").innerHTML = "";
 }
 
 function animate() {
