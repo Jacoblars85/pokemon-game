@@ -347,7 +347,7 @@ function movementIf(boundryParam) {
 function openChest() {
   let rewardId = Math.floor(Math.random() * 14 + 1);
 
-  userOpenReward(rewardId);
+  // userOpenReward(rewardId);
 
   allItems.forEach((item) => {
     // console.log('item', item);
@@ -355,12 +355,20 @@ function openChest() {
 
     if (item.id === rewardId) {
       console.log("match", item);
+
+      document.getElementById("rewardPicDiv").innerHTML = `
+      <img
+                      height="75"
+                      width="75"
+                      src=${item.item_pic}
+                    />
+      `
     }
   });
 
   document.getElementById("chestInterfacePopUp").style.display = "flex";
 
-  document.getElementById("chestInterfacePopUp").innerHTML = "You Won...";
+  // document.getElementById("chestInterfacePopUp").innerHTML = "";
 }
 
 function animate() {
