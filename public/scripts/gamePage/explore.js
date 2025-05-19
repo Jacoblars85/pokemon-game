@@ -352,9 +352,6 @@ function openChest() {
   document.getElementById("chestInterfacePopUp").style.display = "flex";
 
   allItems.forEach((item) => {
-    // console.log('item', item);
-    // console.log('rewardId', rewardId);
-
     if (item.id === rewardId) {
       console.log("match", item);
 
@@ -362,15 +359,13 @@ function openChest() {
       <p>${item.item_name}</p>
 
       <img
-                      height="75"
-                      width="75"
-                      src=${item.item_pic}
-                    />
-      `
+        height="75"
+        width="75"
+        src=${item.item_pic}
+      />
+      `;
     }
   });
-
-
 }
 
 function animate() {
