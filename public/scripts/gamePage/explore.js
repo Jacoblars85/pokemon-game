@@ -372,6 +372,10 @@ function openChest() {
   });
 }
 
+function closeChest() {
+  
+}
+
 function animate() {
   const animationId = window.requestAnimationFrame(animate);
   exploringBackground.draw();
