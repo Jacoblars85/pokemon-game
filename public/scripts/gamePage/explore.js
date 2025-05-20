@@ -416,6 +416,7 @@ function animate() {
         })
       ) {
         window.cancelAnimationFrame(animationId);
+        chest.opened = true
 
         openChest();
       }
