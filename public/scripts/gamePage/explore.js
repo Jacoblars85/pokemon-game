@@ -356,7 +356,7 @@ function openChest() {
       console.log("match", item);
 
       document.getElementById("rewardPicDiv").innerHTML = `
-      <p>${item.item_name}</p>
+      <h3>${item.item_name}</h3>
 
       <img
         height="75"
