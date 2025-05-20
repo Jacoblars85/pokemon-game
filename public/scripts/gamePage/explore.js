@@ -402,7 +402,7 @@ function animate() {
   moving = true;
   player.animate = false;
 
-  if (battle.initiated) return;
+  if (battle.initiated || chest.opened) return;
 
   // open chest
   if (keys.e.pressed || keys.f.pressed) {
