@@ -376,8 +376,7 @@ function closeChest() {
   // animate()
   document.getElementById("chestInterfacePopUp").style.display = "none";
 
-  chest.opened = false
-  
+  chest.opened = false;
 }
 
 function animate() {
@@ -424,7 +423,7 @@ function animate() {
         })
       ) {
         // window.cancelAnimationFrame(animationId);
-        chest.opened = true
+        chest.opened = true;
 
         openChest();
       }
