@@ -198,6 +198,10 @@ const battle = {
   initiated: false,
 };
 
+const chest = {
+  opened: false,
+};
+
 let movables;
 
 let moving = true;
