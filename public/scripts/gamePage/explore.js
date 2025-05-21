@@ -118,7 +118,7 @@ const foregroundImage = new Image();
 foregroundImage.src = "./img/backgroundImg/foregroundObjects.png";
 
 const playerDownImage = new Image();
-playerDownImage.src = "./img/playerDown.png";
+playerDownImage.src = "./img/sprites/Player/playerDown.png";
 
 const playerUpImage = new Image();
 playerUpImage.src = "./img/playerUp.png";
