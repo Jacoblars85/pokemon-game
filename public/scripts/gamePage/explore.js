@@ -112,7 +112,7 @@ doorZonesMap.forEach((row, i) => {
 });
 
 const worldImage = new Image();
-worldImage.src = "./img/bowsermon-map-v1.png";
+worldImage.src = "./img/backgroundImg/bowsermon-map-v1.png";
 
 const foregroundImage = new Image();
 foregroundImage.src = "./img/foregroundObjects.png";
