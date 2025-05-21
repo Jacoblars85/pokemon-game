@@ -127,7 +127,7 @@ const playerLeftImage = new Image();
 playerLeftImage.src = "./img/sprites/Player/playerLeft.png";
 
 const playerRightImage = new Image();
-playerRightImage.src = "./img/playerRight.png";
+playerRightImage.src = "./img/sprites/Player/playerRight.png";
 
 const player = new Sprite({
   position: {
