@@ -115,7 +115,7 @@ const worldImage = new Image();
 worldImage.src = "./img/backgroundImg/bowsermon-map-v1.png";
 
 const foregroundImage = new Image();
-foregroundImage.src = "./img/foregroundObjects.png";
+foregroundImage.src = "./img/backgroundImg/foregroundObjects.png";
 
 const playerDownImage = new Image();
 playerDownImage.src = "./img/playerDown.png";
