@@ -373,7 +373,6 @@ function openChest() {
 }
 
 function closeChest() {
-  // animate()
   document.getElementById("chestInterfacePopUp").style.display = "none";
 
   chest.opened = false;
@@ -422,7 +421,6 @@ function animate() {
           rectangle2: chestZone,
         })
       ) {
-        // window.cancelAnimationFrame(animationId);
         chest.opened = true;
         chestZones.splice(i, 1);
         openChest();
