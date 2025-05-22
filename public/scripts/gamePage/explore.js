@@ -348,9 +348,11 @@ function movementIf(boundryParam) {
   }
 }
 
-function openChest() {
+function openChest(boundryId) {
   let rewardId = Math.floor(Math.random() * 14 + 1);
 
+  console.log('boundryId', boundryId);
+  
   // userOpenReward(rewardId);
 
   document.getElementById("chestInterfacePopUp").style.display = "flex";
@@ -421,7 +423,7 @@ function animate() {
       ) {
         chest.opened = true;
         chestZones.splice(i, 1);
-        openChest();
+        openChest(i);
       }
     }
   }
