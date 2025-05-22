@@ -416,7 +416,6 @@ function animate() {
     for (let i = 0; i < chestZones.length; i++) {
       const chestZone = chestZones[i];
 
-
       if (
         rectangularCollisions({
           rectangle1: player,
@@ -425,7 +424,7 @@ function animate() {
       ) {
         // window.cancelAnimationFrame(animationId);
         chest.opened = true;
-        chestZones.splice(i, 1)
+        chestZones.splice(i, 1);
         openChest();
       }
     }
