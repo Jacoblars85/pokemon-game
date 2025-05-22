@@ -357,8 +357,6 @@ function openChest() {
 
   allItems.forEach((item) => {
     if (item.id === rewardId) {
-      console.log("match", item);
-
       document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${item.item_name}</h3>
 
