@@ -422,8 +422,8 @@ function animate() {
         })
       ) {
         chest.opened = true;
-        chestZones.splice(i, 1);
         openChest(i);
+        chestZones.splice(i, 1);
       }
     }
   }
