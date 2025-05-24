@@ -315,12 +315,40 @@ router.put("/won/battle", (req, res) => {
       pool
         .query(sqlText, sqlValues)
         .then((result) => {
+                let sqlText;
+
+      // if (Math.floor(req.user.xp_level + req.body.xp) > req.user.rewards_received) {
+      if (Math.floor(1.75 + req.body.xp) > 1) {
+        sqlText = `
+    UPDATE "user"
+          SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1,  "rewards_received" = "rewards_received" + 1
+          WHERE "id" = $2;
+      `;
+      } else {
+        sqlText = `
+    UPDATE "user"
+          SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1
+          WHERE "id" = $2;
+      `;
+      }
+
+      // const sqlValues = [req.body.xp, req.user.id];
+      const sqlValues = [req.body.xp, 1];
+
+      pool
+        .query(sqlText, sqlValues)
+        .then((result) => {
           res.sendStatus(201);
         })
         .catch((err) => {
           console.log("Error in user.router /won/battle PUT,", err);
           res.sendStatus(500);
         });
+        })
+    .catch((err) => {
+      console.log("Error in user.router /won/battle PUT,", err);
+      res.sendStatus(500);
+    });
     })
     .catch((err) => {
       console.log("Error in user.router /won/battle PUT,", err);
