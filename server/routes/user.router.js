@@ -315,31 +315,29 @@ router.put("/won/battle", (req, res) => {
       pool
         .query(sqlText, sqlValues)
         .then((result) => {
-                  const sqlText = `
+          const sqlText = `
     UPDATE "user_characters"
-  SET "starter_1" = FALSE
-    WHERE "user_id" = $1;
+  SET "xp_level" = "xp_level" + $1
+    WHERE "user_id" = $3 AND "id" = $2;
       `;
 
+          // const sqlValues = [req.body.characterXp,req.body.currentStarterId, req.user.id];
+          const sqlValues = [req.body.characterXp, req.body.currentStarterId, 1];
 
-
-      // const sqlValues = [req.body.xp, req.user.id];
-      const sqlValues = [req.body.characterXp, currentStarterId, 1];
-
-      pool
-        .query(sqlText, sqlValues)
-        .then((result) => {
-          res.sendStatus(201);
+          pool
+            .query(sqlText, sqlValues)
+            .then((result) => {
+              res.sendStatus(201);
+            })
+            .catch((err) => {
+              console.log("Error in user.router /won/battle PUT,", err);
+              res.sendStatus(500);
+            });
         })
         .catch((err) => {
           console.log("Error in user.router /won/battle PUT,", err);
           res.sendStatus(500);
         });
-        })
-    .catch((err) => {
-      console.log("Error in user.router /won/battle PUT,", err);
-      res.sendStatus(500);
-    });
     })
     .catch((err) => {
       console.log("Error in user.router /won/battle PUT,", err);
