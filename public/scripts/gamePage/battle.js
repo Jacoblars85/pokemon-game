@@ -287,6 +287,9 @@ function resetBattleFunc() {
         else if (characterSelectedAttack === pokeAttackStats.attack_name)
           selectedAttack = pokeAttackStats;
 
+            let winningInfo = { xp: 0.25, characterXp: .2, currentStarterId: currentStarter };
+
+
         if (currentStarter.speed >= enemySpeed) {
           currentStarter.attack({
             attack: selectedAttack,
@@ -299,7 +302,7 @@ function resetBattleFunc() {
               enemy.faint();
             });
 
-            let winningInfo = { xp: 0.25, characterXp: .2, currentStarterId: currentStarter };
+            winningInfo = { xp: 0.25, characterXp: .2, currentStarterId: currentStarter };
 
             putWonBattle(winningInfo);
 
