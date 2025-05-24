@@ -400,9 +400,9 @@ function resetBattleFunc() {
                 enemy.faint();
               });
 
-              let reward = { xp: 0.25 };
+              
 
-              putWonBattle(reward);
+              putWonBattle(winningInfo);
 
               queue.push(() => {
                 document.getElementById("dialogueBox").innerHTML =
