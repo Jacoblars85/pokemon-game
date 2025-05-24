@@ -349,11 +349,11 @@ function getAllItems() {
     });
 }
 
-function putWonBattle(reward) {
+function putWonBattle(rewardInfo) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/user/won/battle`,
-    data: reward,
+    data: rewardInfo,
   })
     .then((response) => {
       console.log("finished winning battle axios");
