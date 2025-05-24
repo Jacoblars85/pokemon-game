@@ -299,7 +299,7 @@ function resetBattleFunc() {
               enemy.faint();
             });
 
-            let reward = { xp: 0.25 };
+            let reward = { xp: 0.25, characterXp: .2, currentStarterId: currentStarter };
 
             putWonBattle(reward);
 
