@@ -299,9 +299,9 @@ function resetBattleFunc() {
               enemy.faint();
             });
 
-            let wiiningInfo = { xp: 0.25, characterXp: .2, currentStarterId: currentStarter };
+            let winningInfo = { xp: 0.25, characterXp: .2, currentStarterId: currentStarter };
 
-            putWonBattle(wiiningInfo);
+            putWonBattle(winningInfo);
 
             queue.push(() => {
               document.getElementById("dialogueBox").innerHTML =
