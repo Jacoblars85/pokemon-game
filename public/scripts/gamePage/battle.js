@@ -302,7 +302,6 @@ function resetBattleFunc() {
               enemy.faint();
             });
 
-            winningInfo = { xp: 0.25, characterXp: .2, currentStarterId: currentStarter };
 
             putWonBattle(winningInfo);
 
