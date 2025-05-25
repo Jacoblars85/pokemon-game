@@ -316,9 +316,9 @@ router.put("/won/battle", (req, res) => {
         .query(sqlText, sqlValues)
         .then((result) => {
           const sqlText = `
-    UPDATE "user_characters"
-  SET "xp_level" = "xp_level" + $1
-    WHERE "user_id" = $3 AND "id" = $2;
+          UPDATE "user_characters"
+            SET "xp_level" = "xp_level" + $1
+            WHERE "user_id" = $3 AND "id" = $2;
       `;
 
           // const sqlValues = [req.body.characterXp,req.body.currentStarterId, req.user.id];
