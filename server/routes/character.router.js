@@ -143,6 +143,25 @@ SELECT  "characters"."character_name",
   pool
     .query(query, sqlValues)
     .then((result) => {
+
+            let multiplier = 0.2;
+
+      for (const starter of result.rows) {
+        multiplier += Math.floor(starter.xp_level);
+
+        starter.hp *= multiplier;
+        starter.stamina *= multiplier;
+        starter.speed *= multiplier;
+        starter.attack_damage *= multiplier;
+
+        if (starter.item_id !== null) {
+          starter.hp += starter.item_hp;
+          starter.stamina += starter.item_stamina;
+          starter.speed += starter.item_speed;
+          starter.attack_damage += starter.item_damage;
+        }
+      }
+      
       res.send(result.rows);
     })
     .catch((err) => {
