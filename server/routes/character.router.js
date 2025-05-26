@@ -146,22 +146,22 @@ SELECT  "characters"."character_name",
 
             let multiplier = 0.2;
 
-      for (const starter of result.rows) {
-        multiplier += Math.floor(starter.xp_level);
+      for (const enemy of result.rows) {
+        multiplier += Math.floor(enemy.xp_level);
 
-        starter.hp *= multiplier;
-        starter.stamina *= multiplier;
-        starter.speed *= multiplier;
-        starter.attack_damage *= multiplier;
+        enemy.hp *= multiplier;
+        enemy.stamina *= multiplier;
+        enemy.speed *= multiplier;
+        enemy.attack_damage *= multiplier;
 
-        if (starter.item_id !== null) {
-          starter.hp += starter.item_hp;
-          starter.stamina += starter.item_stamina;
-          starter.speed += starter.item_speed;
-          starter.attack_damage += starter.item_damage;
+        if (enemy.item_id !== null) {
+          enemy.hp += enemy.item_hp;
+          enemy.stamina += enemy.item_stamina;
+          enemy.speed += enemy.item_speed;
+          enemy.attack_damage += enemy.item_damage;
         }
       }
-      
+
       res.send(result.rows);
     })
     .catch((err) => {
