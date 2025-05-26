@@ -153,13 +153,6 @@ SELECT  "characters"."character_name",
         enemy.stamina *= multiplier;
         enemy.speed *= multiplier;
         enemy.attack_damage *= multiplier;
-
-        if (enemy.item_id !== null) {
-          enemy.hp += enemy.item_hp;
-          enemy.stamina += enemy.item_stamina;
-          enemy.speed += enemy.item_speed;
-          enemy.attack_damage += enemy.item_damage;
-        }
       }
 
       res.send(result.rows);
