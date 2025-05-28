@@ -5,6 +5,7 @@ getStarters();
 getEnemy(randomEnemy);
 getBasicAttacks();
 getAllUsersConsumables();
+getAllUsersThrowables()
 getAllItems();
 
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
