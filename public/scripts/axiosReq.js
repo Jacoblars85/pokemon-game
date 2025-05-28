@@ -1,3 +1,5 @@
+// axios functions for user info
+
 const config = {
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
@@ -182,7 +184,7 @@ let starterTwo;
 let usersConsumableItems = [];
 let allItems = [];
 
-// axios functions for user info
+// axios functions for user info for battle
 function getStarters() {
   axios({
     method: "GET",
