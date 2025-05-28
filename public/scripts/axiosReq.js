@@ -345,8 +345,6 @@ function getAllUsersThrowables(resetBattleFunc) {
     url: "http://localhost:5001/api/inventory/user/throwable",
   })
     .then((response) => {
-      console.log('in get throw');
-      
       usersThrowablesItems = response.data;
 
       console.log('usersThrowablesItems', usersThrowablesItems);
