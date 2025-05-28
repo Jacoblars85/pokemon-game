@@ -4,6 +4,7 @@ let randomEnemy = Math.floor(Math.random() * 8 + 1);
 getStarters();
 getEnemy(randomEnemy);
 getBasicAttacks();
+getAllUsersBattleItems()
 getAllUsersConsumables();
 getAllUsersThrowables()
 getAllItems();
