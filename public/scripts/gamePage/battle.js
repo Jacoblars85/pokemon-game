@@ -133,7 +133,7 @@ function resetBattleFunc() {
   }
 
   // InnerHtml for the inventory box
-  for (const usersConsumables of usersConsumableItems) {
+  for (const usersItems of usersBattleItems) {
     document.getElementById("inventoryBox").innerHTML += `
         <div height="140px">
             <div
@@ -161,19 +161,19 @@ function resetBattleFunc() {
                         font-size: 25px;
                       "
                     >
-                      ${usersConsumables.number}X
+                      ${usersItems.number}X
                     </p>
                     <img
                       height="35"
                       width="35"
-                      src=${usersConsumables.item_pic}
+                      src=${usersItems.item_pic}
                     />
                   </div>
                   <p
                     style="
                       ml: 20;
                     "">
-                    ${usersConsumables.item_name}
+                    ${usersItems.item_name}
                   </p>
   
                   <p
@@ -184,23 +184,23 @@ function resetBattleFunc() {
                       text-align: center;
                     ">
                     ${
-                      usersConsumables.item_hp === 0
+                      usersItems.item_hp === 0
                         ? ""
-                        : `+${usersConsumables.item_hp} hp`
+                        : `+${usersItems.item_hp} hp`
                     } ${
-      usersConsumables.item_stamina === 0
+      usersItems.item_stamina === 0
         ? ""
-        : usersConsumables.item_hp === 0
-        ? `+${usersConsumables.item_stamina} stamina`
-        : `| +${usersConsumables.item_stamina} stamina`
+        : usersItems.item_hp === 0
+        ? `+${usersItems.item_stamina} stamina`
+        : `| +${usersItems.item_stamina} stamina`
     } ${
-      usersConsumables.item_speed === 0
+      usersItems.item_speed === 0
         ? ""
-        : `| +${usersConsumables.item_speed} speed`
+        : `| +${usersItems.item_speed} speed`
     }
                   </p>
                   <button
-                  id=${usersConsumables.items_id}
+                  id=${usersItems.items_id}
                     style="
                       color: black;
                       font-size: 15;
@@ -492,9 +492,9 @@ function resetBattleFunc() {
 
         let itemBeingUsed;
 
-        for (const usersConsumables of usersConsumableItems) {
-          if (usersConsumables.items_id == e.target.id) {
-            itemBeingUsed = usersConsumables;
+        for (const usersItems of usersBattleItems) {
+          if (usersItems.items_id == e.target.id) {
+            itemBeingUsed = usersItems;
           }
         }
 
