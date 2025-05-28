@@ -356,6 +356,23 @@ function getAllUsersThrowables(resetBattleFunc) {
     });
 }
 
+function getAllUsersBattleItems(resetBattleFunc) {
+  axios({
+    method: "GET",
+    url: "http://localhost:5001/api/inventory/user/battle/items",
+  })
+    .then((response) => {
+      usersBattleItems = response.data;
+
+      console.log('usersThrowablesItems', usersThrowablesItems);
+      
+      if (resetBattleFunc) resetBattleFunc();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function getAllItems() {
   axios({
     method: "GET",
