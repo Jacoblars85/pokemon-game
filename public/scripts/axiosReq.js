@@ -181,6 +181,7 @@ let starters = [];
 let enemyOne;
 let starterOne;
 let starterTwo;
+let usersBattleItems = [];
 let usersConsumableItems = [];
 let usersThrowablesItems = [];
 let allItems = [];
@@ -364,7 +365,7 @@ function getAllUsersBattleItems(resetBattleFunc) {
     .then((response) => {
       usersBattleItems = response.data;
 
-      console.log('usersThrowablesItems', usersThrowablesItems);
+      console.log('usersBattleItems', usersBattleItems);
       
       if (resetBattleFunc) resetBattleFunc();
     })
