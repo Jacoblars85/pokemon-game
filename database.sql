@@ -253,6 +253,10 @@ INSERT INTO "items"
 	('sword', 'held', 0, 0, 0, 20, '../../images/held/SwordSprite.png', 150, '#000000'),
 	('book', 'held', 0, 20, 10, 0, '../../images/held/BookSprite.png', 120, '#000000'),
 	('magic wand', 'held', 15, 0, 0, 0, '../../images/held/MagicWandSprite.png', 150, '#000000');
+		('ball 1', 'held', 0, 20, 10, 0, '', 20, '#000000'),
+			('ball 2', 'held', 0, 20, 10, 0, '', 50, '#000000'),
+				('ball 3', 'held', 0, 20, 10, 0, '', 100, '#000000'),
+					('ball 4', 'held', 0, 20, 10, 0, '', 200, '#000000'),
 	
 	
 INSERT INTO "rewards" 
