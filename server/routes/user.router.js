@@ -54,7 +54,7 @@ router.post("/register", (req, res, next) => {
           INSERT INTO "user_inventory" 
             ("user_id", "items_id", "number")
             VALUES
-            ($1, 1, 0),
+            ($1, 1, 5),
             ($1, 2, 0),
             ($1, 3, 0),
             ($1, 4, 0),
@@ -67,7 +67,12 @@ router.post("/register", (req, res, next) => {
             ($1, 11, 0),
             ($1, 12, 0),
             ($1, 13, 0),
-            ($1, 14, 0)
+            ($1, 14, 0),
+            ($1, 15, 0),
+            ($1, 16, 0),
+            ($1, 17, 0),
+            ($1, 18, 0),
+            ($1, 19, 0)
             RETURNING user_id;;
         `;
           const insertNewUserValues = [createdUserId];
