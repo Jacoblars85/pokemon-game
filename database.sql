@@ -239,6 +239,10 @@ INSERT INTO "levels"
 INSERT INTO "items" 
 	("item_name", "item_type", "item_hp", "item_stamina", "item_speed", "item_damage", "item_pic", "item_cost", "item_color")
 	VALUES 
+			('ball 1', 'held', 0, 20, 10, 0, '', 20, '#000000'),
+			('ball 2', 'held', 0, 20, 10, 0, '', 50, '#000000'),
+				('ball 3', 'held', 0, 20, 10, 0, '', 100, '#000000'),
+					('ball 4', 'held', 0, 20, 10, 0, '', 200, '#000000'),
 	('healing pot', 'consumable', 50, 0, 0, 0, '../../images/consumables/LifePot.png', 10, '#FF0100'),
 	('stamina pot', 'consumable', 0, 70, 0, 0, '../../images/consumables/WaterPot.png', 10, '#00D400'),
 	('speed pot', 'consumable', 0, 50, 10, 0, '../../images/consumables/Honey.png', 40, '#FF9A1E'),
@@ -253,10 +257,6 @@ INSERT INTO "items"
 	('sword', 'held', 0, 0, 0, 20, '../../images/held/SwordSprite.png', 150, '#000000'),
 	('book', 'held', 0, 20, 10, 0, '../../images/held/BookSprite.png', 120, '#000000'),
 	('magic wand', 'held', 15, 0, 0, 0, '../../images/held/MagicWandSprite.png', 150, '#000000');
-		('ball 1', 'held', 0, 20, 10, 0, '', 20, '#000000'),
-			('ball 2', 'held', 0, 20, 10, 0, '', 50, '#000000'),
-				('ball 3', 'held', 0, 20, 10, 0, '', 100, '#000000'),
-					('ball 4', 'held', 0, 20, 10, 0, '', 200, '#000000'),
 	
 	
 INSERT INTO "rewards" 
