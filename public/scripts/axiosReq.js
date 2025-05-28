@@ -349,7 +349,7 @@ function getAllUsersThrowables(resetBattleFunc) {
 
       console.log('usersThrowablesItems', usersThrowablesItems);
       
-      // if (resetBattleFunc) resetBattleFunc();
+      if (resetBattleFunc) resetBattleFunc();
     })
     .catch((err) => {
       console.log(err);
