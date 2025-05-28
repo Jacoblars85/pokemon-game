@@ -274,7 +274,7 @@ router.get("/user/battle/items", (req, res) => {
     FROM "user_inventory"
         INNER JOIN "items"
     ON "user_inventory"."items_id" = "items"."id"
-        WHERE "user_id" = 1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'throwable'
+        WHERE "user_id" = 1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'throwable' OR "items"."item_type" = 'consumable'
         ORDER BY "items_id" ASC;
   `;
 
@@ -290,7 +290,7 @@ router.get("/user/battle/items", (req, res) => {
       res.send(result.rows);
     })
     .catch((err) => {
-      console.log("ERROR: Get all users throwable", err);
+      console.log("ERROR: Get all users battle items", err);
       res.sendStatus(500);
     });
 });
