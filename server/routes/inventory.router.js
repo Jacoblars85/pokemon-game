@@ -274,12 +274,12 @@ router.get("/user/battle/items", (req, res) => {
     FROM "user_inventory"
         INNER JOIN "items"
     ON "user_inventory"."items_id" = "items"."id"
-        WHERE "user_id" = 1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'throwable' OR "items"."item_type" = 'consumable'
+        WHERE "user_id" = 1 AND "user_inventory"."number" > 0 AND ("items"."item_type" = 'throwable' OR "items"."item_type" = 'consumable')
         ORDER BY "items_id" ASC;
   `;
 
   //   this is the acual where sql
-  // WHERE "user_id" = $1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'throwable'
+  // WHERE "user_id" = $1 AND "user_inventory"."number" > 0 AND ("items"."item_type" = 'throwable' OR "items"."item_type" = 'consumable')
 
   //   const sqlValues = [req.user.id];
 
