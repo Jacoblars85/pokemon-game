@@ -207,7 +207,7 @@ function resetBattleFunc() {
                       border-color: black;
                       cursor: pointer;
                     "
-                  >Use Consumable</button>
+                  >Use Item</button>
                 </div>
             </div>
             <div style="
@@ -485,7 +485,7 @@ function resetBattleFunc() {
             resetBattleFunc();
           });
         }
-      } else if (e.target.innerHTML === "Use Consumable") {
+      } else if (e.target.innerHTML === "Use Item") {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
