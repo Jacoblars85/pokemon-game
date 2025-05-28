@@ -342,9 +342,11 @@ function getAllUsersThrowables(resetBattleFunc) {
     url: "http://localhost:5001/api/inventory/user/throwable",
   })
     .then((response) => {
-      usersConsumableItems = response.data;
+      console.log('in get throw');
+      
+      // usersConsumableItems = response.data;
 
-      if (resetBattleFunc) resetBattleFunc();
+      // if (resetBattleFunc) resetBattleFunc();
     })
     .catch((err) => {
       console.log(err);
