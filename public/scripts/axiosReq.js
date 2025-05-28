@@ -182,6 +182,7 @@ let enemyOne;
 let starterOne;
 let starterTwo;
 let usersConsumableItems = [];
+let usersThrowablesItems = [];
 let allItems = [];
 
 // axios functions for user info for battle
@@ -346,8 +347,10 @@ function getAllUsersThrowables(resetBattleFunc) {
     .then((response) => {
       console.log('in get throw');
       
-      // usersConsumableItems = response.data;
+      usersThrowablesItems = response.data;
 
+      console.log('usersThrowablesItems', usersThrowablesItems);
+      
       // if (resetBattleFunc) resetBattleFunc();
     })
     .catch((err) => {
