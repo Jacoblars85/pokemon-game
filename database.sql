@@ -239,10 +239,10 @@ INSERT INTO "levels"
 INSERT INTO "items" 
 	("item_name", "item_type", "item_hp", "item_stamina", "item_speed", "item_damage", "item_pic", "item_cost", "item_color")
 	VALUES 
-	('ball 1', 'held', 0, 0, 0, 0, '', 20, '#000000'),
-	('ball 2', 'held', 0, 0, 0, 0, '', 50, '#000000'),
-	('ball 3', 'held', 0, 0, 0, 0, '', 100, '#000000'),
-	('ball 4', 'held', 0, 0, 0, 0, '', 200, '#000000'),
+	('ball 1', 'throwable', 0, 0, 0, 0, '', 20, '#000000'),
+	('ball 2', 'throwable', 0, 0, 0, 0, '', 50, '#000000'),
+	('ball 3', 'throwable', 0, 0, 0, 0, '', 100, '#000000'),
+	('ball 4', 'throwable', 0, 0, 0, 0, '', 200, '#000000'),
 	('healing pot', 'consumable', 50, 0, 0, 0, '../../images/consumables/LifePot.png', 10, '#FF0100'),
 	('stamina pot', 'consumable', 0, 70, 0, 0, '../../images/consumables/WaterPot.png', 10, '#00D400'),
 	('speed pot', 'consumable', 0, 50, 10, 0, '../../images/consumables/Honey.png', 40, '#FF9A1E'),
