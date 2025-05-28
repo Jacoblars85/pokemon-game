@@ -190,7 +190,7 @@ router.get("/user/consumable", (req, res) => {
     });
 });
 
-router.get("/user/balls", (req, res) => {
+router.get("/user/throwable", (req, res) => {
   const query = `
     SELECT "user_inventory"."id" as "id",
             "user_inventory"."user_id" as "user_id",
@@ -208,12 +208,12 @@ router.get("/user/balls", (req, res) => {
     FROM "user_inventory"
         INNER JOIN "items"
     ON "user_inventory"."items_id" = "items"."id"
-        WHERE "user_id" = 1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'consumable'
+        WHERE "user_id" = 1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'throwable'
         ORDER BY "items_id" ASC;
   `;
 
   //   this is the acual where sql
-  // WHERE "user_id" = $1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'consumable'
+  // WHERE "user_id" = $1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'throwable'
 
   //   const sqlValues = [req.user.id];
 
@@ -224,7 +224,7 @@ router.get("/user/balls", (req, res) => {
       res.send(result.rows);
     })
     .catch((err) => {
-      console.log("ERROR: Get all users inventory", err);
+      console.log("ERROR: Get all users throwable", err);
       res.sendStatus(500);
     });
 });
