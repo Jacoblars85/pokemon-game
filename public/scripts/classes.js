@@ -204,9 +204,7 @@ class Character extends Sprite {
     } else {
       console.log('trying to heal');
       
-    }
-
-    gsap.to(this.position, {
+          gsap.to(this.position, {
       x: this.position.x + 10,
       yoyo: true,
       repeat: 5,
@@ -226,6 +224,9 @@ class Character extends Sprite {
         });
       },
     });
+    }
+
+
   }
 
   attack({ attack, recipient, renderedSprites }) {
