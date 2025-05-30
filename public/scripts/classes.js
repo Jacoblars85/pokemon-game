@@ -220,6 +220,33 @@ class Character extends Sprite {
         rotation,
       });
       
+       renderedSprites.splice(2, 0, throwableFx);
+
+      gsap.to(throwableFx.position, {
+        x: recipient.position.x,
+        y: recipient.position.y,
+        onComplete: () => {
+          // gsap.to(healthBar, {
+          //   width: (recipient.health / recipient.maxHealth) * 100 + "%",
+          // });
+          gsap.to(recipient.position, {
+            x: recipient.position.x + 10,
+            yoyo: true,
+            repeat: 5,
+            duration: 0.08,
+          });
+          gsap.to(recipient, {
+            opacity: 0,
+            repeat: 5,
+            yoyo: true,
+            duration: 0.08,
+          });
+
+          renderedSprites.splice(2, 1);
+        },
+      });
+
+      
     } else if (item.item_type === "consumable") {
       console.log("trying to heal");
 
