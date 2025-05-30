@@ -186,7 +186,7 @@ class Character extends Sprite {
     });
   }
 
-  usingItem({ item }) {
+  usingItem({ item, recipient, renderedSprites }) {
     document.getElementById("dialogueBox").style.display = "block";
     document.getElementById("dialogueBox").innerHTML =
       this.name + " used " + item.item_name;
@@ -217,7 +217,7 @@ class Character extends Sprite {
           attackFx: true,
         },
         animate: true,
-        rotation,
+        // rotation,
       });
 
       renderedSprites.splice(2, 0, throwableFx);
