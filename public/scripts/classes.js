@@ -198,6 +198,14 @@ class Character extends Sprite {
     if (this.health > this.maxHealth) this.health = this.maxHealth;
     if (this.stamina > this.maxStamina) this.stamina = this.maxStamina;
 
+    if (item.item_type === 'throwable') {
+      console.log('trying to catch');
+      
+    } else {
+      console.log('trying to heal');
+      
+    }
+
     gsap.to(this.position, {
       x: this.position.x + 10,
       yoyo: true,
