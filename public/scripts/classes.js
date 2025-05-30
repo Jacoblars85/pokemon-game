@@ -205,12 +205,15 @@ class Character extends Sprite {
 
       console.log("oddsOfCatching", oddsOfCatching);
 
+          const throwableFxImage = new Image();
+    throwableFxImage.src = item.item_pic
+
       const throwableFx = new Sprite({
         position: {
           x: this.position.x,
           y: this.position.y,
         },
-        image: item.item_pic,
+        image: throwableFxImage,
         frames: {
           max: this.max_frames,
           hold: this.hold_time,
