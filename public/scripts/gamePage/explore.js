@@ -1,7 +1,8 @@
 let randomEnemy = Math.floor(Math.random() * 8 + 1);
 // let randomEnemy = 8;
 
-getStarters();
+fetchUser()
+// getStarters();
 getEnemy(randomEnemy);
 getBasicAttacks();
 getAllUsersBattleItems()
