@@ -214,6 +214,7 @@ SELECT "user_characters"."id" as "id",
     `;
 
     const sqlValues = [req.user.id];
+    // const sqlValues = [1];
 
   pool
     .query(query, sqlValues)
