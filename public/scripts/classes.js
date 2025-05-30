@@ -205,8 +205,8 @@ class Character extends Sprite {
 
       console.log("oddsOfCatching", oddsOfCatching);
 
-          const throwableFxImage = new Image();
-    throwableFxImage.src = item.item_pic
+      const throwableFxImage = new Image();
+      throwableFxImage.src = item.item_pic;
 
       const throwableFx = new Sprite({
         position: {
@@ -229,7 +229,6 @@ class Character extends Sprite {
         x: recipient.position.x,
         y: recipient.position.y,
         onComplete: () => {
-
           renderedSprites.splice(2, 1);
         },
       });
