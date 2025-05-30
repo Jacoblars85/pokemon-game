@@ -12,6 +12,10 @@
       href="https://fonts.cdnfonts.com/css/serious-rounded"
       rel="stylesheet"
     />
+        <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
   </head>
   <body>
     <div class="bigArea" style="display: inline-block; position: relative">
@@ -43,10 +47,10 @@
           margin: 0;
         "
       >
-        <p>username</p>
+        <p id="usernameNavHeader">username</p>
 
-        <p>level</p>
-        <p>coins</p>
+        <p id="userLevelNavHeader">level</p>
+        <p id="usersCoinsNavHeader">coins</p>
 
         <button class="btn" style="margin: 0" onclick="openSettingsDialog()">
           O
