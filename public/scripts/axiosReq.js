@@ -45,17 +45,13 @@ function registerUserPost(userInfo) {
 }
 
 function loginUser(userInfo) {
-  //   const config = {
-  //     headers: { "Content-Type": "application/json" },
-  //     withCredentials: true,
-  //   };
+  // const config = {
+  //   headers: { "Content-Type": "application/json" },
+  //   withCredentials: true,
+  // };
 
-  axios({
-    method: "POST",
-    url: `http://localhost:5001/api/user/login`,
-    data: { config, userInfo },
-    config,
-  })
+  axios
+    .post(`http://localhost:5001/api/user/login`, userInfo, config)
     .then((response) => {
       console.log("logged in", response);
 
@@ -347,7 +343,7 @@ function getAllUsersThrowables(resetBattleFunc) {
   })
     .then((response) => {
       usersThrowablesItems = response.data;
-      
+
       if (resetBattleFunc) resetBattleFunc();
     })
     .catch((err) => {
@@ -362,7 +358,7 @@ function getAllUsersBattleItems(resetBattleFunc) {
   })
     .then((response) => {
       usersBattleItems = response.data;
-      
+
       if (resetBattleFunc) resetBattleFunc();
     })
     .catch((err) => {
