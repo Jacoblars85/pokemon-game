@@ -500,6 +500,8 @@ function resetBattleFunc() {
 
         currentStarter.usingItem({
           item: itemBeingUsed,
+          recipient: enemy,
+          renderedSprites
         });
 
         axios({
