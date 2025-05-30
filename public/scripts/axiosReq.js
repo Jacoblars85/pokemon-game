@@ -347,8 +347,6 @@ function getAllUsersThrowables(resetBattleFunc) {
   })
     .then((response) => {
       usersThrowablesItems = response.data;
-
-      console.log('usersThrowablesItems', usersThrowablesItems);
       
       if (resetBattleFunc) resetBattleFunc();
     })
