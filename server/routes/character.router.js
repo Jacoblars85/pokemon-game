@@ -209,17 +209,14 @@ SELECT "user_characters"."id" as "id",
         	ON "attacks"."attack_animations_id" = "attack_animations"."id"
     LEFT JOIN "items"
     	ON "user_characters"."item_id" = "items"."id"
-    WHERE "user_characters"."starter_1" = TRUE AND "user_id" = 1 OR "user_characters"."starter_2" = TRUE AND "user_id" = 1
+    WHERE "user_characters"."starter_1" = TRUE AND "user_id" = $1 OR "user_characters"."starter_2" = TRUE AND "user_id" = $1
     ORDER BY "starter_1" DESC;
     `;
-  // this is the original where statement
-  // WHERE "user_characters"."starter_1" = TRUE AND "user_id" = $1 OR "user_characters"."starter_2" = TRUE AND "user_id" = $1
 
-  //   const sqlValues = [req.user.id];
+    const sqlValues = [req.user.id];
 
   pool
-    .query(query)
-    // add sqlValues back in here ^
+    .query(query, sqlValues)
     .then((result) => {
       let multiplier = 0.2;
 
