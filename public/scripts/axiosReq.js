@@ -11,12 +11,9 @@ function fetchUser() {
   //     withCredentials: true,
   //   };
 
-  axios({
-    method: "GET",
-    url: `http://localhost:5001/api/user`,
-    data: config,
-    config,
-  })
+
+  axios
+    .get(`http://localhost:5001/api/user`, config)
     .then((response) => {
       console.log("got the user", response);
     })
@@ -50,13 +47,16 @@ function loginUser(userInfo) {
   //   withCredentials: true,
   // };
 
+  console.log('userInfo', userInfo);
+  
+
   axios
     .post(`http://localhost:5001/api/user/login`, userInfo, config)
     .then((response) => {
       console.log("logged in", response);
 
-      window.location.href =
-        "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/mainMenuPage/mainMenu.html";
+      // window.location.href =
+      //   "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/mainMenuPage/mainMenu.html";
 
       fetchUser();
     })
@@ -71,12 +71,8 @@ function logoutUser() {
   //     withCredentials: true,
   //   };
 
-  axios({
-    method: "POST",
-    url: `http://localhost:5001/api/user/logout`,
-    data: config,
-    config,
-  })
+    axios
+    .post(`http://localhost:5001/api/user/logout`, config)
     .then((response) => {
       console.log("logged out", response);
 
