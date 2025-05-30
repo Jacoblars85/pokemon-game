@@ -215,12 +215,12 @@ class Character extends Sprite {
         },
         image: throwableFxImage,
         frames: {
-          max: this.max_frames,
-          hold: this.hold_time,
+          max: 1,
+          hold: 1,
           attackFx: true,
         },
         animate: true,
-        // rotation,
+        rotation: 1,
       });
 
       renderedSprites.splice(2, 0, throwableFx);
