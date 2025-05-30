@@ -1,5 +1,7 @@
 // axios functions for user info
 
+let user = []
+
 const config = {
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
@@ -16,6 +18,11 @@ function fetchUser() {
     .get(`http://localhost:5001/api/user`, config)
     .then((response) => {
       console.log("got the user", response);
+
+      user = response.data
+
+      console.log('user', user);
+      
     })
     .catch((err) => {
       console.log(err);
@@ -32,7 +39,7 @@ function registerUserPost(userInfo) {
       console.log("registered the new user", response);
 
       window.location.href =
-        "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/mainMenuPage/mainMenu.html";
+        "../mainMenuPage/mainMenu.html";
 
       fetchUser();
     })
@@ -55,8 +62,8 @@ function loginUser(userInfo) {
     .then((response) => {
       console.log("logged in", response);
 
-      // window.location.href =
-      //   "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/mainMenuPage/mainMenu.html";
+      window.location.href =
+        "../mainMenuPage/mainMenu.html";
 
       fetchUser();
     })
@@ -77,7 +84,7 @@ function logoutUser() {
       console.log("logged out", response);
 
       window.location.href =
-        "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/registerPage/register.html";
+        "../registerPage/register.html";
     })
     .catch((err) => {
       console.log(err);
@@ -93,7 +100,7 @@ function deleteUser() {
       console.log("deleted the user", response);
 
       window.location.href =
-        "/Users/jacoblars85/Desktop/code/fun/projects/pokemon-game/public/scripts/registerPage/register.html";
+        "../registerPage/register.html";
     })
     .catch((err) => {
       console.log(err);
