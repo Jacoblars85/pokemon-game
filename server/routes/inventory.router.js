@@ -364,20 +364,15 @@ router.put("/sell/item/:id", (req, res) => {
 
 router.put("/use/item/:id", (req, res) => {
   // console.log(req.body);
-  // const sqlText = `
-  //         UPDATE "user_inventory"
-  //         SET "number" = "number" - 1
-  //           WHERE "user_id" = $1 AND "id" = $2;
-  //           `;
 
   const sqlText = `
-    UPDATE "user_inventory"
-    SET "number" = "number" - 1
-      WHERE "user_id" = 1 AND "id" = $1;
-      `;
+          UPDATE "user_inventory"
+          SET "number" = "number" - 1
+            WHERE "user_id" = $1 AND "id" = $2;
+            `;
 
   // const insertValue = [req.user.id, req.params.id]
-  const insertValue = [req.params.id];
+  const insertValue = [1, req.params.id];
 
   pool
     .query(sqlText, insertValue)
