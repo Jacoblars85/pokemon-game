@@ -198,35 +198,32 @@ class Character extends Sprite {
     if (this.health > this.maxHealth) this.health = this.maxHealth;
     if (this.stamina > this.maxStamina) this.stamina = this.maxStamina;
 
-    if (item.item_type === 'throwable') {
-      console.log('trying to catch');
-      
+    if (item.item_type === "throwable") {
+      console.log("trying to catch");
     } else {
-      console.log('trying to heal');
-      
-          gsap.to(this.position, {
-      x: this.position.x + 10,
-      yoyo: true,
-      repeat: 5,
-      duration: 0.08,
-    });
-    gsap.to(this, {
-      opacity: 0,
-      repeat: 5,
-      yoyo: true,
-      duration: 0.08,
-      onComplete: () => {
-        gsap.to("#starterHealthBar", {
-          width: (this.health / this.maxHealth) * 100 + "%",
-        });
-        gsap.to("#starterStaminaBar", {
-          width: (this.stamina / this.maxStamina) * 100 + "%",
-        });
-      },
-    });
+      console.log("trying to heal");
+
+      gsap.to(this.position, {
+        x: this.position.x + 10,
+        yoyo: true,
+        repeat: 5,
+        duration: 0.08,
+      });
+      gsap.to(this, {
+        opacity: 0,
+        repeat: 5,
+        yoyo: true,
+        duration: 0.08,
+        onComplete: () => {
+          gsap.to("#starterHealthBar", {
+            width: (this.health / this.maxHealth) * 100 + "%",
+          });
+          gsap.to("#starterStaminaBar", {
+            width: (this.stamina / this.maxStamina) * 100 + "%",
+          });
+        },
+      });
     }
-
-
   }
 
   attack({ attack, recipient, renderedSprites }) {
