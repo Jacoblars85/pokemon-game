@@ -196,18 +196,15 @@ router.get("/user/consumable", (req, res) => {
     FROM "user_inventory"
         INNER JOIN "items"
     ON "user_inventory"."items_id" = "items"."id"
-        WHERE "user_id" = 1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'consumable'
+        WHERE "user_id" = $1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'consumable'
         ORDER BY "items_id" ASC;
   `;
 
-  //   this is the acual where sql
-  // WHERE "user_id" = $1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'consumable'
-
   //   const sqlValues = [req.user.id];
+    const sqlValues = [1];
 
-  // add sqlValues back in the statment bellow
   pool
-    .query(query)
+    .query(query, sqlValues)
     .then((result) => {
       res.send(result.rows);
     })
