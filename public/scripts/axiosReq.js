@@ -364,8 +364,6 @@ function getAllUsersBattleItems(resetBattleFunc) {
   })
     .then((response) => {
       usersBattleItems = response.data;
-
-      console.log('usersBattleItems', usersBattleItems);
       
       if (resetBattleFunc) resetBattleFunc();
     })
