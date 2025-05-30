@@ -204,8 +204,23 @@ class Character extends Sprite {
       let oddsOfCatching = Math.random()
 
       console.log('oddsOfCatching', oddsOfCatching);
+
+            const throwableFx = new Sprite({
+        position: {
+          x: this.position.x,
+          y: this.position.y,
+        },
+        image: item.item_pic,
+        frames: {
+          max: this.max_frames,
+          hold: this.hold_time,
+          attackFx: true,
+        },
+        animate: true,
+        rotation,
+      });
       
-    } else {
+    } else if (item.item_type === "consumable") {
       console.log("trying to heal");
 
       gsap.to(this.position, {
