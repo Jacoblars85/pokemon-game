@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool");
 
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
+
 router.get("/user/characters", (req, res) => {
   // console.log('im in character get');
 
@@ -162,8 +164,8 @@ SELECT  "characters"."character_name",
     });
 });
 
-router.get("/starter", (req, res) => {
-  // console.log('im in character get', req.user.id);
+router.get("/starter", rejectUnauthenticated, (req, res) => {
+  // console.log('im in character get', req.user);
 
   const query = `
 SELECT "user_characters"."id" as "id",
