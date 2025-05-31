@@ -1,6 +1,6 @@
 // axios functions for user info
 
-let user = []
+let user = [];
 
 const config = {
   withCredentials: true,
@@ -13,23 +13,18 @@ function fetchUser() {
   //     withCredentials: true,
   //   };
 
-
   axios
     .get(`http://localhost:5001/api/user`, config)
     .then((response) => {
-      console.log("got the user", response);
+      user = response.data;
 
-      user = response.data
+      console.log("user", user);
 
-      console.log('user', user);
+      getStarters();
 
-getStarters();
-
-
-      document.getElementById("usernameNavHeader").innerHTML = user.username
-document.getElementById("userLevelNavHeader").innerHTML += user.xp_level
-document.getElementById("usersCoinsNavHeader").innerHTML += user.coins
-      
+      document.getElementById("usernameNavHeader").innerHTML = user.username;
+      document.getElementById("userLevelNavHeader").innerHTML += user.xp_level;
+      document.getElementById("usersCoinsNavHeader").innerHTML += user.coins;
     })
     .catch((err) => {
       console.log(err);
@@ -45,8 +40,7 @@ function registerUserPost(userInfo) {
     .then((response) => {
       console.log("registered the new user", response);
 
-      window.location.href =
-        "../mainMenuPage/mainMenu.html";
+      window.location.href = "../mainMenuPage/mainMenu.html";
 
       fetchUser();
     })
@@ -61,16 +55,14 @@ function loginUser(userInfo) {
   //   withCredentials: true,
   // };
 
-  console.log('userInfo', userInfo);
-  
+  console.log("userInfo", userInfo);
 
   axios
     .post(`http://localhost:5001/api/user/login`, userInfo, config)
     .then((response) => {
       console.log("logged in", response);
 
-      window.location.href =
-        "../mainMenuPage/mainMenu.html";
+      window.location.href = "../mainMenuPage/mainMenu.html";
 
       fetchUser();
     })
@@ -85,13 +77,12 @@ function logoutUser() {
   //     withCredentials: true,
   //   };
 
-    axios
+  axios
     .post(`http://localhost:5001/api/user/logout`, config)
     .then((response) => {
       console.log("logged out", response);
 
-      window.location.href =
-        "../registerPage/register.html";
+      window.location.href = "../registerPage/register.html";
     })
     .catch((err) => {
       console.log(err);
@@ -106,8 +97,7 @@ function deleteUser() {
     .then((response) => {
       console.log("deleted the user", response);
 
-      window.location.href =
-        "../registerPage/register.html";
+      window.location.href = "../registerPage/register.html";
     })
     .catch((err) => {
       console.log(err);
@@ -197,7 +187,7 @@ function getStarters() {
   axios({
     method: "GET",
     url: "http://localhost:5001/api/characters/starter",
-    withCredentials: true
+    withCredentials: true,
   })
     .then((response) => {
       starterOne = response.data[0];
