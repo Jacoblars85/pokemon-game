@@ -93,7 +93,7 @@ function deleteUser() {
   axios({
     method: "DELETE",
     url: `http://localhost:5001/api/user`,
-     withCredentials: true,
+    withCredentials: true,
   })
     .then((response) => {
       console.log("deleted the user", response);
@@ -110,7 +110,7 @@ function changeUsername(newName) {
     method: "PUT",
     url: `http://localhost:5001/api/user/change`,
     data: { newName: newName },
-     withCredentials: true,
+    withCredentials: true,
   })
     .then((response) => {
       console.log("finished changing the username axios");
@@ -125,7 +125,7 @@ function userOpenReward(rewardId) {
     method: "PUT",
     url: `http://localhost:5001/api/user/reward/open`,
     data: rewardId,
-     withCredentials: true,
+    withCredentials: true,
   })
     .then((response) => {
       console.log("finished opening the reward axios");
@@ -329,7 +329,7 @@ function getAllUsersConsumables(resetBattleFunc) {
   axios({
     method: "GET",
     url: "http://localhost:5001/api/inventory/user/consumable",
-     withCredentials: true,
+    withCredentials: true,
   })
     .then((response) => {
       usersConsumableItems = response.data;
@@ -345,7 +345,7 @@ function getAllUsersThrowables(resetBattleFunc) {
   axios({
     method: "GET",
     url: "http://localhost:5001/api/inventory/user/throwable",
-     withCredentials: true,
+    withCredentials: true,
   })
     .then((response) => {
       usersThrowablesItems = response.data;
@@ -361,7 +361,7 @@ function getAllUsersBattleItems(resetBattleFunc) {
   axios({
     method: "GET",
     url: "http://localhost:5001/api/inventory/user/battle/items",
-     withCredentials: true,
+    withCredentials: true,
   })
     .then((response) => {
       usersBattleItems = response.data;
@@ -391,7 +391,7 @@ function putWonBattle(rewardInfo) {
     method: "PUT",
     url: `http://localhost:5001/api/user/won/battle`,
     data: rewardInfo,
-     withCredentials: true,
+    withCredentials: true,
   })
     .then((response) => {
       console.log("finished winning battle axios");
