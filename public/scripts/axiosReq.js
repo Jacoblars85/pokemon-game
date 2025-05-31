@@ -3,8 +3,8 @@
 let user = []
 
 const config = {
-  headers: { "Content-Type": "application/json" },
   withCredentials: true,
+  headers: { "Content-Type": "application/json" },
 };
 
 function fetchUser() {
@@ -22,6 +22,9 @@ function fetchUser() {
       user = response.data
 
       console.log('user', user);
+
+getStarters();
+
 
       document.getElementById("usernameNavHeader").innerHTML = user.username
 document.getElementById("userLevelNavHeader").innerHTML += user.xp_level
@@ -194,6 +197,7 @@ function getStarters() {
   axios({
     method: "GET",
     url: "http://localhost:5001/api/characters/starter",
+    withCredentials: true
   })
     .then((response) => {
       starterOne = response.data[0];
