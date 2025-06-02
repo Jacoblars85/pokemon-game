@@ -45,7 +45,6 @@ function registerUserPost(userInfo) {
 }
 
 function loginUser(userInfo) {
-
   console.log("userInfo", userInfo);
 
   axios
@@ -63,7 +62,6 @@ function loginUser(userInfo) {
 }
 
 function logoutUser() {
-
   axios
     .post(`http://localhost:5001/api/user/logout`, config)
     .then((response) => {
