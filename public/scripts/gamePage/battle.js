@@ -193,11 +193,7 @@ function resetBattleFunc() {
         : usersItems.item_hp === 0
         ? `+${usersItems.item_stamina} stamina`
         : `| +${usersItems.item_stamina} stamina`
-    } ${
-      usersItems.item_speed === 0
-        ? ""
-        : `| +${usersItems.item_speed} speed`
-    }
+    } ${usersItems.item_speed === 0 ? "" : `| +${usersItems.item_speed} speed`}
                   </p>
                   <button
                   id=${usersItems.items_id}
@@ -501,7 +497,7 @@ function resetBattleFunc() {
         currentStarter.usingItem({
           item: itemBeingUsed,
           recipient: enemy,
-          renderedSprites
+          renderedSprites,
         });
 
         axios({
