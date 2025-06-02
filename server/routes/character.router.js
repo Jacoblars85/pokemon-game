@@ -93,6 +93,8 @@ SELECT  "characters"."character_name",
     });
 });
 
+router.use(rejectUnauthenticated); 
+
 router.get("/user/characters", (req, res) => {
   // console.log('im in character get');
 
@@ -165,7 +167,7 @@ SELECT "user_characters"."id" as "id",
     });
 });
 
-router.get("/starter", rejectUnauthenticated, (req, res) => {
+router.get("/starter", (req, res) => {
   // console.log('im in character get', req.user);
 
   const query = `
