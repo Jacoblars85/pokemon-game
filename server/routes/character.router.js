@@ -77,7 +77,8 @@ SELECT  "characters"."character_name",
       let multiplier = 0.2;
 
       for (const enemy of result.rows) {
-        multiplier += Math.floor(Math.random() * 5 + 5);
+
+        let multiplier = (Math.floor(Math.random() * 5 + 5) / 5);
 
         enemy.hp *= multiplier;
         enemy.stamina *= multiplier;
@@ -224,10 +225,9 @@ SELECT "user_characters"."id" as "id",
   pool
     .query(query, sqlValues)
     .then((result) => {
-      let multiplier = 0.2;
 
       for (const starter of result.rows) {
-        multiplier += Math.floor(starter.xp_level);
+        let multiplier = (Math.floor(Number(starter.xp_level)) / 5);
 
         starter.hp *= multiplier;
         starter.stamina *= multiplier;
