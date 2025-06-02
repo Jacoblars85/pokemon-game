@@ -4,77 +4,6 @@ const pool = require("../modules/pool");
 
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
-router.get("/user/characters", (req, res) => {
-  // console.log('im in character get');
-
-  const query = `
-SELECT "user_characters"."id" as "id",
-		"user_characters"."user_id" as "user_id",
-		"user_characters"."character_id",
-        "user_characters"."starter_1",
-        "user_characters"."starter_2",
-        "user_characters"."new",
-        "user_characters"."nickname",
-        "user_characters"."xp_level",
-		"characters"."character_name",
-		"characters"."profile_pic",
-		"characters"."hp",
-		"characters"."stamina",
-        "characters"."speed",
-        "characters"."battle_pic",
-        "attacks"."id" as "attacks_id",
-        "attacks"."attack_name",
-        "attacks"."attack_damage",
-        "attacks"."attack_stamina",
-        "attacks"."attack_type",
-        "attack_animations"."id" as "attack_animations_id",
-        "attack_animations"."animation_name",
-        "attack_animations"."max_frames",
-        "attack_animations"."hold_time",
-        "attack_animations"."fx_img",
-        "items"."id" as "item_id",
-        "items"."item_name",
-        "items"."item_hp",
-        "items"."item_stamina",
-        "items"."item_pic",
-        "items"."item_type",
-        "items"."item_speed",
-        "items"."item_damage",
-        "items"."item_cost",
-    	"items"."item_color"
- FROM "user_characters" 
-	INNER JOIN "characters"
-    	ON "user_characters"."character_id" = "characters"."id"
-    	INNER JOIN "attacks"
-            ON "attacks"."id" = "characters"."attacks_id"
-        INNER JOIN "attack_animations"
-        	ON "attacks"."attack_animations_id" = "attack_animations"."id"
-    LEFT JOIN "items"
-    	ON "user_characters"."item_id" = "items"."id"
-	WHERE "user_id" = $1
-	ORDER BY "character_id", "id" ASC;
-	`;
-
-  const sqlValues = [req.user.id];
-
-  pool
-    .query(query, sqlValues)
-    .then((result) => {
-      for (const character of result.rows) {
-        if (character.item_id !== null) {
-          character.hp += character.item_hp;
-          character.stamina += character.item_stamina;
-          character.speed += character.item_speed;
-          character.attack_damage += character.item_damage;
-        }
-      }
-      res.send(result.rows);
-    })
-    .catch((err) => {
-      console.log("ERROR: Get all user characters", err);
-      res.sendStatus(500);
-    });
-});
 
 router.get("/basic", (req, res) => {
   // console.log('im in basic route');
@@ -160,6 +89,78 @@ SELECT  "characters"."character_name",
     })
     .catch((err) => {
       console.log("ERROR: Get the enemies", err);
+      res.sendStatus(500);
+    });
+});
+
+router.get("/user/characters", (req, res) => {
+  // console.log('im in character get');
+
+  const query = `
+SELECT "user_characters"."id" as "id",
+		"user_characters"."user_id" as "user_id",
+		"user_characters"."character_id",
+        "user_characters"."starter_1",
+        "user_characters"."starter_2",
+        "user_characters"."new",
+        "user_characters"."nickname",
+        "user_characters"."xp_level",
+		"characters"."character_name",
+		"characters"."profile_pic",
+		"characters"."hp",
+		"characters"."stamina",
+        "characters"."speed",
+        "characters"."battle_pic",
+        "attacks"."id" as "attacks_id",
+        "attacks"."attack_name",
+        "attacks"."attack_damage",
+        "attacks"."attack_stamina",
+        "attacks"."attack_type",
+        "attack_animations"."id" as "attack_animations_id",
+        "attack_animations"."animation_name",
+        "attack_animations"."max_frames",
+        "attack_animations"."hold_time",
+        "attack_animations"."fx_img",
+        "items"."id" as "item_id",
+        "items"."item_name",
+        "items"."item_hp",
+        "items"."item_stamina",
+        "items"."item_pic",
+        "items"."item_type",
+        "items"."item_speed",
+        "items"."item_damage",
+        "items"."item_cost",
+    	"items"."item_color"
+ FROM "user_characters" 
+	INNER JOIN "characters"
+    	ON "user_characters"."character_id" = "characters"."id"
+    	INNER JOIN "attacks"
+            ON "attacks"."id" = "characters"."attacks_id"
+        INNER JOIN "attack_animations"
+        	ON "attacks"."attack_animations_id" = "attack_animations"."id"
+    LEFT JOIN "items"
+    	ON "user_characters"."item_id" = "items"."id"
+	WHERE "user_id" = $1
+	ORDER BY "character_id", "id" ASC;
+	`;
+
+  const sqlValues = [req.user.id];
+
+  pool
+    .query(query, sqlValues)
+    .then((result) => {
+      for (const character of result.rows) {
+        if (character.item_id !== null) {
+          character.hp += character.item_hp;
+          character.stamina += character.item_stamina;
+          character.speed += character.item_speed;
+          character.attack_damage += character.item_damage;
+        }
+      }
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("ERROR: Get all user characters", err);
       res.sendStatus(500);
     });
 });
