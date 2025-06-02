@@ -74,8 +74,6 @@ SELECT  "characters"."character_name",
   pool
     .query(query, sqlValues)
     .then((result) => {
-      let multiplier = 0.2;
-
       for (const enemy of result.rows) {
 
         let multiplier = (Math.floor(Math.random() * 5 + 5) / 5);
