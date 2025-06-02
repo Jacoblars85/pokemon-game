@@ -312,10 +312,10 @@ router.put("/sell/character", (req, res) => {
 router.delete("/sell/character", (req, res) => {
   const sqlText = `
     DELETE FROM "user_characters"
-      WHERE "id" = $1;
+      WHERE "id" = $1 AND "user_id" = $2;
       `;
 
-  const sqlValues = [req.body.characterID];
+  const sqlValues = [req.body.characterID, req.user.id];
 
   pool
     .query(sqlText, sqlValues)
@@ -402,10 +402,10 @@ router.put("/new/:id", (req, res) => {
   const sqlText = `
     UPDATE "user_characters"
     SET "new" = FALSE
-    WHERE "id" = $1;
+    WHERE "id" = $1 AND "user_id" = $2;
           `;
 
-  const insertValue = [req.params.id];
+  const insertValue = [req.params.id, req.user.id];
 
   pool
     .query(sqlText, insertValue)
