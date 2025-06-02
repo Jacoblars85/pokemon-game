@@ -8,11 +8,6 @@ const config = {
 };
 
 function fetchUser() {
-  //   const config = {
-  //     headers: { "Content-Type": "application/json" },
-  //     withCredentials: true,
-  //   };
-
   axios
     .get(`http://localhost:5001/api/user`, config)
     .then((response) => {
@@ -50,10 +45,6 @@ function registerUserPost(userInfo) {
 }
 
 function loginUser(userInfo) {
-  // const config = {
-  //   headers: { "Content-Type": "application/json" },
-  //   withCredentials: true,
-  // };
 
   console.log("userInfo", userInfo);
 
@@ -72,10 +63,6 @@ function loginUser(userInfo) {
 }
 
 function logoutUser() {
-  //   const config = {
-  //     headers: { "Content-Type": "application/json" },
-  //     withCredentials: true,
-  //   };
 
   axios
     .post(`http://localhost:5001/api/user/logout`, config)
