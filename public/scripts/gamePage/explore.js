@@ -1,13 +1,13 @@
 let randomEnemy = Math.floor(Math.random() * 8 + 1);
 // let randomEnemy = 8;
 
-fetchUser()
-// getStarters();
+fetchUser();
+getStarters();
 getEnemy(randomEnemy);
 getBasicAttacks();
-getAllUsersBattleItems()
+getAllUsersBattleItems();
 getAllUsersConsumables();
-getAllUsersThrowables()
+getAllUsersThrowables();
 getAllItems();
 
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
