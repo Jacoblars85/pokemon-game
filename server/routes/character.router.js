@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool");
 
-const { rejectUnauthenticated } = require('../modules/authentication-middleware');
-
+const {
+  rejectUnauthenticated,
+} = require("../modules/authentication-middleware");
 
 router.get("/basic", (req, res) => {
   // console.log('im in basic route');
@@ -75,8 +76,7 @@ SELECT  "characters"."character_name",
     .query(query, sqlValues)
     .then((result) => {
       for (const enemy of result.rows) {
-
-        let multiplier = (Math.floor(Math.random() * 5 + 5) / 5);
+        let multiplier = Math.floor(Math.random() * 5 + 5) / 5;
 
         enemy.hp *= multiplier;
         enemy.stamina *= multiplier;
@@ -92,7 +92,7 @@ SELECT  "characters"."character_name",
     });
 });
 
-router.use(rejectUnauthenticated); 
+router.use(rejectUnauthenticated);
 
 router.get("/user/characters", (req, res) => {
   // console.log('im in character get');
@@ -217,15 +217,14 @@ SELECT "user_characters"."id" as "id",
     ORDER BY "starter_1" DESC;
     `;
 
-    const sqlValues = [req.user.id];
-    // const sqlValues = [1];
+  const sqlValues = [req.user.id];
+  // const sqlValues = [1];
 
   pool
     .query(query, sqlValues)
     .then((result) => {
-
       for (const starter of result.rows) {
-        let multiplier = (Math.floor(Number(starter.xp_level)) / 5);
+        let multiplier = Math.floor(Number(starter.xp_level)) / 5;
 
         starter.hp *= multiplier;
         starter.stamina *= multiplier;
