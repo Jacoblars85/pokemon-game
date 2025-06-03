@@ -293,8 +293,8 @@ router.put("/won/battle", (req, res) => {
               `;
   }
 
-  // const sqlValues = [req.user.id, rewardId];
-  const sqlValues = [1, rewardId];
+  const sqlValues = [req.user.id, rewardId];
+  // const sqlValues = [1, rewardId];
 
   pool
     .query(sqlText, sqlValues)
@@ -316,8 +316,8 @@ router.put("/won/battle", (req, res) => {
       `;
       }
 
-      // const sqlValues = [req.body.xp, req.user.id];
-      const sqlValues = [req.body.xp, 1];
+      const sqlValues = [req.body.xp, req.user.id];
+      // const sqlValues = [req.body.xp, 1];
 
       pool
         .query(sqlText, sqlValues)
@@ -328,8 +328,8 @@ router.put("/won/battle", (req, res) => {
             WHERE "user_id" = $3 AND "id" = $2;
       `;
 
-          // const sqlValues = [req.body.characterXp,req.body.currentStarterId, req.user.id];
-          const sqlValues = [req.body.characterXp, req.body.currentStarterId, 1];
+          const sqlValues = [req.body.characterXp,req.body.currentStarterId, req.user.id];
+          // const sqlValues = [req.body.characterXp, req.body.currentStarterId, 1];
 
           pool
             .query(sqlText, sqlValues)
