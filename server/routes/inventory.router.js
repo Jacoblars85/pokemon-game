@@ -205,8 +205,8 @@ router.get("/user/consumable", (req, res) => {
         ORDER BY "items_id" ASC;
   `;
 
-  //   const sqlValues = [req.user.id];
-    const sqlValues = [1];
+    const sqlValues = [req.user.id];
+    // const sqlValues = [1];
 
   pool
     .query(query, sqlValues)
@@ -241,8 +241,8 @@ router.get("/user/throwable", (req, res) => {
         ORDER BY "items_id" ASC;
   `;
 
-  //   const sqlValues = [req.user.id];
-    const sqlValues = [1];
+    const sqlValues = [req.user.id];
+    // const sqlValues = [1];
 
   pool
     .query(query, sqlValues)
@@ -277,8 +277,8 @@ router.get("/user/battle/items", (req, res) => {
         ORDER BY "items_id" ASC;
   `;
 
-  //   const sqlValues = [req.user.id];
-    const sqlValues = [1];
+    const sqlValues = [req.user.id];
+    // const sqlValues = [1];
 
   pool
     .query(query, sqlValues)
@@ -376,8 +376,8 @@ router.put("/use/item/:id", (req, res) => {
             WHERE "user_id" = $1 AND "id" = $2;
             `;
 
-  // const insertValue = [req.user.id, req.params.id]
-  const insertValue = [1, req.params.id];
+  const insertValue = [req.user.id, req.params.id]
+  // const insertValue = [1, req.params.id];
 
   pool
     .query(sqlText, insertValue)
