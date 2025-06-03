@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool");
 
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
+
+
 router.get("/consumable", (req, res) => {
   const query = `
     SELECT "id",
@@ -107,6 +110,8 @@ router.get("/all/items", (req, res) => {
       res.sendStatus(500);
     });
 });
+
+router.use(rejectUnauthenticated); 
 
 router.get("/user/inventory", (req, res) => {
   const query = `
