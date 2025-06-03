@@ -278,8 +278,8 @@ router.put("/won/battle", (req, res) => {
   else if (Math.floor(Number(newUserXpLevel)) % 2 === 0) rewardId = 2;
   else rewardId = 1;
 
-  // if (Math.floor(userXpLevel) > req.user.rewards_received) {
-  if (Math.floor(newUserXpLevel) > 1) {
+  if (Math.floor(newUserXpLevel) > req.user.rewards_received) {
+  // if (Math.floor(newUserXpLevel) > 1) {
     sqlText = `
                 UPDATE "user_rewards"
                       SET "number" = "number" + 1
@@ -300,8 +300,8 @@ router.put("/won/battle", (req, res) => {
     .then((result) => {
       let sqlText;
 
-      // if (Math.floor(req.user.xp_level + req.body.xp) > req.user.rewards_received) {
-      if (Math.floor(1.75 + req.body.xp) > 1) {
+      if (Math.floor(req.user.xp_level + req.body.xp) > req.user.rewards_received) {
+      // if (Math.floor(1.75 + req.body.xp) > 1) {
         sqlText = `
     UPDATE "user"
           SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1,  "rewards_received" = "rewards_received" + 1
