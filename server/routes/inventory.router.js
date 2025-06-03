@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool");
 
-const { rejectUnauthenticated } = require('../modules/authentication-middleware');
-
+const {
+  rejectUnauthenticated,
+} = require("../modules/authentication-middleware");
 
 router.get("/consumable", (req, res) => {
   const query = `
@@ -111,7 +112,7 @@ router.get("/all/items", (req, res) => {
     });
 });
 
-router.use(rejectUnauthenticated); 
+router.use(rejectUnauthenticated);
 
 router.get("/user/inventory", (req, res) => {
   const query = `
@@ -205,7 +206,7 @@ router.get("/user/consumable", (req, res) => {
         ORDER BY "items_id" ASC;
   `;
 
-    const sqlValues = [req.user.id];
+  const sqlValues = [req.user.id];
 
   pool
     .query(query, sqlValues)
@@ -240,7 +241,7 @@ router.get("/user/throwable", (req, res) => {
         ORDER BY "items_id" ASC;
   `;
 
-    const sqlValues = [req.user.id];
+  const sqlValues = [req.user.id];
 
   pool
     .query(query, sqlValues)
@@ -275,7 +276,7 @@ router.get("/user/battle/items", (req, res) => {
         ORDER BY "items_id" ASC;
   `;
 
-    const sqlValues = [req.user.id];
+  const sqlValues = [req.user.id];
 
   pool
     .query(query, sqlValues)
@@ -373,7 +374,7 @@ router.put("/use/item/:id", (req, res) => {
             WHERE "user_id" = $1 AND "id" = $2;
             `;
 
-  const insertValue = [req.user.id, req.params.id]
+  const insertValue = [req.user.id, req.params.id];
 
   pool
     .query(sqlText, insertValue)
