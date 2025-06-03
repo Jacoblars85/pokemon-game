@@ -328,7 +328,11 @@ router.put("/won/battle", (req, res) => {
             WHERE "user_id" = $3 AND "id" = $2;
       `;
 
-          const sqlValues = [req.body.characterXp,req.body.currentStarterId, req.user.id];
+          const sqlValues = [
+            req.body.characterXp,
+            req.body.currentStarterId,
+            req.user.id,
+          ];
           // const sqlValues = [req.body.characterXp, req.body.currentStarterId, 1];
 
           pool
