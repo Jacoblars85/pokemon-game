@@ -503,6 +503,7 @@ function resetBattleFunc() {
         axios({
           method: "PUT",
           url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
+          withCredentials: true,
         })
           .then((response) => {
             getAllUsersBattleItems(resetBattleFunc);
