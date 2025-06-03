@@ -286,7 +286,7 @@ function resetBattleFunc() {
         let winningInfo = {
           xp: 0.25,
           characterXp: 0.2,
-          currentStarterId: currentStarter,
+          currentStarterId: currentStarter.id,
         };
 
         if (currentStarter.speed >= enemySpeed) {
@@ -673,7 +673,7 @@ function initBattle() {
     },
     animate: true,
     isCurrentStarter: true,
-    id: 1,
+    id: starterOne.id,
     name: starterOneName,
     profilePic: starterOne.profile_pic,
     health: starterOneHp,
@@ -719,7 +719,7 @@ function initBattle() {
       },
       animate: true,
       opacity: 0,
-      id: 2,
+      id: starterTwo.id,
       name: starterTwoName,
       profilePic: starterTwo.profile_pic,
       health: starterTwoHp,
