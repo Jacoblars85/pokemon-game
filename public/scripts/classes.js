@@ -231,6 +231,7 @@ class Character extends Sprite {
         x: recipient.position.x,
         y: recipient.position.y,
         onComplete: () => {
+
           renderedSprites.splice(2, 1);
         },
       });
@@ -335,11 +336,6 @@ class Character extends Sprite {
           x: this.position.x,
         });
     } else if (attack.attack_type === "projectile") {
-      //   const enemyProjectileAttackFxImage = new Image();
-      //   enemyProjectileAttackFxImage.src = enemyFxImg;
-
-      //   const starterProjectileAttackFxImage = new Image();
-      //   starterProjectileAttackFxImage.src = starterFxImg;
 
       const projectileAttackFx = new Sprite({
         position: {
@@ -347,12 +343,7 @@ class Character extends Sprite {
           y: this.position.y,
         },
         image: uniqueAttackFxImage,
-        // this.isEnemy
-        //   ? enemyProjectileAttackFxImage
-        //   : starterProjectileAttackFxImage,
         frames: {
-          // max: this.isEnemy ? enemyOne.max_frames : starterOne.max_frames,
-          // hold: this.isEnemy ? enemyOne.hold_time : starterOne.hold_time,
           max: this.max_frames,
           hold: this.hold_time,
           attackFx: true,
