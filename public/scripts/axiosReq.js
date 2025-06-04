@@ -379,7 +379,7 @@ function putWonBattle(rewardInfo) {
     withCredentials: true,
   })
     .then((response) => {
-      console.log("finished winning battle axios");
+      getStarters();
     })
     .catch((err) => {
       console.log(err);
