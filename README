@@ -1,6 +1,5 @@
 Problems:
 
-1. changed the disabled variables to the classes that change the hp and stamina
 2. create the new hp, speed and damage system
 5. fix the input delay when moving in explore
 6. add pokeball and catching characters
