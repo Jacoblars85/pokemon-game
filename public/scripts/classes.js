@@ -167,8 +167,8 @@ class Character extends Sprite {
       opacity: 0,
       onComplete: () => {
         document.getElementById("starterName").innerHTML = recipient.name;
-          document.getElementById("starterLevel").innerHTML =
-    "lv." + Math.floor(recipient.level);
+        document.getElementById("starterLevel").innerHTML =
+          "lv." + Math.floor(recipient.level);
         gsap.to("#starterHealthBar", {
           width: (recipient.health / recipient.maxHealth) * 100 + "%",
         });
