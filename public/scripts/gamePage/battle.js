@@ -497,11 +497,9 @@ function resetBattleFunc() {
           }
         }
 
+        let oddsOfCatching = Math.random();
 
-      let oddsOfCatching = Math.random();
-
-      console.log("oddsOfCatching", oddsOfCatching);
-
+        console.log("oddsOfCatching", oddsOfCatching);
 
         currentStarter.usingItem({
           item: itemBeingUsed,
@@ -521,11 +519,12 @@ function resetBattleFunc() {
             console.log(err);
           });
 
-                if (oddsOfCatching >= .5) {
-        
-      } {
-            document.getElementById("dialogueBox").innerHTML = "you failed to catch...";
-      }
+        if (oddsOfCatching >= 0.5) {
+        }
+        {
+          document.getElementById("dialogueBox").innerHTML =
+            "you failed to catch...";
+        }
 
         queue.push(() => {
           enemy.attack({
