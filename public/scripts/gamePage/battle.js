@@ -696,7 +696,7 @@ function initBattle() {
   document.getElementById("enemyName").innerHTML = enemy.name;
 
   document.getElementById("starterLevel").innerHTML =
-    "lv. " + currentStarter.level;
+    "lv. " + Math.floor(currentStarter.level);
   document.getElementById("enemyLevel").innerHTML = "lv. ";
 
   attackButtonsArray = [starter.attackStats, kickAttackStats, pokeAttackStats];
