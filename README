@@ -1,14 +1,14 @@
 Problems:
 
-2. create the new hp, speed and damage system
-5. fix the input delay when moving in explore
-6. add pokeball and catching characters
-7. add pc to access all of your characters
-8. add healer and make damage perminent to characters
-9. change the battle odds back to normal
+1. create the new hp, speed and damage system
+2. fix the input delay when moving in explore
+3. add pokeball and catching characters
+4. add pc to access all of your characters
+5. add healer and make damage perminent to characters
+6. change the battle odds back to normal
 
 
 New Ideas:
 
 1. use math.random to choose enemies attacks and add the option to have multipe unique attacks per character
-3. make damage to characters permenent and add healing in house and use of items
+2. make damage to characters permenent and add healing in house and use of items
