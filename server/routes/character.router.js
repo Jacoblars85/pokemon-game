@@ -76,7 +76,9 @@ SELECT  "characters"."character_name",
     .query(query, sqlValues)
     .then((result) => {
       for (const enemy of result.rows) {
-        let multiplier = Math.floor(Math.random() * 5 + 5) / 5;
+        let randomLevel = Math.floor(Math.random() * 5 + 5)
+        
+        let multiplier = randomLevel / 5;
 
         enemy.hp *= multiplier;
         enemy.stamina *= multiplier;
