@@ -365,9 +365,9 @@ function resetBattleFunc() {
             });
 
             if (
-              starter.health <= 0 && starterTwo != null
+              starter.health <= 0 && (starterTwo != null
                 ? starter2.health <= 0
-                : currentStarter.health <= 0
+                : currentStarter.health <= 0)
             ) {
               queue.push(() => {
                 document.getElementById("dialogueBox").innerHTML =
