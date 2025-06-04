@@ -203,10 +203,6 @@ class Character extends Sprite {
     if (item.item_type === "throwable") {
       console.log("trying to catch");
 
-      let oddsOfCatching = Math.random();
-
-      console.log("oddsOfCatching", oddsOfCatching);
-
       const throwableFxImage = new Image();
       throwableFxImage.src = item.item_pic;
 
