@@ -231,7 +231,6 @@ class Character extends Sprite {
         x: recipient.position.x,
         y: recipient.position.y,
         onComplete: () => {
-
           renderedSprites.splice(2, 1);
         },
       });
@@ -336,7 +335,6 @@ class Character extends Sprite {
           x: this.position.x,
         });
     } else if (attack.attack_type === "projectile") {
-
       const projectileAttackFx = new Sprite({
         position: {
           x: this.position.x,
@@ -378,7 +376,6 @@ class Character extends Sprite {
         },
       });
     } else if (attack.attack_type === "summon") {
-
       const summonAttackFx = new Sprite({
         position: {
           x: recipient.position.x + 10,
