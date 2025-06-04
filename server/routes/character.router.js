@@ -76,12 +76,11 @@ SELECT  "characters"."character_name",
     .query(query, sqlValues)
     .then((result) => {
       for (const enemy of result.rows) {
-        let randomLevel = Math.floor(Math.random() * 5 + 5)
-        
+        let randomLevel = Math.floor(Math.random() * 5 + 5);
+
         let multiplier = randomLevel / 5;
 
-        enemy.xp_level = randomLevel
-        
+        enemy.xp_level = randomLevel;
 
         enemy.hp *= multiplier;
         enemy.stamina *= multiplier;
