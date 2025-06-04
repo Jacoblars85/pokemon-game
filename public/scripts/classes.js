@@ -238,7 +238,23 @@ class Character extends Sprite {
             repeat: 5,
             duration: 0.08,
             onComplete: () => {
+                        gsap.to(throwableFx.position, {
+            x: throwableFx.position.x + 10,
+            yoyo: true,
+            repeat: 5,
+            duration: 0.08,
+            onComplete: () => {
+                        gsap.to(throwableFx.position, {
+            x: throwableFx.position.x + 10,
+            yoyo: true,
+            repeat: 5,
+            duration: 0.08,
+            onComplete: () => {
               renderedSprites.splice(2, 1);
+            },
+          });
+            },
+          });
             },
           });
         },
