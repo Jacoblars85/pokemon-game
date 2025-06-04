@@ -378,11 +378,6 @@ class Character extends Sprite {
         },
       });
     } else if (attack.attack_type === "summon") {
-      //   const enemySummonAttackFxImage = new Image();
-      //   enemySummonAttackFxImage.src = enemyFxImg;
-
-      //   const starterSummonAttackFxImage = new Image();
-      //   starterSummonAttackFxImage.src = starterFxImg;
 
       const summonAttackFx = new Sprite({
         position: {
@@ -390,12 +385,7 @@ class Character extends Sprite {
           y: recipient.position.y + 30,
         },
         image: uniqueAttackFxImage,
-        // this.isEnemy
-        //   ? enemySummonAttackFxImage
-        //   : starterSummonAttackFxImage,
         frames: {
-          // max: this.isEnemy ? enemyOne.max_frames : starterOne.max_frames,
-          // hold: this.isEnemy ? enemyOne.hold_time : starterOne.hold_time,
           max: this.max_frames,
           hold: this.hold_time,
           attackFx: true,
