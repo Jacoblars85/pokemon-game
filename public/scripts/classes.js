@@ -227,7 +227,21 @@ class Character extends Sprite {
         x: recipient.position.x,
         y: recipient.position.y,
         onComplete: () => {
+          gsap.to(recipient, {
+              opacity: 0,
+              duration: 0.50,
+            });
+
+          gsap.to(throwableFx.position, {
+        x: throwableFx.position.x + 10,
+        yoyo: true,
+            repeat: 5,
+            duration: 0.08,
+        onComplete: () => {
+          
           renderedSprites.splice(2, 1);
+        },
+      });
         },
       });
     } else if (item.item_type === "consumable") {
