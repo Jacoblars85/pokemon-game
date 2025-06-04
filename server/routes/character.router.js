@@ -80,6 +80,9 @@ SELECT  "characters"."character_name",
         
         let multiplier = randomLevel / 5;
 
+        enemy.xp_level = randomLevel
+        
+
         enemy.hp *= multiplier;
         enemy.stamina *= multiplier;
         enemy.speed *= multiplier;
