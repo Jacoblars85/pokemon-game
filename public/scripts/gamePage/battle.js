@@ -651,7 +651,7 @@ function initBattle() {
     stamina: enemyStamina,
     maxStamina: enemyStamina,
     speed: enemySpeed,
-    // level: enemyOne.xp_level,
+    level: enemyOne.xp_level,
     fx_img: enemyAttackStats.fx_img,
     attackStats: enemyAttackStats,
     max_frames: enemyAttackStats.max_frames,
@@ -696,8 +696,8 @@ function initBattle() {
   document.getElementById("enemyName").innerHTML = enemy.name;
 
   document.getElementById("starterLevel").innerHTML =
-    "lv. " + Math.floor(currentStarter.level);
-  document.getElementById("enemyLevel").innerHTML = "lv. ";
+    "lv." + Math.floor(currentStarter.level);
+  document.getElementById("enemyLevel").innerHTML = "lv." + enemy.level;
 
   attackButtonsArray = [starter.attackStats, kickAttackStats, pokeAttackStats];
 
