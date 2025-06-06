@@ -188,7 +188,7 @@ class Character extends Sprite {
     });
   }
 
-  usingItem({ item, recipient, renderedSprites }) {
+  usingItem({ item, recipient, renderedSprites, numOfShakes, isCaught }) {
     document.getElementById("dialogueBox").style.display = "block";
     document.getElementById("dialogueBox").innerHTML =
       this.name + " used " + item.item_name;
@@ -220,6 +220,9 @@ class Character extends Sprite {
         animate: true,
         rotation: 1,
       });
+
+                document.getElementById("dialogueBox").innerHTML =
+            "you failed to catch " + recipient.name;
 
       renderedSprites.splice(2, 0, throwableFx);
 
