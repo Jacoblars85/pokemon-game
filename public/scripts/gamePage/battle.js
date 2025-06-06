@@ -501,6 +501,14 @@ function resetBattleFunc() {
 
         console.log("oddsOfCatching", oddsOfCatching);
 
+        let numOfShakes = 1
+
+        let isCaught = true
+
+        if (enemy.level > currentStarter.level && oddsOfCatching < .5) {
+          isCaught = false
+        } 
+
         currentStarter.usingItem({
           item: itemBeingUsed,
           recipient: enemy,
