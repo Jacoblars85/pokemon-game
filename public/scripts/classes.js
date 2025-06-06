@@ -224,7 +224,7 @@ class Character extends Sprite {
       renderedSprites.splice(2, 0, throwableFx);
 
       gsap.to(throwableFx.position, {
-        x: recipient.position.x,
+        x: recipient.position.x + 5,
         y: recipient.position.y,
         onComplete: () => {
           gsap.to(recipient, {
@@ -237,20 +237,28 @@ class Character extends Sprite {
             yoyo: true,
             repeat: 5,
             duration: 0.08,
+            delay: 1,
             onComplete: () => {
               gsap.to(throwableFx.position, {
                 x: throwableFx.position.x + 10,
                 yoyo: true,
                 repeat: 5,
                 duration: 0.08,
+                delay: 2,
                 onComplete: () => {
                   gsap.to(throwableFx.position, {
                     x: throwableFx.position.x + 10,
                     yoyo: true,
                     repeat: 5,
                     duration: 0.08,
+                    delay: 2,
+                    onComplete: () => {
+                       gsap.to(throwableFx.position, {
+                    delay: 2,
                     onComplete: () => {
                       renderedSprites.splice(2, 1);
+                    },
+                  });
                     },
                   });
                 },
