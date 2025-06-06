@@ -256,6 +256,10 @@ class Character extends Sprite {
                       gsap.to(throwableFx.position, {
                         delay: 2,
                         onComplete: () => {
+                          gsap.to(recipient, {
+                            opacity: 1,
+                            duration: 0.5,
+                          });
                           renderedSprites.splice(2, 1);
                         },
                       });
