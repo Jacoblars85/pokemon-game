@@ -516,6 +516,7 @@ function resetBattleFunc() {
         } else {
           isCaught = true
           numOfShakes = 3
+          postNewUserCharacter({character_id: enemy.id})
         }
 
         currentStarter.usingItem({
@@ -537,7 +538,7 @@ function resetBattleFunc() {
           .catch((err) => {
             console.log(err);
           });
-          
+
 
         queue.push(() => {
           enemy.attack({
