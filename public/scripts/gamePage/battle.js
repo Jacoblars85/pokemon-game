@@ -522,6 +522,8 @@ function resetBattleFunc() {
           item: itemBeingUsed,
           recipient: enemy,
           renderedSprites,
+          numOfShakes: numOfShakes,
+          isCaught: isCaught,
         });
 
         axios({
