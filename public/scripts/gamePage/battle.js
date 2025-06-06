@@ -505,9 +505,15 @@ function resetBattleFunc() {
 
         let isCaught = true
 
-        if (enemy.level > currentStarter.level && oddsOfCatching < .5) {
+        if (enemy.level > currentStarter.level && oddsOfCatching < .75) {
           isCaught = false
-        } 
+        } else if (enemy.level <= currentStarter.level && oddsOfCatching < .5) {
+          isCaught = false
+          numOfShakes = 2
+        } else if (enemy.level < currentStarter.level && oddsOfCatching > .25) {
+          isCaught = false
+          numOfShakes = 3
+        }
 
         currentStarter.usingItem({
           item: itemBeingUsed,
