@@ -385,3 +385,16 @@ function putWonBattle(rewardInfo) {
       console.log(err);
     });
 }
+
+function postNewUserCharacter(action) {
+
+  try {
+    const postResponse = yield axios({
+      method: 'POST',
+      url: '/api/characters/new/character',
+      data: action.payload
+    })
+  } catch (error) {
+    console.log('Unable to posting new character to server', error);
+  }
+}
