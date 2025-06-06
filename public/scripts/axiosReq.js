@@ -386,15 +386,18 @@ function putWonBattle(rewardInfo) {
     });
 }
 
-function postNewUserCharacter(action) {
-
-  try {
-    const postResponse = yield axios({
-      method: 'POST',
-      url: '/api/characters/new/character',
-      data: action.payload
+function postNewUserCharacter(newCharacter) {
+  axios({
+    method: "POST",
+    url: `http://localhost:5001/api/characters/new/character`,
+    data: newCharacter,
+    withCredentials: true,
+  })
+    .then((response) => {
+      console.log('posted new character!!!');
+      
     })
-  } catch (error) {
-    console.log('Unable to posting new character to server', error);
-  }
+    .catch((err) => {
+      console.log(err);
+    });
 }
