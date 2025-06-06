@@ -537,13 +537,7 @@ function resetBattleFunc() {
           .catch((err) => {
             console.log(err);
           });
-
-        if (oddsOfCatching >= 0.5) {
-        }
-        {
-          document.getElementById("dialogueBox").innerHTML =
-            "you failed to catch...";
-        }
+          
 
         queue.push(() => {
           enemy.attack({
