@@ -153,7 +153,7 @@ class Character extends Sprite {
       opacity: 0,
       onComplete: () => {
         isAnimating = false;
-      }
+      },
     });
   }
 
@@ -162,7 +162,7 @@ class Character extends Sprite {
     document.getElementById("dialogueBox").innerHTML =
       this.name + " switched into " + recipient.name;
 
-      isAnimating = true;
+    isAnimating = true;
 
     this.isCurrentStarter = false;
     recipient.isCurrentStarter = true;
@@ -192,7 +192,7 @@ class Character extends Sprite {
           x: recipient.position.x,
           onComplete: () => {
             isAnimating = false;
-          }
+          },
         });
       },
     });
@@ -203,7 +203,7 @@ class Character extends Sprite {
     document.getElementById("dialogueBox").innerHTML =
       this.name + " used " + item.item_name;
 
-      isAnimating = true;
+    isAnimating = true;
 
     if (item.item_type === "throwable") {
       const throwableFxImage = new Image();
@@ -261,7 +261,7 @@ class Character extends Sprite {
                       onComplete: () => {
                         document.getElementById("dialogueBox").innerHTML =
                           "you caught " + recipient.name;
-                          isAnimating = false;
+                        isAnimating = false;
                       },
                     });
                   },
@@ -439,7 +439,7 @@ class Character extends Sprite {
           x: this.position.x,
           onComplete: () => {
             isAnimating = false;
-          }
+          },
         });
     } else if (attack.attack_type === "projectile") {
       const projectileAttackFx = new Sprite({
@@ -478,8 +478,8 @@ class Character extends Sprite {
             yoyo: true,
             duration: 0.08,
             onComplete: () => {
-            isAnimating = false;
-          }
+              isAnimating = false;
+            },
           });
 
           renderedSprites.splice(2, 1);
@@ -522,8 +522,8 @@ class Character extends Sprite {
             yoyo: true,
             duration: 0.08,
             onComplete: () => {
-            isAnimating = false;
-          }
+              isAnimating = false;
+            },
           });
 
           renderedSprites.splice(3, 1);
@@ -553,8 +553,8 @@ class Character extends Sprite {
           gsap.to(tiredHealthBar, {
             width: (this.health / this.maxHealth) * 100 + "%",
             onComplete: () => {
-            isAnimating = false;
-          }
+              isAnimating = false;
+            },
           });
         },
       });
