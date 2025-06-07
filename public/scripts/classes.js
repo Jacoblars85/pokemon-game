@@ -378,6 +378,8 @@ class Character extends Sprite {
       }
     }
 
+    isAnimating = true;
+
     recipient.health -= attack.attack_damage;
     this.stamina -= attack.attack_stamina;
 
@@ -435,6 +437,9 @@ class Character extends Sprite {
         })
         .to(this.position, {
           x: this.position.x,
+          onComplete: () => {
+            isAnimating = false;
+          }
         });
     } else if (attack.attack_type === "projectile") {
       const projectileAttackFx = new Sprite({
@@ -472,6 +477,9 @@ class Character extends Sprite {
             repeat: 5,
             yoyo: true,
             duration: 0.08,
+            onComplete: () => {
+            isAnimating = false;
+          }
           });
 
           renderedSprites.splice(2, 1);
@@ -513,6 +521,9 @@ class Character extends Sprite {
             repeat: 5,
             yoyo: true,
             duration: 0.08,
+            onComplete: () => {
+            isAnimating = false;
+          }
           });
 
           renderedSprites.splice(3, 1);
@@ -541,6 +552,9 @@ class Character extends Sprite {
         onComplete: () => {
           gsap.to(tiredHealthBar, {
             width: (this.health / this.maxHealth) * 100 + "%",
+            onComplete: () => {
+            isAnimating = false;
+          }
           });
         },
       });
