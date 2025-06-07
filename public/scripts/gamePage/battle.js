@@ -501,27 +501,29 @@ function resetBattleFunc() {
 
         console.log("oddsOfCatching", oddsOfCatching);
 
-        let numOfShakes = 1
+        let numOfShakes = 1;
 
-        let isCaught = false
+        let isCaught = false;
 
-        if (itemBeingUsed.item_type === 'throwable') {
-                  if (enemy.level >= currentStarter.level && oddsOfCatching < .35) {
-          isCaught = false
-        } else if ((enemy.level >= currentStarter.level && oddsOfCatching < .7) || (enemy.level < currentStarter.level && oddsOfCatching < .4)) {
-          isCaught = false
-          numOfShakes = 2
-        } else {
-          isCaught = true
-          numOfShakes = 3
-          postNewUserCharacter({character_id: enemy.id})
+        if (itemBeingUsed.item_type === "throwable") {
+          if (enemy.level >= currentStarter.level && oddsOfCatching < 0.35) {
+            isCaught = false;
+          } else if (
+            (enemy.level >= currentStarter.level && oddsOfCatching < 0.7) ||
+            (enemy.level < currentStarter.level && oddsOfCatching < 0.4)
+          ) {
+            isCaught = false;
+            numOfShakes = 2;
+          } else {
+            isCaught = true;
+            numOfShakes = 3;
+            postNewUserCharacter({ character_id: enemy.id });
 
-          queue.push(() => {
-                  fadeBackToExplore();
-                });
+            queue.push(() => {
+              fadeBackToExplore();
+            });
+          }
         }
-        }
-
 
         currentStarter.usingItem({
           item: itemBeingUsed,
@@ -543,49 +545,47 @@ function resetBattleFunc() {
             console.log(err);
           });
 
+        if (!isCaught) {
+          console.log("i didnt get caught so im gonna attack :)");
 
-          if (!isCaught) {
-            console.log('i didnt get caught so im gonna attack :)');
-
-            queue.push(() => {
-          enemy.attack({
-            attack: {},
-            recipient: currentStarter,
-            renderedSprites,
-          });
-
-          if (currentStarter.health <= 0) {
-            queue.push(() => {
-              currentStarter.faint();
+          queue.push(() => {
+            enemy.attack({
+              attack: {},
+              recipient: currentStarter,
+              renderedSprites,
             });
 
-            if (
-              starter.health <= 0 &&
-              (starterTwo != null
-                ? starter2.health <= 0
-                : currentStarter.health <= 0)
-            ) {
+            if (currentStarter.health <= 0) {
               queue.push(() => {
-                document.getElementById("dialogueBox").innerHTML =
-                  "you lost the battle";
+                currentStarter.faint();
               });
 
-              queue.push(() => {
-                fadeBackToExplore();
-              });
-            }
-            {
-              queue.push(() => {
-                document.getElementById("deadSwitchBox").style.display =
-                  "block";
-              });
-            }
-          }
+              if (
+                starter.health <= 0 &&
+                (starterTwo != null
+                  ? starter2.health <= 0
+                  : currentStarter.health <= 0)
+              ) {
+                queue.push(() => {
+                  document.getElementById("dialogueBox").innerHTML =
+                    "you lost the battle";
+                });
 
-          resetBattleFunc();
-        });
-          }
-        
+                queue.push(() => {
+                  fadeBackToExplore();
+                });
+              }
+              {
+                queue.push(() => {
+                  document.getElementById("deadSwitchBox").style.display =
+                    "block";
+                });
+              }
+            }
+
+            resetBattleFunc();
+          });
+        }
       } else if (
         e.target.innerHTML === "Change Starter" &&
         e.target.id != currentStarter.id
