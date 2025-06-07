@@ -170,6 +170,8 @@ let usersConsumableItems = [];
 let usersThrowablesItems = [];
 let allItems = [];
 
+let isAnimating = false;
+
 // axios functions for user info for battle
 function getStarters() {
   axios({
