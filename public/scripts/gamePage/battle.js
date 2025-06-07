@@ -503,9 +503,10 @@ function resetBattleFunc() {
 
         let numOfShakes = 1
 
-        let isCaught = true
+        let isCaught = false
 
-        if (enemy.level >= currentStarter.level && oddsOfCatching < .35) {
+        if (itemBeingUsed.item_type === 'throwable') {
+                  if (enemy.level >= currentStarter.level && oddsOfCatching < .35) {
           isCaught = false
         } else if ((enemy.level >= currentStarter.level && oddsOfCatching < .7) || (enemy.level < currentStarter.level && oddsOfCatching < .4)) {
           isCaught = false
@@ -514,7 +515,13 @@ function resetBattleFunc() {
           isCaught = true
           numOfShakes = 3
           postNewUserCharacter({character_id: enemy.id})
+
+          queue.push(() => {
+                  fadeBackToExplore();
+                });
         }
+        }
+
 
         currentStarter.usingItem({
           item: itemBeingUsed,
@@ -539,7 +546,7 @@ function resetBattleFunc() {
 
           if (!isCaught) {
             console.log('i didnt get caught so im gonna attack :)');
-            
+
             queue.push(() => {
           enemy.attack({
             attack: {},
@@ -788,6 +795,7 @@ function animateBattle() {
 
 // func to go through the queue
 document.querySelector("#dialogueBox").addEventListener("click", (e) => {
+  if (isAnimating) return;
   if (queue.length > 0) {
     queue[0]();
     queue.shift();
