@@ -144,11 +144,16 @@ class Character extends Sprite {
   faint() {
     document.getElementById("dialogueBox").innerHTML = this.name + " fainted!";
 
+    isAnimating = true;
+
     gsap.to(this.position, {
       y: this.position.y + 20,
     });
     gsap.to(this, {
       opacity: 0,
+      onComplete: () => {
+        isAnimating = false;
+      }
     });
   }
 
@@ -156,6 +161,8 @@ class Character extends Sprite {
     document.getElementById("dialogueBox").style.display = "block";
     document.getElementById("dialogueBox").innerHTML =
       this.name + " switched into " + recipient.name;
+
+      isAnimating = true;
 
     this.isCurrentStarter = false;
     recipient.isCurrentStarter = true;
@@ -183,6 +190,9 @@ class Character extends Sprite {
         });
         gsap.to(recipient.position, {
           x: recipient.position.x,
+          onComplete: () => {
+            isAnimating = false;
+          }
         });
       },
     });
@@ -346,6 +356,7 @@ class Character extends Sprite {
           gsap.to("#starterStaminaBar", {
             width: (this.stamina / this.maxStamina) * 100 + "%",
           });
+          isAnimating = false;
         },
       });
     }
