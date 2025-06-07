@@ -241,55 +241,47 @@ class Character extends Sprite {
           } else {
 console.log('didnt catch');
 
-for (let i = 0; i < numOfShakes; i++) {
-                    gsap.to(throwableFx.position, {
+
+
+          }
+
+          gsap.to(throwableFx.position, {
+            x: throwableFx.position.x + 10,
+            yoyo: true,
+            repeat: 5,
+            duration: 0.08,
+            delay: 1,
+            onComplete: () => {
+              gsap.to(throwableFx.position, {
+                x: throwableFx.position.x + 10,
+                yoyo: true,
+                repeat: 5,
+                duration: 0.08,
+                delay: 2,
+                onComplete: () => {
+                  gsap.to(throwableFx.position, {
                     x: throwableFx.position.x + 10,
                     yoyo: true,
                     repeat: 5,
                     duration: 0.08,
                     delay: 2,
+                    onComplete: () => {
+                      gsap.to(throwableFx.position, {
+                        delay: 2,
+                        onComplete: () => {
+                          gsap.to(recipient, {
+                            opacity: 1,
+                            duration: 0.5,
+                          });
+                          renderedSprites.splice(2, 1);
+                        },
+                      });
+                    },
                   });
-}
-
-          }
-
-          // gsap.to(throwableFx.position, {
-          //   x: throwableFx.position.x + 10,
-          //   yoyo: true,
-          //   repeat: 5,
-          //   duration: 0.08,
-          //   delay: 1,
-          //   onComplete: () => {
-          //     gsap.to(throwableFx.position, {
-          //       x: throwableFx.position.x + 10,
-          //       yoyo: true,
-          //       repeat: 5,
-          //       duration: 0.08,
-          //       delay: 2,
-          //       onComplete: () => {
-          //         gsap.to(throwableFx.position, {
-          //           x: throwableFx.position.x + 10,
-          //           yoyo: true,
-          //           repeat: 5,
-          //           duration: 0.08,
-          //           delay: 2,
-          //           onComplete: () => {
-          //             gsap.to(throwableFx.position, {
-          //               delay: 2,
-          //               onComplete: () => {
-          //                 gsap.to(recipient, {
-          //                   opacity: 1,
-          //                   duration: 0.5,
-          //                 });
-          //                 renderedSprites.splice(2, 1);
-          //               },
-          //             });
-          //           },
-          //         });
-          //       },
-          //     });
-          //   },
-          // });
+                },
+              });
+            },
+          });
         },
       });
     } else if (item.item_type === "consumable") {
