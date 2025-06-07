@@ -221,9 +221,6 @@ class Character extends Sprite {
         rotation: 1,
       });
 
-      // document.getElementById("dialogueBox").innerHTML =
-      //   "you failed to catch " + recipient.name;
-
       renderedSprites.splice(2, 0, throwableFx);
 
       gsap.to(throwableFx.position, {
@@ -259,9 +256,9 @@ class Character extends Sprite {
                       duration: 0.08,
                       delay: 2,
                       onComplete: () => {
-                       document.getElementById("dialogueBox").innerHTML =
-        "you caught " + recipient.name;
-                    },
+                        document.getElementById("dialogueBox").innerHTML =
+                          "you caught " + recipient.name;
+                      },
                     });
                   },
                 });
@@ -284,8 +281,8 @@ class Character extends Sprite {
                       opacity: 1,
                       duration: 0.5,
                     });
-                          document.getElementById("dialogueBox").innerHTML =
-        "you failed to catch " + recipient.name;
+                    document.getElementById("dialogueBox").innerHTML =
+                      "you failed to catch " + recipient.name;
 
                     renderedSprites.splice(2, 1);
                   },
@@ -316,8 +313,8 @@ class Character extends Sprite {
                           opacity: 1,
                           duration: 0.5,
                         });
-                              document.getElementById("dialogueBox").innerHTML =
-        "you failed to catch " + recipient.name;
+                        document.getElementById("dialogueBox").innerHTML =
+                          "you failed to catch " + recipient.name;
                         renderedSprites.splice(2, 1);
                       },
                     });
@@ -326,44 +323,6 @@ class Character extends Sprite {
               },
             });
           }
-
-          // gsap.to(throwableFx.position, {
-          //   x: throwableFx.position.x + 10,
-          //   yoyo: true,
-          //   repeat: 5,
-          //   duration: 0.08,
-          //   delay: 1,
-          //   onComplete: () => {
-          //     gsap.to(throwableFx.position, {
-          //       x: throwableFx.position.x + 10,
-          //       yoyo: true,
-          //       repeat: 5,
-          //       duration: 0.08,
-          //       delay: 2,
-          //       onComplete: () => {
-          //         gsap.to(throwableFx.position, {
-          //           x: throwableFx.position.x + 10,
-          //           yoyo: true,
-          //           repeat: 5,
-          //           duration: 0.08,
-          //           delay: 2,
-          //           onComplete: () => {
-          //             gsap.to(throwableFx.position, {
-          //               delay: 2,
-          //               onComplete: () => {
-          //                 gsap.to(recipient, {
-          //                   opacity: 1,
-          //                   duration: 0.5,
-          //                 });
-          //                 renderedSprites.splice(2, 1);
-          //               },
-          //             });
-          //           },
-          //         });
-          //       },
-          //     });
-          //   },
-          // });
         },
       });
     } else if (item.item_type === "consumable") {
