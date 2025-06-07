@@ -296,7 +296,37 @@ console.log('didnt catch 1 shake');
 
 console.log('didnt catch 2 shake');
 
+          gsap.to(throwableFx.position, {
+            x: throwableFx.position.x + 10,
+            yoyo: true,
+            repeat: 5,
+            duration: 0.08,
+            delay: 1,
+            onComplete: () => {
+              gsap.to(throwableFx.position, {
+                x: throwableFx.position.x + 10,
+                yoyo: true,
+                repeat: 5,
+                duration: 0.08,
+                delay: 2,
+                onComplete: () => {
 
+                      gsap.to(throwableFx.position, {
+                        delay: 2,
+                        onComplete: () => {
+                          gsap.to(recipient, {
+                            opacity: 1,
+                            duration: 0.5,
+                          });
+                          renderedSprites.splice(2, 1);
+                        },
+                      });
+                    },
+              
+                
+              });
+            },
+          });
 
           }
 
