@@ -507,12 +507,9 @@ function resetBattleFunc() {
 
         if (enemy.level >= currentStarter.level && oddsOfCatching < .35) {
           isCaught = false
-        } else if (enemy.level >= currentStarter.level && oddsOfCatching < .7) {
+        } else if ((enemy.level >= currentStarter.level && oddsOfCatching < .7) || (enemy.level < currentStarter.level && oddsOfCatching < .4)) {
           isCaught = false
           numOfShakes = 2
-        } else if (enemy.level < currentStarter.level && oddsOfCatching < .4) {
-          isCaught = false
-          numOfShakes = 3
         } else {
           isCaught = true
           numOfShakes = 3
