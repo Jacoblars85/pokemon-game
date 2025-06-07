@@ -193,7 +193,7 @@ class Character extends Sprite {
     document.getElementById("dialogueBox").innerHTML =
       this.name + " used " + item.item_name;
 
-      
+      isAnimating = true;
 
     if (item.item_type === "throwable") {
       const throwableFxImage = new Image();
@@ -251,6 +251,7 @@ class Character extends Sprite {
                       onComplete: () => {
                         document.getElementById("dialogueBox").innerHTML =
                           "you caught " + recipient.name;
+                          isAnimating = false;
                       },
                     });
                   },
@@ -276,8 +277,8 @@ class Character extends Sprite {
                     });
                     document.getElementById("dialogueBox").innerHTML =
                       "you failed to catch " + recipient.name;
-
                     renderedSprites.splice(2, 1);
+                    isAnimating = false;
                   },
                 });
               },
@@ -309,6 +310,7 @@ class Character extends Sprite {
                         document.getElementById("dialogueBox").innerHTML =
                           "you failed to catch " + recipient.name;
                         renderedSprites.splice(2, 1);
+                        isAnimating = false;
                       },
                     });
                   },
