@@ -270,6 +270,12 @@ function resetBattleFunc() {
 
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
+      let winningInfo = {
+        xp: 0.25,
+        characterXp: 0.2,
+        currentStarterId: currentStarter.id,
+      };
+
       if (e.target.className === "attackButton") {
         const characterSelectedAttack = e.target.innerHTML;
         let selectedAttack = {};
@@ -282,12 +288,6 @@ function resetBattleFunc() {
           selectedAttack = kickAttackStats;
         else if (characterSelectedAttack === pokeAttackStats.attack_name)
           selectedAttack = pokeAttackStats;
-
-        let winningInfo = {
-          xp: 0.25,
-          characterXp: 0.2,
-          currentStarterId: currentStarter.id,
-        };
 
         if (currentStarter.speed >= enemySpeed) {
           currentStarter.attack({
@@ -518,6 +518,7 @@ function resetBattleFunc() {
             isCaught = true;
             numOfShakes = 3;
             postNewUserCharacter({ character_id: enemy.id });
+            putWonBattle(winningInfo);
 
             queue.push(() => {
               fadeBackToExplore();
