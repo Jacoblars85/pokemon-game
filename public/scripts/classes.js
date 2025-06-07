@@ -193,16 +193,9 @@ class Character extends Sprite {
     document.getElementById("dialogueBox").innerHTML =
       this.name + " used " + item.item_name;
 
-    this.health += item.item_hp;
-    this.stamina += item.item_stamina;
-    this.speed += item.item_speed;
-
-    if (this.health > this.maxHealth) this.health = this.maxHealth;
-    if (this.stamina > this.maxStamina) this.stamina = this.maxStamina;
+      
 
     if (item.item_type === "throwable") {
-      console.log("trying to catch");
-
       const throwableFxImage = new Image();
       throwableFxImage.src = item.item_pic;
 
@@ -326,7 +319,12 @@ class Character extends Sprite {
         },
       });
     } else if (item.item_type === "consumable") {
-      console.log("trying to heal");
+      this.health += item.item_hp;
+      this.stamina += item.item_stamina;
+      this.speed += item.item_speed;
+
+      if (this.health > this.maxHealth) this.health = this.maxHealth;
+      if (this.stamina > this.maxStamina) this.stamina = this.maxStamina;
 
       gsap.to(this.position, {
         x: this.position.x + 10,
