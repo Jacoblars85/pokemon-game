@@ -537,7 +537,10 @@ function resetBattleFunc() {
           });
 
 
-        queue.push(() => {
+          if (!isCaught) {
+            console.log('i didnt get caught so im gonna attack :)');
+            
+            queue.push(() => {
           enemy.attack({
             attack: {},
             recipient: currentStarter,
@@ -574,6 +577,8 @@ function resetBattleFunc() {
 
           resetBattleFunc();
         });
+          }
+        
       } else if (
         e.target.innerHTML === "Change Starter" &&
         e.target.id != currentStarter.id
