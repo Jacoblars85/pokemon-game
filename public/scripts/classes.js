@@ -235,6 +235,24 @@ class Character extends Sprite {
             duration: 0.5,
           });
 
+          if (isCaught) {
+            console.log('is caught');
+            
+          } else {
+console.log('didnt catch');
+
+for (let i = 0; i < numOfShakes; i++) {
+                    gsap.to(throwableFx.position, {
+                    x: throwableFx.position.x + 10,
+                    yoyo: true,
+                    repeat: 5,
+                    duration: 0.08,
+                    delay: 2,
+                  });
+}
+
+          }
+
           gsap.to(throwableFx.position, {
             x: throwableFx.position.x + 10,
             yoyo: true,
