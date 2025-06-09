@@ -396,8 +396,7 @@ function postNewUserCharacter(newCharacter) {
     withCredentials: true,
   })
     .then((response) => {
-      console.log('posted new character!!!');
-      
+      console.log("posted new character!!!");
     })
     .catch((err) => {
       console.log(err);
