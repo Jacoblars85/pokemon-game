@@ -46,7 +46,8 @@ router.get("/enemy/:id", (req, res) => {
   // console.log('im in enemy get');
 
   const query = `
-SELECT  "characters"."character_name",
+SELECT  "characters"."id",
+        "characters"."character_name",
         "characters"."profile_pic",
         "characters"."hp",
         "characters"."stamina",
