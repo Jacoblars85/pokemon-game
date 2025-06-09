@@ -261,7 +261,7 @@ router.post("/new/character", (req, res) => {
             VALUES
             ($1, $2);
         `;
-  const insertCharacterValue = [req.user.id, req.body.characterID];
+  const insertCharacterValue = [req.user.id, req.body.characterId];
 
   pool
     .query(insertCharacterQuery, insertCharacterValue)
