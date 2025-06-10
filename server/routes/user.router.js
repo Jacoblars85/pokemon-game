@@ -294,7 +294,7 @@ router.delete("/", (req, res) => {
 });
 
 router.put("/won/battle", (req, res) => {
-  const newUserXpLevel = (req.user.xp_level += req.body.xp);
+  const newUserXpLevel = Number(req.user.xp_level) + req.body.xp;
   let rewardId;
   let sqlText;
 
@@ -326,7 +326,7 @@ router.put("/won/battle", (req, res) => {
       let sqlText;
 
       if (
-        Math.floor(req.user.xp_level + req.body.xp) > req.user.rewards_received
+        Math.floor(Number(req.user.xp_level) + req.body.xp) > req.user.rewards_received
       ) {
         // if (Math.floor(1.75 + req.body.xp) > 1) {
         sqlText = `
