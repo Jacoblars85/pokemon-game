@@ -8,7 +8,6 @@ const userStrategy = require("../strategies/user.strategy");
 
 const router = express.Router();
 
-
 // Handles Ajax request for user information if user is authenticated
 router.get("/", rejectUnauthenticated, (req, res) => {
   // Send back user object from the session (previously queried from the database)
@@ -102,26 +101,31 @@ router.post("/register", (req, res, next) => {
                 .query(insertNewUserQuery, insertNewUserValues)
                 // was here for basic
                 .then(() => {
-  const getUserQuery = `SELECT * FROM "user" WHERE id = $1`;
-  pool.query(getUserQuery, [createdUserId])
-    .then((result) => {
-      const user = result.rows[0];
+                  const getUserQuery = `SELECT * FROM "user" WHERE id = $1`;
+                  pool
+                    .query(getUserQuery, [createdUserId])
+                    .then((result) => {
+                      const user = result.rows[0];
 
-      req.login(user, (err) => {
-        if (err) {
-          console.error("Login error after register:", err);
-          return res.sendStatus(500);
-        }
+                      req.login(user, (err) => {
+                        if (err) {
+                          console.error("Login error after register:", err);
+                          return res.sendStatus(500);
+                        }
 
-        res.status(201).json({ message: "User registered and logged in", user });
-      });
-    })
-    .catch((err) => {
-      console.error("Error fetching user for login:", err);
-      res.sendStatus(500);
-    });
-});
-
+                        res
+                          .status(201)
+                          .json({
+                            message: "User registered and logged in",
+                            user,
+                          });
+                      });
+                    })
+                    .catch((err) => {
+                      console.error("Error fetching user for login:", err);
+                      res.sendStatus(500);
+                    });
+                });
             })
             .catch((err) => {
               // catch for third query
@@ -163,7 +167,6 @@ router.post("/logout", (req, res) => {
 });
 
 router.use(rejectUnauthenticated);
-
 
 router.get("/rewards", (req, res) => {
   const query = `
@@ -301,7 +304,7 @@ router.put("/won/battle", (req, res) => {
   else rewardId = 1;
 
   if (Math.floor(newUserXpLevel) > req.user.rewards_received) {
-  // if (Math.floor(newUserXpLevel) > 1) {
+    // if (Math.floor(newUserXpLevel) > 1) {
     sqlText = `
                 UPDATE "user_rewards"
                       SET "number" = "number" + 1
@@ -322,8 +325,10 @@ router.put("/won/battle", (req, res) => {
     .then((result) => {
       let sqlText;
 
-      if (Math.floor(req.user.xp_level + req.body.xp) > req.user.rewards_received) {
-      // if (Math.floor(1.75 + req.body.xp) > 1) {
+      if (
+        Math.floor(req.user.xp_level + req.body.xp) > req.user.rewards_received
+      ) {
+        // if (Math.floor(1.75 + req.body.xp) > 1) {
         sqlText = `
     UPDATE "user"
           SET "coins" = "coins" + 10, "xp_level" = "xp_level" + $1,  "rewards_received" = "rewards_received" + 1
