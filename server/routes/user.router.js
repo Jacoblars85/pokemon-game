@@ -101,7 +101,27 @@ router.post("/register", (req, res, next) => {
               pool
                 .query(insertNewUserQuery, insertNewUserValues)
                 // was here for basic
-                .then(() => res.sendStatus(201));
+                .then(() => {
+  const getUserQuery = `SELECT * FROM "user" WHERE id = $1`;
+  pool.query(getUserQuery, [createdUserId])
+    .then((result) => {
+      const user = result.rows[0];
+
+      req.login(user, (err) => {
+        if (err) {
+          console.error("Login error after register:", err);
+          return res.sendStatus(500);
+        }
+
+        res.status(201).json({ message: "User registered and logged in", user });
+      });
+    })
+    .catch((err) => {
+      console.error("Error fetching user for login:", err);
+      res.sendStatus(500);
+    });
+});
+
             })
             .catch((err) => {
               // catch for third query
