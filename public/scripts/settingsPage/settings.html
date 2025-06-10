@@ -16,6 +16,19 @@
       defer
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
     ></script>
+    <script>
+      fetch("http://localhost:5001/api/user", {
+        credentials: "include",
+      })
+        .then((res) => {
+          if (res.status === 403) {
+            window.location.href = "../loginPage/login.html";
+          }
+        })
+        .catch(() => {
+          window.location.href = "../loginPage/login.html";
+        });
+    </script>
   </head>
   <body>
     <div class="bigArea" style="display: inline-block; position: relative">
