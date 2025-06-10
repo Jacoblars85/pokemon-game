@@ -18,19 +18,18 @@
     ></script>
 
     <script>
-  fetch('http://localhost:5001/api/user', {
-    credentials: 'include',
-  })
-  .then(res => {
-    if (res.status === 403) {
-      window.location.href = '../loginPage/login.html';
-    }
-  })
-  .catch(() => {
-    window.location.href = '../loginPage/login.html';
-  });
-</script>
-
+      fetch("http://localhost:5001/api/user", {
+        credentials: "include",
+      })
+        .then((res) => {
+          if (res.status === 403) {
+            window.location.href = "../loginPage/login.html";
+          }
+        })
+        .catch(() => {
+          window.location.href = "../loginPage/login.html";
+        });
+    </script>
   </head>
   <body>
     <div class="bigArea" style="display: inline-block; position: relative">
@@ -64,7 +63,7 @@
       >
         <p id="usernameNavHeader">username</p>
 
-        <p id="userLevelNavHeader">lvl: </p>
+        <p id="userLevelNavHeader">lvl:</p>
         <p id="usersCoinsNavHeader">$</p>
 
         <button class="btn" style="margin: 0" onclick="openSettingsDialog()">
