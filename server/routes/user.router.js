@@ -8,7 +8,6 @@ const userStrategy = require("../strategies/user.strategy");
 
 const router = express.Router();
 
-router.use(rejectUnauthenticated);
 
 // Handles Ajax request for user information if user is authenticated
 router.get("/", rejectUnauthenticated, (req, res) => {
@@ -142,6 +141,9 @@ router.post("/logout", (req, res) => {
   req.logout();
   res.sendStatus(200);
 });
+
+router.use(rejectUnauthenticated);
+
 
 router.get("/rewards", (req, res) => {
   const query = `
