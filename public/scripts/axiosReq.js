@@ -63,7 +63,7 @@ function loginUser(userInfo) {
 
 function logoutUser() {
   axios
-    .post(`http://localhost:5001/api/user/logout`, config)
+    .post(`http://localhost:5001/api/user/logout`, {}, config)
     .then((response) => {
       console.log("logged out", response);
 
