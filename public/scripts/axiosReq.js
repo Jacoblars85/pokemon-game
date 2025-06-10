@@ -67,7 +67,7 @@ function logoutUser() {
     .then((response) => {
       console.log("logged out", response);
 
-      window.location.href = "../registerPage/register.html";
+      window.location.href = "../loginPage/login.html";
     })
     .catch((err) => {
       console.log(err);
