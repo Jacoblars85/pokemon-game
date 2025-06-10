@@ -113,12 +113,10 @@ router.post("/register", (req, res, next) => {
                           return res.sendStatus(500);
                         }
 
-                        res
-                          .status(201)
-                          .json({
-                            message: "User registered and logged in",
-                            user,
-                          });
+                        res.status(201).json({
+                          message: "User registered and logged in",
+                          user,
+                        });
                       });
                     })
                     .catch((err) => {
@@ -326,7 +324,8 @@ router.put("/won/battle", (req, res) => {
       let sqlText;
 
       if (
-        Math.floor(Number(req.user.xp_level) + req.body.xp) > req.user.rewards_received
+        Math.floor(Number(req.user.xp_level) + req.body.xp) >
+        req.user.rewards_received
       ) {
         // if (Math.floor(1.75 + req.body.xp) > 1) {
         sqlText = `
