@@ -22,19 +22,19 @@
       defer
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
     ></script>
-        <script>
-  fetch('http://localhost:5001/api/user', {
-    credentials: 'include',
-  })
-  .then(res => {
-    if (res.status === 403) {
-      window.location.href = '../loginPage/login.html';
-    }
-  })
-  .catch(() => {
-    window.location.href = '../loginPage/login.html';
-  });
-</script>
+    <script>
+      fetch("http://localhost:5001/api/user", {
+        credentials: "include",
+      })
+        .then((res) => {
+          if (res.status === 403) {
+            window.location.href = "../loginPage/login.html";
+          }
+        })
+        .catch(() => {
+          window.location.href = "../loginPage/login.html";
+        });
+    </script>
     <title>pokemon game</title>
   </head>
   <body>
@@ -364,7 +364,7 @@
 
         <div id="rewardPicDiv"></div>
 
-        <button style="margin: 30px;" onclick="closeChest()">close</button>
+        <button style="margin: 30px" onclick="closeChest()">close</button>
       </div>
 
       <!-- settings button -->
@@ -383,7 +383,7 @@
         </h2>
 
         <div
-        id="settingsBody"
+          id="settingsBody"
           style="
             display: flex;
             flex-direction: column;
