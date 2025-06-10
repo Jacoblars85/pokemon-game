@@ -31,6 +31,7 @@ function registerUserPost(userInfo) {
     method: "POST",
     url: `http://localhost:5001/api/user/register`,
     data: userInfo,
+    withCredentials: true,
   })
     .then((response) => {
       console.log("registered the new user", response);
