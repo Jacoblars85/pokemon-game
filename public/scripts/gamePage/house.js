@@ -145,4 +145,21 @@ function animateHouse() {
       }
     }
   }
+
+  if (keys.e.pressed || keys.f.pressed) {
+    for (let i = 0; i < housePcZones.length; i++) {
+      const pcZone = housePcZones[i];
+
+      if (
+        rectangularCollisions({
+          rectangle1: player,
+          rectangle2: pcZone,
+        })
+      ) {
+        // window.cancelAnimationFrame(houseAnimationId);
+        
+        break;
+      }
+    }
+  }
 }
