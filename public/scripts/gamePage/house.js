@@ -17,15 +17,15 @@ for (let i = 0; i < housePcZonesArray.length; i += 50) {
 }
 
 const houseOffset = {
-  x: -635.5,
-  y: -625,
+  x: -732,
+  y: -1020,
 };
 
 const houseBoundaries = [];
 
 houseCollisionsMap.forEach((row, i) => {
   row.forEach((symbol, j) => {
-    if (symbol === 2207) {
+    if (symbol === 1185) {
       houseBoundaries.push(
         new Boundary({
           position: {
@@ -42,7 +42,7 @@ const houseDoorZones = [];
 
 houseDoorZonesMap.forEach((row, i) => {
   row.forEach((symbol, j) => {
-    if (symbol === 2207) {
+    if (symbol === 1185) {
       houseDoorZones.push(
         new Boundary({
           position: {
@@ -59,7 +59,7 @@ const housePcZones = [];
 
 housePcZonesMap.forEach((row, i) => {
   row.forEach((symbol, j) => {
-    if (symbol === 2207) {
+    if (symbol === 1185) {
       housePcZones.push(
         new Boundary({
           position: {
