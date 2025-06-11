@@ -313,6 +313,21 @@ function getBasicAttacks() {
     });
 }
 
+function getAllUsersCharacters() {
+  axios({
+    method: "GET",
+    url: "http://localhost:5001/api/characters/user/characters",
+    withCredentials: true,
+  })
+    .then((response) => {
+      console.log('response', response.data);
+      
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function getAllUsersConsumables(resetBattleFunc) {
   axios({
     method: "GET",
