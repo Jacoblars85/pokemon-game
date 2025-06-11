@@ -356,7 +356,7 @@ function openChest(boundryId) {
 
   console.log("boundryId", boundryId);
 
-  // userOpenReward(rewardId);
+  userOpenReward(rewardId);
 
   document.getElementById("chestInterfacePopUp").style.display = "flex";
 
