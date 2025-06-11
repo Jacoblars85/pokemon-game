@@ -97,9 +97,13 @@ function animateHouse() {
     houseDoorZone.draw();
   });
 
+    housePcZones.forEach((housePcZone) => {
+    housePcZone.draw();
+  });
+
   player.draw();
 
-  movables = [houseBackground, ...houseBoundaries, ...houseDoorZones];
+  movables = [houseBackground, ...houseBoundaries, ...houseDoorZones, ...housePcZones];
 
   moving = true;
   player.animate = false;
