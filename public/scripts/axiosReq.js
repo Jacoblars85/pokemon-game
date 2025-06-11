@@ -106,15 +106,15 @@ function changeUsername(newName) {
     });
 }
 
-function userOpenReward(rewardId) {
+function userOpenChest(chestInfo) {
   axios({
     method: "PUT",
-    url: `http://localhost:5001/api/user/reward/open`,
-    data: rewardId,
+    url: `http://localhost:5001/api/user/chest/open`,
+    data: chestInfo,
     withCredentials: true,
   })
     .then((response) => {
-      console.log("finished opening the reward axios");
+      console.log("finished opening the chest axios");
     })
     .catch((err) => {
       console.log(err);
