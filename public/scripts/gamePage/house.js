@@ -146,6 +146,7 @@ function animateHouse() {
     }
   }
 
+  // open pc to show all users characters
   if (keys.e.pressed || keys.f.pressed) {
     for (let i = 0; i < housePcZones.length; i++) {
       const pcZone = housePcZones[i];
@@ -157,8 +158,8 @@ function animateHouse() {
         })
       ) {
         // window.cancelAnimationFrame(houseAnimationId);
+        console.log('trying to open the pc');
         
-        break;
       }
     }
   }
