@@ -403,7 +403,7 @@ router.put("/credits", (req, res) => {
 
 router.put("/reward/open", (req, res) => {
   // console.log('are we here?');
-   const sqlText = `
+  const sqlText = `
       UPDATE "user_rewards"
         SET "number" = "number" - 1
           WHERE "reward_id" = $1 AND "user_id" = $2
@@ -417,7 +417,7 @@ router.put("/reward/open", (req, res) => {
       res.sendStatus(201);
     })
     .catch((err) => {
-            console.log("Error in user.router /reward/open PUT,", err);
+      console.log("Error in user.router /reward/open PUT,", err);
       res.sendStatus(500);
     });
 });
@@ -444,8 +444,7 @@ router.put("/chest/open", (req, res) => {
 
       const sqlValues = [req.user.id, req.body.itemId];
 
-      pool.query(sqlText, sqlValues)
-      .then((result) => {
+      pool.query(sqlText, sqlValues).then((result) => {
         res.sendStatus(201);
       });
     })
