@@ -55,6 +55,23 @@ houseDoorZonesMap.forEach((row, i) => {
   });
 });
 
+const housePcZones = [];
+
+housePcZonesMap.forEach((row, i) => {
+  row.forEach((symbol, j) => {
+    if (symbol === 2207) {
+      housePcZones.push(
+        new Boundary({
+          position: {
+            x: j * Boundary.width + houseOffset.x,
+            y: i * Boundary.height + houseOffset.y,
+          },
+        })
+      );
+    }
+  });
+});
+
 const houseBackgroundImage = new Image();
 houseBackgroundImage.src = "./img/backgroundImg/house-interior-background.png";
 
