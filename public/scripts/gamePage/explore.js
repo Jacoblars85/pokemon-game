@@ -354,6 +354,8 @@ function movementIf(boundryParam) {
 function openChest(boundryId) {
   let itemId = Math.floor(Math.random() * 19 + 1);
 
+  let rewardId;
+
   console.log("boundryId", boundryId);
 
   userOpenReward({ itemId, rewardId });
