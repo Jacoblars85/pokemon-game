@@ -10,6 +10,12 @@ for (let i = 0; i < houseDoorZonesArray.length; i += 50) {
   houseDoorZonesMap.push(houseDoorZonesArray.slice(i, 50 + i));
 }
 
+const housePcZonesMap = [];
+
+for (let i = 0; i < housePcZonesArray.length; i += 50) {
+  housePcZonesMap.push(housePcZonesArray.slice(i, 50 + i));
+}
+
 const houseOffset = {
   x: -635.5,
   y: -625,
