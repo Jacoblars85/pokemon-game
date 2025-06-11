@@ -352,16 +352,16 @@ function movementIf(boundryParam) {
 }
 
 function openChest(boundryId) {
-  let rewardId = Math.floor(Math.random() * 19 + 1);
+  let itemId = Math.floor(Math.random() * 19 + 1);
 
   console.log("boundryId", boundryId);
 
-  userOpenReward(rewardId);
+  userOpenReward({ itemId, rewardId });
 
   document.getElementById("chestInterfacePopUp").style.display = "flex";
 
   allItems.forEach((item) => {
-    if (item.id === rewardId) {
+    if (item.id === itemId) {
       document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${item.item_name}</h3>
 
