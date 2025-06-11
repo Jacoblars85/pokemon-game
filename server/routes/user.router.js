@@ -402,29 +402,6 @@ router.put("/credits", (req, res) => {
 });
 
 router.put("/reward/open", (req, res) => {
-  const sqlText = `
-  UPDATE "user_rewards"
-        SET "number" = "number" - 1
-        WHERE "reward_id" = $1 AND "user_id" = $2
-    `;
-
-  const sqlValues = [req.body.rewardId, req.user.id];
-
-  pool
-    .query(sqlText, sqlValues)
-    .then((result) => {
-      pool.query(sqlText, sqlValues).then((result) => {
-        res.sendStatus(201);
-      });
-    })
-
-    .catch((err) => {
-      console.log("Error in user.router /reward/open PUT,", err);
-      res.sendStatus(500);
-    });
-});
-
-router.put("/reward/open", (req, res) => {
   // console.log('req.body', req.body);
 
   const sqlText = `
@@ -438,6 +415,7 @@ router.put("/reward/open", (req, res) => {
   pool
     .query(sqlText, sqlValues)
     .then((result) => {
+
       const sqlText = `
     UPDATE "user_inventory"
     SET "number" = "number" + 1
