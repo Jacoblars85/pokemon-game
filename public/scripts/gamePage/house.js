@@ -203,6 +203,7 @@ function animateHouse() {
                 width: 100px;
               "
             >Set Starter 1</button>
+
             <button
               id=${characters.id}
               style="
@@ -213,6 +214,17 @@ function animateHouse() {
                 width: 100px;
               "
             >Set Starter 2</button>
+
+            <button
+              id=${characters.id}
+              style="
+                color: black;
+                font-size: 15;
+                border-color: black;
+                cursor: pointer;
+                width: 100px;
+              "
+            >Remove Starter</button>
         </div>
       `;
         }
