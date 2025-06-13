@@ -162,6 +162,8 @@ function animateHouse() {
 
           document.getElementById("pcInterfacePopUp").style.display = "flex";
 
+          document.getElementById("pcBody").innerHTML = ''
+
         for (let i = 0; i < usersCharacters.length; i++) {
           const characters = usersCharacters[i];
 
