@@ -178,13 +178,13 @@ function animateHouse() {
               text-align: center;
               width: 230px;
              "
-             >${characters.name} </p>
+             >${characters.character_name} </p>
             <div>
               <p style=" 
               margin: 0px;
               text-align: center;
               "
-              >${characters.health}/${characters.maxHealth} hp | ${characters.stamina}/${characters.maxStamina} stamina
+              >${characters.hp} hp | ${characters.stamina} stamina
               </p>
               <p style=" 
               margin: 0px;
