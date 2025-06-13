@@ -160,10 +160,10 @@ function animateHouse() {
         window.cancelAnimationFrame(houseAnimationId);
         console.log("trying to open the pc");
 
-          for (let i = 0; i < usersCharacters.length; i++) {
-    const characters = usersCharacters[i];
+        for (let i = 0; i < usersCharacters.length; i++) {
+          const characters = usersCharacters[i];
 
-    document.getElementById("").innerHTML += `
+          document.getElementById("").innerHTML += `
         <div style=" 
                 display: flex;
                 flex-direction: row;
@@ -212,7 +212,7 @@ function animateHouse() {
             >Set Starter 2</button>
         </div>
       `;
-  }
+        }
       }
     }
   }
