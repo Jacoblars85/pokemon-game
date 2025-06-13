@@ -158,11 +158,10 @@ function animateHouse() {
         })
       ) {
         window.cancelAnimationFrame(houseAnimationId);
-        console.log("trying to open the pc");
 
-          document.getElementById("pcInterfacePopUp").style.display = "flex";
+        document.getElementById("pcInterfacePopUp").style.display = "flex";
 
-          document.getElementById("pcBody").innerHTML = ''
+        document.getElementById("pcBody").innerHTML = "";
 
         for (let i = 0; i < usersCharacters.length; i++) {
           const characters = usersCharacters[i];
