@@ -417,14 +417,12 @@
         </button>
       </div>
 
-      <!-- settings interface -->
+      <!-- pc interface -->
       <div id="pcInterface" class="pcInterface">
         <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
-          Settings
+          Characters
         </h2>
-
-        <div
-          id="pcInterface"
+        <div id="pcBody"
           style="
             display: flex;
             flex-direction: column;
@@ -432,31 +430,9 @@
             justify-content: space-evenly;
             width: 80%;
             height: 90%;
-          "
-        >
-          <!-- <button class="btn" onclick="goToMainMenu()">Main Menu</button> -->
-          <button class="btn">
-            <a href="../mainMenuPage/mainMenu.html">Main Menu</a>
-          </button>
-          <button class="btn" onclick="deleteUserDialog()">
-            Delete Account
-          </button>
-          <button class="btn" onclick="changeUsernameDialog()">
-            Change Name
-          </button>
-          <button class="btn" onclick="logoutUser()">
-            <a href="../loginPage/login.html">Log Out</a>
-          </button>
-        </div>
-
-        <button
-          class="btn"
-          style="position: absolute; top: 0.5%; right: 0.5%; margin: 0"
-          onclick="closeSettingsDialog()"
-        >
-          X
-        </button>
+          "></div>
       </div>
+
     </div>
 
     <script src="./data/exploreData/battleZones.js"></script>
