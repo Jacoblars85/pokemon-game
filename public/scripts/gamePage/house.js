@@ -162,7 +162,6 @@ function animateHouse() {
 
           for (let i = 0; i < usersCharacters.length; i++) {
     const characters = usersCharacters[i];
-    starterNum++;
 
     document.getElementById("").innerHTML += `
         <div style=" 
@@ -172,27 +171,27 @@ function animateHouse() {
                 justify-content: space-around;
                 padding: 5px; 
         ">
-            <img height="50" width="50" src=${start.profilePic} />
+            <img height="50" width="50" src=${characters.profilePic} />
             <p style=" 
               text-align: center;
               width: 230px;
              "
-             >starter ${starterNum}: ${start.name} </p>
+             >starter ${starterNum}: ${characters.name} </p>
             <div>
               <p style=" 
               margin: 0px;
               text-align: center;
               "
-              >${start.health}/${start.maxHealth} hp | ${start.stamina}/${start.maxStamina} stamina
+              >${characters.health}/${characters.maxHealth} hp | ${characters.stamina}/${characters.maxStamina} stamina
               </p>
               <p style=" 
               margin: 0px;
               text-align: center;
               "
-              >${start.speed} speed</p>
+              >${characters.speed} speed</p>
             </div>
             <button
-              id=${starterNum}
+              id=${characters.id}
               style="
                 color: black;
                 font-size: 15;
@@ -200,7 +199,17 @@ function animateHouse() {
                 cursor: pointer;
                 width: 100px;
               "
-            >Change Starter</button>
+            >Set Starter 1</button>
+            <button
+              id=${characters.id}
+              style="
+                color: black;
+                font-size: 15;
+                border-color: black;
+                cursor: pointer;
+                width: 100px;
+              "
+            >Set Starter 2</button>
         </div>
       `;
   }
