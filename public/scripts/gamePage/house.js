@@ -169,7 +169,7 @@ function animateHouse() {
           document.getElementById("pcBody").innerHTML += `
         <div style=" 
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
                 justify-content: space-around;
                 padding: 5px; 
