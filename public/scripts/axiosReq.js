@@ -170,6 +170,7 @@ let usersBattleItems = [];
 let usersConsumableItems = [];
 let usersThrowablesItems = [];
 let allItems = [];
+let usersCharacters = []
 
 let isAnimating = false;
 
@@ -319,9 +320,10 @@ function getAllUsersCharacters() {
     url: "http://localhost:5001/api/characters/user/characters",
     withCredentials: true,
   })
-    .then((response) => {
-      console.log('response', response.data);
-      
+    .then((response) => {      
+      usersCharacters = response.data
+
+            console.log('usersCharacters', usersCharacters);
     })
     .catch((err) => {
       console.log(err);
