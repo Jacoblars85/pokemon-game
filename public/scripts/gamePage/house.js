@@ -178,7 +178,7 @@ function animateHouse() {
               text-align: center;
               width: 230px;
              "
-             >starter ${starterNum}: ${characters.name} </p>
+             >${characters.name} </p>
             <div>
               <p style=" 
               margin: 0px;
