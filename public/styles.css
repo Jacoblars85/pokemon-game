@@ -225,8 +225,8 @@ PC Interface
   left: 10%;
   width: 806px;
   height: 428px;
-  display: flex;
-  /* display: none; */
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
