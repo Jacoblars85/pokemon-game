@@ -157,8 +157,53 @@ function animateHouse() {
           rectangle2: pcZone,
         })
       ) {
-        // window.cancelAnimationFrame(houseAnimationId);
+        window.cancelAnimationFrame(houseAnimationId);
         console.log("trying to open the pc");
+
+          for (let i = 0; i < usersCharacters.length; i++) {
+    const characters = usersCharacters[i];
+    starterNum++;
+
+    document.getElementById("").innerHTML += `
+        <div style=" 
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                padding: 5px; 
+        ">
+            <img height="50" width="50" src=${start.profilePic} />
+            <p style=" 
+              text-align: center;
+              width: 230px;
+             "
+             >starter ${starterNum}: ${start.name} </p>
+            <div>
+              <p style=" 
+              margin: 0px;
+              text-align: center;
+              "
+              >${start.health}/${start.maxHealth} hp | ${start.stamina}/${start.maxStamina} stamina
+              </p>
+              <p style=" 
+              margin: 0px;
+              text-align: center;
+              "
+              >${start.speed} speed</p>
+            </div>
+            <button
+              id=${starterNum}
+              style="
+                color: black;
+                font-size: 15;
+                border-color: black;
+                cursor: pointer;
+                width: 100px;
+              "
+            >Change Starter</button>
+        </div>
+      `;
+  }
       }
     }
   }
