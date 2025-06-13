@@ -158,8 +158,7 @@ function animateHouse() {
         })
       ) {
         // window.cancelAnimationFrame(houseAnimationId);
-        console.log('trying to open the pc');
-        
+        console.log("trying to open the pc");
       }
     }
   }
