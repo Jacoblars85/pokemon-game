@@ -219,27 +219,6 @@ Chest Interface
 PC Interface
 -------------------------------------------------------------------------------- */
 
-.settingsScreen {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 1016px;
-  height: 568px;
-  display: flex;
-  /* display: none; */
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 25px;
-  background-color: #efefef;
-  border: 2px solid black;
-  border-radius: 3px;
-  box-shadow: 5px 3px 7px -2px black;
-  text-align: center;
-  z-index: 100;
-}
-
 .pcInterface {
   position: absolute;
   top: 7.5%;
