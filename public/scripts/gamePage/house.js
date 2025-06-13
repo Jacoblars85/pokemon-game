@@ -160,10 +160,12 @@ function animateHouse() {
         window.cancelAnimationFrame(houseAnimationId);
         console.log("trying to open the pc");
 
+          document.getElementById("pcInterfacePopUp").style.display = "flex";
+
         for (let i = 0; i < usersCharacters.length; i++) {
           const characters = usersCharacters[i];
 
-          document.getElementById("").innerHTML += `
+          document.getElementById("pcBody").innerHTML += `
         <div style=" 
                 display: flex;
                 flex-direction: row;
