@@ -420,3 +420,19 @@ function postNewUserCharacter(newCharacter) {
       console.log(err);
     });
 }
+
+function putStarterSwitching(starterInfo) {
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/character/starter/${starterInfo.route}`,
+    data: rewardInfo,
+    withCredentials: true,
+  })
+    .then((response) => {
+      getStarters();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
