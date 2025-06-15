@@ -165,7 +165,7 @@ function animateHouse() {
 
         for (let i = 0; i < usersCharacters.length; i++) {
           const characters = usersCharacters[i];
-
+          
           document.getElementById("pcBody").innerHTML += `
         <div style=" 
                 display: flex;
@@ -174,7 +174,7 @@ function animateHouse() {
                 justify-content: space-around;
                 padding: 5px; 
         ">
-            <img height="50" width="50" src=${characters.profilePic} />
+            <img height="50" width="50" src=${characters.profile_pic} />
             <p style=" 
               text-align: center;
               width: 230px;
