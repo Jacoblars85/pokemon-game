@@ -83,6 +83,11 @@ const houseBackground = new Sprite({
   image: houseBackgroundImage,
 });
 
+function changeTheStarter(starterInfo) {
+  console.log('trying to...', starterInfo);
+  
+}
+
 let houseAnimationId;
 
 function animateHouse() {
