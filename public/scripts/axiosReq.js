@@ -170,7 +170,7 @@ let usersBattleItems = [];
 let usersConsumableItems = [];
 let usersThrowablesItems = [];
 let allItems = [];
-let usersCharacters = []
+let usersCharacters = [];
 
 let isAnimating = false;
 
@@ -320,10 +320,10 @@ function getAllUsersCharacters() {
     url: "http://localhost:5001/api/characters/user/characters",
     withCredentials: true,
   })
-    .then((response) => {      
-      usersCharacters = response.data
+    .then((response) => {
+      usersCharacters = response.data;
 
-            console.log('usersCharacters', usersCharacters);
+      console.log("usersCharacters", usersCharacters);
     })
     .catch((err) => {
       console.log(err);
@@ -421,7 +421,7 @@ function postNewUserCharacter(newCharacter) {
     });
 }
 
-function putStarterSwitching({newStarterInfo}) {
+function putStarterSwitching({ newStarterInfo }) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/character/starter/${newStarterInfo.route}`,
@@ -430,10 +430,9 @@ function putStarterSwitching({newStarterInfo}) {
   })
     .then((response) => {
       getStarters();
-      getAllUsersCharacters()
+      getAllUsersCharacters();
     })
     .catch((err) => {
       console.log(err);
     });
 }
-
