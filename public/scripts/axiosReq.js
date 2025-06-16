@@ -421,15 +421,16 @@ function postNewUserCharacter(newCharacter) {
     });
 }
 
-function putStarterSwitching(starterInfo) {
+function putStarterSwitching(newStarterInfo) {
   axios({
     method: "PUT",
-    url: `http://localhost:5001/api/character/starter/${starterInfo.route}`,
-    data: rewardInfo,
+    url: `http://localhost:5001/api/character/starter/${newStarterInfo.route}`,
+    data: newStarterInfo,
     withCredentials: true,
   })
     .then((response) => {
       getStarters();
+      getAllUsersCharacters()
     })
     .catch((err) => {
       console.log(err);
