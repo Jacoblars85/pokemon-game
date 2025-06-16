@@ -229,6 +229,7 @@ function animateHouse() {
                 cursor: pointer;
                 width: 100px;
               "
+              onClick="changeTheStarter({ character: ${characters.id}, route: clear })"
             >Remove Starter</button>
         </div>
       `;
