@@ -179,7 +179,7 @@ function animateHouse() {
                 justify-content: space-around;
                 padding: 5px; 
         ">
-            <img height="50" width="50" src=${characters.profile_pic} />
+            <img height="55" width="55" src=${characters.profile_pic} />
             
             
         </div>
