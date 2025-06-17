@@ -169,20 +169,20 @@ function animateHouse() {
 
         const pcGrid = document.getElementById("pcBody");
 
-for (let i = 0; i < 35; i++) {
-  const cell = document.createElement("div");
-  cell.classList.add("pcGridItem");
+        for (let i = 0; i < 35; i++) {
+          const cell = document.createElement("div");
+          cell.classList.add("pcGridItem");
 
-  if (i < usersCharacters.length) {
-    const img = document.createElement("img");
-    img.src = usersCharacters[i].profile_pic;
-    // img.alt = `item-${i}`;
-    img.classList.add("pcItemImg");
-    cell.appendChild(img);
-  }
+          if (i < usersCharacters.length) {
+            const img = document.createElement("img");
+            img.src = usersCharacters[i].profile_pic;
+            // img.alt = `item-${i}`;
+            img.classList.add("pcItemImg");
+            cell.appendChild(img);
+          }
 
-  pcGrid.appendChild(cell);
-}
+          pcGrid.appendChild(cell);
+        }
       }
     }
   }
