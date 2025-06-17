@@ -242,8 +242,13 @@ PC Interface
 }
 
 .pcGridItem {
-background-color: cyan;
+background-color: black;
 border: 1px solid black;
 height: 60px;
 width: 60px;
+}
+
+.pcItemImg {
+  height: 60px;
+  width: 60px;
 }
