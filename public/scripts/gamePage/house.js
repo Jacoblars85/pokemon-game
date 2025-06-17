@@ -172,6 +172,14 @@ function animateHouse() {
 for (let i = 0; i < 35; i++) {
   const cell = document.createElement("div");
   cell.classList.add("pcGridItem");
+
+  if (i < usersCharacters.length) {
+    const img = document.createElement("img");
+    img.src = usersCharacters[i].profile_pic;
+    img.classList.add("pcItemImg");
+    cell.appendChild(img);
+  }
+
   pcGrid.appendChild(cell);
 }
 
