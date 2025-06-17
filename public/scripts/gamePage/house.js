@@ -180,57 +180,8 @@ function animateHouse() {
                 padding: 5px; 
         ">
             <img height="50" width="50" src=${characters.profile_pic} />
-            <p style=" 
-              text-align: center;
-              width: 230px;
-             "
-             >${characters.character_name} </p>
-            <div>
-              <p style=" 
-              margin: 0px;
-              text-align: center;
-              "
-              >${characters.hp} hp | ${characters.stamina} stamina
-              </p>
-              <p style=" 
-              margin: 0px;
-              text-align: center;
-              "
-              >${characters.speed} speed</p>
-            </div>
-            <button
-              id=${characters.id}
-              style="
-                color: black;
-                font-size: 15;
-                border-color: black;
-                cursor: pointer;
-                width: 100px;
-              "
-            >Set Starter 1</button>
-
-            <button
-              id=${characters.id}
-              style="
-                color: black;
-                font-size: 15;
-                border-color: black;
-                cursor: pointer;
-                width: 100px;
-              "
-            >Set Starter 2</button>
-
-            <button
-              id=${characters.id}
-              style="
-                color: black;
-                font-size: 15;
-                border-color: black;
-                cursor: pointer;
-                width: 100px;
-              "
-              onClick="changeTheStarter({ character: ${characters.id}, route: clear })"
-            >Remove Starter</button>
+            
+            
         </div>
       `;
         }
