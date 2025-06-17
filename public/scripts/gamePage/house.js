@@ -87,6 +87,27 @@ function changeTheStarter(starterInfo) {
   console.log("trying to...", starterInfo);
 }
 
+function renderPcGrid() {
+  document.getElementById("pcBody").innerHTML = "";
+
+        const pcGrid = document.getElementById("pcBody");
+
+        for (let i = 0; i < 35; i++) {
+          const cell = document.createElement("div");
+          cell.classList.add("pcGridItem");
+
+          if (i < usersCharacters.length) {
+            const img = document.createElement("img");
+            img.src = usersCharacters[i].profile_pic;
+            // img.alt = `item-${i}`;
+            img.classList.add("pcItemImg");
+            cell.appendChild(img);
+          }
+
+          pcGrid.appendChild(cell);
+        }
+}
+
 let houseAnimationId;
 
 function animateHouse() {
