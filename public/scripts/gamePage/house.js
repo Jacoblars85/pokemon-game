@@ -84,8 +84,7 @@ const houseBackground = new Sprite({
 });
 
 function changeTheStarter(starterInfo) {
-  console.log('trying to...', starterInfo);
-  
+  console.log("trying to...", starterInfo);
 }
 
 let houseAnimationId;
@@ -170,18 +169,15 @@ function animateHouse() {
 
         for (let i = 0; i < usersCharacters.length; i++) {
           const characters = usersCharacters[i];
-          
+
           document.getElementById("pcBody").innerHTML += `
         <div style=" 
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: space-around;
-                padding: 5px; 
+                justify-content: center;
         ">
-            <img height="55" width="55" src=${characters.profile_pic} />
-            
-            
+            <img height="60" width="60" src=${characters.profile_pic} />
         </div>
       `;
         }
