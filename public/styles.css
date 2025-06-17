@@ -252,3 +252,11 @@ width: 60px;
   height: 60px;
   width: 60px;
 }
+
+.pcControls {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
