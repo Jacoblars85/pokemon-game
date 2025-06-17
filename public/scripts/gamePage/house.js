@@ -167,20 +167,28 @@ function animateHouse() {
 
         document.getElementById("pcBody").innerHTML = "";
 
-        for (let i = 0; i < usersCharacters.length; i++) {
-          const characters = usersCharacters[i];
+        const pcGrid = document.getElementById("pcBody");
 
-          document.getElementById("pcBody").innerHTML += `
-        <div style=" 
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-        ">
-            <img height="60" width="60" src=${characters.profile_pic} />
-        </div>
-      `;
-        }
+for (let i = 0; i < 35; i++) {
+  const cell = document.createElement("div");
+  cell.classList.add("pcGridItem");
+  pcGrid.appendChild(cell);
+}
+
+      //   for (let i = 0; i < usersCharacters.length; i++) {
+      //     const characters = usersCharacters[i];
+
+      //     document.getElementById("pcBody").innerHTML += `
+      //   <div style=" 
+      //           display: flex;
+      //           flex-direction: column;
+      //           align-items: center;
+      //           justify-content: center;
+      //   ">
+      //       <img height="60" width="60" src=${characters.profile_pic} />
+      //   </div>
+      // `;
+      //   }
       }
     }
   }
