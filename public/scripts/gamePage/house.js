@@ -176,27 +176,13 @@ for (let i = 0; i < 35; i++) {
   if (i < usersCharacters.length) {
     const img = document.createElement("img");
     img.src = usersCharacters[i].profile_pic;
+    // img.alt = `item-${i}`;
     img.classList.add("pcItemImg");
     cell.appendChild(img);
   }
 
   pcGrid.appendChild(cell);
 }
-
-      //   for (let i = 0; i < usersCharacters.length; i++) {
-      //     const characters = usersCharacters[i];
-
-      //     document.getElementById("pcBody").innerHTML += `
-      //   <div style=" 
-      //           display: flex;
-      //           flex-direction: column;
-      //           align-items: center;
-      //           justify-content: center;
-      //   ">
-      //       <img height="60" width="60" src=${characters.profile_pic} />
-      //   </div>
-      // `;
-      //   }
       }
     }
   }
