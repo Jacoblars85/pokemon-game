@@ -240,3 +240,10 @@ PC Interface
   text-align: center;
   z-index: 100;
 }
+
+.pcGridItem {
+background-color: cyan;
+border: 1px solid black;
+height: 60px;
+width: 60px;
+}
