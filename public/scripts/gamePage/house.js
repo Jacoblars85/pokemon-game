@@ -96,15 +96,15 @@ function renderPcGrid() {
         const pcGrid = document.getElementById("pcBody");
 
           const startIndex = currentPage * itemsPerPage;
-  const pageItems = items.slice(startIndex, startIndex + itemsPerPage);
+  const pageItems = usersCharacters.slice(startIndex, startIndex + itemsPerPage);
 
-        for (let i = 0; i < 35; i++) {
+        for (let i = 0; i < itemsPerPage; i++) {
           const cell = document.createElement("div");
           cell.classList.add("pcGridItem");
 
-          if (i < usersCharacters.length) {
+          if (i < pageItems.length) {
             const img = document.createElement("img");
-            img.src = usersCharacters[i].profile_pic;
+            img.src = pageItems[i].profile_pic;
             // img.alt = `item-${i}`;
             img.classList.add("pcItemImg");
             cell.appendChild(img);
