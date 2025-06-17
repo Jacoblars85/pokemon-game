@@ -231,7 +231,8 @@ PC Interface
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 25px;
+  padding: 20px;
+  padding-top: 0px;
   background-color: #efefef;
   border: 2px solid black;
   border-radius: 3px;
