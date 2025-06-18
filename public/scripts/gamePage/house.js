@@ -120,6 +120,23 @@ function renderPcGrid() {
 
 function eventListenersForPc() {
   console.log('in event listener');
+
+   document.getElementById("nextBtn").addEventListener("click", () => {
+          const maxPages = Math.ceil(usersCharacters.length / itemsPerPage);
+          // if (currentPage < maxPages - 1) {
+          //   currentPage++;
+          //   renderPcGrid();
+          // }
+          currentPage++;
+          renderPcGrid();
+        });
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+          if (currentPage > 0) {
+            currentPage--;
+            renderPcGrid();
+          }
+        });
   
 }
 
@@ -202,22 +219,22 @@ function animateHouse() {
 
         document.getElementById("pcInterfacePopUp").style.display = "flex";
 
-        document.getElementById("nextBtn").addEventListener("click", () => {
-          const maxPages = Math.ceil(usersCharacters.length / itemsPerPage);
-          // if (currentPage < maxPages - 1) {
-          //   currentPage++;
-          //   renderPcGrid();
-          // }
-          currentPage++;
-          renderPcGrid();
-        });
+        // document.getElementById("nextBtn").addEventListener("click", () => {
+        //   const maxPages = Math.ceil(usersCharacters.length / itemsPerPage);
+        //   // if (currentPage < maxPages - 1) {
+        //   //   currentPage++;
+        //   //   renderPcGrid();
+        //   // }
+        //   currentPage++;
+        //   renderPcGrid();
+        // });
 
-        document.getElementById("prevBtn").addEventListener("click", () => {
-          if (currentPage > 0) {
-            currentPage--;
-            renderPcGrid();
-          }
-        });
+        // document.getElementById("prevBtn").addEventListener("click", () => {
+        //   if (currentPage > 0) {
+        //     currentPage--;
+        //     renderPcGrid();
+        //   }
+        // });
 
         // renderPcGrid()
       }
