@@ -140,6 +140,11 @@ function eventListenersForPc() {
   });
 }
 
+function closePc() {
+  document.getElementById("pcInterfacePopUp").style.display = "none";
+  
+}
+
 eventListenersForPc();
 
 let houseAnimationId;
