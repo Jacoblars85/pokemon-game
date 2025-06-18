@@ -142,7 +142,7 @@ function eventListenersForPc() {
 
 function closePc() {
   document.getElementById("pcInterfacePopUp").style.display = "none";
-  
+        pc.opened = false;
 }
 
 eventListenersForPc();
@@ -177,7 +177,10 @@ function animateHouse() {
   moving = true;
   player.animate = false;
 
-  movementIf(houseBoundaries);
+  if (battle.initiated || chest.opened || pc.opened) return;
+
+
+
 
   // open door back to explore
   if (keys.e.pressed || keys.f.pressed) {
@@ -221,10 +224,13 @@ function animateHouse() {
           rectangle2: pcZone,
         })
       ) {
-        window.cancelAnimationFrame(houseAnimationId);
+        pc.opened = true;
         document.getElementById("pcInterfacePopUp").style.display = "flex";
         renderPcGrid();
       }
     }
   }
+
+    // moving in all directions
+    movementIf(houseBoundaries);
 }
