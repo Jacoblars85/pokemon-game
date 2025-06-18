@@ -173,7 +173,7 @@ function animateHouse() {
   player.animate = false;
 
   movementIf(houseBoundaries);
-  renderPcGrid();
+  // renderPcGrid();
 
   // open door back to explore
   if (keys.e.pressed || keys.f.pressed) {
@@ -221,24 +221,8 @@ function animateHouse() {
 
         document.getElementById("pcInterfacePopUp").style.display = "flex";
 
-        // document.getElementById("nextBtn").addEventListener("click", () => {
-        //   const maxPages = Math.ceil(usersCharacters.length / itemsPerPage);
-        //   // if (currentPage < maxPages - 1) {
-        //   //   currentPage++;
-        //   //   renderPcGrid();
-        //   // }
-        //   currentPage++;
-        //   renderPcGrid();
-        // });
 
-        // document.getElementById("prevBtn").addEventListener("click", () => {
-        //   if (currentPage > 0) {
-        //     currentPage--;
-        //     renderPcGrid();
-        //   }
-        // });
-
-        // renderPcGrid()
+        renderPcGrid()
       }
     }
   }
