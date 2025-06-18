@@ -120,13 +120,13 @@ function renderPcGrid() {
 
 function eventListenersForPc() {
   document.getElementById("nextBtn").addEventListener("click", () => {
-    const maxPages = Math.ceil(usersCharacters.length / itemsPerPage);
-    // if (currentPage < maxPages - 1) {
-    //   currentPage++;
-    //   renderPcGrid();
-    // }
+    if (currentPage === 49) {
+      currentPage = 0;
+      renderPcGrid();
+    } else {
     currentPage++;
     renderPcGrid();
+    }
   });
 
   document.getElementById("prevBtn").addEventListener("click", () => {
