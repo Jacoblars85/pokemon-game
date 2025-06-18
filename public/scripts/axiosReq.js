@@ -415,6 +415,7 @@ function postNewUserCharacter(newCharacter) {
   })
     .then((response) => {
       console.log("posted new character!!!");
+      getAllUsersCharacters()
     })
     .catch((err) => {
       console.log(err);
