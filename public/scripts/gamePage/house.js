@@ -118,6 +118,11 @@ function renderPcGrid() {
   document.getElementById("pageNumber").textContent = `Page ${currentPage + 1}`;
 }
 
+function eventListenersForPc() {
+  console.log('in event listener');
+  
+}
+
 let houseAnimationId;
 
 function animateHouse() {
