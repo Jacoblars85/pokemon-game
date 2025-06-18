@@ -93,25 +93,29 @@ const itemsPerPage = 35;
 function renderPcGrid() {
   document.getElementById("pcBody").innerHTML = "";
 
-        const pcGrid = document.getElementById("pcBody");
+  const pcGrid = document.getElementById("pcBody");
 
-          const startIndex = currentPage * itemsPerPage;
-  const pageItems = usersCharacters.slice(startIndex, startIndex + itemsPerPage);
+  const startIndex = currentPage * itemsPerPage;
+  const pageItems = usersCharacters.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
-        for (let i = 0; i < itemsPerPage; i++) {
-          const cell = document.createElement("div");
-          cell.classList.add("pcGridItem");
+  for (let i = 0; i < itemsPerPage; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("pcGridItem");
 
-          if (i < pageItems.length) {
-            const img = document.createElement("img");
-            img.src = pageItems[i].profile_pic;
-            // img.alt = `item-${i}`;
-            img.classList.add("pcItemImg");
-            cell.appendChild(img);
-          }
+    if (i < pageItems.length) {
+      const img = document.createElement("img");
+      img.src = pageItems[i].profile_pic;
+      // img.alt = `item-${i}`;
+      img.classList.add("pcItemImg");
+      cell.appendChild(img);
+    }
 
-          pcGrid.appendChild(cell);
-        }
+    pcGrid.appendChild(cell);
+  }
+  document.getElementById("pageNumber").textContent = `Page ${currentPage + 1}`;
 }
 
 let houseAnimationId;
@@ -145,6 +149,7 @@ function animateHouse() {
   player.animate = false;
 
   movementIf(houseBoundaries);
+  renderPcGrid();
 
   // open door back to explore
   if (keys.e.pressed || keys.f.pressed) {
@@ -193,24 +198,23 @@ function animateHouse() {
         document.getElementById("pcInterfacePopUp").style.display = "flex";
 
         document.getElementById("nextBtn").addEventListener("click", () => {
-  const maxPages = Math.ceil(usersCharacters.length / itemsPerPage);
-  // if (currentPage < maxPages - 1) {
-  //   currentPage++;
-  //   renderPcGrid();
-  // }
-  currentPage++;
-    renderPcGrid();
-});
+          const maxPages = Math.ceil(usersCharacters.length / itemsPerPage);
+          // if (currentPage < maxPages - 1) {
+          //   currentPage++;
+          //   renderPcGrid();
+          // }
+          currentPage++;
+          renderPcGrid();
+        });
 
-document.getElementById("prevBtn").addEventListener("click", () => {
-  if (currentPage > 0) {
-    currentPage--;
-    renderPcGrid();
-  }
-});
-      
-        renderPcGrid()
-        
+        document.getElementById("prevBtn").addEventListener("click", () => {
+          if (currentPage > 0) {
+            currentPage--;
+            renderPcGrid();
+          }
+        });
+
+        // renderPcGrid()
       }
     }
   }
