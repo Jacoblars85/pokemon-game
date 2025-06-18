@@ -142,7 +142,7 @@ function eventListenersForPc() {
 
 function closePc() {
   document.getElementById("pcInterfacePopUp").style.display = "none";
-        pc.opened = false;
+  pc.opened = false;
 }
 
 eventListenersForPc();
@@ -178,9 +178,6 @@ function animateHouse() {
   player.animate = false;
 
   if (battle.initiated || chest.opened || pc.opened) return;
-
-
-
 
   // open door back to explore
   if (keys.e.pressed || keys.f.pressed) {
@@ -231,6 +228,6 @@ function animateHouse() {
     }
   }
 
-    // moving in all directions
-    movementIf(houseBoundaries);
+  // moving in all directions
+  movementIf(houseBoundaries);
 }
