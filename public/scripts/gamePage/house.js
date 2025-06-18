@@ -119,28 +119,25 @@ function renderPcGrid() {
 }
 
 function eventListenersForPc() {
-  console.log('in event listener');
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    const maxPages = Math.ceil(usersCharacters.length / itemsPerPage);
+    // if (currentPage < maxPages - 1) {
+    //   currentPage++;
+    //   renderPcGrid();
+    // }
+    currentPage++;
+    renderPcGrid();
+  });
 
-   document.getElementById("nextBtn").addEventListener("click", () => {
-          const maxPages = Math.ceil(usersCharacters.length / itemsPerPage);
-          // if (currentPage < maxPages - 1) {
-          //   currentPage++;
-          //   renderPcGrid();
-          // }
-          currentPage++;
-          renderPcGrid();
-        });
-
-        document.getElementById("prevBtn").addEventListener("click", () => {
-          if (currentPage > 0) {
-            currentPage--;
-            renderPcGrid();
-          }
-        });
-  
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    if (currentPage > 0) {
+      currentPage--;
+      renderPcGrid();
+    }
+  });
 }
 
-eventListenersForPc()
+eventListenersForPc();
 
 let houseAnimationId;
 
@@ -173,7 +170,6 @@ function animateHouse() {
   player.animate = false;
 
   movementIf(houseBoundaries);
-  // renderPcGrid();
 
   // open door back to explore
   if (keys.e.pressed || keys.f.pressed) {
@@ -218,11 +214,8 @@ function animateHouse() {
         })
       ) {
         window.cancelAnimationFrame(houseAnimationId);
-
         document.getElementById("pcInterfacePopUp").style.display = "flex";
-
-
-        renderPcGrid()
+        renderPcGrid();
       }
     }
   }
