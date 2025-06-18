@@ -133,6 +133,9 @@ function eventListenersForPc() {
     if (currentPage > 0) {
       currentPage--;
       renderPcGrid();
+    } else {
+      currentPage = 49;
+      renderPcGrid();
     }
   });
 }
