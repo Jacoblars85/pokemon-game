@@ -140,6 +140,8 @@ function eventListenersForPc() {
   
 }
 
+eventListenersForPc()
+
 let houseAnimationId;
 
 function animateHouse() {
