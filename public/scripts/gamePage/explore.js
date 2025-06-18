@@ -206,6 +206,10 @@ const chest = {
   opened: false,
 };
 
+const pc = {
+  opened: false,
+};
+
 let movables;
 
 let moving = true;
@@ -414,7 +418,7 @@ function animate() {
   moving = true;
   player.animate = false;
 
-  if (battle.initiated || chest.opened) return;
+  if (battle.initiated || chest.opened || pc.opened) return;
 
   // open chest
   if (keys.e.pressed || keys.f.pressed) {
