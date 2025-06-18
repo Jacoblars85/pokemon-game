@@ -124,8 +124,8 @@ function eventListenersForPc() {
       currentPage = 0;
       renderPcGrid();
     } else {
-    currentPage++;
-    renderPcGrid();
+      currentPage++;
+      renderPcGrid();
     }
   });
 
