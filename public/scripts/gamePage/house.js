@@ -87,6 +87,16 @@ function changeTheStarter(starterInfo) {
   console.log("trying to...", starterInfo);
 }
 
+function showCharacterDetails(item) {
+  const detailPanel = document.getElementById("itemDetailsPopup");
+
+  document.getElementById("detailImage").src = item.big_image || item.profile_pic;
+  document.getElementById("detailName").textContent = item.name;
+  document.getElementById("detailDescription").textContent = item.description || "No description.";
+  
+  detailPanel.style.display = "flex";
+}
+
 let currentPage = 0;
 const itemsPerPage = 35;
 
@@ -112,9 +122,9 @@ function renderPcGrid() {
       img.classList.add("pcItemImg");
 
         img.addEventListener("click", () => {
-    showItemDetails(pageItems[i]);
+    showCharacterDetails(pageItems[i]);
   });
-  
+
       cell.appendChild(img);
     }
 
