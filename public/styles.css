@@ -261,3 +261,20 @@ width: 60px;
   align-items: center;
   gap: 10px;
 }
+
+.characterDetails {
+  position: absolute;
+  top: 12%;
+  left: 10%;
+  width: 806px;
+  height: 428px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px black;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
