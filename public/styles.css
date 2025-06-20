@@ -262,13 +262,17 @@ width: 60px;
   gap: 10px;
 }
 
+/* --------------------------------------------------------------------------------
+Details Interface
+-------------------------------------------------------------------------------- */
+
 .characterDetails {
   position: absolute;
   top: 12%;
   left: 10%;
   width: 806px;
   height: 428px;
-  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, -50%); */
   background: white;
   border-radius: 12px;
   padding: 20px;
@@ -277,4 +281,18 @@ width: 60px;
   flex-direction: column;
   align-items: center;
   z-index: 100;
+}
+
+.characterDetails img {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  top: .5%;
+  left: .5%;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.characterDetails h2 {
+  margin: 2.5px;
 }
