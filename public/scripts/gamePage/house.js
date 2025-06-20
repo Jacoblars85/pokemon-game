@@ -97,6 +97,10 @@ function showCharacterDetails(character) {
   detailPanel.style.display = "flex";
 }
 
+function closeCharacterDetails() {
+  document.getElementById("characterDetailsPopup").style.display = "none";
+}
+
 let currentPage = 0;
 const itemsPerPage = 35;
 
