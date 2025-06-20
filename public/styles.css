@@ -242,10 +242,10 @@ PC Interface
 }
 
 .pcGridItem {
-background-color: black;
-border: 1px solid black;
-height: 60px;
-width: 60px;
+  background-color: black;
+  border: 1px solid black;
+  height: 60px;
+  width: 60px;
 }
 
 .pcItemImg {
@@ -287,8 +287,8 @@ Details Interface
   position: relative;
   width: 150px;
   height: 150px;
-  top: .5%;
-  left: .5%;
+  top: 0.5%;
+  left: 0.5%;
   object-fit: contain;
   margin-bottom: 12px;
 }
