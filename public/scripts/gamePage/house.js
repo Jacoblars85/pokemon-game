@@ -92,8 +92,9 @@ function showCharacterDetails(character) {
 
   document.getElementById("detailImage").src = character.profile_pic;
   document.getElementById("detailName").textContent = character.name;
-  document.getElementById("detailDescription").textContent = character.description || "No description.";
-  
+  document.getElementById("detailDescription").textContent =
+    character.description || "No description.";
+
   detailPanel.style.display = "flex";
 }
 
@@ -125,9 +126,9 @@ function renderPcGrid() {
       // img.alt = `item-${i}`;
       img.classList.add("pcItemImg");
 
-        img.addEventListener("click", () => {
-    showCharacterDetails(pageItems[i]);
-  });
+      img.addEventListener("click", () => {
+        showCharacterDetails(pageItems[i]);
+      });
 
       cell.appendChild(img);
     }
