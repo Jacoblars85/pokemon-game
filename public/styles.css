@@ -293,6 +293,6 @@ Details Interface
   margin-bottom: 12px;
 }
 
-.characterDetails h2 {
+.characterDetails h2, .characterDetails h4 {
   margin: 2.5px;
 }
