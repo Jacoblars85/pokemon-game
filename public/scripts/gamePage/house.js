@@ -90,8 +90,19 @@ function changeTheStarter(starterInfo) {
 function showCharacterDetails(character) {
   const detailPanel = document.getElementById("characterDetailsPopup");
 
+  console.log('character', character);
+  
+
   document.getElementById("detailImage").src = character.profile_pic;
-  document.getElementById("detailName").textContent = character.name;
+  document.getElementById("detailName").textContent = character.character_name;
+  document.getElementById("detailHp").textContent = character.hp;
+  document.getElementById("detailStamina").textContent = character.stamina;
+  document.getElementById("detailSpeed").textContent = character.speed;
+  document.getElementById("detailAttackName").textContent = character.attack_name;
+  document.getElementById("detailAttackDamage").textContent = character.attack_damage;
+  document.getElementById("detailAttackStamina").textContent = character.attack_stamina;
+
+
   document.getElementById("detailDescription").textContent =
     character.description || "No description.";
 
