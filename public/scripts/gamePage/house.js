@@ -110,6 +110,11 @@ function renderPcGrid() {
       img.src = pageItems[i].profile_pic;
       // img.alt = `item-${i}`;
       img.classList.add("pcItemImg");
+
+        img.addEventListener("click", () => {
+    showItemDetails(pageItems[i]);
+  });
+  
       cell.appendChild(img);
     }
 
