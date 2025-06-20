@@ -423,7 +423,13 @@
           Characters
         </h2>
 
-        <button class="btn" style="position: absolute; top: .5%; right: .5%; margin: 0;" onclick="closePc()">X</button>
+        <button
+          class="btn"
+          style="position: absolute; top: 0.5%; right: 0.5%; margin: 0"
+          onclick="closePc()"
+        >
+          X
+        </button>
 
         <div class="pcControls">
           <button id="prevBtn">Previous</button>
@@ -445,22 +451,20 @@
         ></div>
       </div>
 
+      <!-- details interface -->
       <div id="characterDetailsPopup" class="characterDetails">
-  <img id="detailImage" src="" alt="Item Image" />
-  <h2 id="detailName"></h2>
-  <h2 id="detailHp"></h2>
-  <h2 id="detailStamina"></h2>
-  <h2 id="detailSpeed"></h2>
-  <h2 id="detailAttackName"></h2>
-  <h2 id="detailAttackDamage"></h2>
-  <h2 id="detailAttackStamina"></h2>
+        <img id="detailImage" src="" alt="Item Image" />
+        <h2 id="detailName"></h2>
+        <h2 id="detailHp"></h2>
+        <h2 id="detailStamina"></h2>
+        <h2 id="detailSpeed"></h2>
+        <h2 id="detailAttackName"></h2>
+        <h2 id="detailAttackDamage"></h2>
+        <h2 id="detailAttackStamina"></h2>
 
-  
-
-
-  <p id="detailDescription"></p>
-  <button onclick="closeCharacterDetails()">Close</button>
-</div>
+        <p id="detailDescription"></p>
+        <button onclick="closeCharacterDetails()">Close</button>
+      </div>
     </div>
 
     <script src="./data/exploreData/battleZones.js"></script>
