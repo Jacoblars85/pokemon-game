@@ -95,12 +95,12 @@ function showCharacterDetails(character) {
 
   document.getElementById("detailImage").src = character.profile_pic;
   document.getElementById("detailName").textContent = character.character_name;
-  document.getElementById("detailHp").textContent = character.hp;
-  document.getElementById("detailStamina").textContent = character.stamina;
-  document.getElementById("detailSpeed").textContent = character.speed;
-  document.getElementById("detailAttackName").textContent = character.attack_name;
-  document.getElementById("detailAttackDamage").textContent = character.attack_damage;
-  document.getElementById("detailAttackStamina").textContent = character.attack_stamina;
+  document.getElementById("detailHp").textContent = 'hp: ' + character.hp;
+  document.getElementById("detailStamina").textContent = 'stamina: ' + character.stamina;
+  document.getElementById("detailSpeed").textContent = 'speed: ' + character.speed;
+  document.getElementById("detailAttackName").textContent = 'attack: ' + character.attack_name;
+  document.getElementById("detailAttackDamage").textContent = 'damage: ' + character.attack_damage;
+  document.getElementById("detailAttackStamina").textContent = 'stamina used: ' + character.attack_stamina;
 
 
   document.getElementById("detailDescription").textContent =
