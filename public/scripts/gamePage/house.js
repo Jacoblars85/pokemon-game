@@ -87,12 +87,12 @@ function changeTheStarter(starterInfo) {
   console.log("trying to...", starterInfo);
 }
 
-function showCharacterDetails(item) {
-  const detailPanel = document.getElementById("itemDetailsPopup");
+function showCharacterDetails(character) {
+  const detailPanel = document.getElementById("characterDetailsPopup");
 
-  document.getElementById("detailImage").src = item.big_image || item.profile_pic;
-  document.getElementById("detailName").textContent = item.name;
-  document.getElementById("detailDescription").textContent = item.description || "No description.";
+  document.getElementById("detailImage").src = character.profile_pic;
+  document.getElementById("detailName").textContent = character.name;
+  document.getElementById("detailDescription").textContent = character.description || "No description.";
   
   detailPanel.style.display = "flex";
 }
