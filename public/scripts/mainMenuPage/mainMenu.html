@@ -70,13 +70,16 @@
           O
         </button>
       </div>
+
       <!-- settings interface -->
+                    <div id="settingsOverlay" class="overlay">
       <div id="settingsInterfacePopUp" class="settingsScreenPopUp">
         <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
           Settings
         </h2>
 
         <div
+        id="settingsBody"
           style="
             display: flex;
             flex-direction: column;
@@ -109,10 +112,13 @@
           X
         </button>
       </div>
+      </div>
+
     </div>
 
     <script src="../axiosReq.js"></script>
     <script src="../index.js"></script>
+     <script src="../settingsPage/settings.js"></script>
     <script defer src="./mainMenu.js"></script>
   </body>
 </html>
