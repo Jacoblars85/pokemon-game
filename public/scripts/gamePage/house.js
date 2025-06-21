@@ -88,7 +88,8 @@ function changeTheStarter(starterInfo) {
 }
 
 function showCharacterDetails(character) {
-          document.getElementById("characterDetailsPopup").style.display = "flex";
+          document.getElementById("characterDetailsOverlay").style.display = "flex";
+
 
   console.log('character', character);
   
@@ -108,7 +109,7 @@ function showCharacterDetails(character) {
 }
 
 function closeCharacterDetails() {
-  document.getElementById("characterDetailsPopup").style.display = "none";
+  document.getElementById("characterDetailsOverlay").style.display = "none";
 }
 
 let currentPage = 0;
