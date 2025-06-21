@@ -175,8 +175,7 @@ Settings Interface
   left: 5%;
   width: 916px;
   height: 468px;
-  /* display: flex; */
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
