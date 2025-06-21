@@ -112,6 +112,15 @@ function closeCharacterDetails() {
   document.getElementById("characterDetailsOverlay").style.display = "none";
 }
 
+document.getElementById("characterDetailsOverlay").addEventListener("click", (event) => {
+  const popup = document.getElementById("characterDetailsPopup");
+
+  // Only close if clicking directly on the overlay (not inside the popup)
+  if (!popup.contains(event.target)) {
+    closeCharacterDetails();
+  }
+});
+
 let currentPage = 0;
 const itemsPerPage = 35;
 
