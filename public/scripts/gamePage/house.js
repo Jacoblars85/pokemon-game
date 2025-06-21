@@ -88,7 +88,7 @@ function changeTheStarter(starterInfo) {
 }
 
 function showCharacterDetails(character) {
-  const detailPanel = document.getElementById("characterDetailsPopup");
+          document.getElementById("characterDetailsPopup").style.display = "flex";
 
   console.log('character', character);
   
@@ -105,8 +105,6 @@ function showCharacterDetails(character) {
 
   document.getElementById("detailDescription").textContent =
     character.description || "No description.";
-
-  detailPanel.style.display = "flex";
 }
 
 function closeCharacterDetails() {
