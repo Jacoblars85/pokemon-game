@@ -365,7 +365,7 @@ function openChest(boundryId) {
 
   userOpenChest({ itemId, chestId });
 
-  document.getElementById("chestInterfacePopUp").style.display = "flex";
+  document.getElementById("chestOverlay").style.display = "flex";
 
   allItems.forEach((item) => {
     if (item.id === itemId) {
@@ -383,10 +383,19 @@ function openChest(boundryId) {
 }
 
 function closeChest() {
-  document.getElementById("chestInterfacePopUp").style.display = "none";
+  document.getElementById("chestOverlay").style.display = "none";
 
   chest.opened = false;
 }
+
+document.getElementById("chestOverlay").addEventListener("click", (event) => {
+  const popup = document.getElementById("chestInterfacePopUp");
+
+  // Only close if clicking directly on the overlay (not inside the popup)
+  if (!popup.contains(event.target)) {
+    closeChest();
+  }
+});
 
 function animate() {
   const animationId = window.requestAnimationFrame(animate);
