@@ -57,6 +57,52 @@ function changeUsernameDialog() {
 `;
 }
 
+// function resetSettingsBody() {
+//   document.getElementById("settingsBody").innerHTML = `
+//  <button class="btn">
+//             <a href="../mainMenuPage/mainMenu.html">Main Menu</a>
+//           </button>
+//           <button class="btn" onclick="deleteUserDialog()">
+//             Delete Account
+//           </button>
+//           <button class="btn" onclick="changeUsernameDialog()">
+//             Change Name
+//           </button>
+//           <button class="btn" onclick="logoutUser()">
+//             <a href="../loginPage/login.html">Log Out</a>
+//           </button>
+
+
+// `;
+// }
+
+function goBackButton() {
+  window.history.back();
+}
+
+function openSettingsDialog() {
+  moving = false;
+
+  document.getElementById("settingsOverlay").style.display = "flex";
+}
+
+function closeSettingsDialog() {
+  moving = true;
+
+  document.getElementById("settingsOverlay").style.display = "none";
+
+  resetSettingsBody();
+}
+
+document.getElementById("settingsOverlay").addEventListener("click", (event) => {
+  const popup = document.getElementById("settingsInterfacePopUp");
+
+  // Only close if clicking directly on the overlay (not inside the popup)
+  if (!popup.contains(event.target)) {
+    closeSettingsDialog();
+  }
+});
+
 function resetSettingsBody() {
   document.getElementById("settingsBody").innerHTML = `
  <button class="btn">
@@ -74,22 +120,4 @@ function resetSettingsBody() {
 
 
 `;
-}
-
-function goBackButton() {
-  window.history.back();
-}
-
-function openSettingsDialog() {
-  moving = false;
-
-  document.getElementById("settingsInterfacePopUp").style.display = "flex";
-}
-
-function closeSettingsDialog() {
-  moving = true;
-
-  document.getElementById("settingsInterfacePopUp").style.display = "none";
-
-  resetSettingsBody();
 }
