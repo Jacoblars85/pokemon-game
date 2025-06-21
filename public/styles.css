@@ -199,8 +199,7 @@ Chest Interface
   left: 20%;
   width: 616px;
   height: 368px;
-  /* display: flex; */
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -291,10 +290,10 @@ Details Interface
   margin-bottom: 12px;
 }
 
-.characterDetails h2, .characterDetails h4 {
+.characterDetails h2,
+.characterDetails h4 {
   margin: 2.5px;
 }
-
 
 /* --------------------------------------------------------------------------------
 Overlay
