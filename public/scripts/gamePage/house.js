@@ -180,9 +180,18 @@ function eventListenersForPc() {
 }
 
 function closePc() {
-  document.getElementById("pcInterfacePopUp").style.display = "none";
+  document.getElementById("pcOverlay").style.display = "none";
   pc.opened = false;
 }
+
+document.getElementById("pcOverlay").addEventListener("click", (event) => {
+  const popup = document.getElementById("pcInterfacePopUp");
+
+  // Only close if clicking directly on the overlay (not inside the popup)
+  if (!popup.contains(event.target)) {
+    closePc();
+  }
+});
 
 eventListenersForPc();
 
@@ -261,7 +270,7 @@ function animateHouse() {
         })
       ) {
         pc.opened = true;
-        document.getElementById("pcInterfacePopUp").style.display = "flex";
+        document.getElementById("pcOverlay").style.display = "flex";
         renderPcGrid();
       }
     }
