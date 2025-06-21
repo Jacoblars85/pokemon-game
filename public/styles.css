@@ -277,7 +277,7 @@ Details Interface
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 0 10px black;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 100;
@@ -298,10 +298,14 @@ Details Interface
 }
 
 
+/* --------------------------------------------------------------------------------
+Overlay
+-------------------------------------------------------------------------------- */
+
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: .5%;
+  left: .5%;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* semi-transparent */
