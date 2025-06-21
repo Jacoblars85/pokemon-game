@@ -88,21 +88,23 @@ function changeTheStarter(starterInfo) {
 }
 
 function showCharacterDetails(character) {
-          document.getElementById("characterDetailsOverlay").style.display = "flex";
+  document.getElementById("characterDetailsOverlay").style.display = "flex";
 
-
-  console.log('character', character);
-  
+  console.log("character", character);
 
   document.getElementById("detailImage").src = character.profile_pic;
   document.getElementById("detailName").textContent = character.character_name;
-  document.getElementById("detailHp").textContent = 'hp: ' + character.hp;
-  document.getElementById("detailStamina").textContent = 'stamina: ' + character.stamina;
-  document.getElementById("detailSpeed").textContent = 'speed: ' + character.speed;
-  document.getElementById("detailAttackName").textContent = 'attack: ' + character.attack_name;
-  document.getElementById("detailAttackDamage").textContent = 'damage: ' + character.attack_damage;
-  document.getElementById("detailAttackStamina").textContent = 'stamina used: ' + character.attack_stamina;
-
+  document.getElementById("detailHp").textContent = "hp: " + character.hp;
+  document.getElementById("detailStamina").textContent =
+    "stamina: " + character.stamina;
+  document.getElementById("detailSpeed").textContent =
+    "speed: " + character.speed;
+  document.getElementById("detailAttackName").textContent =
+    "attack: " + character.attack_name;
+  document.getElementById("detailAttackDamage").textContent =
+    "damage: " + character.attack_damage;
+  document.getElementById("detailAttackStamina").textContent =
+    "stamina used: " + character.attack_stamina;
 
   document.getElementById("detailDescription").textContent =
     character.description || "No description.";
@@ -112,14 +114,16 @@ function closeCharacterDetails() {
   document.getElementById("characterDetailsOverlay").style.display = "none";
 }
 
-document.getElementById("characterDetailsOverlay").addEventListener("click", (event) => {
-  const popup = document.getElementById("characterDetailsPopup");
+document
+  .getElementById("characterDetailsOverlay")
+  .addEventListener("click", (event) => {
+    const popup = document.getElementById("characterDetailsPopup");
 
-  // Only close if clicking directly on the overlay (not inside the popup)
-  if (!popup.contains(event.target)) {
-    closeCharacterDetails();
-  }
-});
+    // Only close if clicking directly on the overlay (not inside the popup)
+    if (!popup.contains(event.target)) {
+      closeCharacterDetails();
+    }
+  });
 
 let currentPage = 0;
 const itemsPerPage = 35;
