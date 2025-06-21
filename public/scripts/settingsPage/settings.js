@@ -72,7 +72,6 @@ function changeUsernameDialog() {
 //             <a href="../loginPage/login.html">Log Out</a>
 //           </button>
 
-
 // `;
 // }
 
@@ -94,14 +93,16 @@ function closeSettingsDialog() {
   resetSettingsBody();
 }
 
-document.getElementById("settingsOverlay").addEventListener("click", (event) => {
-  const popup = document.getElementById("settingsInterfacePopUp");
+document
+  .getElementById("settingsOverlay")
+  .addEventListener("click", (event) => {
+    const popup = document.getElementById("settingsInterfacePopUp");
 
-  // Only close if clicking directly on the overlay (not inside the popup)
-  if (!popup.contains(event.target)) {
-    closeSettingsDialog();
-  }
-});
+    // Only close if clicking directly on the overlay (not inside the popup)
+    if (!popup.contains(event.target)) {
+      closeSettingsDialog();
+    }
+  });
 
 function resetSettingsBody() {
   document.getElementById("settingsBody").innerHTML = `
