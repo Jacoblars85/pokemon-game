@@ -20,30 +20,30 @@ const c = canvas.getContext("2d");
 
 const collisionsMap = [];
 
-for (let i = 0; i < collisionsArray.length; i += 235) {
+for (let i = 0; i < collisionsArray.length; i += 140) {
   collisionsMap.push(collisionsArray.slice(i, 235 + i));
 }
 
 const battleZonesMap = [];
 
-for (let i = 0; i < battleZonesArray.length; i += 235) {
+for (let i = 0; i < battleZonesArray.length; i += 140) {
   battleZonesMap.push(battleZonesArray.slice(i, 235 + i));
 }
 
 const chestZonesMap = [];
 
-for (let i = 0; i < chestZonesArray.length; i += 235) {
+for (let i = 0; i < chestZonesArray.length; i += 140) {
   chestZonesMap.push(chestZonesArray.slice(i, 235 + i));
 }
 
 const doorZonesMap = [];
 
-for (let i = 0; i < doorZonesArray.length; i += 235) {
+for (let i = 0; i < doorZonesArray.length; i += 140) {
   doorZonesMap.push(doorZonesArray.slice(i, 235 + i));
 }
 
 const offset = {
-  x: -4767.5,
+  x: -208.5,
   y: -5990,
 };
 
@@ -116,7 +116,7 @@ doorZonesMap.forEach((row, i) => {
 });
 
 const worldImage = new Image();
-worldImage.src = "./img/backgroundImg/bowsermon-map-v1.png";
+worldImage.src = "./img/backgroundImg/bowsermon-map-v2.png";
 
 const foregroundImage = new Image();
 foregroundImage.src = "./img/backgroundImg/foregroundObjects.png";
