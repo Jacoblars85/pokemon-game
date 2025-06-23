@@ -407,20 +407,33 @@ document.getElementById("chestOverlay").addEventListener("click", (event) => {
   }
 });
 
+function isOnScreen(obj) {
+  return (
+    obj.position.x + obj.width > 0 &&
+    obj.position.x < canvas.width &&
+    obj.position.y + obj.height > 0 &&
+    obj.position.y < canvas.height
+  );
+}
+
 function animate() {
   const animationId = window.requestAnimationFrame(animate);
   exploringBackground.draw();
   boundaries.forEach((boundary) => {
-    boundary.draw();
+      if (isOnScreen(boundary)) boundary.draw();
+    // boundary.draw();
   });
   battleZones.forEach((battleZone) => {
-    battleZone.draw();
+      if (isOnScreen(battleZone)) battleZone.draw();
+    // battleZone.draw();
   });
   chestZones.forEach((chestZone) => {
-    chestZone.draw();
+      if (isOnScreen(chestZone)) chestZone.draw();
+    // chestZone.draw();
   });
   doorZones.forEach((doorZone) => {
-    doorZone.draw();
+      if (isOnScreen(doorZone)) doorZone.draw();
+    // doorZone.draw();
   });
   player.draw();
   foreground.draw();
