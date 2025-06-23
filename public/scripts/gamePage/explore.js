@@ -215,6 +215,14 @@ let movables;
 let moving = true;
 
 function movementIf(boundryParam) {
+
+  const nearbyBoundaries = boundryParam.filter((boundary) => {
+  return (
+    Math.abs(boundary.position.x - player.position.x) < 100 &&
+    Math.abs(boundary.position.y - player.position.y) < 100
+  );
+});
+
   if (keys.w.pressed && lastKey === "w") {
     player.animate = true;
     player.image = player.sprites.up;
