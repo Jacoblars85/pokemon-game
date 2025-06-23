@@ -214,15 +214,16 @@ let movables;
 
 let moving = true;
 
+function getNearby(boundaries, distance = 100) {
+  return boundaries.filter((b) => 
+    Math.abs(b.position.x - player.position.x) < distance &&
+    Math.abs(b.position.y - player.position.y) < distance
+  );
+}
 
 function movementIf(boundryParam) {
 
-  const nearbyBoundaries = boundryParam.filter((boundary) => {
-  return (
-    Math.abs(boundary.position.x - player.position.x) < 100 &&
-    Math.abs(boundary.position.y - player.position.y) < 100
-  );
-});
+  const nearbyBoundaries = getNearby(boundryParam);
 
   if (keys.w.pressed && lastKey === "w") {
     player.animate = true;
