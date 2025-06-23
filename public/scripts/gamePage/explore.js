@@ -20,30 +20,30 @@ const c = canvas.getContext("2d");
 
 const collisionsMap = [];
 
-for (let i = 0; i < collisionsArray.length; i += 140) {
-  collisionsMap.push(collisionsArray.slice(i, 235 + i));
+for (let i = 0; i < collisionsArray.length; i += 95) {
+  collisionsMap.push(collisionsArray.slice(i, 95 + i));
 }
 
 const battleZonesMap = [];
 
-for (let i = 0; i < battleZonesArray.length; i += 140) {
-  battleZonesMap.push(battleZonesArray.slice(i, 235 + i));
+for (let i = 0; i < battleZonesArray.length; i += 95) {
+  battleZonesMap.push(battleZonesArray.slice(i, 95 + i));
 }
 
 const chestZonesMap = [];
 
-for (let i = 0; i < chestZonesArray.length; i += 140) {
-  chestZonesMap.push(chestZonesArray.slice(i, 235 + i));
+for (let i = 0; i < chestZonesArray.length; i += 95) {
+  chestZonesMap.push(chestZonesArray.slice(i, 95 + i));
 }
 
 const doorZonesMap = [];
 
-for (let i = 0; i < doorZonesArray.length; i += 140) {
-  doorZonesMap.push(doorZonesArray.slice(i, 235 + i));
+for (let i = 0; i < doorZonesArray.length; i += 95) {
+  doorZonesMap.push(doorZonesArray.slice(i, 95 + i));
 }
 
 const offset = {
-  x: -208.5,
+  x: -15.5,
   y: -5990,
 };
 
@@ -116,7 +116,7 @@ doorZonesMap.forEach((row, i) => {
 });
 
 const worldImage = new Image();
-worldImage.src = "./img/backgroundImg/bowsermon-map-v2.png";
+worldImage.src = "./img/backgroundImg/bowsermon-map-v3.png";
 
 const foregroundImage = new Image();
 foregroundImage.src = "./img/backgroundImg/foregroundObjects.png";
@@ -407,12 +407,12 @@ document.getElementById("chestOverlay").addEventListener("click", (event) => {
   }
 });
 
-function isOnScreen(obj) {
+function isOnScreen(obj, buffer = 50) {
   return (
-    obj.position.x + obj.width > 0 &&
-    obj.position.x < canvas.width &&
-    obj.position.y + obj.height > 0 &&
-    obj.position.y < canvas.height
+    obj.position.x + obj.width > -buffer &&
+    obj.position.x < canvas.width + buffer &&
+    obj.position.y + obj.height > -buffer &&
+    obj.position.y < canvas.height + buffer
   );
 }
 
