@@ -214,6 +214,7 @@ let movables;
 
 let moving = true;
 
+
 function movementIf(boundryParam) {
 
   const nearbyBoundaries = boundryParam.filter((boundary) => {
@@ -226,8 +227,8 @@ function movementIf(boundryParam) {
   if (keys.w.pressed && lastKey === "w") {
     player.animate = true;
     player.image = player.sprites.up;
-    for (let i = 0; i < boundryParam.length; i++) {
-      const boundary = boundryParam[i];
+    for (let i = 0; i < nearbyBoundaries.length; i++) {
+      const boundary = nearbyBoundaries[i];
 
       const overlappingArea =
         Math.min(
@@ -259,8 +260,8 @@ function movementIf(boundryParam) {
   } else if (keys.a.pressed && lastKey === "a") {
     player.animate = true;
     player.image = player.sprites.left;
-    for (let i = 0; i < boundryParam.length; i++) {
-      const boundary = boundryParam[i];
+    for (let i = 0; i < nearbyBoundaries.length; i++) {
+      const boundary = nearbyBoundaries[i];
 
       const overlappingArea =
         Math.min(
@@ -293,8 +294,8 @@ function movementIf(boundryParam) {
   } else if (keys.s.pressed && lastKey === "s") {
     player.animate = true;
     player.image = player.sprites.down;
-    for (let i = 0; i < boundryParam.length; i++) {
-      const boundary = boundryParam[i];
+    for (let i = 0; i < nearbyBoundaries.length; i++) {
+      const boundary = nearbyBoundaries[i];
 
       const overlappingArea =
         Math.min(
@@ -330,8 +331,8 @@ function movementIf(boundryParam) {
   } else if (keys.d.pressed && lastKey === "d") {
     player.animate = true;
     player.image = player.sprites.right;
-    for (let i = 0; i < boundryParam.length; i++) {
-      const boundary = boundryParam[i];
+    for (let i = 0; i < nearbyBoundaries.length; i++) {
+      const boundary = nearbyBoundaries[i];
 
       const overlappingArea =
         Math.min(
