@@ -84,24 +84,37 @@ const houseBackground = new Sprite({
 });
 
 function changeTheStarter(e) {
-  let newStarterInfo = {characterId: 21, switchType: e.target.innerHTML}
+  let newStarterInfo = {characterId: Number(e.target.dataset.characterId), switchType: e.target.innerHTML}
+
+  console.log('e', e.target.dataset.characterId);
+  
 
   console.log('newStarterInfo', newStarterInfo);
   
 
-  if (e.target.innerHTML === "Starter 1") {
-    console.log("starter 1 if");
-  } else if (e.target.innerHTML === "Starter 2") {
-    console.log("starter 2 if");
-  } else if (e.target.innerHTML === "Remove") {
-    console.log("remove if");
-  }
+  // if (e.target.innerHTML === "Starter 1") {
+  //   console.log("starter 1 if");
+  // } else if (e.target.innerHTML === "Starter 2") {
+  //   console.log("starter 2 if");
+  // } else if (e.target.innerHTML === "Remove") {
+  //   console.log("remove if");
+  // }
 }
 
 function showCharacterDetails(character) {
   document.getElementById("characterDetailsOverlay").style.display = "flex";
 
-  console.log("character", character);
+  // console.log("character", character);
+
+  document.getElementById("switchStarter1Button").dataset.characterId = character.id;
+  document.getElementById("switchStarterButton").dataset.characterId = character.id;
+  document.getElementById("switchStarter2Button").dataset.characterId = character.id;
+
+
+  let dataSetSwitch = document.getElementById("switchStarterButton")
+
+  console.log('dataSetSwitch', dataSetSwitch);
+  
 
   document.getElementById("detailImage").src = character.profile_pic;
   document.getElementById("detailName").textContent = character.character_name;
