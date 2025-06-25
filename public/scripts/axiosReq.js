@@ -424,9 +424,17 @@ function postNewUserCharacter(newCharacter) {
 
 function putStarterSwitching(e) {
 
-  console.log('e', e);
+  let switchRoute
+  
+  if (e.target.innerHTML === "Starter 1") {
+    
+  } else if (e.target.innerHTML === "Starter 2") {
+    
+  } else if (e.target.innerHTML === "Remove") {
+    
+  }
 
-    let newStarterInfo = {characterId: Number(e.target.dataset.characterId), switchType: e.target.innerHTML}
+    let newStarterInfo = {characterId: Number(e.target.dataset.characterId), route: e.target.innerHTML}
 
     console.log('newStarterInfo', newStarterInfo);
     
