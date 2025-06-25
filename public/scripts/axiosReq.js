@@ -427,14 +427,17 @@ function putStarterSwitching(e) {
   let switchRoute
   
   if (e.target.innerHTML === "Starter 1") {
-    
+    switchRoute = ""
   } else if (e.target.innerHTML === "Starter 2") {
-    
+    switchRoute = ""
   } else if (e.target.innerHTML === "Remove") {
-    
+    switchRoute = "clear"
   }
 
-    let newStarterInfo = {characterId: Number(e.target.dataset.characterId), route: e.target.innerHTML}
+  console.log('switchRoute', switchRoute);
+  
+
+    let newStarterInfo = {characterId: Number(e.target.dataset.characterId), route: switchRoute}
 
     console.log('newStarterInfo', newStarterInfo);
     
