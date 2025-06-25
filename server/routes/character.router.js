@@ -423,7 +423,7 @@ router.put("/new/:id", (req, res) => {
     });
 });
 
-router.put("/starter/clear/:id", (req, res) => {
+router.put("/starter/clear", (req, res) => {
   // console.log(req.params.id);
   const sqlText = `
     UPDATE "user_characters"
@@ -431,7 +431,7 @@ router.put("/starter/clear/:id", (req, res) => {
             WHERE "id" = $1 AND "user_id" = $2;
     `;
 
-  const sqlValues = [req.params.id, req.user.id];
+  const sqlValues = [req.body.characterId, req.user.id];
 
   pool
     .query(sqlText, sqlValues)
@@ -442,7 +442,7 @@ router.put("/starter/clear/:id", (req, res) => {
             WHERE "id" = $1 AND "user_id" = $2;
     `;
 
-      const sqlValues = [req.params.id, req.user.id];
+      const sqlValues = [req.body.characterId, req.user.id];
 
       pool.query(sqlText, sqlValues).then((result) => {
         res.sendStatus(201);
