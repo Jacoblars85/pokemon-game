@@ -422,18 +422,27 @@ function postNewUserCharacter(newCharacter) {
     });
 }
 
-function putStarterSwitching({ newStarterInfo }) {
-  axios({
-    method: "PUT",
-    url: `http://localhost:5001/api/character/starter/${newStarterInfo.route}`,
-    data: newStarterInfo,
-    withCredentials: true,
-  })
-    .then((response) => {
-      getStarters();
-      getAllUsersCharacters();
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+function putStarterSwitching(e) {
+
+  console.log('e', e);
+
+    let newStarterInfo = {characterId: Number(e.target.dataset.characterId), switchType: e.target.innerHTML}
+
+    console.log('newStarterInfo', newStarterInfo);
+    
+  
+
+  // axios({
+  //   method: "PUT",
+  //   url: `http://localhost:5001/api/character/starter/${newStarterInfo.route}`,
+  //   data: newStarterInfo,
+  //   withCredentials: true,
+  // })
+  //   .then((response) => {
+  //     getStarters();
+  //     getAllUsersCharacters();
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 }
