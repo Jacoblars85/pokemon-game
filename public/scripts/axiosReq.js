@@ -442,17 +442,17 @@ function putStarterSwitching(e) {
 
   console.log("newStarterInfo", newStarterInfo);
 
-  // axios({
-  //   method: "PUT",
-  //   url: `http://localhost:5001/api/character/starter/${newStarterInfo.route}`,
-  //   data: newStarterInfo,
-  //   withCredentials: true,
-  // })
-  //   .then((response) => {
-  //     getStarters();
-  //     getAllUsersCharacters();
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/characters/starter/${newStarterInfo.route}`,
+    data: newStarterInfo,
+    withCredentials: true,
+  })
+    .then((response) => {
+      getStarters();
+      getAllUsersCharacters();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
