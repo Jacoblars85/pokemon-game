@@ -85,14 +85,11 @@ const houseBackground = new Sprite({
 
 function changeTheStarter(e) {
   if (e.target.innerHTML === "Starter 1") {
-    console.log('starter 1 if');
-    
+    console.log("starter 1 if");
   } else if (e.target.innerHTML === "Starter 2") {
-    console.log('starter 2 if');
-    
+    console.log("starter 2 if");
   } else if (e.target.innerHTML === "Remove") {
-    console.log('remove if');
-    
+    console.log("remove if");
   }
 }
 
