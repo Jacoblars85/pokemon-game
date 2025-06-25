@@ -83,17 +83,15 @@ const houseBackground = new Sprite({
   image: houseBackgroundImage,
 });
 
-
 function showCharacterDetails(character) {
   document.getElementById("characterDetailsOverlay").style.display = "flex";
 
-  // console.log("character", character);
-
-  document.getElementById("switchStarter1Button").dataset.characterId = character.id;
-  document.getElementById("switchStarterButton").dataset.characterId = character.id;
-  document.getElementById("switchStarter2Button").dataset.characterId = character.id;
-
-  
+  document.getElementById("switchStarter1Button").dataset.characterId =
+    character.id;
+  document.getElementById("switchStarterButton").dataset.characterId =
+    character.id;
+  document.getElementById("switchStarter2Button").dataset.characterId =
+    character.id;
 
   document.getElementById("detailImage").src = character.profile_pic;
   document.getElementById("detailName").textContent = character.character_name;
