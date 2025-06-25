@@ -84,6 +84,11 @@ const houseBackground = new Sprite({
 });
 
 function changeTheStarter(e) {
+  let newStarterInfo = {characterId: 21, switchType: e.target.innerHTML}
+
+  console.log('newStarterInfo', newStarterInfo);
+  
+
   if (e.target.innerHTML === "Starter 1") {
     console.log("starter 1 if");
   } else if (e.target.innerHTML === "Starter 2") {
