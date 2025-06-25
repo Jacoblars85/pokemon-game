@@ -458,7 +458,7 @@ router.put("/starter/clear", (req, res) => {
     });
 });
 
-router.put("/starter/conditional/:id", (req, res) => {
+router.put("/starter/conditional", (req, res) => {
   //  console.log('req.body', req.body);
 
   const sqlText = `
@@ -467,7 +467,7 @@ router.put("/starter/conditional/:id", (req, res) => {
          WHERE "id" = $1 AND "user_id" = $2;
       `;
 
-  const sqlValues = [req.params.id, req.user.id];
+  const sqlValues = [req.body.characterId, req.user.id];
 
   pool
     .query(sqlText, sqlValues)
@@ -489,7 +489,7 @@ router.put("/starter/conditional/:id", (req, res) => {
               WHERE "id" = $1 AND "user_id" = $2;
               `;
 
-          const sqlValues = [req.params.id, req.user.id];
+          const sqlValues = [req.body.characterId, req.user.id];
 
           pool.query(insertNewUserQuery, sqlValues).then((result) => {
             res.sendStatus(201);
