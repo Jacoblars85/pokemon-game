@@ -215,14 +215,14 @@ let movables;
 let moving = true;
 
 function getNearby(boundaries, distance = 100) {
-  return boundaries.filter((b) => 
-    Math.abs(b.position.x - player.position.x) < distance &&
-    Math.abs(b.position.y - player.position.y) < distance
+  return boundaries.filter(
+    (b) =>
+      Math.abs(b.position.x - player.position.x) < distance &&
+      Math.abs(b.position.y - player.position.y) < distance
   );
 }
 
 function movementIf(boundryParam) {
-
   const nearbyBoundaries = getNearby(boundryParam);
 
   if (keys.w.pressed && lastKey === "w") {
@@ -420,19 +420,19 @@ function animate() {
   const animationId = window.requestAnimationFrame(animate);
   exploringBackground.draw();
   boundaries.forEach((boundary) => {
-      if (isOnScreen(boundary)) boundary.draw();
+    if (isOnScreen(boundary)) boundary.draw();
     // boundary.draw();
   });
   battleZones.forEach((battleZone) => {
-      if (isOnScreen(battleZone)) battleZone.draw();
+    if (isOnScreen(battleZone)) battleZone.draw();
     // battleZone.draw();
   });
   chestZones.forEach((chestZone) => {
-      if (isOnScreen(chestZone)) chestZone.draw();
+    if (isOnScreen(chestZone)) chestZone.draw();
     // chestZone.draw();
   });
   doorZones.forEach((doorZone) => {
-      if (isOnScreen(doorZone)) doorZone.draw();
+    if (isOnScreen(doorZone)) doorZone.draw();
     // doorZone.draw();
   });
   player.draw();
