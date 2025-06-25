@@ -415,7 +415,7 @@ function postNewUserCharacter(newCharacter) {
   })
     .then((response) => {
       console.log("posted new character!!!");
-      getAllUsersCharacters()
+      getAllUsersCharacters();
     })
     .catch((err) => {
       console.log(err);
@@ -423,25 +423,24 @@ function postNewUserCharacter(newCharacter) {
 }
 
 function putStarterSwitching(e) {
+  let switchRoute;
 
-  let switchRoute
-  
   if (e.target.innerHTML === "Starter 1") {
-    switchRoute = ""
+    switchRoute = "";
   } else if (e.target.innerHTML === "Starter 2") {
-    switchRoute = ""
+    switchRoute = "";
   } else if (e.target.innerHTML === "Remove") {
-    switchRoute = "clear"
+    switchRoute = "clear";
   }
 
-  console.log('switchRoute', switchRoute);
-  
+  console.log("switchRoute", switchRoute);
 
-    let newStarterInfo = {characterId: Number(e.target.dataset.characterId), route: switchRoute}
+  let newStarterInfo = {
+    characterId: Number(e.target.dataset.characterId),
+    route: switchRoute,
+  };
 
-    console.log('newStarterInfo', newStarterInfo);
-    
-  
+  console.log("newStarterInfo", newStarterInfo);
 
   // axios({
   //   method: "PUT",
