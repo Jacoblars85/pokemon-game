@@ -333,8 +333,6 @@ router.delete("/sell/character", (req, res) => {
     });
 });
 
-
-
 router.put("/new/:id", (req, res) => {
   const sqlText = `
     UPDATE "user_characters"
@@ -572,7 +570,5 @@ router.put("/starter/switch", (req, res) => {
       res.sendStatus(500);
     });
 });
-
-
 
 module.exports = router;
