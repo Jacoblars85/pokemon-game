@@ -422,15 +422,8 @@ function postNewUserCharacter(newCharacter) {
     });
 }
 
-function putStarterSwitching(e) {
+function putStarterSwitching(newStarterInfo) {
 
-
-  console.log("switchRoute", switchRoute);
-
-  let newStarterInfo = {
-    characterId: Number(e.target.dataset.characterId),
-    route: switchRoute,
-  };
 
   console.log("newStarterInfo", newStarterInfo);
 
