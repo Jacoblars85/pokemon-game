@@ -86,13 +86,7 @@ const houseBackground = new Sprite({
 function setStarter(e) {
   let switchRoute;
 
-  if (e.target.innerHTML === "Starter 1") {
-    switchRoute = "";
-  } else if (e.target.innerHTML === "Starter 2") {
-    switchRoute = "";
-  } else if (e.target.innerHTML === "Remove") {
-    switchRoute = "clear";
-  }
+if (e.target.innerHTML === "Remove") switchRoute = "clear";
 
   console.log("switchRoute", switchRoute);
 
