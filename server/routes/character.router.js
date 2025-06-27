@@ -333,6 +333,52 @@ router.delete("/sell/character", (req, res) => {
     });
 });
 
+
+
+router.put("/new/:id", (req, res) => {
+  const sqlText = `
+    UPDATE "user_characters"
+    SET "new" = FALSE
+    WHERE "id" = $1 AND "user_id" = $2;
+          `;
+
+  const insertValue = [req.params.id, req.user.id];
+
+  pool
+    .query(sqlText, insertValue)
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log("Error in character.router /new PUT,", err);
+      res.sendStatus(500);
+    });
+});
+
+router.put("/edit/nickname", (req, res) => {
+  const sqlText = `
+        UPDATE "user_characters"
+          SET "nickname" = $1
+          WHERE "id" = $2 AND "user_id" = $3;
+          `;
+
+  const sqlValues = [
+    req.body.newCharacterName,
+    req.body.characterID,
+    req.user.id,
+  ];
+
+  pool
+    .query(sqlText, sqlValues)
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log("Error in character.router /edit/nickname PUT,", err);
+      res.sendStatus(500);
+    });
+});
+
 router.put("/starter/one/:id", (req, res) => {
   const sqlText = `
     UPDATE "user_characters"
@@ -399,26 +445,6 @@ router.put("/starter/two/:id", (req, res) => {
     })
     .catch((err) => {
       console.log("Error in character.router /starter 2 PUT,", err);
-      res.sendStatus(500);
-    });
-});
-
-router.put("/new/:id", (req, res) => {
-  const sqlText = `
-    UPDATE "user_characters"
-    SET "new" = FALSE
-    WHERE "id" = $1 AND "user_id" = $2;
-          `;
-
-  const insertValue = [req.params.id, req.user.id];
-
-  pool
-    .query(sqlText, insertValue)
-    .then((result) => {
-      res.sendStatus(201);
-    })
-    .catch((err) => {
-      console.log("Error in character.router /new PUT,", err);
       res.sendStatus(500);
     });
 });
@@ -547,28 +573,6 @@ router.put("/starter/switch", (req, res) => {
     });
 });
 
-router.put("/edit/nickname", (req, res) => {
-  const sqlText = `
-        UPDATE "user_characters"
-          SET "nickname" = $1
-          WHERE "id" = $2 AND "user_id" = $3;
-          `;
 
-  const sqlValues = [
-    req.body.newCharacterName,
-    req.body.characterID,
-    req.user.id,
-  ];
-
-  pool
-    .query(sqlText, sqlValues)
-    .then((result) => {
-      res.sendStatus(201);
-    })
-    .catch((err) => {
-      console.log("Error in character.router /edit/nickname PUT,", err);
-      res.sendStatus(500);
-    });
-});
 
 module.exports = router;
