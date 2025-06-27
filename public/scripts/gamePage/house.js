@@ -87,6 +87,9 @@ function setStarter(e) {
   let switchRoute;
 
 if (e.target.innerHTML === "Remove") switchRoute = "clear";
+else if (e.target.innerHTML === "Starter 1") switchRoute = "one";
+else if (e.target.innerHTML === "Starter 2") switchRoute = "two";
+
 
   console.log("switchRoute", switchRoute);
 
@@ -97,44 +100,44 @@ if (e.target.innerHTML === "Remove") switchRoute = "clear";
     route: switchRoute,
   };
 
-  if (starter.length === 0) {
-    dispatch({
-      type: "SAGA_SET_STARTER_ONE",
-      payload: character.id,
-    });
-  } else if (starter.length === 1) {
-    if (character.starter_2 === true) {
-      dispatch({
-        type: "SAGA_SET_STARTER_CONDITIONALLY",
-        payload: {
-          characterId: character.id,
-          currentStarter: 1,
-          otherStarter: 2,
-        },
-      });
-    } else {
-      dispatch({
-        type: "SAGA_SET_STARTER_ONE",
-        payload: character.id,
-      });
-    }
-  } else if (starter.length === 2) {
-    if (character.id === starter[1].id) {
-      dispatch({
-        type: "SAGA_SET_STARTER_CONDITIONALLY",
-        payload: {
-          characterId: character.id,
-          currentStarter: 1,
-          otherStarter: 2,
-        },
-      });
-    } else {
-      dispatch({
-        type: "SAGA_SET_STARTER_ONE",
-        payload: character.id,
-      });
-    }
-  }
+  // if (starter.length === 0) {
+  //   dispatch({
+  //     type: "SAGA_SET_STARTER_ONE",
+  //     payload: character.id,
+  //   });
+  // } else if (starter.length === 1) {
+  //   if (character.starter_2 === true) {
+  //     dispatch({
+  //       type: "SAGA_SET_STARTER_CONDITIONALLY",
+  //       payload: {
+  //         characterId: character.id,
+  //         currentStarter: 1,
+  //         otherStarter: 2,
+  //       },
+  //     });
+  //   } else {
+  //     dispatch({
+  //       type: "SAGA_SET_STARTER_ONE",
+  //       payload: character.id,
+  //     });
+  //   }
+  // } else if (starter.length === 2) {
+  //   if (character.id === starter[1].id) {
+  //     dispatch({
+  //       type: "SAGA_SET_STARTER_CONDITIONALLY",
+  //       payload: {
+  //         characterId: character.id,
+  //         currentStarter: 1,
+  //         otherStarter: 2,
+  //       },
+  //     });
+  //   } else {
+  //     dispatch({
+  //       type: "SAGA_SET_STARTER_ONE",
+  //       payload: character.id,
+  //     });
+  //   }
+  // }
 
   putStarterSwitching(newStarterInfo)
 }
