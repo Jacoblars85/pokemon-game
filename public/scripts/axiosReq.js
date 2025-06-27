@@ -423,8 +423,6 @@ function postNewUserCharacter(newCharacter) {
 }
 
 function putStarterSwitching(newStarterInfo) {
-
-
   console.log("newStarterInfo", newStarterInfo);
 
   axios({
