@@ -92,6 +92,8 @@ if (e.target.innerHTML === "Remove") switchRoute = "clear";
 
   let newStarterInfo = {
     characterId: Number(e.target.dataset.characterId),
+    currentStarter: 1,
+  otherStarter: 2,
     route: switchRoute,
   };
 
@@ -133,6 +135,8 @@ if (e.target.innerHTML === "Remove") switchRoute = "clear";
       });
     }
   }
+
+  putStarterSwitching(newStarterInfo)
 }
 
 function showCharacterDetails(character) {
