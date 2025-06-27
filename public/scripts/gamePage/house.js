@@ -84,6 +84,17 @@ const houseBackground = new Sprite({
 });
 
   function setStarter()  {
+
+      let switchRoute;
+
+  if (e.target.innerHTML === "Starter 1") {
+    switchRoute = "";
+  } else if (e.target.innerHTML === "Starter 2") {
+    switchRoute = "";
+  } else if (e.target.innerHTML === "Remove") {
+    switchRoute = "clear";
+  }
+  
     if (starter.length === 0) {
       dispatch({
         type: "SAGA_SET_STARTER_ONE",
