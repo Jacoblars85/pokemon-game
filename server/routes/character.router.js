@@ -377,7 +377,7 @@ router.put("/edit/nickname", (req, res) => {
     });
 });
 
-router.put("/starter/one/:id", (req, res) => {
+router.put("/starter/one", (req, res) => {
   const sqlText = `
     UPDATE "user_characters"
   SET "starter_1" = FALSE
@@ -395,7 +395,7 @@ router.put("/starter/one/:id", (req, res) => {
           WHERE "id" = $1 AND "user_id" = $2;
           `;
 
-      const sqlValues = [req.params.id, req.user.id];
+      const sqlValues = [req.body.characterId, req.user.id];
 
       pool.query(insertNewUserQuery, sqlValues).then((result) => {
         res.sendStatus(201);
@@ -412,7 +412,7 @@ router.put("/starter/one/:id", (req, res) => {
     });
 });
 
-router.put("/starter/two/:id", (req, res) => {
+router.put("/starter/two", (req, res) => {
   const sqlText = `
     UPDATE "user_characters"
   SET "starter_2" = FALSE
@@ -430,7 +430,7 @@ router.put("/starter/two/:id", (req, res) => {
           WHERE "id" = $1 AND "user_id" = $2;
           `;
 
-      const sqlValues = [req.params.id, req.user.id];
+      const sqlValues = [req.body.characterId, req.user.id];
 
       pool.query(insertNewUserQuery, sqlValues).then((result) => {
         res.sendStatus(201);
