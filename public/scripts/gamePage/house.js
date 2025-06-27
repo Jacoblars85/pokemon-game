@@ -83,7 +83,7 @@ const houseBackground = new Sprite({
   image: houseBackgroundImage,
 });
 
-  function setStarter()  {
+  function setStarter(e)  {
 
       let switchRoute;
 
@@ -94,7 +94,16 @@ const houseBackground = new Sprite({
   } else if (e.target.innerHTML === "Remove") {
     switchRoute = "clear";
   }
-  
+
+
+  console.log("switchRoute", switchRoute);
+
+  let newStarterInfo = {
+    characterId: Number(e.target.dataset.characterId),
+    route: switchRoute,
+  };
+
+
     if (starter.length === 0) {
       dispatch({
         type: "SAGA_SET_STARTER_ONE",
