@@ -429,8 +429,6 @@ function postNewUserCharacter(newCharacter) {
 }
 
 function putStarterSwitching(newStarterInfo) {
-  console.log("newStarterInfo", newStarterInfo);
-
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/characters/starter/${newStarterInfo.route}`,
