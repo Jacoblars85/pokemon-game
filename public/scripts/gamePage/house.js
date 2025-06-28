@@ -98,7 +98,6 @@ function setStarter(e) {
     const allSlots = Array.from({ length: totalStarters }, (_, i) => i + 1);
     const otherSlots = allSlots.filter((slot) => slot !== currentStarter);
 
-    // Find if the character is currently in the other slot
     const isInOtherSlot = usersStarters.find(
       (start) => start.id === characterId && start[`starter_${otherSlots}`]
     );
@@ -114,8 +113,6 @@ function setStarter(e) {
     currentStarter,
     otherStarter,
   };
-
-  console.log("newStarterInfo", newStarterInfo);
 
   if (usersStarters.length === 1 && newStarterInfo.route === "clear") return;
 
