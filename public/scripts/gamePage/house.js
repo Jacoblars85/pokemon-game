@@ -85,6 +85,7 @@ const houseBackground = new Sprite({
 
 function setStarter(e) {
   let route = "update"
+  let characterId = Number(e.target.dataset.characterId)
 
   // if (e.target.innerHTML === "Remove") switchRoute = "clear";
   // else if (e.target.innerHTML === "Starter 1") switchRoute = "one";
@@ -96,7 +97,7 @@ function setStarter(e) {
   let currentStarter
   let otherStarter
 
-  if (e.target.innerHTML === "Remove") switchRoute = "clear";
+  if (e.target.innerHTML === "Remove") route = "clear";
   else if (e.target.innerHTML === "Starter 1") currentStarter = 1;
   else if (e.target.innerHTML === "Starter 2") currentStarter = 2;
 
@@ -107,7 +108,7 @@ const otherSlots = allSlots.filter((slot) => slot !== currentStarter);
 
     // Find if the character is currently in the other slot
     const isInOtherSlot = usersStarters.find(
-      (char) => char.id === characterId && char[`starter_${otherSlots}`]
+      (start) => start.id === characterId && start[`starter_${otherSlots}`]
     );
 
     if (isInOtherSlot) {
@@ -118,10 +119,13 @@ const otherSlots = allSlots.filter((slot) => slot !== currentStarter);
 
   let newStarterInfo = {
     route,
-    characterId: Number(e.target.dataset.characterId),
+    characterId,
     currentStarter,
     otherStarter,
   };
+
+  console.log('newStarterInfo', newStarterInfo);
+  
 
   putStarterSwitching(newStarterInfo);
 }
