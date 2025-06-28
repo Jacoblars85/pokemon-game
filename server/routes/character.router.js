@@ -576,7 +576,7 @@ router.put("/starter/update", (req, res) => {
   const userId = req.user.id;
 
   // Sanitize/validate starter slot input (must be numeric and within allowed range)
-  const validSlots = ["1", "2", "3"]; // Expand if more slots allowed
+  const validSlots = ["1", "2", "3"];
   if (
     !validSlots.includes(String(currentStarter)) ||
     (otherStarter && !validSlots.includes(String(otherStarter)))
@@ -585,7 +585,7 @@ router.put("/starter/update", (req, res) => {
   }
 
   // Step 1: Clear the target character’s existing starter flags
-  const clearCharacterSql = `
+  const sqlText = `
     UPDATE "user_characters"
     SET "starter_1" = FALSE,
         "starter_2" = FALSE,
@@ -593,36 +593,47 @@ router.put("/starter/update", (req, res) => {
     WHERE "id" = $1 AND "user_id" = $2;
   `;
 
+    const sqlValues = [characterId, userId];
+
   pool
-    .query(clearCharacterSql, [characterId, userId])
+    .query(sqlText, sqlValues)
     .then(() => {
       // Step 2: Clear any character that is already in the currentStarter slot
-      const clearSlotSql = `
+      const sqlText = `
         UPDATE "user_characters"
         SET "starter_${currentStarter}" = FALSE
         WHERE "user_id" = $1;
       `;
-      return pool.query(clearSlotSql, [userId]);
+
+       const sqlValues = [userId];
+
+      return pool.query(sqlText, sqlValues);
     })
     .then(() => {
       // Step 3: Optionally clear the other slot if provided (for swaps)
       if (otherStarter) {
-        const clearOtherSlotSql = `
+        const sqlText = `
           UPDATE "user_characters"
           SET "starter_${otherStarter}" = FALSE
           WHERE "id" = $1 AND "user_id" = $2;
         `;
-        return pool.query(clearOtherSlotSql, [characterId, userId]);
+
+         const sqlValues = [characterId, userId];
+
+        return pool.query(sqlText, sqlValues);
       }
     })
     .then(() => {
       // Step 4: Set the selected character into the new starter slot
-      const setStarterSql = `
+      const sqlText = `
         UPDATE "user_characters"
         SET "starter_${currentStarter}" = TRUE
         WHERE "id" = $1 AND "user_id" = $2;
       `;
-      return pool.query(setStarterSql, [characterId, userId]);
+
+       const sqlValues = [characterId, userId];
+
+      return pool.query(sqlText, sqlValues);
     })
     .then(() => res.sendStatus(200))
     .catch((err) => {
