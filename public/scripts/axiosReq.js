@@ -182,6 +182,9 @@ function getStarters() {
     withCredentials: true,
   })
     .then((response) => {
+
+      console.log('starters', response.data);
+      
       starterOne = response.data[0];
 
       starterOneHp = Math.floor(response.data[0].hp);
@@ -209,7 +212,7 @@ function getStarters() {
         hold_time: response.data[0].hold_time,
       };
 
-      if (response.data.length === 2) {
+      if (response.data.length >= 2) {
         starterTwo = response.data[1];
 
         starterTwoHp = Math.floor(response.data[1].hp);
@@ -427,7 +430,7 @@ function putStarterSwitching(newStarterInfo) {
 
   axios({
     method: "PUT",
-    url: `http://localhost:5001/api/characters/starter/${newStarterInfo.route}`,
+    url: `http://localhost:5001/api/characters/starter/update`,
     data: newStarterInfo,
     withCredentials: true,
   })
