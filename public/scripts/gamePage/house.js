@@ -84,7 +84,7 @@ const houseBackground = new Sprite({
 });
 
 function setStarter(e) {
-  // let switchRoute;
+  let switchRoute = "update"
 
   // if (e.target.innerHTML === "Remove") switchRoute = "clear";
   // else if (e.target.innerHTML === "Starter 1") switchRoute = "one";
@@ -94,16 +94,24 @@ function setStarter(e) {
 
 
   let currentStarter
+  let otherStarter
 
-  if (e.target.innerHTML === "Starter 1") currentStarter = 1;
+  if (e.target.innerHTML === "Remove") switchRoute = "clear";
+  else if (e.target.innerHTML === "Starter 1") currentStarter = 1;
   else if (e.target.innerHTML === "Starter 2") currentStarter = 2;
+
+  usersStarters.forEach((start) => {
+    if (start.starter_1 === currentStarter) {
+      
+    }
+  })
 
 
   let newStarterInfo = {
+    route: switchRoute,
     characterId: Number(e.target.dataset.characterId),
     currentStarter,
-    otherStarter: 2,
-    // route: switchRoute,
+    otherStarter,
   };
 
   // if (starter.length === 0) {
