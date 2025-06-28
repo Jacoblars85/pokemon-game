@@ -162,7 +162,7 @@ let pokeAttack = "";
 let pokeStamina = 0;
 
 // setting each starter/enemy to a varriable
-let starters = [];
+let usersStarters = [];
 let enemyOne;
 let starterOne;
 let starterTwo;
@@ -183,7 +183,9 @@ function getStarters() {
   })
     .then((response) => {
 
-      console.log('starters', response.data);
+      usersStarters = response.data
+
+      console.log('usersStarters', usersStarters);
       
       starterOne = response.data[0];
 
