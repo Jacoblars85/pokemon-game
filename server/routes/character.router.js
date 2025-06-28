@@ -377,75 +377,75 @@ router.put("/edit/nickname", (req, res) => {
     });
 });
 
-router.put("/starter/one", (req, res) => {
-  const sqlText = `
-    UPDATE "user_characters"
-  SET "starter_1" = FALSE
-    WHERE "user_id" = $1;
-      `;
+// router.put("/starter/one", (req, res) => {
+//   const sqlText = `
+//     UPDATE "user_characters"
+//   SET "starter_1" = FALSE
+//     WHERE "user_id" = $1;
+//       `;
 
-  const sqlValues = [req.user.id];
+//   const sqlValues = [req.user.id];
 
-  pool
-    .query(sqlText, sqlValues)
-    .then((result) => {
-      const insertNewUserQuery = `
-        UPDATE "user_characters"
-          SET "starter_1" = TRUE
-          WHERE "id" = $1 AND "user_id" = $2;
-          `;
+//   pool
+//     .query(sqlText, sqlValues)
+//     .then((result) => {
+//       const insertNewUserQuery = `
+//         UPDATE "user_characters"
+//           SET "starter_1" = TRUE
+//           WHERE "id" = $1 AND "user_id" = $2;
+//           `;
 
-      const sqlValues = [req.body.characterId, req.user.id];
+//       const sqlValues = [req.body.characterId, req.user.id];
 
-      pool.query(insertNewUserQuery, sqlValues).then((result) => {
-        res.sendStatus(201);
-      });
-    })
-    .catch((err) => {
-      // catch for second query
-      console.log("in the second", err);
-      res.sendStatus(500);
-    })
-    .catch((err) => {
-      console.log("Error in character.router /startrer 1 PUT,", err);
-      res.sendStatus(500);
-    });
-});
+//       pool.query(insertNewUserQuery, sqlValues).then((result) => {
+//         res.sendStatus(201);
+//       });
+//     })
+//     .catch((err) => {
+//       // catch for second query
+//       console.log("in the second", err);
+//       res.sendStatus(500);
+//     })
+//     .catch((err) => {
+//       console.log("Error in character.router /startrer 1 PUT,", err);
+//       res.sendStatus(500);
+//     });
+// });
 
-router.put("/starter/two", (req, res) => {
-  const sqlText = `
-    UPDATE "user_characters"
-  SET "starter_2" = FALSE
-    WHERE "user_id" = $1;
-      `;
+// router.put("/starter/two", (req, res) => {
+//   const sqlText = `
+//     UPDATE "user_characters"
+//   SET "starter_2" = FALSE
+//     WHERE "user_id" = $1;
+//       `;
 
-  const sqlValues = [req.user.id];
+//   const sqlValues = [req.user.id];
 
-  pool
-    .query(sqlText, sqlValues)
-    .then((result) => {
-      const insertNewUserQuery = `
-        UPDATE "user_characters"
-          SET "starter_2" = TRUE
-          WHERE "id" = $1 AND "user_id" = $2;
-          `;
+//   pool
+//     .query(sqlText, sqlValues)
+//     .then((result) => {
+//       const insertNewUserQuery = `
+//         UPDATE "user_characters"
+//           SET "starter_2" = TRUE
+//           WHERE "id" = $1 AND "user_id" = $2;
+//           `;
 
-      const sqlValues = [req.body.characterId, req.user.id];
+//       const sqlValues = [req.body.characterId, req.user.id];
 
-      pool.query(insertNewUserQuery, sqlValues).then((result) => {
-        res.sendStatus(201);
-      });
-    })
-    .catch((err) => {
-      // catch for second query
-      console.log("in the second", err);
-      res.sendStatus(500);
-    })
-    .catch((err) => {
-      console.log("Error in character.router /starter 2 PUT,", err);
-      res.sendStatus(500);
-    });
-});
+//       pool.query(insertNewUserQuery, sqlValues).then((result) => {
+//         res.sendStatus(201);
+//       });
+//     })
+//     .catch((err) => {
+//       // catch for second query
+//       console.log("in the second", err);
+//       res.sendStatus(500);
+//     })
+//     .catch((err) => {
+//       console.log("Error in character.router /starter 2 PUT,", err);
+//       res.sendStatus(500);
+//     });
+// });
 
 router.put("/starter/clear", (req, res) => {
   // console.log(req.params.id);
@@ -482,94 +482,94 @@ router.put("/starter/clear", (req, res) => {
     });
 });
 
-router.put("/starter/conditional", (req, res) => {
-  //  console.log('req.body', req.body);
+// router.put("/starter/conditional", (req, res) => {
+//   //  console.log('req.body', req.body);
 
-  const sqlText = `
-    UPDATE "user_characters"
-       SET "starter_${req.body.otherStarter}" = FALSE
-         WHERE "id" = $1 AND "user_id" = $2;
-      `;
+//   const sqlText = `
+//     UPDATE "user_characters"
+//        SET "starter_${req.body.otherStarter}" = FALSE
+//          WHERE "id" = $1 AND "user_id" = $2;
+//       `;
 
-  const sqlValues = [req.body.characterId, req.user.id];
+//   const sqlValues = [req.body.characterId, req.user.id];
 
-  pool
-    .query(sqlText, sqlValues)
-    .then((result) => {
-      const insertNewUserQuery = `
-        UPDATE "user_characters"
-          SET "starter_${req.body.currentStarter}" = FALSE
-          WHERE "user_id" = $1;
-          `;
+//   pool
+//     .query(sqlText, sqlValues)
+//     .then((result) => {
+//       const insertNewUserQuery = `
+//         UPDATE "user_characters"
+//           SET "starter_${req.body.currentStarter}" = FALSE
+//           WHERE "user_id" = $1;
+//           `;
 
-      const sqlValues = [req.user.id];
+//       const sqlValues = [req.user.id];
 
-      pool
-        .query(insertNewUserQuery, sqlValues)
-        .then((result) => {
-          const insertNewUserQuery = `
-            UPDATE "user_characters"
-              SET "starter_${req.body.currentStarter}" = TRUE
-              WHERE "id" = $1 AND "user_id" = $2;
-              `;
+//       pool
+//         .query(insertNewUserQuery, sqlValues)
+//         .then((result) => {
+//           const insertNewUserQuery = `
+//             UPDATE "user_characters"
+//               SET "starter_${req.body.currentStarter}" = TRUE
+//               WHERE "id" = $1 AND "user_id" = $2;
+//               `;
 
-          const sqlValues = [req.body.characterId, req.user.id];
+//           const sqlValues = [req.body.characterId, req.user.id];
 
-          pool.query(insertNewUserQuery, sqlValues).then((result) => {
-            res.sendStatus(201);
-          });
-        })
-        .catch((err) => {
-          // catch for second query
-          console.log("in the third", err);
-          res.sendStatus(500);
-        });
-    })
-    .catch((err) => {
-      // catch for second query
-      console.log("in the second", err);
-      res.sendStatus(500);
-    })
-    .catch((err) => {
-      console.log("Error in character.router /starter conditionally PUT,", err);
-      res.sendStatus(500);
-    });
-});
+//           pool.query(insertNewUserQuery, sqlValues).then((result) => {
+//             res.sendStatus(201);
+//           });
+//         })
+//         .catch((err) => {
+//           // catch for second query
+//           console.log("in the third", err);
+//           res.sendStatus(500);
+//         });
+//     })
+//     .catch((err) => {
+//       // catch for second query
+//       console.log("in the second", err);
+//       res.sendStatus(500);
+//     })
+//     .catch((err) => {
+//       console.log("Error in character.router /starter conditionally PUT,", err);
+//       res.sendStatus(500);
+//     });
+// });
 
-router.put("/starter/switch", (req, res) => {
-  // console.log('req.body',req.body);
-  const sqlText = `
- UPDATE "user_characters"
-    SET "starter_1" = FALSE, "starter_2" = TRUE
-    WHERE "id" = $1 AND "user_id" = $2;
-    `;
+// router.put("/starter/switch", (req, res) => {
+//   // console.log('req.body',req.body);
+//   const sqlText = `
+//  UPDATE "user_characters"
+//     SET "starter_1" = FALSE, "starter_2" = TRUE
+//     WHERE "id" = $1 AND "user_id" = $2;
+//     `;
 
-  const sqlValues = [req.body.starterOneId, req.user.id];
+//   const sqlValues = [req.body.starterOneId, req.user.id];
 
-  pool
-    .query(sqlText, sqlValues)
-    .then((result) => {
-      const sqlText = `
-     UPDATE "user_characters"
-    SET "starter_2" = FALSE, "starter_1" = TRUE
-    WHERE "id" = $1 AND "user_id" = $2;
-    `;
+//   pool
+//     .query(sqlText, sqlValues)
+//     .then((result) => {
+//       const sqlText = `
+//      UPDATE "user_characters"
+//     SET "starter_2" = FALSE, "starter_1" = TRUE
+//     WHERE "id" = $1 AND "user_id" = $2;
+//     `;
 
-      const sqlValues = [req.body.starterTwoId, req.user.id];
+//       const sqlValues = [req.body.starterTwoId, req.user.id];
 
-      pool.query(sqlText, sqlValues).then((result) => {
-        res.sendStatus(201);
-      });
-    })
-    .catch((err) => {
-      console.log("Error in 2nd character.router /starter/switch PUT,", err);
-      res.sendStatus(500);
-    })
-    .catch((err) => {
-      console.log("Error in character.router /starter/switch PUT,", err);
-      res.sendStatus(500);
-    });
-});
+//       pool.query(sqlText, sqlValues).then((result) => {
+//         res.sendStatus(201);
+//       });
+//     })
+//     .catch((err) => {
+//       console.log("Error in 2nd character.router /starter/switch PUT,", err);
+//       res.sendStatus(500);
+//     })
+//     .catch((err) => {
+//       console.log("Error in character.router /starter/switch PUT,", err);
+//       res.sendStatus(500);
+//     });
+// });
 
 router.put("/starter/update", (req, res) => {
   const { characterId, currentStarter, otherStarter } = req.body;
