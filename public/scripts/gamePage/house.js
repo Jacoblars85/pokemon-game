@@ -84,7 +84,7 @@ const houseBackground = new Sprite({
 });
 
 function setStarter(e) {
-  let switchRoute = "update"
+  let route = "update"
 
   // if (e.target.innerHTML === "Remove") switchRoute = "clear";
   // else if (e.target.innerHTML === "Starter 1") switchRoute = "one";
@@ -100,15 +100,24 @@ function setStarter(e) {
   else if (e.target.innerHTML === "Starter 1") currentStarter = 1;
   else if (e.target.innerHTML === "Starter 2") currentStarter = 2;
 
-  usersStarters.forEach((start) => {
-    if (start.starter_1 === currentStarter) {
-      
+  if (route !== "clear") {
+const totalStarters = 2;
+const allSlots = Array.from({ length: totalStarters }, (_, i) => i + 1);
+const otherSlots = allSlots.filter((slot) => slot !== currentStarter);
+
+    // Find if the character is currently in the other slot
+    const isInOtherSlot = usersStarters.find(
+      (char) => char.id === characterId && char[`starter_${otherSlots}`]
+    );
+
+    if (isInOtherSlot) {
+      otherStarter = otherSlots;
     }
-  })
+  }
 
 
   let newStarterInfo = {
-    route: switchRoute,
+    route,
     characterId: Number(e.target.dataset.characterId),
     currentStarter,
     otherStarter,
