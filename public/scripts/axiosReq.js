@@ -18,7 +18,9 @@ function fetchUser() {
       getStarters();
 
       document.getElementById("usernameNavHeader").innerHTML = user.username;
-      document.getElementById("userLevelNavHeader").innerHTML += Math.floor(user.xp_level);
+      document.getElementById("userLevelNavHeader").innerHTML += Math.floor(
+        user.xp_level
+      );
       document.getElementById("usersCoinsNavHeader").innerHTML += user.coins;
     })
     .catch((err) => {
@@ -182,11 +184,10 @@ function getStarters() {
     withCredentials: true,
   })
     .then((response) => {
+      usersStarters = response.data;
 
-      usersStarters = response.data
+      console.log("usersStarters", usersStarters);
 
-      console.log('usersStarters', usersStarters);
-      
       starterOne = response.data[0];
 
       starterOneHp = Math.floor(response.data[0].hp);
