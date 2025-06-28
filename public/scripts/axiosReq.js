@@ -432,7 +432,7 @@ function putStarterSwitching(newStarterInfo) {
 
   axios({
     method: "PUT",
-    url: `http://localhost:5001/api/characters/starter/update`,
+    url: `http://localhost:5001/api/characters/starter/${newStarterInfo.route}`,
     data: newStarterInfo,
     withCredentials: true,
   })
