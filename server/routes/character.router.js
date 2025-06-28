@@ -591,24 +591,22 @@ router.put("/starter/update", (req, res) => {
     WHERE "id" = $1 AND "user_id" = $2;
   `;
 
-    const sqlValues = [characterId, userId];
+  const sqlValues = [characterId, userId];
 
   pool
     .query(sqlText, sqlValues)
     .then(() => {
-
       const sqlText = `
         UPDATE "user_characters"
         SET "starter_${currentStarter}" = FALSE
         WHERE "user_id" = $1;
       `;
 
-       const sqlValues = [userId];
+      const sqlValues = [userId];
 
       return pool.query(sqlText, sqlValues);
     })
     .then(() => {
-
       if (otherStarter) {
         const sqlText = `
           UPDATE "user_characters"
@@ -616,20 +614,19 @@ router.put("/starter/update", (req, res) => {
           WHERE "id" = $1 AND "user_id" = $2;
         `;
 
-         const sqlValues = [characterId, userId];
+        const sqlValues = [characterId, userId];
 
         return pool.query(sqlText, sqlValues);
       }
     })
     .then(() => {
-
       const sqlText = `
         UPDATE "user_characters"
         SET "starter_${currentStarter}" = TRUE
         WHERE "id" = $1 AND "user_id" = $2;
       `;
 
-       const sqlValues = [characterId, userId];
+      const sqlValues = [characterId, userId];
 
       return pool.query(sqlText, sqlValues);
     })
@@ -639,6 +636,5 @@ router.put("/starter/update", (req, res) => {
       res.sendStatus(500);
     });
 });
-
 
 module.exports = router;
