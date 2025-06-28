@@ -575,7 +575,6 @@ router.put("/starter/update", (req, res) => {
   const { characterId, currentStarter, otherStarter } = req.body;
   const userId = req.user.id;
 
-  // Sanitize/validate starter slot input (must be numeric and within allowed range)
   const validSlots = ["1", "2", "3"];
   if (
     !validSlots.includes(String(currentStarter)) ||
@@ -584,7 +583,6 @@ router.put("/starter/update", (req, res) => {
     return res.status(400).send("Invalid starter slot");
   }
 
-  // Step 1: Clear the target character’s existing starter flags
   const sqlText = `
     UPDATE "user_characters"
     SET "starter_1" = FALSE,
@@ -598,7 +596,7 @@ router.put("/starter/update", (req, res) => {
   pool
     .query(sqlText, sqlValues)
     .then(() => {
-      // Step 2: Clear any character that is already in the currentStarter slot
+
       const sqlText = `
         UPDATE "user_characters"
         SET "starter_${currentStarter}" = FALSE
@@ -610,7 +608,7 @@ router.put("/starter/update", (req, res) => {
       return pool.query(sqlText, sqlValues);
     })
     .then(() => {
-      // Step 3: Optionally clear the other slot if provided (for swaps)
+
       if (otherStarter) {
         const sqlText = `
           UPDATE "user_characters"
@@ -624,7 +622,7 @@ router.put("/starter/update", (req, res) => {
       }
     })
     .then(() => {
-      // Step 4: Set the selected character into the new starter slot
+
       const sqlText = `
         UPDATE "user_characters"
         SET "starter_${currentStarter}" = TRUE
