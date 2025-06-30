@@ -36,8 +36,6 @@ function registerUserPost(userInfo) {
     withCredentials: true,
   })
     .then((response) => {
-      console.log("registered the new user", response);
-
       window.location.href = "../mainMenuPage/mainMenu.html";
 
       fetchUser();
@@ -53,8 +51,6 @@ function loginUser(userInfo) {
   axios
     .post(`http://localhost:5001/api/user/login`, userInfo, config)
     .then((response) => {
-      console.log("logged in", response);
-
       window.location.href = "../mainMenuPage/mainMenu.html";
 
       fetchUser();
@@ -68,8 +64,6 @@ function logoutUser() {
   axios
     .post(`http://localhost:5001/api/user/logout`, {}, config)
     .then((response) => {
-      console.log("logged out", response);
-
       window.location.href = "../loginPage/login.html";
     })
     .catch((err) => {
@@ -84,8 +78,6 @@ function deleteUser() {
     withCredentials: true,
   })
     .then((response) => {
-      console.log("deleted the user", response);
-
       window.location.href = "../registerPage/register.html";
     })
     .catch((err) => {
@@ -101,7 +93,7 @@ function changeUsername(newName) {
     withCredentials: true,
   })
     .then((response) => {
-      console.log("finished changing the username axios");
+      fetchUser()
     })
     .catch((err) => {
       console.log(err);
@@ -116,7 +108,8 @@ function userOpenChest(chestInfo) {
     withCredentials: true,
   })
     .then((response) => {
-      console.log("finished opening the chest axios");
+      getAllItems()
+      getAllUsersBattleItems()
     })
     .catch((err) => {
       console.log(err);
@@ -328,8 +321,6 @@ function getAllUsersCharacters() {
   })
     .then((response) => {
       usersCharacters = response.data;
-
-      console.log("usersCharacters", usersCharacters);
     })
     .catch((err) => {
       console.log(err);
@@ -420,7 +411,6 @@ function postNewUserCharacter(newCharacter) {
     withCredentials: true,
   })
     .then((response) => {
-      console.log("posted new character!!!");
       getAllUsersCharacters();
     })
     .catch((err) => {
