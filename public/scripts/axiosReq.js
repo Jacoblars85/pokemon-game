@@ -93,7 +93,7 @@ function changeUsername(newName) {
     withCredentials: true,
   })
     .then((response) => {
-      fetchUser()
+      fetchUser();
     })
     .catch((err) => {
       console.log(err);
@@ -108,8 +108,8 @@ function userOpenChest(chestInfo) {
     withCredentials: true,
   })
     .then((response) => {
-      getAllItems()
-      getAllUsersBattleItems()
+      getAllItems();
+      getAllUsersBattleItems();
     })
     .catch((err) => {
       console.log(err);
