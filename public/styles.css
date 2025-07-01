@@ -332,3 +332,10 @@ Overlay
   text-align: center;
   z-index: 100;
 }
+
+.starterGridItem {
+  background-color: black;
+  border: 1px solid white;
+  height: 60px;
+  width: 180px;
+}
