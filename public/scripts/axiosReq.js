@@ -236,6 +236,13 @@ function getStarters() {
           hold_time: response.data[1].hold_time,
         };
       }
+
+      for (let i = 0; i < usersStarters.length; i++) {
+        const start = usersStarters[i];
+        
+        console.log('start', start);
+        
+      }
     })
     .catch((err) => {
       console.log(err);
