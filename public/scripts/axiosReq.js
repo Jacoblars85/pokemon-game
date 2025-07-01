@@ -248,9 +248,9 @@ function getStarters() {
           display: flex;
           align-items: center;
           gap: 10px;
-          background-color: white;
-          border: 1px solid black;
-          min-height: 60px;
+          background-color: black;
+          border: 1px solid white;
+          min-height: 50px;
         `;
 
         if (usersStarters[i]) {
@@ -258,8 +258,8 @@ function getStarters() {
 
           const img = document.createElement("img");
           img.src = start.profile_pic;
-          img.width = 60;
-          img.height = 60;
+          img.width = 57;
+          img.height = 57;
 
           const name = document.createElement("span");
           name.textContent = start.character_name;
