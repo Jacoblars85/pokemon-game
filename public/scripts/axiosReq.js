@@ -237,12 +237,46 @@ function getStarters() {
         };
       }
 
-      for (let i = 0; i < usersStarters.length; i++) {
-        const start = usersStarters[i];
-        
-        console.log('start', start);
-        
-      }
+      const starterGrid = document.getElementById("starterBody");
+starterGrid.innerHTML = "";
+
+const totalSlots = 6;
+
+for (let i = 0; i < totalSlots; i++) {
+  const cell = document.createElement("div");
+  cell.style = `
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border: 1px solid black;
+    min-height: 60px;
+  `;
+
+  if (usersStarters[i]) {
+    const start = usersStarters[i];
+
+    const img = document.createElement("img");
+    img.src = start.profile_pic;
+    img.width = 60;
+    img.height = 60;
+
+    const name = document.createElement("span");
+    name.textContent = start.character_name;
+
+    cell.appendChild(img);
+    cell.appendChild(name);
+  } else {
+    // Optionally add placeholder content
+    const placeholder = document.createElement("span");
+    placeholder.textContent = "Empty Slot";
+    placeholder.style.opacity = 0.5;
+    cell.appendChild(placeholder);
+  }
+
+  starterGrid.appendChild(cell);
+}
+
     })
     .catch((err) => {
       console.log(err);
