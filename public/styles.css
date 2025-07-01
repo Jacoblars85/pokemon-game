@@ -312,6 +312,9 @@ Overlay
   z-index: 999;
 }
 
+/* --------------------------------------------------------------------------------
+Starter Interface
+-------------------------------------------------------------------------------- */
 
 .starterInterface {
   position: absolute;
@@ -319,7 +322,7 @@ Overlay
   left: 20%;
   width: 616px;
   height: 368px;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
