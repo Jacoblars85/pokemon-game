@@ -417,19 +417,15 @@ function closeBag() {
   moving = true;
 
   document.getElementById("bagOverlay").style.display = "none";
-
 }
 
-document
-  .getElementById("bagOverlay")
-  .addEventListener("click", (event) => {
-    const popup = document.getElementById("bagPopup");
+document.getElementById("bagOverlay").addEventListener("click", (event) => {
+  const popup = document.getElementById("bagPopup");
 
-
-    if (!popup.contains(event.target)) {
-      closeBag();
-    }
-  });
+  if (!popup.contains(event.target)) {
+    closeBag();
+  }
+});
 
 function isOnScreen(obj, buffer = 50) {
   return (
