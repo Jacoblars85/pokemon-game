@@ -296,23 +296,6 @@ Details Interface
 }
 
 /* --------------------------------------------------------------------------------
-Overlay
--------------------------------------------------------------------------------- */
-
-.overlay {
-  position: fixed;
-  top: 1%;
-  left: 1;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent */
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-/* --------------------------------------------------------------------------------
 Starter Interface
 -------------------------------------------------------------------------------- */
 
@@ -341,4 +324,21 @@ Starter Interface
   border: 1px solid white;
   height: 60px;
   width: 180px;
+}
+
+/* --------------------------------------------------------------------------------
+Overlay
+-------------------------------------------------------------------------------- */
+
+.overlay {
+  position: fixed;
+  top: 1%;
+  left: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
