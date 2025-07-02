@@ -410,20 +410,20 @@ document.getElementById("chestOverlay").addEventListener("click", (event) => {
 function openBag() {
   moving = false;
 
-  document.getElementById("settingsOverlay").style.display = "flex";
+  document.getElementById("bagOverlay").style.display = "flex";
 }
 
 function closeBag() {
   moving = true;
 
-  document.getElementById("settingsOverlay").style.display = "none";
+  document.getElementById("bagOverlay").style.display = "none";
 
 }
 
 document
-  .getElementById("settingsOverlay")
+  .getElementById("bagOverlay")
   .addEventListener("click", (event) => {
-    const popup = document.getElementById("settingsInterfacePopUp");
+    const popup = document.getElementById("bagPopup");
 
 
     if (!popup.contains(event.target)) {
