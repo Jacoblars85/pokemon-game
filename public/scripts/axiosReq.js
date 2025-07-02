@@ -379,16 +379,16 @@ function getAllUsersItems() {
       usersItems = response.data;
 
 
+            for (const items of usersItems) {
+        console.log('items', items);
+        
+        document.getElementById("bagBody").innerHTML = ``
+      }
     })
     .catch((err) => {
       console.log(err);
     });
 }
-
-            for (const items of usersBattleItems) {
-        console.log('items', items);
-        
-      }
 
 function getAllUsersConsumables(resetBattleFunc) {
   axios({
