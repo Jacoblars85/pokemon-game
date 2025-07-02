@@ -407,6 +407,30 @@ document.getElementById("chestOverlay").addEventListener("click", (event) => {
   }
 });
 
+function openSettingsDialog() {
+  moving = false;
+
+  document.getElementById("settingsOverlay").style.display = "flex";
+}
+
+function closeSettingsDialog() {
+  moving = true;
+
+  document.getElementById("settingsOverlay").style.display = "none";
+
+}
+
+document
+  .getElementById("settingsOverlay")
+  .addEventListener("click", (event) => {
+    const popup = document.getElementById("settingsInterfacePopUp");
+
+    // Only close if clicking directly on the overlay (not inside the popup)
+    if (!popup.contains(event.target)) {
+      closeSettingsDialog();
+    }
+  });
+
 function isOnScreen(obj, buffer = 50) {
   return (
     obj.position.x + obj.width > -buffer &&
