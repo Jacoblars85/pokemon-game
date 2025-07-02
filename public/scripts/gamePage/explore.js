@@ -8,6 +8,7 @@ getBasicAttacks();
 getAllUsersBattleItems();
 getAllUsersConsumables();
 getAllUsersThrowables();
+getAllUsersItems();
 getAllItems();
 getAllUsersCharacters();
 
