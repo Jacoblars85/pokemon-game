@@ -407,13 +407,13 @@ document.getElementById("chestOverlay").addEventListener("click", (event) => {
   }
 });
 
-function openSettingsDialog() {
+function openBag() {
   moving = false;
 
   document.getElementById("settingsOverlay").style.display = "flex";
 }
 
-function closeSettingsDialog() {
+function closeBag() {
   moving = true;
 
   document.getElementById("settingsOverlay").style.display = "none";
@@ -425,9 +425,9 @@ document
   .addEventListener("click", (event) => {
     const popup = document.getElementById("settingsInterfacePopUp");
 
-    // Only close if clicking directly on the overlay (not inside the popup)
+
     if (!popup.contains(event.target)) {
-      closeSettingsDialog();
+      closeBag();
     }
   });
 
