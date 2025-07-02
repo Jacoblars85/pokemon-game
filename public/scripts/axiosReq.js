@@ -164,6 +164,7 @@ let starterTwo;
 let usersBattleItems = [];
 let usersConsumableItems = [];
 let usersThrowablesItems = [];
+let usersItems = [];
 let allItems = [];
 let usersCharacters = [];
 
@@ -366,6 +367,28 @@ function getAllUsersCharacters() {
       console.log(err);
     });
 }
+
+
+function getAllUsersItems() {
+  axios({
+    method: "GET",
+    url: "http://localhost:5001/api/inventory/user/inventory",
+    withCredentials: true,
+  })
+    .then((response) => {
+      usersItems = response.data;
+
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+            for (const items of usersBattleItems) {
+        console.log('items', items);
+        
+      }
 
 function getAllUsersConsumables(resetBattleFunc) {
   axios({
