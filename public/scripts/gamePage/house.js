@@ -129,6 +129,9 @@ function showCharacterDetails(character) {
   document.getElementById("switchStarter2Button").dataset.characterId =
     character.id;
 
+      document.getElementById("starterHeader").textContent = character.starter_1 ? 'Starter 1' :
+      document.getElementById("starterHeader").textContent = character.starter_2 ? 'Starter 2' : ''
+
   document.getElementById("detailImage").src = character.profile_pic;
   document.getElementById("detailName").textContent = character.character_name;
   document.getElementById("detailHp").textContent = "hp: " + character.hp;
