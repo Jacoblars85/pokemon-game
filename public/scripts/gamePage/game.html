@@ -1,48 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <link
-      href="https://fonts.cdnfonts.com/css/serious-rounded"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../styles.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
-      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
-    ></script>
-    <script>
-      fetch("http://localhost:5001/api/user", {
-        credentials: "include",
-      })
-        .then((res) => {
-          if (res.status === 403) {
-            window.location.href = "../loginPage/login.html";
-          }
-        })
-        .catch(() => {
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  <link href="https://fonts.cdnfonts.com/css/serious-rounded" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    fetch("http://localhost:5001/api/user", {
+      credentials: "include",
+    })
+      .then((res) => {
+        if (res.status === 403) {
           window.location.href = "../loginPage/login.html";
-        });
-    </script>
-    <title>pokemon game</title>
-  </head>
-  <body>
-    <div style="display: inline-block; position: relative">
-      <!-- fade out div  -->
-      <div
-        id="fadeOutDiv"
-        style="
+        }
+      })
+      .catch(() => {
+        window.location.href = "../loginPage/login.html";
+      });
+  </script>
+  <title>pokemon game</title>
+</head>
+
+<body>
+  <div style="display: inline-block; position: relative">
+    <!-- fade out div  -->
+    <div id="fadeOutDiv" style="
           background-color: black;
           position: absolute;
           top: 0;
@@ -52,17 +40,15 @@
           opacity: 0;
           pointer-events: none;
           z-index: 10;
-        "
-      ></div>
+        "></div>
 
-      <!-- main canvas -->
-      <canvas id="canvasRef" height="576" width="1024"></canvas>
+    <!-- main canvas -->
+    <canvas id="canvasRef" height="576" width="1024"></canvas>
 
-      <!-- battle interface  -->
-      <div id="battleInterface" style="display: none">
-        <!-- enemy health box  -->
-        <div
-          style="
+    <!-- battle interface  -->
+    <div id="battleInterface" style="display: none">
+      <!-- enemy health box  -->
+      <div style="
             background-color: white;
             width: 300px;
             position: absolute;
@@ -72,29 +58,22 @@
             display: flex;
             flex-direction: column;
             padding: 10px;
-          "
-        >
-          <div
-            style="
+          ">
+        <div style="
               display: flex;
               flex-direction: row;
               justify-content: space-between;
               align-items: baseline;
-            "
-          >
-            <h1 id="enemyName" style="margin: 0"></h1>
+            ">
+          <h1 id="enemyName" style="margin: 0"></h1>
 
-            <h2 id="enemyLevel" style="margin: 0"></h2>
-          </div>
+          <h2 id="enemyLevel" style="margin: 0"></h2>
+        </div>
 
-          <!-- enemy health bar  -->
-          <div style="position: relative">
-            <div
-              style="height: 8px; background-color: #ccc; margin-top: 10px"
-            ></div>
-            <div
-              id="enemyHealthBar"
-              style="
+        <!-- enemy health bar  -->
+        <div style="position: relative">
+          <div style="height: 8px; background-color: #ccc; margin-top: 10px"></div>
+          <div id="enemyHealthBar" style="
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -102,18 +81,13 @@
                 height: 8px;
                 background-color: red;
                 margin-top: 10px;
-              "
-            ></div>
-          </div>
+              "></div>
+        </div>
 
-          <!-- enemy stamina bar  -->
-          <div style="position: relative">
-            <div
-              style="height: 5px; background-color: #ccc; margin-top: 10px"
-            ></div>
-            <div
-              id="enemyStaminaBar"
-              style="
+        <!-- enemy stamina bar  -->
+        <div style="position: relative">
+          <div style="height: 5px; background-color: #ccc; margin-top: 10px"></div>
+          <div id="enemyStaminaBar" style="
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -121,14 +95,12 @@
                 height: 5px;
                 background-color: green;
                 margin-top: 10px;
-              "
-            ></div>
-          </div>
+              "></div>
         </div>
+      </div>
 
-        <!-- starter health box -->
-        <div
-          style="
+      <!-- starter health box -->
+      <div style="
             background-color: white;
             width: 300px;
             position: absolute;
@@ -138,29 +110,22 @@
             display: flex;
             flex-direction: column;
             padding: 10px;
-          "
-        >
-          <div
-            style="
+          ">
+        <div style="
               display: flex;
               flex-direction: row;
               justify-content: space-between;
               align-items: baseline;
-            "
-          >
-            <h1 id="starterName" style="margin: 0"></h1>
+            ">
+          <h1 id="starterName" style="margin: 0"></h1>
 
-            <h2 id="starterLevel" style="margin: 0"></h2>
-          </div>
+          <h2 id="starterLevel" style="margin: 0"></h2>
+        </div>
 
-          <!-- starter health bar  -->
-          <div style="position: relative">
-            <div
-              style="height: 8px; background-color: #ccc; margin-top: 10px"
-            ></div>
-            <div
-              id="starterHealthBar"
-              style="
+        <!-- starter health bar  -->
+        <div style="position: relative">
+          <div style="height: 8px; background-color: #ccc; margin-top: 10px"></div>
+          <div id="starterHealthBar" style="
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -168,18 +133,13 @@
                 height: 8px;
                 background-color: red;
                 margin-top: 10px;
-              "
-            ></div>
-          </div>
+              "></div>
+        </div>
 
-          <!-- starter stamina bar -->
-          <div style="position: relative">
-            <div
-              style="height: 5px; background-color: #ccc; margin-top: 10px"
-            ></div>
-            <div
-              id="starterStaminaBar"
-              style="
+        <!-- starter stamina bar -->
+        <div style="position: relative">
+          <div style="height: 5px; background-color: #ccc; margin-top: 10px"></div>
+          <div id="starterStaminaBar" style="
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -187,14 +147,12 @@
                 height: 5px;
                 background-color: green;
                 margin-top: 10px;
-              "
-            ></div>
-          </div>
+              "></div>
         </div>
+      </div>
 
-        <!-- attack box -->
-        <div
-          style="
+      <!-- attack box -->
+      <div style="
             background-color: white;
             height: 140px;
             position: absolute;
@@ -203,12 +161,9 @@
             right: 0;
             border-top: 4px solid black;
             display: flex;
-          "
-        >
-          <!-- dialog box  -->
-          <div
-            id="dialogueBox"
-            style="
+          ">
+        <!-- dialog box  -->
+        <div id="dialogueBox" style="
               position: absolute;
               bottom: 0;
               left: 0;
@@ -220,13 +175,10 @@
               font-size: 30px;
               z-index: 1;
               cursor: pointer;
-            "
-          ></div>
+            "></div>
 
-          <!-- dead switch box -->
-          <div
-            id="deadSwitchBox"
-            style="
+        <!-- dead switch box -->
+        <div id="deadSwitchBox" style="
               position: absolute;
               bottom: 0;
               left: 0;
@@ -238,36 +190,27 @@
               font-size: 30px;
               z-index: 2;
               cursor: pointer;
-            "
-          ></div>
+            "></div>
 
-          <!-- all of the togglable buttons -->
-          <div
-            id="togglableButtons"
-            style="
+        <!-- all of the togglable buttons -->
+        <div id="togglableButtons" style="
               width: 66.66%;
               display: flex;
               align-items: center;
               justify-content: center;
-            "
-          >
-            <!-- attack box  -->
-            <div
-              id="attackBox"
-              style="
+            ">
+          <!-- attack box  -->
+          <div id="attackBox" style="
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 100%;
                 height: 100%;
                 background-color: white;
-              "
-            ></div>
+              "></div>
 
-            <!-- switch box  -->
-            <div
-              id="switchBox"
-              style="
+          <!-- switch box  -->
+          <div id="switchBox" style="
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -279,13 +222,10 @@
                 border-left: 4px solid black;
                 border-bottom: 4px solid black;
                 overflow-y: scroll;
-              "
-            ></div>
+              "></div>
 
-            <!-- inventory box  -->
-            <div
-              id="inventoryBox"
-              style="
+          <!-- inventory box  -->
+          <div id="inventoryBox" style="
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -297,53 +237,44 @@
                 border-left: 4px solid black;
                 border-bottom: 4px solid black;
                 overflow-y: scroll;
-              "
-            ></div>
-          </div>
+              "></div>
+        </div>
 
-          <!-- all of the basic buttons -->
-          <div style="width: 33.33%; border-left: 4px solid black">
-            <div style="height: 100%; width: 100%">
-              <!-- shows all the attack buttons -->
-              <button
-                style="
+        <!-- all of the basic buttons -->
+        <div style="width: 33.33%; border-left: 4px solid black">
+          <div style="height: 100%; width: 100%">
+            <!-- shows all the attack buttons -->
+            <button style="
                   height: 25%;
                   width: 100%;
                   border: 0;
                   border-right: 4px solid black;
                   cursor: pointer;
                   font-size: 30px;
-                "
-              >Attack</button>
+                ">Attack</button>
 
-              <!-- the inventory button  -->
-              <button
-                style="
+            <!-- the inventory button  -->
+            <button style="
                   height: 25%;
                   width: 100%;
                   border: 0;
                   border-right: 4px solid black;
                   cursor: pointer;
                   font-size: 30px;
-                "
-              >Inventory</button>
+                ">Inventory</button>
 
-              <!-- the switch button  -->
-              <button
-                style="
+            <!-- the switch button  -->
+            <button style="
                   height: 25%;
                   width: 100%;
                   border: 0;
                   border-right: 4px solid black;
                   cursor: pointer;
                   font-size: 30px;
-                "
-                class="switch"
-              >Switch</button>
+                " class="switch">Switch</button>
 
-              <!-- run button  -->
-              <button
-                style="
+            <!-- run button  -->
+            <button style="
                   height: 25%;
                   width: 100%;
                   border: 0;
@@ -351,117 +282,93 @@
                   border-right: 4px solid black;
                   cursor: pointer;
                   font-size: 30px;
-                "
-              >Run</button>
-            </div>
+                ">Run</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- chest interface -->
-      <div id="chestOverlay" class="overlay">
-        <div id="chestInterfacePopUp" class="chestPopUp">
-          <h2>you got...</h2>
+    <!-- chest interface -->
+    <div id="chestOverlay" class="overlay">
+      <div id="chestInterfacePopUp" class="chestPopUp">
+        <h2>you got...</h2>
 
-          <div id="rewardPicDiv"></div>
+        <div id="rewardPicDiv"></div>
 
-          <button style="margin: 30px" onclick="closeChest()">close</button>
-        </div>
+        <button style="margin: 30px" onclick="closeChest()">close</button>
       </div>
+    </div>
 
-      <!-- settings button -->
-      <button
-        class="btn"
-        style="position: absolute; top: 0.5%; right: 0.5%; margin: 0"
-        onclick="openSettingsDialog()"
-      >
-        O
-      </button>
+    <!-- settings button -->
+    <button class="btn" style="position: absolute; top: 0.5%; right: 0.5%; margin: 0" onclick="openSettingsDialog()">
+      O
+    </button>
 
-      <!-- settings interface -->
-      <div id="settingsOverlay" class="overlay">
-        <div id="settingsInterfacePopUp" class="settingsScreenPopUp">
-          <h2
-            style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray"
-          >
-            Settings
-          </h2>
+    <!-- settings interface -->
+    <div id="settingsOverlay" class="overlay">
+      <div id="settingsInterfacePopUp" class="settingsScreenPopUp">
+        <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
+          Settings
+        </h2>
 
-          <div
-            id="settingsBody"
-            style="
+        <div id="settingsBody" style="
               display: flex;
               flex-direction: column;
               align-items: center;
               justify-content: space-evenly;
               width: 80%;
               height: 90%;
-            "
-          >
-            <!-- <button class="btn" onclick="goToMainMenu()">Main Menu</button> -->
-            <button class="btn">
-              <a href="../mainMenuPage/mainMenu.html">Main Menu</a>
-            </button>
-            <button class="btn" onclick="deleteUserDialog()">
-              Delete Account
-            </button>
-            <button class="btn" onclick="changeUsernameDialog()">
-              Change Name
-            </button>
-            <button class="btn" onclick="logoutUser()">
-              <a href="../loginPage/login.html">Log Out</a>
-            </button>
-          </div>
-
-          <button
-            class="btn"
-            style="position: absolute; top: 0.5%; right: 0.5%; margin: 0"
-            onclick="closeSettingsDialog()"
-          >
-            X
+            ">
+          <!-- <button class="btn" onclick="goToMainMenu()">Main Menu</button> -->
+          <button class="btn">
+            <a href="../mainMenuPage/mainMenu.html">Main Menu</a>
+          </button>
+          <button class="btn" onclick="deleteUserDialog()">
+            Delete Account
+          </button>
+          <button class="btn" onclick="changeUsernameDialog()">
+            Change Name
+          </button>
+          <button class="btn" onclick="logoutUser()">
+            <a href="../loginPage/login.html">Log Out</a>
           </button>
         </div>
+
+        <button class="btn" style="position: absolute; top: 0.5%; right: 0.5%; margin: 0"
+          onclick="closeSettingsDialog()">
+          X
+        </button>
       </div>
+    </div>
 
-      <!-- pc interface -->
-      <div id="pcOverlay" class="overlay">
-        <div id="pcInterfacePopUp" class="pcInterface">
-          <h2
-            style="margin: 0px; font-size: 30px; text-shadow: 3px 3px 3px gray"
-          >
-            Characters
-          </h2>
+    <!-- pc interface -->
+    <div id="pcOverlay" class="overlay">
+      <div id="pcInterfacePopUp" class="pcInterface">
+        <h2 style="margin: 0px; font-size: 30px; text-shadow: 3px 3px 3px gray">
+          Characters
+        </h2>
 
-          <button
-            class="btn"
-            style="position: absolute; top: 0.5%; right: 0.5%; margin: 0"
-            onclick="closePc()"
-          >
-            X
-          </button>
+        <button class="btn" style="position: absolute; top: 0.5%; right: 0.5%; margin: 0" onclick="closePc()">
+          X
+        </button>
 
-          <div class="pcControls">
-            <button id="prevBtn">Previous</button>
-            <span id="pageNumber">Page 1</span>
-            <button id="nextBtn">Next</button>
-          </div>
+        <div class="pcControls">
+          <button id="prevBtn">Previous</button>
+          <span id="pageNumber">Page 1</span>
+          <button id="nextBtn">Next</button>
+        </div>
 
-          <div style="display: flex; column-gap: 50px">
-            <div
-              id="starterBody"
-              style="
+        <div style="display: flex; column-gap: 50px">
+          <div id="starterBody" style="
                 background-color: darkgray;
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
                 grid-template-rows: repeat(6, 3fr);
                 border: 3px solid black;
                 color: white;
-              "
-            ></div>
+              "></div>
 
-            <div
-              id="pcBody"
-              style="
+          <div id="pcBody" style="
                 background-color: darkgray;
                 display: grid;
                 grid-template-columns: repeat(7, 1fr);
@@ -469,106 +376,85 @@
                 column-gap: 15px;
                 row-gap: 10px;
                 border: 3px solid black;
-              "
-            ></div>
-          </div>
+              "></div>
         </div>
-      </div>
-
-      <!-- details interface -->
-      <div id="characterDetailsOverlay" class="overlay">
-        <div id="characterDetailsPopup" class="characterDetails">
-          <div style="display: flex">
-            <button
-              id="switchStarter1Button"
-              data-character-id
-              class="btn"
-              style="margin: 5px"
-              onclick="setStarter(event)"
-            >Starter 1</button>
-            <button
-              id="switchStarterButton"
-              data-character-id
-              class="btn"
-              style="margin: 5px"
-              onclick="setStarter(event)"
-            >Remove</button>
-            <button
-              id="switchStarter2Button"
-              data-character-id
-              class="btn"
-              style="margin: 5px"
-              onclick="setStarter(event)"
-            >Starter 2</button>
-          </div>
-          <img id="detailImage" src="" alt="Item Image" />
-          <h2 id="detailName"></h2>
-          <h4 id="detailHp"></h4>
-          <h4 id="detailStamina"></h4>
-          <h4 id="detailSpeed"></h4>
-          <h2 id="detailAttackName"></h2>
-          <h4 id="detailAttackDamage"></h4>
-          <h4 id="detailAttackStamina"></h4>
-
-          <p id="detailDescription"></p>
-          <button onclick="closeCharacterDetails()">Close</button>
-        </div>
-      </div>
-
-      <!-- bag button -->
-      <button class="btn" style="position: absolute; top: 0.5%; right: 6.5%; margin: 0" onclick="openBag()">
-        Bag
-      </button>
-      
-      <!-- bag interface -->
-      <div id="bagOverlay" class="overlay">
-        <div id="bagPopup" class="bagInterface">
-
-                  <div
-          id="starterBody"
-          style="
-            background-color: darkgray;
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(6, 3fr);
-            border: 3px solid black;
-          "
-        ></div>
-
-          <div id="bagBody"></div>
-      
-          <button onclick="closeBag()">Close</button>
-        </div>
-      </div>
-
-      <!-- starter interface -->
-      <div id="starterInterfacePopUp" class="starterInterface">
-        <div
-          id="starterBody"
-          style="
-            background-color: darkgray;
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(6, 3fr);
-            border: 3px solid black;
-          "
-        ></div>
       </div>
     </div>
 
-    <script src="./data/exploreData/battleZones.js"></script>
-    <script src="./data/exploreData/chestZones.js"></script>
-    <script src="./data/exploreData/doorZones.js"></script>
-    <script src="./data/exploreData/collisions.js"></script>
-    <script src="./data/houseData/houseCollisions.js"></script>
-    <script src="./data/houseData/houseDoorZones.js"></script>
-    <script src="./data/houseData/housePcZones.js"></script>
-    <script src="../axiosReq.js"></script>
-    <script src="../classes.js"></script>
-    <script defer src="../index.js"></script>
-    <script defer src="../settingsPage/settings.js"></script>
-    <script defer src="./explore.js"></script>
-    <script defer src="./house.js"></script>
-    <script defer src="./battle.js"></script>
-  </body>
+    <!-- details interface -->
+    <div id="characterDetailsOverlay" class="overlay">
+      <div id="characterDetailsPopup" class="characterDetails">
+        <div style="display: flex">
+          <button id="switchStarter1Button" data-character-id class="btn" style="margin: 5px"
+            onclick="setStarter(event)">Starter 1</button>
+          <button id="switchStarterButton" data-character-id class="btn" style="margin: 5px"
+            onclick="setStarter(event)">Remove</button>
+          <button id="switchStarter2Button" data-character-id class="btn" style="margin: 5px"
+            onclick="setStarter(event)">Starter 2</button>
+        </div>
+        <img id="detailImage" src="" alt="Item Image" />
+        <h2 id="detailName"></h2>
+        <h4 id="detailHp"></h4>
+        <h4 id="detailStamina"></h4>
+        <h4 id="detailSpeed"></h4>
+        <h2 id="detailAttackName"></h2>
+        <h4 id="detailAttackDamage"></h4>
+        <h4 id="detailAttackStamina"></h4>
+
+        <p id="detailDescription"></p>
+        <button onclick="closeCharacterDetails()">Close</button>
+      </div>
+    </div>
+
+    <!-- bag button -->
+    <button class="btn" style="position: absolute; top: 0.5%; right: 6.5%; margin: 0" onclick="openBag()">
+      Bag
+    </button>
+
+    <!-- bag interface -->
+    <div id="bagOverlay" class="overlay">
+      <div id="bagPopup" class="bagInterface">
+
+        <div id="starterBody" style="
+            background-color: darkgray;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(6, 3fr);
+            border: 3px solid black;
+          "></div>
+
+        <div id="bagBody"></div>
+
+        <button onclick="closeBag()">Close</button>
+      </div>
+    </div>
+
+    <!-- starter interface -->
+    <div id="starterInterfacePopUp" class="starterInterface">
+      <div id="starterBody" style="
+            background-color: darkgray;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(6, 3fr);
+            border: 3px solid black;
+          "></div>
+    </div>
+  </div>
+
+  <script src="./data/exploreData/battleZones.js"></script>
+  <script src="./data/exploreData/chestZones.js"></script>
+  <script src="./data/exploreData/doorZones.js"></script>
+  <script src="./data/exploreData/collisions.js"></script>
+  <script src="./data/houseData/houseCollisions.js"></script>
+  <script src="./data/houseData/houseDoorZones.js"></script>
+  <script src="./data/houseData/housePcZones.js"></script>
+  <script src="../axiosReq.js"></script>
+  <script src="../classes.js"></script>
+  <script defer src="../index.js"></script>
+  <script defer src="../settingsPage/settings.js"></script>
+  <script defer src="./explore.js"></script>
+  <script defer src="./house.js"></script>
+  <script defer src="./battle.js"></script>
+</body>
+
 </html>
