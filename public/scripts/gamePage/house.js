@@ -147,9 +147,6 @@ function showCharacterDetails(character) {
     "damage: " + character.attack_damage;
   document.getElementById("detailAttackStamina").textContent =
     "stamina used: " + character.attack_stamina;
-
-  document.getElementById("detailDescription").textContent =
-    character.description || "No description.";
 }
 
 function closeCharacterDetails() {
