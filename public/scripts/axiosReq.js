@@ -187,26 +187,6 @@ function renderStarterGrid(containerElement) {
       color: white;
     `;
 
-    // if (usersStarters[i]) {
-    //   const starter = usersStarters[i];
-
-    //   const img = document.createElement("img");
-    //   img.src = starter.profile_pic;
-    //   img.width = 57;
-    //   img.height = 57;
-
-    //   const name = document.createElement("span");
-    //   name.textContent = starter.character_name;
-
-    //   cell.appendChild(img);
-    //   cell.appendChild(name);
-    // } else {
-    //   const placeholder = document.createElement("span");
-    //   placeholder.textContent = "Empty Slot";
-    //   placeholder.style.opacity = 0.5;
-    //   cell.appendChild(placeholder);
-    // }
-
     if (usersStarters[i]) {
       const starter = usersStarters[i];
 
