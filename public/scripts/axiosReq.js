@@ -319,6 +319,15 @@ function getStarters() {
 
         starterGrid.appendChild(cell);
       }
+
+            // Render in PC
+      const pcStarterGrid = document.getElementById("pcStarterBody");
+      if (pcStarterGrid) renderStarterGrid(pcStarterGrid);
+
+      // Render in Bag
+      const bagStarterGrid = document.getElementById("bagStarterBody");
+      if (bagStarterGrid) renderStarterGrid(bagStarterGrid);
+
     })
     .catch((err) => {
       console.log(err);
