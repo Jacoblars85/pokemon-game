@@ -178,13 +178,13 @@ function renderStarterGrid(containerElement) {
   for (let i = 0; i < totalSlots; i++) {
     const cell = document.createElement("div");
     cell.style = `
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background-color: white;
-      padding: 5px;
-      border: 1px solid black;
-      min-height: 60px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: black;
+          border: 1px solid white;
+          min-height: 50px;
+          color: white;
     `;
 
     if (usersStarters[i]) {
