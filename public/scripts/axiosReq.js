@@ -178,13 +178,13 @@ function renderStarterGrid(containerElement) {
   for (let i = 0; i < totalSlots; i++) {
     const cell = document.createElement("div");
     cell.style = `
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          background-color: black;
-          border: 1px solid white;
-          min-height: 50px;
-          color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: black;
+      border: 1px solid white;
+      min-height: 50px;
+      color: white;
     `;
 
     if (usersStarters[i]) {
@@ -210,7 +210,6 @@ function renderStarterGrid(containerElement) {
     containerElement.appendChild(cell);
   }
 }
-
 
 // axios functions for user info for battle
 function getStarters() {
@@ -320,14 +319,11 @@ function getStarters() {
       //   starterGrid.appendChild(cell);
       // }
 
-            // Render in PC
       const pcStarterGrid = document.getElementById("pcStarterBody");
       if (pcStarterGrid) renderStarterGrid(pcStarterGrid);
 
-      // Render in Bag
       const bagStarterGrid = document.getElementById("bagStarterBody");
       if (bagStarterGrid) renderStarterGrid(bagStarterGrid);
-
     })
     .catch((err) => {
       console.log(err);
@@ -419,7 +415,6 @@ function getAllUsersCharacters() {
     });
 }
 
-
 function getAllUsersItems() {
   axios({
     method: "GET",
@@ -429,11 +424,10 @@ function getAllUsersItems() {
     .then((response) => {
       usersItems = response.data;
 
+      for (const items of usersItems) {
+        console.log("items", items);
 
-            for (const items of usersItems) {
-        console.log('items', items);
-        
-        document.getElementById("bagBody").innerHTML = ``
+        document.getElementById("bagBody").innerHTML = ``;
       }
     })
     .catch((err) => {
