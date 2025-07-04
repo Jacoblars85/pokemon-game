@@ -444,10 +444,14 @@ function getAllUsersItems() {
     .then((response) => {
       usersItems = response.data;
 
+              document.getElementById("bagInventoryBody").innerHTML = "";
+
       for (const items of usersItems) {
         console.log("items", items);
 
-        document.getElementById("bagBody").innerHTML = ``;
+        document.getElementById("bagInventoryBody").innerHTML = `
+        
+        `;
       }
     })
     .catch((err) => {
