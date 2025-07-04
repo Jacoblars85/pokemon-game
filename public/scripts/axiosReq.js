@@ -225,10 +225,10 @@ function renderStarterGrid(containerElement) {
   // HP Bar
   const hpBar = document.createElement("div");
   hpBar.style = `
-    height: 8px;
+    height: 6.5px;
+    width: 90%;
     background-color: lightgray;
     margin-top: 4px;
-    border-radius: 4px;
     overflow: hidden;
   `;
 
@@ -245,10 +245,10 @@ function renderStarterGrid(containerElement) {
   // Stamina Bar
   const staminaBar = document.createElement("div");
   staminaBar.style = `
-    height: 8px;
+    height: 3px;
+    width: 90%;
     background-color: lightgray;
     margin-top: 4px;
-    border-radius: 4px;
     overflow: hidden;
   `;
 
@@ -257,7 +257,7 @@ function renderStarterGrid(containerElement) {
   staminaFill.style = `
     width: ${staminaPercent}%;
     height: 100%;
-    background-color: blue;
+    background-color: green;
   `;
 
   staminaBar.appendChild(staminaFill);
