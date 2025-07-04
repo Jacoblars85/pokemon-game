@@ -170,6 +170,48 @@ let usersCharacters = [];
 
 let isAnimating = false;
 
+function renderStarterGrid(containerElement) {
+  containerElement.innerHTML = ""; // Clear previous
+
+  const totalSlots = 6;
+
+  for (let i = 0; i < totalSlots; i++) {
+    const cell = document.createElement("div");
+    cell.style = `
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: white;
+      padding: 5px;
+      border: 1px solid black;
+      min-height: 60px;
+    `;
+
+    if (usersStarters[i]) {
+      const starter = usersStarters[i];
+
+      const img = document.createElement("img");
+      img.src = starter.profile_pic;
+      img.width = 57;
+      img.height = 57;
+
+      const name = document.createElement("span");
+      name.textContent = starter.character_name;
+
+      cell.appendChild(img);
+      cell.appendChild(name);
+    } else {
+      const placeholder = document.createElement("span");
+      placeholder.textContent = "Empty Slot";
+      placeholder.style.opacity = 0.5;
+      cell.appendChild(placeholder);
+    }
+
+    containerElement.appendChild(cell);
+  }
+}
+
+
 // axios functions for user info for battle
 function getStarters() {
   axios({
