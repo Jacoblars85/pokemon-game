@@ -190,6 +190,17 @@ function renderStarterGrid(containerElement) {
     if (usersStarters[i]) {
       const starter = usersStarters[i];
 
+         cell.style = `
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: black;
+      border: 1px solid white;
+      min-height: 50px;
+      color: white;
+      cursor: pointer;
+    `;
+
       const img = document.createElement("img");
       img.src = starter.profile_pic;
       img.width = 57;
