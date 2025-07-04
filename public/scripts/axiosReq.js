@@ -281,8 +281,6 @@ function getStarters() {
     .then((response) => {
       usersStarters = response.data;
 
-      console.log("usersStarters", usersStarters);
-
       starterOne = response.data[0];
 
       starterOneHp = Math.floor(response.data[0].hp);
@@ -447,8 +445,6 @@ function getAllUsersItems() {
       document.getElementById("bagInventoryBody").innerHTML = "";
 
       for (const items of usersItems) {
-        console.log("items", items);
-
         document.getElementById("bagInventoryBody").innerHTML += `
         <div height="140px">
             <div
