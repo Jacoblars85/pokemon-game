@@ -187,20 +187,89 @@ function renderStarterGrid(containerElement) {
       color: white;
     `;
 
+    // if (usersStarters[i]) {
+    //   const starter = usersStarters[i];
+
+    //   const img = document.createElement("img");
+    //   img.src = starter.profile_pic;
+    //   img.width = 57;
+    //   img.height = 57;
+
+    //   const name = document.createElement("span");
+    //   name.textContent = starter.character_name;
+
+    //   cell.appendChild(img);
+    //   cell.appendChild(name);
+    // } else {
+    //   const placeholder = document.createElement("span");
+    //   placeholder.textContent = "Empty Slot";
+    //   placeholder.style.opacity = 0.5;
+    //   cell.appendChild(placeholder);
+    // }
+
     if (usersStarters[i]) {
-      const starter = usersStarters[i];
+  const starter = usersStarters[i];
 
-      const img = document.createElement("img");
-      img.src = starter.profile_pic;
-      img.width = 57;
-      img.height = 57;
+  const img = document.createElement("img");
+  img.src = starter.profile_pic;
+  img.width = 50;
+  img.height = 50;
 
-      const name = document.createElement("span");
-      name.textContent = starter.character_name;
+  const infoContainer = document.createElement("div");
+  infoContainer.style.flex = "1";
 
-      cell.appendChild(img);
-      cell.appendChild(name);
-    } else {
+  const name = document.createElement("div");
+  name.textContent = starter.character_name;
+  name.style.fontWeight = "bold";
+
+  // HP Bar
+  const hpBar = document.createElement("div");
+  hpBar.style = `
+    height: 8px;
+    background-color: lightgray;
+    margin-top: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+  `;
+
+  const hpFill = document.createElement("div");
+  const hpPercent = (starter.hp / starter.max_hp) * 100;
+  hpFill.style = `
+    width: ${hpPercent}%;
+    height: 100%;
+    background-color: red;
+  `;
+
+  hpBar.appendChild(hpFill);
+
+  // Stamina Bar
+  const staminaBar = document.createElement("div");
+  staminaBar.style = `
+    height: 8px;
+    background-color: lightgray;
+    margin-top: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+  `;
+
+  const staminaFill = document.createElement("div");
+  const staminaPercent = (starter.stamina / starter.max_stamina) * 100;
+  staminaFill.style = `
+    width: ${staminaPercent}%;
+    height: 100%;
+    background-color: blue;
+  `;
+
+  staminaBar.appendChild(staminaFill);
+
+  // Combine everything
+  infoContainer.appendChild(name);
+  infoContainer.appendChild(hpBar);
+  infoContainer.appendChild(staminaBar);
+
+  cell.appendChild(img);
+  cell.appendChild(infoContainer);
+} else {
       const placeholder = document.createElement("span");
       placeholder.textContent = "Empty Slot";
       placeholder.style.opacity = 0.5;
