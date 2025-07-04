@@ -171,7 +171,7 @@ let usersCharacters = [];
 let isAnimating = false;
 
 function renderStarterGrid(containerElement) {
-  containerElement.innerHTML = ""; // Clear previous
+  containerElement.innerHTML = "";
 
   const totalSlots = 6;
 
@@ -192,8 +192,8 @@ function renderStarterGrid(containerElement) {
 
       const img = document.createElement("img");
       img.src = starter.profile_pic;
-      img.width = 50;
-      img.height = 50;
+      img.width = 57;
+      img.height = 57;
 
       const infoContainer = document.createElement("div");
       infoContainer.style.flex = "1";
