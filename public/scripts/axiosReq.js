@@ -190,7 +190,7 @@ function renderStarterGrid(containerElement) {
     if (usersStarters[i]) {
       const starter = usersStarters[i];
 
-         cell.style = `
+      cell.style = `
       display: flex;
       align-items: center;
       gap: 10px;
@@ -444,12 +444,12 @@ function getAllUsersItems() {
     .then((response) => {
       usersItems = response.data;
 
-              document.getElementById("bagInventoryBody").innerHTML = "";
+      document.getElementById("bagInventoryBody").innerHTML = "";
 
       for (const items of usersItems) {
         console.log("items", items);
 
-            document.getElementById("bagInventoryBody").innerHTML += `
+        document.getElementById("bagInventoryBody").innerHTML += `
         <div height="140px">
             <div
               style="
@@ -498,17 +498,13 @@ function getAllUsersItems() {
                       width: 150px;
                       text-align: center;
                     ">
-                    ${
-                      items.item_hp === 0
-                        ? ""
-                        : `+${items.item_hp} hp`
-                    } ${
-      items.item_stamina === 0
-        ? ""
-        : items.item_hp === 0
-        ? `+${items.item_stamina} stamina`
-        : `| +${items.item_stamina} stamina`
-    } ${items.item_speed === 0 ? "" : `| +${items.item_speed} speed`}
+                    ${items.item_hp === 0 ? "" : `+${items.item_hp} hp`} ${
+          items.item_stamina === 0
+            ? ""
+            : items.item_hp === 0
+            ? `+${items.item_stamina} stamina`
+            : `| +${items.item_stamina} stamina`
+        } ${items.item_speed === 0 ? "" : `| +${items.item_speed} speed`}
                   </p>
                   <button
                   id=${items.items_id}
