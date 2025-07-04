@@ -208,23 +208,23 @@ function renderStarterGrid(containerElement) {
     // }
 
     if (usersStarters[i]) {
-  const starter = usersStarters[i];
+      const starter = usersStarters[i];
 
-  const img = document.createElement("img");
-  img.src = starter.profile_pic;
-  img.width = 50;
-  img.height = 50;
+      const img = document.createElement("img");
+      img.src = starter.profile_pic;
+      img.width = 50;
+      img.height = 50;
 
-  const infoContainer = document.createElement("div");
-  infoContainer.style.flex = "1";
+      const infoContainer = document.createElement("div");
+      infoContainer.style.flex = "1";
 
-  const name = document.createElement("div");
-  name.textContent = starter.character_name;
-  name.style.fontWeight = "bold";
+      const name = document.createElement("div");
+      name.textContent = starter.character_name;
+      name.style.fontWeight = "bold";
 
-  // HP Bar
-  const hpBar = document.createElement("div");
-  hpBar.style = `
+      // HP Bar
+      const hpBar = document.createElement("div");
+      hpBar.style = `
     height: 6.5px;
     width: 90%;
     background-color: lightgray;
@@ -232,19 +232,19 @@ function renderStarterGrid(containerElement) {
     overflow: hidden;
   `;
 
-  const hpFill = document.createElement("div");
-  const hpPercent = (starter.hp / starter.max_hp) * 100;
-  hpFill.style = `
+      const hpFill = document.createElement("div");
+      const hpPercent = (starter.hp / starter.max_hp) * 100;
+      hpFill.style = `
     width: ${hpPercent}%;
     height: 100%;
     background-color: red;
   `;
 
-  hpBar.appendChild(hpFill);
+      hpBar.appendChild(hpFill);
 
-  // Stamina Bar
-  const staminaBar = document.createElement("div");
-  staminaBar.style = `
+      // Stamina Bar
+      const staminaBar = document.createElement("div");
+      staminaBar.style = `
     height: 3px;
     width: 90%;
     background-color: lightgray;
@@ -252,24 +252,24 @@ function renderStarterGrid(containerElement) {
     overflow: hidden;
   `;
 
-  const staminaFill = document.createElement("div");
-  const staminaPercent = (starter.stamina / starter.max_stamina) * 100;
-  staminaFill.style = `
+      const staminaFill = document.createElement("div");
+      const staminaPercent = (starter.stamina / starter.max_stamina) * 100;
+      staminaFill.style = `
     width: ${staminaPercent}%;
     height: 100%;
     background-color: green;
   `;
 
-  staminaBar.appendChild(staminaFill);
+      staminaBar.appendChild(staminaFill);
 
-  // Combine everything
-  infoContainer.appendChild(name);
-  infoContainer.appendChild(hpBar);
-  infoContainer.appendChild(staminaBar);
+      // Combine everything
+      infoContainer.appendChild(name);
+      infoContainer.appendChild(hpBar);
+      infoContainer.appendChild(staminaBar);
 
-  cell.appendChild(img);
-  cell.appendChild(infoContainer);
-} else {
+      cell.appendChild(img);
+      cell.appendChild(infoContainer);
+    } else {
       const placeholder = document.createElement("span");
       placeholder.textContent = "Empty Slot";
       placeholder.style.opacity = 0.5;
