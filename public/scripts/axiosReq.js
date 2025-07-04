@@ -280,45 +280,45 @@ function getStarters() {
         };
       }
 
-      const starterGrid = document.getElementById("starterBody");
-      starterGrid.innerHTML = "";
+      // const starterGrid = document.getElementById("starterBody");
+      // starterGrid.innerHTML = "";
 
-      const totalSlots = 6;
+      // const totalSlots = 6;
 
-      for (let i = 0; i < totalSlots; i++) {
-        const cell = document.createElement("div");
-        cell.style = `
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          background-color: black;
-          border: 1px solid white;
-          min-height: 50px;
-        `;
+      // for (let i = 0; i < totalSlots; i++) {
+      //   const cell = document.createElement("div");
+      //   cell.style = `
+      //     display: flex;
+      //     align-items: center;
+      //     gap: 10px;
+      //     background-color: black;
+      //     border: 1px solid white;
+      //     min-height: 50px;
+      //   `;
 
-        if (usersStarters[i]) {
-          const start = usersStarters[i];
+      //   if (usersStarters[i]) {
+      //     const start = usersStarters[i];
 
-          const img = document.createElement("img");
-          img.src = start.profile_pic;
-          img.width = 57;
-          img.height = 57;
+      //     const img = document.createElement("img");
+      //     img.src = start.profile_pic;
+      //     img.width = 57;
+      //     img.height = 57;
 
-          const name = document.createElement("span");
-          name.textContent = start.character_name;
+      //     const name = document.createElement("span");
+      //     name.textContent = start.character_name;
 
-          cell.appendChild(img);
-          cell.appendChild(name);
-        } else {
-          // Optionally add placeholder content
-          const placeholder = document.createElement("span");
-          placeholder.textContent = "Empty Slot";
-          placeholder.style.opacity = 0.5;
-          cell.appendChild(placeholder);
-        }
+      //     cell.appendChild(img);
+      //     cell.appendChild(name);
+      //   } else {
+      //     // Optionally add placeholder content
+      //     const placeholder = document.createElement("span");
+      //     placeholder.textContent = "Empty Slot";
+      //     placeholder.style.opacity = 0.5;
+      //     cell.appendChild(placeholder);
+      //   }
 
-        starterGrid.appendChild(cell);
-      }
+      //   starterGrid.appendChild(cell);
+      // }
 
             // Render in PC
       const pcStarterGrid = document.getElementById("pcStarterBody");
