@@ -269,7 +269,6 @@ Details Interface
   left: 10%;
   width: 806px;
   height: 428px;
-  /* transform: translate(-50%, -50%); */
   background: white;
   border-radius: 12px;
   padding: 20px;
@@ -352,9 +351,8 @@ Bag Interface
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-around;
+  justify-content: space-around;
 }
-
 
 /* --------------------------------------------------------------------------------
 Overlay
