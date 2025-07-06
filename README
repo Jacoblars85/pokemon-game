@@ -1,7 +1,8 @@
 Problems:
 
 1. create the new hp, speed and damage system
-2. add backpack to heal starter and look at inventory
+2a. heal starters inside backpack
+2b. add use item functionality to bag
 3a. add healer
 3b. make damage perminent to characters
 4. add audio to game from video
