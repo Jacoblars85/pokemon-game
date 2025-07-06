@@ -261,9 +261,9 @@ function renderStarterGrid(containerElement) {
       cell.appendChild(img);
       cell.appendChild(infoContainer);
 
-        cell.addEventListener("click", () => {
-    showCharacterDetails(starter);
-  });
+      cell.addEventListener("click", () => {
+        showCharacterDetails(starter);
+      });
     } else {
       const placeholder = document.createElement("span");
       placeholder.textContent = "Empty Slot";
