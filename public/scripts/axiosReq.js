@@ -275,6 +275,39 @@ function renderStarterGrid(containerElement) {
   }
 }
 
+function renderPcGrid() {
+  document.getElementById("pcBody").innerHTML = "";
+
+  const pcGrid = document.getElementById("pcBody");
+
+  const startIndex = currentPage * itemsPerPage;
+  const pageItems = usersCharacters.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
+
+  for (let i = 0; i < itemsPerPage; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("pcGridItem");
+
+    if (i < pageItems.length) {
+      const img = document.createElement("img");
+      img.src = pageItems[i].profile_pic;
+      // img.alt = `item-${i}`;
+      img.classList.add("pcItemImg");
+
+      img.addEventListener("click", () => {
+        showCharacterDetails(pageItems[i]);
+      });
+
+      cell.appendChild(img);
+    }
+
+    pcGrid.appendChild(cell);
+  }
+  document.getElementById("pageNumber").textContent = `Page ${currentPage + 1}`;
+}
+
 // axios functions for user info for battle
 function getStarters() {
   axios({
@@ -431,6 +464,8 @@ function getAllUsersCharacters() {
   })
     .then((response) => {
       usersCharacters = response.data;
+
+      renderPcGrid()
     })
     .catch((err) => {
       console.log(err);
