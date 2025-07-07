@@ -146,7 +146,7 @@ SELECT "user_characters"."id" as "id",
         	ON "attacks"."attack_animations_id" = "attack_animations"."id"
     LEFT JOIN "items"
     	ON "user_characters"."item_id" = "items"."id"
-	WHERE "user_id" = $1
+	WHERE "user_id" = $1 AND "user_characters"."starter_1" = FALSE AND "user_characters"."starter_2" = FALSE
 	ORDER BY "character_id", "id" ASC;
 	`;
 
