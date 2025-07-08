@@ -261,11 +261,9 @@ function renderStarterGrid(containerElement) {
       cell.appendChild(img);
       cell.appendChild(infoContainer);
 
-
-      let contextForStarterButtons = "pc"
-      if (containerElement.id === "bagStarterBody") contextForStarterButtons = "bag"
-        
-
+      let contextForStarterButtons = "pc";
+      if (containerElement.id === "bagStarterBody")
+        contextForStarterButtons = "bag";
 
       cell.addEventListener("click", () => {
         showCharacterDetails(starter, contextForStarterButtons);
