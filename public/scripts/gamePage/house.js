@@ -152,12 +152,10 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("detailAttackStamina").textContent =
     "stamina used: " + character.attack_stamina;
 
-
-  if (context === "pc") {
-    document.getElementById("starterButtonContainer").style.display = "flex";
-  } else {
-    document.getElementById("starterButtonContainer").style.display = "none";
-  }
+    let starterButtonContainer = document.getElementById("starterButtonContainer")
+    
+  if (context === "pc") starterButtonContainer.style.display = "flex";
+  else starterButtonContainer.style.display = "none";
 }
 
 function closeCharacterDetails() {
