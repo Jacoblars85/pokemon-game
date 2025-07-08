@@ -261,8 +261,14 @@ function renderStarterGrid(containerElement) {
       cell.appendChild(img);
       cell.appendChild(infoContainer);
 
+
+      let contextForStarterButtons = "pc"
+      if (containerElement.id === "bagStarterBody") contextForStarterButtons = "bag"
+        
+
+
       cell.addEventListener("click", () => {
-        showCharacterDetails(starter);
+        showCharacterDetails(starter, contextForStarterButtons);
       });
     } else {
       const placeholder = document.createElement("span");
@@ -297,7 +303,7 @@ function renderPcGrid() {
       img.classList.add("pcItemImg");
 
       img.addEventListener("click", () => {
-        showCharacterDetails(pageItems[i]);
+        showCharacterDetails(pageItems[i], "pc");
       });
 
       cell.appendChild(img);
