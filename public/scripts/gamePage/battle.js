@@ -534,17 +534,19 @@ function resetBattleFunc() {
           isCaught: isCaught,
         });
 
-        axios({
-          method: "PUT",
-          url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
-          withCredentials: true,
-        })
-          .then((response) => {
-            getAllUsersBattleItems(resetBattleFunc);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+        // axios({
+        //   method: "PUT",
+        //   url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
+        //   withCredentials: true,
+        // })
+        //   .then((response) => {
+        //     getAllUsersBattleItems(resetBattleFunc);
+        //   })
+        //   .catch((err) => {
+        //     console.log(err);
+        //   });
+
+          useItem(itemBeingUsed, resetBattleFunc)
 
         if (!isCaught) {
           console.log("i didnt get caught so im gonna attack :)");
