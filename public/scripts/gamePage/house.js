@@ -152,8 +152,10 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("detailAttackStamina").textContent =
     "stamina used: " + character.attack_stamina;
 
-    let starterButtonContainer = document.getElementById("starterButtonContainer")
-    
+  let starterButtonContainer = document.getElementById(
+    "starterButtonContainer"
+  );
+
   if (context === "pc") starterButtonContainer.style.display = "flex";
   else starterButtonContainer.style.display = "none";
 }
