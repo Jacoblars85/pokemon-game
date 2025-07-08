@@ -377,7 +377,6 @@ router.put("/edit/nickname", (req, res) => {
     });
 });
 
-
 router.put("/starter/clear", (req, res) => {
   // console.log(req.params.id);
   const sqlText = `
@@ -412,7 +411,6 @@ router.put("/starter/clear", (req, res) => {
       res.sendStatus(500);
     });
 });
-
 
 router.put("/starter/update", (req, res) => {
   const { characterId, currentStarter, otherStarter } = req.body;
