@@ -93,6 +93,9 @@ function setStarter(e) {
   else if (e.target.innerHTML === "Starter 1") currentStarter = 1;
   else if (e.target.innerHTML === "Starter 2") currentStarter = 2;
 
+  document.getElementById("starterHeader").textContent = e.target.innerHTML
+    if (e.target.innerHTML === "Remove") document.getElementById("starterHeader").textContent = ''
+
   if (route !== "clear") {
     const totalStarters = 2;
     const allSlots = Array.from({ length: totalStarters }, (_, i) => i + 1);
