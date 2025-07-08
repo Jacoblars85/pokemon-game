@@ -123,7 +123,7 @@ function setStarter(e) {
   putStarterSwitching(newStarterInfo);
 }
 
-function showCharacterDetails(character) {
+function showCharacterDetails(character, context = "") {
   document.getElementById("characterDetailsOverlay").style.display = "flex";
 
   document.getElementById("switchStarter1Button").dataset.characterId =
@@ -151,6 +151,13 @@ function showCharacterDetails(character) {
     "damage: " + character.attack_damage;
   document.getElementById("detailAttackStamina").textContent =
     "stamina used: " + character.attack_stamina;
+
+
+  if (context === "pc") {
+    document.getElementById("starterButtonContainer").style.display = "flex";
+  } else {
+    document.getElementById("starterButtonContainer").style.display = "none";
+  }
 }
 
 function closeCharacterDetails() {
