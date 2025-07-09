@@ -428,6 +428,19 @@ document.getElementById("bagOverlay").addEventListener("click", (event) => {
   }
 });
 
+function showItemDetails(item) {
+  // Reuse your character details UI or make a new overlay
+  const detail = document.getElementById("itemDetailsOverlay");
+  document.getElementById("itemDetailName").textContent = item.item_name;
+  document.getElementById("itemDetailImage").src = item.item_pic;
+  document.getElementById("itemDetailStats").textContent = `
+    ${item.item_hp ? `+${item.item_hp} HP ` : ""}
+    ${item.item_stamina ? `+${item.item_stamina} Stamina ` : ""}
+    ${item.item_speed ? `+${item.item_speed} Speed` : ""}
+  `;
+  detail.style.display = "flex";
+}
+
 function isOnScreen(obj, buffer = 50) {
   return (
     obj.position.x + obj.width > -buffer &&
