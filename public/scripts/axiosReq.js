@@ -640,7 +640,8 @@ function useItem(itemBeingUsed, resetBattleFunc) {
     withCredentials: true,
   })
     .then((response) => {
-      getAllUsersBattleItems(resetBattleFunc);
+      if (resetBattleFunc) getAllUsersBattleItems(resetBattleFunc);
+      getAllUsersItems()
     })
     .catch((err) => {
       console.log(err);
