@@ -634,18 +634,17 @@ function getAllItems() {
 }
 
 function useItem(itemBeingUsed, resetBattleFunc) {
-  
-        axios({
-          method: "PUT",
-          url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
-          withCredentials: true,
-        })
-          .then((response) => {
-            getAllUsersBattleItems(resetBattleFunc);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/inventory/use/item/${itemBeingUsed.items_id}`,
+    withCredentials: true,
+  })
+    .then((response) => {
+      getAllUsersBattleItems(resetBattleFunc);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 function putWonBattle(rewardInfo) {
