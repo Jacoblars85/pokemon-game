@@ -534,8 +534,7 @@ function resetBattleFunc() {
           isCaught: isCaught,
         });
 
-
-          useItem(itemBeingUsed, resetBattleFunc)
+        useItem(itemBeingUsed, resetBattleFunc);
 
         if (!isCaught) {
           console.log("i didnt get caught so im gonna attack :)");
