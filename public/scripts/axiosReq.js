@@ -485,8 +485,6 @@ function getAllUsersItems() {
     .then((response) => {
       usersItems = response.data;
 
-      // document.getElementById("bagInventoryBody").innerHTML = "";
-
       const bagBody = document.getElementById("bagInventoryBody");
       bagBody.innerHTML = "";
 
@@ -495,23 +493,23 @@ function getAllUsersItems() {
 
         const row = document.createElement("div");
         row.style = `
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height: 45px;
-    padding: 5px;
-    cursor: pointer;
-  `;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+          height: 45px;
+          padding: 5px;
+          cursor: pointer;
+        `;
 
         const countAndImage = document.createElement("div");
         countAndImage.style = `
-    display: flex;
-    flex-direction: row;
-    column-gap: 5px;
-    justify-content: space-around;
-    align-items: center;
-  `;
+          display: flex;
+          flex-direction: row;
+          column-gap: 5px;
+          justify-content: space-around;
+          align-items: center;
+        `;
 
         const count = document.createElement("p");
         count.textContent = `${item.number}X`;
@@ -541,11 +539,11 @@ function getAllUsersItems() {
         const useButton = document.createElement("button");
         useButton.textContent = "Use Item";
         useButton.style = `
-    color: black;
-    font-size: 15px;
-    border-color: black;
-    cursor: pointer;
-  `;
+          color: black;
+          font-size: 15px;
+          border-color: black;
+          cursor: pointer;
+        `;
 
         // ✅ Use Item Click
         useButton.addEventListener("click", (e) => {
@@ -568,13 +566,13 @@ function getAllUsersItems() {
         // Separator line
         const hr = document.createElement("div");
         hr.style = `
-    display: block;
-    height: 2px;
-    border: 0;
-    border-top: 2px solid black;
-    margin: 0;
-    padding: 0;
-  `;
+          display: block;
+          height: 2px;
+          border: 0;
+          border-top: 2px solid black;
+          margin: 0;
+          padding: 0;
+        `;
         container.appendChild(hr);
 
         bagBody.appendChild(container);
