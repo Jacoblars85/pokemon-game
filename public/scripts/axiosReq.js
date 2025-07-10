@@ -485,7 +485,100 @@ function getAllUsersItems() {
     .then((response) => {
       usersItems = response.data;
 
-      document.getElementById("bagInventoryBody").innerHTML = "";
+      // document.getElementById("bagInventoryBody").innerHTML = "";
+
+const bagBody = document.getElementById("bagInventoryBody");
+bagBody.innerHTML = "";
+
+usersItems.forEach((item) => {
+  const container = document.createElement("div");
+
+  const row = document.createElement("div");
+  row.style = `
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 45px;
+    padding: 5px;
+    cursor: pointer;
+  `;
+
+  const countAndImage = document.createElement("div");
+  countAndImage.style = `
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    justify-content: space-around;
+    align-items: center;
+  `;
+
+  const count = document.createElement("p");
+  count.textContent = `${item.number}X`;
+  count.style = `color: black; font-size: 25px;`;
+
+  const img = document.createElement("img");
+  img.src = item.item_pic;
+  img.width = 35;
+  img.height = 35;
+
+  countAndImage.appendChild(count);
+  countAndImage.appendChild(img);
+
+  const name = document.createElement("p");
+  name.textContent = item.item_name;
+  name.style = "font-size: 20px;";
+
+  const effects = document.createElement("p");
+  effects.style = "font-size: 20px; width: 150px; text-align: center;";
+
+  const effectText = [];
+  if (item.item_hp) effectText.push(`+${item.item_hp} hp`);
+  if (item.item_stamina) effectText.push(`+${item.item_stamina} stamina`);
+  if (item.item_speed) effectText.push(`+${item.item_speed} speed`);
+  effects.textContent = effectText.join(" | ");
+
+  const useButton = document.createElement("button");
+  useButton.textContent = "Use Item";
+  useButton.style = `
+    color: black;
+    font-size: 15px;
+    border-color: black;
+    cursor: pointer;
+  `;
+
+  // ✅ Use Item Click
+  useButton.addEventListener("click", (e) => {
+    e.stopPropagation(); // Stop it from triggering detail popup
+    useItem(item);
+  });
+
+  // ✅ View Item Details
+  row.addEventListener("click", () => {
+    showItemDetails(item);
+  });
+
+  row.appendChild(countAndImage);
+  row.appendChild(name);
+  row.appendChild(effects);
+  row.appendChild(useButton);
+
+  container.appendChild(row);
+
+  // Separator line
+  const hr = document.createElement("div");
+  hr.style = `
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 2px solid black;
+    margin: 0;
+    padding: 0;
+  `;
+  container.appendChild(hr);
+
+  bagBody.appendChild(container);
+});
 
     //   for (const items of usersItems) {
 
