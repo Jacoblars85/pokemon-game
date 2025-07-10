@@ -440,6 +440,21 @@ function showItemDetails(item) {
   `;
 }
 
+function closeItemDetails() {
+  document.getElementById("itemDetailsOverlay").style.display = "none";
+}
+
+document
+  .getElementById("itemDetailsOverlay")
+  .addEventListener("click", (event) => {
+    const popup = document.getElementById("itemDetailsPopup");
+
+    // Only close if clicking directly on the overlay (not inside the popup)
+    if (!popup.contains(event.target)) {
+      closeItemDetails();
+    }
+  });
+
 function isOnScreen(obj, buffer = 50) {
   return (
     obj.position.x + obj.width > -buffer &&
