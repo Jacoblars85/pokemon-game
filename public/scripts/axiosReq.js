@@ -487,85 +487,86 @@ function getAllUsersItems() {
 
       document.getElementById("bagInventoryBody").innerHTML = "";
 
-      for (const items of usersItems) {
-        document.getElementById("bagInventoryBody").innerHTML += `
-        <div height="140px">
-            <div
-              style="
-                  display: flex;
-                  flex-direction: row;
-                  align-items: center;
-                  justify-content: space-around;
-                  height: 45px;
-                  padding: 5px; 
-                "
-                >
-                  <div
-                    style="
-                      display: flex;
-                      flex-direction: row;
-                      column-gap: 5px;
-                      justify-content: space-around;
-                      align-items: center;
-                    "
-                       >
-                    <p
-                      style="
-                        color: black;
-                        font-size: 25px;
-                      "
-                    >
-                      ${items.number}X
-                    </p>
-                    <img
-                      height="35"
-                      width="35"
-                      src=${items.item_pic}
-                    />
-                  </div>
-                  <p
-                    style="
-                      ml: 20;
-                    "">
-                    ${items.item_name}
-                  </p>
+    //   for (const items of usersItems) {
+
+    //     document.getElementById("bagInventoryBody").innerHTML += `
+    //     <div height="140px">
+    //         <div
+    //           style="
+    //               display: flex;
+    //               flex-direction: row;
+    //               align-items: center;
+    //               justify-content: space-around;
+    //               height: 45px;
+    //               padding: 5px; 
+    //             "
+    //             >
+    //               <div
+    //                 style="
+    //                   display: flex;
+    //                   flex-direction: row;
+    //                   column-gap: 5px;
+    //                   justify-content: space-around;
+    //                   align-items: center;
+    //                 "
+    //                    >
+    //                 <p
+    //                   style="
+    //                     color: black;
+    //                     font-size: 25px;
+    //                   "
+    //                 >
+    //                   ${items.number}X
+    //                 </p>
+    //                 <img
+    //                   height="35"
+    //                   width="35"
+    //                   src=${items.item_pic}
+    //                 />
+    //               </div>
+    //               <p
+    //                 style="
+    //                   ml: 20;
+    //                 "">
+    //                 ${items.item_name}
+    //               </p>
   
-                  <p
-                    style="
-                      ml: 5;
-                      font-size: 20px;
-                      width: 150px;
-                      text-align: center;
-                    ">
-                    ${items.item_hp === 0 ? "" : `+${items.item_hp} hp`} ${
-          items.item_stamina === 0
-            ? ""
-            : items.item_hp === 0
-            ? `+${items.item_stamina} stamina`
-            : `| +${items.item_stamina} stamina`
-        } ${items.item_speed === 0 ? "" : `| +${items.item_speed} speed`}
-                  </p>
-                  <button
-                  id=${items.items_id}
-                    style="
-                      color: black;
-                      font-size: 15;
-                      border-color: black;
-                      cursor: pointer;
-                    "
-                  >Use Item</button>
-                </div>
-            </div>
-            <div style="
-                  display: block;
-                  height: 2px;
-                  border: 0;
-                  border-top: 2px solid black;
-                  margin: 0 0;
-                  padding: 0;
-                " />
-     `;
-      }
+    //               <p
+    //                 style="
+    //                   ml: 5;
+    //                   font-size: 20px;
+    //                   width: 150px;
+    //                   text-align: center;
+    //                 ">
+    //                 ${items.item_hp === 0 ? "" : `+${items.item_hp} hp`} ${
+    //       items.item_stamina === 0
+    //         ? ""
+    //         : items.item_hp === 0
+    //         ? `+${items.item_stamina} stamina`
+    //         : `| +${items.item_stamina} stamina`
+    //     } ${items.item_speed === 0 ? "" : `| +${items.item_speed} speed`}
+    //               </p>
+    //               <button
+    //               id=${items.items_id}
+    //                 style="
+    //                   color: black;
+    //                   font-size: 15;
+    //                   border-color: black;
+    //                   cursor: pointer;
+    //                 "
+    //               >Use Item</button>
+    //             </div>
+    //         </div>
+    //         <div style="
+    //               display: block;
+    //               height: 2px;
+    //               border: 0;
+    //               border-top: 2px solid black;
+    //               margin: 0 0;
+    //               padding: 0;
+    //             " />
+    //  `;
+    //   }
     })
     .catch((err) => {
       console.log(err);
