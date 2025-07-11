@@ -540,12 +540,6 @@ function getAllUsersItems() {
     ${item.item_damage ? `+${item.item_damage} Damage` : ""}
   `;
 
-        // const effectText = [];
-        // if (item.item_hp) effectText.push(`+${item.item_hp} hp`);
-        // if (item.item_stamina) effectText.push(`+${item.item_stamina} stamina`);
-        // if (item.item_speed) effectText.push(`+${item.item_speed} speed`);
-        // effects.textContent = effectText.join(" | ");
-
         const useButton = document.createElement("button");
         useButton.textContent = "Use Item";
         useButton.style = `
