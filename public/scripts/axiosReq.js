@@ -530,11 +530,12 @@ function getAllUsersItems() {
         const effects = document.createElement("p");
         effects.style = "font-size: 20px; width: 150px; text-align: center;";
 
-        const effectText = [];
-        if (item.item_hp) effectText.push(`+${item.item_hp} hp`);
-        if (item.item_stamina) effectText.push(`+${item.item_stamina} stamina`);
-        if (item.item_speed) effectText.push(`+${item.item_speed} speed`);
-        effects.textContent = effectText.join(" | ");
+
+        // const effectText = [];
+        // if (item.item_hp) effectText.push(`+${item.item_hp} hp`);
+        // if (item.item_stamina) effectText.push(`+${item.item_stamina} stamina`);
+        // if (item.item_speed) effectText.push(`+${item.item_speed} speed`);
+        // effects.textContent = effectText.join(" | ");
 
         const useButton = document.createElement("button");
         useButton.textContent = "Use Item";
