@@ -521,7 +521,7 @@ function getAllUsersItems() {
         img.src = item.item_pic;
         img.width = 35;
         img.height = 35;
-                img.style = `text-align: center; align-self: center;`;
+        img.style = `text-align: center; align-self: center;`;
 
         countAndImage.appendChild(count);
         countAndImage.appendChild(img);
@@ -533,12 +533,12 @@ function getAllUsersItems() {
         const effects = document.createElement("p");
         effects.style = "font-size: 16px; width: 100px; text-align: center;";
 
-          effects.textContent = `
-    ${item.item_hp ? `+${item.item_hp} HP ` : ""}
-    ${item.item_stamina ? `+${item.item_stamina} Stamina ` : ""}
-    ${item.item_speed ? `+${item.item_speed} Speed` : ""}
-    ${item.item_damage ? `+${item.item_damage} Damage` : ""}
-  `;
+        effects.textContent = `
+          ${item.item_hp ? `+${item.item_hp} HP ` : ""}
+          ${item.item_stamina ? `+${item.item_stamina} Stamina ` : ""}
+          ${item.item_speed ? `+${item.item_speed} Speed` : ""}
+          ${item.item_damage ? `+${item.item_damage} Damage` : ""}
+        `;
 
         const useButton = document.createElement("button");
         useButton.textContent = "Use Item";
