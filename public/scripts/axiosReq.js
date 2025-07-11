@@ -507,19 +507,21 @@ function getAllUsersItems() {
         countAndImage.style = `
           display: flex;
           flex-direction: row;
-          column-gap: 5px;
-          justify-content: space-around;
+          column-gap: 10px;
+          justify-content: space-between;
           align-items: center;
+          width: 95px;
         `;
 
         const count = document.createElement("p");
         count.textContent = `${item.number}X`;
-        count.style = `color: black; font-size: 25px;`;
+        count.style = `color: black; font-size: 25px; width: 50px; text-align: left;`;
 
         const img = document.createElement("img");
         img.src = item.item_pic;
         img.width = 35;
         img.height = 35;
+                img.style = `text-align: center; align-self: center;`;
 
         countAndImage.appendChild(count);
         countAndImage.appendChild(img);
