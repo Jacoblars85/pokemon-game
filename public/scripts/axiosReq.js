@@ -496,8 +496,9 @@ function getAllUsersItems() {
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: space-around;
+          justify-content: space-between;
           height: 45px;
+          width: 516px;
           padding: 5px;
           cursor: pointer;
         `;
@@ -525,10 +526,10 @@ function getAllUsersItems() {
 
         const name = document.createElement("p");
         name.textContent = item.item_name;
-        name.style = "font-size: 20px;";
+        name.style = "font-size: 20px; width: 125px; text-align: center;";
 
         const effects = document.createElement("p");
-        effects.style = "font-size: 20px; width: 150px; text-align: center;";
+        effects.style = "font-size: 16px; width: 100px; text-align: center;";
 
           effects.textContent = `
     ${item.item_hp ? `+${item.item_hp} HP ` : ""}
