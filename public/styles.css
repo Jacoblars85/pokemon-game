@@ -314,6 +314,16 @@ Item Details Interface
   z-index: 100;
 }
 
+.itemDetails img {
+  position: relative;
+  /* width: 150px; */
+  height: 100px;
+  top: 0.5%;
+  left: 0.5%;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
 /* --------------------------------------------------------------------------------
 Starter Interface
 -------------------------------------------------------------------------------- */
