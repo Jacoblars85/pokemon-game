@@ -437,6 +437,7 @@ function showItemDetails(item) {
     ${item.item_hp ? `+${item.item_hp} HP ` : ""}
     ${item.item_stamina ? `+${item.item_stamina} Stamina ` : ""}
     ${item.item_speed ? `+${item.item_speed} Speed` : ""}
+    ${item.item_damage ? `+${item.item_damage} Damage` : ""}
   `;
 }
 
