@@ -555,15 +555,6 @@ function getAllUsersItems() {
           useButton.style = `width: 103px;`;
         }
 
-        // const useButton = document.createElement("button");
-        // useButton.textContent = "Use Item";
-        // useButton.style = `
-        //   color: black;
-        //   font-size: 15px;
-        //   border-color: black;
-        //   cursor: pointer;
-        // `;
-
         // ✅ Use Item Click
         useButton.addEventListener("click", (e) => {
           e.stopPropagation(); // Stop it from triggering detail popup
