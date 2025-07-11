@@ -530,6 +530,12 @@ function getAllUsersItems() {
         const effects = document.createElement("p");
         effects.style = "font-size: 20px; width: 150px; text-align: center;";
 
+          effects.textContent = `
+    ${item.item_hp ? `+${item.item_hp} HP ` : ""}
+    ${item.item_stamina ? `+${item.item_stamina} Stamina ` : ""}
+    ${item.item_speed ? `+${item.item_speed} Speed` : ""}
+    ${item.item_damage ? `+${item.item_damage} Damage` : ""}
+  `;
 
         // const effectText = [];
         // if (item.item_hp) effectText.push(`+${item.item_hp} hp`);
