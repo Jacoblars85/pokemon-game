@@ -540,22 +540,19 @@ function getAllUsersItems() {
           ${item.item_damage ? `+${item.item_damage} Damage` : ""}
         `;
 
-
-         let useButton 
+        let useButton;
         if (item.item_type != "throwable") {
-                  useButton = document.createElement("button");
-        useButton.textContent = "Use Item";
-        useButton.style = `
-          color: black;
-          font-size: 15px;
-          border-color: black;
-          cursor: pointer;
-        `;
+          useButton = document.createElement("button");
+          useButton.textContent = "Use Item";
+          useButton.style = `
+            color: black;
+            font-size: 15px;
+            border-color: black;
+            cursor: pointer;
+          `;
         } else {
-                useButton = document.createElement("div");
-        useButton.style = `
-width: 103px;
-        `;
+          useButton = document.createElement("div");
+          useButton.style = `width: 103px;`;
         }
 
         // const useButton = document.createElement("button");
