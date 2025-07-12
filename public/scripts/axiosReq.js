@@ -546,9 +546,8 @@ function getAllUsersItems() {
         if (item.item_type === "throwable") {
           useButton = document.createElement("div");
           useButton.style = `width: 120px;`;
-
         } else if (item.item_type === "held") {
-                    useButton = document.createElement("button");
+          useButton = document.createElement("button");
           useButton.textContent = "Equip Item";
           useButton.style = `
             color: black;
@@ -557,11 +556,8 @@ function getAllUsersItems() {
             cursor: pointer;
             width: 120px;
           `;
-
         } else {
-
-
-                    useButton = document.createElement("button");
+          useButton = document.createElement("button");
           useButton.textContent = "Use Item";
           useButton.style = `
             color: black;
@@ -687,19 +683,18 @@ function useItemOnStarter(item, starter) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/characters/use/heal/item`,
-    data: {item, starter},
+    data: { item, starter },
     withCredentials: true,
   })
     .then((response) => {
       getStarters();
       getAllUsersCharacters();
-      getItems(); 
+      getItems();
     })
     .catch((err) => {
       console.log(err);
     });
 }
-
 
 function putWonBattle(rewardInfo) {
   axios({
