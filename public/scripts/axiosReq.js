@@ -556,6 +556,11 @@ function getAllUsersItems() {
             cursor: pointer;
             width: 120px;
           `;
+
+                  useButton.addEventListener("click", (e) => {
+          e.stopPropagation(); // Stop it from triggering detail popup
+          equipItem(item);
+        });
         } else {
           useButton = document.createElement("button");
           useButton.textContent = "Use Item";
@@ -566,12 +571,14 @@ function getAllUsersItems() {
             cursor: pointer;
             width: 120px;
           `;
-        }
 
-        useButton.addEventListener("click", (e) => {
+                  useButton.addEventListener("click", (e) => {
           e.stopPropagation(); // Stop it from triggering detail popup
           useItem(item);
         });
+        }
+
+
 
         row.addEventListener("click", () => {
           showItemDetails(item);
