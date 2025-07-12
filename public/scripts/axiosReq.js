@@ -543,18 +543,33 @@ function getAllUsersItems() {
         `;
 
         let useButton;
-        if (item.item_type != "throwable") {
-          useButton = document.createElement("button");
+        if (item.item_type === "throwable") {
+          useButton = document.createElement("div");
+          useButton.style = `width: 120px;`;
+
+        } else if (item.item_type === "held") {
+                    useButton = document.createElement("button");
+          useButton.textContent = "Equip Item";
+          useButton.style = `
+            color: black;
+            font-size: 15px;
+            border-color: black;
+            cursor: pointer;
+            width: 120px;
+          `;
+
+        } else {
+
+
+                    useButton = document.createElement("button");
           useButton.textContent = "Use Item";
           useButton.style = `
             color: black;
             font-size: 15px;
             border-color: black;
             cursor: pointer;
+            width: 120px;
           `;
-        } else {
-          useButton = document.createElement("div");
-          useButton.style = `width: 103px;`;
         }
 
         useButton.addEventListener("click", (e) => {
@@ -671,7 +686,7 @@ function useItem(itemBeingUsed, resetBattleFunc) {
 function useItemOnStarter(item, starter) {
   axios({
     method: "PUT",
-    url: `http://localhost:5001/api/characters/use/item`,
+    url: `http://localhost:5001/api/characters/use/heal/item`,
     data: {item, starter},
     withCredentials: true,
   })
