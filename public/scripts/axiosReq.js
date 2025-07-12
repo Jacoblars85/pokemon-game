@@ -668,6 +668,24 @@ function useItem(itemBeingUsed, resetBattleFunc) {
     });
 }
 
+function useItemOnStarter(item, starter) {
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/characters/use/item`,
+    data: {item, starter},
+    withCredentials: true,
+  })
+    .then((response) => {
+      getStarters();
+      getAllUsersCharacters();
+      getItems(); 
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+
 function putWonBattle(rewardInfo) {
   axios({
     method: "PUT",
