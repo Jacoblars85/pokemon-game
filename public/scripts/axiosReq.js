@@ -555,13 +555,11 @@ function getAllUsersItems() {
           useButton.style = `width: 103px;`;
         }
 
-        // ✅ Use Item Click
         useButton.addEventListener("click", (e) => {
           e.stopPropagation(); // Stop it from triggering detail popup
           useItem(item);
         });
 
-        // ✅ View Item Details
         row.addEventListener("click", () => {
           showItemDetails(item);
         });
@@ -573,7 +571,6 @@ function getAllUsersItems() {
 
         container.appendChild(row);
 
-        // Separator line
         const hr = document.createElement("div");
         hr.style = `
           display: block;
