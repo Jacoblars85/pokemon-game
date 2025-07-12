@@ -17,11 +17,16 @@ function fetchUser() {
 
       getStarters();
 
+      if (document.getElementById("usernameNavHeader")) {
+
       document.getElementById("usernameNavHeader").innerHTML = user.username;
       document.getElementById("userLevelNavHeader").innerHTML += Math.floor(
         user.xp_level
       );
       document.getElementById("usersCoinsNavHeader").innerHTML += user.coins;
+      
+      }
+
     })
     .catch((err) => {
       console.log(err);
