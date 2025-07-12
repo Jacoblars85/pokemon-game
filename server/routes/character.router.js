@@ -34,6 +34,16 @@ router.get("/all/characters", (req, res) => {
   pool
     .query(query)
     .then((result) => {
+                  for (const character of result.rows) {
+        let multiplier = 1 / 5;
+
+        character.hp *= multiplier;
+        character.stamina *= multiplier;
+        character.speed *= multiplier;
+        character.attack_damage *= multiplier;
+
+      }
+
       res.send(result.rows);
     })
     .catch((err) => {
