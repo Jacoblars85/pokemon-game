@@ -34,14 +34,13 @@ router.get("/all/characters", (req, res) => {
   pool
     .query(query)
     .then((result) => {
-                  for (const character of result.rows) {
+      for (const character of result.rows) {
         let multiplier = 1 / 5;
 
         character.hp *= multiplier;
         character.stamina *= multiplier;
         character.speed *= multiplier;
         character.attack_damage *= multiplier;
-
       }
 
       res.send(result.rows);
@@ -165,8 +164,7 @@ SELECT "user_characters"."id" as "id",
   pool
     .query(query, sqlValues)
     .then((result) => {
-
-            for (const character of result.rows) {
+      for (const character of result.rows) {
         let multiplier = Math.floor(Number(character.xp_level)) / 5;
 
         character.hp *= multiplier;
@@ -279,7 +277,11 @@ router.post("/new/character", (req, res) => {
             VALUES
             ($1, $2, $3);
         `;
-  const insertCharacterValue = [req.user.id, req.body.characterId, req.body.characterLevel];
+  const insertCharacterValue = [
+    req.user.id,
+    req.body.characterId,
+    req.body.characterLevel,
+  ];
 
   pool
     .query(insertCharacterQuery, insertCharacterValue)
