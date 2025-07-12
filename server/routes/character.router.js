@@ -155,14 +155,6 @@ SELECT "user_characters"."id" as "id",
   pool
     .query(query, sqlValues)
     .then((result) => {
-      // for (const character of result.rows) {
-      //   if (character.item_id !== null) {
-      //     character.hp += character.item_hp;
-      //     character.stamina += character.item_stamina;
-      //     character.speed += character.item_speed;
-      //     character.attack_damage += character.item_damage;
-      //   }
-      // }
 
             for (const character of result.rows) {
         let multiplier = Math.floor(Number(character.xp_level)) / 5;
