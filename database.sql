@@ -62,8 +62,8 @@ CREATE TABLE "characters" (
 	"id" SERIAL PRIMARY KEY,
 	"character_name" VARCHAR(20),
 	"profile_pic" VARCHAR(100),
-	"hp" INT,
-	"stamina" INT,
+	"max_hp" INT,
+	"max_stamina" INT,
 	"speed" INT,
 	"attacks_id" INT DEFAULT NULL REFERENCES "attacks" ON DELETE CASCADE,
 	"battle_pic" VARCHAR(10000));
