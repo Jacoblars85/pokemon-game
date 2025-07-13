@@ -90,6 +90,8 @@ CREATE TABLE "user_characters" (
 	"id" SERIAL PRIMARY KEY,
 	"user_id" INT NOT NULL REFERENCES "user" ON DELETE CASCADE,
 	"character_id" INT NOT NULL REFERENCES "characters" ON DELETE CASCADE,
+		"hp" INT,
+		"stamina" INT,
 	"starter_1" BOOLEAN DEFAULT FALSE,
 	"starter_2" BOOLEAN DEFAULT FALSE,
 	"starter_3" BOOLEAN DEFAULT FALSE,
