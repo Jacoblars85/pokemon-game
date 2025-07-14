@@ -694,7 +694,7 @@ function useItemOnStarter(item, starter) {
     .then((response) => {
       getStarters();
       getAllUsersCharacters();
-      getItems();
+      getAllUsersItems();
     })
     .catch((err) => {
       console.log(err);
