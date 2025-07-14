@@ -701,7 +701,7 @@ function useItemOnStarter(item, starter) {
     });
 }
 
-function* equipItem(item, starter) {
+function equipItem(item, starter) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/equip/item`,
