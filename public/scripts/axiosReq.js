@@ -701,9 +701,8 @@ function useItemOnStarter(item, starter) {
     });
 }
 
-  function* equipItem(item, starter) {
-
-      axios({
+function* equipItem(item, starter) {
+  axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/equip/item`,
     data: { item, starter },
@@ -717,7 +716,7 @@ function useItemOnStarter(item, starter) {
     .catch((err) => {
       console.log(err);
     });
-  }
+}
 
 function putWonBattle(rewardInfo) {
   axios({
