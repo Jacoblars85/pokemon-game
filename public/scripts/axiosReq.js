@@ -701,6 +701,40 @@ function useItemOnStarter(item, starter) {
     });
 }
 
+  function* equipItem(action) {
+    // console.log('action.payload', action.payload);
+    try {
+      const response = yield axios({
+        method: 'PUT',
+        url: `/api/inventory/equip/item`,
+        data: action.payload
+      })
+      yield put({
+        type: 'SAGA_FETCH_IVENTORY',
+      })
+      yield put({
+        type: 'SAGA_FETCH_CHARACTERS',
+      })
+    } catch (error) {
+      console.log('Unable to equip item to server', error);
+    }
+
+      axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/inventory/equip/item`,
+    data: { item, starter },
+    withCredentials: true,
+  })
+    .then((response) => {
+      getStarters();
+      getAllUsersCharacters();
+      getAllUsersItems();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
 function putWonBattle(rewardInfo) {
   axios({
     method: "PUT",
