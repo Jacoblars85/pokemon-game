@@ -701,23 +701,7 @@ function useItemOnStarter(item, starter) {
     });
 }
 
-  function* equipItem(action) {
-    // console.log('action.payload', action.payload);
-    try {
-      const response = yield axios({
-        method: 'PUT',
-        url: `/api/inventory/equip/item`,
-        data: action.payload
-      })
-      yield put({
-        type: 'SAGA_FETCH_IVENTORY',
-      })
-      yield put({
-        type: 'SAGA_FETCH_CHARACTERS',
-      })
-    } catch (error) {
-      console.log('Unable to equip item to server', error);
-    }
+  function* equipItem(item, starter) {
 
       axios({
     method: "PUT",
