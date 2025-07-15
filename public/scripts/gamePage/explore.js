@@ -456,8 +456,7 @@ document
     }
   });
 
-
-  function equipHeldItem(item) {
+function equipHeldItem(item) {
   const container = document.getElementById("equipStarterList");
   container.innerHTML = "";
 
@@ -489,7 +488,6 @@ document
 
   document.getElementById("equipOverlay").style.display = "block";
 }
-
 
 function closeEquipOverlay() {
   document.getElementById("equipOverlay").style.display = "none";
