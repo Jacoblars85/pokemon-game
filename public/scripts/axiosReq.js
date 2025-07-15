@@ -559,7 +559,7 @@ function getAllUsersItems() {
 
           useButton.addEventListener("click", (e) => {
             e.stopPropagation(); // Stop it from triggering detail popup
-            equipItem(item);
+            renderUseItemChoice(item);
           });
         } else {
           useButton = document.createElement("button");
@@ -574,7 +574,7 @@ function getAllUsersItems() {
 
           useButton.addEventListener("click", (e) => {
             e.stopPropagation(); // Stop it from triggering detail popup
-            useItem(item);
+            renderUseItemChoice(item);
           });
         }
 
