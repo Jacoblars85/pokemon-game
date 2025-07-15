@@ -735,6 +735,21 @@ function equipItem(item, starter) {
     } catch (error) {
       console.log('Unable to equip item to server', error);
     }
+
+      axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/inventory/remove/item`,
+    data: { item, starter },
+    withCredentials: true,
+  })
+    .then((response) => {
+      getStarters();
+      getAllUsersCharacters();
+      getAllUsersItems();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 
 function putWonBattle(rewardInfo) {
