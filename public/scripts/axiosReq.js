@@ -718,23 +718,23 @@ function equipItem(item, starter) {
     });
 }
 
-  function* removeItem(action) {
+  function removeItem(action) {
     // console.log('action.payload', action.payload);
-    try {
-      const response = yield axios({
-        method: 'PUT',
-        url: `/api/inventory/remove/item`,
-        data: action.payload
-      })
-      yield put({
-        type: 'SAGA_FETCH_IVENTORY',
-      })
-      yield put({
-        type: 'SAGA_FETCH_CHARACTERS',
-      })
-    } catch (error) {
-      console.log('Unable to equip item to server', error);
-    }
+    // try {
+    //   const response = yield axios({
+    //     method: 'PUT',
+    //     url: `/api/inventory/remove/item`,
+    //     data: action.payload
+    //   })
+    //   yield put({
+    //     type: 'SAGA_FETCH_IVENTORY',
+    //   })
+    //   yield put({
+    //     type: 'SAGA_FETCH_CHARACTERS',
+    //   })
+    // } catch (error) {
+    //   console.log('Unable to equip item to server', error);
+    // }
 
       axios({
     method: "PUT",
