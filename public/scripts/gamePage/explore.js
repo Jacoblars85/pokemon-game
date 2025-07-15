@@ -475,7 +475,7 @@ function renderUseItemChoice(item) {
     //     itemId: item.items_id,
     //   }, { withCredentials: true })
     //   .then(() => {
-    //     closeEquipOverlay();
+    //     closeUseItemOverlay();
     //     getStarters(); // Refresh
     //   })
     //   .catch((err) => console.log(err));
@@ -486,12 +486,23 @@ function renderUseItemChoice(item) {
     container.appendChild(row);
   });
 
-  document.getElementById("equipOverlay").style.display = "block";
+  document.getElementById("useItemOverlay").style.display = "flex";
 }
 
-function closeEquipOverlay() {
-  document.getElementById("equipOverlay").style.display = "none";
+function closeUseItemOverlay() {
+  document.getElementById("useItemOverlay").style.display = "none";
 }
+
+document
+  .getElementById("useItemOverlay")
+  .addEventListener("click", (event) => {
+    const popup = document.getElementById("useItemPopup");
+
+    // Only close if clicking directly on the overlay (not inside the popup)
+    if (!popup.contains(event.target)) {
+      closeUseItemOverlay();
+    }
+  });
 
 function isOnScreen(obj, buffer = 50) {
   return (
