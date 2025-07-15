@@ -491,6 +491,9 @@ document
 }
 
 
+function closeEquipOverlay() {
+  document.getElementById("equipOverlay").style.display = "none";
+}
 
 function isOnScreen(obj, buffer = 50) {
   return (
