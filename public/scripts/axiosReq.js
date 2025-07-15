@@ -718,10 +718,8 @@ function equipItem(item, starter) {
     });
 }
 
-  function removeItem(item, starter) {
-
-
-      axios({
+function removeItem(item, starter) {
+  axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/remove/item`,
     data: { item, starter },
@@ -735,7 +733,7 @@ function equipItem(item, starter) {
     .catch((err) => {
       console.log(err);
     });
-  }
+}
 
 function putWonBattle(rewardInfo) {
   axios({
