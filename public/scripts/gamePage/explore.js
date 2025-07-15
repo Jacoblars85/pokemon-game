@@ -456,7 +456,7 @@ document
     }
   });
 
-function equipHeldItem(item) {
+function renderUseItemChoice(item) {
   const container = document.getElementById("equipStarterList");
   container.innerHTML = "";
 
@@ -467,9 +467,9 @@ function equipHeldItem(item) {
     const name = document.createElement("span");
     name.textContent = starter.character_name;
 
-    const equipBtn = document.createElement("button");
-    equipBtn.textContent = "Equip";
-    // equipBtn.onclick = () => {
+    const btn = document.createElement("button");
+    btn.textContent = "Equip";
+    // btn.onclick = () => {
     //   axios.put("/api/items/equip", {
     //     characterId: starter.id,
     //     itemId: item.items_id,
@@ -482,7 +482,7 @@ function equipHeldItem(item) {
     // };
 
     row.appendChild(name);
-    row.appendChild(equipBtn);
+    row.appendChild(btn);
     container.appendChild(row);
   });
 
