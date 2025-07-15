@@ -464,6 +464,13 @@
         <button style="margin-top: auto;" onclick="closeCharacterDetails()">Close</button>
       </div>
     </div>
+
+    <!-- use item on starter interface -->
+    <div id="equipOverlay" style="display: none; position: fixed; top: 30%; left: 30%; background: white; border: 2px solid black; padding: 20px; z-index: 999;">
+  <h3>Select Starter to Equip</h3>
+  <div id="equipStarterList"></div>
+  <button onclick="closeEquipOverlay()">Cancel</button>
+</div>
   </div>
 
   <script src="./data/exploreData/battleZones.js"></script>
