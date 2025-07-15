@@ -456,6 +456,42 @@ document
     }
   });
 
+
+  function equipHeldItem(item) {
+  const container = document.getElementById("equipStarterList");
+  container.innerHTML = "";
+
+  usersStarters.forEach((starter) => {
+    const row = document.createElement("div");
+    row.style.marginBottom = "10px";
+
+    const name = document.createElement("span");
+    name.textContent = starter.character_name;
+
+    const equipBtn = document.createElement("button");
+    equipBtn.textContent = "Equip";
+    // equipBtn.onclick = () => {
+    //   axios.put("/api/items/equip", {
+    //     characterId: starter.id,
+    //     itemId: item.items_id,
+    //   }, { withCredentials: true })
+    //   .then(() => {
+    //     closeEquipOverlay();
+    //     getStarters(); // Refresh
+    //   })
+    //   .catch((err) => console.log(err));
+    // };
+
+    row.appendChild(name);
+    row.appendChild(equipBtn);
+    container.appendChild(row);
+  });
+
+  document.getElementById("equipOverlay").style.display = "block";
+}
+
+
+
 function isOnScreen(obj, buffer = 50) {
   return (
     obj.position.x + obj.width > -buffer &&
