@@ -468,8 +468,12 @@ function renderUseItemChoice(item) {
     name.textContent = starter.character_name;
 
     const btn = document.createElement("button");
-    btn.textContent = item.item_type === "held" ? "Equip Item" : "Use Item"
-    btn.onclick = () => {item.item_type === "held" ? equipItem(item, starter) : useItemOnStarter(item, starter)};
+    btn.textContent = item.item_type === "held" ? "Equip Item" : "Use Item";
+    btn.onclick = () => {
+      item.item_type === "held"
+        ? equipItem(item, starter)
+        : useItemOnStarter(item, starter);
+    };
 
     row.appendChild(name);
     row.appendChild(btn);
@@ -483,16 +487,14 @@ function closeUseItemOverlay() {
   document.getElementById("useItemOverlay").style.display = "none";
 }
 
-document
-  .getElementById("useItemOverlay")
-  .addEventListener("click", (event) => {
-    const popup = document.getElementById("useItemPopup");
+document.getElementById("useItemOverlay").addEventListener("click", (event) => {
+  const popup = document.getElementById("useItemPopup");
 
-    // Only close if clicking directly on the overlay (not inside the popup)
-    if (!popup.contains(event.target)) {
-      closeUseItemOverlay();
-    }
-  });
+  // Only close if clicking directly on the overlay (not inside the popup)
+  if (!popup.contains(event.target)) {
+    closeUseItemOverlay();
+  }
+});
 
 function isOnScreen(obj, buffer = 50) {
   return (
