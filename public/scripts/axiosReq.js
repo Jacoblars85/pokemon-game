@@ -684,11 +684,11 @@ function useItem(itemBeingUsed, resetBattleFunc) {
     });
 }
 
-function useItemOnStarter(item, starter) {
+function useItemOnStarter(itemBeingUsed, starter) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/characters/use/heal/item`,
-    data: { item, starter },
+    data: { itemBeingUsed, starter },
     withCredentials: true,
   })
     .then((response) => {
@@ -701,11 +701,11 @@ function useItemOnStarter(item, starter) {
     });
 }
 
-function equipItem(item, starter) {
+function equipItem(itemBeingUsed, starter) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/equip/item`,
-    data: { item, starter },
+    data: { itemBeingUsed, starter },
     withCredentials: true,
   })
     .then((response) => {
@@ -718,11 +718,11 @@ function equipItem(item, starter) {
     });
 }
 
-function removeItem(item, starter) {
+function removeItem(itemBeingUsed, starter) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/remove/item`,
-    data: { item, starter },
+    data: { itemBeingUsed, starter },
     withCredentials: true,
   })
     .then((response) => {
