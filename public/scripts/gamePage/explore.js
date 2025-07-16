@@ -468,7 +468,7 @@ function renderUseItemChoice(item) {
     name.textContent = starter.character_name;
 
     const btn = document.createElement("button");
-    btn.textContent = "Equip";
+    btn.textContent = item.item_type === "held" ? "Equip Item" : "Use Item"
     btn.onclick = () => {item.item_type === "held" ? equipItem(item, starter) : useItemOnStarter(item, starter)};
 
     row.appendChild(name);
