@@ -456,7 +456,7 @@ document
     }
   });
 
-function renderUseItemChoice(item) {
+function renderUseItemOverlay(item) {
   const container = document.getElementById("equipStarterList");
   container.innerHTML = "";
 
