@@ -469,17 +469,7 @@ function renderUseItemChoice(item) {
 
     const btn = document.createElement("button");
     btn.textContent = "Equip";
-    // btn.onclick = () => {
-    //   axios.put("/api/items/equip", {
-    //     characterId: starter.id,
-    //     itemId: item.items_id,
-    //   }, { withCredentials: true })
-    //   .then(() => {
-    //     closeUseItemOverlay();
-    //     getStarters(); // Refresh
-    //   })
-    //   .catch((err) => console.log(err));
-    // };
+    btn.onclick = () => {item.item_type === "held" ? equipItem(item, starter) : useItemOnStarter(item, starter)};
 
     row.appendChild(name);
     row.appendChild(btn);
