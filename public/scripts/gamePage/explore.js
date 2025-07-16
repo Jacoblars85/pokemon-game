@@ -457,7 +457,7 @@ document
   });
 
 function renderUseItemOverlay(item) {
-  const container = document.getElementById("equipStarterList");
+  const container = document.getElementById("useItemStarterList");
   container.innerHTML = "";
 
   usersStarters.forEach((starter) => {
