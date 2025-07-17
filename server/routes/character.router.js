@@ -498,4 +498,26 @@ router.put("/starter/update", (req, res) => {
     });
 });
 
+router.put("/use/item", (req, res) => {
+  // console.log(req.body);
+
+  const sqlText = `
+          UPDATE "user_inventory"
+          SET "number" = "number" - 1
+            WHERE "user_id" = $1 AND "id" = $2;
+            `;
+
+  const insertValue = [req.user.id, req.body.itemBeingUsed.id];
+
+  pool
+    .query(sqlText, insertValue)
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log("Error in inventory.router /use PUT,", err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
