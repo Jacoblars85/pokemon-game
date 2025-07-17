@@ -460,24 +460,6 @@ function renderUseItemOverlay(item) {
   const container = document.getElementById("useItemStarterList");
   container.innerHTML = "";
 
-  // usersStarters.forEach((starter) => {
-  //   const row = document.createElement("div");
-  //   row.style.marginBottom = "10px";
-
-  //   const name = document.createElement("span");
-  //   name.textContent = starter.character_name;
-
-  //   const btn = document.createElement("button");
-  //   btn.textContent = item.item_type === "held" ? "Equip Item" : "Use Item";
-  // btn.onclick = () => {
-  //   item.item_type === "held"
-  //     ? equipItem(item, starter)
-  //     : useItemOnStarter(item, starter);
-  // };
-
-  //   row.appendChild(name);
-  //   row.appendChild(btn);
-  //   container.appendChild(row);
 
   for (let i = 0; i < usersStarters.length; i++) {
     const cell = document.createElement("div");
@@ -574,7 +556,7 @@ function renderUseItemOverlay(item) {
 
     container.appendChild(cell);
   }
-  // });
+
 
   document.getElementById("useItemOverlay").style.display = "flex";
 }
