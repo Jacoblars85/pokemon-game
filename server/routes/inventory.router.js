@@ -393,10 +393,10 @@ router.put("/equip/item", (req, res) => {
   const sqlText = `
         UPDATE "user_inventory"
         SET "number" = "number" - 1
-            WHERE "user_id" = $1 AND "id" = $2;
+            WHERE "user_id" = $1 AND "items_id" = $2;
             `;
 
-  const insertValue = [req.user.id, req.body.itemBeingUsed.id];
+  const insertValue = [req.user.id, req.body.itemBeingUsed.items_id];
 
   pool.query(sqlText, insertValue).then((result) => {
     let insertNewUserQuery;
@@ -426,7 +426,7 @@ router.put("/equip/item", (req, res) => {
         `;
 
         const insertValue = [
-          req.body.itemBeingUsed.id,
+          req.body.itemBeingUsed.items_id,
           req.user.id,
           req.body.starter.id,
         ];
