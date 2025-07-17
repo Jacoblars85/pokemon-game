@@ -460,25 +460,123 @@ function renderUseItemOverlay(item) {
   const container = document.getElementById("useItemStarterList");
   container.innerHTML = "";
 
-  usersStarters.forEach((starter) => {
-    const row = document.createElement("div");
-    row.style.marginBottom = "10px";
+  // usersStarters.forEach((starter) => {
+  //   const row = document.createElement("div");
+  //   row.style.marginBottom = "10px";
 
-    const name = document.createElement("span");
-    name.textContent = starter.character_name;
+  //   const name = document.createElement("span");
+  //   name.textContent = starter.character_name;
 
-    const btn = document.createElement("button");
-    btn.textContent = item.item_type === "held" ? "Equip Item" : "Use Item";
-    btn.onclick = () => {
-      item.item_type === "held"
+  //   const btn = document.createElement("button");
+  //   btn.textContent = item.item_type === "held" ? "Equip Item" : "Use Item";
+    // btn.onclick = () => {
+    //   item.item_type === "held"
+    //     ? equipItem(item, starter)
+    //     : useItemOnStarter(item, starter);
+    // };
+
+  //   row.appendChild(name);
+  //   row.appendChild(btn);
+  //   container.appendChild(row);
+    
+
+
+  for (let i = 0; i < usersStarters.length; i++) {
+    const cell = document.createElement("div");
+    cell.style = `
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: black;
+      border: 1px solid white;
+      min-height: 50px;
+      color: white;
+    `;
+
+      const starter = usersStarters[i];
+
+      cell.style = `
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: black;
+      border: 1px solid white;
+      min-height: 50px;
+      color: white;
+      cursor: pointer;
+    `;
+
+      const img = document.createElement("img");
+      img.src = starter.profile_pic;
+      img.width = 57;
+      img.height = 57;
+
+      const infoContainer = document.createElement("div");
+      infoContainer.style.flex = "1";
+
+      const name = document.createElement("div");
+      name.textContent = starter.character_name;
+      name.style.fontWeight = "bold";
+
+      // HP Bar
+      const hpBar = document.createElement("div");
+      hpBar.style = `
+    height: 6.5px;
+    width: 90%;
+    background-color: lightgray;
+    margin-top: 4px;
+    overflow: hidden;
+  `;
+
+      const hpFill = document.createElement("div");
+      const hpPercent = (starter.hp / starter.max_hp) * 100;
+      hpFill.style = `
+    width: ${hpPercent}%;
+    height: 100%;
+    background-color: red;
+  `;
+
+      hpBar.appendChild(hpFill);
+
+      // Stamina Bar
+      const staminaBar = document.createElement("div");
+      staminaBar.style = `
+    height: 3px;
+    width: 90%;
+    background-color: lightgray;
+    margin-top: 4px;
+    overflow: hidden;
+  `;
+
+      const staminaFill = document.createElement("div");
+      const staminaPercent = (starter.stamina / starter.max_stamina) * 100;
+      staminaFill.style = `
+    width: ${staminaPercent}%;
+    height: 100%;
+    background-color: green;
+  `;
+
+      staminaBar.appendChild(staminaFill);
+
+      // Combine everything
+      infoContainer.appendChild(name);
+      infoContainer.appendChild(hpBar);
+      infoContainer.appendChild(staminaBar);
+
+      cell.appendChild(img);
+      cell.appendChild(infoContainer);
+
+
+      cell.addEventListener("click", () => {
+              {item.item_type === "held"
         ? equipItem(item, starter)
-        : useItemOnStarter(item, starter);
-    };
+        : useItemOnStarter(item, starter)}
+      });
+ 
 
-    row.appendChild(name);
-    row.appendChild(btn);
-    container.appendChild(row);
-  });
+    container.appendChild(cell);
+  }
+  // });
 
   document.getElementById("useItemOverlay").style.display = "flex";
 }
