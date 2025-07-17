@@ -687,7 +687,7 @@ function useItem(itemBeingUsed, resetBattleFunc) {
 function useItemOnStarter(itemBeingUsed, starter) {
   axios({
     method: "PUT",
-    url: `http://localhost:5001/api/characters/use/heal/item`,
+    url: `http://localhost:5001/api/characters/use/item`,
     data: { itemBeingUsed, starter },
     withCredentials: true,
   })
