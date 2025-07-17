@@ -469,17 +469,15 @@ function renderUseItemOverlay(item) {
 
   //   const btn = document.createElement("button");
   //   btn.textContent = item.item_type === "held" ? "Equip Item" : "Use Item";
-    // btn.onclick = () => {
-    //   item.item_type === "held"
-    //     ? equipItem(item, starter)
-    //     : useItemOnStarter(item, starter);
-    // };
+  // btn.onclick = () => {
+  //   item.item_type === "held"
+  //     ? equipItem(item, starter)
+  //     : useItemOnStarter(item, starter);
+  // };
 
   //   row.appendChild(name);
   //   row.appendChild(btn);
   //   container.appendChild(row);
-    
-
 
   for (let i = 0; i < usersStarters.length; i++) {
     const cell = document.createElement("div");
@@ -493,9 +491,9 @@ function renderUseItemOverlay(item) {
       color: white;
     `;
 
-      const starter = usersStarters[i];
+    const starter = usersStarters[i];
 
-      cell.style = `
+    cell.style = `
       display: flex;
       align-items: center;
       gap: 10px;
@@ -506,21 +504,21 @@ function renderUseItemOverlay(item) {
       cursor: pointer;
     `;
 
-      const img = document.createElement("img");
-      img.src = starter.profile_pic;
-      img.width = 57;
-      img.height = 57;
+    const img = document.createElement("img");
+    img.src = starter.profile_pic;
+    img.width = 57;
+    img.height = 57;
 
-      const infoContainer = document.createElement("div");
-      infoContainer.style.flex = "1";
+    const infoContainer = document.createElement("div");
+    infoContainer.style.flex = "1";
 
-      const name = document.createElement("div");
-      name.textContent = starter.character_name;
-      name.style.fontWeight = "bold";
+    const name = document.createElement("div");
+    name.textContent = starter.character_name;
+    name.style.fontWeight = "bold";
 
-      // HP Bar
-      const hpBar = document.createElement("div");
-      hpBar.style = `
+    // HP Bar
+    const hpBar = document.createElement("div");
+    hpBar.style = `
     height: 6.5px;
     width: 90%;
     background-color: lightgray;
@@ -528,19 +526,19 @@ function renderUseItemOverlay(item) {
     overflow: hidden;
   `;
 
-      const hpFill = document.createElement("div");
-      const hpPercent = (starter.hp / starter.max_hp) * 100;
-      hpFill.style = `
+    const hpFill = document.createElement("div");
+    const hpPercent = (starter.hp / starter.max_hp) * 100;
+    hpFill.style = `
     width: ${hpPercent}%;
     height: 100%;
     background-color: red;
   `;
 
-      hpBar.appendChild(hpFill);
+    hpBar.appendChild(hpFill);
 
-      // Stamina Bar
-      const staminaBar = document.createElement("div");
-      staminaBar.style = `
+    // Stamina Bar
+    const staminaBar = document.createElement("div");
+    staminaBar.style = `
     height: 3px;
     width: 90%;
     background-color: lightgray;
@@ -548,31 +546,31 @@ function renderUseItemOverlay(item) {
     overflow: hidden;
   `;
 
-      const staminaFill = document.createElement("div");
-      const staminaPercent = (starter.stamina / starter.max_stamina) * 100;
-      staminaFill.style = `
+    const staminaFill = document.createElement("div");
+    const staminaPercent = (starter.stamina / starter.max_stamina) * 100;
+    staminaFill.style = `
     width: ${staminaPercent}%;
     height: 100%;
     background-color: green;
   `;
 
-      staminaBar.appendChild(staminaFill);
+    staminaBar.appendChild(staminaFill);
 
-      // Combine everything
-      infoContainer.appendChild(name);
-      infoContainer.appendChild(hpBar);
-      infoContainer.appendChild(staminaBar);
+    // Combine everything
+    infoContainer.appendChild(name);
+    infoContainer.appendChild(hpBar);
+    infoContainer.appendChild(staminaBar);
 
-      cell.appendChild(img);
-      cell.appendChild(infoContainer);
+    cell.appendChild(img);
+    cell.appendChild(infoContainer);
 
-
-      cell.addEventListener("click", () => {
-              {item.item_type === "held"
-        ? equipItem(item, starter)
-        : useItemOnStarter(item, starter)}
-      });
- 
+    cell.addEventListener("click", () => {
+      {
+        item.item_type === "held"
+          ? equipItem(item, starter)
+          : useItemOnStarter(item, starter);
+      }
+    });
 
     container.appendChild(cell);
   }
