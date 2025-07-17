@@ -514,11 +514,11 @@ router.put("/use/item", (req, res) => {
     .then((result) => {
       const insertNewUserQuery = `
                 UPDATE "user_characters"
-                SET "item_id" = NULL
-                WHERE "user_id" = $1 AND "id" = $2
+                SET "hp" = "hp" + $1, "stamina" = "stamina" + $2
+                WHERE "user_id" = $3 AND "id" = $4
                 `;
 
-      const insertValue = [req.user.id, req.body.characterID];
+      const insertValue = [req.body.itemBeingUsed.hp, req.body.itemBeingUsed.stamina, req.user.id, req.body.starter.id];
 
       pool.query(insertNewUserQuery, insertValue).then((result) => {
         res.sendStatus(201);
