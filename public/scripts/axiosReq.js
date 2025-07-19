@@ -780,3 +780,7 @@ function putStarterSwitching(newStarterInfo) {
       console.log(err);
     });
 }
+
+function healStarters() {
+  
+}
