@@ -555,11 +555,11 @@ router.put("/use/item", (req, res) => {
 router.put("/heal/starter", (req, res) => {
   const sqlText = `
         UPDATE "user_characters"
-          SET "hp" = 100, "stamina" = 100
-          WHERE "id" = $1 AND "user_id" = $2;
+          SET "current_hp" = "max_hp", "current_stamina" = "max_stamina"
+          WHERE "user_id" = $1;
           `;
 
-  const sqlValues = [req.body.characterID, req.user.id];
+  const sqlValues = [req.user.id];
 
   pool
     .query(sqlText, sqlValues)
