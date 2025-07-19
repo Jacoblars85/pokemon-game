@@ -512,6 +512,10 @@ router.put("/use/item", (req, res) => {
   pool
     .query(sqlText, insertValue)
     .then((result) => {
+
+      const updatedHp = Math.min(req.body.starter.hp + req.body.itemBeingUsed.hp, req.body.starter.max_hp);
+const updatedStamina = Math.min(req.body.starter.stamina + req.body.itemBeingUsed.stamina, req.body.starter.max_stamina);
+
       const insertNewUserQuery = `
                 UPDATE "user_characters"
                 SET "hp" = "hp" + $1, "stamina" = "stamina" + $2
@@ -519,8 +523,8 @@ router.put("/use/item", (req, res) => {
                 `;
 
       const insertValue = [
-        req.body.itemBeingUsed.hp,
-        req.body.itemBeingUsed.stamina,
+        updatedHp,
+        updatedStamina,
         req.user.id,
         req.body.starter.id,
       ];
