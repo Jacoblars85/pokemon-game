@@ -559,10 +559,7 @@ router.put("/heal/starter", (req, res) => {
           WHERE "id" = $1 AND "user_id" = $2;
           `;
 
-  const sqlValues = [
-    req.body.characterID,
-    req.user.id,
-  ];
+  const sqlValues = [req.body.characterID, req.user.id];
 
   pool
     .query(sqlText, sqlValues)
@@ -570,7 +567,7 @@ router.put("/heal/starter", (req, res) => {
       res.sendStatus(201);
     })
     .catch((err) => {
-      console.log("Error in character.router /edit/nickname PUT,", err);
+      console.log("Error in character.router /heal/starter PUT,", err);
       res.sendStatus(500);
     });
 });
