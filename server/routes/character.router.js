@@ -516,17 +516,17 @@ router.put("/use/item", (req, res) => {
       const staminaToAdd = req.body.itemBeingUsed.stamina || 0;
 
       const updatedHp = Math.min(
-        req.body.starter.hp + hpToAdd,
+        req.body.starter.current_hp + hpToAdd,
         req.body.starter.max_hp
       );
       const updatedStamina = Math.min(
-        req.body.starter.stamina + staminaToAdd,
+        req.body.starter.current_stamina + staminaToAdd,
         req.body.starter.max_stamina
       );
 
       const insertNewUserQuery = `
                 UPDATE "user_characters"
-                SET "hp" = "hp" + $1, "stamina" = "stamina" + $2
+                SET "current_hp" = $1, "current_stamina" = $2
                 WHERE "user_id" = $3 AND "id" = $4
                 `;
 
