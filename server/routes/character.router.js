@@ -556,7 +556,7 @@ router.put("/heal/starter", (req, res) => {
   const sqlText = `
         UPDATE "user_characters"
           SET "current_hp" = "max_hp", "current_stamina" = "max_stamina"
-          WHERE "user_id" = $1;
+          WHERE "user_id" = $1 AND ("starter_1" = TRUE OR "starter_2" = TRUE OR "starter_3" = TRUE);
           `;
 
   const sqlValues = [req.user.id];
