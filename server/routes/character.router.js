@@ -552,4 +552,27 @@ router.put("/use/item", (req, res) => {
     });
 });
 
+router.put("/heal/starter", (req, res) => {
+  const sqlText = `
+        UPDATE "user_characters"
+          SET "hp" = 100, "stamina" = 100
+          WHERE "id" = $1 AND "user_id" = $2;
+          `;
+
+  const sqlValues = [
+    req.body.characterID,
+    req.user.id,
+  ];
+
+  pool
+    .query(sqlText, sqlValues)
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log("Error in character.router /edit/nickname PUT,", err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
