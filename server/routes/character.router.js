@@ -194,9 +194,9 @@ router.get("/starter", (req, res) => {
 SELECT "user_characters"."id" as "id",
         "user_characters"."user_id" as "user_id",
         "user_characters"."character_id",
-                "user_characters"."current_hp" as "hp",
+        "user_characters"."current_hp" as "hp",
         "user_characters"."current_stamina" as "stamina",
-                "user_characters"."max_hp",
+        "user_characters"."max_hp",
         "user_characters"."max_stamina",
         "user_characters"."starter_1",
         "user_characters"."starter_2",
@@ -226,7 +226,7 @@ SELECT "user_characters"."id" as "id",
         "items"."item_speed",
         "items"."item_damage",
         "items"."item_cost",
-    	"items"."item_color"
+    	  "items"."item_color"
  FROM "user_characters" 
 	INNER JOIN "characters"
     	ON "user_characters"."character_id" = "characters"."id"
