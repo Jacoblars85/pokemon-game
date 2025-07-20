@@ -277,9 +277,9 @@ router.post("/new/character", (req, res) => {
 
   const insertCharacterQuery = `
           INSERT INTO "user_characters" 
-            ("user_id", "character_id", "xp_level")
+            ("user_id", "character_id", "current_hp", "current_stamina", "max_hp", "max_stamina", "xp_level")
             VALUES
-            ($1, $2, $3);
+            ($1, $2, $3, $4, $5, $6, $7);
         `;
   const insertCharacterValue = [
     req.user.id,
