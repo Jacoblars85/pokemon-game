@@ -169,6 +169,7 @@ let usersThrowablesItems = [];
 let usersItems = [];
 let allItems = [];
 let usersCharacters = [];
+let allCharacters = [];
 
 let isAnimating = false;
 
@@ -423,6 +424,19 @@ function getEnemy(enemyId) {
         max_frames: response.data[0].max_frames,
         hold_time: response.data[0].hold_time,
       };
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function getAllCharacters() {
+  axios({
+    method: "GET",
+    url: "http://localhost:5001/api/characters/all/characters",
+  })
+    .then((response) => {
+      allCharacters = response.data;
     })
     .catch((err) => {
       console.log(err);
