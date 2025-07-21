@@ -517,6 +517,9 @@ function resetBattleFunc() {
           } else {
             isCaught = true;
             numOfShakes = 3;
+
+            console.log('allCharacters[enemy.id]', allCharacters[enemy.id]);
+            
             postNewUserCharacter({newCharacterLevel: enemy.level, newCharacter: allCharacters[enemy.id] });
             putWonBattle(winningInfo);
 
