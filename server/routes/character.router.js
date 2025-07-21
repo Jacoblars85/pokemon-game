@@ -283,8 +283,12 @@ router.post("/new/character", (req, res) => {
         `;
   const insertCharacterValue = [
     req.user.id,
-    req.body.characterId,
-    req.body.characterLevel,
+    req.body.id,
+    req.body.health,
+    req.body.stamina,
+    req.body.maxHealth,
+    req.body.maxStamina,
+    req.body.level,
   ];
 
   pool
