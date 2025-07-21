@@ -517,7 +517,7 @@ function resetBattleFunc() {
           } else {
             isCaught = true;
             numOfShakes = 3;
-            postNewUserCharacter({ characterId: enemy.id, characterLevel: enemy.level });
+            postNewUserCharacter(enemy);
             putWonBattle(winningInfo);
 
             queue.push(() => {
