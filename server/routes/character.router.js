@@ -267,8 +267,8 @@ SELECT "user_characters"."id" as "id",
 
         const multiplier = Math.floor(Number(starter.xp_level)) / 5;
 
-        const baseHp = starter.hp * multiplier;
-        const baseStamina = starter.stamina * multiplier;
+        const baseHp = starter.base_hp * multiplier;
+        const baseStamina = starter.base_stamina * multiplier;
         const baseSpeed = starter.speed * multiplier;
         const baseDamage = starter.attack_damage * multiplier;
 
