@@ -263,28 +263,29 @@ SELECT "user_characters"."id" as "id",
         //   starter.attack_damage += starter.item_damage;
         // }
 
-  const multiplier = Math.floor(Number(starter.xp_level)) / 5;
+        const multiplier = Math.floor(Number(starter.xp_level)) / 5;
 
-  const baseHp = starter.hp * multiplier;
-  const baseStamina = starter.stamina * multiplier;
-  const baseSpeed = starter.speed * multiplier;
-  const baseDamage = starter.attack_damage * multiplier;
+        const baseHp = starter.hp * multiplier;
+        const baseStamina = starter.stamina * multiplier;
+        const baseSpeed = starter.speed * multiplier;
+        const baseDamage = starter.attack_damage * multiplier;
 
-  // Item boosts
-  const itemHp = starter.item_id !== null ? starter.item_hp : 0;
-  const itemStamina = starter.item_id !== null ? starter.item_stamina : 0;
-  const itemSpeed = starter.item_id !== null ? starter.item_speed : 0;
-  const itemDamage = starter.item_id !== null ? starter.item_damage : 0;
+        // Item boosts
+        const itemHp = starter.item_id !== null ? starter.item_hp : 0;
+        const itemStamina = starter.item_id !== null ? starter.item_stamina : 0;
+        const itemSpeed = starter.item_id !== null ? starter.item_speed : 0;
+        const itemDamage = starter.item_id !== null ? starter.item_damage : 0;
 
-  // Set max (or scaled) stats
-  starter.max_hp = baseHp + itemHp;
-  starter.max_stamina = baseStamina + itemStamina;
-  starter.total_speed = baseSpeed + itemSpeed;
-  starter.total_attack = baseDamage + itemDamage;
+        // Set max (or scaled) stats
+        starter.max_hp = baseHp + itemHp;
+        starter.max_stamina = baseStamina + itemStamina;
+        starter.total_speed = baseSpeed + itemSpeed;
+        starter.total_attack = baseDamage + itemDamage;
 
-  // Keep current values separate and clamped later
-  if (starter.hp > starter.max_hp) starter.hp = starter.max_hp;
-  if (starter.stamina > starter.max_stamina) starter.stamina = starter.max_stamina;
+        // Keep current values separate and clamped later
+        if (starter.hp > starter.max_hp) starter.hp = starter.max_hp;
+        if (starter.stamina > starter.max_stamina)
+          starter.stamina = starter.max_stamina;
       }
 
       res.send(result.rows);
