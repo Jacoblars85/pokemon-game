@@ -279,8 +279,8 @@ SELECT "user_characters"."id" as "id",
         // Set max (or scaled) stats
         starter.max_hp = baseHp + itemHp;
         starter.max_stamina = baseStamina + itemStamina;
-        starter.total_speed = baseSpeed + itemSpeed;
-        starter.total_attack = baseDamage + itemDamage;
+        starter.speed = baseSpeed + itemSpeed;
+        starter.attack_damage = baseDamage + itemDamage;
 
         // Keep current values separate and clamped later
         if (starter.hp > starter.max_hp) starter.hp = starter.max_hp;
