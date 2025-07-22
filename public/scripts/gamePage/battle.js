@@ -274,6 +274,7 @@ function resetBattleFunc() {
         xp: 0.25,
         characterXp: 0.2,
         currentStarterId: currentStarter.id,
+        currentStarter
       };
 
       if (e.target.className === "attackButton") {
