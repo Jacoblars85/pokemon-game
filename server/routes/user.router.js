@@ -346,7 +346,16 @@ router.put("/won/battle", (req, res) => {
       pool
         .query(sqlText, sqlValues)
         .then((result) => {
-          const sqlText = `
+          console.log('newcharacetreXpLevel', newUserXpLevel);
+          console.log('old user lvl', req.user.xp_level);
+
+          let starterLevel = Math.floor(Number(req.body.starter.level))
+          
+          if (Math.floor(Number(req.body.characterXp + req.body.starter.level)) > starterLevel ) {
+            
+          }
+          
+          let sqlText = `
           UPDATE "user_characters"
             SET "xp_level" = "xp_level" + $1
             WHERE "user_id" = $3 AND "id" = $2;
