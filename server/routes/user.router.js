@@ -372,7 +372,7 @@ const newMaxStamina = baseStamina + itemStamina;
           ) {
             sqlText = `
           UPDATE "user_characters"
-            SET "xp_level" = "xp_level" + $1, "max_hp" = $2, "max_stamina" = $3
+            SET "xp_level" = "xp_level" + $1, "current_hp" = $2, "current_stamina" = $3, "max_hp" = $2, "max_stamina" = $3
             WHERE "user_id" = $4 AND "id" = $5;
       `;
           } else {
@@ -391,8 +391,12 @@ const newMaxStamina = baseStamina + itemStamina;
 
           const sqlValues = [
             req.body.characterXp,
+            newMaxHp,
+            newMaxStamina,
             req.body.currentStarterId,
             req.user.id,
+            req.body.starter.current_hp,
+            req.body.starter.current_stamina
           ];
 
           pool
