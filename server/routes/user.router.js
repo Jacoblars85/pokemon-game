@@ -37,7 +37,7 @@ router.post("/register", (req, res, next) => {
         INSERT INTO "user_characters" 
           ("user_id", "character_id", "starter_1", "current_hp", "current_stamina", "max_hp", "max_stamina", "xp_level")
           VALUES
-          ($1, 1, TRUE, 26, 18, 26, 18, 5) 
+          ($1, 1, TRUE, 130, 90, 130, 90, 5) 
           RETURNING user_id;
       `;
       const insertNewUserValues = [createdUserId];
