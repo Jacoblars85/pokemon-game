@@ -367,6 +367,7 @@ function movementIf(boundryParam) {
   }
 }
 
+// chest functions
 function openChest(boundryId) {
   let itemId = Math.floor(Math.random() * 19 + 1);
 
@@ -408,6 +409,7 @@ document.getElementById("chestOverlay").addEventListener("click", (event) => {
   }
 });
 
+// bag functions
 function openBag() {
   moving = false;
 
@@ -428,6 +430,7 @@ document.getElementById("bagOverlay").addEventListener("click", (event) => {
   }
 });
 
+// item detail functions
 function showItemDetails(item) {
   document.getElementById("itemDetailsOverlay").style.display = "flex";
 
@@ -456,6 +459,7 @@ document
     }
   });
 
+  // use item functions
 function renderUseItemOverlay(item) {
   const container = document.getElementById("useItemStarterList");
   container.innerHTML = "";
