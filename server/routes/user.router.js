@@ -348,29 +348,28 @@ router.put("/won/battle", (req, res) => {
         .then((result) => {
           let starterLevel = Math.floor(Number(req.body.winningStarter.level));
 
-
           let sqlText;
-          let sqlValues
+          let sqlValues;
 
           const multiplier =
-            Math.floor(Number(req.body.characterXp) + Number(req.body.winningStarter.level)) /
-            5;
-
-
+            Math.floor(
+              Number(req.body.characterXp) +
+                Number(req.body.winningStarter.level)
+            ) / 5;
 
           const baseHp = req.body.winningStarter.base_hp * multiplier;
           const baseStamina = req.body.winningStarter.base_stamina * multiplier;
           const itemHp = req.body.winningStarter.item.item_hp || 0;
           const itemStamina = req.body.winningStarter.item.item_stamina || 0;
 
-       
-
           const newMaxHp = baseHp + itemHp;
           const newMaxStamina = baseStamina + itemStamina;
 
           if (
-            Math.floor(Number(req.body.characterXp) + Number(req.body.winningStarter.level)) >
-            starterLevel
+            Math.floor(
+              Number(req.body.characterXp) +
+                Number(req.body.winningStarter.level)
+            ) > starterLevel
           ) {
             sqlText = `
           UPDATE "user_characters"
@@ -378,13 +377,13 @@ router.put("/won/battle", (req, res) => {
             WHERE "user_id" = $4 AND "id" = $5;
       `;
 
-      sqlValues = [
-            req.body.characterXp,
-            newMaxHp,
-            newMaxStamina,
-            req.user.id,
-            req.body.winningStarter.currentStarterId,
-          ];
+            sqlValues = [
+              req.body.characterXp,
+              newMaxHp,
+              newMaxStamina,
+              req.user.id,
+              req.body.winningStarter.currentStarterId,
+            ];
           } else {
             sqlText = `
           UPDATE "user_characters"
@@ -392,13 +391,13 @@ router.put("/won/battle", (req, res) => {
             WHERE "user_id" = $4 AND "id" = $5;
       `;
 
-      sqlValues = [
-            req.body.characterXp,
-                        req.body.winningStarter.current_hp,
-            req.body.winningStarter.current_stamina,
-            req.user.id,
-            req.body.winningStarter.currentStarterId,
-          ];
+            sqlValues = [
+              req.body.characterXp,
+              req.body.winningStarter.current_hp,
+              req.body.winningStarter.current_stamina,
+              req.user.id,
+              req.body.winningStarter.currentStarterId,
+            ];
           }
 
           //     sqlText = `
