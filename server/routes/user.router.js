@@ -346,30 +346,33 @@ router.put("/won/battle", (req, res) => {
       pool
         .query(sqlText, sqlValues)
         .then((result) => {
-          let starterLevel = Math.floor(Number(req.body.starter.level));
+          let starterLevel = Math.floor(Number(req.body.winningStarter.level));
 
           console.log("starterLevel", starterLevel);
           console.log(
             "new starterLevel",
-            req.body.characterXp + req.body.starter.level
+            req.body.characterXp + req.body.winningStarter.level
           );
 
           let sqlText;
 
           const multiplier =
-            Math.floor(Number(req.body.characterXp + req.body.starter.level)) /
+            Math.floor(Number(req.body.characterXp + req.body.winningStarter.level)) /
             5;
 
-          const baseHp = req.body.starter.base_hp * multiplier;
-          const baseStamina = req.body.starter.base_stamina * multiplier;
-          const itemHp = req.body.starter.item?.item_hp || 0;
-          const itemStamina = req.body.starter.item?.item_stamina || 0;
+          const baseHp = req.body.winningStarter.base_hp * multiplier;
+          const baseStamina = req.body.winningStarter.base_stamina * multiplier;
+          const itemHp = req.body.winningStarter.item?.item_hp || 0;
+          const itemStamina = req.body.winningStarter.item?.item_stamina || 0;
+
+          console.log('itemHp', itemHp);
+          
 
           const newMaxHp = baseHp + itemHp;
           const newMaxStamina = baseStamina + itemStamina;
 
           if (
-            Math.floor(Number(req.body.characterXp + req.body.starter.level)) >
+            Math.floor(Number(req.body.characterXp + req.body.winningStarter.level)) >
             starterLevel
           ) {
             sqlText = `
@@ -380,7 +383,7 @@ router.put("/won/battle", (req, res) => {
           } else {
             sqlText = `
           UPDATE "user_characters"
-            SET "xp_level" = "xp_level" + $1, "current_hp" = $6, "current_stamina" = $7,
+            SET "xp_level" = "xp_level" + $1, "current_hp" = $6, "current_stamina" = $7
             WHERE "user_id" = $4 AND "id" = $5;
       `;
           }
@@ -396,9 +399,9 @@ router.put("/won/battle", (req, res) => {
             newMaxHp,
             newMaxStamina,
             req.user.id,
-            req.body.currentStarterId,
-            req.body.starter.current_hp,
-            req.body.starter.current_stamina,
+            req.body.winningStarter.currentStarterId,
+            req.body.winningStarter.current_hp,
+            req.body.winningStarter.current_stamina,
           ];
 
           pool
