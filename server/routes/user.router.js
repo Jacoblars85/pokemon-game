@@ -348,31 +348,28 @@ router.put("/won/battle", (req, res) => {
         .then((result) => {
           let starterLevel = Math.floor(Number(req.body.winningStarter.level));
 
-          console.log("starterLevel", starterLevel);
-          console.log(
-            "new starterLevel",
-            req.body.characterXp + req.body.winningStarter.level
-          );
 
           let sqlText;
+          let sqlValues
 
           const multiplier =
-            Math.floor(Number(req.body.characterXp + req.body.winningStarter.level)) /
+            Math.floor(Number(req.body.characterXp) + Number(req.body.winningStarter.level)) /
             5;
+
+
 
           const baseHp = req.body.winningStarter.base_hp * multiplier;
           const baseStamina = req.body.winningStarter.base_stamina * multiplier;
-          const itemHp = req.body.winningStarter.item?.item_hp || 0;
-          const itemStamina = req.body.winningStarter.item?.item_stamina || 0;
+          const itemHp = req.body.winningStarter.item.item_hp || 0;
+          const itemStamina = req.body.winningStarter.item.item_stamina || 0;
 
-          console.log('itemHp', itemHp);
-          
+       
 
           const newMaxHp = baseHp + itemHp;
           const newMaxStamina = baseStamina + itemStamina;
 
           if (
-            Math.floor(Number(req.body.characterXp + req.body.winningStarter.level)) >
+            Math.floor(Number(req.body.characterXp) + Number(req.body.winningStarter.level)) >
             starterLevel
           ) {
             sqlText = `
@@ -380,12 +377,28 @@ router.put("/won/battle", (req, res) => {
             SET "xp_level" = "xp_level" + $1, "current_hp" = $2, "current_stamina" = $3, "max_hp" = $2, "max_stamina" = $3
             WHERE "user_id" = $4 AND "id" = $5;
       `;
+
+      sqlValues = [
+            req.body.characterXp,
+            newMaxHp,
+            newMaxStamina,
+            req.user.id,
+            req.body.winningStarter.currentStarterId,
+          ];
           } else {
             sqlText = `
           UPDATE "user_characters"
-            SET "xp_level" = "xp_level" + $1, "current_hp" = $6, "current_stamina" = $7
+            SET "xp_level" = "xp_level" + $1, "current_hp" = $2, "current_stamina" = $3
             WHERE "user_id" = $4 AND "id" = $5;
       `;
+
+      sqlValues = [
+            req.body.characterXp,
+                        req.body.winningStarter.current_hp,
+            req.body.winningStarter.current_stamina,
+            req.user.id,
+            req.body.winningStarter.currentStarterId,
+          ];
           }
 
           //     sqlText = `
@@ -394,15 +407,15 @@ router.put("/won/battle", (req, res) => {
           //       WHERE "user_id" = $3 AND "id" = $2;
           // `;
 
-          const sqlValues = [
-            req.body.characterXp,
-            newMaxHp,
-            newMaxStamina,
-            req.user.id,
-            req.body.winningStarter.currentStarterId,
-            req.body.winningStarter.current_hp,
-            req.body.winningStarter.current_stamina,
-          ];
+          // sqlValues = [
+          //   req.body.characterXp,
+          //   newMaxHp,
+          //   newMaxStamina,
+          //   req.user.id,
+          //   req.body.winningStarter.currentStarterId,
+          //   req.body.winningStarter.current_hp,
+          //   req.body.winningStarter.current_stamina,
+          // ];
 
           pool
             .query(sqlText, sqlValues)
