@@ -342,7 +342,7 @@ router.post("/new/character", (req, res) => {
     req.body.newCharacter.stamina,
     req.body.newCharacter.maxHealth,
     req.body.newCharacter.maxStamina,
-    req.body.newCharacterLevel,
+    req.body.newCharacter.level,
   ];
 
   pool
