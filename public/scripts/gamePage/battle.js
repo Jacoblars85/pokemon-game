@@ -276,13 +276,13 @@ function resetBattleFunc() {
         winningStarter: {
           currentStarterId: currentStarter.id,
           level: currentStarter.level,
-          current_hp: currentStarter.current_hp,
-          current_stamina: currentStarter.current_stamina,
-          base_hp: currentStarter.base_hp,
-          base_stamina: currentStarter.base_stamina,
+          current_hp: currentStarter.health,
+          current_stamina: currentStarter.stamina,
+          base_hp: allCharacters[currentStarter.id - 1].hp,
+          base_stamina: allCharacters[currentStarter.id - 1].stamina,
           item: {
-            item_hp: currentStarter.item_hp,
-            item_stamina: currentStarter.item_stamina,
+            item_hp: usersStarters[currentStarter.id - 1].item_hp,
+            item_stamina: usersStarters[currentStarter.id - 1].item_stamina,
           },
         },
       };
