@@ -181,7 +181,29 @@ SELECT "user_characters"."id" as "id",
         //   character.attack_damage += character.item_damage;
         // }
 
-        
+                const multiplier = Math.floor(Number(character.xp_level)) / 5;
+
+        const baseHp = character.base_hp * multiplier;
+        const baseStamina = character.base_stamina * multiplier;
+        const baseSpeed = character.speed * multiplier;
+        const baseDamage = character.attack_damage * multiplier;
+
+        // Item boosts
+        const itemHp = character.item_id !== null ? character.item_hp : 0;
+        const itemStamina = character.item_id !== null ? character.item_stamina : 0;
+        const itemSpeed = character.item_id !== null ? character.item_speed : 0;
+        const itemDamage = character.item_id !== null ? character.item_damage : 0;
+
+        // Set max (or scaled) stats
+        character.max_hp = baseHp + itemHp;
+        character.max_stamina = baseStamina + itemStamina;
+        character.speed = baseSpeed + itemSpeed;
+        character.attack_damage = baseDamage + itemDamage;
+
+        // Keep current values separate and clamped later
+        if (character.hp > character.max_hp) character.hp = character.max_hp;
+        if (character.stamina > character.max_stamina)
+          character.stamina = character.max_stamina;
       }
       res.send(result.rows);
     })
