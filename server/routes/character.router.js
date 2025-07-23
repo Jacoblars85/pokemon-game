@@ -183,7 +183,7 @@ SELECT "user_characters"."id" as "id",
         //   character.attack_damage += character.item_damage;
         // }
 
-                const multiplier = Math.floor(Number(character.xp_level)) / 5;
+        const multiplier = Math.floor(Number(character.xp_level)) / 5;
 
         const baseHp = character.base_hp * multiplier;
         const baseStamina = character.base_stamina * multiplier;
@@ -192,9 +192,11 @@ SELECT "user_characters"."id" as "id",
 
         // Item boosts
         const itemHp = character.item_id !== null ? character.item_hp : 0;
-        const itemStamina = character.item_id !== null ? character.item_stamina : 0;
+        const itemStamina =
+          character.item_id !== null ? character.item_stamina : 0;
         const itemSpeed = character.item_id !== null ? character.item_speed : 0;
-        const itemDamage = character.item_id !== null ? character.item_damage : 0;
+        const itemDamage =
+          character.item_id !== null ? character.item_damage : 0;
 
         // Set max (or scaled) stats
         character.max_hp = baseHp + itemHp;
