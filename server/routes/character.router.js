@@ -86,7 +86,7 @@ SELECT  "characters"."id",
     .query(query, sqlValues)
     .then((result) => {
       for (const enemy of result.rows) {
-        let randomLevel = Math.floor(Math.random() * 5 + 5);
+        let randomLevel = Math.floor(Math.random() * 5 + 2);
 
         let multiplier = randomLevel / 5;
 
