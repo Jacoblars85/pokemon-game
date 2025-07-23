@@ -356,6 +356,16 @@ router.put("/won/battle", (req, res) => {
 
           let sqlText;
 
+          const multiplier = Math.floor(Number(req.body.characterXp + req.body.starter.level)) / 5;
+
+const baseHp =  req.body.starter.base_hp * multiplier;
+const baseStamina =  req.body.starter.base_stamina * multiplier;
+const itemHp = req.body.starter.item?.item_hp || 0;
+const itemStamina =  req.body.starter.item?.item_stamina || 0;
+
+const newMaxHp = baseHp + itemHp;
+const newMaxStamina = baseStamina + itemStamina;
+
           if (
             Math.floor(Number(req.body.characterXp + req.body.starter.level)) >
             starterLevel
