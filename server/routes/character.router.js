@@ -167,19 +167,21 @@ SELECT "user_characters"."id" as "id",
     .query(query, sqlValues)
     .then((result) => {
       for (const character of result.rows) {
-        let multiplier = Math.floor(Number(character.xp_level)) / 5;
+        // let multiplier = Math.floor(Number(character.xp_level)) / 5;
 
-        character.hp *= multiplier;
-        character.stamina *= multiplier;
-        character.speed *= multiplier;
-        character.attack_damage *= multiplier;
+        // character.hp *= multiplier;
+        // character.stamina *= multiplier;
+        // character.speed *= multiplier;
+        // character.attack_damage *= multiplier;
 
-        if (character.item_id !== null) {
-          character.hp += character.item_hp;
-          character.stamina += character.item_stamina;
-          character.speed += character.item_speed;
-          character.attack_damage += character.item_damage;
-        }
+        // if (character.item_id !== null) {
+        //   character.hp += character.item_hp;
+        //   character.stamina += character.item_stamina;
+        //   character.speed += character.item_speed;
+        //   character.attack_damage += character.item_damage;
+        // }
+
+        
       }
       res.send(result.rows);
     })
