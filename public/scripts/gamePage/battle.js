@@ -273,8 +273,24 @@ function resetBattleFunc() {
       let winningInfo = {
         xp: 0.25,
         characterXp: 0.2,
-        winningStarter: {currentStarterId: currentStarter.id, level: currentStarter.level, current_hp: currentStarter.current_hp, current_stamina: currentStarter.current_stamina, base_hp: currentStarter.base_hp, base_stamina: currentStarter.base_stamina, item: {item_hp: currentStarter.item_hp, item_stamina: currentStarter.item_stamina  }  },
+        winningStarter: {
+          currentStarterId: currentStarter.id,
+          level: currentStarter.level,
+          current_hp: currentStarter.current_hp,
+          current_stamina: currentStarter.current_stamina,
+          base_hp: currentStarter.base_hp,
+          base_stamina: currentStarter.base_stamina,
+          item: {
+            item_hp: currentStarter.item_hp,
+            item_stamina: currentStarter.item_stamina,
+          },
+        },
       };
+
+      console.log('currentStarter', currentStarter);
+      
+      console.log('winningInfo', winningInfo);
+      
 
       if (e.target.className === "attackButton") {
         const characterSelectedAttack = e.target.innerHTML;
