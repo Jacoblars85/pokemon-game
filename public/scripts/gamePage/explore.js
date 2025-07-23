@@ -11,6 +11,7 @@ getAllUsersThrowables();
 getAllUsersItems();
 getAllItems();
 getAllUsersCharacters();
+getAllCharacters()
 
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
 // import forestBackground from "./img/backgroundImg/RockForest.webp";
