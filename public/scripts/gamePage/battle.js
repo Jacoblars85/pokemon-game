@@ -274,7 +274,7 @@ function resetBattleFunc() {
         xp: 0.25,
         characterXp: 0.2,
         currentStarterId: currentStarter.id,
-        currentStarter
+        currentStarter,
       };
 
       if (e.target.className === "attackButton") {
@@ -519,9 +519,7 @@ function resetBattleFunc() {
             isCaught = true;
             numOfShakes = 3;
 
-            postNewUserCharacter({
-              newCharacter: enemy,
-            });
+            postNewUserCharacter({ newCharacter: enemy });
             putWonBattle(winningInfo);
 
             queue.push(() => {
@@ -723,11 +721,9 @@ function initBattle() {
     hold_time: starterOneAttackStats.hold_time,
   });
 
-  console.log('enemy', enemy);
-  
+  console.log("enemy", enemy);
 
-  console.log('starter', starter);
-  
+  console.log("starter", starter);
 
   starters = [starter];
 
