@@ -535,7 +535,7 @@ function resetBattleFunc() {
             numOfShakes = 3;
 
             let newCharacter = {
-              id: enemy.id,
+              characterId: enemy.id,
               level: enemy.level,
               health: enemy.health,
               stamina: enemy.stamina,
