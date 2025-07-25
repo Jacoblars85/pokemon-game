@@ -400,21 +400,7 @@ router.put("/won/battle", (req, res) => {
             ];
           }
 
-          //     sqlText = `
-          //     UPDATE "user_characters"
-          //       SET "xp_level" = "xp_level" + $1
-          //       WHERE "user_id" = $3 AND "id" = $2;
-          // `;
 
-          // sqlValues = [
-          //   req.body.characterXp,
-          //   newMaxHp,
-          //   newMaxStamina,
-          //   req.user.id,
-          //   req.body.winningStarter.currentStarterId,
-          //   req.body.winningStarter.current_hp,
-          //   req.body.winningStarter.current_stamina,
-          // ];
 
           pool
             .query(sqlText, sqlValues)
