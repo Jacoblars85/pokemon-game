@@ -685,8 +685,8 @@ function initBattle() {
   document.getElementById("enemyHealthBar").style.width = "100%";
   document.getElementById("enemyStaminaBar").style.width = "100%";
 
-  document.getElementById("starterHealthBar").style.width = "100%";
-  document.getElementById("starterStaminaBar").style.width = "100%";
+  // document.getElementById("starterHealthBar").style.width = (starter.health / starter.maxHealth) * 100 + "%";
+  // document.getElementById("starterStaminaBar").style.width = (starter.stamina / starter.maxStamina) * 100 + "%";
 
   enemy = new Character({
     position: {
@@ -746,6 +746,9 @@ function initBattle() {
     max_frames: starterOneAttackStats.max_frames,
     hold_time: starterOneAttackStats.hold_time,
   });
+
+    document.getElementById("starterHealthBar").style.width = (starter.health / starter.maxHealth) * 100 + "%";
+  document.getElementById("starterStaminaBar").style.width = (starter.stamina / starter.maxStamina) * 100 + "%";
 
   console.log("enemy", enemy);
 
