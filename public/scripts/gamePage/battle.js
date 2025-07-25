@@ -542,10 +542,6 @@ function resetBattleFunc() {
               maxStamina: enemy.maxStamina,
             };
 
-            console.log("enemy", enemy);
-
-            console.log("newCharacter", newCharacter);
-
             postNewUserCharacter(newCharacter);
             putWonBattle(winningInfo);
 
