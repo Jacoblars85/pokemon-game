@@ -286,7 +286,7 @@ function resetBattleFunc() {
           },
         },
       };
-      
+
       if (e.target.className === "attackButton") {
         const characterSelectedAttack = e.target.innerHTML;
         let selectedAttack = {};
@@ -529,7 +529,23 @@ function resetBattleFunc() {
             isCaught = true;
             numOfShakes = 3;
 
-            postNewUserCharacter({ newCharacter: enemy });
+
+                  let newCharacter = {
+          id: enemy.id,
+          level: enemy.level,
+          health: enemy.health,
+          stamina: enemy.stamina,
+          maxHealth: enemy.maxHealth,
+          maxStamina: enemy.maxStamina,
+      };
+
+      console.log('enemy', enemy);
+      
+
+      console.log('newCharacter', newCharacter);
+      
+
+            postNewUserCharacter(newCharacter);
             putWonBattle(winningInfo);
 
             queue.push(() => {
