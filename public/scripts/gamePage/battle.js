@@ -529,21 +529,18 @@ function resetBattleFunc() {
             isCaught = true;
             numOfShakes = 3;
 
+            let newCharacter = {
+              id: enemy.id,
+              level: enemy.level,
+              health: enemy.health,
+              stamina: enemy.stamina,
+              maxHealth: enemy.maxHealth,
+              maxStamina: enemy.maxStamina,
+            };
 
-                  let newCharacter = {
-          id: enemy.id,
-          level: enemy.level,
-          health: enemy.health,
-          stamina: enemy.stamina,
-          maxHealth: enemy.maxHealth,
-          maxStamina: enemy.maxStamina,
-      };
+            console.log("enemy", enemy);
 
-      console.log('enemy', enemy);
-      
-
-      console.log('newCharacter', newCharacter);
-      
+            console.log("newCharacter", newCharacter);
 
             postNewUserCharacter(newCharacter);
             putWonBattle(winningInfo);
@@ -685,9 +682,6 @@ function initBattle() {
   document.getElementById("enemyHealthBar").style.width = "100%";
   document.getElementById("enemyStaminaBar").style.width = "100%";
 
-  // document.getElementById("starterHealthBar").style.width = (starter.health / starter.maxHealth) * 100 + "%";
-  // document.getElementById("starterStaminaBar").style.width = (starter.stamina / starter.maxStamina) * 100 + "%";
-
   enemy = new Character({
     position: {
       x: 800,
@@ -747,8 +741,10 @@ function initBattle() {
     hold_time: starterOneAttackStats.hold_time,
   });
 
-    document.getElementById("starterHealthBar").style.width = (starter.health / starter.maxHealth) * 100 + "%";
-  document.getElementById("starterStaminaBar").style.width = (starter.stamina / starter.maxStamina) * 100 + "%";
+  document.getElementById("starterHealthBar").style.width =
+    (starter.health / starter.maxHealth) * 100 + "%";
+  document.getElementById("starterStaminaBar").style.width =
+    (starter.stamina / starter.maxStamina) * 100 + "%";
 
   console.log("enemy", enemy);
 
