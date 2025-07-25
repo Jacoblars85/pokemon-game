@@ -328,12 +328,12 @@ router.post("/new/character", (req, res) => {
         `;
   const insertCharacterValue = [
     req.user.id,
-    req.body.newCharacter.id,
-    req.body.newCharacter.health,
-    req.body.newCharacter.stamina,
-    req.body.newCharacter.maxHealth,
-    req.body.newCharacter.maxStamina,
-    req.body.newCharacter.level,
+    req.body.characterId,
+    req.body.health,
+    req.body.stamina,
+    req.body.maxHealth,
+    req.body.maxStamina,
+    req.body.level,
   ];
 
   pool
