@@ -270,10 +270,9 @@ function resetBattleFunc() {
 
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
-
       const matchedStarter = usersStarters.find(
-  (userStarter) => userStarter.id === currentStarter.id
-);
+        (userStarter) => userStarter.id === currentStarter.id
+      );
 
       let winningInfo = {
         xp: 0.25,
