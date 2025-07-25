@@ -270,6 +270,11 @@ function resetBattleFunc() {
 
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
+
+      const matchedStarter = usersStarters.find(
+  (userStarter) => userStarter.id === currentStarter.id
+);
+
       let winningInfo = {
         xp: 0.25,
         characterXp: 0.2,
@@ -281,8 +286,8 @@ function resetBattleFunc() {
           base_hp: allCharacters[currentStarter.id - 1].hp,
           base_stamina: allCharacters[currentStarter.id - 1].stamina,
           item: {
-            item_hp: usersStarters[currentStarter.id - 1].item_hp,
-            item_stamina: usersStarters[currentStarter.id - 1].item_stamina,
+            item_hp: matchedStarter.item_hp,
+            item_stamina: matchedStarter.item_stamina,
           },
         },
       };
