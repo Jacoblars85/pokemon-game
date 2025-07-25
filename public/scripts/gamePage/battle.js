@@ -286,12 +286,7 @@ function resetBattleFunc() {
           },
         },
       };
-
-      console.log('currentStarter', currentStarter);
       
-      console.log('winningInfo', winningInfo);
-      
-
       if (e.target.className === "attackButton") {
         const characterSelectedAttack = e.target.innerHTML;
         let selectedAttack = {};
