@@ -400,8 +400,6 @@ router.put("/won/battle", (req, res) => {
             ];
           }
 
-
-
           pool
             .query(sqlText, sqlValues)
             .then((result) => {
