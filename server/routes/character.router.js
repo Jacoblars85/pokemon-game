@@ -270,8 +270,6 @@ SELECT "user_characters"."id" as "id",
     .query(query, sqlValues)
     .then((result) => {
       for (const starter of result.rows) {
-
-
         const multiplier = Math.floor(Number(starter.xp_level)) / 5;
 
         const baseHp = starter.base_hp * multiplier;
@@ -293,8 +291,6 @@ SELECT "user_characters"."id" as "id",
 
         console.log("starter", starter.hp);
         console.log("starter", starter.max_hp);
-
-        
 
         // Keep current values separate and clamped later
         if (starter.hp > starter.max_hp) starter.hp = starter.max_hp;
