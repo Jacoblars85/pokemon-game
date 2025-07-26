@@ -502,7 +502,7 @@ function resetBattleFunc() {
             resetBattleFunc();
           });
         }
-      } else if (e.target.innerHTML === "Use Item") {
+      } else if (e.target.innerHTML === "Use Item" && battle.initiated) {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
