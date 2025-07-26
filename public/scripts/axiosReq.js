@@ -799,7 +799,6 @@ function healStarters() {
     axios({
     method: "PUT",
     url: `http://localhost:5001/api/characters/heal/starters`,
-    data: starters,
     withCredentials: true,
   })
     .then((response) => {
