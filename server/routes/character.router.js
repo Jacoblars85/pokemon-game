@@ -605,7 +605,7 @@ router.put("/use/item", (req, res) => {
     });
 });
 
-router.put("/heal/starter", (req, res) => {
+router.put("/heal/starters", (req, res) => {
   const sqlText = `
         UPDATE "user_characters"
           SET "current_hp" = "max_hp", "current_stamina" = "max_stamina"
@@ -620,7 +620,7 @@ router.put("/heal/starter", (req, res) => {
       res.sendStatus(201);
     })
     .catch((err) => {
-      console.log("Error in character.router /heal/starter PUT,", err);
+      console.log("Error in character.router /heal/starters PUT,", err);
       res.sendStatus(500);
     });
 });
