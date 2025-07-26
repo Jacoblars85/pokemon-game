@@ -11,7 +11,7 @@ getAllUsersThrowables();
 getAllUsersItems();
 getAllItems();
 getAllUsersCharacters();
-getAllCharacters()
+getAllCharacters();
 
 // import lakeBackground from "./img/backgroundImg/LakeBackground.png";
 // import forestBackground from "./img/backgroundImg/RockForest.webp";
@@ -460,11 +460,10 @@ document
     }
   });
 
-  // use item functions
+// use item functions
 function renderUseItemOverlay(item) {
   const container = document.getElementById("useItemStarterList");
   container.innerHTML = "";
-
 
   for (let i = 0; i < usersStarters.length; i++) {
     const cell = document.createElement("div");
@@ -561,7 +560,6 @@ function renderUseItemOverlay(item) {
 
     container.appendChild(cell);
   }
-
 
   document.getElementById("useItemOverlay").style.display = "flex";
 }
