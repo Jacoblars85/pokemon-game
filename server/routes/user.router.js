@@ -379,8 +379,8 @@ router.put("/won/battle", (req, res) => {
 
             sqlValues = [
               req.body.characterXp,
-              newMaxHp,
-              newMaxStamina,
+              Math.round(newMaxHp),
+              Math.round(newMaxStamina),
               req.user.id,
               req.body.winningStarter.currentStarterId,
             ];
@@ -393,8 +393,8 @@ router.put("/won/battle", (req, res) => {
 
             sqlValues = [
               req.body.characterXp,
-              req.body.winningStarter.current_hp,
-              req.body.winningStarter.current_stamina,
+              Math.round(req.body.winningStarter.current_hp),
+              Math.round(req.body.winningStarter.current_stamina),
               req.user.id,
               req.body.winningStarter.currentStarterId,
             ];
