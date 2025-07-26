@@ -270,19 +270,7 @@ SELECT "user_characters"."id" as "id",
     .query(query, sqlValues)
     .then((result) => {
       for (const starter of result.rows) {
-        // let multiplier = Math.floor(Number(starter.xp_level)) / 5;
 
-        // starter.hp *= multiplier;
-        // starter.stamina *= multiplier;
-        // starter.speed *= multiplier;
-        // starter.attack_damage *= multiplier;
-
-        // if (starter.item_id !== null) {
-        //   starter.hp += starter.item_hp;
-        //   starter.stamina += starter.item_stamina;
-        //   starter.speed += starter.item_speed;
-        //   starter.attack_damage += starter.item_damage;
-        // }
 
         const multiplier = Math.floor(Number(starter.xp_level)) / 5;
 
@@ -298,10 +286,15 @@ SELECT "user_characters"."id" as "id",
         const itemDamage = starter.item_id !== null ? starter.item_damage : 0;
 
         // Set max (or scaled) stats
-        starter.max_hp = baseHp + itemHp;
-        starter.max_stamina = baseStamina + itemStamina;
-        starter.speed = baseSpeed + itemSpeed;
-        starter.attack_damage = baseDamage + itemDamage;
+        starter.max_hp = Math.round(baseHp) + itemHp;
+        starter.max_stamina = Math.round(baseStamina) + itemStamina;
+        starter.speed = Math.round(baseSpeed) + itemSpeed;
+        starter.attack_damage = Math.round(baseDamage) + itemDamage;
+
+        console.log("starter", starter.hp);
+        console.log("starter", starter.max_hp);
+
+        
 
         // Keep current values separate and clamped later
         if (starter.hp > starter.max_hp) starter.hp = starter.max_hp;
