@@ -554,8 +554,8 @@ router.put("/use/item", (req, res) => {
   pool
     .query(sqlText, insertValue)
     .then((result) => {
-      const hpToAdd = req.body.itemBeingUsed.hp || 0;
-      const staminaToAdd = req.body.itemBeingUsed.stamina || 0;
+      const hpToAdd = req.body.itemBeingUsed.item_hp || 0;
+      const staminaToAdd = req.body.itemBeingUsed.item_stamina || 0;
 
       const updatedHp = Math.min(
         req.body.starter.hp + hpToAdd,
