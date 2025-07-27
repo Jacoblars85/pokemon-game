@@ -556,6 +556,7 @@ function renderUseItemOverlay(item) {
           ? equipItem(item, starter)
           : useItemOnStarter(item, starter);
       }
+       document.getElementById("useItemOverlay").style.display = "none";
     });
 
     container.appendChild(cell);
