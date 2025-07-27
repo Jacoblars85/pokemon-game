@@ -551,20 +551,26 @@ router.put("/use/item", (req, res) => {
 
   const insertValue = [req.user.id, req.body.itemBeingUsed.id];
 
+
+
   pool
     .query(sqlText, insertValue)
     .then((result) => {
       const hpToAdd = req.body.itemBeingUsed.hp || 0;
       const staminaToAdd = req.body.itemBeingUsed.stamina || 0;
 
+      
+
       const updatedHp = Math.min(
-        req.body.starter.current_hp + hpToAdd,
+        req.body.starter.hp + hpToAdd,
         req.body.starter.max_hp
       );
       const updatedStamina = Math.min(
-        req.body.starter.current_stamina + staminaToAdd,
+        req.body.starter.stamina + staminaToAdd,
         req.body.starter.max_stamina
       );
+
+
 
       const insertNewUserQuery = `
                 UPDATE "user_characters"
@@ -578,6 +584,8 @@ router.put("/use/item", (req, res) => {
         req.user.id,
         req.body.starter.id,
       ];
+
+
 
       pool.query(insertNewUserQuery, insertValue).then((result) => {
         res.sendStatus(201);
