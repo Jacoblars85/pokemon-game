@@ -417,14 +417,14 @@ document.getElementById("chestOverlay").addEventListener("click", (event) => {
 // bag functions
 function openBag() {
   moving = false;
-   bag.opened = true;
+  bag.opened = true;
 
   document.getElementById("bagOverlay").style.display = "flex";
 }
 
 function closeBag() {
   moving = true;
-   bag.opened = false;
+  bag.opened = false;
 
   document.getElementById("bagOverlay").style.display = "none";
 }
@@ -562,7 +562,7 @@ function renderUseItemOverlay(item) {
           ? equipItem(item, starter)
           : useItemOnStarter(item, starter);
       }
-       document.getElementById("useItemOverlay").style.display = "none";
+      document.getElementById("useItemOverlay").style.display = "none";
     });
 
     container.appendChild(cell);
