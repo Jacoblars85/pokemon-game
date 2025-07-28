@@ -160,7 +160,6 @@ SELECT "user_characters"."id" as "id",
     .query(query, sqlValues)
     .then((result) => {
       for (const character of result.rows) {
-
         const multiplier = Math.floor(Number(character.xp_level)) / 5;
 
         const baseHp = character.base_hp * multiplier;
