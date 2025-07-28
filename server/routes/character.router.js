@@ -177,10 +177,10 @@ SELECT "user_characters"."id" as "id",
           character.item_id !== null ? character.item_damage : 0;
 
         // Set max (or scaled) stats
-        character.max_hp = baseHp + itemHp;
-        character.max_stamina = baseStamina + itemStamina;
-        character.speed = baseSpeed + itemSpeed;
-        character.attack_damage = baseDamage + itemDamage;
+        character.max_hp = Math.round(baseHp) + itemHp;
+        character.max_stamina = Math.round(baseStamina) + itemStamina;
+        character.speed = Math.round(baseSpeed) + itemSpeed;
+        character.attack_damage = Math.round(baseDamage) + itemDamage;
 
         // Keep current values separate and clamped later
         if (character.hp > character.max_hp) character.hp = character.max_hp;
