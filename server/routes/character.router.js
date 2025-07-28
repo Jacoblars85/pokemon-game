@@ -289,9 +289,6 @@ SELECT "user_characters"."id" as "id",
         starter.speed = Math.round(baseSpeed) + itemSpeed;
         starter.attack_damage = Math.round(baseDamage) + itemDamage;
 
-        console.log("starter", starter.hp);
-        console.log("starter", starter.max_hp);
-
         // Keep current values separate and clamped later
         if (starter.hp > starter.max_hp) starter.hp = starter.max_hp;
         if (starter.stamina > starter.max_stamina)
