@@ -212,6 +212,10 @@ const pc = {
   opened: false,
 };
 
+const bag = {
+  opened: false,
+};
+
 let movables;
 
 let moving = true;
@@ -413,12 +417,14 @@ document.getElementById("chestOverlay").addEventListener("click", (event) => {
 // bag functions
 function openBag() {
   moving = false;
+   bag.opened = true;
 
   document.getElementById("bagOverlay").style.display = "flex";
 }
 
 function closeBag() {
   moving = true;
+   bag.opened = false;
 
   document.getElementById("bagOverlay").style.display = "none";
 }
@@ -621,7 +627,7 @@ function animate() {
   moving = true;
   player.animate = false;
 
-  if (battle.initiated || chest.opened || pc.opened) return;
+  if (battle.initiated || chest.opened || pc.opened || bag.opened) return;
 
   // open chest
   if (keys.e.pressed || keys.f.pressed) {
