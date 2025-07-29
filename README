@@ -1,4 +1,4 @@
-Problems:
+Tasks:
 
 1. create the new hp, speed and damage system
 2. add healer
@@ -8,9 +8,12 @@ Problems:
 6. stop movement when opening settings
 7. remove bag icon when in battle
 8. add boss or gym or event
-9. 
+9. making the chest not able to be opened again after user opens it
+10. if user loses, reset to last save point or spawn while losing $$
+11. finish the menu screen and settings functionality
 
 New Ideas:
 
 1. use math.random to choose enemies attacks and add the option to have multipe unique attacks per character
-2. make damage to characters permenent and add healing in house and use of items
+2. add merging characters to give boost to stats
+3. make the enemy into AI
