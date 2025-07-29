@@ -359,7 +359,7 @@ function animateHouse() {
     }
   }
 
-    // heal the current starters
+  // heal the current starters
   if (keys.e.pressed || keys.f.pressed) {
     for (let i = 0; i < houseHealerZones.length; i++) {
       const HealerZone = houseHealerZones[i];
@@ -370,13 +370,10 @@ function animateHouse() {
           rectangle2: HealerZone,
         })
       ) {
-console.log('am i healing the starters?');
-
+        console.log("am i healing the starters?");
       }
     }
   }
-
-  
 
   // moving in all directions
   movementIf(houseBoundaries);
