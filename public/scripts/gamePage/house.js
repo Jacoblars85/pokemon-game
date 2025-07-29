@@ -16,7 +16,6 @@ for (let i = 0; i < housePcZonesArray.length; i += 50) {
   housePcZonesMap.push(housePcZonesArray.slice(i, 50 + i));
 }
 
-
 const houseHealerZonesMap = [];
 
 for (let i = 0; i < houseHealerZonesArray.length; i += 50) {
@@ -293,7 +292,7 @@ function animateHouse() {
     housePcZone.draw();
   });
 
-    houseHealerZones.forEach((houseHealerZone) => {
+  houseHealerZones.forEach((houseHealerZone) => {
     houseHealerZone.draw();
   });
 
