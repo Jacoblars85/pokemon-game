@@ -308,7 +308,7 @@ function animateHouse() {
   moving = true;
   player.animate = false;
 
-  if (battle.initiated || chest.opened || pc.opened) return;
+  if (battle.initiated || chest.opened || pc.opened || bag.opened) return;
 
   // open door back to explore
   if (keys.e.pressed || keys.f.pressed) {
