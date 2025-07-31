@@ -303,6 +303,7 @@ function animateHouse() {
     ...houseBoundaries,
     ...houseDoorZones,
     ...housePcZones,
+    ...houseHealerZones,
   ];
 
   moving = true;
