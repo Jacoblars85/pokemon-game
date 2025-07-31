@@ -282,6 +282,9 @@ function renderStarterGrid(containerElement) {
   }
 }
 
+let currentPage = 0;
+const itemsPerPage = 35;
+
 function renderPcGrid() {
   document.getElementById("pcBody").innerHTML = "";
 
