@@ -81,12 +81,14 @@ function goBackButton() {
 
 function openSettingsDialog() {
   moving = false;
+  settings.opened = true;
 
   document.getElementById("settingsOverlay").style.display = "flex";
 }
 
 function closeSettingsDialog() {
   moving = true;
+  settings.opened = false;
 
   document.getElementById("settingsOverlay").style.display = "none";
 
