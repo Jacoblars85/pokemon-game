@@ -216,6 +216,10 @@ const bag = {
   opened: false,
 };
 
+const settings = {
+  opened: false,
+};
+
 let movables;
 
 let moving = true;
@@ -627,7 +631,7 @@ function animate() {
   moving = true;
   player.animate = false;
 
-  if (battle.initiated || chest.opened || pc.opened || bag.opened) return;
+  if (battle.initiated || chest.opened || pc.opened || bag.opened || settings.opened) return;
 
   // open chest
   if (keys.e.pressed || keys.f.pressed) {
