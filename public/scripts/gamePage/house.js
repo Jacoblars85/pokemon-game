@@ -200,8 +200,8 @@ document
     }
   });
 
-let currentPage = 0;
-const itemsPerPage = 35;
+// let currentPage = 0;
+// const itemsPerPage = 35;
 
 // function renderPcGrid() {
 //   document.getElementById("pcBody").innerHTML = "";
