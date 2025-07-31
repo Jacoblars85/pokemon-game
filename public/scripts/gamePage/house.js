@@ -372,7 +372,7 @@ function animateHouse() {
       ) {
         console.log("am i healing the starters?");
 
-        healStarters()
+        healStarters();
       }
     }
   }
