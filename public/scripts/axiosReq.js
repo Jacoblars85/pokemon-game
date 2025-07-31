@@ -796,7 +796,7 @@ function putStarterSwitching(newStarterInfo) {
 }
 
 function healStarters() {
-    axios({
+  axios({
     method: "PUT",
     url: `http://localhost:5001/api/characters/heal/starters`,
     withCredentials: true,
