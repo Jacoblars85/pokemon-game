@@ -57,24 +57,6 @@ function changeUsernameDialog() {
 `;
 }
 
-// function resetSettingsBody() {
-//   document.getElementById("settingsBody").innerHTML = `
-//  <button class="btn">
-//             <a href="../mainMenuPage/mainMenu.html">Main Menu</a>
-//           </button>
-//           <button class="btn" onclick="deleteUserDialog()">
-//             Delete Account
-//           </button>
-//           <button class="btn" onclick="changeUsernameDialog()">
-//             Change Name
-//           </button>
-//           <button class="btn" onclick="logoutUser()">
-//             <a href="../loginPage/login.html">Log Out</a>
-//           </button>
-
-// `;
-// }
-
 function goBackButton() {
   window.history.back();
 }
@@ -120,7 +102,5 @@ function resetSettingsBody() {
           <button class="btn" onclick="logoutUser()">
             <a href="../loginPage/login.html">Log Out</a>
           </button>
-
-
 `;
 }
