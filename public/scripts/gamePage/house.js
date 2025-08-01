@@ -278,7 +278,8 @@ function animateHouse() {
     chest.opened ||
     pc.opened ||
     bag.opened ||
-    settings.opened
+    settings.opened ||
+    healing.started
   )
     return;
 
