@@ -518,15 +518,14 @@ function resetBattleFunc() {
 
         let baseOdds = Math.random();
         let itemCaptureBonus = itemBeingUsed.item_capture_rate;
-let totalOdds = Math.min(1, baseOdds + itemCaptureBonus);
+        let totalOdds = Math.min(1, baseOdds + itemCaptureBonus);
 
-const levelDiff = enemy.level - Number(currentStarter.level);
+        const levelDiff = enemy.level - Number(currentStarter.level);
 
         console.log("baseOdds", baseOdds);
         console.log("itemCaptureBonus", itemCaptureBonus);
         console.log("totalOdds", totalOdds);
         console.log("levelDiff", levelDiff);
-
 
         let numOfShakes = 1;
 
@@ -536,8 +535,8 @@ const levelDiff = enemy.level - Number(currentStarter.level);
           if (levelDiff >= 0 && totalOdds < 0.35) {
             isCaught = false;
           } else if (
-              (levelDiff >= 0 && totalOdds < 0.7) ||
-  (levelDiff < 0 && totalOdds < 0.4)
+            (levelDiff >= 0 && totalOdds < 0.7) ||
+            (levelDiff < 0 && totalOdds < 0.4)
           ) {
             isCaught = false;
             numOfShakes = 2;
