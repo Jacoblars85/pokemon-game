@@ -516,7 +516,11 @@ function resetBattleFunc() {
           }
         }
 
-        let oddsOfCatching = Math.random();
+        let baseOdds = Math.random();
+        let itemCaptureBonus = itemBeingUsed.item_capture_rate;
+let totalOdds = Math.min(1, baseOdds + itemCaptureBonus);
+
+const levelDiff = enemy.level - currentStarter.level;
 
         console.log("oddsOfCatching", oddsOfCatching);
 
