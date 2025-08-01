@@ -35,6 +35,7 @@ function fadeBackToExplore() {
       getEnemy(randomEnemy);
       animate();
       document.getElementById("battleInterface").style.display = "none";
+      document.getElementById("bagButton").style.display = "block";
       gsap.to("#fadeOutDiv", {
         opacity: 0,
       });
