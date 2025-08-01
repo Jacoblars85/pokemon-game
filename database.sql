@@ -76,6 +76,7 @@ CREATE TABLE "items" (
 	"item_stamina" INT, 
 	"item_speed" INT,
 	"item_damage" INT,
+	"item_capture_rate" INT,
 	"item_pic" VARCHAR(100),
 	"item_cost" INT,
 	"item_color" VARCHAR(25));
@@ -241,13 +242,13 @@ INSERT INTO "levels"
 	
 	
 INSERT INTO "items" 
-	("item_name", "item_type", "item_hp", "item_stamina", "item_speed", "item_damage", "item_pic", "item_cost", "item_color")
+	("item_name", "item_type", "item_hp", "item_stamina", "item_speed", "item_damage", "item_capture_rate", "item_pic", "item_cost", "item_color")
 	VALUES 
-	('poke ball', 'throwable', 0, 0, 0, 0, '../../images/throwables/YellowBall.png', 20, '#000000'),
-	('great ball', 'throwable', 0, 0, 0, 0, '../../images/throwables/WhiteBall.png', 50, '#000000'),
-	('ultra ball', 'throwable', 0, 0, 0, 0, '../../images/throwables/RedBall.png', 75, '#000000'),
-	('premium ball', 'throwable', 0, 0, 0, 0, '../../images/throwables/SuperWhiteBall.png', 100, '#000000'),
-	('master ball', 'throwable', 0, 0, 0, 0, '../../images/throwables/SuperRedBall.png', 200, '#000000'),
+	('poke ball', 'throwable', 0, 0, 0, 0, 40, '../../images/throwables/YellowBall.png', 20, '#000000'),
+	('great ball', 'throwable', 0, 0, 0, 0, 50, '../../images/throwables/WhiteBall.png', 50, '#000000'),
+	('ultra ball', 'throwable', 0, 0, 0, 0, 60, '../../images/throwables/RedBall.png', 75, '#000000'),
+	('premium ball', 'throwable', 0, 0, 0, 0, 70, '../../images/throwables/SuperWhiteBall.png', 100, '#000000'),
+	('master ball', 'throwable', 0, 0, 0, 0, 100, '../../images/throwables/SuperRedBall.png', 200, '#000000'),
 	('healing pot', 'consumable', 50, 0, 0, 0, '../../images/consumables/LifePot.png', 10, '#FF0100'),
 	('stamina pot', 'consumable', 0, 70, 0, 0, '../../images/consumables/WaterPot.png', 10, '#00D400'),
 	('speed pot', 'consumable', 0, 50, 10, 0, '../../images/consumables/Honey.png', 40, '#FF9A1E'),
