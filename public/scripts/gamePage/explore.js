@@ -733,6 +733,7 @@ function animate() {
               onComplete() {
                 initBattle();
                 animateBattle();
+                        document.getElementById("bagButton").style.display = "none";
 
                 gsap.to("#fadeOutDiv", {
                   opacity: 0,
