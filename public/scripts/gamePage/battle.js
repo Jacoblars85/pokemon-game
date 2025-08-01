@@ -529,11 +529,11 @@ const levelDiff = enemy.level - currentStarter.level;
         let isCaught = false;
 
         if (itemBeingUsed.item_type === "throwable") {
-          if (enemy.level >= currentStarter.level && oddsOfCatching < 0.35) {
+          if (levelDiff >= 0 && totalOdds < 0.35) {
             isCaught = false;
           } else if (
-            (enemy.level >= currentStarter.level && oddsOfCatching < 0.7) ||
-            (enemy.level < currentStarter.level && oddsOfCatching < 0.4)
+              (levelDiff >= 0 && totalOdds < 0.7) ||
+  (levelDiff < 0 && totalOdds < 0.4)
           ) {
             isCaught = false;
             numOfShakes = 2;
