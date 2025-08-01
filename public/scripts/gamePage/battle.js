@@ -520,9 +520,13 @@ function resetBattleFunc() {
         let itemCaptureBonus = itemBeingUsed.item_capture_rate;
 let totalOdds = Math.min(1, baseOdds + itemCaptureBonus);
 
-const levelDiff = enemy.level - currentStarter.level;
+const levelDiff = enemy.level - Number(currentStarter.level);
 
-        console.log("oddsOfCatching", oddsOfCatching);
+        console.log("baseOdds", baseOdds);
+        console.log("itemCaptureBonus", itemCaptureBonus);
+        console.log("totalOdds", totalOdds);
+        console.log("levelDiff", levelDiff);
+
 
         let numOfShakes = 1;
 
