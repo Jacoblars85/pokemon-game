@@ -516,7 +516,7 @@ function resetBattleFunc() {
           }
         }
 
-        // let baseOdds = Math.random();
+        let randomRoll = Math.random();
         // let itemCaptureBonus = itemBeingUsed.item_capture_rate;
         // let totalOdds = Math.min(1, baseOdds + itemCaptureBonus);
 
@@ -527,37 +527,36 @@ function resetBattleFunc() {
         // console.log("totalOdds", totalOdds);
         // console.log("levelDiff", levelDiff);
 
-        let numOfShakes = 1;
+        let numOfShakes = 0;
 
         let isCaught = false;
 
 
         const hpFactor = 1 - (enemy.hp / enemy.max_hp);
-const levelFactor = (currentStarter.level + 2) / (enemy.level + 2);
+const levelFactor = (Number(currentStarter.level) + 2) / (enemy.level + 2);
 
 let baseCatchChance = hpFactor * levelFactor;
 let finalCatchChance = baseCatchChance * Number(itemBeingUsed.item_capture_rate);
 
 finalCatchChance = Math.min(finalCatchChance, 1); 
 
-isCaught = Math.random() < finalCatchChance;
+console.log('finalCatchChance', finalCatchChance);
+console.log('randomRoll', randomRoll);
+console.log('baseCatchChance', baseCatchChance);
+
+
+
 
 
 
         if (itemBeingUsed.item_type === "throwable") {
-          if (levelDiff >= 0 && totalOdds < 0.35) {
-            isCaught = false;
-          } else if (
-            (levelDiff >= 0 && totalOdds < 0.7) ||
-            (levelDiff < 0 && totalOdds < 0.4)
-          ) {
-            isCaught = false;
-            numOfShakes = 2;
-          } else {
-            isCaught = true;
-            numOfShakes = 3;
+          if (randomRoll < finalCatchChance) {
+            console.log('caught');
+            
+  isCaught = true;
+  numOfShakes = 3;
 
-            let newCharacter = {
+              let newCharacter = {
               characterId: enemy.id,
               level: enemy.level,
               health: enemy.health,
@@ -572,7 +571,55 @@ isCaught = Math.random() < finalCatchChance;
             queue.push(() => {
               fadeBackToExplore();
             });
-          }
+
+} else if (randomRoll < finalCatchChance * 0.7) {
+            console.log('2 shake');
+
+  // Close call — almost caught
+  isCaught = false;
+  numOfShakes = 2;
+} else if (randomRoll < finalCatchChance * 0.4) {
+            console.log('1 shake');
+
+  // Not very close
+  isCaught = false;
+  numOfShakes = 1;
+} else {
+            console.log('0 shake');
+
+  // Total fail
+  isCaught = false;
+  numOfShakes = 0;
+}
+
+          // if (levelDiff >= 0 && totalOdds < 0.35) {
+          //   isCaught = false;
+          // } else if (
+          //   (levelDiff >= 0 && totalOdds < 0.7) ||
+          //   (levelDiff < 0 && totalOdds < 0.4)
+          // ) {
+          //   isCaught = false;
+          //   numOfShakes = 2;
+          // } else {
+          //   isCaught = true;
+          //   numOfShakes = 3;
+
+          //   let newCharacter = {
+          //     characterId: enemy.id,
+          //     level: enemy.level,
+          //     health: enemy.health,
+          //     stamina: enemy.stamina,
+          //     maxHealth: enemy.maxHealth,
+          //     maxStamina: enemy.maxStamina,
+          //   };
+
+          //   postNewUserCharacter(newCharacter);
+          //   putWonBattle(winningInfo);
+
+          //   queue.push(() => {
+          //     fadeBackToExplore();
+          //   });
+          // }
         }
 
         currentStarter.usingItem({
