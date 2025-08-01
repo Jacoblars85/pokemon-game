@@ -343,13 +343,11 @@ function animateHouse() {
           rectangle2: HealerZone,
         })
       ) {
-        healing.started = true
-
-       
+        healing.started = true;
 
         setTimeout(() => {
-           healStarters();
-           healing.started = false
+          healStarters();
+          healing.started = false;
         }, 3000);
       }
     }
