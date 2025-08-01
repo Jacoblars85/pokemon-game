@@ -220,6 +220,10 @@ const settings = {
   opened: false,
 };
 
+const healing = {
+  started: false,
+};
+
 let movables;
 
 let moving = true;
@@ -636,7 +640,8 @@ function animate() {
     chest.opened ||
     pc.opened ||
     bag.opened ||
-    settings.opened
+    settings.opened ||
+    healing.started
   )
     return;
 
