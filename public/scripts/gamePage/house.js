@@ -343,7 +343,7 @@ function animateHouse() {
           rectangle2: HealerZone,
         })
       ) {
-        console.log("am i healing the starters?");
+        healing.started = true
 
         healStarters();
       }
