@@ -345,7 +345,12 @@ function animateHouse() {
       ) {
         healing.started = true
 
-        healStarters();
+       
+
+        setTimeout(() => {
+           healStarters();
+           healing.started = false
+        }, 3000);
       }
     }
   }
