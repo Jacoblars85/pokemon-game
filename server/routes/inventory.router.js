@@ -68,6 +68,7 @@ router.get("/throwable", (req, res) => {
         "item_stamina",
         "item_speed",
         "item_damage",
+        "item_capture_rate",
         "item_pic",
         "item_cost",
         "item_color"
@@ -95,6 +96,7 @@ router.get("/all/items", (req, res) => {
         "item_stamina",
         "item_speed",
         "item_damage",
+        "item_capture_rate",
         "item_pic",
         "item_cost",
         "item_color"
@@ -127,6 +129,7 @@ router.get("/user/inventory", (req, res) => {
             "items"."item_type",
             "items"."item_speed",
             "items"."item_damage",
+            "items"."item_capture_rate",
             "items"."item_cost",
             "items"."item_color"
     FROM "user_inventory"
@@ -232,6 +235,7 @@ router.get("/user/throwable", (req, res) => {
             "items"."item_type",
             "items"."item_speed",
             "items"."item_damage",
+            "items"."item_capture_rate",
             "items"."item_cost",
             "items"."item_color"
     FROM "user_inventory"
@@ -267,6 +271,7 @@ router.get("/user/battle/items", (req, res) => {
             "items"."item_type",
             "items"."item_speed",
             "items"."item_damage",
+            "items"."item_capture_rate",
             "items"."item_cost",
             "items"."item_color"
     FROM "user_inventory"
