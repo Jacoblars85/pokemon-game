@@ -531,7 +531,7 @@ function resetBattleFunc() {
 
         let isCaught = false;
 
-        const hpFactor = 1 - enemy.hp / enemy.max_hp;
+        const hpFactor = 1 - enemy.health / enemy.maxHealth;
         const levelFactor =
           (Number(currentStarter.level) + 2) / (enemy.level + 2);
 
@@ -540,6 +540,10 @@ function resetBattleFunc() {
           baseCatchChance * Number(itemBeingUsed.item_capture_rate);
 
         finalCatchChance = Math.min(finalCatchChance, 1);
+
+        console.log("hpFactor", hpFactor);
+        console.log("levelFactor", levelFactor);
+        console.log("finalCatchChance", finalCatchChance);
 
         console.log("finalCatchChance", finalCatchChance);
         console.log("randomRoll", randomRoll);
