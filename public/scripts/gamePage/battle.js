@@ -522,10 +522,7 @@ function resetBattleFunc() {
 
         // const levelDiff = enemy.level - Number(currentStarter.level);
 
-        // console.log("baseOdds", baseOdds);
-        // console.log("itemCaptureBonus", itemCaptureBonus);
-        // console.log("totalOdds", totalOdds);
-        // console.log("levelDiff", levelDiff);
+
 
         let numOfShakes = 0;
 
@@ -543,11 +540,10 @@ function resetBattleFunc() {
 
         console.log("hpFactor", hpFactor);
         console.log("levelFactor", levelFactor);
-        console.log("finalCatchChance", finalCatchChance);
-
+        console.log("baseCatchChance", baseCatchChance);
+        console.log("Number(itemBeingUsed.item_capture_rate)", Number(itemBeingUsed.item_capture_rate));
         console.log("finalCatchChance", finalCatchChance);
         console.log("randomRoll", randomRoll);
-        console.log("baseCatchChance", baseCatchChance);
 
         if (itemBeingUsed.item_type === "throwable") {
           if (randomRoll < finalCatchChance) {
