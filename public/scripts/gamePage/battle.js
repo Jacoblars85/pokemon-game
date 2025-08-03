@@ -531,32 +531,28 @@ function resetBattleFunc() {
 
         let isCaught = false;
 
+        const hpFactor = 1 - enemy.hp / enemy.max_hp;
+        const levelFactor =
+          (Number(currentStarter.level) + 2) / (enemy.level + 2);
 
-        const hpFactor = 1 - (enemy.hp / enemy.max_hp);
-const levelFactor = (Number(currentStarter.level) + 2) / (enemy.level + 2);
+        let baseCatchChance = hpFactor * levelFactor;
+        let finalCatchChance =
+          baseCatchChance * Number(itemBeingUsed.item_capture_rate);
 
-let baseCatchChance = hpFactor * levelFactor;
-let finalCatchChance = baseCatchChance * Number(itemBeingUsed.item_capture_rate);
+        finalCatchChance = Math.min(finalCatchChance, 1);
 
-finalCatchChance = Math.min(finalCatchChance, 1); 
-
-console.log('finalCatchChance', finalCatchChance);
-console.log('randomRoll', randomRoll);
-console.log('baseCatchChance', baseCatchChance);
-
-
-
-
-
+        console.log("finalCatchChance", finalCatchChance);
+        console.log("randomRoll", randomRoll);
+        console.log("baseCatchChance", baseCatchChance);
 
         if (itemBeingUsed.item_type === "throwable") {
           if (randomRoll < finalCatchChance) {
-            console.log('caught');
-            
-  isCaught = true;
-  numOfShakes = 3;
+            console.log("caught");
 
-              let newCharacter = {
+            isCaught = true;
+            numOfShakes = 3;
+
+            let newCharacter = {
               characterId: enemy.id,
               level: enemy.level,
               health: enemy.health,
@@ -571,26 +567,25 @@ console.log('baseCatchChance', baseCatchChance);
             queue.push(() => {
               fadeBackToExplore();
             });
+          } else if (randomRoll < finalCatchChance * 0.7) {
+            console.log("2 shake");
 
-} else if (randomRoll < finalCatchChance * 0.7) {
-            console.log('2 shake');
+            // Close call — almost caught
+            isCaught = false;
+            numOfShakes = 2;
+          } else if (randomRoll < finalCatchChance * 0.4) {
+            console.log("1 shake");
 
-  // Close call — almost caught
-  isCaught = false;
-  numOfShakes = 2;
-} else if (randomRoll < finalCatchChance * 0.4) {
-            console.log('1 shake');
+            // Not very close
+            isCaught = false;
+            numOfShakes = 1;
+          } else {
+            console.log("0 shake");
 
-  // Not very close
-  isCaught = false;
-  numOfShakes = 1;
-} else {
-            console.log('0 shake');
-
-  // Total fail
-  isCaught = false;
-  numOfShakes = 0;
-}
+            // Total fail
+            isCaught = false;
+            numOfShakes = 0;
+          }
 
           // if (levelDiff >= 0 && totalOdds < 0.35) {
           //   isCaught = false;
