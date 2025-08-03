@@ -271,23 +271,21 @@ class Character extends Sprite {
           } else if (numOfShakes === 0) {
             console.log("didnt catch 0 shake");
 
-
-                          gsap.to(throwableFx.position, {
+            gsap.to(throwableFx.position, {
               x: throwableFx.position.x,
               delay: 0.5,
 
-                  onComplete: () => {
-                    gsap.to(recipient, {
-                      opacity: 1,
-                      duration: 1,
-                    });
-                    document.getElementById("dialogueBox").innerHTML =
-                      "you failed to catch " + recipient.name;
-                    renderedSprites.splice(2, 1);
-                    isAnimating = false;
-                  },
+              onComplete: () => {
+                gsap.to(recipient, {
+                  opacity: 1,
+                  duration: 1,
+                });
+                document.getElementById("dialogueBox").innerHTML =
+                  "you failed to catch " + recipient.name;
+                renderedSprites.splice(2, 1);
+                isAnimating = false;
+              },
             });
-
           } else if (numOfShakes === 1) {
             console.log("didnt catch 1 shake");
 
