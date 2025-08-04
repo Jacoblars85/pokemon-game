@@ -526,7 +526,7 @@ function resetBattleFunc() {
 
         let isCaught = false;
 
-        const hpFactor = 1 - enemy.health / enemy.maxHealth;
+        const hpFactor = Math.max(0.2, (1 - enemy.health / enemy.maxHealth));
         const levelFactor =
           (Number(currentStarter.level) + 2) / (enemy.level + 2);
 
