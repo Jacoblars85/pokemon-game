@@ -244,11 +244,11 @@ INSERT INTO "levels"
 INSERT INTO "items" 
 	("item_name", "item_type", "item_hp", "item_stamina", "item_speed", "item_damage", "item_capture_rate", "item_pic", "item_cost", "item_color")
 	VALUES 
-	('poke ball', 'throwable', 0, 0, 0, 0, 0.1, '../../images/throwables/YellowBall.png', 20, '#000000'),
-	('great ball', 'throwable', 0, 0, 0, 0, 0.2, '../../images/throwables/WhiteBall.png', 50, '#000000'),
-	('ultra ball', 'throwable', 0, 0, 0, 0, 0.3, '../../images/throwables/RedBall.png', 75, '#000000'),
-	('premium ball', 'throwable', 0, 0, 0, 0, 0.4, '../../images/throwables/SuperWhiteBall.png', 100, '#000000'),
-	('master ball', 'throwable', 0, 0, 0, 0, 1.0, '../../images/throwables/SuperRedBall.png', 200, '#000000'),
+	('poke ball', 'throwable', 0, 0, 0, 0, 1.1, '../../images/throwables/YellowBall.png', 20, '#000000'),
+	('great ball', 'throwable', 0, 0, 0, 0, 1.2, '../../images/throwables/WhiteBall.png', 50, '#000000'),
+	('ultra ball', 'throwable', 0, 0, 0, 0, 1.3, '../../images/throwables/RedBall.png', 75, '#000000'),
+	('premium ball', 'throwable', 0, 0, 0, 0, 1.4, '../../images/throwables/SuperWhiteBall.png', 100, '#000000'),
+	('master ball', 'throwable', 0, 0, 0, 0, 9, '../../images/throwables/SuperRedBall.png', 200, '#000000'),
 	('healing pot', 'consumable', 50, 0, 0, 0, 0, '../../images/consumables/LifePot.png', 10, '#FF0100'),
 	('stamina pot', 'consumable', 0, 70, 0, 0, 0, '../../images/consumables/WaterPot.png', 10, '#00D400'),
 	('speed pot', 'consumable', 0, 50, 10, 0, 0, '../../images/consumables/Honey.png', 40, '#FF9A1E'),
