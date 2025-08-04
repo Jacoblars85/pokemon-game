@@ -547,7 +547,7 @@ function resetBattleFunc() {
         console.log("randomRoll", randomRoll);
 
         if (itemBeingUsed.item_type === "throwable") {
-          if (randomRoll < finalCatchChance) {
+          if (randomRoll < finalCatchChance || Number(itemBeingUsed.item_capture_rate) === 9) {
             console.log("caught");
 
             isCaught = true;
