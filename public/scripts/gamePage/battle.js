@@ -522,8 +522,6 @@ function resetBattleFunc() {
 
         // const levelDiff = enemy.level - Number(currentStarter.level);
 
-
-
         let numOfShakes = 0;
 
         let isCaught = false;
@@ -541,7 +539,10 @@ function resetBattleFunc() {
         console.log("hpFactor", hpFactor);
         console.log("levelFactor", levelFactor);
         console.log("baseCatchChance", baseCatchChance);
-        console.log("Number(itemBeingUsed.item_capture_rate)", Number(itemBeingUsed.item_capture_rate));
+        console.log(
+          "Number(itemBeingUsed.item_capture_rate)",
+          Number(itemBeingUsed.item_capture_rate)
+        );
         console.log("finalCatchChance", finalCatchChance);
         console.log("randomRoll", randomRoll);
 
