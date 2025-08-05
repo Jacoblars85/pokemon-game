@@ -368,6 +368,7 @@ function resetBattleFunc() {
                 });
 
                 queue.push(() => {
+                  resetToStart()
                   fadeBackToExplore();
                   healStarters();
                 });
@@ -409,6 +410,7 @@ function resetBattleFunc() {
               });
 
               queue.push(() => {
+                resetToStart()
                 fadeBackToExplore();
                 healStarters();
               });
@@ -503,6 +505,7 @@ function resetBattleFunc() {
                 });
 
                 queue.push(() => {
+                  resetToStart()
                   fadeBackToExplore();
                   healStarters();
                 });
@@ -642,6 +645,7 @@ function resetBattleFunc() {
                 });
 
                 queue.push(() => {
+                  resetToStart()
                   fadeBackToExplore();
                   healStarters();
                 });
@@ -707,6 +711,7 @@ function resetBattleFunc() {
                   });
 
                   queue.push(() => {
+                    resetToStart()
                     fadeBackToExplore();
                     healStarters();
                   });
