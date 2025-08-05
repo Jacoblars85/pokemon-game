@@ -44,6 +44,21 @@ function fadeBackToExplore() {
   });
 }
 
+function resetToStart() {
+  const canvasCenter = {
+    x: canvas.width / 2,
+    y: canvas.height / 2
+  };
+
+  const offsetX = canvasCenter.x - startingWorldPosition.x;
+  const offsetY = canvasCenter.y - startingWorldPosition.y;
+
+  movables.forEach((obj) => {
+    obj.position.x = obj.originalPosition.x + offsetX;
+    obj.position.y = obj.originalPosition.y + offsetY;
+  });
+}
+
 // func to reset the display for the attack box
 function resetBattleFunc() {
   document.getElementById("attackBox").innerHTML = "";
