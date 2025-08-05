@@ -51,7 +51,7 @@ const offset = {
 
 const startingWorldPosition = {
   x: 440, // The x position in the world where the player "starts"
-  y: -100   // The y position in the world where the player "starts"
+  y: -100, // The y position in the world where the player "starts"
 };
 
 const boundaries = [];
@@ -637,13 +637,12 @@ function animate() {
     ...doorZones,
   ];
 
-
-movables.forEach((obj) => {
-  obj.originalPosition = {
-    x: obj.position.x,
-    y: obj.position.y
-  };
-});
+  movables.forEach((obj) => {
+    obj.originalPosition = {
+      x: obj.position.x,
+      y: obj.position.y,
+    };
+  });
 
   moving = true;
   player.animate = false;
@@ -746,7 +745,7 @@ movables.forEach((obj) => {
               onComplete() {
                 initBattle();
                 animateBattle();
-                        document.getElementById("bagButton").style.display = "none";
+                document.getElementById("bagButton").style.display = "none";
 
                 gsap.to("#fadeOutDiv", {
                   opacity: 0,
