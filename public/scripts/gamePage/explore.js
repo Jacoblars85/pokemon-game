@@ -49,6 +49,11 @@ const offset = {
   y: -5990,
 };
 
+const startingWorldPosition = {
+  x: 1200, // The x position in the world where the player "starts"
+  y: 800   // The y position in the world where the player "starts"
+};
+
 const boundaries = [];
 
 collisionsMap.forEach((row, i) => {
