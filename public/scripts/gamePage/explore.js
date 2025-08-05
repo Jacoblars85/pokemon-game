@@ -637,6 +637,14 @@ function animate() {
     ...doorZones,
   ];
 
+
+movables.forEach((obj) => {
+  obj.originalPosition = {
+    x: obj.position.x,
+    y: obj.position.y
+  };
+});
+
   moving = true;
   player.animate = false;
 
