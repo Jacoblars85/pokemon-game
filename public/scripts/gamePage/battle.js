@@ -516,13 +516,12 @@ function resetBattleFunc() {
           }
         }
 
-
         let numOfShakes = 0;
         let isCaught = false;
 
         let randomRoll = Math.random();
 
-        const hpFactor = Math.max(0.2, (1 - enemy.health / enemy.maxHealth));
+        const hpFactor = Math.max(0.2, 1 - enemy.health / enemy.maxHealth);
         const levelFactor =
           (Math.floor(Number(currentStarter.level)) + 2) / (enemy.level + 2);
 
@@ -543,11 +542,13 @@ function resetBattleFunc() {
         );
         console.log("finalCatchChance", finalCatchChance);
         console.log("randomRoll", randomRoll);
-        console.log('margin', margin);
-        
+        console.log("margin", margin);
 
         if (itemBeingUsed.item_type === "throwable") {
-          if (randomRoll < finalCatchChance || Number(itemBeingUsed.item_capture_rate) === 9) {
+          if (
+            randomRoll < finalCatchChance ||
+            Number(itemBeingUsed.item_capture_rate) === 9
+          ) {
             console.log("caught");
 
             isCaught = true;
@@ -568,13 +569,13 @@ function resetBattleFunc() {
             queue.push(() => {
               fadeBackToExplore();
             });
-          } else if (margin  > -0.15) {
+          } else if (margin > -0.15) {
             console.log("2 shake");
 
             // Close call — almost caught
             isCaught = false;
             numOfShakes = 2;
-          } else if (margin  > -0.3) {
+          } else if (margin > -0.3) {
             console.log("1 shake");
 
             // Not very close
@@ -587,7 +588,6 @@ function resetBattleFunc() {
             isCaught = false;
             numOfShakes = 0;
           }
-
         }
 
         currentStarter.usingItem({
