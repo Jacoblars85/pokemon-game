@@ -516,16 +516,12 @@ function resetBattleFunc() {
           }
         }
 
-        let randomRoll = Math.random();
-        // let itemCaptureBonus = itemBeingUsed.item_capture_rate;
-        // let totalOdds = Math.min(1, baseOdds + itemCaptureBonus);
-
-        // const levelDiff = enemy.level - Number(currentStarter.level);
 
         let numOfShakes = 0;
-
         let isCaught = false;
 
+        let randomRoll = Math.random();
+        
         const hpFactor = Math.max(0.2, (1 - enemy.health / enemy.maxHealth));
         const levelFactor =
           (Math.floor(Number(currentStarter.level)) + 2) / (enemy.level + 2);
