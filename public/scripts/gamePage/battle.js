@@ -521,7 +521,7 @@ function resetBattleFunc() {
         let isCaught = false;
 
         let randomRoll = Math.random();
-        
+
         const hpFactor = Math.max(0.2, (1 - enemy.health / enemy.maxHealth));
         const levelFactor =
           (Math.floor(Number(currentStarter.level)) + 2) / (enemy.level + 2);
@@ -588,34 +588,6 @@ function resetBattleFunc() {
             numOfShakes = 0;
           }
 
-          // if (levelDiff >= 0 && totalOdds < 0.35) {
-          //   isCaught = false;
-          // } else if (
-          //   (levelDiff >= 0 && totalOdds < 0.7) ||
-          //   (levelDiff < 0 && totalOdds < 0.4)
-          // ) {
-          //   isCaught = false;
-          //   numOfShakes = 2;
-          // } else {
-          //   isCaught = true;
-          //   numOfShakes = 3;
-
-          //   let newCharacter = {
-          //     characterId: enemy.id,
-          //     level: enemy.level,
-          //     health: enemy.health,
-          //     stamina: enemy.stamina,
-          //     maxHealth: enemy.maxHealth,
-          //     maxStamina: enemy.maxStamina,
-          //   };
-
-          //   postNewUserCharacter(newCharacter);
-          //   putWonBattle(winningInfo);
-
-          //   queue.push(() => {
-          //     fadeBackToExplore();
-          //   });
-          // }
         }
 
         currentStarter.usingItem({
