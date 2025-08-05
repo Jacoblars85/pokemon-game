@@ -50,8 +50,8 @@ const offset = {
 };
 
 const startingWorldPosition = {
-  x: 1200, // The x position in the world where the player "starts"
-  y: 800   // The y position in the world where the player "starts"
+  x: 440, // The x position in the world where the player "starts"
+  y: -100   // The y position in the world where the player "starts"
 };
 
 const boundaries = [];
