@@ -47,7 +47,7 @@ function fadeBackToExplore() {
 function resetToStart() {
   const canvasCenter = {
     x: canvas.width / 2,
-    y: canvas.height / 2
+    y: canvas.height / 2,
   };
 
   const offsetX = canvasCenter.x - startingWorldPosition.x;
@@ -368,7 +368,7 @@ function resetBattleFunc() {
                 });
 
                 queue.push(() => {
-                  resetToStart()
+                  resetToStart();
                   fadeBackToExplore();
                   healStarters();
                 });
@@ -410,7 +410,7 @@ function resetBattleFunc() {
               });
 
               queue.push(() => {
-                resetToStart()
+                resetToStart();
                 fadeBackToExplore();
                 healStarters();
               });
@@ -505,7 +505,7 @@ function resetBattleFunc() {
                 });
 
                 queue.push(() => {
-                  resetToStart()
+                  resetToStart();
                   fadeBackToExplore();
                   healStarters();
                 });
@@ -645,7 +645,7 @@ function resetBattleFunc() {
                 });
 
                 queue.push(() => {
-                  resetToStart()
+                  resetToStart();
                   fadeBackToExplore();
                   healStarters();
                 });
@@ -711,7 +711,7 @@ function resetBattleFunc() {
                   });
 
                   queue.push(() => {
-                    resetToStart()
+                    resetToStart();
                     fadeBackToExplore();
                     healStarters();
                   });
