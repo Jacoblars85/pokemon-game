@@ -46,15 +46,16 @@ function fadeBackToExplore() {
 
 // reset user back to start on loss
 function resetToStart() {
-  const canvasCenter = {
-    x: canvas.width / 2,
-    y: canvas.height / 2,
-  };
+  const offsetX = player.position.x - startingWorldPosition.x;
+  const offsetY = player.position.y - startingWorldPosition.y;
 
-  const offsetX = canvasCenter.x - startingWorldPosition.x;
-  const offsetY = canvasCenter.y - startingWorldPosition.y;
-
+  // make sure movables is the array that contains every object that moves
   movables.forEach((obj) => {
+    // Use originalPosition so we don't accumulate offsets
+    if (!obj.originalPosition) {
+      // fallback: if originalPosition wasn't saved, save it now based on current position
+      obj.originalPosition = { x: obj.position.x, y: obj.position.y };
+    }
     obj.position.x = obj.originalPosition.x + offsetX;
     obj.position.y = obj.originalPosition.y + offsetY;
   });
