@@ -637,7 +637,6 @@ function animate() {
     ...doorZones,
   ];
 
-
   moving = true;
   player.animate = false;
 
@@ -759,12 +758,12 @@ function animate() {
 }
 animate();
 
-  movables.forEach((obj) => {
-    obj.originalPosition = {
-      x: obj.position.x,
-      y: obj.position.y,
-    };
-  });
+movables.forEach((obj) => {
+  obj.originalPosition = {
+    x: obj.position.x,
+    y: obj.position.y,
+  };
+});
 
 let lastKey = "";
 
