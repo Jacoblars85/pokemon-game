@@ -50,8 +50,8 @@ const offset = {
 };
 
 const startingWorldPosition = {
-  x: 440,
-  y: -100,
+  x: 488,
+  y: 254,
 };
 
 const boundaries = [];
@@ -637,12 +637,12 @@ function animate() {
     ...doorZones,
   ];
 
-  movables.forEach((obj) => {
-    obj.originalPosition = {
-      x: obj.position.x,
-      y: obj.position.y,
-    };
-  });
+  // movables.forEach((obj) => {
+  //   obj.originalPosition = {
+  //     x: obj.position.x,
+  //     y: obj.position.y,
+  //   };
+  // });
 
   moving = true;
   player.animate = false;
@@ -764,6 +764,13 @@ function animate() {
   movementIf(boundaries);
 }
 animate();
+
+  movables.forEach((obj) => {
+    obj.originalPosition = {
+      x: obj.position.x,
+      y: obj.position.y,
+    };
+  });
 
 let lastKey = "";
 
