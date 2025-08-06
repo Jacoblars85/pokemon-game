@@ -58,6 +58,8 @@ function resetToStart() {
     obj.position.x = obj.originalPosition.x + offsetX;
     obj.position.y = obj.originalPosition.y + offsetY;
   });
+
+  player.image = player.sprites.down;
 }
 
 // func to reset the display for the attack box
