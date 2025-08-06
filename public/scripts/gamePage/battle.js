@@ -44,6 +44,7 @@ function fadeBackToExplore() {
   });
 }
 
+// reset user back to start on loss
 function resetToStart() {
   const canvasCenter = {
     x: canvas.width / 2,
