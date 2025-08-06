@@ -518,7 +518,7 @@ class Character extends Sprite {
         animate: true,
       });
 
-      renderedSprites.splice(3, 0, summonAttackFx);
+      renderedSprites.splice(2, 0, summonAttackFx);
 
       gsap.to(summonAttackFx.position, {
         x: recipient.position.x + 10,
@@ -544,7 +544,7 @@ class Character extends Sprite {
             },
           });
 
-          renderedSprites.splice(3, 1);
+          renderedSprites.splice(2, 1);
         },
       });
     } else if (attack.attack_type === "tired") {
