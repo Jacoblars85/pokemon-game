@@ -381,6 +381,23 @@ function animateHouse() {
     }
   }
 
+    // open shop to show all items
+  if (keys.e.pressed || keys.f.pressed) {
+    for (let i = 0; i < houseShopZones.length; i++) {
+      const shopZone = houseShopZones[i];
+
+      if (
+        rectangularCollisions({
+          rectangle1: player,
+          rectangle2: shopZone,
+        })
+      ) {
+        shop.opened = true;
+
+      }
+    }
+  }
+
   // moving in all directions
   movementIf(houseBoundaries);
 }
