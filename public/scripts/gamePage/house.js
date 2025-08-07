@@ -295,6 +295,7 @@ function animateHouse() {
     ...houseDoorZones,
     ...housePcZones,
     ...houseHealerZones,
+    ...houseShopZones,
   ];
 
   moving = true;
