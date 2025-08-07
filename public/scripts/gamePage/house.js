@@ -22,6 +22,12 @@ for (let i = 0; i < houseHealerZonesArray.length; i += 50) {
   houseHealerZonesMap.push(houseHealerZonesArray.slice(i, 50 + i));
 }
 
+const houseShopZonesMap = [];
+
+for (let i = 0; i < houseShopZonesArray.length; i += 50) {
+  houseShopZonesMap.push(houseShopZonesArray.slice(i, 50 + i));
+}
+
 const houseOffset = {
   x: -732,
   y: -1020,
