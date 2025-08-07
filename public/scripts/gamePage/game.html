@@ -380,6 +380,33 @@
       </div>
     </div>
 
+        <!-- shop interface -->
+    <div id="shopOverlay" class="overlay">
+      <div id="shopInterfacePopUp" class="shopInterface">
+        <h2 style="margin: 0px; font-size: 30px; text-shadow: 3px 3px 3px gray">
+          Shop
+        </h2>
+
+        <button class="btn" style="position: absolute; top: 0.5%; right: 0.5%; margin: 0" onclick="closeShop()">
+          X
+        </button>
+
+
+
+
+          <div id="shopBody" style="
+                background-color: darkgray;
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+                column-gap: 15px;
+                row-gap: 10px;
+                border: 3px solid black;
+              "></div>
+ 
+      </div>
+    </div>
+
     <!-- bag button -->
     <button id="bagButton" class="btn" style="position: absolute; top: 0.5%; right: 6.5%; margin: 0"
       onclick="openBag()">
