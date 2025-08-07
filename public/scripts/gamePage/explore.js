@@ -229,6 +229,10 @@ const healing = {
   started: false,
 };
 
+const shop = {
+  opened: false,
+};
+
 let movables;
 
 let moving = true;
@@ -646,7 +650,7 @@ function animate() {
     pc.opened ||
     bag.opened ||
     settings.opened ||
-    healing.started
+    healing.started || shop.opened
   )
     return;
 
