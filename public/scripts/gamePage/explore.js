@@ -650,7 +650,8 @@ function animate() {
     pc.opened ||
     bag.opened ||
     settings.opened ||
-    healing.started || shop.opened
+    healing.started ||
+    shop.opened
   )
     return;
 
