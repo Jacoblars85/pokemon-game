@@ -307,7 +307,7 @@ function animateHouse() {
     pc.opened ||
     bag.opened ||
     settings.opened ||
-    healing.started
+    healing.started || shop.opened
   )
     return;
 
