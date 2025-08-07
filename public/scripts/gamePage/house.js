@@ -283,6 +283,10 @@ function animateHouse() {
     houseHealerZone.draw();
   });
 
+    houseShopZones.forEach((houseShopZone) => {
+    houseShopZone.draw();
+  });
+
   player.draw();
 
   movables = [
