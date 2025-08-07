@@ -283,7 +283,7 @@ function animateHouse() {
     houseHealerZone.draw();
   });
 
-    houseShopZones.forEach((houseShopZone) => {
+  houseShopZones.forEach((houseShopZone) => {
     houseShopZone.draw();
   });
 
@@ -307,7 +307,8 @@ function animateHouse() {
     pc.opened ||
     bag.opened ||
     settings.opened ||
-    healing.started || shop.opened
+    healing.started ||
+    shop.opened
   )
     return;
 
@@ -381,7 +382,7 @@ function animateHouse() {
     }
   }
 
-    // open shop to show all items
+  // open shop to show all items
   if (keys.e.pressed || keys.f.pressed) {
     for (let i = 0; i < houseShopZones.length; i++) {
       const shopZone = houseShopZones[i];
@@ -393,7 +394,6 @@ function animateHouse() {
         })
       ) {
         shop.opened = true;
-
       }
     }
   }
