@@ -261,6 +261,20 @@ document.getElementById("pcOverlay").addEventListener("click", (event) => {
 
 eventListenersForPc();
 
+function closeShop() {
+  document.getElementById("shopOverlay").style.display = "none";
+  shop.opened = false;
+}
+
+document.getElementById("shopOverlay").addEventListener("click", (event) => {
+  const popup = document.getElementById("shopInterfacePopUp");
+
+  // Only close if clicking directly on the overlay (not inside the popup)
+  if (!popup.contains(event.target)) {
+    closeShop();
+  }
+});
+
 let houseAnimationId;
 
 function animateHouse() {
