@@ -408,9 +408,8 @@ function animateHouse() {
         })
       ) {
         shop.opened = true;
-        console.log('trying to open the shop');
-                document.getElementById("shopOverlay").style.display = "flex";
-
+        console.log("trying to open the shop");
+        document.getElementById("shopOverlay").style.display = "flex";
       }
     }
   }
