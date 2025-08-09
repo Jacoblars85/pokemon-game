@@ -685,20 +685,18 @@ function getAllItems() {
         console.log('item', item);
         
                 document.getElementById("shopBody").innerHTML += `
-                <div style="
-                  width: 100%;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-                ">
-                <img src=${item.item_pic} height="50" width="50"/>
-                <p>${item.item_name}</p>
-                <p>$${item.item_cost}</p>
-                
-
-</div>
+          <div style="
+              width: 100%;
+              height: 50px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-around;
+            ">
+            <img src=${item.item_pic} height="50" />
+            <p>${item.item_name}</p>
+            <p>$${item.item_cost}</p>
+          </div>
                 `;
       }
     })
