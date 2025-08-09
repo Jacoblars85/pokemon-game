@@ -680,6 +680,19 @@ function getAllItems() {
   })
     .then((response) => {
       allItems = response.data;
+
+      for (const item of allItems) {
+        console.log('item', item);
+        
+                document.getElementById("shopBody").innerHTML += `
+                <div>
+                <p>${item.item_name}</p>
+                <p> ${item.item_cost}</p>
+                <img src=${item.item_pic} />
+
+</div>
+                `;
+      }
     })
     .catch((err) => {
       console.log(err);
