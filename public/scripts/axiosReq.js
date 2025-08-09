@@ -682,9 +682,9 @@ function getAllItems() {
       allItems = response.data;
 
       for (const item of allItems) {
-        console.log('item', item);
-        
-                document.getElementById("shopBody").innerHTML += `
+        console.log("item", item);
+
+        document.getElementById("shopBody").innerHTML += `
           <div style="
               width: 100%;
               height: 50px;
