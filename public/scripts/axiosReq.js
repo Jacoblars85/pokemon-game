@@ -691,12 +691,13 @@ function getAllItems() {
               display: flex;
               flex-direction: row;
               align-items: center;
-              justify-content: space-around;
+              justify-content: space-between;
               border: 2px solid black;
             ">
             <img src=${item.item_pic} height="50" />
             <p>${item.item_name}</p>
             <p>$${item.item_cost}</p>
+            <button>Buy</button>
           </div>
                 `;
       }
