@@ -700,7 +700,7 @@ function getAllItems() {
 
             <p style="width: 150px; text-align: center">${item.item_name}</p>
             <p style="width: 60px; text-align: center">$${item.item_cost}</p>
-            <button>Buy</button>
+            <button onclick="buyItem(${item.id})">Buy</button>
           </div>
                 `;
       }
@@ -774,6 +774,11 @@ function removeItem(itemBeingUsed, starter) {
     .catch((err) => {
       console.log(err);
     });
+}
+
+function buyItem(item) {
+  console.log('item', item);
+  
 }
 
 function putWonBattle(rewardInfo) {
