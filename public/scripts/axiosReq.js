@@ -699,7 +699,7 @@ function getAllItems() {
             </div>
 
             <p style="width: 150px; text-align: center">${item.item_name}</p>
-            <p>$${item.item_cost}</p>
+            <p style="width: 60px; text-align: center">$${item.item_cost}</p>
             <button>Buy</button>
           </div>
                 `;
