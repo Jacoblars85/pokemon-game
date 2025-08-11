@@ -682,7 +682,6 @@ function getAllItems() {
       allItems = response.data;
 
       for (const item of allItems) {
-        console.log("item", item);
 
         document.getElementById("shopBody").innerHTML += `
           <div style="
@@ -786,7 +785,7 @@ function buyItem(item) {
     withCredentials: true,
   })
     .then((response) => {
-      if (resetBattleFunc) getAllUsersBattleItems(resetBattleFunc);
+      fetchUser()
       getAllUsersItems();
     })
     .catch((err) => {
