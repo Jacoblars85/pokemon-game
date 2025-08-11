@@ -691,14 +691,14 @@ function getAllItems() {
               display: flex;
               flex-direction: row;
               align-items: center;
-              justify-content: space-between;
+              justify-content: space-around;
               border: 2px solid black;
             ">
             <div style="width: 50px; display: flex; justify-content: center;">
               <img src=${item.item_pic} height="50" />
             </div>
-            
-            <p>${item.item_name}</p>
+
+            <p style="width: 150px; text-align: center">${item.item_name}</p>
             <p>$${item.item_cost}</p>
             <button>Buy</button>
           </div>
