@@ -700,7 +700,7 @@ function getAllItems() {
 
             <p style="width: 150px; text-align: center">${item.item_name}</p>
             <p style="width: 60px; text-align: center">$${item.item_cost}</p>
-            <button onclick="buyItem(${item.id})">Buy</button>
+            <button onclick="buyItem(${item})">Buy</button>
           </div>
                 `;
       }
@@ -779,6 +779,19 @@ function removeItem(itemBeingUsed, starter) {
 function buyItem(item) {
   console.log('item', item);
   
+    axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/inventory/buy/item`,
+    data: item,
+    withCredentials: true,
+  })
+    .then((response) => {
+      if (resetBattleFunc) getAllUsersBattleItems(resetBattleFunc);
+      getAllUsersItems();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 function putWonBattle(rewardInfo) {
