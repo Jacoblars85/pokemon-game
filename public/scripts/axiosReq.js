@@ -777,8 +777,6 @@ function removeItem(itemBeingUsed, starter) {
 
 function buyItem(item) {
   if (user.coins > item.itemCost) {
-    console.log("have enough coins :)");
-
     axios({
       method: "PUT",
       url: `http://localhost:5001/api/inventory/buy/item`,
