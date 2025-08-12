@@ -681,7 +681,7 @@ function getAllItems() {
     .then((response) => {
       allItems = response.data;
 
-              document.getElementById("shopBody").innerHTML = ''
+      document.getElementById("shopBody").innerHTML = "";
 
       for (const item of allItems) {
         document.getElementById("shopBody").innerHTML += `
