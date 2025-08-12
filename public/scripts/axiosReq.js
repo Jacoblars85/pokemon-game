@@ -698,7 +698,8 @@ function getAllItems() {
 
             <p style="width: 150px; text-align: center">${item.item_name}</p>
             <p style="width: 60px; text-align: center">$${item.item_cost}</p>
-            <button onclick="buyItem(${item})">Buy</button>
+
+            <button onclick="buyItem({itemId: ${item.id}, itemCost: ${item.item_cost}})">Buy</button>
           </div>
                 `;
       }
@@ -775,9 +776,7 @@ function removeItem(itemBeingUsed, starter) {
 }
 
 function buyItem(item) {
-  console.log("item", item);
-
-  if (user.coins > item.item_cost) {
+  if (user.coins > item.itemCost) {
     console.log("have enough coins :)");
 
     axios({
