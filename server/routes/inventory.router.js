@@ -299,11 +299,11 @@ router.put("/buy/item", (req, res) => {
 
   const sqlText = `
     UPDATE "user_inventory"
-    SET "number" = "number" + $1
-      WHERE "user_id" = $2 AND "items_id" = $3;
+    SET "number" = "number" + 1
+      WHERE "user_id" = $1 AND "items_id" = $2;
       `;
 
-  const insertValue = [req.body.amountNum, req.user.id, req.body.itemId];
+  const insertValue = [req.user.id, req.body.itemId];
 
   pool
     .query(sqlText, insertValue)
