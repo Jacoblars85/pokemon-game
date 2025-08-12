@@ -781,11 +781,7 @@ function buyItem(item) {
   if (user.coins > item.item_cost) {
     console.log('have enough coins :)');
     
-  } else {
-    console.log('im broke :(');
-
-  }
-    axios({
+        axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/buy/item`,
     data: item,
@@ -798,6 +794,12 @@ function buyItem(item) {
     .catch((err) => {
       console.log(err);
     });
+    
+  } else {
+    console.log('im broke :(');
+
+  }
+
 }
 
 function putWonBattle(rewardInfo) {
