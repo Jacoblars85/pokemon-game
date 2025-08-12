@@ -315,7 +315,7 @@ router.put("/buy/item", (req, res) => {
                       RETURNING "coins";
                       `;
 
-      const insertValue = [req.body.totalCoins, req.user.id];
+      const insertValue = [req.body.itemCost, req.user.id];
 
       pool.query(insertNewUserQuery, insertValue).then((result) => {
         res.sendStatus(201);
