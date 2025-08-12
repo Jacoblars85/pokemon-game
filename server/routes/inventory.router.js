@@ -90,8 +90,8 @@ router.get("/throwable", (req, res) => {
 router.get("/all/items", (req, res) => {
   const query = `
     SELECT "id",
- 		"item_name",
- 		"item_type",
+ 		    "item_name",
+ 		    "item_type",
         "item_hp",
         "item_stamina",
         "item_speed",
@@ -109,7 +109,7 @@ router.get("/all/items", (req, res) => {
       res.send(result.rows);
     })
     .catch((err) => {
-      console.log("ERROR: Get all held items", err);
+      console.log("ERROR: Get all items", err);
       res.sendStatus(500);
     });
 });
