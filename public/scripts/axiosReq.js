@@ -682,7 +682,6 @@ function getAllItems() {
       allItems = response.data;
 
       for (const item of allItems) {
-
         document.getElementById("shopBody").innerHTML += `
           <div style="
               width: 95%;
@@ -776,30 +775,27 @@ function removeItem(itemBeingUsed, starter) {
 }
 
 function buyItem(item) {
-  console.log('item', item);
-  
+  console.log("item", item);
+
   if (user.coins > item.item_cost) {
-    console.log('have enough coins :)');
-    
-        axios({
-    method: "PUT",
-    url: `http://localhost:5001/api/inventory/buy/item`,
-    data: item,
-    withCredentials: true,
-  })
-    .then((response) => {
-      fetchUser()
-      getAllUsersItems();
+    console.log("have enough coins :)");
+
+    axios({
+      method: "PUT",
+      url: `http://localhost:5001/api/inventory/buy/item`,
+      data: item,
+      withCredentials: true,
     })
-    .catch((err) => {
-      console.log(err);
-    });
-    
+      .then((response) => {
+        fetchUser();
+        getAllUsersItems();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   } else {
-    console.log('im broke :(');
-
+    console.log("im broke :(");
   }
-
 }
 
 function putWonBattle(rewardInfo) {
