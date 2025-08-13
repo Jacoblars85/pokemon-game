@@ -388,15 +388,17 @@
         </h2>
 
         <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 5px; margin-top: 5px;">
-          <h4 class="shopHeaders">Buy</h4>
-          <h4 class="shopHeaders">Sell</h4>
+          <h4 class="shopHeaders" onclick="switchToBuy()">Buy</h4>
+          <h4 class="shopHeaders" onclick="switchToSell()">Sell</h4>
         </div>
 
         <button class="btn" style="position: absolute; top: 0.5%; right: 0.5%; margin: 0" onclick="closeShop()">
           X
         </button>
 
-        <div id="shopBody" class="shopBody"></div>
+        <div id="shopBodyBuy" class="shopBody"></div>
+        <div id="shopBodySell" class="shopBody" style="display: none;"></div>
+
       </div>
     </div>
 
