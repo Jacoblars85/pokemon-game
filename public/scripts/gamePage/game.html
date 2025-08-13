@@ -288,17 +288,6 @@
       </div>
     </div>
 
-    <!-- chest interface -->
-    <div id="chestOverlay" class="overlay">
-      <div id="chestInterfacePopUp" class="chestPopUp">
-        <h2>you got...</h2>
-
-        <div id="rewardPicDiv"></div>
-
-        <button style="margin: 30px" onclick="closeChest()">close</button>
-      </div>
-    </div>
-
     <!-- settings button -->
     <button class="btn" style="position: absolute; top: 0.5%; right: 0.5%; margin: 0" onclick="openSettingsDialog()">
       O
@@ -341,7 +330,54 @@
       </div>
     </div>
 
+        <!-- bag button -->
+    <button id="bagButton" class="btn" style="position: absolute; top: 0.5%; right: 6.5%; margin: 0"
+      onclick="openBag()">
+      Bag
+    </button>
+
+    <!-- bag interface -->
+    <div id="bagOverlay" class="overlay">
+      <div id="bagPopup" class="bagInterface">
+
+        <h1 style="margin: 5px;">Bag</h1>
+
+        <button class="btn" style="position: absolute; top: 0.5%; right: 0.5%; margin: 0" onclick="closeBag()">
+          X
+        </button>
+
+        <div class="bagArea">
+          <div id="bagStarterBody" style="
+            background-color: darkgray;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(6, 3fr);
+            border: 3px solid black;
+          "></div>
+
+          <div id="bagInventoryBody" style="
+            height: 352px;
+            font-size: 20px;
+            border: 4px solid black;
+            overflow-y: scroll;
+              "></div>
+        </div>
+        <button onclick="closeBag()" style="margin-top: 10px;">Close</button>
+      </div>
+    </div>
+
     <div><p id="usersCoinsNavHeader">$</p></div>
+
+        <!-- chest interface -->
+    <div id="chestOverlay" class="overlay">
+      <div id="chestInterfacePopUp" class="chestPopUp">
+        <h2>you got...</h2>
+
+        <div id="rewardPicDiv"></div>
+
+        <button style="margin: 30px" onclick="closeChest()">close</button>
+      </div>
+    </div>
 
     <!-- pc interface -->
     <div id="pcOverlay" class="overlay">
@@ -401,42 +437,6 @@
         <div id="shopBodyBuy" class="shopBody"></div>
         <div id="shopBodySell" class="shopBody" style="display: none;"></div>
 
-      </div>
-    </div>
-
-    <!-- bag button -->
-    <button id="bagButton" class="btn" style="position: absolute; top: 0.5%; right: 6.5%; margin: 0"
-      onclick="openBag()">
-      Bag
-    </button>
-
-    <!-- bag interface -->
-    <div id="bagOverlay" class="overlay">
-      <div id="bagPopup" class="bagInterface">
-
-        <h1 style="margin: 5px;">Bag</h1>
-
-        <button class="btn" style="position: absolute; top: 0.5%; right: 0.5%; margin: 0" onclick="closeBag()">
-          X
-        </button>
-
-        <div class="bagArea">
-          <div id="bagStarterBody" style="
-            background-color: darkgray;
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(6, 3fr);
-            border: 3px solid black;
-          "></div>
-
-          <div id="bagInventoryBody" style="
-            height: 352px;
-            font-size: 20px;
-            border: 4px solid black;
-            overflow-y: scroll;
-              "></div>
-        </div>
-        <button onclick="closeBag()" style="margin-top: 10px;">Close</button>
       </div>
     </div>
 
