@@ -370,7 +370,7 @@ router.put("/sell/item", (req, res) => {
     });
 });
 
-router.put("/use/item/:id", (req, res) => {
+router.put("/use/item", (req, res) => {
   // console.log(req.body);
 
   const sqlText = `
@@ -379,7 +379,7 @@ router.put("/use/item/:id", (req, res) => {
             WHERE "user_id" = $1 AND "id" = $2;
             `;
 
-  const insertValue = [req.user.id, req.params.id];
+  const insertValue = [req.user.id, req.body.items_id];
 
   pool
     .query(sqlText, insertValue)
@@ -387,7 +387,7 @@ router.put("/use/item/:id", (req, res) => {
       res.sendStatus(201);
     })
     .catch((err) => {
-      console.log("Error in inventory.router /use PUT,", err);
+      console.log("Error in inventory.router /use/item PUT,", err);
       res.sendStatus(500);
     });
 });
