@@ -827,6 +827,24 @@ function buyItem(item) {
   }
 }
 
+function sellItem(item) {
+
+    axios({
+      method: "PUT",
+      url: `http://localhost:5001/api/inventory/sell/item`,
+      data: item,
+      withCredentials: true,
+    })
+      .then((response) => {
+        fetchUser();
+        getAllUsersItems();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+}
+
 function putWonBattle(rewardInfo) {
   axios({
     method: "PUT",
