@@ -414,6 +414,12 @@ Shop Interface
   overflow-y: scroll;
 }
 
+.shopHeaders {
+margin: 0;
+border-bottom: 1px solid black;
+cursor: pointer;
+}
+
 /* --------------------------------------------------------------------------------
 Use Item Interface
 -------------------------------------------------------------------------------- */
