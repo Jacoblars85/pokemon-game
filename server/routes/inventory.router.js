@@ -332,16 +332,16 @@ router.put("/buy/item", (req, res) => {
     });
 });
 
-router.put("/sell/item/:id", (req, res) => {
+router.put("/sell/item", (req, res) => {
   //  console.log('req.body', req.body);
 
   const sqlText = `
         UPDATE "user_inventory"
-        SET "number" = "number" - $1
-          WHERE "user_id" = $2 AND "items_id" = $3;
+        SET "number" = "number" - 1
+          WHERE "user_id" = $1 AND "items_id" = $2;
           `;
 
-  const insertValue = [req.body.amountNum, req.user.id, req.params.id];
+  const insertValue = [req.user.id, req.body.itemId];
 
   pool
     .query(sqlText, insertValue)
@@ -365,7 +365,7 @@ router.put("/sell/item/:id", (req, res) => {
       res.sendStatus(500);
     })
     .catch((err) => {
-      console.log("Error in inventory.router /sell PUT,", err);
+      console.log("Error in inventory.router /sell/item PUT,", err);
       res.sendStatus(500);
     });
 });
