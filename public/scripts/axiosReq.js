@@ -687,14 +687,14 @@ function getAllItems() {
         document.getElementById("shopBody").innerHTML += `
           <div style="
               width: 100%;
-              height: 55px;
+              height: 60px;
               display: flex;
               flex-direction: row;
               align-items: center;
               justify-content: space-around;
               border-bottom: 2px solid black;
             ">
-            <div style="width: 50px; display: flex; justify-content: center;">
+            <div style="width: 50px; display: flex; justify-content: center; margin: 5px;">
               <img src=${item.item_pic} height="50" />
             </div>
 
