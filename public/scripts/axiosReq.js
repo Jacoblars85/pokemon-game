@@ -620,10 +620,9 @@ function getAllUsersItems() {
         bagBody.appendChild(container);
       });
 
+      document.getElementById("shopBodySell").innerHTML = "";
 
-      document.getElementById("shopBodySell").innerHTML = ''
-
-            for (const item of usersItems) {
+      for (const item of usersItems) {
         document.getElementById("shopBodySell").innerHTML += `
           <div style="
               width: 100%;
@@ -640,9 +639,13 @@ function getAllUsersItems() {
 
             <p style="width: 150px; text-align: center">x${item.number}</p>
             <p style="width: 150px; text-align: center">${item.item_name}</p>
-            <p style="width: 60px; text-align: center">$${item.item_cost / 2}</p>
+            <p style="width: 60px; text-align: center">$${
+              item.item_cost / 2
+            }</p>
 
-            <button onclick="sellItem({itemId: ${item.id}, itemCost: ${item.item_cost / 2}})">Sell</button>
+            <button onclick="sellItem({itemId: ${item.id}, itemCost: ${
+          item.item_cost / 2
+        }})">Sell</button>
           </div>
                 `;
       }
