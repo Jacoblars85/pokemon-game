@@ -638,6 +638,7 @@ function getAllUsersItems() {
               <img src=${item.item_pic} height="50" />
             </div>
 
+            <p style="width: 150px; text-align: center">x${item.number}</p>
             <p style="width: 150px; text-align: center">${item.item_name}</p>
             <p style="width: 60px; text-align: center">$${item.item_cost / 2}</p>
 
