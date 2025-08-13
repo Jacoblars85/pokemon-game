@@ -643,7 +643,7 @@ function getAllUsersItems() {
               item.item_cost / 2
             }</p>
 
-            <button onclick="sellItem({itemId: ${item.id}, itemCost: ${
+            <button onclick="sellItem({itemId: ${item.id}, totalCoins: ${
           item.item_cost / 2
         }})">Sell</button>
           </div>
