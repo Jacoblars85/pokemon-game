@@ -415,14 +415,13 @@ Shop Interface
 }
 
 .shopHeaders {
-margin: 0;
-border-bottom: 1px solid black;
-cursor: pointer;
+  margin: 0;
+  border-bottom: 1px solid black;
+  cursor: pointer;
 }
 
 .shopHeaders:hover {
-color: gray;
-
+  color: gray;
 }
 
 /* --------------------------------------------------------------------------------
