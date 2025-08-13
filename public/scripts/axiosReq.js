@@ -681,10 +681,10 @@ function getAllItems() {
     .then((response) => {
       allItems = response.data;
 
-      document.getElementById("shopBody").innerHTML = "";
+      document.getElementById("shopBodyBuy").innerHTML = "";
 
       for (const item of allItems) {
-        document.getElementById("shopBody").innerHTML += `
+        document.getElementById("shopBodyBuy").innerHTML += `
           <div style="
               width: 100%;
               height: 60px;
