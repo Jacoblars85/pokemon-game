@@ -100,7 +100,8 @@ router.get("/all/items", (req, res) => {
         "item_pic",
         "item_cost",
         "item_color"
-    FROM "items";
+    FROM "items"
+    ORDER BY "id";
   `;
 
   pool
