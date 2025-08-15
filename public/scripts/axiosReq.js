@@ -105,6 +105,7 @@ function changeUsername(newName) {
 }
 
 // starter stats/info
+let starterOne;
 let starterOneHp = 0;
 let starterOneStamina = 0;
 let starterPicture = "";
@@ -115,6 +116,7 @@ let starterOneInfo = {};
 let starterOneAttackStats = {};
 
 // starter 2 stats/info
+let starterTwo;
 let starterTwoHp = 0;
 let starterTwoStamina = 0;
 let starterTwoPicture = "";
@@ -125,6 +127,7 @@ let starterTwoInfo = {};
 let starterTwoAttackStats = {};
 
 // enemy stats/info
+let enemyOne;
 let enemyHp = 0;
 let enemyStamina = 0;
 let enemyPicture = "";
@@ -146,9 +149,6 @@ let pokeStamina = 0;
 
 // setting each starter/enemy to a varriable
 let usersStarters = [];
-let enemyOne;
-let starterOne;
-let starterTwo;
 let usersBattleItems = [];
 let usersConsumableItems = [];
 let usersThrowablesItems = [];
