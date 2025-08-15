@@ -155,7 +155,7 @@ let usersThrowablesItems = [];
 let usersItems = [];
 let usersCharacters = [];
 
-// setting basic info 
+// setting basic info
 let allItems = [];
 let allCharacters = [];
 
