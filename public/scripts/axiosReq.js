@@ -147,14 +147,16 @@ let pokeAttackStats = {};
 let pokeAttack = "";
 let pokeStamina = 0;
 
-// setting each starter/enemy to a varriable
+// setting users items and starters info
 let usersStarters = [];
 let usersBattleItems = [];
 let usersConsumableItems = [];
 let usersThrowablesItems = [];
 let usersItems = [];
-let allItems = [];
 let usersCharacters = [];
+
+// setting basic info 
+let allItems = [];
 let allCharacters = [];
 
 let isAnimating = false;
