@@ -22,14 +22,12 @@ function fetchUser() {
         document.getElementById("userLevelNavHeader").innerHTML += Math.floor(
           user.xp_level
         );
-
       }
 
-if (document.getElementById("usersCoinsNavHeader")) {
-
-            document.getElementById("usersCoinsNavHeader").innerHTML = '$'
-          document.getElementById("usersCoinsNavHeader").innerHTML += user.coins;
-}
+      if (document.getElementById("usersCoinsNavHeader")) {
+        document.getElementById("usersCoinsNavHeader").innerHTML = "$";
+        document.getElementById("usersCoinsNavHeader").innerHTML += user.coins;
+      }
     })
     .catch((err) => {
       console.log(err);
