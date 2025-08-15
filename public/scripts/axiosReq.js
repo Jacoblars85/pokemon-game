@@ -24,10 +24,8 @@ function fetchUser() {
         );
       }
 
-      let usersCoinsHeader = document.getElementById("usersCoinsNavHeader")
-      if (usersCoinsHeader) {
-        usersCoinsHeader.innerHTML = "$" + user.coins;
-      }
+      let usersCoinsHeader = document.getElementById("usersCoinsNavHeader");
+      if (usersCoinsHeader) usersCoinsHeader.innerHTML = "$" + user.coins;
     })
     .catch((err) => {
       console.log(err);
