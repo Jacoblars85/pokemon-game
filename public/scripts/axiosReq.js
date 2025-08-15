@@ -104,8 +104,6 @@ function changeUsername(newName) {
     });
 }
 
-
-
 // starter stats/info
 let starterOneHp = 0;
 let starterOneStamina = 0;
