@@ -24,8 +24,9 @@ function fetchUser() {
         );
       }
 
-      if (document.getElementById("usersCoinsNavHeader")) {
-        document.getElementById("usersCoinsNavHeader").innerHTML = "$" + user.coins;
+      let usersCoinsHeader = document.getElementById("usersCoinsNavHeader")
+      if (usersCoinsHeader) {
+        usersCoinsHeader.innerHTML = "$" + user.coins;
       }
     })
     .catch((err) => {
