@@ -112,7 +112,7 @@ function userOpenChest(chestInfo) {
     withCredentials: true,
   })
     .then((response) => {
-      getAllItems();
+      getAllUsersItems();
       getAllUsersBattleItems();
     })
     .catch((err) => {
