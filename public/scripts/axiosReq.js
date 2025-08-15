@@ -104,21 +104,7 @@ function changeUsername(newName) {
     });
 }
 
-function userOpenChest(chestInfo) {
-  axios({
-    method: "PUT",
-    url: `http://localhost:5001/api/user/chest/open`,
-    data: chestInfo,
-    withCredentials: true,
-  })
-    .then((response) => {
-      getAllUsersItems();
-      getAllUsersBattleItems();
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
+
 
 // starter stats/info
 let starterOneHp = 0;
@@ -737,6 +723,22 @@ function getAllItems() {
           </div>
                 `;
       }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function userOpenChest(chestInfo) {
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/user/chest/open`,
+    data: chestInfo,
+    withCredentials: true,
+  })
+    .then((response) => {
+      getAllUsersItems();
+      getAllUsersBattleItems();
     })
     .catch((err) => {
       console.log(err);
