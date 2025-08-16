@@ -18,15 +18,13 @@ function fetchUser() {
       getStarters();
 
       let usersNameHeader = document.getElementById("usernameNavHeader");
-        if (usersNameHeader) {
+      if (usersNameHeader) {
         usersNameHeader.innerHTML = user.username;
       }
 
       let usersLevelHeader = document.getElementById("userLevelNavHeader");
       if (usersLevelHeader) {
-        usersLevelHeader.innerHTML = "lvl: " + Math.floor(
-          user.xp_level
-        );
+        usersLevelHeader.innerHTML = "lvl: " + Math.floor(user.xp_level);
       }
 
       let usersCoinsHeader = document.getElementById("usersCoinsNavHeader");
