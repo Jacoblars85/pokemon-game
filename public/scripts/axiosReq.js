@@ -21,8 +21,9 @@ function fetchUser() {
         document.getElementById("usernameNavHeader").innerHTML = user.username;
       }
 
-      if (document.getElementById("userLevelNavHeader")) {
-        document.getElementById("userLevelNavHeader").innerHTML = "lvl: " + Math.floor(
+      let usersLevelHeader = document.getElementById("userLevelNavHeader");
+      if (usersLevelHeader) {
+        usersLevelHeader.innerHTML = "lvl: " + Math.floor(
           user.xp_level
         );
       }
