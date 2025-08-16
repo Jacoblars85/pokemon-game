@@ -24,7 +24,7 @@ function fetchUser() {
 
       let usersLevelHeader = document.getElementById("userLevelNavHeader");
       if (usersLevelHeader) {
-        usersLevelHeader.innerHTML = "lvl: " + Math.floor(user.xp_level);
+        usersLevelHeader.innerHTML = "lvl " + Math.floor(user.xp_level);
       }
 
       let usersCoinsHeader = document.getElementById("usersCoinsNavHeader");
