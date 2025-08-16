@@ -17,8 +17,9 @@ function fetchUser() {
 
       getStarters();
 
-        if (document.getElementById("usernameNavHeader")) {
-        document.getElementById("usernameNavHeader").innerHTML = user.username;
+      let usersNameHeader = document.getElementById("usernameNavHeader");
+        if (usersNameHeader) {
+        usersNameHeader.innerHTML = user.username;
       }
 
       let usersLevelHeader = document.getElementById("userLevelNavHeader");
