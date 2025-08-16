@@ -17,9 +17,15 @@ function fetchUser() {
 
       getStarters();
 
-      if (document.getElementById("usernameNavHeader")) {
+        if (document.getElementById("usernameNavHeader")) {
         document.getElementById("usernameNavHeader").innerHTML = user.username;
         document.getElementById("userLevelNavHeader").innerHTML += Math.floor(
+          user.xp_level
+        );
+      }
+
+      if (document.getElementById("userLevelNavHeader")) {
+        document.getElementById("userLevelNavHeader").innerHTML = Math.floor(
           user.xp_level
         );
       }
