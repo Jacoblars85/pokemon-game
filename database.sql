@@ -102,6 +102,8 @@ CREATE TABLE "user_characters" (
 	"new" BOOLEAN DEFAULT TRUE,
 	"xp_level" DEC DEFAULT 1,
 	"merged_level" DEC DEFAULT 1,
+	"attack_id_2" INT DEFAULT NULL REFERENCES "attacks" ON DELETE CASCADE,
+	"attack_id_3" INT DEFAULT NULL REFERENCES "attacks" ON DELETE CASCADE,
 	"item_id" INT DEFAULT NULL REFERENCES "items" ON DELETE CASCADE);
 	
 CREATE TABLE "basic_attacks" (
