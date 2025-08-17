@@ -200,6 +200,11 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("detailAttackStamina").textContent =
     "stamina used: " + character.attack_stamina;
 
+    console.log('character', character);
+    
+  document.getElementById("detailItemImage").src = character.item_pic;
+
+
   let starterButtonContainer = document.getElementById(
     "starterButtonContainer"
   );
