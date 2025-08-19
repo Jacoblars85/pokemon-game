@@ -286,7 +286,7 @@ Character Details Interface
   top: 0.5%;
   left: 0.5%;
   object-fit: contain;
-  margin-bottom: 12px;
+  margin: 12px;
 }
 
 .characterDetails h2,
