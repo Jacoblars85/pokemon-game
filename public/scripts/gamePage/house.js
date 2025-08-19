@@ -202,6 +202,8 @@ function showCharacterDetails(character, context = "") {
 
     console.log('character', character);
     
+  document.getElementById("detailItemName").textContent = character.item_name;
+
   document.getElementById("detailItemImage").src = character.item_pic;
 
 
