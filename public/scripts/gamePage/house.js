@@ -179,6 +179,9 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("switchStarter2Button").dataset.characterId =
     character.id;
 
+      document.getElementById("removeStarterButton").dataset.characterId =
+    character.id;
+
   document.getElementById("starterHeader").textContent = character.starter_1
     ? "Starter 1"
     : (document.getElementById("starterHeader").textContent =
