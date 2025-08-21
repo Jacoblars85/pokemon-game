@@ -798,7 +798,10 @@ function equipItem(itemBeingUsed, starter) {
     });
 }
 
-function removeItem(itemBeingUsed, starter) {
+function removeItem(e) {
+
+    let characterId = Number(e.target.dataset.characterId);
+    
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/remove/item`,
