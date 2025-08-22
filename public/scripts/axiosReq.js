@@ -801,11 +801,13 @@ function equipItem(itemBeingUsed, starter) {
 function removeItem(e) {
 
     let characterId = Number(e.target.dataset.characterId);
-    
+    let itemId = Number(e.target.dataset.characterId);
+
+
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/remove/item`,
-    data: { itemBeingUsed, starter },
+    data: { characterId, itemId },
     withCredentials: true,
   })
     .then((response) => {
