@@ -202,10 +202,10 @@ function showCharacterDetails(character, context = "") {
 
   console.log("character", character);
 
-        document.getElementById("removeStarterButton").dataset.characterId =
+  document.getElementById("removeStarterButton").dataset.characterId =
     character.id;
 
-    document.getElementById("removeStarterButton").dataset.itemId =
+  document.getElementById("removeStarterButton").dataset.itemId =
     character.item_id;
 
   document.getElementById("detailItemName").textContent = character.item_name;
