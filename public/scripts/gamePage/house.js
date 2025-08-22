@@ -179,12 +179,6 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("switchStarter2Button").dataset.characterId =
     character.id;
 
-      document.getElementById("removeStarterButton").dataset.characterId =
-    character.id;
-
-    document.getElementById("removeStarterButton").dataset.itemId =
-    character.item_id;
-
   document.getElementById("starterHeader").textContent = character.starter_1
     ? "Starter 1"
     : (document.getElementById("starterHeader").textContent =
@@ -207,6 +201,12 @@ function showCharacterDetails(character, context = "") {
     "stamina used: " + character.attack_stamina;
 
   console.log("character", character);
+
+        document.getElementById("removeStarterButton").dataset.characterId =
+    character.id;
+
+    document.getElementById("removeStarterButton").dataset.itemId =
+    character.item_id;
 
   document.getElementById("detailItemName").textContent = character.item_name;
   document.getElementById("detailItemImage").src = character.item_pic;
