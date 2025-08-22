@@ -491,7 +491,7 @@ router.put("/remove/item", (req, res) => {
       res.sendStatus(500);
     })
     .catch((err) => {
-      console.log("Error in inventory.router /sell PUT,", err);
+      console.log("Error in inventory.router /remove/item PUT,", err);
       res.sendStatus(500);
     });
 });
