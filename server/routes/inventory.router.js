@@ -468,7 +468,7 @@ router.put("/remove/item", (req, res) => {
             WHERE "user_id" = $1 AND "items_id" = $2;
               `;
 
-  const insertValue = [req.user.id, req.body.oldItemId];
+  const insertValue = [req.user.id, req.body.itemId];
 
   pool
     .query(sqlText, insertValue)
@@ -479,7 +479,7 @@ router.put("/remove/item", (req, res) => {
                 WHERE "user_id" = $1 AND "id" = $2
                 `;
 
-      const insertValue = [req.user.id, req.body.characterID];
+      const insertValue = [req.user.id, req.body.characterId];
 
       pool.query(insertNewUserQuery, insertValue).then((result) => {
         res.sendStatus(201);
