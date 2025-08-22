@@ -182,6 +182,9 @@ function showCharacterDetails(character, context = "") {
       document.getElementById("removeStarterButton").dataset.characterId =
     character.id;
 
+    document.getElementById("removeStarterButton").dataset.itemId =
+    character.item_id;
+
   document.getElementById("starterHeader").textContent = character.starter_1
     ? "Starter 1"
     : (document.getElementById("starterHeader").textContent =
@@ -206,7 +209,6 @@ function showCharacterDetails(character, context = "") {
   console.log("character", character);
 
   document.getElementById("detailItemName").textContent = character.item_name;
-
   document.getElementById("detailItemImage").src = character.item_pic;
 
   let starterButtonContainer = document.getElementById(
