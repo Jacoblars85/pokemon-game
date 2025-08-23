@@ -229,6 +229,11 @@ function showCharacterDetails(character, context = "") {
             cursor: pointer;
             width: 120px;
           `;
+
+                    removeButton.addEventListener("click", (e) => {
+            e.stopPropagation(); // Stop it from triggering detail popup
+            removeItem(item);
+          });
   } else {
     document.getElementById("detailItemName").textContent = "";
     document.getElementById("detailItemImage").src = "";
