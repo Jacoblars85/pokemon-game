@@ -202,6 +202,9 @@ function showCharacterDetails(character, context = "") {
 
   console.log("character", character);
 
+  const container = document.getElementById('detailsItem');
+    container.innerHTML = ""
+    
   if (character.item_id) {
     // document.getElementById("removeStarterButton").dataset.characterId =
     //   character.id;
@@ -212,7 +215,8 @@ function showCharacterDetails(character, context = "") {
     // document.getElementById("detailItemName").textContent = character.item_name;
     // document.getElementById("detailItemImage").src = character.item_pic;
 
-    const container = document.createElement("div");
+    // const container = document.createElement("div");
+    
     container.style = `
           position: absolute; 
           top: 15%; 
@@ -222,7 +226,7 @@ function showCharacterDetails(character, context = "") {
           align-items: center;
         `;
 
-    const img = document.createElement("img");
+    let img = document.createElement("img");
     img.src = character.item_pic;
     img.height = "70px";
 
