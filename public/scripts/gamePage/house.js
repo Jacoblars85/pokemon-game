@@ -219,6 +219,16 @@ function showCharacterDetails(character, context = "") {
     const itemName = document.createElement("div");
     itemName.textContent = character.item_name;
     itemName.style.fontWeight = "bold";
+
+           const removeButton = document.createElement("button");
+          removeButton.textContent = "Equip Item";
+          removeButton.style = `
+            color: black;
+            font-size: 15px;
+            border-color: black;
+            cursor: pointer;
+            width: 120px;
+          `;
   } else {
     document.getElementById("detailItemName").textContent = "";
     document.getElementById("detailItemImage").src = "";
