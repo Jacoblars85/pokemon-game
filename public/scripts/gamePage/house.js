@@ -214,14 +214,7 @@ function showCharacterDetails(character, context = "") {
 
     const container = document.createElement("div");
     container.style = `
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          height: 45px;
-          width: 516px;
-          padding: 5px;
-          cursor: pointer;
+          position: absolute; top: 15%; right: 15%; display: flex; flex-direction: column; align-items: center;
         `;
 
     const img = document.createElement("img");
@@ -235,11 +228,7 @@ function showCharacterDetails(character, context = "") {
     const removeButton = document.createElement("button");
     removeButton.textContent = "Equip Item";
     removeButton.style = `
-            color: black;
-            font-size: 15px;
-            border-color: black;
             cursor: pointer;
-            width: 120px;
           `;
 
     removeButton.addEventListener("click", (e) => {
