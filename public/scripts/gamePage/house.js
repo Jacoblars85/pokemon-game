@@ -211,6 +211,10 @@ function showCharacterDetails(character, context = "") {
 
     document.getElementById("detailItemName").textContent = character.item_name;
     document.getElementById("detailItemImage").src = character.item_pic;
+
+          const img = document.createElement("img");
+      img.src = character.item_pic;
+      img.height = '70px';
   } else {
      document.getElementById("detailItemName").textContent = '';
     document.getElementById("detailItemImage").src = '';
