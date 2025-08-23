@@ -249,9 +249,6 @@ function showCharacterDetails(character, context = "") {
     container.appendChild(img);
       container.appendChild(removeButton);
 
-  } else {
-    document.getElementById("detailItemName").textContent = "";
-    document.getElementById("detailItemImage").src = "";
   }
 
   let starterButtonContainer = document.getElementById(
