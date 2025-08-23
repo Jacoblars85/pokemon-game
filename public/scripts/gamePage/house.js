@@ -220,9 +220,9 @@ function showCharacterDetails(character, context = "") {
     itemName.textContent = character.item_name;
     itemName.style.fontWeight = "bold";
 
-           const removeButton = document.createElement("button");
-          removeButton.textContent = "Equip Item";
-          removeButton.style = `
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Equip Item";
+    removeButton.style = `
             color: black;
             font-size: 15px;
             border-color: black;
@@ -230,10 +230,10 @@ function showCharacterDetails(character, context = "") {
             width: 120px;
           `;
 
-                    removeButton.addEventListener("click", (e) => {
-            e.stopPropagation(); // Stop it from triggering detail popup
-            removeItem(item);
-          });
+    removeButton.addEventListener("click", (e) => {
+      e.stopPropagation(); // Stop it from triggering detail popup
+      removeItem(item);
+    });
   } else {
     document.getElementById("detailItemName").textContent = "";
     document.getElementById("detailItemImage").src = "";
