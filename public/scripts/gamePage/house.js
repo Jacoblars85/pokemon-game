@@ -215,6 +215,11 @@ function showCharacterDetails(character, context = "") {
           const img = document.createElement("img");
       img.src = character.item_pic;
       img.height = '70px';
+
+            const itemName = document.createElement("div");
+      itemName.textContent = character.item_name;
+      itemName.style.fontWeight = "bold";
+
   } else {
      document.getElementById("detailItemName").textContent = '';
     document.getElementById("detailItemImage").src = '';
