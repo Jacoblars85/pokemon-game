@@ -203,14 +203,14 @@ function showCharacterDetails(character, context = "") {
   console.log("character", character);
 
   if (character.item_id) {
-    document.getElementById("removeStarterButton").dataset.characterId =
-      character.id;
+    // document.getElementById("removeStarterButton").dataset.characterId =
+    //   character.id;
 
-    document.getElementById("removeStarterButton").dataset.itemId =
-      character.item_id;
+    // document.getElementById("removeStarterButton").dataset.itemId =
+    //   character.item_id;
 
-    document.getElementById("detailItemName").textContent = character.item_name;
-    document.getElementById("detailItemImage").src = character.item_pic;
+    // document.getElementById("detailItemName").textContent = character.item_name;
+    // document.getElementById("detailItemImage").src = character.item_pic;
 
     const container = document.createElement("div");
     container.style = `
