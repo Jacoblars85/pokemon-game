@@ -240,6 +240,11 @@ function showCharacterDetails(character, context = "") {
       e.stopPropagation(); // Stop it from triggering detail popup
       removeItem({ characterId: character.id, itemId: character.item_id });
     });
+
+    container.appendChild(itemName);
+    container.appendChild(img);
+      container.appendChild(removeButton);
+
   } else {
     document.getElementById("detailItemName").textContent = "";
     document.getElementById("detailItemImage").src = "";
