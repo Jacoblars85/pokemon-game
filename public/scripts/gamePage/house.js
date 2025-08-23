@@ -214,7 +214,12 @@ function showCharacterDetails(character, context = "") {
 
     const container = document.createElement("div");
     container.style = `
-          position: absolute; top: 15%; right: 15%; display: flex; flex-direction: column; align-items: center;
+          position: absolute; 
+          top: 15%; 
+          right: 15%; 
+          display: flex; 
+          flex-direction: column; 
+          align-items: center;
         `;
 
     const img = document.createElement("img");
@@ -233,7 +238,7 @@ function showCharacterDetails(character, context = "") {
 
     removeButton.addEventListener("click", (e) => {
       e.stopPropagation(); // Stop it from triggering detail popup
-      removeItem({characterId: character.id, itemId: character.item_id});
+      removeItem({ characterId: character.id, itemId: character.item_id });
     });
   } else {
     document.getElementById("detailItemName").textContent = "";
