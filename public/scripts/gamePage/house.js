@@ -235,14 +235,14 @@ function showCharacterDetails(character, context = "") {
     itemName.style.fontWeight = "bold";
 
     const removeButton = document.createElement("button");
-    removeButton.textContent = "Equip Item";
+    removeButton.textContent = "Remove";
     removeButton.style = `
             cursor: pointer;
           `;
 
     removeButton.addEventListener("click", (e) => {
       e.stopPropagation(); // Stop it from triggering detail popup
-      removeItem({ characterId: character.id, itemId: character.item_id });
+      removeItem({ character, itemId: character.item_id });
     });
 
     container.appendChild(itemName);
