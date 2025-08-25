@@ -202,9 +202,9 @@ function showCharacterDetails(character, context = "") {
 
   console.log("character", character);
 
-  const container = document.getElementById('detailsItem');
-    container.innerHTML = ""
-    
+  const container = document.getElementById("detailsItem");
+  container.innerHTML = "";
+
   if (character.item_id) {
     // document.getElementById("removeStarterButton").dataset.characterId =
     //   character.id;
@@ -216,7 +216,7 @@ function showCharacterDetails(character, context = "") {
     // document.getElementById("detailItemImage").src = character.item_pic;
 
     // const container = document.createElement("div");
-    
+
     container.style = `
           position: absolute; 
           top: 15%; 
@@ -226,7 +226,7 @@ function showCharacterDetails(character, context = "") {
           align-items: center;
         `;
 
-    let img = document.createElement("img");
+    const img = document.createElement("img");
     img.src = character.item_pic;
     img.height = "70px";
 
@@ -247,8 +247,7 @@ function showCharacterDetails(character, context = "") {
 
     container.appendChild(itemName);
     container.appendChild(img);
-      container.appendChild(removeButton);
-
+    container.appendChild(removeButton);
   }
 
   let starterButtonContainer = document.getElementById(
