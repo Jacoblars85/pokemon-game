@@ -798,20 +798,24 @@ function equipItem(itemBeingUsed, starter) {
     });
 }
 
-function removeItem({characterId, itemId}) {
+function removeItem({character, itemId}) {
   // let characterId = Number(e.target.dataset.characterId);
   // let itemId = Number(e.target.dataset.itemId);
+
+  console.log('character', character);
+  
 
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/remove/item`,
-    data: { characterId, itemId },
+    data: { characterId: character.id , itemId },
     withCredentials: true,
   })
     .then((response) => {
       getStarters();
       getAllUsersCharacters();
       getAllUsersItems();
+      showCharacterDetails(character, "bag")
     })
     .catch((err) => {
       console.log(err);
