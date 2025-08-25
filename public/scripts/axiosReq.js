@@ -799,11 +799,7 @@ function equipItem(itemBeingUsed, starter) {
 }
 
 function removeItem({character, itemId}) {
-  // let characterId = Number(e.target.dataset.characterId);
-  // let itemId = Number(e.target.dataset.itemId);
-
-  console.log('character', character);
-  
+  console.log('character', character); 
 
   axios({
     method: "PUT",
