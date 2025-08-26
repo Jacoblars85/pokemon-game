@@ -477,12 +477,13 @@ router.put("/remove/item", (req, res) => {
                 UPDATE "user_characters"
                 SET "item_id" = NULL
                 WHERE "user_id" = $1 AND "id" = $2
+                RETURNING *;
                 `;
 
       const insertValue = [req.user.id, req.body.characterId];
 
       pool.query(insertNewUserQuery, insertValue).then((result) => {
-        res.sendStatus(201);
+        res.send(result.rows[0]);
       });
     })
     .catch((err) => {
