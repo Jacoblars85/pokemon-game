@@ -460,7 +460,7 @@ router.put("/equip/item", (req, res) => {
 });
 
 router.put("/remove/item", (req, res) => {
-   //  console.log('req.body', req.body);
+  //  console.log('req.body', req.body);
 
   const sqlText = `
         UPDATE "user_inventory"
@@ -470,11 +470,9 @@ router.put("/remove/item", (req, res) => {
 
   const sqlValues = [req.user.id, req.body.itemId];
 
-
   pool
     .query(sqlText, sqlValues)
     .then((result) => {
-
       const sqlText = `
                 UPDATE "user_characters"
                 SET "item_id" = NULL
@@ -484,14 +482,12 @@ router.put("/remove/item", (req, res) => {
 
       const sqlValues = [req.user.id, req.body.characterId];
 
-
       pool
         .query(sqlText, sqlValues)
         .then((result) => {
-
           const updatedId = result.rows[0].id;
 
-      const sqlText = `
+          const sqlText = `
 SELECT "user_characters"."id" as "id",
         "user_characters"."user_id" as "user_id",
         "user_characters"."character_id",
@@ -542,8 +538,7 @@ SELECT "user_characters"."id" as "id",
     WHERE "user_id" = $1 AND "user_characters"."id" = $2;
     `;
 
-      const sqlValues = [req.user.id, updatedId];
-
+          const sqlValues = [req.user.id, updatedId];
 
           pool
             .query(sqlText, sqlValues)
@@ -551,12 +546,18 @@ SELECT "user_characters"."id" as "id",
               res.send(result.rows[0]);
             })
             .catch((err) => {
-              console.log("Error in the third inventory.router /remove/item PUT,", err);
+              console.log(
+                "Error in the third inventory.router /remove/item PUT,",
+                err
+              );
               res.sendStatus(500);
             });
         })
         .catch((err) => {
-          console.log("Error in the second inventory.router /remove/item PUT,", err);
+          console.log(
+            "Error in the second inventory.router /remove/item PUT,",
+            err
+          );
           res.sendStatus(500);
         });
     })
