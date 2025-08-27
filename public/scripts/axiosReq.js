@@ -799,8 +799,6 @@ function equipItem(itemBeingUsed, starter) {
 }
 
 function removeItem({ character, itemId }) {
-  console.log("character", character);
-
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/remove/item`,
@@ -808,12 +806,10 @@ function removeItem({ character, itemId }) {
     withCredentials: true,
   })
     .then((response) => {
-      console.log('response', response);
-      
       getStarters();
       getAllUsersCharacters();
       getAllUsersItems();
-      // showCharacterDetails(character, "bag");
+      showCharacterDetails(response.data, "bag");
     })
     .catch((err) => {
       console.log(err);
