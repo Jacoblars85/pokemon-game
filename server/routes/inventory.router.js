@@ -460,44 +460,6 @@ router.put("/equip/item", (req, res) => {
 });
 
 router.put("/remove/item", (req, res) => {
-  //  console.log('req.body', req.body);
-
-  const sqlText = `
-        UPDATE "user_inventory"
-        SET "number" = "number" + 1
-            WHERE "user_id" = $1 AND "items_id" = $2;
-              `;
-
-  const insertValue = [req.user.id, req.body.itemId];
-
-  pool
-    .query(sqlText, insertValue)
-    .then((result) => {
-      const insertNewUserQuery = `
-                UPDATE "user_characters"
-                SET "item_id" = NULL
-                WHERE "user_id" = $1 AND "id" = $2
-                RETURNING id;
-                `;
-
-      const insertValue = [req.user.id, req.body.characterId];
-
-      pool.query(insertNewUserQuery, insertValue).then((result) => {
-        res.send(result.rows[0]);
-      });
-    })
-    .catch((err) => {
-      // catch for second query
-      console.log("in the second", err);
-      res.sendStatus(500);
-    })
-    .catch((err) => {
-      console.log("Error in inventory.router /remove/item PUT,", err);
-      res.sendStatus(500);
-    });
-});
-
-router.put("/remove/item", (req, res) => {
    //  console.log('req.body', req.body);
 
   const sqlText = `
