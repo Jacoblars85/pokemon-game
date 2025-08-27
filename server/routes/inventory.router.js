@@ -477,7 +477,7 @@ router.put("/remove/item", (req, res) => {
                 UPDATE "user_characters"
                 SET "item_id" = NULL
                 WHERE "user_id" = $1 AND "id" = $2
-                RETURNING *;
+                RETURNING id;
                 `;
 
       const insertValue = [req.user.id, req.body.characterId];
@@ -493,6 +493,113 @@ router.put("/remove/item", (req, res) => {
     })
     .catch((err) => {
       console.log("Error in inventory.router /remove/item PUT,", err);
+      res.sendStatus(500);
+    });
+});
+
+router.put("/remove/item", (req, res) => {
+   //  console.log('req.body', req.body);
+
+  const sqlText = `
+        UPDATE "user_inventory"
+        SET "number" = "number" + 1
+            WHERE "user_id" = $1 AND "items_id" = $2;
+              `;
+
+  const sqlValues = [req.user.id, req.body.itemId];
+
+
+  pool
+    .query(sqlText, sqlValues)
+    .then((result) => {
+
+      const sqlText = `
+                UPDATE "user_characters"
+                SET "item_id" = NULL
+                WHERE "user_id" = $1 AND "id" = $2
+                RETURNING id;
+                `;
+
+      const sqlValues = [req.user.id, req.body.characterId];
+
+
+      pool
+        .query(sqlText, sqlValues)
+        .then((result) => {
+
+          const updatedId = result.rows[0].id;
+
+      const sqlText = `
+SELECT "user_characters"."id" as "id",
+        "user_characters"."user_id" as "user_id",
+        "user_characters"."character_id",
+        "user_characters"."current_hp" as "hp",
+        "user_characters"."current_stamina" as "stamina",
+        "user_characters"."max_hp",
+        "user_characters"."max_stamina",
+        "user_characters"."starter_1",
+        "user_characters"."starter_2",
+        "user_characters"."new",
+        "user_characters"."nickname",
+        "user_characters"."xp_level",
+        "characters"."character_name",
+        "characters"."profile_pic",
+        "characters"."hp" as "base_hp",
+        "characters"."stamina" as "base_stamina",
+        "characters"."speed",
+        "characters"."battle_pic",
+        "attacks"."id" as "attacks_id",
+        "attacks"."attack_name",
+        "attacks"."attack_damage",
+        "attacks"."attack_stamina",
+        "attacks"."attack_type",
+        "attack_animations"."id" as "attack_animations_id",
+        "attack_animations"."animation_name",
+        "attack_animations"."max_frames",
+        "attack_animations"."hold_time",
+        "attack_animations"."fx_img",
+        "items"."id" as "item_id",
+        "items"."item_name",
+        "items"."item_hp",
+        "items"."item_stamina",
+        "items"."item_pic",
+        "items"."item_type",
+        "items"."item_speed",
+        "items"."item_damage",
+        "items"."item_cost",
+    	  "items"."item_color"
+ FROM "user_characters" 
+	INNER JOIN "characters"
+    	ON "user_characters"."character_id" = "characters"."id"
+    	INNER JOIN "attacks"
+            ON "attacks"."id" = "characters"."attacks_id"
+        INNER JOIN "attack_animations"
+        	ON "attacks"."attack_animations_id" = "attack_animations"."id"
+    LEFT JOIN "items"
+    	ON "user_characters"."item_id" = "items"."id"
+    WHERE "user_id" = $1 AND "user_characters"."id" = $2;
+    `;
+
+      const sqlValues = [req.user.id, updatedId];
+
+
+          pool
+            .query(sqlText, sqlValues)
+            .then((result) => {
+              res.send(result.rows[0]);
+            })
+            .catch((err) => {
+              console.log("Error in the third inventory.router /remove/item PUT,", err);
+              res.sendStatus(500);
+            });
+        })
+        .catch((err) => {
+          console.log("Error in the second inventory.router /remove/item PUT,", err);
+          res.sendStatus(500);
+        });
+    })
+    .catch((err) => {
+      console.log("Error in the first inventory.router /remove/item PUT,", err);
       res.sendStatus(500);
     });
 });
