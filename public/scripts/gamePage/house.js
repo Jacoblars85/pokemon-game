@@ -206,7 +206,6 @@ function showCharacterDetails(character, context = "") {
   container.innerHTML = "";
 
   if (character.item_id) {
-
     container.style = `
           position: absolute; 
           top: 15%; 
