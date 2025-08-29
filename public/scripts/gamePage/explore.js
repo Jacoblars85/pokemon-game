@@ -809,3 +809,11 @@ window.addEventListener("keyup", (e) => {
     keys.f.pressed = false;
   }
 });
+
+let clicked = false
+addEventListener("click", () => {
+  if (!clicked) {
+audio.Map.play()
+    clicked = true
+  }
+});
