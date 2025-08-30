@@ -155,6 +155,8 @@ class Character extends Sprite {
         isAnimating = false;
       },
     });
+    audio.battle.stop()
+    audio.victory.play()
   }
 
   switching({ recipient }) {
@@ -436,6 +438,7 @@ class Character extends Sprite {
           x: this.position.x + movementDistance * 2,
           duration: 0.1,
           onComplete: () => {
+            audio.physicalHit.play()
             gsap.to(healthBar, {
               width: (recipient.health / recipient.maxHealth) * 100 + "%",
             });
@@ -460,6 +463,8 @@ class Character extends Sprite {
           },
         });
     } else if (attack.attack_type === "projectile") {
+          audio.initFireball.play()
+      
       const projectileAttackFx = new Sprite({
         position: {
           x: this.position.x,
@@ -481,6 +486,7 @@ class Character extends Sprite {
         x: recipient.position.x,
         y: recipient.position.y,
         onComplete: () => {
+          audio.fireballHit.play()
           gsap.to(healthBar, {
             width: (recipient.health / recipient.maxHealth) * 100 + "%",
           });
