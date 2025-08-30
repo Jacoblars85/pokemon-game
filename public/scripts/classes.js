@@ -510,6 +510,7 @@ class Character extends Sprite {
         },
       });
     } else if (attack.attack_type === "summon") {
+      audio.initFireball.play()
       const summonAttackFx = new Sprite({
         position: {
           x: recipient.position.x + 10,
@@ -531,6 +532,7 @@ class Character extends Sprite {
         y: recipient.position.y + 30,
         duration: 1.3,
         onComplete: () => {
+          audio.fireballHit.play()
           gsap.to(healthBar, {
             width: (recipient.health / recipient.maxHealth) * 100 + "%",
           });
@@ -574,6 +576,7 @@ class Character extends Sprite {
         yoyo: true,
         duration: 0.08,
         onComplete: () => {
+          audio.physicalHit.play()
           gsap.to(tiredHealthBar, {
             width: (this.health / this.maxHealth) * 100 + "%",
             onComplete: () => {
