@@ -730,6 +730,9 @@ function animate() {
         Math.random() < 0.015
       ) {
         window.cancelAnimationFrame(animationId);
+        audio.map.stop()
+        audio.initBattle.play()
+        audio.battle.play()
         battle.initiated = true;
         gsap.to("#fadeOutDiv", {
           opacity: 1,
@@ -813,7 +816,7 @@ window.addEventListener("keyup", (e) => {
 let clicked = false
 addEventListener("click", () => {
   if (!clicked) {
-audio.Map.play()
+audio.map.play()
     clicked = true
   }
 });
