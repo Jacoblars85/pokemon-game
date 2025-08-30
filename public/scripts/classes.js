@@ -562,7 +562,7 @@ class Character extends Sprite {
       if (this.isEnemy) tiredHealthBar = "#enemyHealthBar";
 
       document.getElementById("dialogueBox").innerHTML =
-        this.name + " is " + attack.attack_name + "...";
+        this.name + " hurt itself in exhaustion";
 
       gsap.to(this.position, {
         x: this.position.x + 10,
