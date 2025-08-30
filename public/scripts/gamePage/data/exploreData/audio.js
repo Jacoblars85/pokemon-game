@@ -7,12 +7,12 @@ const audio = {
     initBattle: new Howl({
         src: './audio/initBattle.wav',
         html5: true,
-        volume: 0.4
+        volume: 0.2
     }),
     battle: new Howl({
         src: './audio/battle.mp3',
         html5: true,
-        volume: 0.5
+        volume: 0.35
     }),
     physicalHit: new Howl({
         src: './audio/tackleHit.wav',
