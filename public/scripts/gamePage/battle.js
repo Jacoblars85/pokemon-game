@@ -40,7 +40,7 @@ function fadeBackToExplore() {
         opacity: 0,
       });
       battle.initiated = false;
-      audio.map.play()
+      audio.map.play();
     },
   });
 }
