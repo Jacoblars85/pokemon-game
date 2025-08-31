@@ -155,8 +155,8 @@ class Character extends Sprite {
         isAnimating = false;
       },
     });
-    audio.battle.stop()
-    audio.victory.play()
+    audio.battle.stop();
+    audio.victory.play();
   }
 
   switching({ recipient }) {
@@ -438,7 +438,7 @@ class Character extends Sprite {
           x: this.position.x + movementDistance * 2,
           duration: 0.1,
           onComplete: () => {
-            audio.physicalHit.play()
+            audio.physicalHit.play();
             gsap.to(healthBar, {
               width: (recipient.health / recipient.maxHealth) * 100 + "%",
             });
@@ -463,8 +463,8 @@ class Character extends Sprite {
           },
         });
     } else if (attack.attack_type === "projectile") {
-          audio.initFireball.play()
-      
+      audio.initFireball.play();
+
       const projectileAttackFx = new Sprite({
         position: {
           x: this.position.x,
@@ -486,7 +486,7 @@ class Character extends Sprite {
         x: recipient.position.x,
         y: recipient.position.y,
         onComplete: () => {
-          audio.fireballHit.play()
+          audio.fireballHit.play();
           gsap.to(healthBar, {
             width: (recipient.health / recipient.maxHealth) * 100 + "%",
           });
@@ -510,7 +510,7 @@ class Character extends Sprite {
         },
       });
     } else if (attack.attack_type === "summon") {
-      audio.initFireball.play()
+      audio.initFireball.play();
       const summonAttackFx = new Sprite({
         position: {
           x: recipient.position.x + 10,
@@ -532,7 +532,7 @@ class Character extends Sprite {
         y: recipient.position.y + 30,
         duration: 1.3,
         onComplete: () => {
-          audio.fireballHit.play()
+          audio.fireballHit.play();
           gsap.to(healthBar, {
             width: (recipient.health / recipient.maxHealth) * 100 + "%",
           });
@@ -576,7 +576,7 @@ class Character extends Sprite {
         yoyo: true,
         duration: 0.08,
         onComplete: () => {
-          audio.physicalHit.play()
+          audio.physicalHit.play();
           gsap.to(tiredHealthBar, {
             width: (this.health / this.maxHealth) * 100 + "%",
             onComplete: () => {
