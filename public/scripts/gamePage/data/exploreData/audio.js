@@ -59,4 +59,9 @@ const audio = {
     html5: true,
     volume: 0.5,
   }),
+  openSettings: new Howl({
+    src: "./audio/initBattle.wav",
+    html5: true,
+    volume: 0.5,
+  }),
 };
