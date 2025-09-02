@@ -459,6 +459,7 @@ function animateHouse() {
         })
       ) {
         shop.opened = true;
+        audio.openShop.play()
         document.getElementById("shopOverlay").style.display = "flex";
       }
     }
