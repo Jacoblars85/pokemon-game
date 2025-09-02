@@ -685,6 +685,7 @@ function animate() {
         })
       ) {
         window.cancelAnimationFrame(animationId);
+        audio.openDoor.play()
         gsap.to("#fadeOutDiv", {
           opacity: 1,
           repeat: 1,
