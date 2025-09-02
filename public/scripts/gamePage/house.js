@@ -437,6 +437,7 @@ function animateHouse() {
         })
       ) {
         healing.started = true;
+        audio.healingCharacters.play()
 
         setTimeout(() => {
           healStarters();
