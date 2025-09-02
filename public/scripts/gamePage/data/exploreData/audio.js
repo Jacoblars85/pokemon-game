@@ -39,4 +39,9 @@ const audio = {
     html5: true,
     volume: 0.5,
   }),
+  healingCharacter: new Howl({
+    src: "./audio/initBattle.wav",
+    html5: true,
+    volume: 0.5,
+  }),
 };
