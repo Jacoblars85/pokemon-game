@@ -64,6 +64,11 @@ function goBackButton() {
 function openSettingsDialog() {
   moving = false;
   settings.opened = true;
+  audio.map.stop()
+        audio.openSettings.play()
+        
+
+
 
   document.getElementById("settingsOverlay").style.display = "flex";
 }
@@ -71,6 +76,9 @@ function openSettingsDialog() {
 function closeSettingsDialog() {
   moving = true;
   settings.opened = false;
+
+  audio.map.play()
+
 
   document.getElementById("settingsOverlay").style.display = "none";
 
