@@ -370,6 +370,8 @@ class Character extends Sprite {
         yoyo: true,
         duration: 0.08,
         onComplete: () => {
+  audio.usingHealingItem.play()
+
           gsap.to("#starterHealthBar", {
             width: (this.health / this.maxHealth) * 100 + "%",
           });
