@@ -435,6 +435,7 @@ document.getElementById("chestOverlay").addEventListener("click", (event) => {
 function openBag() {
   moving = false;
   bag.opened = true;
+  audio.openBag.play()
 
   document.getElementById("bagOverlay").style.display = "flex";
 }
