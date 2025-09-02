@@ -419,6 +419,8 @@ function animateHouse() {
         })
       ) {
         pc.opened = true;
+        audio.openPc.play()
+
         document.getElementById("pcOverlay").style.display = "flex";
         renderPcGrid();
       }
