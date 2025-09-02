@@ -814,9 +814,24 @@ window.addEventListener("keyup", (e) => {
 });
 
 let clicked = false;
-addEventListener("click", () => {
+// addEventListener("click", () => {
+//   if (!clicked) {
+//     audio.map.play();
+//     clicked = true;
+//   }
+// });
+
+
+function startAudio() {
   if (!clicked) {
     audio.map.play();
     clicked = true;
+
+    removeEventListener("click", startAudio);
+    removeEventListener("keydown", startAudio);
   }
-});
+}
+
+
+addEventListener("click", startAudio);
+addEventListener("keydown", startAudio);
