@@ -387,7 +387,7 @@ function animateHouse() {
         })
       ) {
         window.cancelAnimationFrame(houseAnimationId);
-        audio.openDoor.play()
+        audio.openDoor.play();
         gsap.to("#fadeOutDiv", {
           opacity: 1,
           repeat: 1,
@@ -419,7 +419,7 @@ function animateHouse() {
         })
       ) {
         pc.opened = true;
-        audio.openPc.play()
+        audio.openPc.play();
 
         document.getElementById("pcOverlay").style.display = "flex";
         renderPcGrid();
@@ -439,7 +439,7 @@ function animateHouse() {
         })
       ) {
         healing.started = true;
-        audio.healingCharacters.play()
+        audio.healingCharacters.play();
 
         setTimeout(() => {
           healStarters();
@@ -461,7 +461,7 @@ function animateHouse() {
         })
       ) {
         shop.opened = true;
-        audio.openShop.play()
+        audio.openShop.play();
         document.getElementById("shopOverlay").style.display = "flex";
       }
     }
