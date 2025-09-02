@@ -435,7 +435,7 @@ document.getElementById("chestOverlay").addEventListener("click", (event) => {
 function openBag() {
   moving = false;
   bag.opened = true;
-  audio.openBag.play()
+  audio.openBag.play();
 
   document.getElementById("bagOverlay").style.display = "flex";
 }
@@ -668,7 +668,7 @@ function animate() {
         })
       ) {
         chest.opened = true;
-        audio.openChest.play()
+        audio.openChest.play();
         openChest(i);
         chestZones.splice(i, 1);
       }
@@ -687,7 +687,7 @@ function animate() {
         })
       ) {
         window.cancelAnimationFrame(animationId);
-        audio.openDoor.play()
+        audio.openDoor.play();
         gsap.to("#fadeOutDiv", {
           opacity: 1,
           repeat: 1,
