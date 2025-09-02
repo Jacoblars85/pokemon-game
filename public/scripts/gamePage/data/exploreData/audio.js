@@ -64,7 +64,7 @@ const audio = {
     html5: true,
     volume: 0.5,
   }),
-   buyAndSellItem: new Howl({
+  buyAndSellItem: new Howl({
     src: "./audio/initBattle.wav",
     html5: true,
     volume: 0.5,
