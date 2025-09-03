@@ -34,17 +34,12 @@ const audio = {
     html5: true,
     volume: 0.5,
   }),
-  openDoor: new Howl({
+  switchingCaracters: new Howl({
     src: "./audio/initBattle.wav",
     html5: true,
     volume: 0.5,
   }),
-  healingCharacters: new Howl({
-    src: "./audio/initBattle.wav",
-    html5: true,
-    volume: 0.5,
-  }),
-  usingHealingItem: new Howl({
+    usingHealingItem: new Howl({
     src: "./audio/initBattle.wav",
     html5: true,
     volume: 0.5,
@@ -70,6 +65,16 @@ const audio = {
     volume: 0.5,
   }),
    ballShake: new Howl({
+    src: "./audio/initBattle.wav",
+    html5: true,
+    volume: 0.5,
+  }),
+    openDoor: new Howl({
+    src: "./audio/initBattle.wav",
+    html5: true,
+    volume: 0.5,
+  }),
+    healingCharacters: new Howl({
     src: "./audio/initBattle.wav",
     html5: true,
     volume: 0.5,
