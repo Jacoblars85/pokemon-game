@@ -226,7 +226,7 @@ class Character extends Sprite {
         rotation: 1,
       });
 
-  audio.usingThrowableItem.play()
+      audio.usingThrowableItem.play();
 
       renderedSprites.splice(2, 0, throwableFx);
 
@@ -242,7 +242,7 @@ class Character extends Sprite {
           if (isCaught) {
             console.log("is caught");
 
-            audio.ballShake.play()
+            audio.ballShake.play();
             gsap.to(throwableFx.position, {
               x: throwableFx.position.x + 10,
               yoyo: true,
@@ -250,7 +250,7 @@ class Character extends Sprite {
               duration: 0.08,
               delay: 1,
               onComplete: () => {
-                audio.ballShake.play()
+                audio.ballShake.play();
                 gsap.to(throwableFx.position, {
                   x: throwableFx.position.x + 10,
                   yoyo: true,
@@ -258,7 +258,7 @@ class Character extends Sprite {
                   duration: 0.08,
                   delay: 2,
                   onComplete: () => {
-                    audio.ballShake.play()
+                    audio.ballShake.play();
                     gsap.to(throwableFx.position, {
                       x: throwableFx.position.x + 10,
                       yoyo: true,
@@ -266,7 +266,7 @@ class Character extends Sprite {
                       duration: 0.08,
                       delay: 2,
                       onComplete: () => {
-  audio.caughtCharacter.play()
+                        audio.caughtCharacter.play();
 
                         document.getElementById("dialogueBox").innerHTML =
                           "you caught " + recipient.name;
@@ -285,12 +285,12 @@ class Character extends Sprite {
               delay: 0.5,
 
               onComplete: () => {
-                audio.failedCatchingCharacter.play()
+                audio.failedCatchingCharacter.play();
                 gsap.to(recipient, {
                   opacity: 1,
                   duration: 1,
                 });
-                
+
                 document.getElementById("dialogueBox").innerHTML =
                   "you failed to catch " + recipient.name;
                 renderedSprites.splice(2, 1);
@@ -300,7 +300,7 @@ class Character extends Sprite {
           } else if (numOfShakes === 1) {
             console.log("didnt catch 1 shake");
 
-            audio.ballShake.play()
+            audio.ballShake.play();
             gsap.to(throwableFx.position, {
               x: throwableFx.position.x + 10,
               yoyo: true,
@@ -311,12 +311,11 @@ class Character extends Sprite {
                 gsap.to(throwableFx.position, {
                   delay: 1,
                   onComplete: () => {
-                    audio.failedCatchingCharacter.play()
+                    audio.failedCatchingCharacter.play();
                     gsap.to(recipient, {
                       opacity: 1,
                       duration: 0.5,
                     });
-                
 
                     document.getElementById("dialogueBox").innerHTML =
                       "you failed to catch " + recipient.name;
@@ -329,7 +328,7 @@ class Character extends Sprite {
           } else if (numOfShakes === 2) {
             console.log("didnt catch 2 shake");
 
-            audio.ballShake.play()
+            audio.ballShake.play();
             gsap.to(throwableFx.position, {
               x: throwableFx.position.x + 10,
               yoyo: true,
@@ -337,7 +336,7 @@ class Character extends Sprite {
               duration: 0.08,
               delay: 1,
               onComplete: () => {
-                audio.ballShake.play()
+                audio.ballShake.play();
                 gsap.to(throwableFx.position, {
                   x: throwableFx.position.x + 10,
                   yoyo: true,
@@ -348,7 +347,7 @@ class Character extends Sprite {
                     gsap.to(throwableFx.position, {
                       delay: 1,
                       onComplete: () => {
-                audio.failedCatchingCharacter.play()
+                        audio.failedCatchingCharacter.play();
 
                         gsap.to(recipient, {
                           opacity: 1,
@@ -388,7 +387,7 @@ class Character extends Sprite {
         yoyo: true,
         duration: 0.08,
         onComplete: () => {
-  audio.usingHealingItem.play()
+          audio.usingHealingItem.play();
 
           gsap.to("#starterHealthBar", {
             width: (this.health / this.maxHealth) * 100 + "%",
