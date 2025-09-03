@@ -226,6 +226,8 @@ class Character extends Sprite {
         rotation: 1,
       });
 
+  audio.usingThrowableItem.play()
+
       renderedSprites.splice(2, 0, throwableFx);
 
       gsap.to(throwableFx.position, {
