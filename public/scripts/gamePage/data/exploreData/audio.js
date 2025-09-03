@@ -64,6 +64,11 @@ const audio = {
     html5: true,
     volume: 0.5,
   }),
+   ballShake: new Howl({
+    src: "./audio/initBattle.wav",
+    html5: true,
+    volume: 0.5,
+  }),
   openBag: new Howl({
     src: "./audio/initBattle.wav",
     html5: true,
