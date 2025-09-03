@@ -263,6 +263,8 @@ class Character extends Sprite {
                       duration: 0.08,
                       delay: 2,
                       onComplete: () => {
+  audio.caughtCharacter.play()
+
                         document.getElementById("dialogueBox").innerHTML =
                           "you caught " + recipient.name;
                         isAnimating = false;
