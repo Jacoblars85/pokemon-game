@@ -234,6 +234,8 @@ class Character extends Sprite {
         x: recipient.position.x + 5,
         y: recipient.position.y,
         onComplete: () => {
+          audio.characterGoingIntoBall.play();
+
           gsap.to(recipient, {
             opacity: 0,
             duration: 0.5,
