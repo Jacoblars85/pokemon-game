@@ -286,6 +286,7 @@ class Character extends Sprite {
                   opacity: 1,
                   duration: 1,
                 });
+                audio.failedCatchingCharacter.play()
                 document.getElementById("dialogueBox").innerHTML =
                   "you failed to catch " + recipient.name;
                 renderedSprites.splice(2, 1);
@@ -309,6 +310,8 @@ class Character extends Sprite {
                       opacity: 1,
                       duration: 0.5,
                     });
+                audio.failedCatchingCharacter.play()
+
                     document.getElementById("dialogueBox").innerHTML =
                       "you failed to catch " + recipient.name;
                     renderedSprites.splice(2, 1);
@@ -341,6 +344,8 @@ class Character extends Sprite {
                           opacity: 1,
                           duration: 0.5,
                         });
+                audio.failedCatchingCharacter.play()
+
                         document.getElementById("dialogueBox").innerHTML =
                           "you failed to catch " + recipient.name;
                         renderedSprites.splice(2, 1);
