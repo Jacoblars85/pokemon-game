@@ -818,7 +818,7 @@ function removeItem({ character, itemId }) {
 
 function buyItem(item) {
   if (user.coins >= item.itemCost) {
-  audio.buyAndSellItem.play()
+    audio.buyAndSellItem.play();
 
     axios({
       method: "PUT",
@@ -839,7 +839,7 @@ function buyItem(item) {
 }
 
 function sellItem(item) {
-  audio.buyAndSellItem.play()
+  audio.buyAndSellItem.play();
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/sell/item`,
