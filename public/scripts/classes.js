@@ -175,7 +175,7 @@ class Character extends Sprite {
     gsap.to(this, {
       opacity: 0,
       onComplete: () => {
-        audio.switchingCaracters.play()
+        audio.switchingCaracters.play();
         document.getElementById("starterName").innerHTML = recipient.name;
         document.getElementById("starterLevel").innerHTML =
           "lv." + Math.floor(recipient.level);
