@@ -10,19 +10,12 @@ const battleBackground = new Sprite({
 });
 
 let enemy;
-
 let starter;
-
 let starter2;
-
 let attackButtonsArray;
-
 let renderedSprites;
-
 let currentStarter;
-
 let queue;
-
 let battleAnimationId;
 
 // animation for fading back to explore
