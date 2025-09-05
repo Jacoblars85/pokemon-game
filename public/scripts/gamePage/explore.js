@@ -773,7 +773,6 @@ movables.forEach((obj) => {
 });
 
 let lastKey = "";
-
 window.addEventListener("keydown", (e) => {
   if (e.key === "w" || e.key === "ArrowUp") {
     keys.w.pressed = true;
@@ -813,7 +812,6 @@ window.addEventListener("keyup", (e) => {
 });
 
 let clicked = false;
-
 function startAudio() {
   if (!clicked) {
     audio.map.play();
