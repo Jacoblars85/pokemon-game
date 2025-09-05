@@ -389,8 +389,6 @@ function resetBattleFunc() {
             resetBattleFunc();
           });
         } else if (currentStarter.speed < enemySpeed) {
-          console.log("enemy is faster");
-
           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
           enemy.attack({
             attack: selectedAttack,
