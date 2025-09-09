@@ -914,3 +914,17 @@ function healStarters() {
       console.log(err);
     });
 }
+
+function editCharactersNickname() {
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/characters/edit/nickname`,
+    withCredentials: true,
+  })
+    .then((response) => {
+      getStarters();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
