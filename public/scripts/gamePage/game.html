@@ -492,7 +492,10 @@
         </div>
         <img id="detailImage" src="" alt="Item Image" />
         <h2 id="detailLevel"></h2>
+        <div style="display: flex;">
         <h2 id="detailName"></h2>
+        <button onclick="openEditNicknamePopUp()">/</button>
+        </div>
         <h4 id="detailHp"></h4>
         <h4 id="detailStamina"></h4>
         <h4 id="detailSpeed"></h4>
@@ -508,7 +511,8 @@
       </div>
     </div>
 
-    <div id="editNicknamePopUp" style="display: flex;">
+    <!-- edit charcters nickname interface -->
+    <div id="editNicknamePopUp" style="display: none; z-index: 999;">
       <form class="formPanel" onSubmit="editCharactersNickname(event)">
         <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
           Create Characters Nickname
@@ -526,6 +530,7 @@
           <input class="btn" type="submit" name="submit" value="Edit Nickname" />
         </div>
       </form>
+      <button onclick="closeEditNicknamePopUp()">close</button>
     </div>
 
     <!-- use item on starter interface -->
