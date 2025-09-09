@@ -915,10 +915,11 @@ function healStarters() {
     });
 }
 
-function editCharactersNickname() {
+function editCharactersNickname(characterInfo) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/characters/edit/nickname`,
+    data: characterInfo,
     withCredentials: true,
   })
     .then((response) => {
