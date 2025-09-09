@@ -210,6 +210,7 @@ function showCharacterDetails(character, context = "") {
   editNicknameButton.addEventListener("click", (e) => {
     e.stopPropagation(); // Stop it from triggering detail popup
     console.log("trying to edit nickname");
+      document.getElementById("editNicknamePopUp").style.display = "flex";
   });
 
   console.log("character", character);
@@ -273,6 +274,17 @@ document
       closeCharacterDetails();
     }
   });
+
+
+    function openEditNicknamePopUp() {
+      document.getElementById("editNicknamePopUp").style.display = "none";
+    
+  }
+
+  function closeEditNicknamePopUp() {
+      document.getElementById("editNicknamePopUp").style.display = "none";
+    
+  }
 
 function eventListenersForPc() {
   document.getElementById("nextBtn").addEventListener("click", () => {
