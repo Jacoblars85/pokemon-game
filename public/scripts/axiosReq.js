@@ -204,7 +204,7 @@ function renderStarterGrid(containerElement) {
       infoContainer.style.flex = "1";
 
       const name = document.createElement("div");
-      name.textContent = starter.character_name;
+      name.textContent = starter.nickname || starter.character_name;
       name.style.fontWeight = "bold";
 
       // HP Bar
