@@ -200,6 +200,12 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("detailAttackStamina").textContent =
     "stamina used: " + character.attack_stamina;
 
+        const editNicknameButton = document.createElement("button");
+    editNicknameButton.textContent = "Edit Nickname";
+    editNicknameButton.style = `
+            cursor: pointer;
+          `;
+
   console.log("character", character);
 
   const container = document.getElementById("detailsItem");
