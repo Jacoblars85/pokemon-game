@@ -206,6 +206,12 @@ function showCharacterDetails(character, context = "") {
             cursor: pointer;
           `;
 
+              editNicknameButton.addEventListener("click", (e) => {
+      e.stopPropagation(); // Stop it from triggering detail popup
+      console.log('trying to edit nickname');
+      
+    });
+
   console.log("character", character);
 
   const container = document.getElementById("detailsItem");
