@@ -283,6 +283,17 @@ function closeEditNicknamePopUp() {
   document.getElementById("editNicknamePopUp").style.display = "none";
 }
 
+document
+  .getElementById("editNicknameOverlay")
+  .addEventListener("click", (event) => {
+    const popup = document.getElementById("editNicknamePopUp");
+
+    // Only close if clicking directly on the overlay (not inside the popup)
+    if (!popup.contains(event.target)) {
+      closeEditNicknamePopUp();
+    }
+  });
+
 function eventListenersForPc() {
   document.getElementById("nextBtn").addEventListener("click", () => {
     if (currentPage === 49) {
