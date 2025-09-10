@@ -277,7 +277,7 @@ document
 
 
     function openEditNicknamePopUp() {
-      document.getElementById("editNicknamePopUp").style.display = "none";
+      document.getElementById("editNicknamePopUp").style.display = "flex";
     
   }
 
