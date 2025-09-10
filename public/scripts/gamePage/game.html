@@ -512,7 +512,8 @@
     </div>
 
     <!-- edit charcters nickname interface -->
-    <div id="editNicknamePopUp" style="display: none; z-index: 999;">
+         <div id="editNicknameOverlay" class="overlay">
+    <div id="editNicknamePopUp">
       <form class="formPanel" onSubmit="editCharactersNickname(event)">
         <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
           Create Characters Nickname
@@ -531,6 +532,7 @@
         </div>
       </form>
       <button onclick="closeEditNicknamePopUp()">close</button>
+    </div>
     </div>
 
     <!-- use item on starter interface -->
