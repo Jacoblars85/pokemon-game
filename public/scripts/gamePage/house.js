@@ -276,11 +276,11 @@ document
   });
 
 function openEditNicknamePopUp() {
-  document.getElementById("editNicknamePopUp").style.display = "flex";
+  document.getElementById("editNicknameOverlay").style.display = "flex";
 }
 
 function closeEditNicknamePopUp() {
-  document.getElementById("editNicknamePopUp").style.display = "none";
+  document.getElementById("editNicknameOverlay").style.display = "none";
 }
 
 document
