@@ -201,17 +201,17 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("detailAttackStamina").textContent =
     "stamina used: " + character.attack_stamina;
 
-  const editNicknameButton = document.createElement("button");
-  editNicknameButton.textContent = "Edit Nickname";
-  editNicknameButton.style = `
-            cursor: pointer;
-          `;
+  // const editNicknameButton = document.createElement("button");
+  // editNicknameButton.textContent = "Edit Nickname";
+  // editNicknameButton.style = `
+  //           cursor: pointer;
+  //         `;
 
-  editNicknameButton.addEventListener("click", (e) => {
-    e.stopPropagation(); // Stop it from triggering detail popup
-    console.log("trying to edit nickname");
-    document.getElementById("editNicknamePopUp").style.display = "flex";
-  });
+  // editNicknameButton.addEventListener("click", (e) => {
+  //   e.stopPropagation(); // Stop it from triggering detail popup
+  //   console.log("trying to edit nickname");
+  //   document.getElementById("editNicknamePopUp").style.display = "flex";
+  // });
 
   console.log("character", character);
 
