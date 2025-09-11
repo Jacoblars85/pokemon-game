@@ -915,7 +915,10 @@ function healStarters() {
     });
 }
 
-function editCharactersNickname(characterInfo) {
+function editCharactersNickname(e) {
+
+let characterInfo = {characterID: e, newCharacterName}
+
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/characters/edit/nickname`,
