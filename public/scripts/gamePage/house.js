@@ -273,7 +273,7 @@ document
 function openEditNicknamePopUp(characterChanging) {
   console.log('characterChanging', characterChanging);
 
-    const editNicknameButton = document.getElementById("openEditNicknameButton");
+    const editNicknameButton = document.getElementById("submitEditNicknameButton");
 
   editNicknameButton.addEventListener("click", (e) => {
     e.stopPropagation(); // Stop it from triggering detail popup
