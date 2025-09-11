@@ -277,7 +277,7 @@ function openEditNicknamePopUp(characterChanging) {
 
   editNicknameButton.addEventListener("click", (e) => {
     e.stopPropagation(); // Stop it from triggering detail popup
-openEditNicknamePopUp(character)
+editCharactersNickname(characterChanging)
   });
   
   document.getElementById("editNicknameOverlay").style.display = "flex";
