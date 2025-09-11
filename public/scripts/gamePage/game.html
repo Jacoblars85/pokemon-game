@@ -514,7 +514,7 @@
     <!-- edit charcters nickname interface -->
     <div id="editNicknameOverlay" class="overlay">
       <div id="editNicknamePopUp" class="editNickname">
-        <form class="formPanel" onSubmit="editCharactersNickname(event)">
+        <form class="formPanel">
           <h2 style="margin: 5px; font-size: 35px; text-shadow: 3px 3px 3px gray">
             Create Characters Nickname
           </h2>
@@ -528,7 +528,7 @@
             ">
             <input id="editNicknameInput" placeholder="nickname" type="text" name="nickname" />
 
-            <input class="btn" type="submit" name="submit" value="Edit Nickname" />
+            <button id="submitEditNicknameButton" class="btn">Edit Nickname</button>
           </div>
         </form>
         <button onclick="closeEditNicknamePopUp()">close</button>
