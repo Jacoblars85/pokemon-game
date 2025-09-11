@@ -915,15 +915,15 @@ function healStarters() {
     });
 }
 
-function editCharactersNickname(e) {
+function editCharactersNickname(character) {
   e.preventDefault();
 
-  console.log('e', e);
+  console.log('character', character);
   
 
   let editCharacterInput = document.getElementById("editNicknameInput");
 
-  let characterInfo = { characterID: e, newCharacterName: editCharacterInput };
+  let characterInfo = { characterID: character.id, newCharacterName: editCharacterInput };
 
   axios({
     method: "PUT",
