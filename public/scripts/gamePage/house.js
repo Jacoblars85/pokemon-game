@@ -201,12 +201,11 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("detailAttackStamina").textContent =
     "stamina used: " + character.attack_stamina;
 
-  // const editNicknameButton = document.createElement("button");
+  const editNicknameButton = document.getElementById("openEditNicknameButton");
 
   editNicknameButton.addEventListener("click", (e) => {
     e.stopPropagation(); // Stop it from triggering detail popup
-    console.log("trying to edit nickname");
-    document.getElementById("editNicknamePopUp").style.display = "flex";
+openEditNicknamePopUp(character)
   });
 
   console.log("character", character);
