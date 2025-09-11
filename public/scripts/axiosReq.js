@@ -918,9 +918,9 @@ function healStarters() {
 function editCharactersNickname(e) {
   e.preventDefault();
 
-  let editCharacterInput = document.getElementById("editNicknameInput")
+  let editCharacterInput = document.getElementById("editNicknameInput");
 
-let characterInfo = {characterID: e, newCharacterName: editCharacterInput}
+  let characterInfo = { characterID: e, newCharacterName: editCharacterInput };
 
   axios({
     method: "PUT",
@@ -930,7 +930,7 @@ let characterInfo = {characterID: e, newCharacterName: editCharacterInput}
   })
     .then((response) => {
       getStarters();
-      editCharacterInput.value = ""
+      editCharacterInput.value = "";
     })
     .catch((err) => {
       console.log(err);
