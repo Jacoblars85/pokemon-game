@@ -201,9 +201,9 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("detailAttackStamina").textContent =
     "stamina used: " + character.attack_stamina;
 
-  const editNicknameButton = document.getElementById("openEditNicknameButton");
+  const openEditNicknameButton = document.getElementById("openEditNicknameButton");
 
-  editNicknameButton.addEventListener("click", (e) => {
+  openEditNicknameButton.addEventListener("click", (e) => {
     e.stopPropagation(); // Stop it from triggering detail popup
 openEditNicknamePopUp(character)
   });
@@ -270,8 +270,15 @@ document
     }
   });
 
-function openEditNicknamePopUp(e) {
-  console.log('e in open', e);
+function openEditNicknamePopUp(characterChanging) {
+  console.log('characterChanging', characterChanging);
+
+    const editNicknameButton = document.getElementById("openEditNicknameButton");
+
+  editNicknameButton.addEventListener("click", (e) => {
+    e.stopPropagation(); // Stop it from triggering detail popup
+openEditNicknamePopUp(character)
+  });
   
   document.getElementById("editNicknameOverlay").style.display = "flex";
 }
