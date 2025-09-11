@@ -918,6 +918,9 @@ function healStarters() {
 function editCharactersNickname(e) {
   e.preventDefault();
 
+  console.log('e', e);
+  
+
   let editCharacterInput = document.getElementById("editNicknameInput");
 
   let characterInfo = { characterID: e, newCharacterName: editCharacterInput };
