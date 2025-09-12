@@ -915,15 +915,12 @@ function healStarters() {
     });
 }
 
-function editCharactersNickname(character) {
+function editCharactersNickname(e, character) {
   e.preventDefault();
-
-  console.log('character', character);
-  
 
   let editCharacterInput = document.getElementById("editNicknameInput");
 
-  let characterInfo = { characterID: character.id, newCharacterName: editCharacterInput };
+  let characterInfo = { characterID: character.id, newCharacterName: editCharacterInput.value };
 
   axios({
     method: "PUT",
@@ -933,7 +930,7 @@ function editCharactersNickname(character) {
   })
     .then((response) => {
       getStarters();
-      editCharacterInput.value = "";
+      // editCharacterInput.value = "";
     })
     .catch((err) => {
       console.log(err);
