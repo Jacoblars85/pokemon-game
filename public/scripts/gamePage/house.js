@@ -273,15 +273,13 @@ document
   });
 
 function openEditNicknamePopUp(characterChanging) {
-  console.log("characterChanging", characterChanging);
-
   const editNicknameButton = document.getElementById(
     "submitEditNicknameButton"
   );
 
   editNicknameButton.addEventListener("click", (e) => {
     e.stopPropagation(); // Stop it from triggering detail popup
-    editCharactersNickname(characterChanging);
+    editCharactersNickname(e, characterChanging);
   });
 
   document.getElementById("editNicknameOverlay").style.display = "flex";
