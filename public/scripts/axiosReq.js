@@ -920,7 +920,10 @@ function editCharactersNickname(e, character) {
 
   let editCharacterInput = document.getElementById("editNicknameInput");
 
-  let characterInfo = { characterID: character.id, newCharacterName: editCharacterInput.value };
+  let characterInfo = {
+    characterID: character.id,
+    newCharacterName: editCharacterInput.value,
+  };
 
   axios({
     method: "PUT",
@@ -930,7 +933,7 @@ function editCharactersNickname(e, character) {
   })
     .then((response) => {
       getStarters();
-      // editCharacterInput.value = "";
+      editCharacterInput.value = "";
     })
     .catch((err) => {
       console.log(err);
