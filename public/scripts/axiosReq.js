@@ -925,8 +925,8 @@ function editCharactersNickname(e, character) {
     newCharacterName: editCharacterInput.value,
   };
 
-  character.nickname = editCharacterInput.value
-  
+  character.nickname = editCharacterInput.value;
+
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/characters/edit/nickname`,
@@ -936,7 +936,7 @@ function editCharactersNickname(e, character) {
     .then((response) => {
       getStarters();
       editCharacterInput.value = "";
-      showCharacterDetails(character, "bag")
+      showCharacterDetails(character, "bag");
     })
     .catch((err) => {
       console.log(err);
