@@ -43,7 +43,7 @@ router.get("/all/characters", (req, res) => {
 });
 
 router.get("/enemy/:id", (req, res) => {
-  // console.log('im in enemy get');
+  //  console.log('req.body', req.body);
 
   const query = `
 SELECT  "characters"."id",
