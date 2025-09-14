@@ -378,14 +378,14 @@ router.delete("/sell/character", (req, res) => {
     });
 });
 
-router.put("/new/:id", (req, res) => {
+router.put("/new", (req, res) => {
   const sqlText = `
     UPDATE "user_characters"
     SET "new" = FALSE
     WHERE "id" = $1 AND "user_id" = $2;
           `;
 
-  const insertValue = [req.params.id, req.user.id];
+  const insertValue = [req.body.characterId, req.user.id];
 
   pool
     .query(sqlText, insertValue)
