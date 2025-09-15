@@ -40,7 +40,7 @@ const audio = {
     volume: 0.5,
   }),
   usingHealingItem: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/usingHealingItem.wav",
     html5: true,
     volume: 0.5,
   }),
@@ -75,7 +75,7 @@ const audio = {
     volume: 0.5,
   }),
   healingCharacters: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/healingCharacters.wav",
     html5: true,
     volume: 0.5,
   }),
@@ -95,12 +95,12 @@ const audio = {
     volume: 0.5,
   }),
   buyAndSellItem: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/buyAndSellItem.wav",
     html5: true,
     volume: 0.5,
   }),
   openSettings: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/openSettings.wav",
     html5: true,
     volume: 0.5,
   }),
