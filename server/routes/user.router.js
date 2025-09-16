@@ -79,7 +79,6 @@ router.post("/register", (req, res, next) => {
 
           pool
             .query(insertNewUserQuery, insertNewUserValues)
-
             .then((result) => {
               // ID IS HERE!
               // console.log('New user Id:', result.rows[0].user_id);
@@ -93,7 +92,33 @@ router.post("/register", (req, res, next) => {
               ($1, 1, 1),
               ($1, 2, 0),
               ($1, 3, 0),
-              ($1, 4, 0);
+              ($1, 4, 0)
+              RETURNING user_id;
+          `;
+              const insertNewUserValues = [createdUserId];
+
+              pool
+                .query(insertNewUserQuery, insertNewUserValues)
+                .then((result) => {
+                   // ID IS HERE!
+              // console.log('New user Id:', result.rows[0].user_id);
+              const createdUserId = result.rows[0].user_id;
+
+              // Now handle the user_characters reference:
+              const insertNewUserQuery = `
+            INSERT INTO "user_chests" 
+              ("user_id", "chest_id")
+              VALUES
+              ($1, 1),
+              ($1, 2),
+              ($1, 3),
+              ($1, 4),
+              ($1, 5),
+              ($1, 6),
+              ($1, 7),
+              ($1, 8),
+              ($1, 9),
+              ($1, 10);
           `;
               const insertNewUserValues = [createdUserId];
 
@@ -118,6 +143,7 @@ router.post("/register", (req, res, next) => {
                           user,
                         });
                       });
+                    })
                     })
                     .catch((err) => {
                       console.error("Error fetching user for login:", err);
