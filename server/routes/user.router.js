@@ -234,7 +234,6 @@ router.put("/change", (req, res) => {
     });
 });
 
-// delete the users account
 router.delete("/", (req, res) => {
   const sqlText = `
     DELETE FROM "user_inventory"
@@ -420,7 +419,6 @@ router.put("/won/battle", (req, res) => {
     });
 });
 
-// user watched credits and turns it to true
 router.put("/credits", (req, res) => {
   // console.log('are we here?');
   const sqlText = `
