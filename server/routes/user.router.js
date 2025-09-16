@@ -100,12 +100,12 @@ router.post("/register", (req, res, next) => {
               pool
                 .query(insertNewUserQuery, insertNewUserValues)
                 .then((result) => {
-                   // ID IS HERE!
-              // console.log('New user Id:', result.rows[0].user_id);
-              const createdUserId = result.rows[0].user_id;
+                  // ID IS HERE!
+                  // console.log('New user Id:', result.rows[0].user_id);
+                  const createdUserId = result.rows[0].user_id;
 
-              // Now handle the user_characters reference:
-              const insertNewUserQuery = `
+                  // Now handle the user_characters reference:
+                  const insertNewUserQuery = `
             INSERT INTO "user_chests" 
               ("user_id", "chest_id")
               VALUES
@@ -120,30 +120,30 @@ router.post("/register", (req, res, next) => {
               ($1, 9),
               ($1, 10);
           `;
-              const insertNewUserValues = [createdUserId];
+                  const insertNewUserValues = [createdUserId];
 
-              pool
-                .query(insertNewUserQuery, insertNewUserValues)
-                // was here for basic
-                .then(() => {
-                  const getUserQuery = `SELECT * FROM "user" WHERE id = $1`;
                   pool
-                    .query(getUserQuery, [createdUserId])
-                    .then((result) => {
-                      const user = result.rows[0];
+                    .query(insertNewUserQuery, insertNewUserValues)
+                    // was here for basic
+                    .then(() => {
+                      const getUserQuery = `SELECT * FROM "user" WHERE id = $1`;
+                      pool
+                        .query(getUserQuery, [createdUserId])
+                        .then((result) => {
+                          const user = result.rows[0];
 
-                      req.login(user, (err) => {
-                        if (err) {
-                          console.error("Login error after register:", err);
-                          return res.sendStatus(500);
-                        }
+                          req.login(user, (err) => {
+                            if (err) {
+                              console.error("Login error after register:", err);
+                              return res.sendStatus(500);
+                            }
 
-                        res.status(201).json({
-                          message: "User registered and logged in",
-                          user,
+                            res.status(201).json({
+                              message: "User registered and logged in",
+                              user,
+                            });
+                          });
                         });
-                      });
-                    })
                     })
                     .catch((err) => {
                       console.error("Error fetching user for login:", err);
