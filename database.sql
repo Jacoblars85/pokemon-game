@@ -129,7 +129,13 @@ CREATE TABLE "user_rewards" (
 	"user_id" INT NOT NULL REFERENCES "user" ON DELETE CASCADE,
 	"reward_id" INT NOT NULL REFERENCES "rewards" ON DELETE CASCADE,
 	"number" INT);
-	
+
+	CREATE TABLE "user_chests" (
+  "id" SERIAL PRIMARY KEY,
+  "user_id" INT REFERENCES "user" ON DELETE CASCADE,
+  "chest_id" INT REFERENCES "chests" ON DELETE CASCADE,
+  "is_opened" BOOLEAN DEFAULT FALSE
+);
 
 
 INSERT INTO "attack_animations" 
