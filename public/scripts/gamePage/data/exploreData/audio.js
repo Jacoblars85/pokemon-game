@@ -35,7 +35,7 @@ const audio = {
     volume: 0.5,
   }),
   switchingCaracters: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/switchingCaracters.wav",
     html5: true,
     volume: 0.5,
   }),
@@ -45,12 +45,12 @@ const audio = {
     volume: 0.5,
   }),
   usingThrowableItem: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/usingThrowableItem.wav",
     html5: true,
     volume: 0.5,
   }),
   characterGoingIntoBall: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/characterGoingIntoBall.wav",
     html5: true,
     volume: 0.5,
   }),
@@ -65,12 +65,12 @@ const audio = {
     volume: 0.5,
   }),
   ballShake: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/ballShake.wav",
     html5: true,
     volume: 0.5,
   }),
   openDoor: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/openDoor.wav",
     html5: true,
     volume: 0.5,
   }),
@@ -80,7 +80,7 @@ const audio = {
     volume: 0.5,
   }),
   openBag: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/openBag.wav",
     html5: true,
     volume: 0.5,
   }),
@@ -90,7 +90,7 @@ const audio = {
     volume: 0.5,
   }),
   openShop: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/openShop.wav",
     html5: true,
     volume: 0.5,
   }),
