@@ -509,9 +509,21 @@ router.put("/chest/open", (req, res) => {
 
       const sqlValues = [req.user.id, req.body.itemId];
 
-      pool.query(sqlText, sqlValues).then((result) => {
+      pool.query(sqlText, sqlValues)
+      .then((result) => {
+        const sqlText = `
+        UPDATE "user_chests"
+          SET "is_opened" = TRUE
+            WHERE "user_id" = $1 AND "items_id" = $2;
+      `;
+
+      const sqlValues = [req.user.id, req.body.chestId];
+
+      pool.query(sqlText, sqlValues)
+      .then((result) => {
         res.sendStatus(201);
       });
+      })
     })
     .catch((err) => {
       // catch for second query
