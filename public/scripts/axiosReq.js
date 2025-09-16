@@ -942,18 +942,3 @@ function editCharactersNickname(e, character) {
       console.log(err);
     });
 }
-
-function putOpenChest(chestInfo) {
-  axios({
-    method: "PUT",
-    url: `http://localhost:5001/api/user/won/battle`,
-    data: chestInfo,
-    withCredentials: true,
-  })
-    .then((response) => {
-      getStarters();
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
