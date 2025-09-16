@@ -282,3 +282,18 @@ INSERT INTO "rewards"
 	  ('consumable item mystery box', 'images/1200px-ItemBoxMK8.webp', 25),
 	  ('item mystery box', 'images/1200px-ItemBoxMK8.webp', 50);
 	  
+INSERT INTO "chests" 
+	  ("world_name", "x", "y")
+	  VALUES
+	  ('World 1', 15, 15),
+	  ('World 1', 15, 15),
+	  ('World 1', 15, 15),
+	  ('World 1', 15, 15),
+	  ('World 1', 15, 15),
+	  ('World 1', 15, 15),
+	  ('World 1', 15, 15),
+	  ('World 1', 15, 15),
+	  ('World 1', 15, 15),
+	  ('World 1', 15, 15),
+	  ('World 1', 15, 15);
+	
