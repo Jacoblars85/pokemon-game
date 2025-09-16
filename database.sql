@@ -87,6 +87,13 @@ CREATE TABLE "rewards" (
 	"pic" VARCHAR(100),
 	"cost" INT);
 	
+CREATE TABLE chests (
+  "id" SERIAL PRIMARY KEY,
+  "world_name" VARCHAR(50),
+  "x" INT NOT NULL,
+  "y" INT NOT NULL
+);
+
 CREATE TABLE "user_characters" (
 	"id" SERIAL PRIMARY KEY,
 	"user_id" INT NOT NULL REFERENCES "user" ON DELETE CASCADE,
@@ -130,7 +137,7 @@ CREATE TABLE "user_rewards" (
 	"reward_id" INT NOT NULL REFERENCES "rewards" ON DELETE CASCADE,
 	"number" INT);
 
-	CREATE TABLE "user_chests" (
+CREATE TABLE "user_chests" (
   "id" SERIAL PRIMARY KEY,
   "user_id" INT REFERENCES "user" ON DELETE CASCADE,
   "chest_id" INT REFERENCES "chests" ON DELETE CASCADE,
