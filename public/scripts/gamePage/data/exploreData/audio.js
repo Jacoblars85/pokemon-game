@@ -55,12 +55,12 @@ const audio = {
     volume: 0.5,
   }),
   caughtCharacter: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/caughtCharacter.wav",
     html5: true,
     volume: 0.5,
   }),
   failedCatchingCharacter: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/failedCatchingCharacter.wav",
     html5: true,
     volume: 0.5,
   }),
@@ -85,7 +85,7 @@ const audio = {
     volume: 0.5,
   }),
   openPc: new Howl({
-    src: "./audio/initBattle.wav",
+    src: "./audio/openPc.wav",
     html5: true,
     volume: 0.5,
   }),
