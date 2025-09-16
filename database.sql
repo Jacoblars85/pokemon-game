@@ -275,25 +275,25 @@ INSERT INTO "items"
 	('magic wand', 'held', 15, 0, 0, 0, 0, '../../images/held/MagicWandSprite.png', 150, '#000000');
 		
 INSERT INTO "rewards" 
-	  ("reward_name", "pic", "cost")
-	  VALUES
-	  ('character mystery box', 'images/mysterBoxPic.webp', 15),
-	  ('held item mystery box', 'images/1200px-ItemBoxMK8.webp', 75),
-	  ('consumable item mystery box', 'images/1200px-ItemBoxMK8.webp', 25),
-	  ('item mystery box', 'images/1200px-ItemBoxMK8.webp', 50);
-	  
+	("reward_name", "pic", "cost")
+	VALUES
+	('character mystery box', 'images/mysterBoxPic.webp', 15),
+	('held item mystery box', 'images/1200px-ItemBoxMK8.webp', 75),
+	('consumable item mystery box', 'images/1200px-ItemBoxMK8.webp', 25),
+	('item mystery box', 'images/1200px-ItemBoxMK8.webp', 50);
+	
 INSERT INTO "chests" 
-	  ("world_name", "x", "y")
-	  VALUES
-	  ('World 1', 15, 15),
-	  ('World 1', 15, 15),
-	  ('World 1', 15, 15),
-	  ('World 1', 15, 15),
-	  ('World 1', 15, 15),
-	  ('World 1', 15, 15),
-	  ('World 1', 15, 15),
-	  ('World 1', 15, 15),
-	  ('World 1', 15, 15),
-	  ('World 1', 15, 15),
-	  ('World 1', 15, 15);
+	("world_name", "x", "y")
+	VALUES
+	('World 1', 15, 15),
+	('World 1', 15, 15),
+	('World 1', 15, 15),
+	('World 1', 15, 15),
+	('World 1', 15, 15),
+	('World 1', 15, 15),
+	('World 1', 15, 15),
+	('World 1', 15, 15),
+	('World 1', 15, 15),
+	('World 1', 15, 15),
+	('World 1', 15, 15);
 	
