@@ -85,12 +85,14 @@ battleZonesMap.forEach((row, i) => {
 });
 
 const chestZones = [];
+let chestCounter = 1;
 
 chestZonesMap.forEach((row, i) => {
   row.forEach((symbol, j) => {
     if (symbol === 1025) {
       chestZones.push(
         new Boundary({
+          id: chestCounter++,
           position: {
             x: j * Boundary.width + offset.x,
             y: i * Boundary.height + offset.y,
