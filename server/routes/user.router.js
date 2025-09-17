@@ -509,11 +509,10 @@ router.put("/chest/open", (req, res) => {
 
       const sqlValues = [req.user.id, req.body.itemId];
 
-        pool.query(sqlText, sqlValues)
-        .then((result) => {
-          res.sendStatus(201);
-        });
-      })
+      pool.query(sqlText, sqlValues).then((result) => {
+        res.sendStatus(201);
+      });
+    })
     .catch((err) => {
       // catch for second query
       console.log("in the second", err);
