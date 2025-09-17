@@ -1,7 +1,8 @@
 class Boundary {
   static width = 48;
   static height = 48;
-  constructor({ position }) {
+  constructor({ id, position }) {
+    this.id = id
     this.position = position;
     this.width = 48;
     this.height = 48;
