@@ -491,12 +491,12 @@ router.put("/chest/open", (req, res) => {
   // console.log('req.body', req.body);
 
   const sqlText = `
-      UPDATE "user_rewards"
-        SET "number" = "number" - 1
-          WHERE "reward_id" = $1 AND "user_id" = $2
+        UPDATE "user_chests"
+          SET "is_opened" = TRUE
+            WHERE "user_id" = $1 AND "chest_id" = $2;
     `;
 
-  const sqlValues = [req.body.rewardId, req.user.id];
+  const sqlValues = [req.user.id, req.body.chestId];
 
   pool
     .query(sqlText, sqlValues)
@@ -509,20 +509,11 @@ router.put("/chest/open", (req, res) => {
 
       const sqlValues = [req.user.id, req.body.itemId];
 
-      pool.query(sqlText, sqlValues).then((result) => {
-        const sqlText = `
-        UPDATE "user_chests"
-          SET "is_opened" = TRUE
-            WHERE "user_id" = $1 AND "items_id" = $2;
-      `;
-
-        const sqlValues = [req.user.id, req.body.chestId];
-
-        pool.query(sqlText, sqlValues).then((result) => {
+        pool.query(sqlText, sqlValues)
+        .then((result) => {
           res.sendStatus(201);
         });
-      });
-    })
+      })
     .catch((err) => {
       // catch for second query
       console.log("in the second", err);
