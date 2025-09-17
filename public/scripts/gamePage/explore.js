@@ -667,8 +667,8 @@ function animate() {
       ) {
         chest.opened = true;
         audio.openChest.play();
-        openChest(i);
-        chestZones.splice(i, 1);
+        openChest(chestZone.id);
+        // chestZones.splice(i, 1);
       }
     }
   }
