@@ -232,7 +232,6 @@ const shop = {
 };
 
 let movables;
-
 let moving = true;
 
 function getNearby(boundaries, distance = 100) {
@@ -390,7 +389,6 @@ function movementIf(boundryParam) {
 // chest functions
 function openChest(boundryId) {
   let itemId = Math.floor(Math.random() * 19 + 1);
-
   let chestId = boundryId;
 
   userOpenChest({ itemId, chestId });
