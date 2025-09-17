@@ -88,11 +88,10 @@ CREATE TABLE "rewards" (
 	"cost" INT);
 	
 CREATE TABLE chests (
-  "id" SERIAL PRIMARY KEY,
-  "world_name" VARCHAR(50),
-  "x" INT NOT NULL,
-  "y" INT NOT NULL
-);
+	"id" SERIAL PRIMARY KEY,
+	"world_name" VARCHAR(50),
+	"x" INT NOT NULL,
+	"y" INT NOT NULL);
 
 CREATE TABLE "user_characters" (
 	"id" SERIAL PRIMARY KEY,
@@ -141,8 +140,7 @@ CREATE TABLE "user_chests" (
   "id" SERIAL PRIMARY KEY,
   "user_id" INT REFERENCES "user" ON DELETE CASCADE,
   "chest_id" INT REFERENCES "chests" ON DELETE CASCADE,
-  "is_opened" BOOLEAN DEFAULT FALSE
-);
+  "is_opened" BOOLEAN DEFAULT FALSE );
 
 
 INSERT INTO "attack_animations" 
