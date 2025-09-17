@@ -94,7 +94,7 @@ const audio = {
     html5: true,
     volume: 0.5,
   }),
-    openChest: new Howl({
+  openChest: new Howl({
     src: "./audio/openChest.wav",
     html5: true,
     volume: 0.5,
