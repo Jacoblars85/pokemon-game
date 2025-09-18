@@ -657,9 +657,13 @@ function animate() {
       const chestZone = chestZones[i];
 
       usersChests.forEach(usersChest => {
-        console.log('usersChest', usersChest);
-        console.log('chestZone', chestZone);
+        // console.log('usersChest', usersChest);
+        // console.log('chestZone', chestZone);
         
+        if (chestZone.id === usersChest.chest_id) {
+          console.log('the chest id match!');
+          
+        }
         
       });
 
