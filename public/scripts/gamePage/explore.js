@@ -12,7 +12,7 @@ getAllUsersItems();
 getAllItems();
 getAllUsersCharacters();
 getAllCharacters();
-getUsersChests()
+getUsersChests();
 
 const canvas = document.getElementById("canvasRef");
 const c = canvas.getContext("2d");
@@ -659,25 +659,20 @@ function animate() {
         rectangularCollisions({
           rectangle1: player,
           rectangle2: chestZone,
-        }) 
+        })
       ) {
+        usersChests.forEach((usersChest) => {
+          if (
+            chestZone.id === usersChest.chest_id &&
+            usersChest.is_opened === false
+          ) {
+            console.log("the chest id match!", usersChest, chestZone);
 
-        usersChests.forEach(usersChest => {
-        // console.log('usersChest', usersChest);
-        // console.log('chestZone', chestZone);
-        
-        if (chestZone.id === usersChest.chest_id && usersChest.is_opened === false) {
-          console.log('the chest id match!', usersChest, chestZone);
-          
-                  chest.opened = true;
-        audio.openChest.play();
-        openChest(chestZone.id);
-        }
-        
-      });
-
-
-        // chestZones.splice(i, 1);
+            chest.opened = true;
+            audio.openChest.play();
+            openChest(chestZone.id);
+          }
+        });
       }
     }
   }
