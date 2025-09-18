@@ -661,9 +661,13 @@ function animate() {
           rectangle2: chestZone,
         })
       ) {
-        usersChests.forEach((usersChest) => {
+
+              const usersChest = usersChests.find(
+        (chest) => chest.chest_id === chestZone.id
+      );
+
           if (
-            chestZone.id === usersChest.chest_id &&
+            usersChest &&
             usersChest.is_opened === false
           ) {
             console.log("the chest id match!", usersChest, chestZone);
@@ -672,7 +676,6 @@ function animate() {
             audio.openChest.play();
             openChest(chestZone.id);
           }
-        });
       }
     }
   }
