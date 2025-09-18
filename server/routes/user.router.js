@@ -241,7 +241,17 @@ FROM "rewards";
 
 router.get("/chests", (req, res) => {
   const query = `
-
+  SELECT "user_chests"."id" as "id",
+  "user_chests"."user_id" as "user_id",
+  "user_chests"."chest_id" as "chest_id",
+  "user_chests"."is_opened",
+  "chests"."world_name",
+  "chests"."x" as "chest_x",
+  "chests"."y" as "chest_y"
+FROM "user_chests"
+INNER JOIN "chests"
+ON "user_chests"."chest_id" = "chests"."id"
+WHERE "user_id" = $1;
 `;
 
   const sqlValues = [req.user.id];
