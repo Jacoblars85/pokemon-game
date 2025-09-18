@@ -741,8 +741,6 @@ function getUsersChests() {
   })
     .then((response) => {
       usersChests = response.data;
-
-      console.log("usersChests", usersChests);
     })
     .catch((err) => {
       console.log(err);
