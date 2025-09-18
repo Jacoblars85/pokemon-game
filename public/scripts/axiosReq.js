@@ -157,6 +157,7 @@ let usersConsumableItems = [];
 let usersThrowablesItems = [];
 let usersItems = [];
 let usersCharacters = [];
+let usersChests = []
 
 // setting basic info
 let allItems = [];
@@ -739,8 +740,10 @@ function getUsersChests() {
     withCredentials: true,
   })
     .then((response) => {
-      usersCharacters = response.data;
+      usersChests = response.data;
 
+      console.log('usersChests', usersChests);
+      
     })
     .catch((err) => {
       console.log(err);
