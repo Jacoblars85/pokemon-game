@@ -760,6 +760,7 @@ function userOpenChest(chestInfo) {
     .then((response) => {
       getAllUsersItems();
       getAllUsersBattleItems();
+      getUsersChests()
     })
     .catch((err) => {
       console.log(err);
