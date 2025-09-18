@@ -655,27 +655,28 @@ function animate() {
   if (keys.e.pressed || keys.f.pressed) {
     for (let i = 0; i < chestZones.length; i++) {
       const chestZone = chestZones[i];
-
-      usersChests.forEach(usersChest => {
-        // console.log('usersChest', usersChest);
-        // console.log('chestZone', chestZone);
-        
-        if (chestZone.id === usersChest.chest_id) {
-          console.log('the chest id match!');
-          
-        }
-        
-      });
-
       if (
         rectangularCollisions({
           rectangle1: player,
           rectangle2: chestZone,
         }) 
       ) {
-        chest.opened = true;
+
+        usersChests.forEach(usersChest => {
+        // console.log('usersChest', usersChest);
+        // console.log('chestZone', chestZone);
+        
+        if (chestZone.id === usersChest.chest_id && usersChest.is_opened === false) {
+          console.log('the chest id match!', usersChest, chestZone);
+          
+                  chest.opened = true;
         audio.openChest.play();
         openChest(chestZone.id);
+        }
+        
+      });
+
+
         // chestZones.splice(i, 1);
       }
     }
