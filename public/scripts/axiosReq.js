@@ -732,6 +732,21 @@ function getAllItems() {
     });
 }
 
+function getUsersChests() {
+  axios({
+    method: "GET",
+    url: "http://localhost:5001/api/user/chests",
+    withCredentials: true,
+  })
+    .then((response) => {
+      usersCharacters = response.data;
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function userOpenChest(chestInfo) {
   axios({
     method: "PUT",
