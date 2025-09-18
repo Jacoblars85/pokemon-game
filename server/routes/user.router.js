@@ -239,6 +239,24 @@ FROM "rewards";
     });
 });
 
+router.get("/chests", (req, res) => {
+  const query = `
+
+`;
+
+  const sqlValues = [req.user.id];
+
+  pool
+    .query(query, sqlValues)
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("ERROR: Get chests for user", err);
+      res.sendStatus(500);
+    });
+});
+
 router.put("/change", (req, res) => {
   // console.log('req.body', req.body.newName);
   const sqlText = `
