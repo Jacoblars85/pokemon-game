@@ -655,11 +655,18 @@ function animate() {
     for (let i = 0; i < chestZones.length; i++) {
       const chestZone = chestZones[i];
 
+      usersChests.forEach(usersChest => {
+        console.log('usersChest', usersChest);
+        console.log('chestZone', chestZone);
+        
+        
+      });
+
       if (
         rectangularCollisions({
           rectangle1: player,
           rectangle2: chestZone,
-        })
+        }) 
       ) {
         chest.opened = true;
         audio.openChest.play();
