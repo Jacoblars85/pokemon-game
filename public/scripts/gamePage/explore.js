@@ -666,8 +666,6 @@ function animate() {
         );
 
         if (usersChest && usersChest.is_opened === false) {
-          console.log("the chest id match!", usersChest, chestZone);
-
           chest.opened = true;
           audio.openChest.play();
           openChest(chestZone.id);
