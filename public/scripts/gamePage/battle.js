@@ -532,7 +532,6 @@ function resetBattleFunc() {
 
         let numOfShakes = 0;
         let isCaught = false;
-
         let randomRoll = Math.random();
 
         const hpFactor = Math.max(0.2, 1 - enemy.health / enemy.maxHealth);
@@ -547,13 +546,6 @@ function resetBattleFunc() {
 
         const margin = finalCatchChance - randomRoll;
 
-        console.log("hpFactor", hpFactor);
-        console.log("levelFactor", levelFactor);
-        console.log("baseCatchChance", baseCatchChance);
-        console.log(
-          "Number(itemBeingUsed.item_capture_rate)",
-          Number(itemBeingUsed.item_capture_rate)
-        );
         console.log("finalCatchChance", finalCatchChance);
         console.log("randomRoll", randomRoll);
         console.log("margin", margin);
