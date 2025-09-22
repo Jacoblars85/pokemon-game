@@ -607,8 +607,6 @@ function resetBattleFunc() {
         useItem(itemBeingUsed, resetBattleFunc);
 
         if (!isCaught) {
-          console.log("i didnt get caught so im gonna attack :)");
-
           queue.push(() => {
             enemy.attack({
               attack: {},
