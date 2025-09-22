@@ -53,8 +53,6 @@ function registerUserPost(userInfo) {
 }
 
 function loginUser(userInfo) {
-  console.log("userInfo", userInfo);
-
   axios
     .post(`http://localhost:5001/api/user/login`, userInfo, config)
     .then((response) => {
