@@ -413,7 +413,7 @@ class Character extends Sprite {
       else if (this.stamina >= pokeStamina) attack = pokeAttackStats;
       else if (this.stamina === 0) {
         attack = {
-          attack_type: "tired",
+          attack_style: "tired",
           attack_name: "tired",
           attack_damage: 0,
           attack_stamina: 0,
@@ -448,7 +448,7 @@ class Character extends Sprite {
     const uniqueAttackFxImage = new Image();
     uniqueAttackFxImage.src = this.fx_img;
 
-    if (attack.attack_type === "physical") {
+    if (attack.attack_style === "physical") {
       const tl = gsap.timeline();
 
       let movementDistance = 20;
@@ -485,7 +485,7 @@ class Character extends Sprite {
             isAnimating = false;
           },
         });
-    } else if (attack.attack_type === "projectile") {
+    } else if (attack.attack_style === "projectile") {
       audio.initFireball.play();
 
       const projectileAttackFx = new Sprite({
@@ -532,7 +532,7 @@ class Character extends Sprite {
           renderedSprites.splice(2, 1);
         },
       });
-    } else if (attack.attack_type === "summon") {
+    } else if (attack.attack_style === "summon") {
       audio.initFireball.play();
       const summonAttackFx = new Sprite({
         position: {
@@ -578,7 +578,7 @@ class Character extends Sprite {
           renderedSprites.splice(2, 1);
         },
       });
-    } else if (attack.attack_type === "tired") {
+    } else if (attack.attack_style === "tired") {
       this.health -= 5;
 
       let tiredHealthBar = "#starterHealthBar";
