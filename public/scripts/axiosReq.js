@@ -339,7 +339,7 @@ function getStarters() {
         attack_name: response.data[0].attack_name,
         attack_damage: Math.floor(response.data[0].attack_damage),
         attack_stamina: Math.floor(response.data[0].attack_stamina),
-        attack_type: response.data[0].attack_type,
+        attack_style: response.data[0].attack_style,
         fx_img: response.data[0].fx_img,
         max_frames: response.data[0].max_frames,
         hold_time: response.data[0].hold_time,
@@ -367,7 +367,7 @@ function getStarters() {
           attack_name: response.data[1].attack_name,
           attack_damage: Math.floor(response.data[1].attack_damage),
           attack_stamina: Math.floor(response.data[1].attack_stamina),
-          attack_type: response.data[1].attack_type,
+          attack_style: response.data[1].attack_style,
           fx_img: response.data[1].fx_img,
           max_frames: response.data[1].max_frames,
           hold_time: response.data[1].hold_time,
@@ -412,7 +412,7 @@ function getEnemy(enemyId) {
         attack_name: response.data[0].attack_name,
         attack_damage: response.data[0].attack_damage,
         attack_stamina: response.data[0].attack_stamina,
-        attack_type: response.data[0].attack_type,
+        attack_style: response.data[0].attack_style,
         fx_img: response.data[0].fx_img,
         max_frames: response.data[0].max_frames,
         hold_time: response.data[0].hold_time,
@@ -444,24 +444,24 @@ function getBasicAttacks() {
     .then((response) => {
       kickAttack = response.data[0].attack_name;
       kickStamina = response.data[0].attack_stamina;
-      // setKickAttackType(response.data[0].attack_type);
+      // setKickAttackType(response.data[0].attack_style);
 
       kickAttackStats = {
         attack_name: response.data[0].attack_name,
         attack_damage: response.data[0].attack_damage,
         attack_stamina: response.data[0].attack_stamina,
-        attack_type: response.data[0].attack_type,
+        attack_style: response.data[0].attack_style,
       };
 
       pokeAttack = response.data[1].attack_name;
       pokeStamina = response.data[1].attack_stamina;
-      // setPokeAttackType(response.data[1].attack_type);
+      // setPokeAttackType(response.data[1].attack_style);
 
       pokeAttackStats = {
         attack_name: response.data[1].attack_name,
         attack_damage: response.data[1].attack_damage,
         attack_stamina: response.data[1].attack_stamina,
-        attack_type: response.data[1].attack_type,
+        attack_style: response.data[1].attack_style,
       };
     })
     .catch((err) => {
