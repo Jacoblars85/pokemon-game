@@ -20,6 +20,8 @@ DROP TABLE IF EXISTS attack_animations;
 
 DROP TABLE IF EXISTS basic_attacks;
 
+DROP TABLE IF EXISTS types;
+
 
 
 CREATE TABLE "user" (
@@ -119,6 +121,12 @@ CREATE TABLE "basic_attacks" (
 	"attack_damage" INT,
 	"attack_stamina" INT,
 	"attack_type" VARCHAR(20));
+
+CREATE TABLE "types" (
+	"id" SERIAL PRIMARY KEY,
+	"type_name" VARCHAR(20),
+	"effective" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
+	"weakness" INT NOT NULL REFERENCES "types" ON DELETE CASCADE);
 	
 CREATE TABLE "levels" (
 	"id" SERIAL PRIMARY KEY,
@@ -143,6 +151,18 @@ CREATE TABLE "user_chests" (
   "chest_id" INT REFERENCES "chests" ON DELETE CASCADE,
   "is_opened" BOOLEAN DEFAULT FALSE );
 
+
+INSERT INTO "types" 
+	("type_name", "effective", "weakness")
+	VALUES 
+	('normal', 2, 1),
+	('fire', 4, 3),
+	('water', 2, 6),
+	('grass', 5, 2),
+	('ground', 6, 4),
+	('electric', 3, 5),
+	('dark', 8, 7),
+	('light', 8, 7);
 
 INSERT INTO "attack_animations" 
 	("animation_name", "max_frames", "hold_time", "fx_img")
