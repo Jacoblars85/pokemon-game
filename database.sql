@@ -157,7 +157,7 @@ CREATE TABLE "user_chests" (
 INSERT INTO "types" 
 	("type_name", "effective", "weakness")
 	VALUES 
-	('normal', 2, 1),
+	('normal', 1, 1),
 	('fire', 4, 3),
 	('water', 2, 6),
 	('grass', 5, 2),
