@@ -52,15 +52,21 @@ CREATE TABLE "attack_animations" (
 	"hold_time" INT,
 	"fx_img" VARCHAR(10000));
 
+CREATE TABLE "types" (
+	"id" SERIAL PRIMARY KEY,
+	"type_name" VARCHAR(20),
+	"effective" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
+	"weakness" INT NOT NULL REFERENCES "types" ON DELETE CASCADE);
+	
 CREATE TABLE "attacks" (
 	"id" SERIAL PRIMARY KEY,
 	"attack_name" VARCHAR(20),
 	"attack_damage" INT,
 	"attack_stamina" INT,
-	"attack_type" VARCHAR(20),
+	"type_id" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
 	"attack_style" VARCHAR(20),
 	"attack_animations_id" INT REFERENCES "attack_animations" ON DELETE CASCADE);
-	
+
 CREATE TABLE "characters" (
 	"id" SERIAL PRIMARY KEY,
 	"character_name" VARCHAR(20),
@@ -68,6 +74,7 @@ CREATE TABLE "characters" (
 	"hp" INT,
 	"stamina" INT,
 	"speed" INT,
+	"type_id" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
 	"attacks_id" INT DEFAULT NULL REFERENCES "attacks" ON DELETE CASCADE,
 	"battle_pic" VARCHAR(10000));
 	
@@ -120,14 +127,9 @@ CREATE TABLE "basic_attacks" (
 	"attack_name" VARCHAR(20),
 	"attack_damage" INT,
 	"attack_stamina" INT,
+	"type_id" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
 	"attack_type" VARCHAR(20));
 
-CREATE TABLE "types" (
-	"id" SERIAL PRIMARY KEY,
-	"type_name" VARCHAR(20),
-	"effective" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
-	"weakness" INT NOT NULL REFERENCES "types" ON DELETE CASCADE);
-	
 CREATE TABLE "levels" (
 	"id" SERIAL PRIMARY KEY,
 	"level_name" VARCHAR(20),
