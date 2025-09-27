@@ -469,6 +469,20 @@ function getBasicAttacks() {
     });
 }
 
+function getAllAttacks() {
+  axios({
+    method: "GET",
+    url: `http://localhost:5001/api/characters/attacks`,
+  })
+    .then((response) => {
+      console.log('got attacks', response.data);
+      
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function getAllUsersCharacters() {
   axios({
     method: "GET",
