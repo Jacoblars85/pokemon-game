@@ -5,6 +5,7 @@ fetchUser();
 getStarters();
 getEnemy(randomEnemy);
 getBasicAttacks();
+getAllAttacks()
 getAllUsersBattleItems();
 getAllUsersConsumables();
 getAllUsersThrowables();
