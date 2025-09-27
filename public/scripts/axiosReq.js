@@ -138,12 +138,11 @@ let enemySpeed = 0;
 let enemyInfo = {};
 let enemyAttackStats = {};
 
-// kick attack name and stamina
+// kick and poke attack stats
+let attacks = []
 let kickAttackStats = {};
 let kickAttack = "";
 let kickStamina = 0;
-
-// poke attack name and stamina
 let pokeAttackStats = {};
 let pokeAttack = "";
 let pokeStamina = 0;
@@ -442,6 +441,8 @@ function getBasicAttacks() {
     url: `http://localhost:5001/api/characters/basic`,
   })
     .then((response) => {
+      attacks.push(response.data)
+      
       kickAttack = response.data[0].attack_name;
       kickStamina = response.data[0].attack_stamina;
       // setKickAttackType(response.data[0].attack_style);
@@ -476,7 +477,7 @@ function getAllAttacks() {
   })
     .then((response) => {
       console.log('got attacks', response.data);
-      
+      attacks.push(response.data)
     })
     .catch((err) => {
       console.log(err);
