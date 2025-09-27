@@ -28,7 +28,9 @@ router.get("/attacks", (req, res) => {
   // console.log('im in attacks route');
 
   const query = `
-      SELECT * FROM "attacks";
+      SELECT * FROM "attacks"
+        INNER JOIN "types"
+      ON "types"."id" = "attacks"."type_id";
     `;
 
   pool
