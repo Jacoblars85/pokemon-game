@@ -24,6 +24,24 @@ router.get("/basic", (req, res) => {
     });
 });
 
+router.get("/attacks", (req, res) => {
+  // console.log('im in attacks route');
+
+  const query = `
+      SELECT * FROM "attacks";
+    `;
+
+  pool
+    .query(query)
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("ERROR: Get all attacks", err);
+      res.sendStatus(500);
+    });
+});
+
 router.get("/all/characters", (req, res) => {
   // console.log('im in character route');
 
