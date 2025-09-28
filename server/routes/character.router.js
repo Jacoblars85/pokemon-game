@@ -77,6 +77,10 @@ SELECT  "characters"."id",
         "characters"."stamina",
         "characters"."speed",
         "characters"."battle_pic",
+        "types"."id" as type_id,
+        "types"."type_name" as "character_type_name",
+        "types"."effective" as "character_type_effective",
+        "types"."weakness" as "character_type_weakness",
         "attacks"."id" as "attacks_id",
         "attacks"."attack_name",
         "attacks"."attack_damage",
@@ -88,6 +92,8 @@ SELECT  "characters"."id",
         "attack_animations"."hold_time",
         "attack_animations"."fx_img"
             FROM "characters"
+                  INNER JOIN "types"
+      ON "types"."id" = "characters"."type_id"
         INNER JOIN "attacks"
             ON "attacks"."id" = "characters"."attacks_id"
         INNER JOIN "attack_animations"
