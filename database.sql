@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS user_characters;
 
 DROP TABLE IF EXISTS user_rewards;
 
+DROP TABLE IF EXISTS user_chests;
+
 DROP TABLE IF EXISTS "user";
 
 DROP TABLE IF EXISTS levels;
@@ -11,6 +13,8 @@ DROP TABLE IF EXISTS levels;
 DROP TABLE IF EXISTS items;
 
 DROP TABLE IF EXISTS rewards;
+
+DROP TABLE IF EXISTS chests;
 
 DROP TABLE IF EXISTS characters;
 
