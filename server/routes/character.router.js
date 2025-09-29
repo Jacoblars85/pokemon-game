@@ -11,8 +11,8 @@ router.get("/basic", (req, res) => {
 
   const query = `
       SELECT * FROM "basic_attacks"
-      INNER JOIN "types"
-      ON "types"."id" = "basic_attacks"."type_id";
+        INNER JOIN "types"
+          ON "types"."id" = "basic_attacks"."type_id";
     `;
 
   pool
@@ -32,7 +32,7 @@ router.get("/attacks", (req, res) => {
   const query = `
       SELECT * FROM "attacks"
         INNER JOIN "types"
-      ON "types"."id" = "attacks"."type_id";
+          ON "types"."id" = "attacks"."type_id";
     `;
 
   pool
@@ -51,8 +51,8 @@ router.get("/all/characters", (req, res) => {
 
   const query = `
       SELECT * FROM "characters"
-      INNER JOIN "types"
-      ON "types"."id" = "characters"."type_id";
+        INNER JOIN "types"
+          ON "types"."id" = "characters"."type_id";
     `;
 
   pool
