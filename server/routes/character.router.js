@@ -92,10 +92,10 @@ SELECT  "characters"."id",
         "attack_animations"."hold_time",
         "attack_animations"."fx_img"
             FROM "characters"
-                  INNER JOIN "types"
-      ON "types"."id" = "characters"."type_id"
+        INNER JOIN "types"
+          ON "types"."id" = "characters"."type_id"
         INNER JOIN "attacks"
-            ON "attacks"."id" = "characters"."attacks_id"
+          ON "attacks"."id" = "characters"."attacks_id"
         INNER JOIN "attack_animations"
         	ON "attacks"."attack_animations_id" = "attack_animations"."id"
         WHERE "characters"."id" = $1;
