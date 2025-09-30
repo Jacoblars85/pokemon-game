@@ -244,8 +244,6 @@ class Character extends Sprite {
           });
 
           if (isCaught) {
-            console.log("is caught");
-
             audio.ballShake.play();
             gsap.to(throwableFx.position, {
               x: throwableFx.position.x + 10,
@@ -282,8 +280,6 @@ class Character extends Sprite {
               },
             });
           } else if (numOfShakes === 0) {
-            console.log("didnt catch 0 shake");
-
             gsap.to(throwableFx.position, {
               x: throwableFx.position.x,
               delay: 0.5,
@@ -302,8 +298,6 @@ class Character extends Sprite {
               },
             });
           } else if (numOfShakes === 1) {
-            console.log("didnt catch 1 shake");
-
             audio.ballShake.play();
             gsap.to(throwableFx.position, {
               x: throwableFx.position.x + 10,
@@ -330,8 +324,6 @@ class Character extends Sprite {
               },
             });
           } else if (numOfShakes === 2) {
-            console.log("didnt catch 2 shake");
-
             audio.ballShake.play();
             gsap.to(throwableFx.position, {
               x: throwableFx.position.x + 10,
