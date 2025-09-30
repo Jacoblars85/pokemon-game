@@ -147,7 +147,7 @@ let pokeAttackStats = {};
 let pokeAttack = "";
 let pokeStamina = 0;
 
-// setting users items and starters info
+// users items and starters info
 let usersStarters = [];
 let usersBattleItems = [];
 let usersConsumableItems = [];
@@ -156,7 +156,7 @@ let usersItems = [];
 let usersCharacters = [];
 let usersChests = [];
 
-// setting basic info
+// basic info
 let allItems = [];
 let allCharacters = [];
 
