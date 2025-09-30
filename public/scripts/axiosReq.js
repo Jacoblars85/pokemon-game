@@ -138,7 +138,7 @@ let enemySpeed = 0;
 let enemyInfo = {};
 let enemyAttackStats = {};
 
-// kick and poke attack stats
+// attack stats/info
 let attacks = [];
 let kickAttackStats = {};
 let kickAttack = "";
