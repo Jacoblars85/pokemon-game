@@ -210,8 +210,6 @@ function showCharacterDetails(character, context = "") {
     openEditNicknamePopUp(character);
   });
 
-  console.log("character", character);
-
   const container = document.getElementById("detailsItem");
   container.innerHTML = "";
 
