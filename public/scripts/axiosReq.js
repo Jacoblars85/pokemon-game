@@ -13,7 +13,7 @@ function fetchUser() {
     .then((response) => {
       user = response.data;
 
-      console.log("user", user);
+      // console.log("user", user);
 
       getStarters();
 
