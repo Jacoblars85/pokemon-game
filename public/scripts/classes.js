@@ -398,6 +398,10 @@ class Character extends Sprite {
   }
 
   attack({ attack, recipient, renderedSprites }) {
+    console.log('attack', attack);
+    console.log('recipient', recipient);
+    
+    
     if (this.isEnemy) {
       if (this.stamina >= enemyAttackStats.attack_stamina)
         attack = enemyAttackStats;
