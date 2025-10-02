@@ -70,7 +70,7 @@ router.get("/enemy/:id", (req, res) => {
   //  console.log('req.body', req.body);
 
   const query = `
-SELECT  "characters"."id",
+	SELECT  "characters"."id",
         "characters"."character_name",
         "characters"."profile_pic",
         "characters"."hp",
@@ -96,12 +96,12 @@ SELECT  "characters"."id",
         "attack_animations"."hold_time",
         "attack_animations"."fx_img"
             FROM "characters"
-        INNER JOIN "types" character_type
-          ON "types"."id" = "characters"."type_id"
+        INNER JOIN "types" "character_type"
+          ON "character_type"."id" = "characters"."type_id"
         INNER JOIN "attacks"
           ON "attacks"."id" = "characters"."attacks_id"
-        INNER JOIN "types" attack_type
-          ON "attacks"."type_id" = "types"."id"
+        INNER JOIN "types" "attack_type"
+          ON "attacks"."type_id" = "attack_type"."id"
         INNER JOIN "attack_animations"
         	ON "attacks"."attack_animations_id" = "attack_animations"."id"
         WHERE "characters"."id" = $1;
