@@ -2,7 +2,7 @@ class Boundary {
   static width = 48;
   static height = 48;
   constructor({ id, position }) {
-    this.id = id
+    this.id = id;
     this.position = position;
     this.width = 48;
     this.height = 48;
@@ -398,10 +398,9 @@ class Character extends Sprite {
   }
 
   attack({ attack, recipient, renderedSprites }) {
-    console.log('attack', attack);
-    console.log('recipient', recipient);
-    
-    
+    console.log("attack", attack);
+    console.log("recipient", recipient);
+
     if (this.isEnemy) {
       if (this.stamina >= enemyAttackStats.attack_stamina)
         attack = enemyAttackStats;
