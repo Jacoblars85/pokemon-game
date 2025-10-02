@@ -319,6 +319,9 @@ function getStarters() {
 
       starterOne = response.data[0];
 
+      console.log('starterOne', starterOne);
+      
+
       starterOneHp = Math.floor(response.data[0].hp);
       starterOneStamina = Math.floor(response.data[0].stamina);
       starterOneName = response.data[0].character_name;
@@ -429,6 +432,8 @@ function getAllCharacters() {
   })
     .then((response) => {
       allCharacters = response.data;
+      console.log('allCharacters', allCharacters);
+      
     })
     .catch((err) => {
       console.log(err);
@@ -478,6 +483,8 @@ function getAllAttacks() {
     .then((response) => {
       console.log("got attacks", response.data);
       attacks.push(response.data);
+      console.log('attacks', attacks);
+      
     })
     .catch((err) => {
       console.log(err);
