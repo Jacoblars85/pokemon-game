@@ -264,11 +264,19 @@ SELECT "user_characters"."id" as "id",
         "characters"."stamina" as "base_stamina",
         "characters"."speed",
         "characters"."battle_pic",
+        "character_type"."id" as "character_type_id",
+        "character_type"."type_name" as "character_type_name",
+        "character_type"."effective" as "character_type_effective",
+        "character_type"."weakness" as "character_type_weakness",
         "attacks"."id" as "attacks_id",
         "attacks"."attack_name",
         "attacks"."attack_damage",
         "attacks"."attack_stamina",
         "attacks"."attack_style",
+        "attack_type"."id" as "attack_type_id",
+        "attack_type"."type_name" as "attack_type_name",
+        "attack_type"."effective" as "attack_type_effective",
+        "attack_type"."weakness" as "attack_type_weakness",
         "attack_animations"."id" as "attack_animations_id",
         "attack_animations"."animation_name",
         "attack_animations"."max_frames",
@@ -285,14 +293,18 @@ SELECT "user_characters"."id" as "id",
         "items"."item_cost",
     	  "items"."item_color"
  FROM "user_characters" 
-	INNER JOIN "characters"
-    	ON "user_characters"."character_id" = "characters"."id"
+	    INNER JOIN "characters"
+    	  ON "user_characters"."character_id" = "characters"."id"
+      INNER JOIN "types" "character_type"
+        ON "character_type"."id" = "characters"."type_id"
     	INNER JOIN "attacks"
-            ON "attacks"."id" = "characters"."attacks_id"
-        INNER JOIN "attack_animations"
-        	ON "attacks"."attack_animations_id" = "attack_animations"."id"
-    LEFT JOIN "items"
-    	ON "user_characters"."item_id" = "items"."id"
+        ON "attacks"."id" = "characters"."attacks_id"
+      INNER JOIN "types" "attack_type"
+        ON "attacks"."type_id" = "attack_type"."id"
+      INNER JOIN "attack_animations"
+        ON "attacks"."attack_animations_id" = "attack_animations"."id"
+      LEFT JOIN "items"
+    	  ON "user_characters"."item_id" = "items"."id"
     WHERE "user_characters"."starter_1" = TRUE AND "user_id" = $1 OR "user_characters"."starter_2" = TRUE AND "user_id" = $1
     ORDER BY "starter_1" DESC;
     `;
