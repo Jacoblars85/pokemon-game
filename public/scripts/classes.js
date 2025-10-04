@@ -401,6 +401,11 @@ class Character extends Sprite {
     console.log("attack", attack);
     console.log("recipient", recipient);
 
+    if (attack.attack_item_effective) {
+      console.log('effectiive is here');
+      
+    }
+
     if (this.isEnemy) {
       if (this.stamina >= enemyAttackStats.attack_stamina)
         attack = enemyAttackStats;
