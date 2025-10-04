@@ -334,10 +334,10 @@ function getStarters() {
         stamina: Math.floor(response.data[0].stamina),
         speed: Math.floor(response.data[0].speed),
         battle_pic: response.data[0].battle_pic,
-                          character_type_id: response.data[0].character_type_id,
-                          character_type_name: response.data[0].character_type_name,
+        character_type_id: response.data[0].character_type_id,
+        character_type_name: response.data[0].character_type_name,
         character_type_effective: response.data[0].character_type_effective,
-        character_type_weakness: response.data[0].character_type_weakness
+        character_type_weakness: response.data[0].character_type_weakness,
       };
 
       starterOneAttackStats = {
@@ -370,10 +370,10 @@ function getStarters() {
           stamina: Math.floor(response.data[1].stamina),
           speed: Math.floor(response.data[1].speed),
           battle_pic: response.data[1].battle_pic,
-                  character_type_id: response.data[1].character_type_id,
-                  character_type_name: response.data[1].character_type_name,
-        character_type_effective: response.data[1].character_type_effective,
-        character_type_weakness: response.data[1].character_type_weakness
+          character_type_id: response.data[1].character_type_id,
+          character_type_name: response.data[1].character_type_name,
+          character_type_effective: response.data[1].character_type_effective,
+          character_type_weakness: response.data[1].character_type_weakness,
         };
 
         starterTwoAttackStats = {
@@ -381,10 +381,10 @@ function getStarters() {
           attack_damage: Math.floor(response.data[1].attack_damage),
           attack_stamina: Math.floor(response.data[1].attack_stamina),
           attack_style: response.data[1].attack_style,
-                  attack_type_id: response.data[1].attack_type_id,
-                  attack_type_name: response.data[1].attack_type_name,
-        attack_type_effective: response.data[1].attack_type_effective,
-        attack_type_weakness: response.data[1].attack_type_weakness,
+          attack_type_id: response.data[1].attack_type_id,
+          attack_type_name: response.data[1].attack_type_name,
+          attack_type_effective: response.data[1].attack_type_effective,
+          attack_type_weakness: response.data[1].attack_type_weakness,
           fx_img: response.data[1].fx_img,
           max_frames: response.data[1].max_frames,
           hold_time: response.data[1].hold_time,
