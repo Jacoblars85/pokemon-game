@@ -365,6 +365,9 @@ function getStarters() {
           stamina: Math.floor(response.data[1].stamina),
           speed: Math.floor(response.data[1].speed),
           battle_pic: response.data[1].battle_pic,
+                  character_type_id: response.data[1].character_type_id,
+        character_type_effective: response.data[1].character_type_effective,
+        character_type_weakness: response.data[1].character_type_weakness
         };
 
         starterTwoAttackStats = {
