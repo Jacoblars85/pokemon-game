@@ -401,8 +401,13 @@ class Character extends Sprite {
     console.log("attack", attack);
     console.log("recipient", recipient);
 
-    if (attack.attack_type_effective === recipient.character_type_weakness) {
-      console.log('effectiive is here');
+    if (attack.attack_type_effective === recipient.character_type_id) {
+      console.log('attack is effectiive');
+      
+    }
+
+        if (attack.attack_type_weakness === recipient.character_type_id) {
+      console.log('attack is weak');
       
     }
 
