@@ -423,6 +423,10 @@ function getEnemy(enemyId) {
         stamina: response.data[0].stamina,
         speed: response.data[0].speed,
         battle_pic: response.data[0].battle_pic,
+                character_type_id: response.data[0].character_type_id,
+        character_type_name: response.data[0].character_type_name,
+        character_type_effective: response.data[0].character_type_effective,
+        character_type_weakness: response.data[0].character_type_weakness,
       };
 
       enemyAttackStats = {
