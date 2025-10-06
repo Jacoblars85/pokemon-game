@@ -401,15 +401,7 @@ class Character extends Sprite {
     console.log("attack", attack);
     console.log("recipient", recipient);
 
-    if (attack.attack_type_effective === recipient.character_type_id) {
-      console.log("attack is effectiive");
-      attack.attack_damage += 20
-    }
 
-    if (attack.attack_type_weakness === recipient.character_type_id) {
-      console.log("attack is weak");
-      attack.attack_damage -= 20
-    }
 
     if (this.isEnemy) {
       if (this.stamina >= enemyAttackStats.attack_stamina)
@@ -424,6 +416,16 @@ class Character extends Sprite {
           attack_stamina: 0,
         };
       }
+    }
+
+        if (attack.attack_type_effective === recipient.character_type_id) {
+      console.log("attack is effectiive");
+      attack.attack_damage += 20
+    }
+
+    if (attack.attack_type_weakness === recipient.character_type_id) {
+      console.log("attack is weak");
+      attack.attack_damage -= 20
     }
 
     isAnimating = true;
