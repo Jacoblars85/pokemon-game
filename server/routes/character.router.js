@@ -30,7 +30,7 @@ router.get("/attacks", (req, res) => {
   // console.log('im in attacks route');
 
   const query = `
-      SELECT * 
+      SELECT *,
         "types"."id" as "attack_type_id",
         "types"."type_name" as "attack_type_name",
         "types"."effective" as "attack_type_effective",
