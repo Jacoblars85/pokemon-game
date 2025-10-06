@@ -403,6 +403,7 @@ class Character extends Sprite {
 
     if (attack.attack_type_effective === recipient.character_type_id) {
       console.log("attack is effectiive");
+      attack.attack_damage += 20
     }
 
     if (attack.attack_type_weakness === recipient.character_type_id) {
