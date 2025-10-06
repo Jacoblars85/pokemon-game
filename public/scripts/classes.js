@@ -408,6 +408,7 @@ class Character extends Sprite {
 
     if (attack.attack_type_weakness === recipient.character_type_id) {
       console.log("attack is weak");
+      attack.attack_damage -= 20
     }
 
     if (this.isEnemy) {
