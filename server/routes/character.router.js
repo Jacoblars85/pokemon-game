@@ -10,7 +10,12 @@ router.get("/basic", (req, res) => {
   // console.log('im in basic route');
 
   const query = `
-      SELECT * FROM "basic_attacks"
+      SELECT *,
+          "types"."id" as "attack_type_id",
+          "types"."type_name" as "attack_type_name",
+          "types"."effective" as "attack_type_effective",
+          "types"."weakness" as "attack_type_weakness"
+        FROM "basic_attacks"
         INNER JOIN "types"
           ON "types"."id" = "basic_attacks"."type_id";
     `;
@@ -34,7 +39,7 @@ router.get("/attacks", (req, res) => {
         "types"."id" as "attack_type_id",
         "types"."type_name" as "attack_type_name",
         "types"."effective" as "attack_type_effective",
-        "types"."weakness" as "attack_type_weakness",
+        "types"."weakness" as "attack_type_weakness"
       FROM "attacks"
         INNER JOIN "types"
           ON "types"."id" = "attacks"."type_id";
