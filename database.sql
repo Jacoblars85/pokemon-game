@@ -289,18 +289,10 @@ INSERT INTO "enemy"
 INSERT INTO "worlds" 
 	("world_name", "enemy_id")
 	VALUES 
-	('', 10),
-	('', 11),
-	('', 12),
-	('', 13),
-	('', 14),
-	('', 15),
-	('', 16),
-	('', 17),
-	('', 18),
-	('', 19),
-	('', 20),
-	('', 21);
+	('', 1),
+	('', 2),
+	('', 3),
+	('', 4);
 		
 INSERT INTO "items" 
 	("item_name", "item_type", "item_hp", "item_stamina", "item_speed", "item_damage", "item_capture_rate", "item_pic", "item_cost", "item_color")
