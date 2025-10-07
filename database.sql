@@ -289,18 +289,18 @@ INSERT INTO "enemy"
 INSERT INTO "worlds" 
 	("world_name", "enemy_id")
 	VALUES 
-	('lands', 10),
-	('lands', 11),
-	('forest', 12),
-	('forest', 13),
-	('mountain', 14),
-	('bridge', 15),
-	('mountain', 16),
-	('lake', 17),
-	('lake', 18),
-	('castle', 19),
-	('berg', 20),
-	('skull', 21);
+	('', 10),
+	('', 11),
+	('', 12),
+	('', 13),
+	('', 14),
+	('', 15),
+	('', 16),
+	('', 17),
+	('', 18),
+	('', 19),
+	('', 20),
+	('', 21);
 		
 INSERT INTO "items" 
 	("item_name", "item_type", "item_hp", "item_stamina", "item_speed", "item_damage", "item_capture_rate", "item_pic", "item_cost", "item_color")
