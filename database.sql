@@ -139,6 +139,15 @@ CREATE TABLE "levels" (
 	"level_name" VARCHAR(20),
 	"enemy_id" INT NOT NULL REFERENCES "characters" ON DELETE CASCADE);
 	
+CREATE TABLE "enemies" (
+	"id" SERIAL PRIMARY KEY,
+	"enemy_name" VARCHAR(20),
+	"character_id" INT NOT NULL REFERENCES "characters" ON DELETE CASCADE
+	"attack_1_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE
+	"attack_2_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE
+	"attack_3_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE);
+
+
 CREATE TABLE "user_inventory" (
 	"id" SERIAL PRIMARY KEY,
 	"user_id" INT NOT NULL REFERENCES "user" ON DELETE CASCADE,
