@@ -429,6 +429,9 @@ class Character extends Sprite {
       attack.attack_damage -= 20;
     }
 
+    console.log('attack after all of the changes', attack);
+    
+
     isAnimating = true;
 
     recipient.health -= attack.attack_damage;
