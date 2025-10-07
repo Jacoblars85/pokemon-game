@@ -134,11 +134,6 @@ CREATE TABLE "basic_attacks" (
 	"type_id" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
 	"attack_style" VARCHAR(20));
 
-CREATE TABLE "levels" (
-	"id" SERIAL PRIMARY KEY,
-	"level_name" VARCHAR(20),
-	"enemy_id" INT NOT NULL REFERENCES "characters" ON DELETE CASCADE);
-	
 CREATE TABLE "enemies" (
 	"id" SERIAL PRIMARY KEY,
 	"enemy_name" VARCHAR(20),
@@ -147,6 +142,10 @@ CREATE TABLE "enemies" (
 	"attack_2_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE
 	"attack_3_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE);
 
+CREATE TABLE "levels" (
+	"id" SERIAL PRIMARY KEY,
+	"level_name" VARCHAR(20),
+	"enemy_id" INT NOT NULL REFERENCES "characters" ON DELETE CASCADE);
 
 CREATE TABLE "user_inventory" (
 	"id" SERIAL PRIMARY KEY,
