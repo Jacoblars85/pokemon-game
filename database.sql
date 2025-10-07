@@ -289,7 +289,7 @@ INSERT INTO "enemy"
 INSERT INTO "worlds" 
 	("world_name", "enemy_id")
 	VALUES 
-	('', 1),
+	('Starting Island', 1),
 	('', 2),
 	('', 3),
 	('', 4);
