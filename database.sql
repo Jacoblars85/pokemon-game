@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS user_chests;
 
 DROP TABLE IF EXISTS "user";
 
-DROP TABLE IF EXISTS levels;
+DROP TABLE IF EXISTS worlds;
 
 DROP TABLE IF EXISTS enemy;
 
@@ -144,7 +144,7 @@ CREATE TABLE "enemy" (
 	"attack_2_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE
 	"attack_3_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE);
 
-CREATE TABLE "levels" (
+CREATE TABLE "worlds" (
 	"id" SERIAL PRIMARY KEY,
 	"level_name" VARCHAR(20),
 	"enemy_id" INT NOT NULL REFERENCES "characters" ON DELETE CASCADE);
@@ -286,7 +286,7 @@ INSERT INTO "enemy"
 	('', 1, 1, 1, 1),
 	('', 1, 1, 1, 1);
 	
-INSERT INTO "levels" 
+INSERT INTO "worlds" 
 	("level_name", "enemy_id")
 	VALUES 
 	('lands', 10),
