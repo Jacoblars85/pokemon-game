@@ -146,8 +146,8 @@ CREATE TABLE "enemy" (
 
 CREATE TABLE "worlds" (
 	"id" SERIAL PRIMARY KEY,
-	"level_name" VARCHAR(20),
-	"enemy_id" INT NOT NULL REFERENCES "characters" ON DELETE CASCADE);
+	"world_name" VARCHAR(20),
+	"enemy_id" INT NOT NULL REFERENCES "enemy" ON DELETE CASCADE);
 
 CREATE TABLE "user_inventory" (
 	"id" SERIAL PRIMARY KEY,
@@ -287,7 +287,7 @@ INSERT INTO "enemy"
 	('', 1, 1, 1, 1);
 	
 INSERT INTO "worlds" 
-	("level_name", "enemy_id")
+	("world_name", "enemy_id")
 	VALUES 
 	('lands', 10),
 	('lands', 11),
