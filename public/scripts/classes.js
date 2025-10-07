@@ -416,6 +416,9 @@ class Character extends Sprite {
       }
     }
 
+    console.log('attack after the enemy if', attack);
+    
+
     if (attack.attack_type_effective === recipient.character_type_id) {
       console.log("attack is effectiive");
       attack.attack_damage += 20;
