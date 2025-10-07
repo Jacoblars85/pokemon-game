@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS "user";
 
 DROP TABLE IF EXISTS levels;
 
-DROP TABLE IF EXISTS enemies;
+DROP TABLE IF EXISTS enemy;
 
 DROP TABLE IF EXISTS items;
 
@@ -136,7 +136,7 @@ CREATE TABLE "basic_attacks" (
 	"type_id" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
 	"attack_style" VARCHAR(20));
 
-CREATE TABLE "enemies" (
+CREATE TABLE "enemy" (
 	"id" SERIAL PRIMARY KEY,
 	"enemy_name" VARCHAR(20),
 	"character_id" INT NOT NULL REFERENCES "characters" ON DELETE CASCADE
@@ -270,7 +270,7 @@ INSERT INTO "basic_attacks"
 	('tackle', 20, 10, 1, 'physical'),
 	('poke', 10, 5, 1, 'physical');
 	
-INSERT INTO "enemies" 
+INSERT INTO "enemy" 
 	("enemy_name", "character_id", "attack_1_id", "attack_2_id", "attack_3_id")
 	VALUES 
 	('', 1, 1, 1, 1),
