@@ -278,12 +278,12 @@ INSERT INTO "basic_attacks"
 INSERT INTO "enemy" 
 	("enemy_name", "character_id", "attack_1_id", "attack_2_id", "attack_3_id")
 	VALUES 
-	('enemy 1', 1, 1, 1, 1),
-	('enemy 2', 1, 1, 1, 1),
-	('enemy 3', 1, 2, 1, 1),
-	('enemy 4', 1, 3, 1, 1),
-	('enemy 5', 1, 4, 1, 1),
-	('enemy 6', 1, 1, 1, 1);
+	('enemy 1', 1, 6, 12, 24),
+	('enemy 2', 2, 7, 14, 28),
+	('enemy 3', 12, 23, 13, 11),
+	('enemy 4', 9, 3, 18, 19),
+	('enemy 5', 18, 4, 21, 29),
+	('enemy 6', 22, 17, 23, 27);
 	
 INSERT INTO "worlds" 
 	("world_name", "enemy_id")
