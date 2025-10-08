@@ -207,6 +207,12 @@ INSERT INTO "attack_animations"
 INSERT INTO "attacks" 
 	("attack_name", "attack_damage", "attack_stamina", "type_id", "attack_style", "attack_animations_id")
 	VALUES 
+	('tackle', 25, 10, 1, 'physical', 1),
+	('kick', 20, 10, 1, 'physical', 1),
+	('punch', 20, 5, 1, 'physical', 1),
+	('', 20, 10, 1, 'physical', 1),
+	('slap', 10, 5, 1, 'physical', 1)
+	('poke', 5, 1, 1, 'physical', 1),
 	('spirit bomb', 40, 20, 1, 'projectile', 15),
 	('thunder', 40, 20, 1, 'summon', 10),
 	('fireball', 40, 20, 1, 'projectile', 1),
