@@ -177,8 +177,8 @@ INSERT INTO "types"
 	('grass', 5, 2),
 	('ground', 6, 4),
 	('electric', 3, 5),
-	('dark', 8, 7),
-	('light', 8, 7);
+	('dark', 8, 8),
+	('light', 7, 7);
 
 INSERT INTO "attack_animations" 
 	("animation_name", "max_frames", "hold_time", "fx_img")
