@@ -289,9 +289,9 @@ INSERT INTO "worlds"
 	("world_name", "enemy_id")
 	VALUES 
 	('Starting Island', 1),
-	('', 2),
-	('', 3),
-	('', 4);
+	('World 2', 2),
+	('World 3', 3),
+	('World 4', 4);
 		
 INSERT INTO "items" 
 	("item_name", "item_type", "item_hp", "item_stamina", "item_speed", "item_damage", "item_capture_rate", "item_pic", "item_cost", "item_color")
