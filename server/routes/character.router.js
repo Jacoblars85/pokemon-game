@@ -195,12 +195,7 @@ router.get("/boss/:id", (req, res) => {
     .query(query, sqlValues)
     .then((result) => {
       for (const enemy of result.rows) {
-
-
         const multiplier = Math.floor(Number(enemy.xp_level)) / 5;
-
-
-
 
         enemy.hp *= multiplier;
         enemy.stamina *= multiplier;
