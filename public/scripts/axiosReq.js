@@ -456,18 +456,18 @@ function getBossCharacter(enemyId) {
     .then((response) => {
       enemyOne = response.data[0];
 
-      enemyHp = response.data[0].hp;
-      enemyStamina = response.data[0].stamina;
+      enemyHp = response.data[0].hp + 100;
+      enemyStamina = response.data[0].stamina + 150;
       enemyName = response.data[0].character_name;
-      enemySpeed = response.data[0].speed;
+      enemySpeed = response.data[0].speed + 50;
       enemyPicture = response.data[0].battle_pic;
       enemyFxImg = response.data[0].fx_img;
 
       enemyInfo = {
         character_name: response.data[0].character_name,
-        hp: response.data[0].hp,
-        stamina: response.data[0].stamina,
-        speed: response.data[0].speed,
+        hp: response.data[0].hp + 100,
+        stamina: response.data[0].stamina + 150,
+        speed: response.data[0].speed + 50,
         battle_pic: response.data[0].battle_pic,
         character_type_id: response.data[0].character_type_id,
         character_type_name: response.data[0].character_type_name,
@@ -477,7 +477,7 @@ function getBossCharacter(enemyId) {
 
       enemyAttackStats = {
         attack_name: response.data[0].attack_name,
-        attack_damage: response.data[0].attack_damage,
+        attack_damage: response.data[0].attack_damage + 50,
         attack_stamina: response.data[0].attack_stamina,
         attack_style: response.data[0].attack_style,
         attack_type_id: response.data[0].attack_type_id,
