@@ -402,10 +402,10 @@ function getStarters() {
     });
 }
 
-function getEnemy(enemyId) {
+function getBossCharacter(enemyId) {
   axios({
     method: "GET",
-    url: `http://localhost:5001/api/characters/enemy/${enemyId}`,
+    url: `http://localhost:5001/api/characters/boss/${enemyId}`,
   })
     .then((response) => {
       enemyOne = response.data[0];
