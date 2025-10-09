@@ -195,11 +195,12 @@ router.get("/boss/:id", (req, res) => {
     .query(query, sqlValues)
     .then((result) => {
       for (const enemy of result.rows) {
-        let randomLevel = Math.floor(Math.random() * 5 + 2);
 
-        let multiplier = randomLevel / 5;
 
-        enemy.xp_level = randomLevel;
+        const multiplier = Math.floor(Number(enemy.xp_level)) / 5;
+
+
+
 
         enemy.hp *= multiplier;
         enemy.stamina *= multiplier;
