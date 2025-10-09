@@ -152,7 +152,14 @@ router.get("/boss/:id", (req, res) => {
   //  console.log('req.body', req.body);
 
   const query = `
-	SELECT  "characters"."id",
+	SELECT  "enemy"."id",
+        "enemy"."enemy_name",
+        "enemy"."character_id",
+        "enemy"."attack_1_id",
+        "enemy"."attack_2_id",
+        "enemy"."attack_3_id",
+        "enemy"."xp_level",
+        "characters"."id",
         "characters"."character_name",
         "characters"."profile_pic",
         "characters"."hp",
@@ -177,7 +184,9 @@ router.get("/boss/:id", (req, res) => {
         "attack_animations"."max_frames",
         "attack_animations"."hold_time",
         "attack_animations"."fx_img"
-            FROM "characters"
+            FROM "enemy"
+        INNER JOIN "characters"
+          ON "enemy"."character_id" = "characters"."id"
         INNER JOIN "types" "character_type"
           ON "character_type"."id" = "characters"."type_id"
         INNER JOIN "attacks"
@@ -186,7 +195,7 @@ router.get("/boss/:id", (req, res) => {
           ON "attacks"."type_id" = "attack_type"."id"
         INNER JOIN "attack_animations"
         	ON "attacks"."attack_animations_id" = "attack_animations"."id"
-        WHERE "characters"."id" = $1;
+        WHERE "enemy"."id" = $1;
       `;
 
   const sqlValues = [req.params.id];
