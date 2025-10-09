@@ -148,6 +148,73 @@ router.get("/enemy/:id", (req, res) => {
     });
 });
 
+router.get("/boss/:id", (req, res) => {
+  //  console.log('req.body', req.body);
+
+  const query = `
+	SELECT  "characters"."id",
+        "characters"."character_name",
+        "characters"."profile_pic",
+        "characters"."hp",
+        "characters"."stamina",
+        "characters"."speed",
+        "characters"."battle_pic",
+        "character_type"."id" as "character_type_id",
+        "character_type"."type_name" as "character_type_name",
+        "character_type"."effective" as "character_type_effective",
+        "character_type"."weakness" as "character_type_weakness",
+        "attacks"."id" as "attacks_id",
+        "attacks"."attack_name",
+        "attacks"."attack_damage",
+        "attacks"."attack_stamina",
+        "attacks"."attack_style",
+        "attack_type"."id" as "attack_type_id",
+        "attack_type"."type_name" as "attack_type_name",
+        "attack_type"."effective" as "attack_type_effective",
+        "attack_type"."weakness" as "attack_type_weakness",
+        "attack_animations"."id" as "attack_animations_id",
+        "attack_animations"."animation_name",
+        "attack_animations"."max_frames",
+        "attack_animations"."hold_time",
+        "attack_animations"."fx_img"
+            FROM "characters"
+        INNER JOIN "types" "character_type"
+          ON "character_type"."id" = "characters"."type_id"
+        INNER JOIN "attacks"
+          ON "attacks"."id" = "characters"."attacks_id"
+        INNER JOIN "types" "attack_type"
+          ON "attacks"."type_id" = "attack_type"."id"
+        INNER JOIN "attack_animations"
+        	ON "attacks"."attack_animations_id" = "attack_animations"."id"
+        WHERE "characters"."id" = $1;
+      `;
+
+  const sqlValues = [req.params.id];
+
+  pool
+    .query(query, sqlValues)
+    .then((result) => {
+      for (const enemy of result.rows) {
+        let randomLevel = Math.floor(Math.random() * 5 + 2);
+
+        let multiplier = randomLevel / 5;
+
+        enemy.xp_level = randomLevel;
+
+        enemy.hp *= multiplier;
+        enemy.stamina *= multiplier;
+        enemy.speed *= multiplier;
+        enemy.attack_damage *= multiplier;
+      }
+
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("ERROR: Get the enemies", err);
+      res.sendStatus(500);
+    });
+});
+
 router.use(rejectUnauthenticated);
 
 router.get("/user/characters", (req, res) => {
