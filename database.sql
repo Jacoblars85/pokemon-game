@@ -139,10 +139,11 @@ CREATE TABLE "basic_attacks" (
 CREATE TABLE "enemy" (
 	"id" SERIAL PRIMARY KEY,
 	"enemy_name" VARCHAR(20),
-	"character_id" INT NOT NULL REFERENCES "characters" ON DELETE CASCADE
-	"attack_1_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE
-	"attack_2_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE
-	"attack_3_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE);
+	"character_id" INT NOT NULL REFERENCES "characters" ON DELETE CASCADE,
+	"attack_1_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE,
+	"attack_2_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE,
+	"attack_3_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE,
+	"xp_level" DEC DEFAULT 1);
 
 CREATE TABLE "worlds" (
 	"id" SERIAL PRIMARY KEY,
@@ -276,7 +277,7 @@ INSERT INTO "basic_attacks"
 	('poke', 10, 5, 1, 'physical');
 	
 INSERT INTO "enemy" 
-	("enemy_name", "character_id", "attack_1_id", "attack_2_id", "attack_3_id")
+	("enemy_name", "character_id", "attack_1_id", "attack_2_id", "attack_3_id", )
 	VALUES 
 	('enemy 1', 1, 6, 12, 24),
 	('enemy 2', 2, 7, 14, 28),
