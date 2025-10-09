@@ -402,10 +402,10 @@ function getStarters() {
     });
 }
 
-function getBossCharacter(enemyId) {
+function getWildCharacter(enemyId) {
   axios({
     method: "GET",
-    url: `http://localhost:5001/api/characters/boss/${enemyId}`,
+    url: `http://localhost:5001/api/characters/enemy/${enemyId}`,
   })
     .then((response) => {
       enemyOne = response.data[0];
@@ -448,10 +448,10 @@ function getBossCharacter(enemyId) {
     });
 }
 
-function getWildCharacter(enemyId) {
+function getBossCharacter(enemyId) {
   axios({
     method: "GET",
-    url: `http://localhost:5001/api/characters/enemy/${enemyId}`,
+    url: `http://localhost:5001/api/characters/boss/${enemyId}`,
   })
     .then((response) => {
       enemyOne = response.data[0];
