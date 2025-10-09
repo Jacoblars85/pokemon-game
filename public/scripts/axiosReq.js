@@ -448,6 +448,52 @@ function getEnemy(enemyId) {
     });
 }
 
+function getWildCharacter(enemyId) {
+  axios({
+    method: "GET",
+    url: `http://localhost:5001/api/characters/enemy/${enemyId}`,
+  })
+    .then((response) => {
+      enemyOne = response.data[0];
+
+      enemyHp = response.data[0].hp;
+      enemyStamina = response.data[0].stamina;
+      enemyName = response.data[0].character_name;
+      enemySpeed = response.data[0].speed;
+      enemyPicture = response.data[0].battle_pic;
+      enemyFxImg = response.data[0].fx_img;
+
+      enemyInfo = {
+        character_name: response.data[0].character_name,
+        hp: response.data[0].hp,
+        stamina: response.data[0].stamina,
+        speed: response.data[0].speed,
+        battle_pic: response.data[0].battle_pic,
+        character_type_id: response.data[0].character_type_id,
+        character_type_name: response.data[0].character_type_name,
+        character_type_effective: response.data[0].character_type_effective,
+        character_type_weakness: response.data[0].character_type_weakness,
+      };
+
+      enemyAttackStats = {
+        attack_name: response.data[0].attack_name,
+        attack_damage: response.data[0].attack_damage,
+        attack_stamina: response.data[0].attack_stamina,
+        attack_style: response.data[0].attack_style,
+        attack_type_id: response.data[0].attack_type_id,
+        attack_type_name: response.data[0].attack_type_name,
+        attack_type_effective: response.data[0].attack_type_effective,
+        attack_type_weakness: response.data[0].attack_type_weakness,
+        fx_img: response.data[0].fx_img,
+        max_frames: response.data[0].max_frames,
+        hold_time: response.data[0].hold_time,
+      };
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function getAllCharacters() {
   axios({
     method: "GET",
