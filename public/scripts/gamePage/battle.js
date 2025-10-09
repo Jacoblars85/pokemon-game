@@ -25,7 +25,7 @@ function fadeBackToExplore() {
     onComplete: () => {
       cancelAnimationFrame(battleAnimationId);
       randomEnemy = Math.floor(Math.random() * 18 + 1);
-      getEnemy(randomEnemy);
+      getWildCharacter(randomEnemy);
       animate();
       document.getElementById("battleInterface").style.display = "none";
       document.getElementById("bagButton").style.display = "block";
