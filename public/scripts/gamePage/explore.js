@@ -3,7 +3,7 @@ let randomEnemy = Math.floor(Math.random() * 8 + 1);
 
 fetchUser();
 getStarters();
-getEnemy(randomEnemy);
+getWildCharacter(randomEnemy);
 getBasicAttacks();
 getAllAttacks();
 getAllUsersBattleItems();
