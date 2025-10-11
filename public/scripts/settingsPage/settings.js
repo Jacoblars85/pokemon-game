@@ -59,6 +59,7 @@ function changeUsernameDialog() {
 
 function goBackButton() {
   window.history.back();
+  audio.closeButton.play();
 }
 
 function openSettingsDialog() {
@@ -78,6 +79,7 @@ function closeSettingsDialog() {
   document.getElementById("settingsOverlay").style.display = "none";
 
   resetSettingsBody();
+  audio.closeButton.play();
 }
 
 document
