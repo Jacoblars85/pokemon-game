@@ -414,8 +414,8 @@ function openChest(boundryId) {
 
 function closeChest() {
   document.getElementById("chestOverlay").style.display = "none";
-
   chest.opened = false;
+  audio.closeButton.play();
 }
 
 document.getElementById("chestOverlay").addEventListener("click", (event) => {
@@ -439,8 +439,8 @@ function openBag() {
 function closeBag() {
   moving = true;
   bag.opened = false;
-
   document.getElementById("bagOverlay").style.display = "none";
+  audio.closeButton.play();
 }
 
 document.getElementById("bagOverlay").addEventListener("click", (event) => {
@@ -467,6 +467,7 @@ function showItemDetails(item) {
 
 function closeItemDetails() {
   document.getElementById("itemDetailsOverlay").style.display = "none";
+  audio.closeButton.play();
 }
 
 document
@@ -587,6 +588,7 @@ function renderUseItemOverlay(item) {
 
 function closeUseItemOverlay() {
   document.getElementById("useItemOverlay").style.display = "none";
+  audio.closeButton.play();
 }
 
 document.getElementById("useItemOverlay").addEventListener("click", (event) => {
