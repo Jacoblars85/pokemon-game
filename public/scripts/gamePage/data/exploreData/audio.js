@@ -69,10 +69,15 @@ const audio = {
     html5: true,
     volume: 0.5,
   }),
-  openDoor: new Howl({
-    src: "./audio/openDoor.wav",
+  openDoorIn: new Howl({
+    src: "./audio/openDoorIn.wav",
     html5: true,
-    volume: 0.5,
+    volume: 0.1,
+  }),
+    openDoorOut: new Howl({
+    src: "./audio/openDoorOut.wav",
+    html5: true,
+    volume: 0.2,
   }),
   healingCharacters: new Howl({
     src: "./audio/healingCharacters.wav",
