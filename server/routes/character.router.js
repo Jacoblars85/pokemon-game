@@ -159,7 +159,6 @@ router.get("/boss/:id", (req, res) => {
         "enemy"."attack_2_id",
         "enemy"."attack_3_id",
         "enemy"."xp_level",
-        "characters"."id",
         "characters"."character_name",
         "characters"."profile_pic",
         "characters"."hp",
