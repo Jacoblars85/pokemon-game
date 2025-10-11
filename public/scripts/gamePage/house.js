@@ -480,7 +480,7 @@ function animateHouse() {
         setTimeout(() => {
           healStarters();
           healing.started = false;
-        }, 3000);
+        }, 1800);
       }
     }
   }
