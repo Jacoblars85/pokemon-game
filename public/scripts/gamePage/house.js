@@ -427,7 +427,7 @@ function animateHouse() {
         })
       ) {
         window.cancelAnimationFrame(houseAnimationId);
-        audio.openDoor.play();
+        audio.openDoorOut.play();
         gsap.to("#fadeOutDiv", {
           opacity: 1,
           repeat: 1,
