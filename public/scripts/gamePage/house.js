@@ -257,6 +257,7 @@ function showCharacterDetails(character, context = "") {
 
 function closeCharacterDetails() {
   document.getElementById("characterDetailsOverlay").style.display = "none";
+  audio.closeButton.play();
 }
 
 document
@@ -285,6 +286,7 @@ function openEditNicknamePopUp(characterChanging) {
 
 function closeEditNicknamePopUp() {
   document.getElementById("editNicknameOverlay").style.display = "none";
+  audio.closeButton.play();
 }
 
 document
@@ -323,6 +325,7 @@ function eventListenersForPc() {
 function closePc() {
   document.getElementById("pcOverlay").style.display = "none";
   pc.opened = false;
+  audio.closeButton.play();
 }
 
 document.getElementById("pcOverlay").addEventListener("click", (event) => {
@@ -339,6 +342,7 @@ eventListenersForPc();
 function closeShop() {
   document.getElementById("shopOverlay").style.display = "none";
   shop.opened = false;
+  audio.closeButton.play();
 }
 
 document.getElementById("shopOverlay").addEventListener("click", (event) => {
