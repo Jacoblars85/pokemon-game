@@ -112,6 +112,6 @@ const audio = {
   closeButton: new Howl({
     src: "./audio/closeButton.wav",
     html5: true,
-    volume: 0.5,
+    volume: 0.7,
   }),
 };
