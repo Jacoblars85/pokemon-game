@@ -74,7 +74,7 @@ const audio = {
     html5: true,
     volume: 0.1,
   }),
-    openDoorOut: new Howl({
+  openDoorOut: new Howl({
     src: "./audio/openDoorOut.wav",
     html5: true,
     volume: 0.2,
