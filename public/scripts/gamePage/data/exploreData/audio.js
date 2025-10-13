@@ -92,12 +92,12 @@ const audio = {
   openPc: new Howl({
     src: "./audio/openPc.wav",
     html5: true,
-    volume: 0.5,
+    volume: 0.4,
   }),
   openShop: new Howl({
     src: "./audio/openShop.wav",
     html5: true,
-    volume: 0.5,
+    volume: 0.4,
   }),
   openChest: new Howl({
     src: "./audio/openChest.wav",
@@ -117,6 +117,6 @@ const audio = {
   closeButton: new Howl({
     src: "./audio/closeButton.wav",
     html5: true,
-    volume: 0.7,
+    volume: 0.6,
   }),
 };
