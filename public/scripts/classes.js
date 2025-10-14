@@ -110,6 +110,7 @@ class Character extends Sprite {
     stamina,
     maxStamina,
     speed,
+    character_type,
     level,
     fx_img,
     attackStats = {},
@@ -135,6 +136,7 @@ class Character extends Sprite {
     this.stamina = stamina;
     this.maxStamina = maxStamina;
     this.speed = speed;
+     this.character_type = character_type;
     this.level = level;
     this.fx_img = fx_img;
     this.attackStats = attackStats;
