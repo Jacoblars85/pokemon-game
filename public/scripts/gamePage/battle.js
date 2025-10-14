@@ -838,6 +838,7 @@ function initBattle() {
       stamina: starterTwoStamina,
       maxStamina: starterTwo.max_stamina,
       speed: starterTwoSpeed,
+      character_type: starterTwo.character_type, 
       level: starterTwo.xp_level,
       fx_img: starterTwoAttackStats.fx_img,
       attackStats: starterTwoAttackStats,
