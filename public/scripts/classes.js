@@ -136,7 +136,7 @@ class Character extends Sprite {
     this.stamina = stamina;
     this.maxStamina = maxStamina;
     this.speed = speed;
-     this.character_type = character_type;
+    this.character_type = character_type;
     this.level = level;
     this.fx_img = fx_img;
     this.attackStats = attackStats;
@@ -418,8 +418,7 @@ class Character extends Sprite {
       }
     }
 
-    console.log('attack after the enemy if', attack);
-    
+    console.log("attack after the enemy if", attack);
 
     if (attack.attack_type_effective === recipient.character_type_id) {
       console.log("attack is effectiive");
@@ -431,8 +430,7 @@ class Character extends Sprite {
       attack.attack_damage -= 20;
     }
 
-    console.log('attack after all of the changes', attack);
-    
+    console.log("attack after all of the changes", attack);
 
     isAnimating = true;
 
