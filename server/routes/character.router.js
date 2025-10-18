@@ -214,7 +214,7 @@ router.get("/boss/:id", (req, res) => {
       res.send(result.rows);
     })
     .catch((err) => {
-      console.log("ERROR: Get the enemies", err);
+      console.log("ERROR: Get the boss", err);
       res.sendStatus(500);
     });
 });
