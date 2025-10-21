@@ -377,6 +377,8 @@ class Character extends Sprite {
       this.stamina += item.item_stamina;
       this.speed += item.item_speed;
 
+      audio.usingHealingItem.play();
+
       if (this.health > this.maxHealth) this.health = this.maxHealth;
       if (this.stamina > this.maxStamina) this.stamina = this.maxStamina;
 
@@ -392,8 +394,6 @@ class Character extends Sprite {
         yoyo: true,
         duration: 0.08,
         onComplete: () => {
-          audio.usingHealingItem.play();
-
           gsap.to("#starterHealthBar", {
             width: (this.health / this.maxHealth) * 100 + "%",
           });
