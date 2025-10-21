@@ -7,32 +7,32 @@ const audio = {
   initBattle: new Howl({
     src: "./audio/initBattle.wav",
     // html5: true,
-    volume: 0.2,
+    volume: 0.15,
   }),
   battle: new Howl({
     src: "./audio/battle.mp3",
     // html5: true,
-    volume: 0.35,
+    volume: 0.3,
   }),
   physicalHit: new Howl({
     src: "./audio/tackleHit.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.4,
   }),
   fireballHit: new Howl({
     src: "./audio/fireballHit.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.3,
   }),
   initFireball: new Howl({
     src: "./audio/initFireball.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.4,
   }),
   victory: new Howl({
     src: "./audio/victory.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.4,
   }),
   switchingCaracters: new Howl({
     src: "./audio/switchingCaracters.wav",
@@ -47,12 +47,12 @@ const audio = {
   usingThrowableItem: new Howl({
     src: "./audio/usingThrowableItem.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.3,
   }),
   characterGoingIntoBall: new Howl({
     src: "./audio/characterGoingIntoBall.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.3,
   }),
   caughtCharacter: new Howl({
     src: "./audio/caughtCharacter.wav",
@@ -67,7 +67,7 @@ const audio = {
   ballShake: new Howl({
     src: "./audio/ballShake.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.3,
   }),
   openDoorIn: new Howl({
     src: "./audio/openDoorIn.wav",
@@ -85,24 +85,24 @@ const audio = {
     volume: 0.5,
   }),
   openBag: new Howl({
-    src: "./audio/openBag.wav",
+    src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.7,
   }),
   openPc: new Howl({
-    src: "./audio/openPc.wav",
+    src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.4,
+    volume: 0.7,
   }),
   openShop: new Howl({
-    src: "./audio/openShop.wav",
+    src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.4,
+    volume: 0.7,
   }),
   openChest: new Howl({
     src: "./audio/openChest.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.35,
   }),
   buyAndSellItem: new Howl({
     src: "./audio/buyAndSellItem.wav",
@@ -110,9 +110,9 @@ const audio = {
     volume: 0.5,
   }),
   openSettings: new Howl({
-    src: "./audio/openSettings.wav",
+    src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.7,
   }),
   closeButton: new Howl({
     src: "./audio/closeButton.wav",
