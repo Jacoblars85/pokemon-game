@@ -28,7 +28,7 @@ function fadeBackToExplore() {
       getWildCharacter(randomEnemy);
       animate();
       document.getElementById("battleInterface").style.display = "none";
-      document.getElementById("bagButton").style.display = "block";
+      document.getElementById("userHud").style.display = "flex";
       gsap.to("#fadeOutDiv", {
         opacity: 0,
       });
