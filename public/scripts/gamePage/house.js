@@ -170,6 +170,8 @@ function setStarter(e) {
 }
 
 function showCharacterDetails(character, context = "") {
+  console.log('character', character);
+  
   document.getElementById("characterDetailsOverlay").style.display = "flex";
 
   document.getElementById("switchStarter1Button").dataset.characterId =
@@ -189,6 +191,7 @@ function showCharacterDetails(character, context = "") {
     "lvl: " + Math.floor(character.xp_level);
   document.getElementById("detailName").textContent =
     character.nickname || character.character_name;
+    document.getElementById("detailHp").textContent = "type: " + character.hp;
   document.getElementById("detailHp").textContent = "hp: " + character.hp;
   document.getElementById("detailStamina").textContent =
     "stamina: " + character.stamina;
