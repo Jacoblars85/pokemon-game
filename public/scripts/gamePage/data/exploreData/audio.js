@@ -34,6 +34,11 @@ const audio = {
     // html5: true,
     volume: 0.4,
   }),
+    defeat: new Howl({
+    src: "./audio/defeat.wav",
+    // html5: true,
+    volume: 0.4,
+  }),
   switchingCaracters: new Howl({
     src: "./audio/switchingCaracters.wav",
     // html5: true,
@@ -87,17 +92,17 @@ const audio = {
   openBag: new Howl({
     src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.7,
+    volume: 0.5,
   }),
   openPc: new Howl({
     src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.7,
+    volume: 0.5,
   }),
   openShop: new Howl({
     src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.7,
+    volume: 0.5,
   }),
   openChest: new Howl({
     src: "./audio/openChest.wav",
