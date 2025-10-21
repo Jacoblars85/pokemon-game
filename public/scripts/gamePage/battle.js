@@ -463,7 +463,7 @@ function resetBattleFunc() {
         document.getElementById("switchBox").style.display = "none";
       } else if (e.target.innerHTML === "Run") {
         document.getElementById("dialogueBox").style.display = "block";
-audio.menuButton.play();
+        audio.menuButton.play();
 
         if (
           currentStarter.maxHealth +
