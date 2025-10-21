@@ -751,7 +751,7 @@ function animate() {
               onComplete() {
                 initBattle();
                 animateBattle();
-                document.getElementById("bagButton").style.display = "none";
+                document.getElementById("userHud").style.display = "none";
 
                 gsap.to("#fadeOutDiv", {
                   opacity: 0,
