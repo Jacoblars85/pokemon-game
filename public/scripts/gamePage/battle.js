@@ -527,7 +527,7 @@ function resetBattleFunc() {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
-audio.menuButton.play();
+        audio.menuButton.play();
 
         let itemBeingUsed;
 
