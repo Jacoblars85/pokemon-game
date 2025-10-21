@@ -33,6 +33,7 @@ function fadeBackToExplore() {
         opacity: 0,
       });
       battle.initiated = false;
+      audio.battle.stop();
       audio.map.play();
     },
   });
@@ -308,6 +309,7 @@ function resetBattleFunc() {
       if (e.target.className === "attackButton") {
         const characterSelectedAttack = e.target.innerHTML;
         let selectedAttack = {};
+        audio.menuButton.play();
 
         if (characterSelectedAttack === starterOneAttackStats.attack_name)
           selectedAttack = starterOneAttackStats;
@@ -525,6 +527,7 @@ function resetBattleFunc() {
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
+audio.menuButton.play();
 
         let itemBeingUsed;
 
@@ -655,6 +658,7 @@ function resetBattleFunc() {
         e.target.innerHTML === "Change Starter" &&
         e.target.id != currentStarter.id
       ) {
+        audio.menuButton.play();
         let changingStarter;
         if (e.target.id == 1) changingStarter = starter;
         else if (e.target.id == 2) changingStarter = starter2;
