@@ -447,19 +447,23 @@ function resetBattleFunc() {
           });
         }
       } else if (e.target.innerHTML === "Attack") {
+        audio.menuButton.play();
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
       } else if (e.target.innerHTML === "Switch") {
+        audio.menuButton.play();
         document.getElementById("switchBox").style.display = "block";
         document.getElementById("attackBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
       } else if (e.target.innerHTML === "Inventory") {
+        audio.menuButton.play();
         document.getElementById("inventoryBox").style.display = "block";
         document.getElementById("attackBox").style.display = "none";
         document.getElementById("switchBox").style.display = "none";
       } else if (e.target.innerHTML === "Run") {
         document.getElementById("dialogueBox").style.display = "block";
+audio.menuButton.play();
 
         if (
           currentStarter.maxHealth +
