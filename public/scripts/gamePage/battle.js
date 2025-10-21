@@ -300,8 +300,8 @@ function resetBattleFunc() {
           base_hp: allCharacters[currentStarter.id - 1].hp,
           base_stamina: allCharacters[currentStarter.id - 1].stamina,
           item: {
-            item_hp: matchedStarter.item_hp,
-            item_stamina: matchedStarter.item_stamina,
+            item_hp: matchedStarter.item_hp || null,
+            item_stamina: matchedStarter.item_stamina || null,
           },
         },
       };
