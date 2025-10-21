@@ -276,6 +276,7 @@ class Character extends Sprite {
                       duration: 0.08,
                       delay: 2,
                       onComplete: () => {
+                        audio.battle.stop();
                         audio.caughtCharacter.play();
 
                         document.getElementById("dialogueBox").innerHTML =
