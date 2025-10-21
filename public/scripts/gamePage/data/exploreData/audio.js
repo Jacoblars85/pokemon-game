@@ -114,7 +114,7 @@ const audio = {
     // html5: true,
     volume: 0.7,
   }),
-    menuButton: new Howl({
+  menuButton: new Howl({
     src: "./audio/Menu1.wav",
     // html5: true,
     volume: 0.6,
