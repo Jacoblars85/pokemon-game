@@ -12,7 +12,7 @@ const audio = {
   battle: new Howl({
     src: "./audio/battle.mp3",
     // html5: true,
-    volume: 0.3,
+    volume: 0.25,
   }),
   physicalHit: new Howl({
     src: "./audio/tackleHit.wav",
@@ -113,6 +113,11 @@ const audio = {
     src: "./audio/Menu1.wav",
     // html5: true,
     volume: 0.7,
+  }),
+    menuButton: new Howl({
+    src: "./audio/Menu1.wav",
+    // html5: true,
+    volume: 0.6,
   }),
   closeButton: new Howl({
     src: "./audio/closeButton.wav",
