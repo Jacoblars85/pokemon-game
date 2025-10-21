@@ -34,7 +34,7 @@ const audio = {
     // html5: true,
     volume: 0.4,
   }),
-    defeat: new Howl({
+  defeat: new Howl({
     src: "./audio/defeat.wav",
     // html5: true,
     volume: 0.4,
