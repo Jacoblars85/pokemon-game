@@ -12,7 +12,7 @@ const audio = {
   battle: new Howl({
     src: "./audio/battle.mp3",
     // html5: true,
-    volume: 0.25,
+    volume: 0.2,
   }),
   physicalHit: new Howl({
     src: "./audio/tackleHit.wav",
@@ -62,12 +62,12 @@ const audio = {
   failedCatchingCharacter: new Howl({
     src: "./audio/failedCatchingCharacter.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.35,
   }),
   ballShake: new Howl({
     src: "./audio/ballShake.wav",
     // html5: true,
-    volume: 0.3,
+    volume: 0.15,
   }),
   openDoorIn: new Howl({
     src: "./audio/openDoorIn.wav",
@@ -117,7 +117,7 @@ const audio = {
   menuButton: new Howl({
     src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.6,
+    volume: 0.45,
   }),
   closeButton: new Howl({
     src: "./audio/closeButton.wav",
