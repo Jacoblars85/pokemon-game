@@ -303,6 +303,41 @@ function resetBattleFunc() {
           }
   }
 
+  function starterFaintIf(params) {
+    if (currentStarter.health <= 0) {
+              queue.push(() => {
+                currentStarter.faint();
+              });
+
+
+              if (
+                starter.health <= 0 &&
+                (starterTwo != null
+                  ? starter2.health <= 0
+                  : currentStarter.health <= 0)
+              ) {
+                audio.defeat.play();
+
+                queue.push(() => {
+                  document.getElementById("dialogueBox").innerHTML =
+                    "you lost the battle";
+                });
+
+                queue.push(() => {
+                  resetToStart();
+                  fadeBackToExplore();
+                  healStarters();
+                });
+              }
+              {
+                queue.push(() => {
+                  document.getElementById("deadSwitchBox").style.display =
+                    "block";
+                });
+              }
+            }
+  }
+
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
       const matchedStarter = usersStarters.find(
