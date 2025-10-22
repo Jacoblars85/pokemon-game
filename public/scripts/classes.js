@@ -164,7 +164,6 @@ class Character extends Sprite {
         isAnimating = false;
       },
     });
-    audio.battle.stop();
   }
 
   switching({ recipient }) {
