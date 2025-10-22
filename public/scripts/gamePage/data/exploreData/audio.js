@@ -37,7 +37,7 @@ const audio = {
   defeat: new Howl({
     src: "./audio/defeat.wav",
     // html5: true,
-    volume: 0.4,
+    volume: 0.6,
   }),
   switchingCaracters: new Howl({
     src: "./audio/switchingCaracters.wav",
