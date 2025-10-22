@@ -283,6 +283,26 @@ function resetBattleFunc() {
       `;
   }
 
+  function enemyFaintIf() {
+    if (enemy.health <= 0) {
+            queue.push(() => {
+              enemy.faint();
+            });
+                audio.victory.play();
+
+            putWonBattle(winningInfo);
+
+            queue.push(() => {
+              document.getElementById("dialogueBox").innerHTML =
+                "you won the battle!";
+            });
+
+            queue.push(() => {
+              fadeBackToExplore();
+            });
+          }
+  }
+
   document.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", (e) => {
       const matchedStarter = usersStarters.find(
