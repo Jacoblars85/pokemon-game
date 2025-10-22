@@ -7,12 +7,12 @@ const audio = {
   initBattle: new Howl({
     src: "./audio/initBattle.wav",
     // html5: true,
-    volume: 0.15,
+    volume: 0.1,
   }),
   battle: new Howl({
     src: "./audio/battle.mp3",
     // html5: true,
-    volume: 0.2,
+    volume: 0.17,
   }),
   physicalHit: new Howl({
     src: "./audio/tackleHit.wav",
@@ -47,7 +47,7 @@ const audio = {
   usingHealingItem: new Howl({
     src: "./audio/usingHealingItem.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.4,
   }),
   usingThrowableItem: new Howl({
     src: "./audio/usingThrowableItem.wav",
@@ -87,7 +87,7 @@ const audio = {
   healingCharacters: new Howl({
     src: "./audio/healingCharacters.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.3,
   }),
   openBag: new Howl({
     src: "./audio/Menu1.wav",
@@ -97,12 +97,12 @@ const audio = {
   openPc: new Howl({
     src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.3,
   }),
   openShop: new Howl({
     src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.5,
+    volume: 0.2,
   }),
   openChest: new Howl({
     src: "./audio/openChest.wav",
@@ -115,18 +115,18 @@ const audio = {
     volume: 0.5,
   }),
   openSettings: new Howl({
-    src: "./audio/Menu1.wav",
+    src: "./audio/openSettings.wav",
     // html5: true,
-    volume: 0.7,
+    volume: 0.35,
   }),
   menuButton: new Howl({
     src: "./audio/Menu1.wav",
     // html5: true,
-    volume: 0.45,
+    volume: 0.25,
   }),
   closeButton: new Howl({
     src: "./audio/closeButton.wav",
     // html5: true,
-    volume: 0.6,
+    volume: 0.55,
   }),
 };
