@@ -303,7 +303,7 @@ function resetBattleFunc() {
     }
   }
 
-  function starterFaintIf(params) {
+  function starterFaintIf() {
     if (currentStarter.health <= 0) {
       queue.push(() => {
         currentStarter.faint();
@@ -351,8 +351,8 @@ function resetBattleFunc() {
           base_hp: allCharacters[currentStarter.id - 1].hp,
           base_stamina: allCharacters[currentStarter.id - 1].stamina,
           item: {
-            item_hp: matchedStarter.item_hp || null,
-            item_stamina: matchedStarter.item_stamina || null,
+            item_hp: matchedStarter.item_hp ? matchedStarter.item_hp : null,
+            item_stamina: matchedStarter.item_stamina ?  matchedStarter.item_stamina : null,
           },
         },
       };
@@ -378,22 +378,7 @@ function resetBattleFunc() {
             renderedSprites,
           });
 
-          if (enemy.health <= 0) {
-            queue.push(() => {
-              enemy.faint();
-            });
-
-            putWonBattle(winningInfo);
-
-            queue.push(() => {
-              document.getElementById("dialogueBox").innerHTML =
-                "you won the battle!";
-            });
-
-            queue.push(() => {
-              fadeBackToExplore();
-            });
-          }
+          enemyFaintIf()
           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
           queue.push(() => {
             enemy.attack({
@@ -402,35 +387,7 @@ function resetBattleFunc() {
               renderedSprites,
             });
 
-            if (currentStarter.health <= 0) {
-              queue.push(() => {
-                currentStarter.faint();
-              });
-
-              if (
-                starter.health <= 0 &&
-                (starterTwo != null
-                  ? starter2.health <= 0
-                  : currentStarter.health <= 0)
-              ) {
-                queue.push(() => {
-                  document.getElementById("dialogueBox").innerHTML =
-                    "you lost the battle";
-                });
-
-                queue.push(() => {
-                  resetToStart();
-                  fadeBackToExplore();
-                  healStarters();
-                });
-              }
-              {
-                queue.push(() => {
-                  document.getElementById("deadSwitchBox").style.display =
-                    "block";
-                });
-              }
-            }
+            starterFaintIf()
 
             resetBattleFunc();
           });
@@ -442,35 +399,7 @@ function resetBattleFunc() {
             renderedSprites,
           });
 
-          if (currentStarter.health <= 0) {
-            queue.push(() => {
-              currentStarter.faint();
-            });
-
-            if (
-              starter.health <= 0 &&
-              (starterTwo != null
-                ? starter2.health <= 0
-                : currentStarter.health <= 0)
-            ) {
-              queue.push(() => {
-                document.getElementById("dialogueBox").innerHTML =
-                  "you lost the battle";
-              });
-
-              queue.push(() => {
-                resetToStart();
-                fadeBackToExplore();
-                healStarters();
-              });
-            }
-            {
-              queue.push(() => {
-                document.getElementById("deadSwitchBox").style.display =
-                  "block";
-              });
-            }
-          }
+          starterFaintIf()
 
           queue.push(() => {
             currentStarter.attack({
@@ -479,22 +408,7 @@ function resetBattleFunc() {
               renderedSprites,
             });
 
-            if (enemy.health <= 0) {
-              queue.push(() => {
-                enemy.faint();
-              });
-
-              putWonBattle(winningInfo);
-
-              queue.push(() => {
-                document.getElementById("dialogueBox").innerHTML =
-                  "you won the battle!";
-              });
-
-              queue.push(() => {
-                fadeBackToExplore();
-              });
-            }
+            enemyFaintIf()
 
             resetBattleFunc();
           });
