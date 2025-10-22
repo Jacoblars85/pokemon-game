@@ -283,12 +283,13 @@ function resetBattleFunc() {
       `;
   }
 
-  function enemyFaintIf() {
+  function enemyFaintIf(winningInfo) {
     if (enemy.health <= 0) {
       queue.push(() => {
         enemy.faint();
+        audio.victory.play();
       });
-      audio.victory.play();
+      
 
       putWonBattle(winningInfo);
 
@@ -379,7 +380,7 @@ function resetBattleFunc() {
             renderedSprites,
           });
 
-          enemyFaintIf()
+          enemyFaintIf(winningInfo)
           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
           queue.push(() => {
             enemy.attack({
@@ -409,7 +410,7 @@ function resetBattleFunc() {
               renderedSprites,
             });
 
-            enemyFaintIf()
+            enemyFaintIf(winningInfo)
 
             resetBattleFunc();
           });
