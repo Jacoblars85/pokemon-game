@@ -313,11 +313,12 @@ function resetBattleFunc() {
         starter.health <= 0 &&
         (starterTwo != null ? starter2.health <= 0 : currentStarter.health <= 0)
       ) {
-        audio.defeat.play();
+      
 
         queue.push(() => {
           document.getElementById("dialogueBox").innerHTML =
             "you lost the battle";
+             audio.defeat.play();
         });
 
         queue.push(() => {
