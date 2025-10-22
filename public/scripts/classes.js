@@ -406,8 +406,8 @@ class Character extends Sprite {
   }
 
   attack({ attack, recipient, renderedSprites }) {
-    console.log("attack", attack);
-    console.log("recipient", recipient);
+    // console.log("attack", attack);
+    // console.log("recipient", recipient);
 
     if (this.isEnemy) {
       if (this.stamina >= enemyAttackStats.attack_stamina)
@@ -424,7 +424,7 @@ class Character extends Sprite {
       }
     }
 
-    console.log("attack after the enemy if", attack);
+    console.log("attack before the if", attack.attack_damage);
 
     if (attack.attack_type_effective === recipient.character_type_id) {
       console.log("attack is effectiive");
@@ -436,7 +436,7 @@ class Character extends Sprite {
       attack.attack_damage -= 20;
     }
 
-    console.log("attack after all of the changes", attack);
+    console.log("attack after all of the changes", attack.attack_damage);
 
     isAnimating = true;
 
