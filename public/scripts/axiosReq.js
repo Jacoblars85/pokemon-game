@@ -974,6 +974,7 @@ function putWonBattle(rewardInfo) {
     withCredentials: true,
   })
     .then((response) => {
+      fetchUser();
       getStarters();
     })
     .catch((err) => {
