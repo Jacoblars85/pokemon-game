@@ -285,57 +285,53 @@ function resetBattleFunc() {
 
   function enemyFaintIf() {
     if (enemy.health <= 0) {
-            queue.push(() => {
-              enemy.faint();
-            });
-                audio.victory.play();
+      queue.push(() => {
+        enemy.faint();
+      });
+      audio.victory.play();
 
-            putWonBattle(winningInfo);
+      putWonBattle(winningInfo);
 
-            queue.push(() => {
-              document.getElementById("dialogueBox").innerHTML =
-                "you won the battle!";
-            });
+      queue.push(() => {
+        document.getElementById("dialogueBox").innerHTML =
+          "you won the battle!";
+      });
 
-            queue.push(() => {
-              fadeBackToExplore();
-            });
-          }
+      queue.push(() => {
+        fadeBackToExplore();
+      });
+    }
   }
 
   function starterFaintIf(params) {
     if (currentStarter.health <= 0) {
-              queue.push(() => {
-                currentStarter.faint();
-              });
+      queue.push(() => {
+        currentStarter.faint();
+      });
 
+      if (
+        starter.health <= 0 &&
+        (starterTwo != null ? starter2.health <= 0 : currentStarter.health <= 0)
+      ) {
+        audio.defeat.play();
 
-              if (
-                starter.health <= 0 &&
-                (starterTwo != null
-                  ? starter2.health <= 0
-                  : currentStarter.health <= 0)
-              ) {
-                audio.defeat.play();
+        queue.push(() => {
+          document.getElementById("dialogueBox").innerHTML =
+            "you lost the battle";
+        });
 
-                queue.push(() => {
-                  document.getElementById("dialogueBox").innerHTML =
-                    "you lost the battle";
-                });
-
-                queue.push(() => {
-                  resetToStart();
-                  fadeBackToExplore();
-                  healStarters();
-                });
-              }
-              {
-                queue.push(() => {
-                  document.getElementById("deadSwitchBox").style.display =
-                    "block";
-                });
-              }
-            }
+        queue.push(() => {
+          resetToStart();
+          fadeBackToExplore();
+          healStarters();
+        });
+      }
+      {
+        queue.push(() => {
+          document.getElementById("deadSwitchBox").style.display = "block";
+        });
+      }
+    }
   }
 
   document.querySelectorAll("button").forEach((button) => {
