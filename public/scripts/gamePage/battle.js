@@ -389,7 +389,6 @@ function resetBattleFunc() {
             });
 
             starterFaintIf();
-
             resetBattleFunc();
           });
         } else if (currentStarter.speed < enemySpeed) {
@@ -410,7 +409,6 @@ function resetBattleFunc() {
             });
 
             enemyFaintIf(winningInfo);
-
             resetBattleFunc();
           });
         }
@@ -457,15 +455,14 @@ function resetBattleFunc() {
             });
 
             starterFaintIf();
-
             resetBattleFunc();
           });
         }
       } else if (e.target.innerHTML === "Use Item" && battle.initiated) {
+        audio.menuButton.play();
         document.getElementById("attackBox").style.display = "flex";
         document.getElementById("switchBox").style.display = "none";
         document.getElementById("inventoryBox").style.display = "none";
-        audio.menuButton.play();
 
         let itemBeingUsed;
 
@@ -491,9 +488,9 @@ function resetBattleFunc() {
 
         const margin = finalCatchChance - randomRoll;
 
-        console.log("finalCatchChance", finalCatchChance);
-        console.log("randomRoll", randomRoll);
-        console.log("margin", margin);
+        // console.log("finalCatchChance", finalCatchChance);
+        // console.log("randomRoll", randomRoll);
+        // console.log("margin", margin);
 
         if (itemBeingUsed.item_type === "throwable") {
           if (
@@ -560,7 +557,6 @@ function resetBattleFunc() {
             });
 
             starterFaintIf();
-
             resetBattleFunc();
           });
         }
@@ -599,7 +595,6 @@ function resetBattleFunc() {
               });
 
               starterFaintIf();
-
               resetBattleFunc();
             });
           }
