@@ -289,7 +289,6 @@ function resetBattleFunc() {
         enemy.faint();
         audio.victory.play();
       });
-      
 
       putWonBattle(winningInfo);
 
@@ -314,12 +313,10 @@ function resetBattleFunc() {
         starter.health <= 0 &&
         (starterTwo != null ? starter2.health <= 0 : currentStarter.health <= 0)
       ) {
-      
-
         queue.push(() => {
           document.getElementById("dialogueBox").innerHTML =
             "you lost the battle";
-             audio.defeat.play();
+          audio.defeat.play();
         });
 
         queue.push(() => {
@@ -354,7 +351,9 @@ function resetBattleFunc() {
           base_stamina: allCharacters[currentStarter.id - 1].stamina,
           item: {
             item_hp: matchedStarter.item_hp ? matchedStarter.item_hp : null,
-            item_stamina: matchedStarter.item_stamina ?  matchedStarter.item_stamina : null,
+            item_stamina: matchedStarter.item_stamina
+              ? matchedStarter.item_stamina
+              : null,
           },
         },
       };
@@ -380,7 +379,7 @@ function resetBattleFunc() {
             renderedSprites,
           });
 
-          enemyFaintIf(winningInfo)
+          enemyFaintIf(winningInfo);
           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
           queue.push(() => {
             enemy.attack({
@@ -389,7 +388,7 @@ function resetBattleFunc() {
               renderedSprites,
             });
 
-            starterFaintIf()
+            starterFaintIf();
 
             resetBattleFunc();
           });
@@ -401,7 +400,7 @@ function resetBattleFunc() {
             renderedSprites,
           });
 
-          starterFaintIf()
+          starterFaintIf();
 
           queue.push(() => {
             currentStarter.attack({
@@ -410,7 +409,7 @@ function resetBattleFunc() {
               renderedSprites,
             });
 
-            enemyFaintIf(winningInfo)
+            enemyFaintIf(winningInfo);
 
             resetBattleFunc();
           });
