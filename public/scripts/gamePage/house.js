@@ -170,8 +170,8 @@ function setStarter(e) {
 }
 
 function showCharacterDetails(character, context = "") {
-  console.log('character', character);
-  
+  console.log("character", character);
+
   document.getElementById("characterDetailsOverlay").style.display = "flex";
 
   document.getElementById("switchStarter1Button").dataset.characterId =
@@ -191,7 +191,8 @@ function showCharacterDetails(character, context = "") {
     "lvl: " + Math.floor(character.xp_level);
   document.getElementById("detailName").textContent =
     character.nickname || character.character_name;
-    document.getElementById("detailCharacterType").textContent = "type: " + character.character_type_name;
+  document.getElementById("detailCharacterType").textContent =
+    "type: " + character.character_type_name;
   document.getElementById("detailHp").textContent = "hp: " + character.hp;
   document.getElementById("detailStamina").textContent =
     "stamina: " + character.stamina;
@@ -199,7 +200,8 @@ function showCharacterDetails(character, context = "") {
     "speed: " + character.speed;
   document.getElementById("detailAttackName").textContent =
     "attack: " + character.attack_name;
-        document.getElementById("detailAttackType").textContent = "type: " + character.attack_type_name;
+  document.getElementById("detailAttackType").textContent =
+    "type: " + character.attack_type_name;
   document.getElementById("detailAttackDamage").textContent =
     "damage: " + character.attack_damage;
   document.getElementById("detailAttackStamina").textContent =
