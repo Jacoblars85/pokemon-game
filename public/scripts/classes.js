@@ -430,6 +430,11 @@ class Character extends Sprite {
       attack.attack_damage += 10;
     }
 
+    if (attack.attack_type_id === this.character_type_weakness) {
+      console.log("attack is the weakness type as the attacker so - 10");
+      attack.attack_damage -= 10;
+    }
+
     if (attack.attack_type_effective === recipient.character_type_id) {
       console.log("attack is effectiive against recipient so + 20");
       attack.attack_damage += 20;
