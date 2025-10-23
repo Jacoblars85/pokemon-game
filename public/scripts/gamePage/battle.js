@@ -456,7 +456,7 @@ function resetBattleFunc() {
               renderedSprites,
             });
 
-            starterFaintIf()
+            starterFaintIf();
 
             resetBattleFunc();
           });
@@ -559,7 +559,7 @@ function resetBattleFunc() {
               renderedSprites,
             });
 
-            starterFaintIf()
+            starterFaintIf();
 
             resetBattleFunc();
           });
@@ -598,7 +598,7 @@ function resetBattleFunc() {
                 renderedSprites,
               });
 
-              starterFaintIf()
+              starterFaintIf();
 
               resetBattleFunc();
             });
