@@ -678,9 +678,6 @@ function initBattle() {
     hold_time: starterOneAttackStats.hold_time,
   });
 
-  // console.log("enemy", enemy);
-  // console.log("starter", starter);
-
   starters = [starter];
 
   currentStarter = starter;
