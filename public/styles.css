@@ -299,8 +299,8 @@ Character Details Interface
 
 .characterDetails img {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   top: 0.5%;
   left: 0.5%;
   object-fit: contain;
@@ -308,6 +308,7 @@ Character Details Interface
 }
 
 .characterDetails h2,
+.characterDetails h3,
 .characterDetails h4 {
   margin: 2.5px;
 }
