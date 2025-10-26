@@ -297,6 +297,14 @@ Character Details Interface
   z-index: 100;
 }
 
+.characterDetailsStatBox {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .characterDetails img {
   position: relative;
   width: 150px;
