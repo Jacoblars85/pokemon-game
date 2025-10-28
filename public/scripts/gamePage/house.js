@@ -206,6 +206,7 @@ function showCharacterDetails(character, context = "") {
     const detailBox = document.createElement("div");
     detailBox.style = `
       display: flex;
+      flex-direction: column;
       align-items: center;
       border: 1px solid white;
       height: 100px;
