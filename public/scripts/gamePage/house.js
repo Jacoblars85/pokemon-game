@@ -198,6 +198,20 @@ function showCharacterDetails(character, context = "") {
     "stamina: " + character.stamina;
   document.getElementById("detailSpeed").textContent =
     "speed: " + character.speed;
+
+    for (let i = 0; i < character.attacks.length; i++) {
+      const attack = character.attacks[i];
+      
+        document.getElementById("detailAttackName").textContent =
+    "attack: " + character.attack_name;
+  document.getElementById("detailAttackType").textContent =
+    "type: " + character.attack_type_name;
+  document.getElementById("detailAttackDamage").textContent =
+    "damage: " + character.attack_damage;
+  document.getElementById("detailAttackStamina").textContent =
+    "stamina used: " + character.attack_stamina;
+    
+    }
   document.getElementById("detailAttackName").textContent =
     "attack: " + character.attack_name;
   document.getElementById("detailAttackType").textContent =
