@@ -297,6 +297,15 @@ Character Details Interface
   z-index: 100;
 }
 
+.characterDetailsStatBigBox {
+  display: flex; 
+  flex-direction: row; 
+  gap: 20px; 
+  height: 100px; 
+  align-items: center; 
+  justify-content: space-around;
+}
+
 .characterDetailsStatBox {
   display: flex;
   flex-direction: column;
