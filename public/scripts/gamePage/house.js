@@ -202,6 +202,17 @@ function showCharacterDetails(character, context = "") {
   for (let i = 0; i < character.attacks.length; i++) {
     const attack = character.attacks[i];
 
+    const detailBox = document.createElement("div");
+    detailBox.style = `
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: black;
+      border: 1px solid white;
+      min-height: 50px;
+      color: white;
+    `;
+
     const attackName = document.createElement("h3");
     attackName.textContent = "attack: " + attack.attack_name;
 
@@ -213,8 +224,10 @@ function showCharacterDetails(character, context = "") {
 
     const attackStamina = document.createElement("h4");
     attackStamina.textContent = "stamina used: " + attack.attack_stamina;
+
+    detailBox.appendChild(attackName);
   }
-  
+
   document.getElementById("detailAttackName").textContent =
     "attack: " + character.attack_name;
   document.getElementById("detailAttackType").textContent =
