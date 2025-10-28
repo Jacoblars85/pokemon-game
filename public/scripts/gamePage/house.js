@@ -202,9 +202,7 @@ function showCharacterDetails(character, context = "") {
   const attackBox = document.getElementById("characterDetailsAttackBox");
   attackBox.innerHTML = "";
 
-  for (let i = 0; i < character.attacks.length; i++) {
-    const attack = character.attacks[i];
-
+  for (const attack of character.attacks) {
     const detailBox = document.createElement("div");
     detailBox.style = `
       display: flex;
