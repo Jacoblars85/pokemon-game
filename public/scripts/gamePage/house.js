@@ -202,6 +202,15 @@ function showCharacterDetails(character, context = "") {
     for (let i = 0; i < character.attacks.length; i++) {
       const attack = character.attacks[i];
       
+      const attackName = document.createElement("h3");
+
+      const attacType = document.createElement("h4");
+
+      const attacDamage = document.createElement("h4");
+
+      const attackStamina = document.createElement("h4");
+
+
         document.getElementById("detailAttackName").textContent =
     "attack: " + character.attack_name;
   document.getElementById("detailAttackType").textContent =
@@ -210,7 +219,7 @@ function showCharacterDetails(character, context = "") {
     "damage: " + character.attack_damage;
   document.getElementById("detailAttackStamina").textContent =
     "stamina used: " + character.attack_stamina;
-    
+
     }
   document.getElementById("detailAttackName").textContent =
     "attack: " + character.attack_name;
