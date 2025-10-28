@@ -199,6 +199,9 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("detailSpeed").textContent =
     "speed: " + character.speed;
 
+    const attackBox = document.getElementById('characterDetailsAttackBox')
+    attackBox.innerHTML = ''
+
   for (let i = 0; i < character.attacks.length; i++) {
     const attack = character.attacks[i];
 
@@ -206,11 +209,8 @@ function showCharacterDetails(character, context = "") {
     detailBox.style = `
       display: flex;
       align-items: center;
-      gap: 10px;
-      background-color: black;
       border: 1px solid white;
-      min-height: 50px;
-      color: white;
+      height: 100px;
     `;
 
     const attackName = document.createElement("h3");
@@ -226,6 +226,9 @@ function showCharacterDetails(character, context = "") {
     attackStamina.textContent = "stamina used: " + attack.attack_stamina;
 
     detailBox.appendChild(attackName);
+    detailBox.appendChild(attacType);
+    detailBox.appendChild(attacDamage);
+    detailBox.appendChild(attackStamina);
   }
 
   document.getElementById("detailAttackName").textContent =
