@@ -317,7 +317,7 @@ Character Details Interface
 
 .characterDetailsAttackBox {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
   align-items: center;
   justify-content: space-around;
