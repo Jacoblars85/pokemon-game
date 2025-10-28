@@ -300,7 +300,7 @@ Character Details Interface
 .characterDetailsStatBox {
   display: flex;
   flex-direction: column;
-    height: 100px;
+  height: 100px;
   align-items: center;
   justify-content: space-around;
 }
@@ -308,7 +308,7 @@ Character Details Interface
 .characterDetailsAttackBox {
   display: flex;
   flex-direction: column;
-    height: 100px;
+  height: 100px;
   align-items: center;
   justify-content: space-around;
 }
