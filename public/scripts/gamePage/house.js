@@ -199,8 +199,8 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("detailSpeed").textContent =
     "speed: " + character.speed;
 
-    const attackBox = document.getElementById('characterDetailsAttackBox')
-    attackBox.innerHTML = ''
+    const attackBox = document.getElementById("characterDetailsAttackBox")
+    attackBox.innerHTML = ""
 
   for (let i = 0; i < character.attacks.length; i++) {
     const attack = character.attacks[i];
@@ -229,6 +229,8 @@ function showCharacterDetails(character, context = "") {
     detailBox.appendChild(attacType);
     detailBox.appendChild(attacDamage);
     detailBox.appendChild(attackStamina);
+
+    attackBox.appendChild(detailBox)
   }
 
   // document.getElementById("detailAttackName").textContent =
