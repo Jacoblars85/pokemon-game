@@ -199,27 +199,21 @@ function showCharacterDetails(character, context = "") {
   document.getElementById("detailSpeed").textContent =
     "speed: " + character.speed;
 
-    for (let i = 0; i < character.attacks.length; i++) {
-      const attack = character.attacks[i];
-      
-      const attackName = document.createElement("h3");
-      attackName.textContent =
-    "attack: " + character.attack_name;
+  for (let i = 0; i < character.attacks.length; i++) {
+    const attack = character.attacks[i];
 
-      const attacType = document.createElement("h4");
-      attacType.textContent =
-    "type: " + character.attack_type_name;
+    const attackName = document.createElement("h3");
+    attackName.textContent = "attack: " + character.attack_name;
 
-      const attacDamage = document.createElement("h4");
-      attacDamage.textContent =
-    "damage: " + character.attack_damage;
+    const attacType = document.createElement("h4");
+    attacType.textContent = "type: " + character.attack_type_name;
 
-      const attackStamina = document.createElement("h4");
-attackStamina.textContent =
-    "stamina used: " + character.attack_stamina; 
+    const attacDamage = document.createElement("h4");
+    attacDamage.textContent = "damage: " + character.attack_damage;
 
-
-    }
+    const attackStamina = document.createElement("h4");
+    attackStamina.textContent = "stamina used: " + character.attack_stamina;
+  }
   document.getElementById("detailAttackName").textContent =
     "attack: " + character.attack_name;
   document.getElementById("detailAttackType").textContent =
