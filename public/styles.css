@@ -319,8 +319,9 @@ Character Details Interface
   display: flex;
   flex-direction: row;
   height: 100%;
+  border: 1px solid black;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .characterDetails img {
