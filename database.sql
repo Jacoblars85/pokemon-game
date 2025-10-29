@@ -283,6 +283,13 @@ INSERT INTO "basic_attacks"
 	('tackle', 20, 10, 1, 'physical'),
 	('poke', 10, 5, 1, 'physical');
 	
+INSERT INTO "user_character_attacks" 
+	("user_character_id", "attack_id")
+	VALUES 
+	(5, 1), 
+	(5, 2), 
+	(5, 3);
+
 INSERT INTO "enemy" 
 	("enemy_name", "character_id", "attack_1_id", "attack_2_id", "attack_3_id", "xp_level")
 	VALUES 
