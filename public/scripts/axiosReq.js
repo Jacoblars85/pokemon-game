@@ -575,8 +575,7 @@ function getAllUsersCharacters() {
     .then((response) => {
       usersCharacters = response.data;
 
-      console.log('usersCharacters', usersCharacters);
-      
+      console.log("usersCharacters", usersCharacters);
 
       renderPcGrid();
     })
