@@ -501,7 +501,7 @@ function getAllCharacters() {
   })
     .then((response) => {
       allCharacters = response.data;
-      console.log("allCharacters", allCharacters);
+      // console.log("allCharacters", allCharacters);
     })
     .catch((err) => {
       console.log(err);
@@ -557,9 +557,9 @@ function getAllAttacks() {
     url: `http://localhost:5001/api/characters/attacks`,
   })
     .then((response) => {
-      console.log("got attacks", response.data);
+      // console.log("got attacks", response.data);
       attacks.push(response.data);
-      console.log("attacks", attacks);
+      // console.log("attacks", attacks);
     })
     .catch((err) => {
       console.log(err);
