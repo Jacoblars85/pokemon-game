@@ -136,6 +136,13 @@ CREATE TABLE "basic_attacks" (
 	"type_id" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
 	"attack_style" VARCHAR(20));
 
+
+CREATE TABLE user_character_attacks (
+  "id" SERIAL PRIMARY KEY,
+  "user_character_id" INT REFERENCES "user_characters" ON DELETE CASCADE,
+  "attack_id" INT REFERENCES "attacks" ON DELETE CASCADE
+);
+
 CREATE TABLE "enemy" (
 	"id" SERIAL PRIMARY KEY,
 	"enemy_name" VARCHAR(20),
