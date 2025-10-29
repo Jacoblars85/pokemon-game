@@ -181,7 +181,7 @@ router.post("/register", (req, res, next) => {
 //   const password = encryptLib.encryptPassword(req.body.password);
 
 //   const queryText = `
-//     INSERT INTO "user" 
+//     INSERT INTO "user"
 //       (username, password)
 //       VALUES ($1, $2)
 //       RETURNING id;
@@ -206,7 +206,7 @@ router.post("/register", (req, res, next) => {
 //           const createdUserCharacterId = charResult.rows[0].id;
 
 //           const insertAttacksQuery = `
-//           INSERT INTO "user_character_attacks" 
+//           INSERT INTO "user_character_attacks"
 //           ("user_character_id", "attack_id")
 //           VALUES
 //             ($1, 1),
@@ -218,7 +218,7 @@ router.post("/register", (req, res, next) => {
 //             .query(insertAttacksQuery, [createdUserCharacterId])
 //             .then(() => {
 //               const insertInventoryQuery = `
-//             INSERT INTO "user_inventory" 
+//             INSERT INTO "user_inventory"
 //             ("user_id", "items_id", "number")
 //             VALUES
 //               ($1, 1, 5),
@@ -250,7 +250,7 @@ router.post("/register", (req, res, next) => {
 //       const createdUserId = result.rows[0].user_id;
 
 //       const insertRewardsQuery = `
-//         INSERT INTO "user_rewards" 
+//         INSERT INTO "user_rewards"
 //         ("user_id", "reward_id", "number")
 //         VALUES
 //           ($1, 1, 1),
@@ -265,7 +265,7 @@ router.post("/register", (req, res, next) => {
 //       const createdUserId = result.rows[0].user_id;
 
 //       const insertChestsQuery = `
-//         INSERT INTO "user_chests" 
+//         INSERT INTO "user_chests"
 //         ("user_id", "chest_id")
 //         VALUES
 //           ($1, 1),
