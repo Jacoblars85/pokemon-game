@@ -176,6 +176,138 @@ router.post("/register", (req, res, next) => {
     });
 });
 
+// router.post("/register", (req, res, next) => {
+//   const username = req.body.username;
+//   const password = encryptLib.encryptPassword(req.body.password);
+
+//   const queryText = `
+//     INSERT INTO "user" 
+//       (username, password)
+//       VALUES ($1, $2)
+//       RETURNING id;
+//   `;
+
+//   pool
+//     .query(queryText, [username, password])
+//     .then((result) => {
+//       const createdUserId = result.rows[0].id;
+
+//       const insertUserCharacterQuery = `
+//         INSERT INTO "user_characters"
+//           ("user_id", "character_id", "starter_1", "current_hp", "current_stamina", "max_hp", "max_stamina", "xp_level")
+//         VALUES
+//           ($1, 1, TRUE, 130, 90, 130, 90, 5)
+//         RETURNING id;  -- RETURN user_character_id
+//       `;
+
+//       return pool
+//         .query(insertUserCharacterQuery, [createdUserId])
+//         .then((charResult) => {
+//           const createdUserCharacterId = charResult.rows[0].id;
+
+//           const insertAttacksQuery = `
+//           INSERT INTO "user_character_attacks" 
+//           ("user_character_id", "attack_id")
+//           VALUES
+//             ($1, 1),
+//             ($1, 2),
+//             ($1, 3);
+//         `;
+
+//           return pool
+//             .query(insertAttacksQuery, [createdUserCharacterId])
+//             .then(() => {
+//               const insertInventoryQuery = `
+//             INSERT INTO "user_inventory" 
+//             ("user_id", "items_id", "number")
+//             VALUES
+//               ($1, 1, 5),
+//               ($1, 2, 0),
+//               ($1, 3, 0),
+//               ($1, 4, 0),
+//               ($1, 5, 0),
+//               ($1, 6, 0),
+//               ($1, 7, 0),
+//               ($1, 8, 0),
+//               ($1, 9, 0),
+//               ($1, 10, 0),
+//               ($1, 11, 0),
+//               ($1, 12, 0),
+//               ($1, 13, 0),
+//               ($1, 14, 0),
+//               ($1, 15, 0),
+//               ($1, 16, 0),
+//               ($1, 17, 0),
+//               ($1, 18, 0),
+//               ($1, 19, 0)
+//             RETURNING user_id;
+//           `;
+//               return pool.query(insertInventoryQuery, [createdUserId]);
+//             });
+//         });
+//     })
+//     .then((result) => {
+//       const createdUserId = result.rows[0].user_id;
+
+//       const insertRewardsQuery = `
+//         INSERT INTO "user_rewards" 
+//         ("user_id", "reward_id", "number")
+//         VALUES
+//           ($1, 1, 1),
+//           ($1, 2, 0),
+//           ($1, 3, 0),
+//           ($1, 4, 0)
+//         RETURNING user_id;
+//       `;
+//       return pool.query(insertRewardsQuery, [createdUserId]);
+//     })
+//     .then((result) => {
+//       const createdUserId = result.rows[0].user_id;
+
+//       const insertChestsQuery = `
+//         INSERT INTO "user_chests" 
+//         ("user_id", "chest_id")
+//         VALUES
+//           ($1, 1),
+//           ($1, 2),
+//           ($1, 3),
+//           ($1, 4),
+//           ($1, 5),
+//           ($1, 6),
+//           ($1, 7),
+//           ($1, 8),
+//           ($1, 9),
+//           ($1, 10),
+//           ($1, 11);
+//       `;
+//       return pool.query(insertChestsQuery, [createdUserId]);
+//     })
+//     .then((result) => {
+//       const createdUserId = result.rows[0].user_id;
+//       const getUserQuery = `SELECT * FROM "user" WHERE id = $1`;
+
+//       pool.query(getUserQuery, [createdUserId]).then((userResult) => {
+//         const user = userResult.rows[0];
+
+//         req.login(user, (err) => {
+//           if (err) {
+//             console.error("Login error after register:", err);
+//             return res.sendStatus(500);
+//           }
+
+//           res.status(201).json({
+//             message: "User registered and logged in",
+//             user,
+//           });
+//         });
+//       });
+//     })
+//     .catch((err) => {
+//       console.error("Registration error:", err);
+//       res.sendStatus(500);
+//     });
+// });
+
 // Handles login form authenticate/login POST
 // userStrategy.authenticate('local') is middleware that we run on this route
 // this middleware will run our POST if successful
