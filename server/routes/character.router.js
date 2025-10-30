@@ -458,10 +458,10 @@ router.post("/new/character", (req, res) => {
   pool
     .query(insertCharacterQuery, insertCharacterValue)
     .then((result) => {
-const createdUserCharacterId = result.rows[0].id;
-const attackId = req.body.characterId + 5;
+      const createdUserCharacterId = result.rows[0].id;
+      const attackId = req.body.characterId + 5;
 
-       const insertCharacterQuery = `
+      const insertCharacterQuery = `
           INSERT INTO "user_character_attacks"
           ("user_id", "user_character_id", "attack_id")
           VALUES
@@ -469,21 +469,24 @@ const attackId = req.body.characterId + 5;
             ($1, $2, 1),
             ($1, $2, 5);
         `;
-  const insertCharacterValue = [
-req.user.id,
-createdUserCharacterId,
-attackId
-  ];
+      const insertCharacterValue = [
+        req.user.id,
+        createdUserCharacterId,
+        attackId,
+      ];
 
-  pool
-    .query(insertCharacterQuery, insertCharacterValue)
-    .then((result) => {
-      res.sendStatus(201);
-    })
-    .catch((err) => {
-      console.log("err in sending new character POST route in 2nd queery", err);
-      res.sendStatus(500);
-    });
+      pool
+        .query(insertCharacterQuery, insertCharacterValue)
+        .then((result) => {
+          res.sendStatus(201);
+        })
+        .catch((err) => {
+          console.log(
+            "err in sending new character POST route in 2nd queery",
+            err
+          );
+          res.sendStatus(500);
+        });
     })
     .catch((err) => {
       console.log("err in sending new character POST route", err);
