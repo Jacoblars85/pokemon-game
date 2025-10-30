@@ -53,9 +53,9 @@ router.post("/register", (req, res, next) => {
         INSERT INTO "user_character_attacks"
           ("user_id", "user_character_id", "attack_id")
           VALUES
+            ($1, $2, 6),
             ($1, $2, 1),
-            ($1, $2, 2),
-            ($1, $2, 3)
+            ($1, $2, 5)
             RETURNING user_id;
       `;
           const insertNewUserValues = [createdUserId, createdUserCharacterId];
