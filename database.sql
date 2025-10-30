@@ -140,6 +140,7 @@ CREATE TABLE "basic_attacks" (
 
 CREATE TABLE user_character_attacks (
   "id" SERIAL PRIMARY KEY,
+  "user_id" INT NOT NULL REFERENCES "user" ON DELETE CASCADE,
   "user_character_id" INT REFERENCES "user_characters" ON DELETE CASCADE,
   "attack_id" INT REFERENCES "attacks" ON DELETE CASCADE
 );
