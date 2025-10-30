@@ -46,6 +46,19 @@ router.post("/register", (req, res, next) => {
         .query(insertNewUserQuery, insertNewUserValues)
         .then((result) => {
           // ID IS HERE!
+      // console.log('New user Id:', result.rows[0].id);
+      const createdUserId = result.rows[0].id;
+
+      // Now handle the user_characters reference:
+      const insertNewUserQuery = `
+        
+      `;
+      const insertNewUserValues = [createdUserId];
+      // SECOND QUERY ADDS user_id to user_characeters
+      pool
+        .query(insertNewUserQuery, insertNewUserValues)
+        .then((result) => {
+          // ID IS HERE!
           // console.log('New user Id:', result.rows[0].user_id);
           const createdUserId = result.rows[0].user_id;
 
@@ -152,6 +165,12 @@ router.post("/register", (req, res, next) => {
                     });
                 });
             })
+            .catch((err) => {
+              // catch for third query
+              console.log(err);
+              res.sendStatus(500);
+            });
+        })
             .catch((err) => {
               // catch for third query
               console.log(err);
