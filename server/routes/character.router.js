@@ -461,7 +461,7 @@ router.post("/new/character", (req, res) => {
       const createdUserCharacterId = result.rows[0].id;
       const attackId = req.body.characterId + 5;
 
-      const insertCharacterQuery = `
+      const insertUserCharacterAttackQuery = `
           INSERT INTO "user_character_attacks"
           ("user_id", "user_character_id", "attack_id")
           VALUES
@@ -469,14 +469,14 @@ router.post("/new/character", (req, res) => {
             ($1, $2, 1),
             ($1, $2, 5);
         `;
-      const insertCharacterValue = [
+      const insertUserCharacterAttackValue = [
         req.user.id,
         createdUserCharacterId,
         attackId,
       ];
 
       pool
-        .query(insertCharacterQuery, insertCharacterValue)
+        .query(insertUserCharacterAttackQuery, insertUserCharacterAttackValue)
         .then((result) => {
           res.sendStatus(201);
         })
