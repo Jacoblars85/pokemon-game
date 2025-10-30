@@ -166,13 +166,13 @@ router.post("/register", (req, res, next) => {
                 });
             })
             .catch((err) => {
-              // catch for third query
+              // catch for fith query
               console.log(err);
               res.sendStatus(500);
             });
         })
             .catch((err) => {
-              // catch for third query
+              // catch for forth query
               console.log(err);
               res.sendStatus(500);
             });
