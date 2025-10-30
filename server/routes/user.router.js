@@ -37,7 +37,7 @@ router.post("/register", (req, res, next) => {
           ("user_id", "character_id", "starter_1", "current_hp", "current_stamina", "max_hp", "max_stamina", "xp_level")
           VALUES
           ($1, 1, TRUE, 130, 90, 130, 90, 5) 
-          RETURNING user_id;
+          RETURNING id, user_id;
       `;
       const insertNewUserValues = [createdUserId];
 
@@ -47,16 +47,18 @@ router.post("/register", (req, res, next) => {
           // ID IS HERE!
           // console.log('New character Id:', result.rows[0].id);
           const createdUserCharacterId = result.rows[0].id;
+          const createdUserId = result.rows[0].user_id;
 
           const insertNewUserQuery = `
         INSERT INTO "user_character_attacks"
-          ("user_character_id", "attack_id")
+          ("user_id", "user_character_id", "attack_id")
           VALUES
-            ($1, 1),
-            ($1, 2),
-            ($1, 3);
+            ($1, $2, 1),
+            ($1, $2, 2),
+            ($1, $2, 3)
+            RETURNING user_id;
       `;
-          const insertNewUserValues = [createdUserCharacterId];
+          const insertNewUserValues = [createdUserId, createdUserCharacterId];
 
           pool
             .query(insertNewUserQuery, insertNewUserValues)
