@@ -45,10 +45,10 @@ router.post("/register", (req, res, next) => {
         .query(insertNewUserQuery, insertNewUserValues)
         .then((result) => {
           // ID IS HERE!
-      // console.log('New character Id:', result.rows[0].id);
-      const createdUserCharacterId = result.rows[0].id;
+          // console.log('New character Id:', result.rows[0].id);
+          const createdUserCharacterId = result.rows[0].id;
 
-      const insertNewUserQuery = `
+          const insertNewUserQuery = `
         INSERT INTO "user_character_attacks"
           ("user_character_id", "attack_id")
           VALUES
@@ -56,17 +56,16 @@ router.post("/register", (req, res, next) => {
             ($1, 2),
             ($1, 3);
       `;
-      const insertNewUserValues = [createdUserCharacterId];
+          const insertNewUserValues = [createdUserCharacterId];
 
-      pool
-        .query(insertNewUserQuery, insertNewUserValues)
-        .then((result) => {
-          // ID IS HERE!
-          // console.log('New user Id:', result.rows[0].user_id);
-          const createdUserId = result.rows[0].user_id;
+          pool
+            .query(insertNewUserQuery, insertNewUserValues)
+            .then((result) => {
+              // ID IS HERE!
+              // console.log('New user Id:', result.rows[0].user_id);
+              const createdUserId = result.rows[0].user_id;
 
-
-          const insertNewUserQuery = `
+              const insertNewUserQuery = `
           INSERT INTO "user_inventory" 
             ("user_id", "items_id", "number")
             VALUES
@@ -91,25 +90,6 @@ router.post("/register", (req, res, next) => {
             ($1, 19, 0)
             RETURNING user_id;;
         `;
-          const insertNewUserValues = [createdUserId];
-
-          pool
-            .query(insertNewUserQuery, insertNewUserValues)
-            .then((result) => {
-              // ID IS HERE!
-              // console.log('New user Id:', result.rows[0].user_id);
-              const createdUserId = result.rows[0].user_id;
-
-              const insertNewUserQuery = `
-            INSERT INTO "user_rewards" 
-              ("user_id", "reward_id", "number")
-              VALUES
-              ($1, 1, 1),
-              ($1, 2, 0),
-              ($1, 3, 0),
-              ($1, 4, 0)
-              RETURNING user_id;
-          `;
               const insertNewUserValues = [createdUserId];
 
               pool
@@ -120,6 +100,25 @@ router.post("/register", (req, res, next) => {
                   const createdUserId = result.rows[0].user_id;
 
                   const insertNewUserQuery = `
+            INSERT INTO "user_rewards" 
+              ("user_id", "reward_id", "number")
+              VALUES
+              ($1, 1, 1),
+              ($1, 2, 0),
+              ($1, 3, 0),
+              ($1, 4, 0)
+              RETURNING user_id;
+          `;
+                  const insertNewUserValues = [createdUserId];
+
+                  pool
+                    .query(insertNewUserQuery, insertNewUserValues)
+                    .then((result) => {
+                      // ID IS HERE!
+                      // console.log('New user Id:', result.rows[0].user_id);
+                      const createdUserId = result.rows[0].user_id;
+
+                      const insertNewUserQuery = `
             INSERT INTO "user_chests" 
               ("user_id", "chest_id")
               VALUES
@@ -135,43 +134,46 @@ router.post("/register", (req, res, next) => {
               ($1, 10),
               ($1, 11);
           `;
-                  const insertNewUserValues = [createdUserId];
+                      const insertNewUserValues = [createdUserId];
 
-                  pool
-                    .query(insertNewUserQuery, insertNewUserValues)
-                    // was here for basic
-                    .then(() => {
-                      const getUserQuery = `SELECT * FROM "user" WHERE id = $1`;
                       pool
-                        .query(getUserQuery, [createdUserId])
-                        .then((result) => {
-                          const user = result.rows[0];
+                        .query(insertNewUserQuery, insertNewUserValues)
+                        // was here for basic
+                        .then(() => {
+                          const getUserQuery = `SELECT * FROM "user" WHERE id = $1`;
+                          pool
+                            .query(getUserQuery, [createdUserId])
+                            .then((result) => {
+                              const user = result.rows[0];
 
-                          req.login(user, (err) => {
-                            if (err) {
-                              console.error("Login error after register:", err);
-                              return res.sendStatus(500);
-                            }
+                              req.login(user, (err) => {
+                                if (err) {
+                                  console.error(
+                                    "Login error after register:",
+                                    err
+                                  );
+                                  return res.sendStatus(500);
+                                }
 
-                            res.status(201).json({
-                              message: "User registered and logged in",
-                              user,
+                                res.status(201).json({
+                                  message: "User registered and logged in",
+                                  user,
+                                });
+                              });
                             });
-                          });
+                        })
+                        .catch((err) => {
+                          console.error("Error fetching user for login:", err);
+                          res.sendStatus(500);
                         });
-                    })
-                    .catch((err) => {
-                      console.error("Error fetching user for login:", err);
-                      res.sendStatus(500);
                     });
+                })
+                .catch((err) => {
+                  // catch for fith query
+                  console.log(err);
+                  res.sendStatus(500);
                 });
             })
-            .catch((err) => {
-              // catch for fith query
-              console.log(err);
-              res.sendStatus(500);
-            });
-        })
             .catch((err) => {
               // catch for forth query
               console.log(err);
