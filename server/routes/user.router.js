@@ -32,7 +32,6 @@ router.post("/register", (req, res, next) => {
       // console.log('New user Id:', result.rows[0].id);
       const createdUserId = result.rows[0].id;
 
-      // Now handle the user_characters reference:
       const insertNewUserQuery = `
         INSERT INTO "user_characters" 
           ("user_id", "character_id", "starter_1", "current_hp", "current_stamina", "max_hp", "max_stamina", "xp_level")
@@ -41,15 +40,14 @@ router.post("/register", (req, res, next) => {
           RETURNING user_id;
       `;
       const insertNewUserValues = [createdUserId];
-      // SECOND QUERY ADDS user_id to user_characeters
+
       pool
         .query(insertNewUserQuery, insertNewUserValues)
         .then((result) => {
           // ID IS HERE!
-      // console.log('New user Id:', result.rows[0].id);
-      const createdUserId = result.rows[0].id;
+      // console.log('New character Id:', result.rows[0].id);
+      const createdUserCharacterId = result.rows[0].id;
 
-      // Now handle the user_characters reference:
       const insertNewUserQuery = `
         INSERT INTO "user_character_attacks"
           ("user_character_id", "attack_id")
@@ -58,8 +56,8 @@ router.post("/register", (req, res, next) => {
             ($1, 2),
             ($1, 3);
       `;
-      const insertNewUserValues = [createdUserId];
-      // SECOND QUERY ADDS user_id to user_characeters
+      const insertNewUserValues = [createdUserCharacterId];
+
       pool
         .query(insertNewUserQuery, insertNewUserValues)
         .then((result) => {
@@ -67,7 +65,7 @@ router.post("/register", (req, res, next) => {
           // console.log('New user Id:', result.rows[0].user_id);
           const createdUserId = result.rows[0].user_id;
 
-          // Now handle the user_characters reference:
+
           const insertNewUserQuery = `
           INSERT INTO "user_inventory" 
             ("user_id", "items_id", "number")
@@ -102,7 +100,6 @@ router.post("/register", (req, res, next) => {
               // console.log('New user Id:', result.rows[0].user_id);
               const createdUserId = result.rows[0].user_id;
 
-              // Now handle the user_characters reference:
               const insertNewUserQuery = `
             INSERT INTO "user_rewards" 
               ("user_id", "reward_id", "number")
@@ -122,7 +119,6 @@ router.post("/register", (req, res, next) => {
                   // console.log('New user Id:', result.rows[0].user_id);
                   const createdUserId = result.rows[0].user_id;
 
-                  // Now handle the user_characters reference:
                   const insertNewUserQuery = `
             INSERT INTO "user_chests" 
               ("user_id", "chest_id")
