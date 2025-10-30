@@ -457,7 +457,22 @@ router.post("/new/character", (req, res) => {
   pool
     .query(insertCharacterQuery, insertCharacterValue)
     .then((result) => {
+       const insertCharacterQuery = `
+          
+        `;
+  const insertCharacterValue = [
+
+  ];
+
+  pool
+    .query(insertCharacterQuery, insertCharacterValue)
+    .then((result) => {
       res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log("err in sending new character POST route in 2nd queery", err);
+      res.sendStatus(500);
+    });
     })
     .catch((err) => {
       console.log("err in sending new character POST route", err);
