@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS user_inventory;
 
-DROP TABLE IF EXISTS user_character_attacks
+DROP TABLE IF EXISTS user_character_attacks;
 
 DROP TABLE IF EXISTS user_characters;
 
