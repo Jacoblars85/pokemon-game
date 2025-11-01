@@ -356,22 +356,22 @@ SELECT "user_characters"."id" as "id",
         "character_type"."weakness" as "character_type_weakness",
           json_agg(
     json_build_object(
-      "attacks"."id" as "attacks_id",
-        "attacks"."attack_name",
-        "attacks"."attack_damage",
-        "attacks"."attack_stamina",
-        "attacks"."attack_style",
-        "attack_type"."id" as "attack_type_id",
-        "attack_type"."type_name" as "attack_type_name",
-        "attack_type"."effective" as "attack_type_effective",
-        "attack_type"."weakness" as "attack_type_weakness",
-        "attack_animations"."id" as "attack_animations_id",
-        "attack_animations"."animation_name",
-        "attack_animations"."max_frames",
-        "attack_animations"."hold_time",
-        "attack_animations"."fx_img",
+        'attacks_id', "attacks"."id",
+      'attack_name', "attacks"."attack_name",
+      'attack_damage', "attacks"."attack_damage",
+      'attack_stamina', "attacks"."attack_stamina",
+      'attack_style', "attacks"."attack_style",
+      'attack_type_id', "attack_type"."id",
+      'attack_type_name', "attack_type"."type_name",
+      'attack_type_effective', "attack_type"."effective",
+      'attack_type_weakness', "attack_type"."weakness",
+      'attack_animations_id', "attack_animations"."id",
+      'animation_name', "attack_animations"."animation_name",
+      'max_frames', "attack_animations"."max_frames",
+      'hold_time', "attack_animations"."hold_time",
+      'fx_img', "attack_animations"."fx_img"
     )
-  ) AS attacks
+  ) AS attacks,
         "items"."id" as "item_id",
         "items"."item_name",
         "items"."item_hp",
@@ -397,7 +397,8 @@ SELECT "user_characters"."id" as "id",
         ON "attacks"."attack_animations_id" = "attack_animations"."id"
       LEFT JOIN "items"
     	  ON "user_characters"."item_id" = "items"."id"
-    WHERE "user_characters"."starter_1" = TRUE AND "user_id" = $1 OR "user_characters"."starter_2" = TRUE AND "user_id" = $1
+    WHERE ("user_characters"."starter_1" = TRUE AND "user_characters"."user_id" = $1) OR ("user_characters"."starter_2" = TRUE AND "user_characters"."user_id" = $1)
+    GROUP BY "user_characters"."id", "characters"."id", "character_type"."id", "items"."id"
     ORDER BY "starter_1" DESC;
     `;
 
