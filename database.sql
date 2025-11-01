@@ -119,8 +119,6 @@ CREATE TABLE "user_characters" (
 	"current_stamina" INT,
 	"max_hp" INT,
 	"max_stamina" INT,
-	"attack_id_2" INT DEFAULT 1 REFERENCES "attacks" ON DELETE CASCADE,
-	"attack_id_3" INT DEFAULT 5 REFERENCES "attacks" ON DELETE CASCADE,
 	"starter_1" BOOLEAN DEFAULT FALSE,
 	"starter_2" BOOLEAN DEFAULT FALSE,
 	"starter_3" BOOLEAN DEFAULT FALSE,
