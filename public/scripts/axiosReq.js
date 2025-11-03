@@ -364,19 +364,7 @@ function getStarters() {
           character_type_weakness: response.data[1].character_type_weakness,
         };
 
-        starterTwoAttackStats = {
-          attack_name: response.data[1].attack_name,
-          attack_damage: Math.floor(response.data[1].attack_damage),
-          attack_stamina: Math.floor(response.data[1].attack_stamina),
-          attack_style: response.data[1].attack_style,
-          attack_type_id: response.data[1].attack_type_id,
-          attack_type_name: response.data[1].attack_type_name,
-          attack_type_effective: response.data[1].attack_type_effective,
-          attack_type_weakness: response.data[1].attack_type_weakness,
-          fx_img: response.data[1].fx_img,
-          max_frames: response.data[1].max_frames,
-          hold_time: response.data[1].hold_time,
-        };
+        starterTwoAttackStats = response.data[1].attacks
       }
 
       const pcStarterGrid = document.getElementById("pcStarterBody");
