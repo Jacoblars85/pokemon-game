@@ -363,6 +363,11 @@ function resetBattleFunc() {
         let selectedAttack = {};
         audio.menuButton.play();
 
+        for (const attack of currentStarter.attacks) {
+          console.log('attack', attack);
+          
+        }
+
         if (characterSelectedAttack === starterOneAttackStats.attack_name)
           selectedAttack = starterOneAttackStats;
         else if (characterSelectedAttack === starterTwoAttackStats.attack_name)
