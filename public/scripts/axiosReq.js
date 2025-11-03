@@ -340,19 +340,7 @@ function getStarters() {
         character_type_weakness: response.data[0].character_type_weakness,
       };
 
-      starterOneAttackStats = {
-        attack_name: response.data[0].attack_name,
-        attack_damage: Math.floor(response.data[0].attack_damage),
-        attack_stamina: Math.floor(response.data[0].attack_stamina),
-        attack_style: response.data[0].attack_style,
-        attack_type_id: response.data[0].attack_type_id,
-        attack_type_name: response.data[0].attack_type_name,
-        attack_type_effective: response.data[0].attack_type_effective,
-        attack_type_weakness: response.data[0].attack_type_weakness,
-        fx_img: response.data[0].fx_img,
-        max_frames: response.data[0].max_frames,
-        hold_time: response.data[0].hold_time,
-      };
+      starterOneAttackStats = response.data[0].attacks
 
       if (response.data.length >= 2) {
         starterTwo = response.data[1];
