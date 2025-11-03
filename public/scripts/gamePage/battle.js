@@ -365,7 +365,9 @@ function resetBattleFunc() {
 
         for (const attack of currentStarter.attacks) {
           console.log('attack', attack);
-          
+          if (characterSelectedAttack === attack.attack_name) {
+            selectedAttack = attack
+          }
         }
 
         if (characterSelectedAttack === starterOneAttackStats.attack_name)
