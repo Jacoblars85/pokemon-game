@@ -342,6 +342,9 @@ function getStarters() {
 
       starterOneAttackStats = response.data[0].attacks
 
+      console.log('starterOneAttackStats', starterOneAttackStats);
+      
+
       if (response.data.length >= 2) {
         starterTwo = response.data[1];
 
