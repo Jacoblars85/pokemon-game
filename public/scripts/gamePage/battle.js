@@ -704,7 +704,7 @@ function initBattle() {
     "lv." + Math.floor(currentStarter.level);
   document.getElementById("enemyLevel").innerHTML = "lv." + enemy.level;
 
-  attackButtonsArray = [starter.attackStats, kickAttackStats, pokeAttackStats];
+  attackButtonsArray = [currentStarter.attacks[0], currentStarter.attacks[1], currentStarter.attacks[2]];
 
   renderedSprites = [enemy, starter];
 
