@@ -471,7 +471,7 @@ class Character extends Sprite {
     });
 
     const uniqueAttackFxImage = new Image();
-    uniqueAttackFxImage.src = this.fx_img;
+    uniqueAttackFxImage.src = attack.fx_img;
 
     if (attack.attack_style === "physical") {
       const tl = gsap.timeline();
@@ -520,8 +520,8 @@ class Character extends Sprite {
         },
         image: uniqueAttackFxImage,
         frames: {
-          max: this.max_frames,
-          hold: this.hold_time,
+          max: attack.max_frames,
+          hold: attack.hold_time,
           attackFx: true,
         },
         animate: true,
