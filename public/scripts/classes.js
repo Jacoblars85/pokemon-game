@@ -115,10 +115,7 @@ class Character extends Sprite {
     character_type_effective,
     character_type_weakness,
     level,
-    fx_img,
     attacks = [],
-    max_frames,
-    hold_time,
   }) {
     super({
       position,
@@ -144,10 +141,7 @@ class Character extends Sprite {
     this.character_type_effective = character_type_effective;
     this.character_type_weakness = character_type_weakness;
     this.level = level;
-    this.fx_img = fx_img;
     this.attacks = attacks;
-    this.max_frames = max_frames;
-    this.hold_time = hold_time;
   }
 
   faint() {
