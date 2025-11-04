@@ -680,7 +680,7 @@ function initBattle() {
     character_type_weakness: starterOne.character_type_weakness,
     level: starterOne.xp_level,
     fx_img: starterOneAttackStats.fx_img,
-    attackStats: starterOneAttackStats,
+    attacks: starterOne.attacks,
     max_frames: starterOneAttackStats.max_frames,
     hold_time: starterOneAttackStats.hold_time,
   });
