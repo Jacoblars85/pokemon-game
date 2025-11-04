@@ -364,14 +364,10 @@ function resetBattleFunc() {
         audio.menuButton.play();
 
         for (const attack of currentStarter.attacks) {
-          console.log("attack", attack);
           if (characterSelectedAttack === attack.attack_name) {
             selectedAttack = attack;
           }
         }
-
-        console.log("selectedAttack", selectedAttack);
-
 
         if (currentStarter.speed >= enemySpeed) {
           currentStarter.attack({
