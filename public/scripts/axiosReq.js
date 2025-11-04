@@ -340,10 +340,9 @@ function getStarters() {
         character_type_weakness: response.data[0].character_type_weakness,
       };
 
-      starterOneAttackStats = response.data[0].attacks
+      starterOneAttackStats = response.data[0].attacks;
 
-      console.log('starterOneAttackStats', starterOneAttackStats);
-      
+      console.log("starterOneAttackStats", starterOneAttackStats);
 
       if (response.data.length >= 2) {
         starterTwo = response.data[1];
@@ -367,7 +366,7 @@ function getStarters() {
           character_type_weakness: response.data[1].character_type_weakness,
         };
 
-        starterTwoAttackStats = response.data[1].attacks
+        starterTwoAttackStats = response.data[1].attacks;
       }
 
       const pcStarterGrid = document.getElementById("pcStarterBody");
