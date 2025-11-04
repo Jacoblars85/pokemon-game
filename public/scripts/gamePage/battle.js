@@ -370,8 +370,7 @@ function resetBattleFunc() {
           }
         }
 
-        console.log('selectedAttack', selectedAttack);
-        
+        console.log("selectedAttack", selectedAttack);
 
         // if (characterSelectedAttack === starterOneAttackStats.attack_name)
         //   selectedAttack = starterOneAttackStats;
