@@ -681,10 +681,7 @@ function initBattle() {
     character_type_effective: starterOne.character_type_effective,
     character_type_weakness: starterOne.character_type_weakness,
     level: starterOne.xp_level,
-    fx_img: starterOneAttackStats.fx_img,
     attacks: starterOne.attacks,
-    max_frames: starterOneAttackStats.max_frames,
-    hold_time: starterOneAttackStats.hold_time,
   });
 
   starters = [starter];
