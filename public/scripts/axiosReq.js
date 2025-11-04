@@ -110,7 +110,6 @@ let starterOne;
 let starterOneHp = 0;
 let starterOneStamina = 0;
 let starterPicture = "";
-let starterFxImg = "";
 let starterOneName = "";
 let starterOneSpeed = 0;
 let starterOneInfo = {};
@@ -121,7 +120,6 @@ let starterTwo;
 let starterTwoHp = 0;
 let starterTwoStamina = 0;
 let starterTwoPicture = "";
-let starterTwoFxImg = "";
 let starterTwoName = "";
 let starterTwoSpeed = 0;
 let starterTwoInfo = {};
@@ -325,7 +323,6 @@ function getStarters() {
       starterOneName = response.data[0].character_name;
       starterOneSpeed = Math.floor(response.data[0].speed);
       starterPicture = response.data[0].battle_pic;
-      starterFxImg = response.data[0].fx_img;
 
       starterOneInfo = {
         character_name: response.data[0].character_name,
@@ -351,7 +348,6 @@ function getStarters() {
         starterTwoName = response.data[1].character_name;
         starterTwoSpeed = Math.floor(response.data[1].speed);
         starterTwoPicture = response.data[1].battle_pic;
-        starterTwoFxImg = response.data[1].fx_img;
 
         starterTwoInfo = {
           character_name: response.data[1].character_name,
