@@ -560,8 +560,8 @@ class Character extends Sprite {
         },
         image: uniqueAttackFxImage,
         frames: {
-          max: this.max_frames,
-          hold: this.hold_time,
+          max: attack.max_frames,
+          hold: attack.hold_time,
           attackFx: true,
         },
         animate: true,
