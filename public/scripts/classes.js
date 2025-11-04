@@ -116,7 +116,7 @@ class Character extends Sprite {
     character_type_weakness,
     level,
     fx_img,
-    attackStats = {},
+    attacks = [],
     max_frames,
     hold_time,
   }) {
@@ -145,7 +145,7 @@ class Character extends Sprite {
     this.character_type_weakness = character_type_weakness;
     this.level = level;
     this.fx_img = fx_img;
-    this.attackStats = attackStats;
+    this.attacks = attacks;
     this.max_frames = max_frames;
     this.hold_time = hold_time;
   }
