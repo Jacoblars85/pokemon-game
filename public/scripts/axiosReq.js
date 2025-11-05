@@ -108,7 +108,6 @@ function changeUsername(newName) {
 // starter stats/info
 let starterOne;
 let starterPicture = "";
-let starterOneName = "";
 let starterOneSpeed = 0;
 let starterOneInfo = {};
 let starterOneAttackStats = {};
@@ -116,7 +115,6 @@ let starterOneAttackStats = {};
 // starter 2 stats/info
 let starterTwo;
 let starterTwoPicture = "";
-let starterTwoName = "";
 let starterTwoSpeed = 0;
 let starterTwoInfo = {};
 let starterTwoAttackStats = {};
@@ -314,7 +312,6 @@ function getStarters() {
 
       console.log("starterOne", starterOne);
 
-      starterOneName = response.data[0].character_name;
       starterOneSpeed = Math.floor(response.data[0].speed);
       starterPicture = response.data[0].battle_pic;
 
@@ -337,7 +334,6 @@ function getStarters() {
       if (response.data.length >= 2) {
         starterTwo = response.data[1];
 
-        starterTwoName = response.data[1].character_name;
         starterTwoSpeed = Math.floor(response.data[1].speed);
         starterTwoPicture = response.data[1].battle_pic;
 
