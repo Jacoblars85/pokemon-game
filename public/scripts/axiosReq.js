@@ -107,7 +107,6 @@ function changeUsername(newName) {
 
 // starter stats/info
 let starterOne;
-let starterOneHp = 0;
 let starterOneStamina = 0;
 let starterPicture = "";
 let starterOneName = "";
@@ -117,7 +116,6 @@ let starterOneAttackStats = {};
 
 // starter 2 stats/info
 let starterTwo;
-let starterTwoHp = 0;
 let starterTwoStamina = 0;
 let starterTwoPicture = "";
 let starterTwoName = "";
@@ -318,7 +316,6 @@ function getStarters() {
 
       console.log("starterOne", starterOne);
 
-      starterOneHp = Math.floor(response.data[0].hp);
       starterOneStamina = Math.floor(response.data[0].stamina);
       starterOneName = response.data[0].character_name;
       starterOneSpeed = Math.floor(response.data[0].speed);
@@ -343,7 +340,6 @@ function getStarters() {
       if (response.data.length >= 2) {
         starterTwo = response.data[1];
 
-        starterTwoHp = Math.floor(response.data[1].hp);
         starterTwoStamina = Math.floor(response.data[1].stamina);
         starterTwoName = response.data[1].character_name;
         starterTwoSpeed = Math.floor(response.data[1].speed);
