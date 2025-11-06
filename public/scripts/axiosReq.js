@@ -126,7 +126,6 @@ let enemyAttackStats = {};
 // attack stats/info
 let attacks = [];
 let kickAttackStats = {};
-let kickAttack = "";
 let kickStamina = 0;
 let pokeAttackStats = {};
 let pokeAttack = "";
@@ -459,7 +458,6 @@ function getBasicAttacks() {
     .then((response) => {
       attacks.push(response.data);
 
-      kickAttack = response.data[0].attack_name;
       kickStamina = response.data[0].attack_stamina;
       // setKickAttackType(response.data[0].attack_style);
 
