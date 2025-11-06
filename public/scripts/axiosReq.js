@@ -455,8 +455,6 @@ function getBasicAttacks() {
     .then((response) => {
       attacks.push(response.data);
 
-      // setKickAttackType(response.data[0].attack_style);
-
       kickAttackStats = {
         attack_name: response.data[0].attack_name,
         attack_damage: response.data[0].attack_damage,
@@ -467,8 +465,6 @@ function getBasicAttacks() {
         attack_type_effective: response.data[0].attack_type_effective,
         attack_type_weakness: response.data[0].attack_type_weakness,
       };
-
-      // setPokeAttackType(response.data[1].attack_style);
 
       pokeAttackStats = {
         attack_name: response.data[1].attack_name,
