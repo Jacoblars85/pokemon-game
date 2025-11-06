@@ -120,7 +120,6 @@ let starterTwoPicture = "";
 // enemy stats/info
 let enemyOne;
 let enemyPicture = "";
-let enemyInfo = {};
 let enemyAttackStats = {};
 
 // attack stats/info
@@ -361,18 +360,6 @@ function getWildCharacter(enemyId) {
 
       enemyPicture = response.data[0].battle_pic;
 
-      enemyInfo = {
-        character_name: response.data[0].character_name,
-        hp: response.data[0].hp,
-        stamina: response.data[0].stamina,
-        speed: response.data[0].speed,
-        battle_pic: response.data[0].battle_pic,
-        character_type_id: response.data[0].character_type_id,
-        character_type_name: response.data[0].character_type_name,
-        character_type_effective: response.data[0].character_type_effective,
-        character_type_weakness: response.data[0].character_type_weakness,
-      };
-
       enemyAttackStats = {
         attack_name: response.data[0].attack_name,
         attack_damage: response.data[0].attack_damage,
@@ -402,17 +389,6 @@ function getBossCharacter(enemyId) {
 
       enemyPicture = response.data[0].battle_pic;
 
-      enemyInfo = {
-        character_name: response.data[0].character_name,
-        hp: response.data[0].hp + 100,
-        stamina: response.data[0].stamina + 150,
-        speed: response.data[0].speed + 50,
-        battle_pic: response.data[0].battle_pic,
-        character_type_id: response.data[0].character_type_id,
-        character_type_name: response.data[0].character_type_name,
-        character_type_effective: response.data[0].character_type_effective,
-        character_type_weakness: response.data[0].character_type_weakness,
-      };
 
       enemyAttackStats = {
         attack_name: response.data[0].attack_name,
