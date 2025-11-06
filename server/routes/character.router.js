@@ -206,9 +206,13 @@ router.get("/boss/:id", (req, res) => {
         const multiplier = Math.floor(Number(enemy.xp_level)) / 5;
 
         enemy.hp *= multiplier;
+        enemy.hp += 100;
         enemy.stamina *= multiplier;
+        enemy.stamina += 150;
         enemy.speed *= multiplier;
+        enemy.speed += 30;
         enemy.attack_damage *= multiplier;
+        enemy.attack_damage += 10;
       }
 
       res.send(result.rows);
