@@ -369,7 +369,7 @@ function resetBattleFunc() {
           }
         }
 
-        if (currentStarter.speed >= enemySpeed) {
+        if (currentStarter.speed >= enemyOne.speed) {
           currentStarter.attack({
             attack: selectedAttack,
             recipient: enemy,
@@ -388,7 +388,7 @@ function resetBattleFunc() {
             starterFaintIf();
             resetBattleFunc();
           });
-        } else if (currentStarter.speed < enemySpeed) {
+        } else if (currentStarter.speed < enemyOne.speed) {
           // enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
           enemy.attack({
             attack: selectedAttack,
@@ -625,9 +625,9 @@ function initBattle() {
     isEnemy: true,
     id: enemyOne.id,
     name: enemyOne.character_name,
-    health: enemyOne,hp,
+    health: enemyOne.hp,
     maxHealth: enemyOne.hp,
-    stamina: enemyOne,stamina,
+    stamina: enemyOne.stamina,
     maxStamina: enemyOne.stamina,
     speed: enemyOne.speed,
     character_type_id: enemyOne.character_type_id,
