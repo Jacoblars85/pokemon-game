@@ -404,7 +404,8 @@ class Character extends Sprite {
         attack = enemyAttackStats;
       else if (this.stamina >= kickAttackStats.attack_stamina) attack = kickAttackStats;
       else if (this.stamina >= pokeAttackStats.attack_stamina) attack = pokeAttackStats;
-      else if (this.stamina <= 0) {
+      else {
+        // else if (this.stamina <= 0) {
         attack = {
           attack_style: "tired",
           attack_name: "tired",
