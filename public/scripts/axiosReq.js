@@ -127,7 +127,6 @@ let enemyAttackStats = {};
 let attacks = [];
 let kickAttackStats = {};
 let pokeAttackStats = {};
-let pokeStamina = 0;
 
 // users items and starters info
 let usersStarters = [];
@@ -469,7 +468,6 @@ function getBasicAttacks() {
         attack_type_weakness: response.data[0].attack_type_weakness,
       };
 
-      pokeStamina = response.data[1].attack_stamina;
       // setPokeAttackType(response.data[1].attack_style);
 
       pokeAttackStats = {
