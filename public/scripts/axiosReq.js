@@ -119,10 +119,7 @@ let starterTwoAttackStats = {};
 
 // enemy stats/info
 let enemyOne;
-let enemyHp = 0;
-let enemyStamina = 0;
 let enemyPicture = "";
-let enemySpeed = 0;
 let enemyInfo = {};
 let enemyAttackStats = {};
 
@@ -366,9 +363,6 @@ function getWildCharacter(enemyId) {
     .then((response) => {
       enemyOne = response.data[0];
 
-      enemyHp = response.data[0].hp;
-      enemyStamina = response.data[0].stamina;
-      enemySpeed = response.data[0].speed;
       enemyPicture = response.data[0].battle_pic;
 
       enemyInfo = {
@@ -410,9 +404,6 @@ function getBossCharacter(enemyId) {
     .then((response) => {
       enemyOne = response.data[0];
 
-      enemyHp = response.data[0].hp + 100;
-      enemyStamina = response.data[0].stamina + 150;
-      enemySpeed = response.data[0].speed + 50;
       enemyPicture = response.data[0].battle_pic;
 
       enemyInfo = {
