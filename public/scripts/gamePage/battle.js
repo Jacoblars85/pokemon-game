@@ -624,7 +624,7 @@ function initBattle() {
     animate: true,
     isEnemy: true,
     id: enemyOne.id,
-    name: enemyName,
+    name: enemyOne.character_name,
     health: enemyHp,
     maxHealth: enemyHp,
     stamina: enemyStamina,
