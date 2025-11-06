@@ -107,17 +107,14 @@ function changeUsername(newName) {
 
 // starter stats/info
 let starterOne;
-let starterPicture = "";
 // let starterOneAttackStats = {};
 
 // starter 2 stats/info
 let starterTwo;
-let starterTwoPicture = "";
 // let starterTwoAttackStats = {};
 
 // enemy stats/info
 let enemyOne;
-let enemyPicture = "";
 let enemyAttackStats = {};
 
 // attack stats/info
@@ -299,16 +296,12 @@ function getStarters() {
 
       console.log("starterOne", starterOne);
 
-      starterPicture = response.data[0].battle_pic;
-
       // starterOneAttackStats = response.data[0].attacks;
 
       // console.log("starterOneAttackStats", starterOneAttackStats);
 
       if (response.data.length >= 2) {
         starterTwo = response.data[1];
-
-        starterTwoPicture = response.data[1].battle_pic;
 
         // starterTwoAttackStats = response.data[1].attacks;
       }
@@ -331,8 +324,6 @@ function getWildCharacter(enemyId) {
   })
     .then((response) => {
       enemyOne = response.data[0];
-
-      enemyPicture = response.data[0].battle_pic;
 
       enemyAttackStats = {
         attack_name: response.data[0].attack_name,
@@ -360,8 +351,6 @@ function getBossCharacter(enemyId) {
   })
     .then((response) => {
       enemyOne = response.data[0];
-
-      enemyPicture = response.data[0].battle_pic;
 
 
       enemyAttackStats = {
