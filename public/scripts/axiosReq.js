@@ -114,8 +114,8 @@ let starterPicture = "";
 // starter 2 stats/info
 let starterTwo;
 let starterTwoPicture = "";
-let starterTwoInfo = {};
-let starterTwoAttackStats = {};
+// let starterTwoInfo = {};
+// let starterTwoAttackStats = {};
 
 // enemy stats/info
 let enemyOne;
@@ -329,19 +329,19 @@ function getStarters() {
 
         starterTwoPicture = response.data[1].battle_pic;
 
-        starterTwoInfo = {
-          character_name: response.data[1].character_name,
-          hp: Math.floor(response.data[1].hp),
-          stamina: Math.floor(response.data[1].stamina),
-          speed: Math.floor(response.data[1].speed),
-          battle_pic: response.data[1].battle_pic,
-          character_type_id: response.data[1].character_type_id,
-          character_type_name: response.data[1].character_type_name,
-          character_type_effective: response.data[1].character_type_effective,
-          character_type_weakness: response.data[1].character_type_weakness,
-        };
+        // starterTwoInfo = {
+        //   character_name: response.data[1].character_name,
+        //   hp: Math.floor(response.data[1].hp),
+        //   stamina: Math.floor(response.data[1].stamina),
+        //   speed: Math.floor(response.data[1].speed),
+        //   battle_pic: response.data[1].battle_pic,
+        //   character_type_id: response.data[1].character_type_id,
+        //   character_type_name: response.data[1].character_type_name,
+        //   character_type_effective: response.data[1].character_type_effective,
+        //   character_type_weakness: response.data[1].character_type_weakness,
+        // };
 
-        starterTwoAttackStats = response.data[1].attacks;
+        // starterTwoAttackStats = response.data[1].attacks;
       }
 
       const pcStarterGrid = document.getElementById("pcStarterBody");
