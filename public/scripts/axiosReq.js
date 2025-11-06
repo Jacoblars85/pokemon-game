@@ -122,7 +122,6 @@ let enemyOne;
 let enemyHp = 0;
 let enemyStamina = 0;
 let enemyPicture = "";
-let enemyName = "";
 let enemySpeed = 0;
 let enemyInfo = {};
 let enemyAttackStats = {};
@@ -369,7 +368,6 @@ function getWildCharacter(enemyId) {
 
       enemyHp = response.data[0].hp;
       enemyStamina = response.data[0].stamina;
-      enemyName = response.data[0].character_name;
       enemySpeed = response.data[0].speed;
       enemyPicture = response.data[0].battle_pic;
 
@@ -414,7 +412,6 @@ function getBossCharacter(enemyId) {
 
       enemyHp = response.data[0].hp + 100;
       enemyStamina = response.data[0].stamina + 150;
-      enemyName = response.data[0].character_name;
       enemySpeed = response.data[0].speed + 50;
       enemyPicture = response.data[0].battle_pic;
 
