@@ -614,7 +614,7 @@ function initBattle() {
       y: 100,
     },
     image: {
-      src: enemyPicture,
+      src: enemyOne.battle_pic,
     },
     frames: {
       max: 4,
@@ -644,7 +644,7 @@ function initBattle() {
       y: 325,
     },
     image: {
-      src: starterPicture,
+      src: starterOne.battle_pic,
     },
     frames: {
       max: 4,
@@ -703,7 +703,7 @@ function initBattle() {
         y: 325,
       },
       image: {
-        src: starterTwoPicture,
+        src: starterTwo.battle_pic,
       },
       frames: {
         max: 4,
