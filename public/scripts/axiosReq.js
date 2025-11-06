@@ -108,13 +108,11 @@ function changeUsername(newName) {
 // starter stats/info
 let starterOne;
 let starterPicture = "";
-// let starterOneInfo = {};
 // let starterOneAttackStats = {};
 
 // starter 2 stats/info
 let starterTwo;
 let starterTwoPicture = "";
-// let starterTwoInfo = {};
 // let starterTwoAttackStats = {};
 
 // enemy stats/info
@@ -303,18 +301,6 @@ function getStarters() {
 
       starterPicture = response.data[0].battle_pic;
 
-      // starterOneInfo = {
-      //   character_name: response.data[0].character_name,
-      //   hp: Math.floor(response.data[0].hp),
-      //   stamina: Math.floor(response.data[0].stamina),
-      //   speed: Math.floor(response.data[0].speed),
-      //   battle_pic: response.data[0].battle_pic,
-      //   character_type_id: response.data[0].character_type_id,
-      //   character_type_name: response.data[0].character_type_name,
-      //   character_type_effective: response.data[0].character_type_effective,
-      //   character_type_weakness: response.data[0].character_type_weakness,
-      // };
-
       // starterOneAttackStats = response.data[0].attacks;
 
       // console.log("starterOneAttackStats", starterOneAttackStats);
@@ -323,18 +309,6 @@ function getStarters() {
         starterTwo = response.data[1];
 
         starterTwoPicture = response.data[1].battle_pic;
-
-        // starterTwoInfo = {
-        //   character_name: response.data[1].character_name,
-        //   hp: Math.floor(response.data[1].hp),
-        //   stamina: Math.floor(response.data[1].stamina),
-        //   speed: Math.floor(response.data[1].speed),
-        //   battle_pic: response.data[1].battle_pic,
-        //   character_type_id: response.data[1].character_type_id,
-        //   character_type_name: response.data[1].character_type_name,
-        //   character_type_effective: response.data[1].character_type_effective,
-        //   character_type_weakness: response.data[1].character_type_weakness,
-        // };
 
         // starterTwoAttackStats = response.data[1].attacks;
       }
