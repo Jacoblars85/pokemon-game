@@ -296,7 +296,6 @@ function getStarters() {
 
       if (response.data.length >= 2) {
         starterTwo = response.data[1];
-
       }
 
       const pcStarterGrid = document.getElementById("pcStarterBody");
@@ -344,7 +343,6 @@ function getBossCharacter(enemyId) {
   })
     .then((response) => {
       enemyOne = response.data[0];
-
 
       enemyAttackStats = {
         attack_name: response.data[0].attack_name,
@@ -396,7 +394,7 @@ function getBasicAttacks() {
         attack_type_name: response.data[0].attack_type_name,
         attack_type_effective: response.data[0].attack_type_effective,
         attack_type_weakness: response.data[0].attack_type_weakness,
-        fx_img: ""
+        fx_img: "",
       };
 
       pokeAttackStats = {
@@ -408,7 +406,7 @@ function getBasicAttacks() {
         attack_type_name: response.data[1].attack_type_name,
         attack_type_effective: response.data[1].attack_type_effective,
         attack_type_weakness: response.data[1].attack_type_weakness,
-        fx_img: ""
+        fx_img: "",
       };
     })
     .catch((err) => {
