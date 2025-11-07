@@ -105,10 +105,9 @@ function changeUsername(newName) {
     });
 }
 
-// starter stats/info
+// starter variables
+let usersStarters = [];
 let starterOne;
-
-// starter 2 stats/info
 let starterTwo;
 
 // enemy stats/info
@@ -121,7 +120,6 @@ let kickAttackStats = {};
 let pokeAttackStats = {};
 
 // users items and starters info
-let usersStarters = [];
 let usersBattleItems = [];
 let usersConsumableItems = [];
 let usersThrowablesItems = [];
