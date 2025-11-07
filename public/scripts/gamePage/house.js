@@ -232,15 +232,6 @@ function showCharacterDetails(character, context = "") {
     attackBox.appendChild(detailBox);
   }
 
-  // document.getElementById("detailAttackName").textContent =
-  //   "attack: " + character.attack_name;
-  // document.getElementById("detailAttackType").textContent =
-  //   "type: " + character.attack_type_name;
-  // document.getElementById("detailAttackDamage").textContent =
-  //   "damage: " + character.attack_damage;
-  // document.getElementById("detailAttackStamina").textContent =
-  //   "stamina used: " + character.attack_stamina;
-
   const openEditNicknameButton = document.getElementById(
     "openEditNicknameButton"
   );
