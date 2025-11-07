@@ -300,9 +300,9 @@ Character Details Interface
 .characterDetailsStatBigBox {
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  height: 100px;
-  width: 90%;
+  /* gap: 20px; */
+  /* height: 100px; */
+  /* width: 90%; */
   align-items: center;
   justify-content: space-around;
 }
@@ -310,7 +310,7 @@ Character Details Interface
 .characterDetailsStatBox {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100px;
   align-items: center;
   justify-content: space-around;
 }
@@ -318,8 +318,10 @@ Character Details Interface
 .characterDetailsAttackBox {
   display: flex;
   flex-direction: row;
-  height: 100%;
+  height: 100px;
+  width: 90%;
   border: 1px solid black;
+  gap: 20px;
   align-items: center;
   justify-content: center;
   text-align: center;
