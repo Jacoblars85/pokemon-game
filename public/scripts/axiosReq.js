@@ -107,11 +107,9 @@ function changeUsername(newName) {
 
 // starter stats/info
 let starterOne;
-// let starterOneAttackStats = {};
 
 // starter 2 stats/info
 let starterTwo;
-// let starterTwoAttackStats = {};
 
 // enemy stats/info
 let enemyOne;
@@ -296,14 +294,9 @@ function getStarters() {
 
       console.log("starterOne", starterOne);
 
-      // starterOneAttackStats = response.data[0].attacks;
-
-      // console.log("starterOneAttackStats", starterOneAttackStats);
-
       if (response.data.length >= 2) {
         starterTwo = response.data[1];
 
-        // starterTwoAttackStats = response.data[1].attacks;
       }
 
       const pcStarterGrid = document.getElementById("pcStarterBody");
