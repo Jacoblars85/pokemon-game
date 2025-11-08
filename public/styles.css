@@ -305,6 +305,7 @@ Character Details Interface
   /* width: 90%; */
   align-items: center;
   justify-content: space-around;
+  margin-top: 20px;
 }
 
 .characterDetailsStatBox {
@@ -326,16 +327,6 @@ Character Details Interface
   justify-content: center;
   text-align: center;
 }
-
-/* .characterDetails img {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  top: 0.5%;
-  left: 0.5%;
-  object-fit: contain;
-  margin: 12px;
-} */
 
 .characterDetails h2,
 .characterDetails h3,
