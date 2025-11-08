@@ -300,8 +300,8 @@ Character Details Interface
 .characterDetailsStatBigBox {
   display: flex;
   flex-direction: row;
-  /* gap: 20px; */
-  /* height: 100px; */
+  gap: 20px;
+  height: 160px;
   /* width: 90%; */
   align-items: center;
   justify-content: space-around;
@@ -327,7 +327,7 @@ Character Details Interface
   text-align: center;
 }
 
-.characterDetails img {
+/* .characterDetails img {
   position: relative;
   width: 150px;
   height: 150px;
@@ -335,7 +335,7 @@ Character Details Interface
   left: 0.5%;
   object-fit: contain;
   margin: 12px;
-}
+} */
 
 .characterDetails h2,
 .characterDetails h3,
