@@ -310,9 +310,9 @@ Character Details Interface
 .characterDetailsStatBox {
   display: flex;
   flex-direction: column;
-  height: 100px;
+  height: 160px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .characterDetailsAttackBox {
