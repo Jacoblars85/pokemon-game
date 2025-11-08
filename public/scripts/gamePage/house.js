@@ -244,10 +244,11 @@ function showCharacterDetails(character, context = "") {
     openEditNicknamePopUp(character);
   });
 
-  const container = document.getElementById("detailsItem");
-  container.innerHTML = "";
+    const characterBox = document.getElementById("characterDetailsStatBigBox");
+    // characterBox.innerHTML = ''
 
   if (character.item_id) {
+      const container = document.createElement("div");
     container.style = `
           display: flex; 
           flex-direction: column; 
@@ -279,6 +280,8 @@ function showCharacterDetails(character, context = "") {
     container.appendChild(itemName);
     container.appendChild(img);
     container.appendChild(removeButton);
+
+    characterBox.appendChild(container);
   }
 
   let starterButtonContainer = document.getElementById(
