@@ -494,7 +494,7 @@
           </div>
         </div>
         <div class="characterDetailsStatBigBox">
-          <img id="detailImage" src="" alt="Item Image" />
+          <img id="detailImage" src="" alt="Item Image" style="width: 150px; height: 150px;" />
 
 
           <div class="characterDetailsStatBox">
@@ -508,13 +508,15 @@
             <h4 id="detailStamina"></h4>
             <h4 id="detailSpeed"></h4>
           </div>
+
+          <div id="detailsItem"
+          style="display: flex; flex-direction: column; align-items: center;">
+        </div>
         </div>
 
         <div id="characterDetailsAttackBox" class="characterDetailsAttackBox"></div>
 
-        <div id="detailsItem"
-          style="position: absolute; top: 15%; right: 15%; display: flex; flex-direction: column; align-items: center;">
-        </div>
+        
 
         <button style="margin-top: auto;" onclick="closeCharacterDetails()">Close</button>
       </div>
