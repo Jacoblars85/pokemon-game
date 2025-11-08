@@ -212,6 +212,7 @@ function showCharacterDetails(character, context = "") {
       text-align: center;
       border: 1px solid white;
       height: 100px;
+      width: 200px;
     `;
 
     const attackName = document.createElement("h3");
@@ -248,17 +249,17 @@ function showCharacterDetails(character, context = "") {
 
   if (character.item_id) {
     container.style = `
-          position: absolute; 
-          top: 15%; 
-          right: 15%; 
           display: flex; 
           flex-direction: column; 
           align-items: center;
+          gap: 10px;
         `;
 
     const img = document.createElement("img");
     img.src = character.item_pic;
-    img.height = "70px";
+    img.style = `
+    height: 100px;
+    `
 
     const itemName = document.createElement("div");
     itemName.textContent = character.item_name;
