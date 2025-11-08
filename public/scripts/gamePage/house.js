@@ -212,7 +212,7 @@ function showCharacterDetails(character, context = "") {
       text-align: center;
       border: 1px solid white;
       height: 100px;
-      width: 200px;
+      width: 220px;
     `;
 
     const attackName = document.createElement("h3");
