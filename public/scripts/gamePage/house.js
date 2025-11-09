@@ -257,9 +257,7 @@ function showCharacterDetails(character, context = "") {
 
     const img = document.createElement("img");
     img.src = character.item_pic;
-    img.style = `
-    height: 100px;
-    `
+    img.style = `height: 100px;`;
 
     const itemName = document.createElement("div");
     itemName.textContent = character.item_name;
@@ -267,9 +265,7 @@ function showCharacterDetails(character, context = "") {
 
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
-    removeButton.style = `
-            cursor: pointer;
-          `;
+    removeButton.style = `cursor: pointer;`;
 
     removeButton.addEventListener("click", (e) => {
       e.stopPropagation(); // Stop it from triggering detail popup
