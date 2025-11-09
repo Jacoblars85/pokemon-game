@@ -489,8 +489,8 @@ router.put("/remove/item", (req, res) => {
 
           const sqlText = `
 SELECT "user_characters"."id" as "id",
-        "user_characters"."user_id" as "user_id",
-        "user_characters"."character_id",
+		    "user_characters"."user_id" as "user_id",
+		    "user_characters"."character_id",
         "user_characters"."current_hp" as "hp",
         "user_characters"."current_stamina" as "stamina",
         "user_characters"."max_hp",
@@ -500,22 +500,34 @@ SELECT "user_characters"."id" as "id",
         "user_characters"."new",
         "user_characters"."nickname",
         "user_characters"."xp_level",
-        "characters"."character_name",
-        "characters"."profile_pic",
+		    "characters"."character_name",
+		    "characters"."profile_pic",
         "characters"."hp" as "base_hp",
         "characters"."stamina" as "base_stamina",
         "characters"."speed",
         "characters"."battle_pic",
-        "attacks"."id" as "attacks_id",
-        "attacks"."attack_name",
-        "attacks"."attack_damage",
-        "attacks"."attack_stamina",
-        "attacks"."attack_style",
-        "attack_animations"."id" as "attack_animations_id",
-        "attack_animations"."animation_name",
-        "attack_animations"."max_frames",
-        "attack_animations"."hold_time",
-        "attack_animations"."fx_img",
+        "character_type"."id" as "character_type_id",
+        "character_type"."type_name" as "character_type_name",
+        "character_type"."effective" as "character_type_effective",
+        "character_type"."weakness" as "character_type_weakness",
+                  json_agg(
+    json_build_object(
+        'attacks_id', "attacks"."id",
+      'attack_name', "attacks"."attack_name",
+      'attack_damage', "attacks"."attack_damage",
+      'attack_stamina', "attacks"."attack_stamina",
+      'attack_style', "attacks"."attack_style",
+      'attack_type_id', "attack_type"."id",
+      'attack_type_name', "attack_type"."type_name",
+      'attack_type_effective', "attack_type"."effective",
+      'attack_type_weakness', "attack_type"."weakness",
+      'attack_animations_id', "attack_animations"."id",
+      'animation_name', "attack_animations"."animation_name",
+      'max_frames', "attack_animations"."max_frames",
+      'hold_time', "attack_animations"."hold_time",
+      'fx_img', "attack_animations"."fx_img"
+    )
+  ) AS attacks,
         "items"."id" as "item_id",
         "items"."item_name",
         "items"."item_hp",
@@ -527,15 +539,23 @@ SELECT "user_characters"."id" as "id",
         "items"."item_cost",
     	  "items"."item_color"
  FROM "user_characters" 
-	INNER JOIN "characters"
+	  INNER JOIN "characters"
     	ON "user_characters"."character_id" = "characters"."id"
+    INNER JOIN "types" "character_type"
+      ON "character_type"."id" = "characters"."type_id"
+            INNER JOIN "user_character_attacks"
+        ON "user_character_attacks"."user_character_id" = "user_characters"."id"
     	INNER JOIN "attacks"
-            ON "attacks"."id" = "characters"."attacks_id"
-        INNER JOIN "attack_animations"
-        	ON "attacks"."attack_animations_id" = "attack_animations"."id"
+        ON "attacks"."id" = "user_character_attacks"."attack_id"
+    INNER JOIN "types" "attack_type"
+      ON "attacks"."type_id" = "attack_type"."id"
+    INNER JOIN "attack_animations"
+      ON "attacks"."attack_animations_id" = "attack_animations"."id"
     LEFT JOIN "items"
     	ON "user_characters"."item_id" = "items"."id"
-    WHERE "user_id" = $1 AND "user_characters"."id" = $2;
+    WHERE "user_characters"."user_id" = $1 AND "user_characters"."id" = $2
+      GROUP BY "user_characters"."id", "characters"."id", "character_type"."id", "items"."id"
+      	ORDER BY "character_id", "id" ASC;;
     `;
 
           const sqlValues = [req.user.id, updatedId];
