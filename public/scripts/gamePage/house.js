@@ -246,6 +246,7 @@ function showCharacterDetails(character, context = "") {
 
   const container = document.getElementById("detailsItem");
   container.innerHTML = "";
+  container.style = `display: none;`;
 
   if (character.item_id) {
     container.style = `
