@@ -555,7 +555,7 @@ SELECT "user_characters"."id" as "id",
     	ON "user_characters"."item_id" = "items"."id"
     WHERE "user_characters"."user_id" = $1 AND "user_characters"."id" = $2
       GROUP BY "user_characters"."id", "characters"."id", "character_type"."id", "items"."id"
-      	ORDER BY "character_id", "id" ASC;;
+      	ORDER BY "character_id", "id" ASC;
     `;
 
           const sqlValues = [req.user.id, updatedId];
