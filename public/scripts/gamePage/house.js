@@ -170,8 +170,6 @@ function setStarter(e) {
 }
 
 function showCharacterDetails(character, context = "") {
-  console.log("character", character);
-
   document.getElementById("characterDetailsOverlay").style.display = "flex";
 
   document.getElementById("switchStarter1Button").dataset.characterId =
