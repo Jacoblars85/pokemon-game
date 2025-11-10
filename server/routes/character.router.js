@@ -268,6 +268,7 @@ SELECT "user_characters"."id" as "id",
       'hold_time', "attack_animations"."hold_time",
       'fx_img', "attack_animations"."fx_img"
     )
+      ORDER BY "user_character_attacks"."id" ASC
   ) AS attacks,
         "items"."id" as "item_id",
         "items"."item_name",
@@ -382,6 +383,7 @@ SELECT "user_characters"."id" as "id",
       'hold_time', "attack_animations"."hold_time",
       'fx_img', "attack_animations"."fx_img"
     )
+      ORDER BY "user_character_attacks"."id" ASC
   ) AS attacks,
         "items"."id" as "item_id",
         "items"."item_name",
