@@ -300,6 +300,10 @@ document
     }
   });
 
+  function openChangeCharacterAttackPopUp() {
+  document.getElementById("editNicknameOverlay").style.display = "flex";
+}
+
 function openEditNicknamePopUp(characterChanging) {
   const editNicknameButton = document.getElementById(
     "submitEditNicknameButton"
