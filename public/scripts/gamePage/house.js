@@ -300,12 +300,14 @@ document
     }
   });
 
-  function openChangeCharacterAttackPopUp() {
-  document.getElementById("changeCharactersAttacksOverlay").style.display = "flex";
+function openChangeCharacterAttackPopUp() {
+  document.getElementById("changeCharactersAttacksOverlay").style.display =
+    "flex";
 }
 
 function closeChangeCharacterAttackPopUp() {
-  document.getElementById("changeCharactersAttacksOverlay").style.display = "none";
+  document.getElementById("changeCharactersAttacksOverlay").style.display =
+    "none";
   audio.closeButton.play();
 }
 
