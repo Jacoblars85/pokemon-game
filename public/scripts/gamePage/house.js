@@ -301,8 +301,24 @@ document
   });
 
   function openChangeCharacterAttackPopUp() {
-  document.getElementById("editNicknameOverlay").style.display = "flex";
+  document.getElementById("changeCharactersAttacksOverlay").style.display = "flex";
 }
+
+function closeChangeCharacterAttackPopUp() {
+  document.getElementById("changeCharactersAttacksOverlay").style.display = "none";
+  audio.closeButton.play();
+}
+
+document
+  .getElementById("changeCharactersAttacksOverlay")
+  .addEventListener("click", (event) => {
+    const popup = document.getElementById("changeCharactersAttacksPopup");
+
+    // Only close if clicking directly on the overlay (not inside the popup)
+    if (!popup.contains(event.target)) {
+      closeChangeCharacterAttackPopUp();
+    }
+  });
 
 function openEditNicknamePopUp(characterChanging) {
   const editNicknameButton = document.getElementById(
