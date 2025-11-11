@@ -519,7 +519,7 @@
 
           <div style="display: flex; flex-direction: column; align-items: center; row-gap: 5px;">
             <div id="characterDetailsAttackBox" class="characterDetailsAttackBox"></div>
-            <button id="changeCharactersAttacks">%</button>
+            <button id="changeCharactersAttacks" onclick="openChangeCharacterAttackPopUp()">%</button>
           </div>
 
           <button onclick="closeCharacterDetails()">Close</button>
@@ -569,6 +569,24 @@
           "></div>
 
         <button style="margin-top: auto;" onclick="closeUseItemOverlay()">Cancel</button>
+      </div>
+    </div>
+
+        <!-- attack change interface -->
+    <div id="itemDetailsOverlay" class="overlay">
+      <div id="itemDetailsPopup" class="itemDetails">
+
+        <button class="btn" style="position: absolute; top: 0.5%; right: 0.5%; margin: 0" onclick="closeItemDetails()">
+          X
+        </button>
+
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 90%;">
+          <img id="itemDetailImage" src="" alt="Item Image" />
+          <h2 id="itemDetailName"></h2>
+          <h4 id="itemDetailStats"></h4>
+        </div>
+
+        <button style="margin-top: auto;" onclick="closeItemDetails()">Close</button>
       </div>
     </div>
   </div>
