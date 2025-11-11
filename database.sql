@@ -243,7 +243,7 @@ INSERT INTO "attacks"
 	('bash', 40, 20, 1, 'physical', 1),
 	('plant spike', 40, 20, 4, 'projectile', 18),
 	('poison gas', 40, 20, 7, 'summon', 20),
-	('water ball ', 40, 20, 3, 'projectile', 14),
+	('waterball ', 40, 20, 3, 'projectile', 14),
 	('rock fall', 40, 20, 5, 'summon', 8),
 	('slash', 40, 20, 1, 'summon', 12);
 
@@ -322,7 +322,15 @@ INSERT INTO "items"
 	('short sword', 'held', 0, 0, 0, 15, 0, '../../images/held/ShortSwordSprite.png', 100, '#000000'),
 	('sword', 'held', 0, 0, 0, 20, 0, '../../images/held/SwordSprite.png', 150, '#000000'),
 	('book', 'held', 0, 20, 10, 0, 0, '../../images/held/BookSprite.png', 120, '#000000'),
-	('magic wand', 'held', 15, 0, 0, 0, 0, '../../images/held/MagicWandSprite.png', 150, '#000000');
+	('magic wand', 'held', 15, 0, 0, 0, 0, '../../images/held/MagicWandSprite.png', 150, '#000000')
+	('slash', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000')
+	('fireball', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000')
+	('leaf blade', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000')
+	('waterball', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000')
+	('rock slide', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000')
+	('thunder', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000')
+	('curse', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000')
+	('spirit bomb', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000');
 		
 INSERT INTO "rewards" 
 	("reward_name", "pic", "cost")
