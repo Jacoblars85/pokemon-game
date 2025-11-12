@@ -300,6 +300,56 @@ document
     }
   });
 
+  function showChangeCharacterAttacks(character, context = "") {
+  document.getElementById("characterDetailsOverlay").style.display = "flex";
+
+ 
+
+  const attackBox = document.getElementById("characterDetailsAttackBox");
+  attackBox.innerHTML = "";
+
+  for (const attack of character.attacks) {
+    const detailBox = document.createElement("div");
+    detailBox.style = `
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      border: 1px solid white;
+      height: 100px;
+      width: 220px;
+    `;
+
+    const attackName = document.createElement("h3");
+    attackName.textContent = "attack: " + attack.attack_name;
+
+    const attacType = document.createElement("h4");
+    attacType.textContent = "type: " + attack.attack_type_name;
+
+    const attacDamage = document.createElement("h4");
+    attacDamage.textContent = "damage: " + attack.attack_damage;
+
+    const attackStamina = document.createElement("h4");
+    attackStamina.textContent = "stamina used: " + attack.attack_stamina;
+
+    detailBox.appendChild(attackName);
+    detailBox.appendChild(attacType);
+    detailBox.appendChild(attacDamage);
+    detailBox.appendChild(attackStamina);
+
+    attackBox.appendChild(detailBox);
+  }
+
+
+ 
+
+
+
+  if (context === "pc") starterButtonContainer.style.display = "flex";
+  else starterButtonContainer.style.display = "none";
+}
+
 function openChangeCharacterAttackPopUp() {
   document.getElementById("changeCharactersAttacksOverlay").style.display =
     "flex";
