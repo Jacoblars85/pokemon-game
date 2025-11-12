@@ -233,12 +233,13 @@ function showCharacterDetails(character, context = "") {
     attackBox.appendChild(detailBox);
   }
 
-
-  const changeCharactersAttackButton = document.getElementById("characterDetailsAttackBox");
+  const changeCharactersAttackButton = document.getElementById(
+    "characterDetailsAttackBox"
+  );
 
   changeCharactersAttackButton.addEventListener("click", () => {
-        showChangeCharacterAttacks(character);
-      });
+    showChangeCharacterAttacks(character);
+  });
 
   const openEditNicknameButton = document.getElementById(
     "openEditNicknameButton"
@@ -308,7 +309,8 @@ document
   });
 
 function showChangeCharacterAttacks(character) {
-  document.getElementById("changeCharactersAttacksOverlay").style.display = "flex";
+  document.getElementById("changeCharactersAttacksOverlay").style.display =
+    "flex";
 
   const attackBox = document.getElementById("characterDetailsAttackBox");
   attackBox.innerHTML = "";
