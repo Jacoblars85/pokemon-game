@@ -234,7 +234,7 @@ function showCharacterDetails(character, context = "") {
   }
 
   const changeCharactersAttackButton = document.getElementById(
-    "characterDetailsAttackBox"
+    "changeCharactersAttackButton"
   );
 
   changeCharactersAttackButton.addEventListener("click", () => {
