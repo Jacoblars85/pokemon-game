@@ -312,12 +312,12 @@ function showChangeCharacterAttacks(character) {
   document.getElementById("changeCharactersAttacksOverlay").style.display =
     "flex";
 
-  const attackBox = document.getElementById("characterDetailsAttackBox");
-  attackBox.innerHTML = "";
+  const currentAttackBox = document.getElementById("changeCharacterAttacksCurrentBox");
+  currentAttackBox.innerHTML = "";
 
   for (const attack of character.attacks) {
-    const detailBox = document.createElement("div");
-    detailBox.style = `
+    const currentDetailBox = document.createElement("div");
+    currentDetailBox.style = `
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -340,12 +340,12 @@ function showChangeCharacterAttacks(character) {
     const attackStamina = document.createElement("h4");
     attackStamina.textContent = "stamina used: " + attack.attack_stamina;
 
-    detailBox.appendChild(attackName);
-    detailBox.appendChild(attacType);
-    detailBox.appendChild(attacDamage);
-    detailBox.appendChild(attackStamina);
+    currentDetailBox.appendChild(attackName);
+    currentDetailBox.appendChild(attacType);
+    currentDetailBox.appendChild(attacDamage);
+    currentDetailBox.appendChild(attackStamina);
 
-    attackBox.appendChild(detailBox);
+    currentAttackBox.appendChild(currentDetailBox);
   }
 }
 
