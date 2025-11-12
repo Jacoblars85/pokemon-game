@@ -233,6 +233,13 @@ function showCharacterDetails(character, context = "") {
     attackBox.appendChild(detailBox);
   }
 
+
+  const changeCharactersAttackButton = document.getElementById("characterDetailsAttackBox");
+
+  changeCharactersAttackButton.addEventListener("click", () => {
+        showChangeCharacterAttacks(character);
+      });
+
   const openEditNicknameButton = document.getElementById(
     "openEditNicknameButton"
   );
