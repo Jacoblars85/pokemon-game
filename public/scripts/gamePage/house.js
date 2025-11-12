@@ -349,11 +349,6 @@ function showChangeCharacterAttacks(character) {
   }
 }
 
-function openChangeCharacterAttackPopUp() {
-  document.getElementById("changeCharactersAttacksOverlay").style.display =
-    "flex";
-}
-
 function closeChangeCharacterAttackPopUp() {
   document.getElementById("changeCharactersAttacksOverlay").style.display =
     "none";
