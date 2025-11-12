@@ -300,10 +300,8 @@ document
     }
   });
 
-  function showChangeCharacterAttacks(character, context = "") {
+function showChangeCharacterAttacks(character, context = "") {
   document.getElementById("characterDetailsOverlay").style.display = "flex";
-
- 
 
   const attackBox = document.getElementById("characterDetailsAttackBox");
   attackBox.innerHTML = "";
@@ -340,11 +338,6 @@ document
 
     attackBox.appendChild(detailBox);
   }
-
-
- 
-
-
 
   if (context === "pc") starterButtonContainer.style.display = "flex";
   else starterButtonContainer.style.display = "none";
