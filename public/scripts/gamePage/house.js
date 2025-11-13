@@ -312,7 +312,9 @@ function showChangeCharacterAttacks(character) {
   document.getElementById("changeCharactersAttacksOverlay").style.display =
     "flex";
 
-  const currentAttackBox = document.getElementById("changeCharacterAttacksCurrentBox");
+  const currentAttackBox = document.getElementById(
+    "changeCharacterAttacksCurrentBox"
+  );
   currentAttackBox.innerHTML = "";
 
   for (const attack of character.attacks) {
@@ -348,10 +350,10 @@ function showChangeCharacterAttacks(character) {
     currentAttackBox.appendChild(currentDetailBox);
   }
 
-    const oldAttackBox = document.getElementById("changeCharacterAttacksOldBox");
+  const oldAttackBox = document.getElementById("changeCharacterAttacksOldBox");
   oldAttackBox.innerHTML = "";
 
-    for (const attack of character.attacks) {
+  for (const attack of character.attacks) {
     const oldDetailBox = document.createElement("div");
     oldDetailBox.style = `
       display: flex;
