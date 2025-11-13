@@ -363,6 +363,17 @@ Attack Change Interface
   text-align: center;
 }
 
+.changeCharacterAttacksOldBox {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  width: 90%;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 /* --------------------------------------------------------------------------------
 Edit Nickname Interface
 -------------------------------------------------------------------------------- */
