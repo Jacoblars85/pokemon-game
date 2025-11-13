@@ -792,4 +792,24 @@ router.put("/heal/starters", (req, res) => {
     });
 });
 
+router.put("/attack/swap", (req, res) => {
+  const sqlText = `
+        UPDATE "user_characters_attacks"
+          SET "current_hp" = "max_hp", "current_stamina" = "max_stamina"
+          WHERE "user_id" = $1 AND ("starter_1" = TRUE OR "starter_2" = TRUE OR "starter_3" = TRUE);
+          `;
+
+  const sqlValues = [req.user.id];
+
+  pool
+    .query(sqlText, sqlValues)
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log("Error in character.router /attack/swap PUT,", err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
