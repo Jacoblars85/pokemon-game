@@ -921,7 +921,7 @@ function editCharactersNickname(e, character) {
 function putCharacterAttackSwitching(characterInfo) {
   axios({
     method: "PUT",
-    url: `http://localhost:5001/api/characters/starter/${newStarterInfo.route}`,
+    url: `http://localhost:5001/api/characters/attack/swap`,
     data: newStarterInfo,
     withCredentials: true,
   })
