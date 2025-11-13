@@ -347,6 +347,39 @@ function showChangeCharacterAttacks(character) {
 
     currentAttackBox.appendChild(currentDetailBox);
   }
+
+    for (const attack of character.attacks) {
+    const currentDetailBox = document.createElement("div");
+    currentDetailBox.style = `
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      border: 1px solid white;
+      height: 100px;
+      width: 220px;
+    `;
+
+    const attackName = document.createElement("h3");
+    attackName.textContent = "attack: " + attack.attack_name;
+
+    const attacType = document.createElement("h4");
+    attacType.textContent = "type: " + attack.attack_type_name;
+
+    const attacDamage = document.createElement("h4");
+    attacDamage.textContent = "damage: " + attack.attack_damage;
+
+    const attackStamina = document.createElement("h4");
+    attackStamina.textContent = "stamina used: " + attack.attack_stamina;
+
+    currentDetailBox.appendChild(attackName);
+    currentDetailBox.appendChild(attacType);
+    currentDetailBox.appendChild(attacDamage);
+    currentDetailBox.appendChild(attackStamina);
+
+    currentAttackBox.appendChild(currentDetailBox);
+  }
 }
 
 function closeChangeCharacterAttackPopUp() {
