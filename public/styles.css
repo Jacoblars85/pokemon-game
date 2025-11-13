@@ -365,8 +365,8 @@ Attack Change Interface
 
 .changeCharacterAttacksOldBox {
   display: flex;
-  flex-direction: row;
-  height: 100px;
+  flex-direction: column;
+  /* height: 100px; */
   width: 90%;
   gap: 20px;
   align-items: center;
