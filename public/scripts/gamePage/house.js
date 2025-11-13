@@ -357,13 +357,13 @@ function showChangeCharacterAttacks(character) {
     const oldDetailBox = document.createElement("div");
     oldDetailBox.style = `
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: row;
+      align-items: space-between;
+      justify-content: center;
       text-align: center;
       border: 1px solid white;
-      height: 100px;
-      width: 220px;
+      height: 150px;
+      width: 100%;
     `;
 
     const attackName = document.createElement("h3");
