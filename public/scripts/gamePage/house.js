@@ -384,13 +384,14 @@ function showChangeCharacterAttacks(character) {
 
     switchButton.addEventListener("click", (e) => {
       e.stopPropagation(); // Stop it from triggering detail popup
-      removeItem({ character, itemId: character.item_id });
+      // removeItem({ character, itemId: character.item_id });
     });
 
     oldDetailBox.appendChild(attackName);
     oldDetailBox.appendChild(attacType);
     oldDetailBox.appendChild(attacDamage);
     oldDetailBox.appendChild(attackStamina);
+    oldDetailBox.appendChild(switchButton);
 
     oldAttackBox.appendChild(oldDetailBox);
   }
