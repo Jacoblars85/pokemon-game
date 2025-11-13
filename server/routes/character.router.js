@@ -796,18 +796,18 @@ router.put("/attack/swap", (req, res) => {
   // console.log(req.body);
   const sqlText = `
     UPDATE "user_characters"
-        SET "starter_1" = FALSE 
-            WHERE "id" = $1 AND "user_id" = $2;
+        SET "attack_${req.body.attack_num}" = $1 
+            WHERE "id" = $2 AND "user_id" = $3;
     `;
 
-  const sqlValues = [req.body.characterId, req.user.id];
+  const sqlValues = [req.body.attackId, req.body.characterId, req.user.id];
 
   pool
     .query(sqlText, sqlValues)
     .then((result) => {
       const sqlText = `
-    UPDATE "user_characters"
-        SET "starter_2" = FALSE
+    UPDATE "user_characters_attacks"
+        SET "is_equipped" = TRUE
             WHERE "id" = $1 AND "user_id" = $2;
     `;
 
@@ -818,11 +818,11 @@ router.put("/attack/swap", (req, res) => {
       });
     })
     .catch((err) => {
-      console.log("Error in 2nd character.router /clear PUT,", err);
+      console.log("Error in 2nd character.router /attack/swap PUT,", err);
       res.sendStatus(500);
     })
     .catch((err) => {
-      console.log("Error in character.router /clear PUT,", err);
+      console.log("Error in character.router /attack/swap PUT,", err);
       res.sendStatus(500);
     });
 });
