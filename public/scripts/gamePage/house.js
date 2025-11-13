@@ -352,8 +352,8 @@ function showChangeCharacterAttacks(character) {
   oldAttackBox.innerHTML = "";
 
     for (const attack of character.attacks) {
-    const currentDetailBox = document.createElement("div");
-    currentDetailBox.style = `
+    const oldDetailBox = document.createElement("div");
+    oldDetailBox.style = `
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -376,12 +376,12 @@ function showChangeCharacterAttacks(character) {
     const attackStamina = document.createElement("h4");
     attackStamina.textContent = "stamina used: " + attack.attack_stamina;
 
-    currentDetailBox.appendChild(attackName);
-    currentDetailBox.appendChild(attacType);
-    currentDetailBox.appendChild(attacDamage);
-    currentDetailBox.appendChild(attackStamina);
+    oldDetailBox.appendChild(attackName);
+    oldDetailBox.appendChild(attacType);
+    oldDetailBox.appendChild(attacDamage);
+    oldDetailBox.appendChild(attackStamina);
 
-    oldAttackBox.appendChild(currentDetailBox);
+    oldAttackBox.appendChild(oldDetailBox);
   }
 }
 
