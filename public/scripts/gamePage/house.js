@@ -348,6 +348,9 @@ function showChangeCharacterAttacks(character) {
     currentAttackBox.appendChild(currentDetailBox);
   }
 
+    const oldAttackBox = document.getElementById("changeCharacterAttacksOldBox");
+  oldAttackBox.innerHTML = "";
+
     for (const attack of character.attacks) {
     const currentDetailBox = document.createElement("div");
     currentDetailBox.style = `
@@ -378,7 +381,7 @@ function showChangeCharacterAttacks(character) {
     currentDetailBox.appendChild(attacDamage);
     currentDetailBox.appendChild(attackStamina);
 
-    currentAttackBox.appendChild(currentDetailBox);
+    oldAttackBox.appendChild(currentDetailBox);
   }
 }
 
