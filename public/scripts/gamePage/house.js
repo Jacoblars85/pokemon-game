@@ -378,6 +378,15 @@ function showChangeCharacterAttacks(character) {
     const attackStamina = document.createElement("h4");
     attackStamina.textContent = "stamina used: " + attack.attack_stamina;
 
+    const switchButton = document.createElement("button");
+    switchButton.textContent = "Switch";
+    switchButton.style = `cursor: pointer;`;
+
+    switchButton.addEventListener("click", (e) => {
+      e.stopPropagation(); // Stop it from triggering detail popup
+      removeItem({ character, itemId: character.item_id });
+    });
+
     oldDetailBox.appendChild(attackName);
     oldDetailBox.appendChild(attacType);
     oldDetailBox.appendChild(attacDamage);
