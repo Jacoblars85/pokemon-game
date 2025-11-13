@@ -141,7 +141,9 @@ CREATE TABLE user_character_attacks (
   "user_id" INT NOT NULL REFERENCES "user" ON DELETE CASCADE,
   "user_character_id" INT REFERENCES "user_characters" ON DELETE CASCADE,
   "attack_id" INT REFERENCES "attacks" ON DELETE CASCADE
-);
+  "attack_1" BOOLEAN DEFAULT FALSE,
+  "attack_2" BOOLEAN DEFAULT FALSE,
+  "attack_3" BOOLEAN DEFAULT FALSE);
 
 CREATE TABLE "enemy" (
 	"id" SERIAL PRIMARY KEY,
