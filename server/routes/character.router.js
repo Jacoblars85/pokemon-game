@@ -814,7 +814,12 @@ router.put("/attack/swap", (req, res) => {
                   WHERE "user_character_id" = $3 AND "user_id" = $4;
             `;
 
-      const sqlValues = [req.body.newAttackId, req.body.oldAttackId, req.body.characterId, req.user.id];
+      const sqlValues = [
+        req.body.newAttackId,
+        req.body.oldAttackId,
+        req.body.characterId,
+        req.user.id,
+      ];
 
       pool.query(sqlText, sqlValues).then((result) => {
         res.sendStatus(201);
