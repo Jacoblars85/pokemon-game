@@ -800,18 +800,21 @@ router.put("/attack/swap", (req, res) => {
             WHERE "id" = $2 AND "user_id" = $3;
     `;
 
-  const sqlValues = [req.body.attackId, req.body.characterId, req.user.id];
+  const sqlValues = [req.body.newAttackId, req.body.characterId, req.user.id];
 
   pool
     .query(sqlText, sqlValues)
     .then((result) => {
       const sqlText = `
-    UPDATE "user_characters_attacks"
-        SET "is_equipped" = TRUE
-            WHERE "id" = $1 AND "user_id" = $2;
-    `;
+            UPDATE "user_character_attacks"
+              SET "is_equipped" = CASE
+                WHEN "id" = $1 THEN TRUE
+                WHEN "id" = $2 THEN FALSE
+                END
+                  WHERE "user_character_id" = $3 AND "user_id" = $4;
+            `;
 
-      const sqlValues = [req.body.characterId, req.user.id];
+      const sqlValues = [req.body.newAttackId, req.body.oldAttackId, req.body.characterId, req.user.id];
 
       pool.query(sqlText, sqlValues).then((result) => {
         res.sendStatus(201);
