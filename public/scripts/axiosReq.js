@@ -922,7 +922,7 @@ function putCharacterAttackSwitching(characterInfo) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/characters/attack/swap`,
-    data: newStarterInfo,
+    data: characterInfo,
     withCredentials: true,
   })
     .then((response) => {
