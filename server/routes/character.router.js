@@ -793,21 +793,36 @@ router.put("/heal/starters", (req, res) => {
 });
 
 router.put("/attack/swap", (req, res) => {
+  // console.log(req.body);
   const sqlText = `
-        UPDATE "user_characters_attacks"
-          SET "current_hp" = "max_hp", "current_stamina" = "max_stamina"
-          WHERE "user_id" = $1 AND ("starter_1" = TRUE OR "starter_2" = TRUE OR "starter_3" = TRUE);
-          `;
+    UPDATE "user_characters"
+        SET "starter_1" = FALSE 
+            WHERE "id" = $1 AND "user_id" = $2;
+    `;
 
-  const sqlValues = [req.user.id];
+  const sqlValues = [req.body.characterId, req.user.id];
 
   pool
     .query(sqlText, sqlValues)
     .then((result) => {
-      res.sendStatus(201);
+      const sqlText = `
+    UPDATE "user_characters"
+        SET "starter_2" = FALSE
+            WHERE "id" = $1 AND "user_id" = $2;
+    `;
+
+      const sqlValues = [req.body.characterId, req.user.id];
+
+      pool.query(sqlText, sqlValues).then((result) => {
+        res.sendStatus(201);
+      });
     })
     .catch((err) => {
-      console.log("Error in character.router /attack/swap PUT,", err);
+      console.log("Error in 2nd character.router /clear PUT,", err);
+      res.sendStatus(500);
+    })
+    .catch((err) => {
+      console.log("Error in character.router /clear PUT,", err);
       res.sendStatus(500);
     });
 });
