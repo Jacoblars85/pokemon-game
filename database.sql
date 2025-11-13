@@ -119,6 +119,9 @@ CREATE TABLE "user_characters" (
 	"current_stamina" INT,
 	"max_hp" INT,
 	"max_stamina" INT,
+	"attack_1" INT DEFAULT NULL REFERENCES "user_character_attacks" ON DELETE CASCADE,
+  	"attack_2" INT DEFAULT NULL REFERENCES "user_character_attacks" ON DELETE CASCADE,
+  	"attack_3" INT DEFAULT NULL REFERENCES "user_character_attacks" ON DELETE CASCADE,
 	"starter_1" BOOLEAN DEFAULT FALSE,
 	"starter_2" BOOLEAN DEFAULT FALSE,
 	"starter_3" BOOLEAN DEFAULT FALSE,
@@ -141,9 +144,7 @@ CREATE TABLE user_character_attacks (
   "user_id" INT NOT NULL REFERENCES "user" ON DELETE CASCADE,
   "user_character_id" INT REFERENCES "user_characters" ON DELETE CASCADE,
   "attack_id" INT REFERENCES "attacks" ON DELETE CASCADE
-  "attack_1" BOOLEAN DEFAULT FALSE,
-  "attack_2" BOOLEAN DEFAULT FALSE,
-  "attack_3" BOOLEAN DEFAULT FALSE);
+  "is_equipped" BOOLEAN DEFAULT FALSE);
 
 CREATE TABLE "enemy" (
 	"id" SERIAL PRIMARY KEY,
