@@ -51,11 +51,11 @@ router.post("/register", (req, res, next) => {
 
           const insertNewUserQuery = `
         INSERT INTO "user_character_attacks"
-          ("user_id", "user_character_id", "attack_id")
+          ("user_id", "user_character_id", "attack_id", "is_equipped")
           VALUES
-            ($1, $2, 6),
-            ($1, $2, 1),
-            ($1, $2, 5)
+            ($1, $2, 6, TRUE),
+            ($1, $2, 1, TRUE),
+            ($1, $2, 5, TRUE)
             RETURNING user_id;
       `;
           const insertNewUserValues = [createdUserId, createdUserCharacterId];
