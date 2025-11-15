@@ -793,7 +793,7 @@ router.put("/heal/starters", (req, res) => {
 });
 
 router.put("/attack/swap", (req, res) => {
-   const sqlText = `
+  const sqlText = `
             UPDATE "user_character_attacks"
               SET "is_equipped" = CASE
                 WHEN "id" = $1 THEN TRUE
@@ -802,12 +802,12 @@ router.put("/attack/swap", (req, res) => {
                   WHERE "user_character_id" = $3 AND "user_id" = $4;
             `;
 
-      const sqlValues = [
-        req.body.newAttackId,
-        req.body.oldAttackId,
-        req.body.characterId,
-        req.user.id,
-      ];
+  const sqlValues = [
+    req.body.newAttackId,
+    req.body.oldAttackId,
+    req.body.characterId,
+    req.user.id,
+  ];
 
   pool
     .query(sqlText, sqlValues)
