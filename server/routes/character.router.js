@@ -835,4 +835,32 @@ router.put("/attack/swap", (req, res) => {
     });
 });
 
+router.put("/attack/swap", (req, res) => {
+   const sqlText = `
+            UPDATE "user_character_attacks"
+              SET "is_equipped" = CASE
+                WHEN "id" = $1 THEN TRUE
+                WHEN "id" = $2 THEN FALSE
+                END
+                  WHERE "user_character_id" = $3 AND "user_id" = $4;
+            `;
+
+      const sqlValues = [
+        req.body.newAttackId,
+        req.body.oldAttackId,
+        req.body.characterId,
+        req.user.id,
+      ];
+
+  pool
+    .query(sqlText, sqlValues)
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log("Error in character.router /attack/swap PUT,", err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
