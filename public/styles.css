@@ -356,11 +356,18 @@ Attack Change Interface
   display: flex;
   flex-direction: row;
   height: 100px;
-  width: 90%;
+  /* width: 90%; */
   gap: 20px;
+  border: solid 1px black;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.changeCharacterAttacksCurrentBox h2,
+.changeCharacterAttacksCurrentBox h3,
+.changeCharacterAttacksCurrentBox h4 {
+  margin: 2.5px;
 }
 
 .changeCharacterAttacksOldBox {
@@ -369,6 +376,8 @@ Attack Change Interface
   /* height: 100px; */
   width: 90%;
   gap: 20px;
+  overflow-y: scroll;
+  border: solid 1px black;
   align-items: center;
   justify-content: center;
   text-align: center;
