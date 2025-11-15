@@ -364,9 +364,9 @@ Attack Change Interface
   text-align: center;
 }
 
-.changeCharacterAttacksCurrentBox h2,
-.changeCharacterAttacksCurrentBox h3,
-.changeCharacterAttacksCurrentBox h4 {
+.changeCharactersAttacks h2,
+.changeCharactersAttacks h3,
+.changeCharactersAttacks h4 {
   margin: 2.5px;
 }
 
@@ -374,7 +374,7 @@ Attack Change Interface
   display: flex;
   flex-direction: column;
   /* height: 100px; */
-  width: 90%;
+  /* width: 90%; */
   gap: 20px;
   overflow-y: scroll;
   border: solid 1px black;
