@@ -358,7 +358,6 @@ Attack Change Interface
   height: 100px;
   /* width: 90%; */
   gap: 20px;
-  border: solid 1px black;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -373,10 +372,11 @@ Attack Change Interface
 .changeCharacterAttacksOldBox {
   display: flex;
   flex-direction: column;
-  /* height: 100px; */
+  height: 80%;
   /* width: 90%; */
   gap: 20px;
   overflow-y: scroll;
+  overflow-x: hidden;
   border: solid 1px black;
   align-items: center;
   justify-content: center;
