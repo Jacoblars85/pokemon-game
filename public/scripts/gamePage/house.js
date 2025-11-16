@@ -376,7 +376,7 @@ function showChangeCharacterAttacks(character) {
     attacDamage.textContent = "damage: " + attack.attack_damage;
 
     const attackStamina = document.createElement("h4");
-    attackStamina.textContent = "stamina used: " + attack.attack_stamina;
+    attackStamina.textContent = "stamina: " + attack.attack_stamina;
 
     const switchButton = document.createElement("button");
     switchButton.textContent = "Switch";
