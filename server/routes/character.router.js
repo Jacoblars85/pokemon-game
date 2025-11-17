@@ -796,18 +796,18 @@ router.put("/attack/swap", (req, res) => {
   console.log("req.body", req.body);
 
   const sqlText = `
-            UPDATE "user_character_attacks"
-              SET "is_equipped" = CASE
-                WHEN "id" = $1 THEN TRUE
-                WHEN "id" = $2 THEN FALSE
-                ELSE "is_equipped"
-                END,
-              "slot_number" = CASE
-                WHEN "id" = $1 THEN $3
-                WHEN "id" = $2 THEN NULL
-                ELSE "slot_number"
-                END
-                WHERE "user_character_id" = $4 AND "user_id" = $5;
+      UPDATE "user_character_attacks"
+        SET "is_equipped" = CASE
+          WHEN "id" = $1 THEN TRUE
+          WHEN "id" = $2 THEN FALSE
+          ELSE "is_equipped"
+          END,
+        "slot_number" = CASE
+          WHEN "id" = $1 THEN $3
+          WHEN "id" = $2 THEN NULL
+          ELSE "slot_number"
+          END
+          WHERE "user_character_id" = $4 AND "user_id" = $5;
             `;
 
   const sqlValues = [
