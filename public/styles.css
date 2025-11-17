@@ -384,6 +384,43 @@ Attack Change Interface
 }
 
 /* --------------------------------------------------------------------------------
+Pick Attack Change Interface
+-------------------------------------------------------------------------------- */
+
+.pickAttackChange {
+  position: absolute;
+  top: 12%;
+  left: 10%;
+  width: 806px;
+  height: 428px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.pickAttackChangeBox {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  /* width: 90%; */
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.pickAttackChangeBox h2,
+.pickAttackChangeBox h3,
+.pickAttackChangeBox h4 {
+  margin: 2.5px;
+}
+
+/* --------------------------------------------------------------------------------
 Edit Nickname Interface
 -------------------------------------------------------------------------------- */
 
