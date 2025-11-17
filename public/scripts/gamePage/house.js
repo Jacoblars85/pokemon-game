@@ -416,14 +416,11 @@ document
     }
   });
 
-  // pick attack to change functions
-  function showPickAttackChange(character) {
-  document.getElementById("changeCharactersAttacksOverlay").style.display =
-    "flex";
+// pick attack to change functions
+function showPickAttackChange(character) {
+  document.getElementById("pickAttackChangeOverlay").style.display = "flex";
 
-  const currentAttackBox = document.getElementById(
-    "changeCharacterAttacksCurrentBox"
-  );
+  const currentAttackBox = document.getElementById("pickAttackChangeBox");
   currentAttackBox.innerHTML = "";
 
   for (const attack of character.attacks) {
@@ -461,15 +458,14 @@ document
 }
 
 function closePickAttackChange() {
-  document.getElementById("changeCharactersAttacksOverlay").style.display =
-    "none";
+  document.getElementById("pickAttackChangeOverlay").style.display = "none";
   audio.closeButton.play();
 }
 
 document
-  .getElementById("changeCharactersAttacksOverlay")
+  .getElementById("pickAttackChangeOverlay")
   .addEventListener("click", (event) => {
-    const popup = document.getElementById("changeCharactersAttacksPopup");
+    const popup = document.getElementById("pickAttackChangePopup");
 
     // Only close if clicking directly on the overlay (not inside the popup)
     if (!popup.contains(event.target)) {
