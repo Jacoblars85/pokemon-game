@@ -423,7 +423,7 @@ function showPickAttackChange(character, newAttack) {
   const attackBox = document.getElementById("pickAttackChangeBox");
   attackBox.innerHTML = "";
 
-    for (const attack of character.attacks) {
+  for (const attack of character.attacks) {
     const detailBox = document.createElement("div");
     detailBox.style = `
       display: flex;
