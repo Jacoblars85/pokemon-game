@@ -800,13 +800,19 @@ router.put("/attack/swap", (req, res) => {
               SET "is_equipped" = CASE
                 WHEN "id" = $1 THEN TRUE
                 WHEN "id" = $2 THEN FALSE
+                END,
+              "slot_number" = CASE
+                WHEN "id" = $1 THEN $5
+                WHEN "id" = $2 THEN NULL
+                ELSE "slot_number"
                 END
-                  WHERE "user_character_id" = $3 AND "user_id" = $4;
+                WHERE "user_character_id" = $3 AND "user_id" = $4;
             `;
 
   const sqlValues = [
     req.body.newAttackId,
     req.body.oldAttackId,
+    req.body.slotNum,
     req.body.characterId,
     req.user.id,
   ];
