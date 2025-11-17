@@ -381,7 +381,7 @@ function showChangeCharacterAttacks(character) {
     attackStamina.textContent = "stamina: " + attack.attack_stamina;
 
     const switchButton = document.createElement("button");
-    switchButton.textContent = "Switch";
+    switchButton.textContent = "Swap";
     switchButton.style = `cursor: pointer;`;
 
     switchButton.addEventListener("click", (e) => {
