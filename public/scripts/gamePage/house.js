@@ -309,7 +309,7 @@ document
     }
   });
 
-  // change attacks functions
+// change attacks functions
 function showChangeCharacterAttacks(character) {
   document.getElementById("changeCharactersAttacksOverlay").style.display =
     "flex";
@@ -416,7 +416,7 @@ document
     }
   });
 
-  // edit nickname functions
+// edit nickname functions
 function openEditNicknamePopUp(characterChanging) {
   const editNicknameButton = document.getElementById(
     "submitEditNicknameButton"
@@ -445,7 +445,7 @@ document
       closeEditNicknamePopUp();
     }
   });
-  
+
 // pc functions
 function eventListenersForPc() {
   document.getElementById("nextBtn").addEventListener("click", () => {
