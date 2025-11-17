@@ -793,6 +793,8 @@ router.put("/heal/starters", (req, res) => {
 });
 
 router.put("/attack/swap", (req, res) => {
+  console.log("req.body", req.body);
+
   const sqlText = `
             UPDATE "user_character_attacks"
               SET "is_equipped" = CASE
