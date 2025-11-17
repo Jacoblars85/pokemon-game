@@ -420,6 +420,11 @@ document
 function showPickAttackChange(character, newAttack) {
   document.getElementById("pickAttackChangeOverlay").style.display = "flex";
 
+  console.log('character in swap', character);
+  console.log('newAttack in swap', newAttack);
+  
+  
+
   const attackBox = document.getElementById("pickAttackChangeBox");
   attackBox.innerHTML = "";
 
