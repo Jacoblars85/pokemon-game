@@ -169,6 +169,7 @@ function setStarter(e) {
   putStarterSwitching(newStarterInfo);
 }
 
+// character details functions
 function showCharacterDetails(character, context = "") {
   document.getElementById("characterDetailsOverlay").style.display = "flex";
 
@@ -308,6 +309,7 @@ document
     }
   });
 
+  // change attacks functions
 function showChangeCharacterAttacks(character) {
   document.getElementById("changeCharactersAttacksOverlay").style.display =
     "flex";
@@ -414,6 +416,7 @@ document
     }
   });
 
+  // edit nickname functions
 function openEditNicknamePopUp(characterChanging) {
   const editNicknameButton = document.getElementById(
     "submitEditNicknameButton"
@@ -442,7 +445,8 @@ document
       closeEditNicknamePopUp();
     }
   });
-
+  
+// pc functions
 function eventListenersForPc() {
   document.getElementById("nextBtn").addEventListener("click", () => {
     if (currentPage === 49) {
@@ -482,6 +486,7 @@ document.getElementById("pcOverlay").addEventListener("click", (event) => {
 
 eventListenersForPc();
 
+// shop functions
 function closeShop() {
   document.getElementById("shopOverlay").style.display = "none";
   shop.opened = false;
