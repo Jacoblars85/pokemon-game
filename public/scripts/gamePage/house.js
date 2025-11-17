@@ -454,7 +454,7 @@ function showPickAttackChange(character, newAttack) {
 
     detailBox.addEventListener("click", (e) => {
       e.stopPropagation(); // Stop it from triggering detail popup
-      putCharacterAttackSwitching({ character, itemId: character.item_id });
+      putCharacterAttackSwitching({ characterId: character.id, newAttackId: newAttack.id, oldAttackId: attack.id });
     });
 
     detailBox.appendChild(attackName);
