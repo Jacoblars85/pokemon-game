@@ -420,12 +420,12 @@ document
 function showPickAttackChange(character) {
   document.getElementById("pickAttackChangeOverlay").style.display = "flex";
 
-  const currentAttackBox = document.getElementById("pickAttackChangeBox");
-  currentAttackBox.innerHTML = "";
+  const attackBox = document.getElementById("pickAttackChangeBox");
+  attackBox.innerHTML = "";
 
-  for (const attack of character.attacks) {
-    const currentDetailBox = document.createElement("div");
-    currentDetailBox.style = `
+    for (const attack of character.attacks) {
+    const detailBox = document.createElement("div");
+    detailBox.style = `
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -446,14 +446,24 @@ function showPickAttackChange(character) {
     attacDamage.textContent = "damage: " + attack.attack_damage;
 
     const attackStamina = document.createElement("h4");
-    attackStamina.textContent = "stamina used: " + attack.attack_stamina;
+    attackStamina.textContent = "stamina: " + attack.attack_stamina;
 
-    currentDetailBox.appendChild(attackName);
-    currentDetailBox.appendChild(attacType);
-    currentDetailBox.appendChild(attacDamage);
-    currentDetailBox.appendChild(attackStamina);
+    const switchButton = document.createElement("button");
+    switchButton.textContent = "Switch";
+    switchButton.style = `cursor: pointer;`;
 
-    currentAttackBox.appendChild(currentDetailBox);
+    switchButton.addEventListener("click", (e) => {
+      e.stopPropagation(); // Stop it from triggering detail popup
+      putCharacterAttackSwitching({ character, itemId: character.item_id });
+    });
+
+    detailBox.appendChild(attackName);
+    detailBox.appendChild(attacType);
+    detailBox.appendChild(attacDamage);
+    detailBox.appendChild(attackStamina);
+    detailBox.appendChild(switchButton);
+
+    attackBox.appendChild(detailBox);
   }
 }
 
