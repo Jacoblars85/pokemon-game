@@ -456,9 +456,9 @@ function showPickAttackChange(character, newAttack) {
       e.stopPropagation(); // Stop it from triggering detail popup
       putCharacterAttackSwitching({
         characterId: character.id,
-        newAttackId: newAttack.id,
-        oldAttackId: attack.id,
-        slotNum: attack,
+        newAttackId: newAttack.user_character_attacks_id,
+        oldAttackId: attack.user_character_attacks_id,
+        slotNum: attack.attack_slot_number,
       });
     });
 
