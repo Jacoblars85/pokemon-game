@@ -530,7 +530,7 @@ SELECT "user_characters"."id" as "id",
       'hold_time', "attack_animations"."hold_time",
       'fx_img', "attack_animations"."fx_img"
     )
-      ORDER BY "user_character_attacks"."id" ASC
+      ORDER BY "user_character_attacks"."slot_number" ASC
   ) FILTER (WHERE "user_character_attacks"."is_equipped" = TRUE)
     AS attacks,
       json_agg(
