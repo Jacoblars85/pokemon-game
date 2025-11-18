@@ -105,7 +105,7 @@ CREATE TABLE "rewards" (
 	"pic" VARCHAR(100),
 	"cost" INT);
 
-CREATE TABLE chests (
+CREATE TABLE "chests" (
 	"id" SERIAL PRIMARY KEY,
 	"world_name" VARCHAR(50),
 	"x" INT NOT NULL,
@@ -136,7 +136,7 @@ CREATE TABLE "basic_attacks" (
 	"type_id" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
 	"attack_style" VARCHAR(20));
 
-CREATE TABLE user_character_attacks (
+CREATE TABLE "user_character_attacks" (
   "id" SERIAL PRIMARY KEY,
   "user_id" INT NOT NULL REFERENCES "user" ON DELETE CASCADE,
   "user_character_id" INT REFERENCES "user_characters" ON DELETE CASCADE,
