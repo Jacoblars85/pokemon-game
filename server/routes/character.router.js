@@ -385,9 +385,9 @@ SELECT "user_characters"."id" as "id",
       'hold_time', "attack_animations"."hold_time",
       'fx_img', "attack_animations"."fx_img"
     )
-      WHERE "user_character_attacks"."is_equipped" = TRUE
       ORDER BY "user_character_attacks"."id" ASC
-  ) AS attacks,
+  ) FILTER (WHERE "user_character_attacks"."is_equipped" = TRUE)
+   AS attacks,
    json_agg(
     json_build_object(
       'attacks_id', "attacks"."id",
@@ -407,9 +407,9 @@ SELECT "user_characters"."id" as "id",
       'hold_time', "attack_animations"."hold_time",
       'fx_img', "attack_animations"."fx_img"
     )
-      WHERE "user_character_attacks"."is_equipped" = FALSE
       ORDER BY "user_character_attacks"."id" ASC
-  ) AS stored_attacks,
+  ) FILTER (WHERE "user_character_attacks"."is_equipped" = FALSE)
+    AS stored_attacks,
         "items"."id" as "item_id",
         "items"."item_name",
         "items"."item_hp",
