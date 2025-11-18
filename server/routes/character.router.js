@@ -253,11 +253,13 @@ SELECT "user_characters"."id" as "id",
         "character_type"."weakness" as "character_type_weakness",
                   json_agg(
     json_build_object(
-        'attacks_id', "attacks"."id",
+      'attacks_id', "attacks"."id",
       'attack_name', "attacks"."attack_name",
       'attack_damage', "attacks"."attack_damage",
       'attack_stamina', "attacks"."attack_stamina",
       'attack_style', "attacks"."attack_style",
+      'attack_slot_number', "user_character_attacks"."slot_number",
+      'attack_is_equipped', "user_character_attacks"."is_equipped",
       'attack_type_id', "attack_type"."id",
       'attack_type_name', "attack_type"."type_name",
       'attack_type_effective', "attack_type"."effective",
@@ -269,7 +271,30 @@ SELECT "user_characters"."id" as "id",
       'fx_img', "attack_animations"."fx_img"
     )
       ORDER BY "user_character_attacks"."id" ASC
-  ) AS attacks,
+  ) FILTER (WHERE "user_character_attacks"."is_equipped" = TRUE)
+    AS attacks,
+      json_agg(
+    json_build_object(
+      'attacks_id', "attacks"."id",
+      'attack_name', "attacks"."attack_name",
+      'attack_damage', "attacks"."attack_damage",
+      'attack_stamina', "attacks"."attack_stamina",
+      'attack_style', "attacks"."attack_style",
+      'attack_slot_number', "user_character_attacks"."slot_number",
+      'attack_is_equipped', "user_character_attacks"."is_equipped",
+      'attack_type_id', "attack_type"."id",
+      'attack_type_name', "attack_type"."type_name",
+      'attack_type_effective', "attack_type"."effective",
+      'attack_type_weakness', "attack_type"."weakness",
+      'attack_animations_id', "attack_animations"."id",
+      'animation_name', "attack_animations"."animation_name",
+      'max_frames', "attack_animations"."max_frames",
+      'hold_time', "attack_animations"."hold_time",
+      'fx_img', "attack_animations"."fx_img"
+    )
+      ORDER BY "user_character_attacks"."id" ASC
+  ) FILTER (WHERE "user_character_attacks"."is_equipped" = FALSE)
+    AS stored_attacks,
         "items"."id" as "item_id",
         "items"."item_name",
         "items"."item_hp",
