@@ -572,17 +572,22 @@ function renderUseItemOverlay(item) {
     cell.appendChild(infoContainer);
 
     let tmAttack;
-          attacks.forEach((attack) => {
-            if (attack.attack_name === item.item_name) {
-              tmAttack = attack;
-            }
-          });
+    attacks.forEach((attack) => {
+      if (attack.attack_name === item.item_name) {
+        tmAttack = attack;
+      }
+    });
 
     cell.addEventListener("click", () => {
       {
         item.item_type === "held"
           ? equipItem(item, starter)
-          : item.item_type === "tm" ? postAddAttackToCharacter({characterId: starter, attackId: tmAttack }) : useItemOnStarter(item, starter);
+          : item.item_type === "tm"
+          ? postAddAttackToCharacter({
+              characterId: starter,
+              attackId: tmAttack,
+            })
+          : useItemOnStarter(item, starter);
       }
       document.getElementById("useItemOverlay").style.display = "none";
     });
