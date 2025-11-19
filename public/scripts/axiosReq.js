@@ -940,11 +940,11 @@ function editCharactersNickname(e, character) {
     });
 }
 
-function postAddAttackToCharacter(attackInfo) {
+function postAddAttackToCharacter(newAttackInfo) {
   axios({
     method: "POST",
     url: `http://localhost:5001/api/characters/add/attack`,
-    data: attackInfo,
+    data: newAttackInfo,
     withCredentials: true,
   })
     .then((response) => {
