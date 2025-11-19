@@ -856,11 +856,7 @@ router.post("/add/attack", (req, res) => {
             ($1, $2, $3);
             `;
 
-  const sqlValues = [
-    req.user.id,
-    req.body.characterId,
-    req.body.attackId
-  ];
+  const sqlValues = [req.user.id, req.body.characterId, req.body.attackId];
 
   pool
     .query(sqlText, sqlValues)
