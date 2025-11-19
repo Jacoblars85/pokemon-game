@@ -940,6 +940,22 @@ function editCharactersNickname(e, character) {
     });
 }
 
+function postAddAttackToCharacter(attackInfo) {
+  axios({
+    method: "POST",
+    url: `http://localhost:5001/api/characters/add/attack`,
+    data: attackInfo,
+    withCredentials: true,
+  })
+    .then((response) => {
+      getStarters();
+      getAllUsersCharacters();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function putCharacterAttackSwitching(characterInfo) {
   axios({
     method: "PUT",
