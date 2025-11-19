@@ -539,10 +539,10 @@ function getAllUsersItems() {
             width: 120px;
           `;
 
-          let tmAttack
-          attacks.forEach(attack => {
+          let tmAttack;
+          attacks.forEach((attack) => {
             if (attack.attack_name === item.item_name) {
-              tmAttack = attack
+              tmAttack = attack;
             }
           });
 
