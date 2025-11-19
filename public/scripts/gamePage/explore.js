@@ -482,7 +482,7 @@ document
   });
 
 // use item functions
-function renderUseItemOverlay(item, tmAttack) {
+function renderUseItemOverlay(item) {
   const container = document.getElementById("useItemStarterList");
   container.innerHTML = "";
 
@@ -570,6 +570,13 @@ function renderUseItemOverlay(item, tmAttack) {
 
     cell.appendChild(img);
     cell.appendChild(infoContainer);
+
+    let tmAttack;
+          attacks.forEach((attack) => {
+            if (attack.attack_name === item.item_name) {
+              tmAttack = attack;
+            }
+          });
 
     cell.addEventListener("click", () => {
       {
