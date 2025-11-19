@@ -846,6 +846,33 @@ router.put("/heal/starters", (req, res) => {
     });
 });
 
+router.post("/add/attack", (req, res) => {
+  console.log("req.body", req.body);
+
+  const sqlText = `
+          INSERT INTO "user_character_attacks" 
+            ("user_id", "user_character_id", "attack_id")
+            VALUES
+            ($1, $2, $3);
+            `;
+
+  const sqlValues = [
+    req.user.id,
+    req.body.characterId,
+    req.body.attackId
+  ];
+
+  pool
+    .query(sqlText, sqlValues)
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log("Error in character.router /add/attack PUT,", err);
+      res.sendStatus(500);
+    });
+});
+
 router.put("/attack/swap", (req, res) => {
   console.log("req.body", req.body);
 
