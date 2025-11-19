@@ -528,6 +528,21 @@ function getAllUsersItems() {
             e.stopPropagation(); // Stop it from triggering detail popup
             renderUseItemOverlay(item);
           });
+        } else if (item.item_type === "tm") {
+          useButton = document.createElement("button");
+          useButton.textContent = "Equip Item";
+          useButton.style = `
+            color: black;
+            font-size: 15px;
+            border-color: black;
+            cursor: pointer;
+            width: 120px;
+          `;
+
+          useButton.addEventListener("click", (e) => {
+            e.stopPropagation(); // Stop it from triggering detail popup
+            renderUseItemOverlay(item);
+          });
         } else {
           useButton = document.createElement("button");
           useButton.textContent = "Use Item";
