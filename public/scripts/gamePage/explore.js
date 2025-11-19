@@ -482,7 +482,7 @@ document
   });
 
 // use item functions
-function renderUseItemOverlay(item) {
+function renderUseItemOverlay(item, tmAttack) {
   const container = document.getElementById("useItemStarterList");
   container.innerHTML = "";
 
@@ -575,7 +575,7 @@ function renderUseItemOverlay(item) {
       {
         item.item_type === "held"
           ? equipItem(item, starter)
-          : useItemOnStarter(item, starter);
+          : item.item_type === "tm" ? postAddAttackToCharacter({characterId: starter, attackId: tmAttack }) : useItemOnStarter(item, starter);
       }
       document.getElementById("useItemOverlay").style.display = "none";
     });
