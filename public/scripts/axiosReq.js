@@ -539,8 +539,6 @@ function getAllUsersItems() {
             width: 120px;
           `;
 
-          
-
           useButton.addEventListener("click", (e) => {
             e.stopPropagation(); // Stop it from triggering detail popup
             renderUseItemOverlay(item);
