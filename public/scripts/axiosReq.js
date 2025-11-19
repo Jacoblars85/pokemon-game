@@ -539,9 +539,16 @@ function getAllUsersItems() {
             width: 120px;
           `;
 
+          let tmAttack
+          attacks.forEach(attack => {
+            if (attack.attack_name === item.item_name) {
+              tmAttack = attack
+            }
+          });
+
           useButton.addEventListener("click", (e) => {
             e.stopPropagation(); // Stop it from triggering detail popup
-            renderUseItemOverlay(item);
+            renderUseItemOverlay(tmAttack);
           });
         } else {
           useButton = document.createElement("button");
