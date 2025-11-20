@@ -35,11 +35,15 @@ router.get("/attacks", (req, res) => {
   // console.log('im in attacks route');
 
   const query = `
-      SELECT *,
-        "types"."id" as "attack_type_id",
-        "types"."type_name" as "attack_type_name",
-        "types"."effective" as "attack_type_effective",
-        "types"."weakness" as "attack_type_weakness"
+      SELECT "attacks"."id" as "attacks_id",
+        "attacks"."attack_name",
+        "attacks"."attack_damage",
+        "attacks"."attack_stamina",
+        "attacks"."attack_style",
+        "attack_type"."id" as "attack_type_id",
+        "attack_type"."type_name" as "attack_type_name",
+        "attack_type"."effective" as "attack_type_effective",
+        "attack_type"."weakness" as "attack_type_weakness"
       FROM "attacks"
         INNER JOIN "types"
           ON "types"."id" = "attacks"."type_id";
