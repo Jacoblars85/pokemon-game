@@ -578,6 +578,11 @@ function renderUseItemOverlay(item) {
       }
     });
 
+    console.log('starter in post', starter);
+    console.log('tmAttack in post', tmAttack);
+    
+    
+
     cell.addEventListener("click", () => {
       {
         item.item_type === "held"
