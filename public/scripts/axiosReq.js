@@ -418,9 +418,7 @@ function getAllAttacks() {
     url: `http://localhost:5001/api/characters/attacks`,
   })
     .then((response) => {
-      // console.log("got allAttacks", response.data);
       allAttacks = response.data;
-      // console.log("allAttacks", allAttacks);
     })
     .catch((err) => {
       console.log(err);
