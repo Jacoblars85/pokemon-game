@@ -586,7 +586,8 @@ function renderUseItemOverlay(item) {
           ? postAddAttackToCharacter({
               characterId: starter.id,
               attackId: tmAttack.attacks_id,
-            })
+            }) +
+            useItem(item)
           : useItemOnStarter(item, starter);
       }
       document.getElementById("useItemOverlay").style.display = "none";
