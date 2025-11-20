@@ -571,23 +571,12 @@ function renderUseItemOverlay(item) {
     cell.appendChild(img);
     cell.appendChild(infoContainer);
 
-    console.log('allAttacks', allAttacks);
-    
     let tmAttack;
     allAttacks.forEach((attack) => {
-      console.log('attack.attack_name', attack.attack_name);
-      console.log('item.item_name', item.item_name);
-      
-      
       if (attack.attack_name === item.item_name) {
         tmAttack = attack;
       }
     });
-
-    console.log('starter in post', starter);
-    console.log('tmAttack in post', tmAttack);
-    
-    
 
     cell.addEventListener("click", () => {
       {
@@ -596,7 +585,7 @@ function renderUseItemOverlay(item) {
           : item.item_type === "tm"
           ? postAddAttackToCharacter({
               characterId: starter.id,
-              attackId: tmAttack,
+              attackId: tmAttack.attacks_id,
             })
           : useItemOnStarter(item, starter);
       }
