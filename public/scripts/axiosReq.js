@@ -530,7 +530,7 @@ function getAllUsersItems() {
           });
         } else if (item.item_type === "tm") {
           useButton = document.createElement("button");
-          useButton.textContent = "Equip Item";
+          useButton.textContent = "Use Item";
           useButton.style = `
             color: black;
             font-size: 15px;
