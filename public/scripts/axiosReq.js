@@ -419,7 +419,7 @@ function getAllAttacks() {
   })
     .then((response) => {
       // console.log("got allAttacks", response.data);
-      allAttacks.push(response.data);
+      allAttacks = response.data;
       // console.log("allAttacks", allAttacks);
     })
     .catch((err) => {
