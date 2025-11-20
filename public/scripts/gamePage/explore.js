@@ -571,8 +571,14 @@ function renderUseItemOverlay(item) {
     cell.appendChild(img);
     cell.appendChild(infoContainer);
 
+    console.log('allAttacks', allAttacks);
+    
     let tmAttack;
-    attacks.forEach((attack) => {
+    allAttacks.forEach((attack) => {
+      console.log('attack.attack_name', attack.attack_name);
+      console.log('item.item_name', item.item_name);
+      
+      
       if (attack.attack_name === item.item_name) {
         tmAttack = attack;
       }
@@ -589,7 +595,7 @@ function renderUseItemOverlay(item) {
           ? equipItem(item, starter)
           : item.item_type === "tm"
           ? postAddAttackToCharacter({
-              characterId: starter,
+              characterId: starter.id,
               attackId: tmAttack,
             })
           : useItemOnStarter(item, starter);
