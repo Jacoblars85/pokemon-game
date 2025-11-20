@@ -115,7 +115,7 @@ let enemyOne;
 let enemyAttackStats = {};
 
 // attack stats/info
-let attacks = [];
+let allAttacks = [];
 let kickAttackStats = {};
 let pokeAttackStats = {};
 
@@ -381,7 +381,7 @@ function getBasicAttacks() {
     url: `http://localhost:5001/api/characters/basic`,
   })
     .then((response) => {
-      attacks.push(response.data);
+      // allAttacks.push(response.data);
 
       kickAttackStats = {
         attack_name: response.data[0].attack_name,
@@ -418,9 +418,9 @@ function getAllAttacks() {
     url: `http://localhost:5001/api/characters/attacks`,
   })
     .then((response) => {
-      // console.log("got attacks", response.data);
-      attacks.push(response.data);
-      // console.log("attacks", attacks);
+      // console.log("got allAttacks", response.data);
+      allAttacks.push(response.data);
+      // console.log("allAttacks", allAttacks);
     })
     .catch((err) => {
       console.log(err);
