@@ -873,42 +873,42 @@ router.post("/add/attack", (req, res) => {
     });
 });
 
-router.put("/attack/swap", (req, res) => {
-  // console.log("req.body", req.body);
+// router.put("/attack/swap", (req, res) => {
+//   // console.log("req.body", req.body);
 
-  const sqlText = `
-      UPDATE "user_character_attacks"
-        SET "is_equipped" = CASE
-          WHEN "id" = $1 THEN TRUE
-          WHEN "id" = $2 THEN FALSE
-          ELSE "is_equipped"
-          END,
-        "slot_number" = CASE
-          WHEN "id" = $1 THEN $3
-          WHEN "id" = $2 THEN NULL
-          ELSE "slot_number"
-          END
-          WHERE "user_character_id" = $4 AND "user_id" = $5;
-            `;
+//   const sqlText = `
+//       UPDATE "user_character_attacks"
+//         SET "is_equipped" = CASE
+//           WHEN "id" = $1 THEN TRUE
+//           WHEN "id" = $2 THEN FALSE
+//           ELSE "is_equipped"
+//           END,
+//         "slot_number" = CASE
+//           WHEN "id" = $1 THEN $3
+//           WHEN "id" = $2 THEN NULL
+//           ELSE "slot_number"
+//           END
+//           WHERE "user_character_id" = $4 AND "user_id" = $5;
+//             `;
 
-  const sqlValues = [
-    req.body.newAttackId,
-    req.body.oldAttackId,
-    req.body.slotNum,
-    req.body.characterId,
-    req.user.id,
-  ];
+//   const sqlValues = [
+//     req.body.newAttackId,
+//     req.body.oldAttackId,
+//     req.body.slotNum,
+//     req.body.characterId,
+//     req.user.id,
+//   ];
 
-  pool
-    .query(sqlText, sqlValues)
-    .then((result) => {
-      res.sendStatus(201);
-    })
-    .catch((err) => {
-      console.log("Error in character.router /attack/swap PUT,", err);
-      res.sendStatus(500);
-    });
-});
+//   pool
+//     .query(sqlText, sqlValues)
+//     .then((result) => {
+//       res.sendStatus(201);
+//     })
+//     .catch((err) => {
+//       console.log("Error in character.router /attack/swap PUT,", err);
+//       res.sendStatus(500);
+//     });
+// });
 
 router.put("/attack/swap", (req, res) => {
   // console.log(req.params.id);
