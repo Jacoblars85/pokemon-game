@@ -963,6 +963,7 @@ function putCharacterAttackSwitching(characterInfo) {
       console.log('response.data', response.data);
 
       showChangeCharacterAttacks(response.data);
+      showCharacterDetails(response.data, "bag")
       
     })
     .catch((err) => {
