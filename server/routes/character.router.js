@@ -910,4 +910,150 @@ router.put("/attack/swap", (req, res) => {
     });
 });
 
+router.put("/attack/swap", (req, res) => {
+  // console.log(req.params.id);
+   const sqlText = `
+      UPDATE "user_character_attacks"
+        SET "is_equipped" = CASE
+          WHEN "id" = $1 THEN TRUE
+          WHEN "id" = $2 THEN FALSE
+          ELSE "is_equipped"
+          END,
+        "slot_number" = CASE
+          WHEN "id" = $1 THEN $3
+          WHEN "id" = $2 THEN NULL
+          ELSE "slot_number"
+          END
+          WHERE "user_character_id" = $4 AND "user_id" = $5
+          RETURNING "user_character_id";
+            `;
+
+  const sqlValues = [
+    req.body.newAttackId,
+    req.body.oldAttackId,
+    req.body.slotNum,
+    req.body.characterId,
+    req.user.id,
+  ];
+
+  pool
+    .query(sqlText, sqlValues)
+    .then((result) => {
+      const updatedId = result.rows[0].id;
+
+                const sqlText = `
+SELECT "user_characters"."id" as "id",
+		    "user_characters"."user_id" as "user_id",
+		    "user_characters"."character_id",
+        "user_characters"."current_hp" as "hp",
+        "user_characters"."current_stamina" as "stamina",
+        "user_characters"."max_hp",
+        "user_characters"."max_stamina",
+        "user_characters"."starter_1",
+        "user_characters"."starter_2",
+        "user_characters"."new",
+        "user_characters"."nickname",
+        "user_characters"."xp_level",
+		    "characters"."character_name",
+		    "characters"."profile_pic",
+        "characters"."hp" as "base_hp",
+        "characters"."stamina" as "base_stamina",
+        "characters"."speed",
+        "characters"."battle_pic",
+        "character_type"."id" as "character_type_id",
+        "character_type"."type_name" as "character_type_name",
+        "character_type"."effective" as "character_type_effective",
+        "character_type"."weakness" as "character_type_weakness",
+                  json_agg(
+    json_build_object(
+      'attacks_id', "attacks"."id",
+      'attack_name', "attacks"."attack_name",
+      'attack_damage', "attacks"."attack_damage",
+      'attack_stamina', "attacks"."attack_stamina",
+      'attack_style', "attacks"."attack_style",
+      'user_character_attacks_id', "user_character_attacks"."id",
+      'attack_slot_number', "user_character_attacks"."slot_number",
+      'attack_is_equipped', "user_character_attacks"."is_equipped",
+      'attack_type_id', "attack_type"."id",
+      'attack_type_name', "attack_type"."type_name",
+      'attack_type_effective', "attack_type"."effective",
+      'attack_type_weakness', "attack_type"."weakness",
+      'attack_animations_id', "attack_animations"."id",
+      'animation_name', "attack_animations"."animation_name",
+      'max_frames', "attack_animations"."max_frames",
+      'hold_time', "attack_animations"."hold_time",
+      'fx_img', "attack_animations"."fx_img"
+    )
+      ORDER BY "user_character_attacks"."slot_number" ASC
+  ) FILTER (WHERE "user_character_attacks"."is_equipped" = TRUE)
+    AS attacks,
+      json_agg(
+    json_build_object(
+      'attacks_id', "attacks"."id",
+      'attack_name', "attacks"."attack_name",
+      'attack_damage', "attacks"."attack_damage",
+      'attack_stamina', "attacks"."attack_stamina",
+      'attack_style', "attacks"."attack_style",
+      'user_character_attacks_id', "user_character_attacks"."id",
+      'attack_slot_number', "user_character_attacks"."slot_number",
+      'attack_is_equipped', "user_character_attacks"."is_equipped",
+      'attack_type_id', "attack_type"."id",
+      'attack_type_name', "attack_type"."type_name",
+      'attack_type_effective', "attack_type"."effective",
+      'attack_type_weakness', "attack_type"."weakness",
+      'attack_animations_id', "attack_animations"."id",
+      'animation_name', "attack_animations"."animation_name",
+      'max_frames', "attack_animations"."max_frames",
+      'hold_time', "attack_animations"."hold_time",
+      'fx_img', "attack_animations"."fx_img"
+    )
+      ORDER BY "user_character_attacks"."id" ASC
+  ) FILTER (WHERE "user_character_attacks"."is_equipped" = FALSE)
+    AS stored_attacks,
+        "items"."id" as "item_id",
+        "items"."item_name",
+        "items"."item_hp",
+        "items"."item_stamina",
+        "items"."item_pic",
+        "items"."item_type",
+        "items"."item_speed",
+        "items"."item_damage",
+        "items"."item_cost",
+    	  "items"."item_color"
+ FROM "user_characters" 
+	  INNER JOIN "characters"
+    	ON "user_characters"."character_id" = "characters"."id"
+    INNER JOIN "types" "character_type"
+      ON "character_type"."id" = "characters"."type_id"
+            INNER JOIN "user_character_attacks"
+        ON "user_character_attacks"."user_character_id" = "user_characters"."id"
+    	INNER JOIN "attacks"
+        ON "attacks"."id" = "user_character_attacks"."attack_id"
+    INNER JOIN "types" "attack_type"
+      ON "attacks"."type_id" = "attack_type"."id"
+    INNER JOIN "attack_animations"
+      ON "attacks"."attack_animations_id" = "attack_animations"."id"
+    LEFT JOIN "items"
+    	ON "user_characters"."item_id" = "items"."id"
+    WHERE "user_characters"."user_id" = $1 AND "user_characters"."id" = $2
+      GROUP BY "user_characters"."id", "characters"."id", "character_type"."id", "items"."id"
+      	ORDER BY "character_id", "id" ASC;
+    `;
+
+          const sqlValues = [req.user.id, updatedId];
+
+      pool.query(sqlText, sqlValues).then((result) => {
+        res.send(result.rows[0]);
+      });
+    })
+    .catch((err) => {
+      console.log("Error in 2nd character.router /clear PUT,", err);
+      res.sendStatus(500);
+    })
+    .catch((err) => {
+      console.log("Error in character.router /clear PUT,", err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
