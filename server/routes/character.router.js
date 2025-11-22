@@ -939,7 +939,7 @@ router.put("/attack/swap", (req, res) => {
   pool
     .query(sqlText, sqlValues)
     .then((result) => {
-      const updatedId = result.rows[0].id;
+      const updatedId = result.rows[0].user_character_id;
 
                 const sqlText = `
 SELECT "user_characters"."id" as "id",
@@ -1047,11 +1047,11 @@ SELECT "user_characters"."id" as "id",
       });
     })
     .catch((err) => {
-      console.log("Error in 2nd character.router /clear PUT,", err);
+      console.log("Error in 2nd character.router /attack/swap PUT,", err);
       res.sendStatus(500);
     })
     .catch((err) => {
-      console.log("Error in character.router /clear PUT,", err);
+      console.log("Error in character.router /attack/swap PUT,", err);
       res.sendStatus(500);
     });
 });
