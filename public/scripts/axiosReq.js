@@ -962,14 +962,14 @@ function putCharacterAttackSwitching(characterInfo) {
       usersStarters.forEach((userStarter) => {
         if (userStarter.characterId === characterInfo.characterId) {
           console.log("match", userStarter);
-          showChangeCharacterAttacks(userStarter);
+          // showChangeCharacterAttacks(userStarter);
         }
       });
 
       usersCharacters.forEach((userCharacter) => {
         if (userCharacter.characterId === characterInfo.characterId) {
           console.log("match", userCharacter);
-          showChangeCharacterAttacks(userCharacter);
+          // showChangeCharacterAttacks(userCharacter);
         }
       });
     })
