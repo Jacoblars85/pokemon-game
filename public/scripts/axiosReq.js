@@ -957,6 +957,7 @@ function putCharacterAttackSwitching(characterInfo) {
     .then((response) => {
       getStarters();
       getAllUsersCharacters();
+      document.getElementById("pickAttackChangeOverlay").style.display = "none";
     })
     .catch((err) => {
       console.log(err);
