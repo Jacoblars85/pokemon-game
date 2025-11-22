@@ -957,21 +957,26 @@ function putCharacterAttackSwitching(characterInfo) {
     .then((response) => {
       getStarters();
       getAllUsersCharacters();
+
       document.getElementById("pickAttackChangeOverlay").style.display = "none";
 
-      usersStarters.forEach((userStarter) => {
-        if (userStarter.id === characterInfo.characterId) {
-          console.log("match", userStarter);
-          showChangeCharacterAttacks(userStarter);
-        }
-      });
+      console.log('response.data', response.data);
 
-      usersCharacters.forEach((userCharacter) => {
-        if (userCharacter.id === characterInfo.characterId) {
-          console.log("match", userCharacter);
-          showChangeCharacterAttacks(userCharacter);
-        }
-      });
+      showChangeCharacterAttacks(response.data);
+      
+      // usersStarters.forEach((userStarter) => {
+      //   if (userStarter.id === characterInfo.characterId) {
+      //     console.log("match", userStarter);
+      //     showChangeCharacterAttacks(userStarter);
+      //   }
+      // });
+
+      // usersCharacters.forEach((userCharacter) => {
+      //   if (userCharacter.id === characterInfo.characterId) {
+      //     console.log("match", userCharacter);
+      //     showChangeCharacterAttacks(userCharacter);
+      //   }
+      // });
     })
     .catch((err) => {
       console.log(err);
