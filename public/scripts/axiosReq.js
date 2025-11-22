@@ -969,7 +969,7 @@ function putCharacterAttackSwitching(characterInfo) {
       usersCharacters.forEach((userCharacter) => {
         if (userCharacter.id === characterInfo.characterId) {
           console.log("match", userCharacter);
-          // showChangeCharacterAttacks(userCharacter);
+          showChangeCharacterAttacks(userCharacter);
         }
       });
     })
