@@ -960,14 +960,14 @@ function putCharacterAttackSwitching(characterInfo) {
       document.getElementById("pickAttackChangeOverlay").style.display = "none";
 
       usersStarters.forEach((userStarter) => {
-        if (userStarter.characterId === characterInfo.characterId) {
+        if (userStarter.id === characterInfo.characterId) {
           console.log("match", userStarter);
-          // showChangeCharacterAttacks(userStarter);
+          showChangeCharacterAttacks(userStarter);
         }
       });
 
       usersCharacters.forEach((userCharacter) => {
-        if (userCharacter.characterId === characterInfo.characterId) {
+        if (userCharacter.id === characterInfo.characterId) {
           console.log("match", userCharacter);
           // showChangeCharacterAttacks(userCharacter);
         }
