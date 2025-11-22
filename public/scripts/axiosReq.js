@@ -966,6 +966,13 @@ function putCharacterAttackSwitching(characterInfo) {
         }
       });
 
+      usersCharacters.forEach(userCharacter => {
+        if (userCharacter.characterId === characterInfo.characterId) {
+          console.log('match', userCharacter);
+          showChangeCharacterAttacks(userCharacter)
+        }
+      });
+
       
     })
     .catch((err) => {
