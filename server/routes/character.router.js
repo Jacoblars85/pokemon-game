@@ -874,7 +874,7 @@ router.post("/add/attack", (req, res) => {
 });
 
 router.put("/attack/swap", (req, res) => {
-  console.log("req.body", req.body);
+  // console.log("req.body", req.body);
 
   const sqlText = `
       UPDATE "user_character_attacks"
