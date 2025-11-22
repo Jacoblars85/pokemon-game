@@ -851,7 +851,7 @@ router.put("/heal/starters", (req, res) => {
 });
 
 router.post("/add/attack", (req, res) => {
-  console.log("req.body", req.body);
+  // console.log("req.body", req.body);
 
   const sqlText = `
           INSERT INTO "user_character_attacks" 
