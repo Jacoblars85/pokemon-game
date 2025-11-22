@@ -964,19 +964,6 @@ function putCharacterAttackSwitching(characterInfo) {
 
       showChangeCharacterAttacks(response.data);
       
-      // usersStarters.forEach((userStarter) => {
-      //   if (userStarter.id === characterInfo.characterId) {
-      //     console.log("match", userStarter);
-      //     showChangeCharacterAttacks(userStarter);
-      //   }
-      // });
-
-      // usersCharacters.forEach((userCharacter) => {
-      //   if (userCharacter.id === characterInfo.characterId) {
-      //     console.log("match", userCharacter);
-      //     showChangeCharacterAttacks(userCharacter);
-      //   }
-      // });
     })
     .catch((err) => {
       console.log(err);
