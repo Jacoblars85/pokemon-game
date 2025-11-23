@@ -875,7 +875,7 @@ router.post("/add/attack", (req, res) => {
 
 router.put("/attack/swap", (req, res) => {
   // console.log(req.params.id);
-   const sqlText = `
+  const sqlText = `
       UPDATE "user_character_attacks"
         SET "is_equipped" = CASE
           WHEN "id" = $1 THEN TRUE
@@ -904,7 +904,7 @@ router.put("/attack/swap", (req, res) => {
     .then((result) => {
       const updatedId = result.rows[0].user_character_id;
 
-                const sqlText = `
+      const sqlText = `
 SELECT "user_characters"."id" as "id",
 		    "user_characters"."user_id" as "user_id",
 		    "user_characters"."character_id",
@@ -1003,7 +1003,7 @@ SELECT "user_characters"."id" as "id",
       	ORDER BY "character_id", "id" ASC;
     `;
 
-          const sqlValues = [req.user.id, updatedId];
+      const sqlValues = [req.user.id, updatedId];
 
       pool.query(sqlText, sqlValues).then((result) => {
         res.send(result.rows[0]);
