@@ -372,14 +372,14 @@ Attack Change Interface
 .changeCharacterAttacksOldBox {
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 200px;
   width: 100%;
-  gap: 20px;
+  /* row-gap: 10px; */
   overflow-y: scroll;
   overflow-x: hidden;
   border: solid 1px black;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   text-align: center;
 }
 
