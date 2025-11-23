@@ -290,8 +290,6 @@ function getStarters() {
 
       starterOne = response.data[0];
 
-      console.log("starterOne", starterOne);
-
       if (response.data.length >= 2) {
         starterTwo = response.data[1];
       }
@@ -368,7 +366,6 @@ function getAllCharacters() {
   })
     .then((response) => {
       allCharacters = response.data;
-      // console.log("allCharacters", allCharacters);
     })
     .catch((err) => {
       console.log(err);
@@ -433,8 +430,6 @@ function getAllUsersCharacters() {
   })
     .then((response) => {
       usersCharacters = response.data;
-
-      console.log("usersCharacters", usersCharacters);
 
       renderPcGrid();
     })
