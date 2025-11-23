@@ -960,8 +960,6 @@ function putCharacterAttackSwitching(characterInfo) {
 
       document.getElementById("pickAttackChangeOverlay").style.display = "none";
 
-      console.log('response.data', response.data);
-
       showChangeCharacterAttacks(response.data);
       showCharacterDetails(response.data, "bag")
       
