@@ -363,7 +363,7 @@ function showChangeCharacterAttacks(character) {
       align-items: space-between;
       justify-content: center;
       text-align: center;
-      border: 1px solid white;
+      border-bottom: solid 1px black;
       height: 20px;
       width: 100%;
     `;
