@@ -244,7 +244,7 @@ INSERT INTO "attacks"
 	('bash', 40, 20, 1, 'physical', 1),
 	('plant spike', 40, 20, 4, 'projectile', 18),
 	('poison gas', 40, 20, 7, 'summon', 20),
-	('waterball ', 40, 20, 3, 'projectile', 14),
+	('waterball', 40, 20, 3, 'projectile', 14),
 	('rock fall', 40, 20, 5, 'summon', 8),
 	('slash', 40, 20, 1, 'summon', 12);
 
