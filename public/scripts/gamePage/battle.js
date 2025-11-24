@@ -442,7 +442,7 @@ function resetBattleFunc() {
           });
         } else {
           document.getElementById("dialogueBox").innerHTML =
-            "you are not able to run away";
+            "you failed to run away";
 
           queue.push(() => {
             enemy.attack({
