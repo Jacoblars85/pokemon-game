@@ -373,7 +373,7 @@ function showChangeCharacterAttacks(character) {
     attackName.style = `
     width: 125px;
     text-align: center;
-    `
+    `;
 
     const attacType = document.createElement("h4");
     attacType.textContent = "type: " + attack.attack_type_name;
