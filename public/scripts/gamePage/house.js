@@ -364,12 +364,16 @@ function showChangeCharacterAttacks(character) {
       justify-content: space-between;
       text-align: center;
       border-bottom: solid 1px black;
-      height: 20px;
+      height: 40px;
       width: 708px;
     `;
 
-    const attackName = document.createElement("h3");
+    const attackName = document.createElement("h4");
     attackName.textContent = "attack: " + attack.attack_name;
+    attackName.style = `
+    width: 125px;
+    text-align: center;
+    `
 
     const attacType = document.createElement("h4");
     attacType.textContent = "type: " + attack.attack_type_name;
