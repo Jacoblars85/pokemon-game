@@ -360,12 +360,12 @@ function showChangeCharacterAttacks(character) {
     oldDetailBox.style = `
       display: flex;
       flex-direction: row;
-      align-items: space-between;
-      justify-content: center;
+      align-items: center;
+      justify-content: space-between;
       text-align: center;
       border-bottom: solid 1px black;
       height: 20px;
-      width: 100%;
+      width: 708px;
     `;
 
     const attackName = document.createElement("h3");
