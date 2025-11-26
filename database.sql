@@ -324,14 +324,14 @@ INSERT INTO "items"
 	('sword', 'held', 0, 0, 0, 20, 0, '../../images/held/SwordSprite.png', 150, '#000000'),
 	('book', 'held', 0, 20, 10, 0, 0, '../../images/held/BookSprite.png', 120, '#000000'),
 	('magic wand', 'held', 15, 0, 0, 0, 0, '../../images/held/MagicWandSprite.png', 150, '#000000'),
-	('slash', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000'),
-	('fireball', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000'),
-	('leaf blade', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000'),
-	('waterball', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000'),
-	('rock slide', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000'),
-	('thunder', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000'),
-	('curse', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000'),
-	('spirit bomb', 'tm', 0, 0, 0, 0, 0, '../../images/', 250, '#000000');
+	('slash', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#000000'),
+	('fireball', 'tm', 0, 0, 0, 0, 0, '../../images/tms/fireTm.png', 250, '#000000'),
+	('leaf blade', 'tm', 0, 0, 0, 0, 0, '../../images/tms/grassTm.png', 250, '#000000'),
+	('waterball', 'tm', 0, 0, 0, 0, 0, '../../images/tms/waterTm.png', 250, '#000000'),
+	('rock slide', 'tm', 0, 0, 0, 0, 0, '../../images/tms/rockTm.png', 250, '#000000'),
+	('thunder', 'tm', 0, 0, 0, 0, 0, '../../images/tms/electricTm.png', 250, '#000000'),
+	('curse', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#000000'),
+	('spirit bomb', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#000000');
 		
 INSERT INTO "rewards" 
 	("reward_name", "pic", "cost")
