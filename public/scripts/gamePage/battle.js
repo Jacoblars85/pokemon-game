@@ -443,8 +443,7 @@ function resetBattleFunc() {
         } else {
           document.getElementById("dialogueBox").innerHTML =
             "you failed to run away";
-            console.log('failed to run');
-            
+          console.log("failed to run");
 
           queue.push(() => {
             enemy.attack({
@@ -452,8 +451,7 @@ function resetBattleFunc() {
               recipient: currentStarter,
               renderedSprites,
             });
-            console.log('failed to run inside the queue');
-            
+            console.log("failed to run inside the queue");
 
             starterFaintIf();
             resetBattleFunc();
