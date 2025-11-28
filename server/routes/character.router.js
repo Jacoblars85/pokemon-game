@@ -541,12 +541,13 @@ router.post("/new/character", (req, res) => {
 
       const insertUserCharacterAttackQuery = `
           INSERT INTO "user_character_attacks"
-          ("user_id", "user_character_id", "attack_id")
+          ("user_id", "user_character_id", "attack_id", "is_equipped", "slot_number")
           VALUES
-            ($1, $2, $3),
-            ($1, $2, 1),
-            ($1, $2, 5);
-        `;
+            ($1, $2, $3, TRUE, 1),
+            ($1, $2, 1, TRUE, 2),
+            ($1, $2, 5, TRUE, 3);
+      `;
+        
       const insertUserCharacterAttackValue = [
         req.user.id,
         createdUserCharacterId,
