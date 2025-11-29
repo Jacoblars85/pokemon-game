@@ -355,7 +355,8 @@ function showChangeCharacterAttacks(character) {
   const oldAttackBox = document.getElementById("changeCharacterAttacksOldBox");
   oldAttackBox.innerHTML = "";
 
-  for (const attack of character.stored_attacks) {
+  if (character.stored_attacks) {
+    for (const attack of character.stored_attacks) {
     const oldDetailBox = document.createElement("div");
     oldDetailBox.style = `
       display: flex;
@@ -401,6 +402,8 @@ function showChangeCharacterAttacks(character) {
 
     oldAttackBox.appendChild(oldDetailBox);
   }
+  }
+  
 }
 
 function closeChangeCharacterAttackPopUp() {
