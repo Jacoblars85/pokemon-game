@@ -402,6 +402,8 @@ function showChangeCharacterAttacks(character) {
 
     oldAttackBox.appendChild(oldDetailBox);
   }
+  } else {
+    oldAttackBox.innerHTML = 'No Stored Attacks'
   }
   
 }
