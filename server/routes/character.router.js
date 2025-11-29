@@ -547,7 +547,7 @@ router.post("/new/character", (req, res) => {
             ($1, $2, 1, TRUE, 2),
             ($1, $2, 5, TRUE, 3);
       `;
-        
+
       const insertUserCharacterAttackValue = [
         req.user.id,
         createdUserCharacterId,
