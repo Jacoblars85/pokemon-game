@@ -357,8 +357,8 @@ function showChangeCharacterAttacks(character) {
 
   if (character.stored_attacks) {
     for (const attack of character.stored_attacks) {
-    const oldDetailBox = document.createElement("div");
-    oldDetailBox.style = `
+      const oldDetailBox = document.createElement("div");
+      oldDetailBox.style = `
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -369,43 +369,42 @@ function showChangeCharacterAttacks(character) {
       width: 708px;
     `;
 
-    const attackName = document.createElement("h4");
-    attackName.textContent = "attack: " + attack.attack_name;
-    attackName.style = `
+      const attackName = document.createElement("h4");
+      attackName.textContent = "attack: " + attack.attack_name;
+      attackName.style = `
     width: 125px;
     text-align: center;
     `;
 
-    const attacType = document.createElement("h4");
-    attacType.textContent = "type: " + attack.attack_type_name;
+      const attacType = document.createElement("h4");
+      attacType.textContent = "type: " + attack.attack_type_name;
 
-    const attacDamage = document.createElement("h4");
-    attacDamage.textContent = "damage: " + attack.attack_damage;
+      const attacDamage = document.createElement("h4");
+      attacDamage.textContent = "damage: " + attack.attack_damage;
 
-    const attackStamina = document.createElement("h4");
-    attackStamina.textContent = "stamina: " + attack.attack_stamina;
+      const attackStamina = document.createElement("h4");
+      attackStamina.textContent = "stamina: " + attack.attack_stamina;
 
-    const switchButton = document.createElement("button");
-    switchButton.textContent = "Swap";
-    switchButton.style = `cursor: pointer;`;
+      const switchButton = document.createElement("button");
+      switchButton.textContent = "Swap";
+      switchButton.style = `cursor: pointer;`;
 
-    switchButton.addEventListener("click", (e) => {
-      e.stopPropagation(); // Stop it from triggering detail popup
-      showPickAttackChange(character, attack);
-    });
+      switchButton.addEventListener("click", (e) => {
+        e.stopPropagation(); // Stop it from triggering detail popup
+        showPickAttackChange(character, attack);
+      });
 
-    oldDetailBox.appendChild(attackName);
-    oldDetailBox.appendChild(attacType);
-    oldDetailBox.appendChild(attacDamage);
-    oldDetailBox.appendChild(attackStamina);
-    oldDetailBox.appendChild(switchButton);
+      oldDetailBox.appendChild(attackName);
+      oldDetailBox.appendChild(attacType);
+      oldDetailBox.appendChild(attacDamage);
+      oldDetailBox.appendChild(attackStamina);
+      oldDetailBox.appendChild(switchButton);
 
-    oldAttackBox.appendChild(oldDetailBox);
-  }
+      oldAttackBox.appendChild(oldDetailBox);
+    }
   } else {
-    oldAttackBox.innerHTML = 'No Stored Attacks'
+    oldAttackBox.innerHTML = "No Attacks";
   }
-  
 }
 
 function closeChangeCharacterAttackPopUp() {
