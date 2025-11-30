@@ -444,9 +444,10 @@ function resetBattleFunc() {
           document.getElementById("dialogueBox").innerHTML =
             "you failed to run away";
           console.log("failed to run");
-
+if (queue.length === 0) {
           queue.push(() => {
-            enemy.attack({
+            
+              enemy.attack({
               attack: {},
               recipient: currentStarter,
               renderedSprites,
@@ -455,7 +456,10 @@ function resetBattleFunc() {
 
             starterFaintIf();
             resetBattleFunc();
+            
+            
           });
+        }
         }
       } else if (e.target.innerHTML === "Use Item" && battle.initiated) {
         audio.menuButton.play();
