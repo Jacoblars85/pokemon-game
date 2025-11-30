@@ -444,22 +444,19 @@ function resetBattleFunc() {
           document.getElementById("dialogueBox").innerHTML =
             "you failed to run away";
           console.log("failed to run");
-if (queue.length === 0) {
-          queue.push(() => {
-            
+          if (queue.length === 0) {
+            queue.push(() => {
               enemy.attack({
-              attack: {},
-              recipient: currentStarter,
-              renderedSprites,
-            });
-            console.log("failed to run inside the queue");
+                attack: {},
+                recipient: currentStarter,
+                renderedSprites,
+              });
+              console.log("failed to run inside the queue");
 
-            starterFaintIf();
-            resetBattleFunc();
-            
-            
-          });
-        }
+              starterFaintIf();
+              resetBattleFunc();
+            });
+          }
         }
       } else if (e.target.innerHTML === "Use Item" && battle.initiated) {
         audio.menuButton.play();
