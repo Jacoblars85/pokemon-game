@@ -87,7 +87,7 @@ const audio = {
   healingCharacters: new Howl({
     src: "./audio/healingCharacters.wav",
     // html5: true,
-    volume: 0.3,
+    volume: 0.25,
   }),
   openBag: new Howl({
     src: "./audio/Menu1.wav",
