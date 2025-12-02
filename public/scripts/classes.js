@@ -417,7 +417,7 @@ class Character extends Sprite {
       }
     }
 
-    currentDamage = attack.attack_damage
+    let currentDamage = attack.attack_damage
 
     console.log("attack before the if", currentDamage);
 
