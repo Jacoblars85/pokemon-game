@@ -413,6 +413,9 @@ class Character extends Sprite {
           attack_name: "tired",
           attack_damage: 0,
           attack_stamina: 0,
+          attack_type_id: 0,
+          attack_type_effective: 0,
+          attack_type_weakness: 0,
         };
       }
     }
