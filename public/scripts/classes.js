@@ -419,7 +419,7 @@ class Character extends Sprite {
 
     currentDamage = attack.attack_damage
 
-    console.log("attack before the if", attack.attack_damage);
+    console.log("attack before the if", currentDamage);
 
     if (attack.attack_type_id === this.character_type_id) {
       console.log("attack is the same type as the attacker so + 10");
@@ -441,11 +441,11 @@ class Character extends Sprite {
       currentDamage -= 20;
     }
 
-    console.log("attack after all of the changes", attack.attack_damage);
+    console.log("attack after all of the changes", currentDamage);
 
     isAnimating = true;
 
-    recipient.health -= attack.attack_damage;
+    recipient.health -= currentDamage;
     this.stamina -= attack.attack_stamina;
 
     if (recipient.health < 0) recipient.health = 0;
