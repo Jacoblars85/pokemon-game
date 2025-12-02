@@ -285,7 +285,18 @@ INSERT INTO "basic_attacks"
 	('poke', 10, 5, 1, 'physical');
 
 INSERT INTO "enemy" 
-	("enemy_name", "character_id", "attack_1_id", "attack_2_id", "attack_3_id", "xp_level")
+	("enemy_name", "character_id", "xp_level")
+	VALUES 
+	('enemy 1', 1, 11),
+	('enemy 2', 2, 16),
+	('enemy 3', 12, 21),
+	('enemy 4', 9, 26),
+	('enemy 5', 18, 29),
+	('enemy 6', 22, 33);
+
+
+INSERT INTO "enemy_attacks" 
+	("enemy_id", "attack_id")
 	VALUES 
 	('enemy 1', 1, 6, 12, 24, 11),
 	('enemy 2', 2, 7, 14, 28, 16),
