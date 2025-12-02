@@ -420,8 +420,7 @@ class Character extends Sprite {
       }
     }
 
-    let currentDamage = attack.attack_damage
-
+    let currentDamage = attack.attack_damage;
 
     if (attack.attack_type_id === this.character_type_id) {
       currentDamage += 10;
@@ -436,10 +435,8 @@ class Character extends Sprite {
     }
 
     if (attack.attack_type_weakness === recipient.character_type_id) {
-
       currentDamage -= 20;
     }
-
 
     isAnimating = true;
 
