@@ -298,7 +298,6 @@ INSERT INTO "enemy"
 	('enemy 5', 18, 29),
 	('enemy 6', 22, 33);
 
-
 INSERT INTO "enemy_attacks" 
 	("enemy_id", "attack_id")
 	VALUES 
