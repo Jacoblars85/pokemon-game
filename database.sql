@@ -153,6 +153,11 @@ CREATE TABLE "enemy" (
 	"attack_3_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE,
 	"xp_level" DEC DEFAULT 1);
 
+CREATE TABLE "enemy_attacks" (
+	"id" SERIAL PRIMARY KEY,
+	"enemy_id" INT NOT NULL REFERENCES "enemy" ON DELETE CASCADE,
+	"attack_id" INT NOT NULL REFERENCES "attacks" ON DELETE CASCADE);
+
 CREATE TABLE "worlds" (
 	"id" SERIAL PRIMARY KEY,
 	"world_name" VARCHAR(20),
