@@ -204,7 +204,8 @@ router.get("/boss/:id", (req, res) => {
           ON "attacks"."type_id" = "attack_type"."id"
         INNER JOIN "attack_animations"
         	ON "attacks"."attack_animations_id" = "attack_animations"."id"
-        WHERE "enemy"."id" = $1;
+        WHERE "enemy"."id" = $1
+        GROUP BY "enemy"."id", "characters"."id", "character_type"."id";
       `;
 
   const sqlValues = [req.params.id];
