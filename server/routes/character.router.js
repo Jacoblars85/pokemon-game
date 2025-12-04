@@ -493,6 +493,19 @@ SELECT "user_characters"."id" as "id",
         const baseStamina = starter.base_stamina * multiplier;
         const baseSpeed = starter.speed * multiplier;
 
+        
+
+        // Item boosts
+        const itemHp = starter.item_id !== null ? starter.item_hp : 0;
+        const itemStamina = starter.item_id !== null ? starter.item_stamina : 0;
+        const itemSpeed = starter.item_id !== null ? starter.item_speed : 0;
+        const itemDamage = starter.item_id !== null ? starter.item_damage : 0;
+
+        // Set max (or scaled) stats
+        starter.max_hp = Math.round(baseHp) + itemHp;
+        starter.max_stamina = Math.round(baseStamina) + itemStamina;
+        starter.speed = Math.round(baseSpeed) + itemSpeed;
+
         console.log("starter", starter);
 
         console.log("starter.attack_damage before", starter.attack_damage);
@@ -510,17 +523,7 @@ SELECT "user_characters"."id" as "id",
         const baseDamage = starter.attack_damage * multiplier;
 
         console.log("baseDamage", baseDamage);
-
-        // Item boosts
-        const itemHp = starter.item_id !== null ? starter.item_hp : 0;
-        const itemStamina = starter.item_id !== null ? starter.item_stamina : 0;
-        const itemSpeed = starter.item_id !== null ? starter.item_speed : 0;
-        const itemDamage = starter.item_id !== null ? starter.item_damage : 0;
-
-        // Set max (or scaled) stats
-        starter.max_hp = Math.round(baseHp) + itemHp;
-        starter.max_stamina = Math.round(baseStamina) + itemStamina;
-        starter.speed = Math.round(baseSpeed) + itemSpeed;
+        
         starter.attack_damage = Math.round(baseDamage) + itemDamage;
 
         console.log("starter.attack_damage after", starter.attack_damage);
