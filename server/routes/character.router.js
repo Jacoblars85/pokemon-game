@@ -159,9 +159,6 @@ router.get("/boss/:id", (req, res) => {
 	SELECT  "enemy"."id",
         "enemy"."enemy_name",
         "enemy"."character_id",
-        "enemy"."attack_1_id",
-        "enemy"."attack_2_id",
-        "enemy"."attack_3_id",
         "enemy"."xp_level",
         "characters"."character_name",
         "characters"."profile_pic",
@@ -181,8 +178,6 @@ router.get("/boss/:id", (req, res) => {
             'attack_stamina', "attacks"."attack_stamina",
             'attack_style', "attacks"."attack_style",
             'enemy_attacks_id', "enemy_attacks"."id",
-            'attack_slot_number', "enemy_attacks"."slot_number",
-            'attack_is_equipped', "enemy_attacks"."is_equipped",
             'attack_type_id', "attack_type"."id",
             'attack_type_name', "attack_type"."type_name",
             'attack_type_effective', "attack_type"."effective",
@@ -193,8 +188,9 @@ router.get("/boss/:id", (req, res) => {
             'hold_time', "attack_animations"."hold_time",
             'fx_img', "attack_animations"."fx_img"
           )
+            ORDER BY "attacks"."id"
         ) FILTER (WHERE "enemy_attacks"."enemy_id" = $1)
-        AS attacks,
+        AS attacks
             FROM "enemy"
         INNER JOIN "characters"
           ON "enemy"."character_id" = "characters"."id"
