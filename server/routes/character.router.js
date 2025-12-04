@@ -492,7 +492,14 @@ SELECT "user_characters"."id" as "id",
         const baseHp = starter.base_hp * multiplier;
         const baseStamina = starter.base_stamina * multiplier;
         const baseSpeed = starter.speed * multiplier;
+
+        console.log('starter.attack_damage before', starter.attack_damage);
+        
+        
         const baseDamage = starter.attack_damage * multiplier;
+
+        console.log('baseDamage', baseDamage);
+        
 
         // Item boosts
         const itemHp = starter.item_id !== null ? starter.item_hp : 0;
@@ -505,6 +512,8 @@ SELECT "user_characters"."id" as "id",
         starter.max_stamina = Math.round(baseStamina) + itemStamina;
         starter.speed = Math.round(baseSpeed) + itemSpeed;
         starter.attack_damage = Math.round(baseDamage) + itemDamage;
+
+                console.log('starter.attack_damage after', starter.attack_damage);
 
         // Keep current values separate and clamped later
         if (starter.hp > starter.max_hp) starter.hp = starter.max_hp;
