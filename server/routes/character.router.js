@@ -173,20 +173,6 @@ router.get("/boss/:id", (req, res) => {
         "character_type"."type_name" as "character_type_name",
         "character_type"."effective" as "character_type_effective",
         "character_type"."weakness" as "character_type_weakness",
-        "attacks"."id" as "attacks_id",
-        "attacks"."attack_name",
-        "attacks"."attack_damage",
-        "attacks"."attack_stamina",
-        "attacks"."attack_style",
-        "attack_type"."id" as "attack_type_id",
-        "attack_type"."type_name" as "attack_type_name",
-        "attack_type"."effective" as "attack_type_effective",
-        "attack_type"."weakness" as "attack_type_weakness",
-        "attack_animations"."id" as "attack_animations_id",
-        "attack_animations"."animation_name",
-        "attack_animations"."max_frames",
-        "attack_animations"."hold_time",
-        "attack_animations"."fx_img"
                   json_agg(
     json_build_object(
       'attacks_id', "attacks"."id",
@@ -218,7 +204,7 @@ router.get("/boss/:id", (req, res) => {
           ON "enemy"."id" = "enemy_attacks"."enemy_id"
         INNER JOIN "attacks"
           ON "attacks"."id" = "enemy_attacks"."attack_id"
-        INNER JOIN "types"
+        INNER JOIN "types" "attack_type"
           ON "attacks"."type_id" = "attack_type"."id"
         INNER JOIN "attack_animations"
         	ON "attacks"."attack_animations_id" = "attack_animations"."id"
