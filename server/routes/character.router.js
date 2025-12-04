@@ -497,6 +497,11 @@ SELECT "user_characters"."id" as "id",
 
         console.log("starter.attack_damage before", starter.attack_damage);
 
+        for (const attack of starter.attacks) {
+          console.log('attack', attack);
+          
+        }
+
         const baseDamage = starter.attack_damage * multiplier;
 
         console.log("baseDamage", baseDamage);
