@@ -187,14 +187,38 @@ router.get("/boss/:id", (req, res) => {
         "attack_animations"."max_frames",
         "attack_animations"."hold_time",
         "attack_animations"."fx_img"
+                  json_agg(
+    json_build_object(
+      'attacks_id', "attacks"."id",
+      'attack_name', "attacks"."attack_name",
+      'attack_damage', "attacks"."attack_damage",
+      'attack_stamina', "attacks"."attack_stamina",
+      'attack_style', "attacks"."attack_style",
+      'user_character_attacks_id', "user_character_attacks"."id",
+      'attack_slot_number', "user_character_attacks"."slot_number",
+      'attack_is_equipped', "user_character_attacks"."is_equipped",
+      'attack_type_id', "attack_type"."id",
+      'attack_type_name', "attack_type"."type_name",
+      'attack_type_effective', "attack_type"."effective",
+      'attack_type_weakness', "attack_type"."weakness",
+      'attack_animations_id', "attack_animations"."id",
+      'animation_name', "attack_animations"."animation_name",
+      'max_frames', "attack_animations"."max_frames",
+      'hold_time', "attack_animations"."hold_time",
+      'fx_img', "attack_animations"."fx_img"
+    )
+  ) FILTER (WHERE "enemy_attacks"."enemy_id" = $1)
+   AS attacks,
             FROM "enemy"
         INNER JOIN "characters"
           ON "enemy"."character_id" = "characters"."id"
         INNER JOIN "types" "character_type"
           ON "character_type"."id" = "characters"."type_id"
+          INNER JOIN "enemy_attacks"
+          ON "enemy"."id" = "enemy_attacks"."enemy_id"
         INNER JOIN "attacks"
-          ON "attacks"."id" = "characters"."attacks_id"
-        INNER JOIN "types" "attack_type"
+          ON "attacks"."id" = "enemy_attacks"."attack_id"
+        INNER JOIN "types"
           ON "attacks"."type_id" = "attack_type"."id"
         INNER JOIN "attack_animations"
         	ON "attacks"."attack_animations_id" = "attack_animations"."id"
