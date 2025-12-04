@@ -502,6 +502,11 @@ SELECT "user_characters"."id" as "id",
           
         }
 
+        for (const storedAttack of starter.stored_attacks) {
+          console.log('storedAttack', storedAttack);
+          
+        }
+
         const baseDamage = starter.attack_damage * multiplier;
 
         console.log("baseDamage", baseDamage);
