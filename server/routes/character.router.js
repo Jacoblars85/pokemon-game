@@ -225,11 +225,8 @@ router.get("/boss/:id", (req, res) => {
 
         for (const attack of enemy.attacks) {
           attack.attack_damage *= multiplier;
-        attack.attack_damage += 10;
+          attack.attack_damage += 10;
         }
-
-       
-        
       }
 
       res.send(result.rows);
@@ -356,7 +353,6 @@ SELECT "user_characters"."id" as "id",
         const baseStamina = character.base_stamina * multiplier;
         const baseSpeed = character.speed * multiplier;
 
-
         // Item boosts
         const itemHp = character.item_id !== null ? character.item_hp : 0;
         const itemStamina =
@@ -369,7 +365,6 @@ SELECT "user_characters"."id" as "id",
         character.max_hp = Math.round(baseHp) + itemHp;
         character.max_stamina = Math.round(baseStamina) + itemStamina;
         character.speed = Math.round(baseSpeed) + itemSpeed;
-
 
         for (const attack of character.attacks) {
           const baseDamage = attack.attack_damage * multiplier;
