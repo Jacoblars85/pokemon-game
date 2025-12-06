@@ -493,8 +493,6 @@ SELECT "user_characters"."id" as "id",
         const baseStamina = starter.base_stamina * multiplier;
         const baseSpeed = starter.speed * multiplier;
 
-        
-
         // Item boosts
         const itemHp = starter.item_id !== null ? starter.item_hp : 0;
         const itemStamina = starter.item_id !== null ? starter.item_stamina : 0;
@@ -509,21 +507,17 @@ SELECT "user_characters"."id" as "id",
         console.log("starter.attack_damage before", starter.attack_damage);
 
         for (const attack of starter.attacks) {
-          console.log('attack', attack);
-          
-        const baseDamage = attack.attack_damage * multiplier;
-        attack.attack_damage = Math.round(baseDamage) + itemDamage;
+          console.log("attack", attack);
 
-
+          const baseDamage = attack.attack_damage * multiplier;
+          attack.attack_damage = Math.round(baseDamage) + itemDamage;
         }
 
         if (starter.stored_attacks) {
           for (const storedAttack of starter.stored_attacks) {
-          console.log('storedAttack', storedAttack);
-          
+            console.log("storedAttack", storedAttack);
+          }
         }
-        }
-        
 
         // const baseDamage = starter.attack_damage * multiplier;
 
