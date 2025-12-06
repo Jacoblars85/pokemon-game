@@ -444,11 +444,9 @@ router.put("/won/battle", (req, res) => {
 
           const baseHp = req.body.winningStarter.base_hp * multiplier;
           const baseStamina = req.body.winningStarter.base_stamina * multiplier;
-          const itemHp = req.body.winningStarter.item.item_hp || 0;
-          const itemStamina = req.body.winningStarter.item.item_stamina || 0;
 
-          const newMaxHp = baseHp + itemHp;
-          const newMaxStamina = baseStamina + itemStamina;
+          const newMaxHp = baseHp;
+          const newMaxStamina = baseStamina;
 
           if (
             Math.floor(
