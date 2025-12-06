@@ -349,7 +349,7 @@ SELECT "user_characters"."id" as "id",
         const baseHp = character.base_hp * multiplier;
         const baseStamina = character.base_stamina * multiplier;
         const baseSpeed = character.speed * multiplier;
-        const baseDamage = character.attack_damage * multiplier;
+
 
         // Item boosts
         const itemHp = character.item_id !== null ? character.item_hp : 0;
@@ -363,7 +363,7 @@ SELECT "user_characters"."id" as "id",
         character.max_hp = Math.round(baseHp) + itemHp;
         character.max_stamina = Math.round(baseStamina) + itemStamina;
         character.speed = Math.round(baseSpeed) + itemSpeed;
-        character.attack_damage = Math.round(baseDamage) + itemDamage;
+        
 
         for (const attack of character.attacks) {
           const baseDamage = attack.attack_damage * multiplier;
