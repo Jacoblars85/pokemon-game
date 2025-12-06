@@ -365,6 +365,18 @@ SELECT "user_characters"."id" as "id",
         character.speed = Math.round(baseSpeed) + itemSpeed;
         character.attack_damage = Math.round(baseDamage) + itemDamage;
 
+        for (const attack of character.attacks) {
+          const baseDamage = attack.attack_damage * multiplier;
+          attack.attack_damage = Math.round(baseDamage) + itemDamage;
+        }
+
+        if (character.stored_attacks) {
+          for (const storedAttack of character.stored_attacks) {
+            const baseDamage = storedAttack.attack_damage * multiplier;
+            storedAttack.attack_damage = Math.round(baseDamage) + itemDamage;
+          }
+        }
+
         // Keep current values separate and clamped later
         if (character.hp > character.max_hp) character.hp = character.max_hp;
         if (character.stamina > character.max_stamina)
