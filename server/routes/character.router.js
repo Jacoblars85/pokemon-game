@@ -222,8 +222,14 @@ router.get("/boss/:id", (req, res) => {
         enemy.stamina += 150;
         enemy.speed *= multiplier;
         enemy.speed += 30;
-        enemy.attack_damage *= multiplier;
-        enemy.attack_damage += 10;
+
+        for (const attack of enemy.attacks) {
+          attack.attack_damage *= multiplier;
+        attack.attack_damage += 10;
+        }
+
+       
+        
       }
 
       res.send(result.rows);
@@ -363,7 +369,7 @@ SELECT "user_characters"."id" as "id",
         character.max_hp = Math.round(baseHp) + itemHp;
         character.max_stamina = Math.round(baseStamina) + itemStamina;
         character.speed = Math.round(baseSpeed) + itemSpeed;
-        
+
 
         for (const attack of character.attacks) {
           const baseDamage = attack.attack_damage * multiplier;
