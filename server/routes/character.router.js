@@ -507,10 +507,14 @@ SELECT "user_characters"."id" as "id",
         console.log("starter.attack_damage before", starter.attack_damage);
 
         for (const attack of starter.attacks) {
-          console.log("attack", attack);
+          console.log("attack befoore", attack.attack_damage);
 
           const baseDamage = attack.attack_damage * multiplier;
+          console.log('baseDamage', baseDamage);
+          
           attack.attack_damage = Math.round(baseDamage) + itemDamage;
+
+          console.log("attack after", attack.attack_damage);
         }
 
         if (starter.stored_attacks) {
