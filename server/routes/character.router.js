@@ -511,8 +511,8 @@ SELECT "user_characters"."id" as "id",
 
         if (starter.stored_attacks) {
           for (const storedAttack of starter.stored_attacks) {
-                      const baseDamage = storedAttack.attack_damage * multiplier;
-          storedAttack.attack_damage = Math.round(baseDamage) + itemDamage;
+            const baseDamage = storedAttack.attack_damage * multiplier;
+            storedAttack.attack_damage = Math.round(baseDamage) + itemDamage;
           }
         }
 
