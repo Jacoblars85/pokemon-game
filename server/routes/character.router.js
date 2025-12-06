@@ -506,13 +506,15 @@ SELECT "user_characters"."id" as "id",
         starter.max_stamina = Math.round(baseStamina) + itemStamina;
         starter.speed = Math.round(baseSpeed) + itemSpeed;
 
-        // console.log("starter", starter);
-
         console.log("starter.attack_damage before", starter.attack_damage);
 
         for (const attack of starter.attacks) {
           console.log('attack', attack);
           
+        const baseDamage = attack.attack_damage * multiplier;
+        attack.attack_damage = Math.round(baseDamage) + itemDamage;
+
+
         }
 
         if (starter.stored_attacks) {
@@ -523,11 +525,11 @@ SELECT "user_characters"."id" as "id",
         }
         
 
-        const baseDamage = starter.attack_damage * multiplier;
+        // const baseDamage = starter.attack_damage * multiplier;
 
-        console.log("baseDamage", baseDamage);
+        // console.log("baseDamage", baseDamage);
 
-        starter.attack_damage = Math.round(baseDamage) + itemDamage;
+        // starter.attack_damage = Math.round(baseDamage) + itemDamage;
 
         console.log("starter.attack_damage after", starter.attack_damage);
 
