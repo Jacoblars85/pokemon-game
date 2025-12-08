@@ -358,6 +358,8 @@ function resetBattleFunc() {
         },
       };
 
+      console.log('allCharacters[currentStarter.id - 1]', allCharacters[currentStarter.id - 1]);
+      
       console.log('winningInfo', winningInfo);
       
 
