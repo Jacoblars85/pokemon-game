@@ -358,11 +358,6 @@ function resetBattleFunc() {
         },
       };
 
-      console.log('allCharacters[currentStarter.id - 1]', allCharacters[currentStarter.id - 1]);
-      
-      console.log('winningInfo', winningInfo);
-      
-
       if (e.target.className === "attackButton") {
         const characterSelectedAttack = e.target.innerHTML;
         let selectedAttack = {};
