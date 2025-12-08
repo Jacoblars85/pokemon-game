@@ -64,14 +64,21 @@ router.get("/all/characters", (req, res) => {
   // console.log('im in character route');
 
   const query = `
-      SELECT *,
+      SELECT "characters"."id",
+        "characters"."character_name",
+        "characters"."profile_pic",
+        "characters"."hp",
+        "characters"."stamina",
+        "characters"."speed",
+        "characters"."battle_pic",
           "types"."id" as "character_type_id",
           "types"."type_name" as "character_type_name",
           "types"."effective" as "character_type_effective",
           "types"."weakness" as "character_type_weakness"
         FROM "characters"
         INNER JOIN "types"
-          ON "types"."id" = "characters"."type_id";
+          ON "types"."id" = "characters"."type_id"
+          ORDER BY "characters"."id";
     `;
 
   pool
