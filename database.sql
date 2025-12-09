@@ -351,17 +351,17 @@ INSERT INTO "items"
 	('sword', 'held', 0, 0, 0, 20, 0, '../../images/held/SwordSprite.png', 150, '#000000'),
 	('book', 'held', 0, 20, 10, 0, 0, '../../images/held/BookSprite.png', 120, '#000000'),
 	('magic wand', 'held', 15, 0, 0, 0, 0, '../../images/held/MagicWandSprite.png', 150, '#000000'),
-	('kick', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#000000'),
-	('punch', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#000000'),
-	('slap', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#000000'),
-	('slash', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#000000'),
-	('fireball', 'tm', 0, 0, 0, 0, 0, '../../images/tms/fireTm.png', 250, '#000000'),
-	('leaf blade', 'tm', 0, 0, 0, 0, 0, '../../images/tms/grassTm.png', 250, '#000000'),
-	('waterball', 'tm', 0, 0, 0, 0, 0, '../../images/tms/waterTm.png', 250, '#000000'),
-	('rock slide', 'tm', 0, 0, 0, 0, 0, '../../images/tms/rockTm.png', 250, '#000000'),
-	('thunder', 'tm', 0, 0, 0, 0, 0, '../../images/tms/electricTm.png', 250, '#000000'),
+	('kick', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#a1a1a1ff'),
+	('punch', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#a1a1a1ff'),
+	('slap', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#a1a1a1ff'),
+	('slash', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#a1a1a1ff'),
+	('fireball', 'tm', 0, 0, 0, 0, 0, '../../images/tms/fireTm.png', 250, '#ff0000ff'),
+	('leaf blade', 'tm', 0, 0, 0, 0, 0, '../../images/tms/grassTm.png', 250, '#11c700ff'),
+	('waterball', 'tm', 0, 0, 0, 0, 0, '../../images/tms/waterTm.png', 250, '#0015ffff'),
+	('rock slide', 'tm', 0, 0, 0, 0, 0, '../../images/tms/rockTm.png', 250, '#5d2d00ff'),
+	('thunder', 'tm', 0, 0, 0, 0, 0, '../../images/tms/electricTm.png', 250, '#fffb00ff'),
 	('curse', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#000000'),
-	('spirit bomb', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#000000');
+	('spirit bomb', 'tm', 0, 0, 0, 0, 0, '../../images/tms/physicalTm.png', 250, '#fffd74ff');
 		
 INSERT INTO "rewards" 
 	("reward_name", "pic", "cost")
