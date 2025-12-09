@@ -14,7 +14,8 @@ router.get("/basic", (req, res) => {
           "types"."id" as "attack_type_id",
           "types"."type_name" as "attack_type_name",
           "types"."effective" as "attack_type_effective",
-          "types"."weakness" as "attack_type_weakness"
+          "types"."weakness" as "attack_type_weakness",
+          "types"."color" as "attack_type_color"
         FROM "basic_attacks"
         INNER JOIN "types"
           ON "types"."id" = "basic_attacks"."type_id";
@@ -43,7 +44,8 @@ router.get("/attacks", (req, res) => {
         "types"."id" as "attack_type_id",
         "types"."type_name" as "attack_type_name",
         "types"."effective" as "attack_type_effective",
-        "types"."weakness" as "attack_type_weakness"
+        "types"."weakness" as "attack_type_weakness",
+        "types"."color" as "attack_type_color"
       FROM "attacks"
         INNER JOIN "types"
           ON "types"."id" = "attacks"."type_id";
@@ -74,7 +76,8 @@ router.get("/all/characters", (req, res) => {
           "types"."id" as "character_type_id",
           "types"."type_name" as "character_type_name",
           "types"."effective" as "character_type_effective",
-          "types"."weakness" as "character_type_weakness"
+          "types"."weakness" as "character_type_weakness",
+          "types"."color" as "character_type_color"
         FROM "characters"
         INNER JOIN "types"
           ON "types"."id" = "characters"."type_id"
@@ -107,6 +110,7 @@ router.get("/enemy/:id", (req, res) => {
         "character_type"."type_name" as "character_type_name",
         "character_type"."effective" as "character_type_effective",
         "character_type"."weakness" as "character_type_weakness",
+        "types"."color" as "character_type_color",
         "attacks"."id" as "attacks_id",
         "attacks"."attack_name",
         "attacks"."attack_damage",
@@ -116,6 +120,7 @@ router.get("/enemy/:id", (req, res) => {
         "attack_type"."type_name" as "attack_type_name",
         "attack_type"."effective" as "attack_type_effective",
         "attack_type"."weakness" as "attack_type_weakness",
+        "types"."color" as "attack_type_color",
         "attack_animations"."id" as "attack_animations_id",
         "attack_animations"."animation_name",
         "attack_animations"."max_frames",
@@ -177,6 +182,7 @@ router.get("/boss/:id", (req, res) => {
         "character_type"."type_name" as "character_type_name",
         "character_type"."effective" as "character_type_effective",
         "character_type"."weakness" as "character_type_weakness",
+        "types"."color" as "character_type_color",
         json_agg(
           json_build_object(
             'attacks_id', "attacks"."id",
@@ -189,6 +195,7 @@ router.get("/boss/:id", (req, res) => {
             'attack_type_name', "attack_type"."type_name",
             'attack_type_effective', "attack_type"."effective",
             'attack_type_weakness', "attack_type"."weakness",
+            "types"."color" as "attack_type_color",
             'attack_animations_id', "attack_animations"."id",
             'animation_name', "attack_animations"."animation_name",
             'max_frames', "attack_animations"."max_frames",
