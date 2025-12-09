@@ -87,6 +87,34 @@ router.get("/throwable", (req, res) => {
     });
 });
 
+router.get("/tms", (req, res) => {
+  const query = `
+    SELECT "id",
+ 		"item_name",
+ 		"item_type",
+        "item_hp",
+        "item_stamina",
+        "item_speed",
+        "item_damage",
+        "item_capture_rate",
+        "item_pic",
+        "item_cost",
+        "item_color"
+    FROM "items"
+        WHERE "item_type" = 'tms';
+  `;
+
+  pool
+    .query(query)
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("ERROR: Get all tms items", err);
+      res.sendStatus(500);
+    });
+});
+
 router.get("/all/items", (req, res) => {
   const query = `
     SELECT "id",
