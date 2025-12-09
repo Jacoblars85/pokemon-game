@@ -67,7 +67,7 @@ CREATE TABLE "types" (
 	"type_name" VARCHAR(20),
 	"effective" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
 	"weakness" INT NOT NULL REFERENCES "types" ON DELETE CASCADE),
-	"color" VARCHAR(20),;
+	"color" VARCHAR(20);
 
 CREATE TABLE "attacks" (
 	"id" SERIAL PRIMARY KEY,
@@ -183,16 +183,16 @@ CREATE TABLE "user_chests" (
 
 
 INSERT INTO "types" 
-	("type_name", "effective", "weakness")
+	("type_name", "effective", "weakness", "color")
 	VALUES 
-	('normal', 1, 1),
-	('fire', 4, 3),
-	('water', 2, 6),
-	('grass', 5, 2),
-	('ground', 6, 4),
-	('electric', 3, 5),
-	('dark', 8, 8),
-	('light', 7, 7);
+	('normal', 1, 1, '#000000'),
+	('fire', 4, 3, '#000000'),
+	('water', 2, 6, '#000000'),
+	('grass', 5, 2, '#000000'),
+	('ground', 6, 4, '#000000'),
+	('electric', 3, 5, '#000000'),
+	('dark', 8, 8, '#000000'),
+	('light', 7, 7, '#000000');
 
 INSERT INTO "attack_animations" 
 	("animation_name", "max_frames", "hold_time", "fx_img")
