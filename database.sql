@@ -185,14 +185,14 @@ CREATE TABLE "user_chests" (
 INSERT INTO "types" 
 	("type_name", "effective", "weakness", "color")
 	VALUES 
-	('normal', 1, 1, '#000000'),
-	('fire', 4, 3, '#000000'),
-	('water', 2, 6, '#000000'),
-	('grass', 5, 2, '#000000'),
-	('ground', 6, 4, '#000000'),
-	('electric', 3, 5, '#000000'),
+	('normal', 1, 1, '#a1a1a1ff'),
+	('fire', 4, 3, '#ff0000ff'),
+	('water', 2, 6, '#0015ffff'),
+	('grass', 5, 2, '#11c700ff'),
+	('ground', 6, 4, '#5d2d00ff'),
+	('electric', 3, 5, '#fffb00ff'),
 	('dark', 8, 8, '#000000'),
-	('light', 7, 7, '#000000');
+	('light', 7, 7, '#fffd74ff');
 
 INSERT INTO "attack_animations" 
 	("animation_name", "max_frames", "hold_time", "fx_img")
