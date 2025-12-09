@@ -279,6 +279,7 @@ SELECT "user_characters"."id" as "id",
         "character_type"."type_name" as "character_type_name",
         "character_type"."effective" as "character_type_effective",
         "character_type"."weakness" as "character_type_weakness",
+        "character_type"."color" as "character_type_color",
                   json_agg(
     json_build_object(
       'attacks_id', "attacks"."id",
@@ -433,6 +434,7 @@ SELECT "user_characters"."id" as "id",
         "character_type"."type_name" as "character_type_name",
         "character_type"."effective" as "character_type_effective",
         "character_type"."weakness" as "character_type_weakness",
+        "character_type"."color" as "character_type_color",
           json_agg(
     json_build_object(
       'attacks_id', "attacks"."id",
