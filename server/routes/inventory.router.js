@@ -287,6 +287,42 @@ router.get("/user/throwable", (req, res) => {
     });
 });
 
+router.get("/user/tms", (req, res) => {
+  const query = `
+    SELECT "user_inventory"."id" as "id",
+            "user_inventory"."user_id" as "user_id",
+            "user_inventory"."items_id" as "items_id",
+            "user_inventory"."number" as "number",
+            "items"."item_name",
+            "items"."item_hp",
+            "items"."item_stamina",
+            "items"."item_pic",
+            "items"."item_type",
+            "items"."item_speed",
+            "items"."item_damage",
+            "items"."item_capture_rate",
+            "items"."item_cost",
+            "items"."item_color"
+    FROM "user_inventory"
+        INNER JOIN "items"
+    ON "user_inventory"."items_id" = "items"."id"
+        WHERE "user_id" = $1 AND "user_inventory"."number" > 0 AND "items"."item_type" = 'tms'
+        ORDER BY "items_id" ASC;
+  `;
+
+  const sqlValues = [req.user.id];
+
+  pool
+    .query(query, sqlValues)
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("ERROR: Get all users tms", err);
+      res.sendStatus(500);
+    });
+});
+
 router.get("/user/battle/items", (req, res) => {
   const query = `
     SELECT "user_inventory"."id" as "id",
