@@ -604,8 +604,19 @@ function openRewardPopUp(reward) {
   
 }
 
+function closeRewardPopUp() {
+  document.getElementById("rewardOverlay").style.display = "none";
+  audio.closeButton.play();
+}
 
+document.getElementById("rewardOverlay").addEventListener("click", (event) => {
+  const popup = document.getElementById("rewardInterfacePopUp");
 
+  // Only close if clicking directly on the overlay (not inside the popup)
+  if (!popup.contains(event.target)) {
+    closeRewardPopUp();
+  }
+});
 
 let houseAnimationId;
 
