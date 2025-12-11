@@ -729,7 +729,7 @@ function getUsersRewards() {
             <p style="width: 150px; text-align: center">x${reward.number}</p>
             <p style="width: 150px; text-align: center">${reward.reward_name}</p>
 
-            <button onclick="sellItem({rewardId: ${reward.id}}})">Open</button>
+            <button onclick="userOpenReward({rewardId: ${reward.id}}})">Open</button>
           </div>
                 `;
       }
