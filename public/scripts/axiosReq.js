@@ -126,6 +126,7 @@ let usersThrowablesItems = [];
 let usersItems = [];
 let usersCharacters = [];
 let usersChests = [];
+let usersRewards = [];
 
 // basic info
 let allItems = [];
@@ -699,18 +700,18 @@ function getAllItems() {
     });
 }
 
-function getAllUsersRewards() {
+function getUsersRewards() {
   axios({
     method: "GET",
     url: "http://localhost:5001/api/user/rewards",
     withCredentials: true,
   })
     .then((response) => {
-      usersItems = response.data;
+      usersRewards = response.data;
 
-      document.getElementById("shopBodySell").innerHTML = "";
+      document.getElementById("shopBodyRewards").innerHTML = "";
 
-      for (const item of usersItems) {
+      for (const item of usersRewards) {
         document.getElementById("shopBodySell").innerHTML += `
           <div style="
               width: 100%;
