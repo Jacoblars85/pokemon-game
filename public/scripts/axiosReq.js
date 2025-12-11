@@ -729,7 +729,7 @@ function getUsersRewards() {
             <p style="width: 150px; text-align: center">x${reward.number}</p>
             <p style="width: 150px; text-align: center">${reward.reward_name}</p>
 
-            <button onclick="sellItem({itemId: ${reward.id}}})">Open</button>
+            <button onclick="sellItem({rewardId: ${reward.id}}})">Open</button>
           </div>
                 `;
       }
@@ -764,6 +764,23 @@ function userOpenChest(chestInfo) {
       getAllUsersItems();
       getAllUsersBattleItems();
       getUsersChests();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function userOpenReward(rewardInfo) {
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/user/reward/open`,
+    data: rewardInfo,
+    withCredentials: true,
+  })
+    .then((response) => {
+      getAllUsersItems();
+      getAllUsersBattleItems();
+      getUsersRewards();
     })
     .catch((err) => {
       console.log(err);
