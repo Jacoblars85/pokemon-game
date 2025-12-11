@@ -437,11 +437,15 @@
         <!-- reward interface -->
     <div id="rewardOverlay" class="overlay">
       <div id="rewardInterfacePopUp" class="rewardPopUp">
+                <button class="btn" style="position: absolute; top: 0.5%; right: 0.5%; margin: 0" onclick="closeRewardPopUp()">
+          X
+        </button>
+
         <h2>you got...</h2>
 
         <div id="rewardPicDiv"></div>
 
-        <button style="margin: 30px" onclick="closeReward()">close</button>
+        <button style="margin: 30px" onclick="closeRewardPopUp()">close</button>
       </div>
     </div>
 
