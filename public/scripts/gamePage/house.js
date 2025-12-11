@@ -591,6 +591,12 @@ function switchToSell() {
   document.getElementById("shopBodySell").style.display = "flex";
 }
 
+function switchToRewards() {
+  document.getElementById("shopBodyBuy").style.display = "none";
+  document.getElementById("shopBodySell").style.display = "none";
+  document.getElementById("shopBodyRewards").style.display = "flex";
+}
+
 let houseAnimationId;
 
 function animateHouse() {
