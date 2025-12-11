@@ -699,6 +699,50 @@ function getAllItems() {
     });
 }
 
+function getAllUsersRewards() {
+  axios({
+    method: "GET",
+    url: "http://localhost:5001/api/user/rewards",
+    withCredentials: true,
+  })
+    .then((response) => {
+      usersItems = response.data;
+
+      document.getElementById("shopBodySell").innerHTML = "";
+
+      for (const item of usersItems) {
+        document.getElementById("shopBodySell").innerHTML += `
+          <div style="
+              width: 100%;
+              height: 60px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-around;
+              border-bottom: 2px solid black;
+            ">
+            <div style="width: 50px; display: flex; justify-content: center; margin: 5px;">
+              <img src=${item.item_pic} height="50" />
+            </div>
+
+            <p style="width: 150px; text-align: center">x${item.number}</p>
+            <p style="width: 150px; text-align: center">${item.item_name}</p>
+            <p style="width: 60px; text-align: center">$${
+              item.item_cost / 2
+            }</p>
+
+            <button onclick="sellItem({itemId: ${item.id}, totalCoins: ${
+          item.item_cost / 2
+        }})">Sell</button>
+          </div>
+                `;
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function getUsersChests() {
   axios({
     method: "GET",
