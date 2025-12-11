@@ -597,6 +597,16 @@ function switchToRewards() {
   document.getElementById("shopBodyRewards").style.display = "flex";
 }
 
+function openRewardPopUp(reward) {
+  console.log('trying to pop up');
+
+  // userOpenReward({rewardId: reward.id})
+  
+}
+
+
+
+
 let houseAnimationId;
 
 function animateHouse() {
