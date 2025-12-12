@@ -600,7 +600,8 @@ function switchToRewards() {
 }
 
 function openRewardPopUp(reward) {
-  console.log("trying to pop up");
+  audio.openPc.play();
+  document.getElementById("rewardOverlay").style.display = "flex";
 
   // userOpenReward({rewardId: reward.id})
 }
