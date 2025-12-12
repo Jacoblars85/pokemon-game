@@ -66,8 +66,8 @@ CREATE TABLE "types" (
 	"id" SERIAL PRIMARY KEY,
 	"type_name" VARCHAR(20),
 	"effective" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
-	"weakness" INT NOT NULL REFERENCES "types" ON DELETE CASCADE),
-	"color" VARCHAR(20);
+	"weakness" INT NOT NULL REFERENCES "types" ON DELETE CASCADE,
+	"color" VARCHAR(20));
 
 CREATE TABLE "attacks" (
 	"id" SERIAL PRIMARY KEY,
