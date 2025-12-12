@@ -340,7 +340,7 @@ function resetBattleFunc() {
       );
 
       let winningInfo = {
-        xp: 0.25,
+        xp: 0.6,
         characterXp: 0.6,
         winningStarter: {
           currentStarterId: currentStarter.id,
