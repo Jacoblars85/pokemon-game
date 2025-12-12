@@ -604,6 +604,20 @@ function openRewardPopUp(rewardId) {
   document.getElementById("rewardOverlay").style.display = "flex";
 
   console.log('rewardId', rewardId);
+
+    allItems.forEach((item) => {
+    if (item.id === rewardId) {
+      document.getElementById("rewardPicDiv").innerHTML = `
+      <h3>${item.item_name}</h3>
+
+      <img
+        height="75"
+        width="75"
+        src=${item.item_pic}
+      />
+      `;
+    }
+  });
   
   // userOpenReward({rewardId: rewardId})
 }
