@@ -599,11 +599,13 @@ function switchToRewards() {
   document.getElementById("shopBodyRewards").style.display = "flex";
 }
 
-function openRewardPopUp(reward) {
+function openRewardPopUp(rewardId) {
   audio.openPc.play();
   document.getElementById("rewardOverlay").style.display = "flex";
 
-  // userOpenReward({rewardId: reward.id})
+  console.log('rewardId', rewardId);
+  
+  // userOpenReward({rewardId: rewardId})
 }
 
 function closeRewardPopUp() {
