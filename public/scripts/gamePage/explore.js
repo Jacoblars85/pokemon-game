@@ -14,6 +14,7 @@ getAllItems();
 getAllUsersCharacters();
 getAllCharacters();
 getUsersChests();
+getUsersRewards();
 
 const canvas = document.getElementById("canvasRef");
 const c = canvas.getContext("2d");
