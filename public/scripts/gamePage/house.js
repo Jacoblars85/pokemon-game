@@ -584,13 +584,13 @@ document.getElementById("shopOverlay").addEventListener("click", (event) => {
 function switchToBuy() {
   document.getElementById("shopBodyBuy").style.display = "flex";
   document.getElementById("shopBodySell").style.display = "none";
-      document.getElementById("shopBodyRewards").style.display = "none";
+  document.getElementById("shopBodyRewards").style.display = "none";
 }
 
 function switchToSell() {
   document.getElementById("shopBodyBuy").style.display = "none";
   document.getElementById("shopBodySell").style.display = "flex";
-    document.getElementById("shopBodyRewards").style.display = "none";
+  document.getElementById("shopBodyRewards").style.display = "none";
 }
 
 function switchToRewards() {
@@ -600,10 +600,9 @@ function switchToRewards() {
 }
 
 function openRewardPopUp(reward) {
-  console.log('trying to pop up');
+  console.log("trying to pop up");
 
   // userOpenReward({rewardId: reward.id})
-  
 }
 
 function closeRewardPopUp() {
