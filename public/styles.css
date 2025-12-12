@@ -564,6 +564,7 @@ Shop Interface
   margin: 0;
   border-bottom: 1px solid black;
   cursor: pointer;
+  text-align: center;
 }
 
 .shopHeaders:hover {
