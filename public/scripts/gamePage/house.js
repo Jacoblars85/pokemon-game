@@ -618,6 +618,20 @@ function openRewardPopUp(rewardId) {
       `;
     }
   });
+
+      allCharacters.forEach((character) => {
+    if (character.id === rewardId) {
+      document.getElementById("rewardPicDiv").innerHTML = `
+      <h3>${character.character_name}</h3>
+
+      <img
+        height="75"
+        width="75"
+        src=${character.profile_pic}
+      />
+      `;
+    }
+  });
   
   // userOpenReward({rewardId: rewardId})
 }
