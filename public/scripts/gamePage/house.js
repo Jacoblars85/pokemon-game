@@ -608,7 +608,23 @@ function openRewardPopUp(rewardId) {
   randomNum
   if (rewardId === 1) {
     randomNum = Math.floor(Math.random() * 9 + 1);
-  } else if (rewardId === 2) {
+
+      allCharacters.forEach((character) => {
+    if (character.id === rewardId) {
+      document.getElementById("rewardPicDiv").innerHTML = `
+      <h3>${character.character_name}</h3>
+
+      <img
+        height="75"
+        width="75"
+        src=${character.profile_pic}
+      />
+      `;
+    }
+  });
+
+  } else { 
+    if (rewardId === 2) {
     randomNum = Math.floor(Math.random() * (16 - 7) + 7);
   } else if (rewardId === 3) {
     randomNum = Math.floor(Math.random() * 6 + 1);
@@ -629,20 +645,8 @@ function openRewardPopUp(rewardId) {
       `;
     }
   });
+  }
 
-  allCharacters.forEach((character) => {
-    if (character.id === rewardId) {
-      document.getElementById("rewardPicDiv").innerHTML = `
-      <h3>${character.character_name}</h3>
-
-      <img
-        height="75"
-        width="75"
-        src=${character.profile_pic}
-      />
-      `;
-    }
-  });
 
   // userOpenReward({rewardId: rewardId})
 }
