@@ -605,13 +605,13 @@ function openRewardPopUp(rewardId) {
 
   console.log("rewardId", rewardId);
 
-  randomNum
+  randomNum;
   if (rewardId === 1) {
     randomNum = Math.floor(Math.random() * 9 + 1);
 
-      allCharacters.forEach((character) => {
-    if (character.id === rewardId) {
-      document.getElementById("rewardPicDiv").innerHTML = `
+    allCharacters.forEach((character) => {
+      if (character.id === rewardId) {
+        document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${character.character_name}</h3>
 
       <img
@@ -620,21 +620,20 @@ function openRewardPopUp(rewardId) {
         src=${character.profile_pic}
       />
       `;
-    }
-  });
-
-  } else { 
+      }
+    });
+  } else {
     if (rewardId === 2) {
-    randomNum = Math.floor(Math.random() * (16 - 7) + 7);
-  } else if (rewardId === 3) {
-    randomNum = Math.floor(Math.random() * 6 + 1);
-  } else if (rewardId === 4) {
-    randomNum = Math.floor(Math.random() * 15 + 1);
-  }
+      randomNum = Math.floor(Math.random() * (16 - 7) + 7);
+    } else if (rewardId === 3) {
+      randomNum = Math.floor(Math.random() * 6 + 1);
+    } else if (rewardId === 4) {
+      randomNum = Math.floor(Math.random() * 15 + 1);
+    }
 
-  allItems.forEach((item) => {
-    if (item.id === rewardId) {
-      document.getElementById("rewardPicDiv").innerHTML = `
+    allItems.forEach((item) => {
+      if (item.id === rewardId) {
+        document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${item.item_name}</h3>
 
       <img
@@ -643,10 +642,9 @@ function openRewardPopUp(rewardId) {
         src=${item.item_pic}
       />
       `;
-    }
-  });
+      }
+    });
   }
-
 
   // userOpenReward({rewardId: rewardId})
 }
