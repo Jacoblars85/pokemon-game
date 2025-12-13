@@ -610,7 +610,7 @@ function openRewardPopUp(rewardId) {
     randomNum = Math.floor(Math.random() * 9 + 1);
 
     allCharacters.forEach((character) => {
-      if (character.id === rewardId) {
+      if (character.id === randomNum) {
         document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${character.character_name}</h3>
 
@@ -632,7 +632,7 @@ function openRewardPopUp(rewardId) {
     }
 
     allItems.forEach((item) => {
-      if (item.id === rewardId) {
+      if (item.id === randomNum) {
         document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${item.item_name}</h3>
 
