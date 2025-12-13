@@ -131,6 +131,7 @@ let usersRewards = [];
 // basic info
 let allItems = [];
 let allCharacters = [];
+let allRewards = [];
 
 let isAnimating = false;
 
@@ -733,6 +734,19 @@ function getUsersRewards() {
           </div>
                 `;
       }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+function getAllRewards() {
+  axios({
+    method: "GET",
+    url: "http://localhost:5001/api/inventory/user/all/rewards"
+  })
+    .then((response) => {
+      allRewards = response.data;
     })
     .catch((err) => {
       console.log(err);
