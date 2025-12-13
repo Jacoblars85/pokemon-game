@@ -605,6 +605,16 @@ function openRewardPopUp(rewardId) {
 
   console.log("rewardId", rewardId);
 
+  if (rewardId === 1) {
+    
+  } else if (rewardId === 2) {
+    
+  } else if (rewardId === 3) {
+    
+  } else if (rewardId === 4) {
+    
+  }
+
   allItems.forEach((item) => {
     if (item.id === rewardId) {
       document.getElementById("rewardPicDiv").innerHTML = `
