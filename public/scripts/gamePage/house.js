@@ -605,14 +605,15 @@ function openRewardPopUp(rewardId) {
 
   console.log("rewardId", rewardId);
 
+  randomNum
   if (rewardId === 1) {
-    
+    randomNum = Math.floor(Math.random() * 9 + 1);
   } else if (rewardId === 2) {
-    
+    randomNum = Math.floor(Math.random() * (16 - 7) + 7);
   } else if (rewardId === 3) {
-    
+    randomNum = Math.floor(Math.random() * 6 + 1);
   } else if (rewardId === 4) {
-    
+    randomNum = Math.floor(Math.random() * 15 + 1);
   }
 
   allItems.forEach((item) => {
