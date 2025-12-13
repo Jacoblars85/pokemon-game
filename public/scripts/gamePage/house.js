@@ -603,9 +603,9 @@ function openRewardPopUp(rewardId) {
   audio.openPc.play();
   document.getElementById("rewardOverlay").style.display = "flex";
 
-  console.log('rewardId', rewardId);
+  console.log("rewardId", rewardId);
 
-    allItems.forEach((item) => {
+  allItems.forEach((item) => {
     if (item.id === rewardId) {
       document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${item.item_name}</h3>
@@ -619,7 +619,7 @@ function openRewardPopUp(rewardId) {
     }
   });
 
-      allCharacters.forEach((character) => {
+  allCharacters.forEach((character) => {
     if (character.id === rewardId) {
       document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${character.character_name}</h3>
@@ -632,7 +632,7 @@ function openRewardPopUp(rewardId) {
       `;
     }
   });
-  
+
   // userOpenReward({rewardId: rewardId})
 }
 
