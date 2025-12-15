@@ -743,7 +743,7 @@ function getUsersRewards() {
 function getAllRewards() {
   axios({
     method: "GET",
-    url: "http://localhost:5001/api/inventory/user/all/rewards"
+    url: "http://localhost:5001/api/inventory/user/all/rewards",
   })
     .then((response) => {
       allRewards = response.data;
