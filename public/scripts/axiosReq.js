@@ -801,7 +801,7 @@ function userOpenReward(rewardInfo) {
     });
 }
 
-function userGetItem(itemInfo) {
+function userGetNewItem(itemInfo) {
   axios({
     method: "PUT",
     url: `http://localhost:5001/api/inventory/get/item`,
