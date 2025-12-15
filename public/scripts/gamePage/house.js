@@ -612,6 +612,7 @@ function openRewardPopUp(rewardId) {
 
     allCharacters.forEach((character) => {
       if (character.id === randomNum) {
+        // postNewUserCharacter(character)
         document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${character.character_name}</h3>
 
@@ -637,6 +638,7 @@ function openRewardPopUp(rewardId) {
 
     allItems.forEach((item) => {
       if (item.id === randomNum) {
+        
         document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${item.item_name}</h3>
 
