@@ -801,6 +801,22 @@ function userOpenReward(rewardInfo) {
     });
 }
 
+function userGetItem(itemInfo) {
+  axios({
+    method: "PUT",
+    url: `http://localhost:5001/api/inventory/get/item`,
+    data: itemInfo,
+    withCredentials: true,
+  })
+    .then((response) => {
+      getAllUsersItems();
+      getAllUsersBattleItems();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
 function useItem(itemBeingUsed, resetBattleFunc) {
   axios({
     method: "PUT",
