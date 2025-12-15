@@ -400,7 +400,7 @@ function openChest(boundryId) {
 
   allItems.forEach((item) => {
     if (item.id === itemId) {
-      document.getElementById("rewardPicDiv").innerHTML = `
+      document.getElementById("chestPicDiv").innerHTML = `
       <h3>${item.item_name}</h3>
 
       <img
