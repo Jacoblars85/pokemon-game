@@ -723,4 +723,26 @@ SELECT "user_characters"."id" as "id",
     });
 });
 
+router.put("/get/item", (req, res) => {
+  // console.log(req.body);
+
+  const sqlText = `
+          UPDATE "user_inventory"
+          SET "number" = "number" + 1
+            WHERE "user_id" = $1 AND "id" = $2;
+            `;
+
+  const insertValue = [req.user.id, req.body.items_id];
+
+  pool
+    .query(sqlText, insertValue)
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.log("Error in inventory.router /get/item PUT,", err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
