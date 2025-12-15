@@ -638,7 +638,7 @@ function openRewardPopUp(rewardId) {
 
     allItems.forEach((item) => {
       if (item.id === randomNum) {
-        
+        userGetNewItem({items_id: item.id})
         document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${item.item_name}</h3>
 
