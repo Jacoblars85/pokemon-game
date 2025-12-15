@@ -723,13 +723,13 @@ SELECT "user_characters"."id" as "id",
     });
 });
 
-router.put("/get/item", (req, res) => {
+router.put("/new/item", (req, res) => {
   // console.log(req.body);
 
   const sqlText = `
           UPDATE "user_inventory"
           SET "number" = "number" + 1
-            WHERE "user_id" = $1 AND "id" = $2;
+            WHERE "user_id" = $1 AND "items_id" = $2;
             `;
 
   const insertValue = [req.user.id, req.body.items_id];
