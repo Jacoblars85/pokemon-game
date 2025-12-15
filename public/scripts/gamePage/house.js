@@ -605,14 +605,14 @@ function openRewardPopUp(rewardId) {
 
   console.log("rewardId", rewardId);
 
-  randomNum;
+  randomNum = 0;
   if (rewardId === 1) {
     // random character num
     randomNum = Math.floor(Math.random() * 9 + 1);
 
     allCharacters.forEach((character) => {
       if (character.id === randomNum) {
-        // postNewUserCharacter(character)
+        postNewUserCharacter(character)
         document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${character.character_name}</h3>
 
@@ -652,7 +652,7 @@ function openRewardPopUp(rewardId) {
     });
   }
 
-  // userOpenReward({rewardId: rewardId})
+  userOpenReward({rewardId: rewardId})
 }
 
 function closeRewardPopUp() {
