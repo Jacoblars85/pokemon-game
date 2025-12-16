@@ -612,6 +612,8 @@ function openRewardPopUp(rewardId) {
 
     allCharacters.forEach((character) => {
       if (character.id === randomNum) {
+        console.log('match character', character);
+        
         postNewUserCharacter(character)
         document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${character.character_name}</h3>
@@ -638,6 +640,8 @@ function openRewardPopUp(rewardId) {
 
     allItems.forEach((item) => {
       if (item.id === randomNum) {
+        console.log('match item', item);
+        
         userPutNewItem({ items_id: item.id });
         document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${item.item_name}</h3>
