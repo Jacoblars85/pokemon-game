@@ -614,7 +614,14 @@ function openRewardPopUp(rewardId) {
       if (character.id === randomNum) {
         console.log("match character", character);
 
-        postNewUserCharacter({characterId: character.id, health: character.hp, stamina: character.stamina, maxHealth: character.hp, maxStamina: character.stamina, level: 5});
+        postNewUserCharacter({
+          characterId: character.id,
+          health: character.hp,
+          stamina: character.stamina,
+          maxHealth: character.hp,
+          maxStamina: character.stamina,
+          level: 5,
+        });
         document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${character.character_name}</h3>
 
