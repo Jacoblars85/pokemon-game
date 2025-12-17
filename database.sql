@@ -366,10 +366,10 @@ INSERT INTO "items"
 INSERT INTO "rewards" 
 	("reward_name", "pic", "cost")
 	VALUES
-	('character mystery box', 'images/mysterBoxPic.webp', 15),
-	('held item mystery box', 'images/1200px-ItemBoxMK8.webp', 75),
-	('consumable item mystery box', 'images/1200px-ItemBoxMK8.webp', 25),
-	('item mystery box', 'images/1200px-ItemBoxMK8.webp', 50);
+	('character mystery box', '../../images/characterReward.png', 15),
+	('held item mystery box', '../../images/itemReward.png', 75),
+	('consumable item mystery box', '../../images/itemReward.png', 25),
+	('item mystery box', '../../images/itemReward.png', 50);
 	
 INSERT INTO "chests" 
 	("world_name", "x", "y")
