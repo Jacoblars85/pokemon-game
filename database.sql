@@ -33,7 +33,6 @@ DROP TABLE IF EXISTS basic_attacks;
 DROP TABLE IF EXISTS types;
 
 
-
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR (16) UNIQUE NOT NULL,
