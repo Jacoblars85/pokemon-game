@@ -606,7 +606,7 @@ function openRewardPopUp(rewardId) {
   randomNum = 0;
   if (rewardId === 1) {
     // random character num
-    randomNum = Math.floor(Math.random() * 9 + 1);
+    randomNum = Math.floor(Math.random() * 26 + 1);
 
     allCharacters.forEach((character) => {
       if (character.id === randomNum) {
@@ -632,13 +632,13 @@ function openRewardPopUp(rewardId) {
   } else {
     if (rewardId === 2) {
       // random held item num
-      randomNum = Math.floor(Math.random() * (16 - 7) + 7);
+      randomNum = Math.floor(Math.random() * (19 - 13 + 1) + 13);
     } else if (rewardId === 3) {
       // random consumable num
-      randomNum = Math.floor(Math.random() * 6 + 1);
+      randomNum = Math.floor(Math.random() * (12 - 6 + 1) + 6);
     } else if (rewardId === 4) {
       // random item num
-      randomNum = Math.floor(Math.random() * 15 + 1);
+      randomNum = Math.floor(Math.random() * 30 + 1);
     }
 
     allItems.forEach((item) => {
