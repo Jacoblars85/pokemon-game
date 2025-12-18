@@ -603,8 +603,6 @@ function openRewardPopUp(rewardId) {
   audio.openPc.play();
   document.getElementById("rewardOverlay").style.display = "flex";
 
-  console.log("rewardId", rewardId);
-
   randomNum = 0;
   if (rewardId === 1) {
     // random character num
@@ -612,8 +610,6 @@ function openRewardPopUp(rewardId) {
 
     allCharacters.forEach((character) => {
       if (character.id === randomNum) {
-        console.log("match character", character);
-
         postNewUserCharacter({
           characterId: character.id,
           health: character.hp,
@@ -647,8 +643,6 @@ function openRewardPopUp(rewardId) {
 
     allItems.forEach((item) => {
       if (item.id === randomNum) {
-        console.log("match item", item);
-
         userPutNewItem({ items_id: item.id });
         document.getElementById("rewardPicDiv").innerHTML = `
       <h3>${item.item_name}</h3>
