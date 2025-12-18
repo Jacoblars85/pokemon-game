@@ -599,6 +599,7 @@ function switchToRewards() {
   document.getElementById("shopBodyRewards").style.display = "flex";
 }
 
+// reward functions
 function openRewardPopUp(rewardId) {
   audio.openPc.play();
   document.getElementById("rewardOverlay").style.display = "flex";
@@ -675,7 +676,6 @@ document.getElementById("rewardOverlay").addEventListener("click", (event) => {
 });
 
 let houseAnimationId;
-
 function animateHouse() {
   houseAnimationId = window.requestAnimationFrame(animateHouse);
   houseBackground.draw();
