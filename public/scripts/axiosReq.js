@@ -710,10 +710,10 @@ function getUsersRewards() {
     .then((response) => {
       usersRewards = response.data;
 
-      document.getElementById("shopBodyRewards").innerHTML = "";
+      document.getElementById("rewardsBody").innerHTML = "";
 
       for (const reward of usersRewards) {
-        document.getElementById("shopBodyRewards").innerHTML += `
+        document.getElementById("rewardsBody").innerHTML += `
           <div style="
               width: 100%;
               height: 60px;
