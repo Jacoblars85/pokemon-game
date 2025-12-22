@@ -584,19 +584,11 @@ document.getElementById("shopOverlay").addEventListener("click", (event) => {
 function switchToBuy() {
   document.getElementById("shopBodyBuy").style.display = "flex";
   document.getElementById("shopBodySell").style.display = "none";
-  document.getElementById("shopBodyRewards").style.display = "none";
 }
 
 function switchToSell() {
   document.getElementById("shopBodyBuy").style.display = "none";
   document.getElementById("shopBodySell").style.display = "flex";
-  document.getElementById("shopBodyRewards").style.display = "none";
-}
-
-function switchToRewards() {
-  document.getElementById("shopBodyBuy").style.display = "none";
-  document.getElementById("shopBodySell").style.display = "none";
-  document.getElementById("shopBodyRewards").style.display = "flex";
 }
 
 // reward functions
