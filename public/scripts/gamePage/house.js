@@ -677,14 +677,16 @@ function closeRewardDisplayPopUp() {
   audio.closeButton.play();
 }
 
-document.getElementById("rewardDisplayOverlay").addEventListener("click", (event) => {
-  const popup = document.getElementById("rewardDisplayInterfacePopUp");
+document
+  .getElementById("rewardDisplayOverlay")
+  .addEventListener("click", (event) => {
+    const popup = document.getElementById("rewardDisplayInterfacePopUp");
 
-  // Only close if clicking directly on the overlay (not inside the popup)
-  if (!popup.contains(event.target)) {
-    closeRewardDisplayPopUp();
-  }
-});
+    // Only close if clicking directly on the overlay (not inside the popup)
+    if (!popup.contains(event.target)) {
+      closeRewardDisplayPopUp();
+    }
+  });
 
 let houseAnimationId;
 function animateHouse() {
