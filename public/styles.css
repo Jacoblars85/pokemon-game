@@ -575,6 +575,22 @@ Shop Interface
 Reward Interface
 -------------------------------------------------------------------------------- */
 
+.rewardPopUp {
+  position: absolute;
+  top: 12%;
+  left: 10%;
+  width: 806px;
+  height: 428px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
 .rewardDisplayPopUp {
   position: absolute;
   top: 17.5%;
