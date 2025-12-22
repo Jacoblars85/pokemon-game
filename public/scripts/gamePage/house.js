@@ -592,65 +592,9 @@ function switchToSell() {
 }
 
 // reward functions
-function openRewardPopUp(rewardId) {
+function openRewardPopUp() {
   audio.openPc.play();
   document.getElementById("rewardOverlay").style.display = "flex";
-
-  randomNum = 0;
-  if (rewardId === 1) {
-    // random character num
-    randomNum = Math.floor(Math.random() * 26 + 1);
-
-    allCharacters.forEach((character) => {
-      if (character.id === randomNum) {
-        postNewUserCharacter({
-          characterId: character.id,
-          health: character.hp,
-          stamina: character.stamina,
-          maxHealth: character.hp,
-          maxStamina: character.stamina,
-          level: 5,
-        });
-        document.getElementById("rewardPicDiv").innerHTML = `
-      <h3>${character.character_name}</h3>
-
-      <img
-        height="75"
-        width="75"
-        src=${character.profile_pic}
-      />
-      `;
-      }
-    });
-  } else {
-    if (rewardId === 2) {
-      // random held item num
-      randomNum = Math.floor(Math.random() * (19 - 13 + 1) + 13);
-    } else if (rewardId === 3) {
-      // random consumable num
-      randomNum = Math.floor(Math.random() * (12 - 6 + 1) + 6);
-    } else if (rewardId === 4) {
-      // random item num
-      randomNum = Math.floor(Math.random() * 30 + 1);
-    }
-
-    allItems.forEach((item) => {
-      if (item.id === randomNum) {
-        userPutNewItem({ items_id: item.id });
-        document.getElementById("rewardPicDiv").innerHTML = `
-      <h3>${item.item_name}</h3>
-
-      <img
-        height="75"
-        width="75"
-        src=${item.item_pic}
-      />
-      `;
-      }
-    });
-  }
-
-  userOpenReward({ rewardId: rewardId });
 }
 
 function closeRewardPopUp() {
