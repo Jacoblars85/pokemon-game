@@ -575,7 +575,7 @@ Shop Interface
 Reward Interface
 -------------------------------------------------------------------------------- */
 
-.rewardPopUp {
+.rewardDisplayPopUp {
   position: absolute;
   top: 17.5%;
   left: 20%;
