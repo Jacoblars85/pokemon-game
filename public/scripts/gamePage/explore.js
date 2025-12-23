@@ -510,6 +510,12 @@ function openRewardDisplayPopUp(rewardId) {
       // random consumable num
       randomNum = Math.floor(Math.random() * (12 - 6 + 1) + 6);
     } else if (rewardId === 4) {
+      // random tm num
+      randomNum = Math.floor(Math.random() * 30 + 1);
+    } else if (rewardId === 5) {
+      // random pokeball num
+      randomNum = Math.floor(Math.random() * 5 + 1);
+    } else if (rewardId === 6) {
       // random item num
       randomNum = Math.floor(Math.random() * 30 + 1);
     }
