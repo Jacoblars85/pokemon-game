@@ -511,7 +511,7 @@ function openRewardDisplayPopUp(rewardId) {
       randomNum = Math.floor(Math.random() * (12 - 6 + 1) + 6);
     } else if (rewardId === 4) {
       // random tm num
-      randomNum = Math.floor(Math.random() * 30 + 1);
+      randomNum = Math.floor(Math.random() * (30 - 20 + 1) + 20);
     } else if (rewardId === 5) {
       // random pokeball num
       randomNum = Math.floor(Math.random() * 5 + 1);
