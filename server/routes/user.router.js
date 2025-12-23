@@ -382,7 +382,9 @@ router.put("/won/battle", (req, res) => {
   let rewardId;
   let sqlText;
 
-  if (Math.floor(Number(newUserXpLevel)) % 4 === 0) rewardId = 4;
+  if (Math.floor(Number(newUserXpLevel)) % 6 === 0) rewardId = 6;
+  else if (Math.floor(Number(newUserXpLevel)) % 5 === 0) rewardId = 5;
+  else if (Math.floor(Number(newUserXpLevel)) % 4 === 0) rewardId = 4;
   else if (Math.floor(Number(newUserXpLevel)) % 3 === 0) rewardId = 3;
   else if (Math.floor(Number(newUserXpLevel)) % 2 === 0) rewardId = 2;
   else rewardId = 1;
