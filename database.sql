@@ -365,9 +365,11 @@ INSERT INTO "items"
 INSERT INTO "rewards" 
 	("reward_name", "pic", "cost")
 	VALUES
-	('character mystery box', '../../images/characterReward.png', 15),
+	('character mystery box', '../../images/characterReward.png', 50),
 	('held item mystery box', '../../images/itemReward.png', 75),
 	('consumable item mystery box', '../../images/itemReward.png', 25),
+	('tm mystery box', '../../images/itemReward.png', 25),
+	('pokeball mystery box', '../../images/itemReward.png', 15),
 	('item mystery box', '../../images/itemReward.png', 50);
 	
 INSERT INTO "chests" 
