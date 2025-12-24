@@ -24,7 +24,7 @@ Before you get started, make sure you have the following software installed on y
 
 ## Create Database and Table
 
-Create a new database called `bowsermon` and create a `user` table:
+Create a new database called `bowsermon_v2` and create a `user` table:
 
 ```SQL
 CREATE TABLE "user" (
@@ -36,7 +36,7 @@ CREATE TABLE "user" (
 
 Go to the `database.sql` file and copy and paste everything into SQL
 
-If you would like to name your database something else, you will need to change `bowsermon` to the name of your new database name in `server/modules/pool.js`.
+If you would like to name your database something else, you will need to change `bowsermon_v2` to the name of your new database name in `server/modules/pool.js`.
 
 ## Development Setup Instructions
 
