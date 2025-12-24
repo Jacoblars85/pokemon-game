@@ -1,6 +1,8 @@
 # pokemon-game
 
-A turn-based game, 
+A turn-based game where strategy, timing, and progression matter.
+
+Explore a dynamic world, battle enemies using unique attacks, capture 30 unique characters, manage stamina and health, and level up your starters to unlock their full potential. Collect items, switch starters mid-battle, and face increasingly powerful bosses that test your skills.
 
 ## Demo
 
