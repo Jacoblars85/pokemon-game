@@ -7,6 +7,7 @@ Tasks:
 6. finish adding color for the type of attack(fire, water...)
 7. add dark amd light tm imgs
 8. finish read me
+9. add a check point functionality
 
 New Ideas:
 1. use math.random to choose enemies attacks and add the option to have multipe unique attacks per character
