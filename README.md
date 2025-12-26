@@ -7,6 +7,7 @@ Explore a dynamic world, battle enemies using unique attacks, capture 30 unique 
 ## Demo
 
 Once the user is logged in, they will see this screen.
+The user can click on the play button to start the game
 
 
 
