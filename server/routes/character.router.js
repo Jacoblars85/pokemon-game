@@ -919,7 +919,7 @@ router.post("/add/attack", (req, res) => {
       res.sendStatus(201);
     })
     .catch((err) => {
-      console.log("Error in character.router /add/attack PUT,", err);
+      console.log("Error in character.router /add/attack POST,", err);
       res.sendStatus(500);
     });
 });
