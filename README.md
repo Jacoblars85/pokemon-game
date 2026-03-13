@@ -55,3 +55,10 @@ While you're in your new `.env` file, take the time to replace `superDuperSecret
 - Run `npm run server` to start the server.
 - Run `serve .` to start the client.
 - Navigate to `localhost:5001`.
+
+## Acknowledgments
+
+* youtube
+* tileset 1
+* tileset 2
+* sprites
