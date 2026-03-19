@@ -60,4 +60,5 @@ While you're in your new `.env` file, take the time to replace `superDuperSecret
 
 * Chris Courses Tutorial https://www.youtube.com/watch?v=yP5DKzriqXA&t=11791s
 * Ninja Adventure - Asset Pack (sprites)
-* tileset 2
+* tileset 
+* audio assets
